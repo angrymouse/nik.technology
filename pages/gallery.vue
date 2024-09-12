@@ -32,7 +32,7 @@
       </div>
   
       <!-- Pagination (only show for multiple images) -->
-      <div v-if="!isSingleSVG && galleryImages.length > itemsPerPage" class="flex justify-center mt-8 space-x-4">
+      <div v-if="!isSingleSVG && galleryImages?.length > itemsPerPage" class="flex justify-center mt-8 space-x-4">
         <button
           @click="previousPage"
           :disabled="currentPage === 1"
@@ -85,7 +85,7 @@
   }
   
 
-  const { data: galleryImages } = await useLazyAsyncData('galleryImages', getGalleryImages, {
+  const { data: galleryImages } = await useAsyncData('galleryImages', getGalleryImages, {
     server: true,
     prefetch:true
   })
