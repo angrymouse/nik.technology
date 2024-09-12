@@ -1,22 +1,24 @@
 <template>
     <div class="container mx-auto mt-8 px-4">
 
-      <section id="about" class="mb-12">
-        <div class="flex items-center space-x-8">
-          <img src="@/assets/photo.png" alt="Your Photo" class="w-48 h-48 rounded-full object-cover border-4 border-neon-green">
-          <div>
-            <h2 class="text-3xl font-bold mb-4">About Me</h2>
-            <p class="text-gray-300">
-              Hey! I'm Nik Rykov, the technology guy originating from Ukraine and nearing 19. 
-              <br>
-              I spend most of my time thinking about software, designing it, implementing it, and helping other people build software of their own.
-              <br>
-              I have some expertise in cryptocurrency industry, as it's the only one being able to give me the ability to design complex/sophisticated protocols able to load my brain.  
-            </p>
-          </div>
-        </div>
-      </section>
-  
+        <section id="about" class="mb-12 px-1 md:px-0">
+  <div class="flex flex-col md:flex-row md:items-center md:space-x-8">
+    <div class="flex justify-center mb-6 md:mb-0">
+      <img src="@/assets/photo.png" alt="Your Photo" class="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-neon-green">
+    </div>
+    <div>
+      <h2 class="text-2xl md:text-3xl font-bold mb-4 text-center md:text-left">About Me</h2>
+      <p class="text-gray-300 text-md md:text-base">
+        Hey! I'm Nik Rykov, the technology guy originating from Ukraine and nearing 19.
+        <br class="hidden md:inline">
+        I spend most of my time thinking about software, designing it, implementing it, and helping other people build software of their own.
+        <br class="hidden md:inline">
+        I have some expertise in cryptocurrency industry, as it's the only one being able to give me the ability to design complex/sophisticated protocols able to load my brain.
+      </p>
+    </div>
+  </div>
+</section>
+
   
       <section id="jack-of-all-trades" class="mb-12">
         <h2 class="text-3xl font-bold mb-4">Jack of all trades AND a master of one</h2>
@@ -66,13 +68,7 @@
       <section id="projects" class="mb-12">
         <h2 class="text-3xl font-bold mb-4">Projects I worked on</h2>
         <div class="flex justify-center md:justify-start gap-6 flex-wrap ">
-          <a href="https://findadiscord.com" class="p-0.5 bg-gradient-to-r from-red-500 to-neon-green w-48 rounded-3xl">
-            <div class="bg-zinc-800 p-4 pt-0 rounded-3xl flex justify-start flex-col items-center h-full">
-              <NuxtImg src="/fad_logo.svg" width="80" class="mt-4" />
-              <h3 class="text-md font-semibold m-2">FindADiscord.com</h3>
-              <div class="text-gray-300 text-center">Sole developer<br><div class="text-zinc-400 text-sm">2019-Present</div></div>
-            </div>
-          </a>
+
           
           <a href="https://arweave.org" class="p-0.5 bg-gradient-to-r from-red-500 to-neon-green rounded-3xl w-48">
             <div class="bg-zinc-800 p-4 pt-0 rounded-3xl flex justify-start flex-col items-center h-full">
@@ -94,6 +90,13 @@
               <NuxtImg src="/weavevm.png" width="80" class=" mt-4 rounded-3xl" />
               <h3 class="text-md font-semibold m-2">WeaveVM</h3>
               <div class="text-gray-300 text-center">Technical Advisor <br> <div class="text-zinc-400 text-sm">2024-Present</div></div>
+            </div>
+          </a>
+          <a href="https://findadiscord.com" class="p-0.5 bg-gradient-to-r from-red-500 to-neon-green w-48 rounded-3xl">
+            <div class="bg-zinc-800 p-4 pt-0 rounded-3xl flex justify-start flex-col items-center h-full">
+              <NuxtImg src="/fad_logo.svg" width="80" class="mt-4" />
+              <h3 class="text-md font-semibold m-2">FindADiscord.com</h3>
+              <div class="text-gray-300 text-center">Sole developer<br><div class="text-zinc-400 text-sm">2019-Present</div></div>
             </div>
           </a>
           <a href="https://handshake.org" class="p-0.5 bg-gradient-to-r from-red-500 to-neon-green rounded-3xl w-48">
@@ -146,7 +149,7 @@
           </button>
         </div>
       </div>
-      <div class="flex flex-wrap gap-4">
+      <div class="flex flex-wrap gap-4 justify-center md:justify-start">
 
         <div class="bg-zinc-800 p-4 rounded-lg border-2 border-zinc-950 w-60">
           <div class="flex items-center mb-2">

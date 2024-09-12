@@ -10,6 +10,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily:{
+        "sans":['Iosevka Web', 'ui-monospace']
+      },
       colors: {
         'neon-green': 'var(--neon-green)',
       },
