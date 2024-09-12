@@ -86,28 +86,28 @@
             </div>
           </a>
           <a href="https://www.wvm.dev/" class="p-0.5 bg-gradient-to-r from-red-500 to-neon-green rounded-3xl w-48">
-            <div class="bg-zinc-800 p-4 pt-0 rounded-3xl flex justify-start flex-col items-center h-full">
+            <div class="bg-zinc-800 py-4 pt-0 rounded-3xl flex justify-start flex-col items-center h-full">
               <NuxtImg src="/weavevm.png" width="80" class=" mt-4 rounded-3xl" />
               <h3 class="text-md font-semibold m-2">WeaveVM</h3>
               <div class="text-gray-300 text-center">Technical Advisor <br> <div class="text-zinc-400 text-sm">2024-Present</div></div>
             </div>
           </a>
           <a href="https://findadiscord.com" class="p-0.5 bg-gradient-to-r from-red-500 to-neon-green w-48 rounded-3xl">
-            <div class="bg-zinc-800 p-4 pt-0 rounded-3xl flex justify-start flex-col items-center h-full">
+            <div class="bg-zinc-800 py-4 pt-0 rounded-3xl flex justify-start flex-col items-center h-full">
               <NuxtImg src="/fad_logo.svg" width="80" class="mt-4" />
               <h3 class="text-md font-semibold m-2">FindADiscord.com</h3>
               <div class="text-gray-300 text-center">Sole developer<br><div class="text-zinc-400 text-sm">2019-Present</div></div>
             </div>
           </a>
           <a href="https://handshake.org" class="p-0.5 bg-gradient-to-r from-red-500 to-neon-green rounded-3xl w-48">
-            <div class="bg-zinc-800 p-4 pt-0 rounded-3xl flex justify-start flex-col items-center h-full">
+            <div class="bg-zinc-800 py-4 pt-0 rounded-3xl flex justify-start flex-col items-center h-full">
               <NuxtImg src="/handshake.svg" width="80" class="mt-4" />
               <h3 class="text-md font-semibold m-2">Handshake</h3>
               <div class="text-gray-300 text-center">Ecosystem Contributor<br> <div class="text-zinc-400 text-sm">2021-Present</div></div>
             </div>
           </a>
           <a href="https://highlayer.io" class="p-0.5 bg-gradient-to-r from-red-500 to-neon-green rounded-3xl w-48">
-            <div class="bg-zinc-800 p-4 pt-0 rounded-3xl flex justify-start flex-col items-center h-full">
+            <div class="bg-zinc-800 py-4 pt-0 rounded-3xl flex justify-start flex-col items-center h-full">
               <NuxtImg src="/highlayer.svg" width="80" class=" mt-4 rounded-3xl bg-[rgb(171,57,21)]" />
               <h3 class="text-md font-semibold m-2">Highlayer</h3>
               <div class="text-gray-300 text-center">Founder/CTO <br> <div class="text-zinc-400 text-sm">2023-Present</div></div>
