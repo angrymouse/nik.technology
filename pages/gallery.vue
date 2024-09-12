@@ -1,8 +1,6 @@
 <template>
     <div class="container mx-auto px-4 py-8">
       <h1 class="text-4xl font-bold mb-8 text-center text-zinc-100">Design Gallery</h1>
-      
-      <!-- Single SVG Image -->
       <div v-if="isSingleSVG" class="flex justify-center items-center min-h-[calc(100vh-12rem)]">
         <div class="w-full max-w-4xl aspect-square">
           <img
@@ -12,8 +10,6 @@
           />
         </div>
       </div>
-  
-      <!-- Multiple Images Gallery -->
       <div v-else class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         <div
           v-for="(image, index) in paginatedImages"
@@ -27,12 +23,9 @@
               class="w-full h-full object-cover"
             />
           </div>
-     
         </div>
       </div>
-  
-      <!-- Pagination (only show for multiple images) -->
-      <div v-if="!isSingleSVG && galleryImages?.length > itemsPerPage" class="flex justify-center mt-8 space-x-4">
+      <div v-if="!isSingleSVG && galleryImages.length > itemsPerPage" class="flex justify-center mt-8 space-x-4">
         <button
           @click="previousPage"
           :disabled="currentPage === 1"
@@ -49,8 +42,6 @@
           Next
         </button>
       </div>
-  
-      <!-- Back to Home Link -->
       <div class="text-center mt-8">
         <NuxtLink to="/" class="text-neon-green hover:underline transition duration-300">
           &larr; Back to Home
@@ -65,30 +56,24 @@
   const itemsPerPage = 12
   const currentPage = ref(1)
   
-  // Server-side only function to get gallery images
-  async function getGalleryImages() {  
-    const { readdir } = require('node:fs/promises')
-    const { join } = require('node:path')
 
+  const getGalleryImages = async () => {
+    const { readdir } = await import('node:fs/promises')
+    const { join } = await import('node:path')
     const galleryDir = join(process.cwd(), 'public', 'gallery')
-    return readdir(galleryDir)
-      .then(files => 
-        files
-          .filter(file => /\.(png|jpe?g|gif|svg)$/i.test(file))
-          .map(file => `/gallery/${file}`)
-      )
-      .catch(error => {
-        console.error('Error reading gallery directory:', error)
-        return []
-      })
-  
+    try {
+      const files = await readdir(galleryDir)
+      return files
+        .filter(file => /\.(png|jpe?g|gif|svg)$/i.test(file))
+        .map(file => `/gallery/${file}`)
+    } catch (error) {
+      console.error('Error reading gallery directory:', error)
+      return []
+    }
   }
   
 
-  const { data: galleryImages } = await useAsyncData('galleryImages', getGalleryImages, {
-    server: true,
-    prefetch:true
-  })
+  const { data: galleryImages } = await useAsyncData('galleryImages', () => getGalleryImages())
   
   const isSingleSVG = computed(() => {
     return galleryImages.value?.length === 1 && galleryImages.value[0].endsWith('.svg')
