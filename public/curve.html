@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<body>
+<canvas id="myCanvas" width="800" height="500" style="border:1px solid #ddd;"></canvas>
+<script>
+const canvas = document.getElementById('myCanvas');
+const ctx = canvas.getContext('2d');
+let isDragging = false;
+let currentHandle = null;
+let dragOffset = 0;
+
+const config = {
+    baselineY: 400,
+    handles: {
+        start: { x: 100, width: 10 },
+        end: { x: 300, width: 10 }
+    },
+    curveFunction: {
+        amplitude: 50,
+        frequency: 0.02,
+        verticalOffset: 100,
+        func: x => {
+            return this.verticalOffset - 
+                   this.amplitude * Math.sin(this.frequency * x);
+        },
+        integral: x => {
+            return this.verticalOffset * x + 
+                   (this.amplitude / this.frequency) * 
+                   Math.cos(this.frequency * x);
+        }
+    }
+};
+
+
+config.curveFunction.func = x => {
+    return config.curveFunction.verticalOffset - 
+           config.curveFunction.amplitude * Math.sin(config.curveFunction.frequency * x);
+};
+
+config.curveFunction.integral = x => {
+    return config.curveFunction.verticalOffset * x + 
+           (config.curveFunction.amplitude / config.curveFunction.frequency) * 
+           Math.cos(config.curveFunction.frequency * x);
+};
+
+canvas.addEventListener('mousedown', startDrag);
+canvas.addEventListener('mousemove', drag);
+canvas.addEventListener('mouseup', endDrag);
+canvas.addEventListener('mouseleave', endDrag);
+
+function startDrag(e) {
+    const rect = canvas.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    if (isNearHandle(x, config.handles.start) || isNearHandle(x, config.handles.end)) {
+        currentHandle = isNearHandle(x, config.handles.start) ? 'start' : 'end';
+        isDragging = true;
+        dragOffset = x - config.handles[currentHandle].x;
+        
+        if (e.shiftKey) {
+            currentHandle = 'chunk';
+        }
+    }
+}
+
+function drag(e) {
+    if (!isDragging) return;
+    
+    const rect = canvas.getBoundingClientRect();
+    const newX = e.clientX - rect.left - dragOffset;
+    
+    if (currentHandle === 'chunk') {
+        const chunkWidth = config.handles.end.x - config.handles.start.x;
+        const newStart = Math.max(0, Math.min(newX, canvas.width - chunkWidth));
+        config.handles.start.x = newStart;
+        config.handles.end.x = newStart + chunkWidth;
+    } else {
+        if (currentHandle === 'start') {
+            config.handles.start.x = Math.max(0, Math.min(newX, config.handles.end.x - 10));
+        } else {
+            config.handles.end.x = Math.max(config.handles.start.x + 10, Math.min(newX, canvas.width));
+        }
+    }
+    
+    render();
+}
+
+function endDrag() {
+    isDragging = false;
+    currentHandle = null;
+}
+
+function isNearHandle(x, handle) {
+    return Math.abs(x - handle.x) < 15;
+}
+
+function calculateArea(startX, endX) {
+    return config.curveFunction.integral(endX) - config.curveFunction.integral(startX);
+}
+
+function drawHandle(x, label) {
+    ctx.beginPath();
+    ctx.arc(x, config.baselineY, 8, 0, Math.PI * 2);
+    ctx.fillStyle = '#ff9900';
+    ctx.fill();
+    ctx.strokeStyle = '#000';
+    ctx.stroke();
+    
+    ctx.fillStyle = '#000';
+    ctx.textAlign = 'center';
+    ctx.fillText(label, x, config.baselineY + 20);
+}
+
+function render() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    ctx.beginPath();
+    ctx.moveTo(0, config.baselineY);
+    ctx.lineTo(canvas.width, config.baselineY);
+    ctx.strokeStyle = '#ff0000';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    const points = [];
+    for(let x = 0; x <= canvas.width; x++) {
+        const y = config.baselineY - config.curveFunction.func(x);
+        points.push({x, y});
+    }
+
+    ctx.beginPath();
+    ctx.moveTo(points[0].x, points[0].y);
+    points.forEach(p => ctx.lineTo(p.x, p.y));
+    ctx.strokeStyle = '#0000ff';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    const area = calculateArea(config.handles.start.x, config.handles.end.x);
+    
+    ctx.beginPath();
+    ctx.moveTo(config.handles.start.x, config.baselineY);
+    ctx.lineTo(config.handles.end.x, config.baselineY);
+    ctx.lineTo(config.handles.end.x, config.baselineY - config.curveFunction.func(config.handles.end.x));
+    
+    for(let x = config.handles.end.x; x >= config.handles.start.x; x--) {
+        ctx.lineTo(x, config.baselineY - config.curveFunction.func(x));
+    }
+    
+    ctx.closePath();
+    ctx.fillStyle = 'rgba(0, 255, 0, 0.3)';
+    ctx.fill();
+
+    drawHandle(config.handles.start.x, 'Start');
+    drawHandle(config.handles.end.x, 'End');
+
+    ctx.fillStyle = '#000';
+    ctx.font = '16px Arial';
+    ctx.fillText(`Area: ${area.toFixed(1)} pixels²`, 110, 30);
+    ctx.fillText(`Start: ${config.handles.start.x.toFixed(1)}px`,88, 50);
+    ctx.fillText(`End: ${config.handles.end.x.toFixed(1)}px`, 86, 70);
+    ctx.fillText(`Hold Shift to move entire chunk`, 150, 90);
+}
+
+render();
+</script>
+</body>
+</html>
