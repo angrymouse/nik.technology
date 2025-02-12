@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Trapezoidal Rule Integration Visualization</title>
+        <style>
+            body {
+                font-family: sans-serif;
+            }
+            #controls {
+                margin-bottom: 10px;
+            }
+            #canvasContainer {
+                border: 1px solid #ccc;
+                display: inline-block;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Trapezoidal Rule Integration Visualization</h2>
+        <p>
+            Function: Custom sinusoid with predefined control points
+            <span id="controlPointsDisplay">[1, 9, 3, 4, 5, 4, 7, 2, 1]</span>
+            interpolated sinusoidally over [0, 2π]. Drag the red points to
+            modify the heights.
+        </p>
+        <div id="controls">
+            <label for="steps">Number of trapezoids: </label>
+            <input type="range" id="steps" min="10" max="10000" value="50" />
+            <span id="stepsValue">50</span>
+            <br />
+            <button id="recalc">Recalculate</button>
+        </div>
+        <div id="results">
+            <p>Trapezoidal Approximation: <span id="approxVal"></span></p>
+            <p>Exact Integral: <span id="exactVal"></span></p>
+            <p>Trapezoidal Computation Time: <span id="compTime"></span> ms</p>
+            <p>Exact Computation Time: <span id="compTimeExact"></span> ms</p>
+        </div>
+        <div id="canvasContainer">
+            <canvas id="canvas" width="600" height="400"></canvas>
+        </div>
+
+        <script>
+            const canvas = document.getElementById("canvas");
+            const ctx = canvas.getContext("2d");
+            const width = canvas.width;
+            const height = canvas.height;
+            const padding = 40;
+
+            const a = 0;
+            const b = 2 * Math.PI;
+
+            let controlPoints = [1, 9, 3, 4, 5, 4, 7, 2, 1, 10, 5, 8, 50, 2];
+            const period = 2 * Math.PI;
+
+            function f(x) {
+                let modX = x % period;
+                if (modX < 0) modX += period;
+                const numSegments = controlPoints.length - 1;
+                const segmentWidth = period / numSegments;
+                let i = Math.floor(modX / segmentWidth);
+                if (i >= numSegments) i = numSegments - 1;
+
+                let t = (modX - i * segmentWidth) / segmentWidth;
+                let factor = (1 - Math.cos(Math.PI * t)) / 2;
+                return (
+                    controlPoints[i] +
+                    (controlPoints[i + 1] - controlPoints[i]) * factor
+                );
+            }
+            function computeYBounds() {
+                let minY = Infinity;
+                let maxY = -Infinity;
+                const numSamples = 1000;
+                for (let i = 0; i <= numSamples; i++) {
+                    const x = a + ((b - a) * i) / numSamples;
+                    const y = f(x);
+                    if (y < minY) minY = y;
+                    if (y > maxY) maxY = y;
+                }
+
+                const margin = 0.1 * (maxY - minY);
+                return { minY: minY - margin, maxY: maxY + margin };
+            }
+
+            let { minY, maxY } = computeYBounds();
+
+            function xToCanvas(x) {
+                return padding + ((x - a) / (b - a)) * (width - 2 * padding);
+            }
+
+            function yToCanvas(y) {
+                return (
+                    padding +
+                    ((maxY - y) / (maxY - minY)) * (height - 2 * padding)
+                );
+            }
+            function canvasToY(canvasY) {
+                return (
+                    maxY -
+                    ((canvasY - padding) / (height - 2 * padding)) *
+                        (maxY - minY)
+                );
+            }
+
+            function drawAxes() {
+                ctx.strokeStyle = "#000";
+                ctx.lineWidth = 1;
+
+                if (0 >= minY && 0 <= maxY) {
+                    const y0 = yToCanvas(0);
+                    ctx.beginPath();
+                    ctx.moveTo(padding, y0);
+                    ctx.lineTo(width - padding, y0);
+                    ctx.stroke();
+                }
+
+                const x0 = xToCanvas(a);
+                ctx.beginPath();
+                ctx.moveTo(x0, padding);
+                ctx.lineTo(x0, height - padding);
+                ctx.stroke();
+            }
+
+            function drawFunction() {
+                ctx.strokeStyle = "blue";
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                const numPoints = 1000;
+                for (let i = 0; i <= numPoints; i++) {
+                    const x = a + ((b - a) * i) / numPoints;
+                    const y = f(x);
+                    const canvasX = xToCanvas(x);
+                    const canvasY = yToCanvas(y);
+                    if (i === 0) {
+                        ctx.moveTo(canvasX, canvasY);
+                    } else {
+                        ctx.lineTo(canvasX, canvasY);
+                    }
+                }
+                ctx.stroke();
+            }
+
+            function drawTrapezoids(nSteps) {
+                const dx = (b - a) / nSteps;
+                for (let i = 0; i < nSteps; i++) {
+                    const x0_val = a + i * dx;
+                    const x1_val = a + (i + 1) * dx;
+                    const y0_val = f(x0_val);
+                    const y1_val = f(x1_val);
+
+                    const canvasX0 = xToCanvas(x0_val);
+                    const canvasX1 = xToCanvas(x1_val);
+                    const canvasY0 = yToCanvas(y0_val);
+                    const canvasY1 = yToCanvas(y1_val);
+                    const canvasY0_axis = yToCanvas(0);
+
+                    ctx.fillStyle = "rgba(255, 165, 0, 0.5)";
+                    ctx.beginPath();
+                    ctx.moveTo(canvasX0, canvasY0_axis);
+                    ctx.lineTo(canvasX0, canvasY0);
+                    ctx.lineTo(canvasX1, canvasY1);
+                    ctx.lineTo(canvasX1, canvasY0_axis);
+                    ctx.closePath();
+                    ctx.fill();
+                    ctx.stroke();
+                }
+            }
+
+            const pointRadius = 6;
+            const selectionRadius = 10;
+
+            function drawControlPoints() {
+                ctx.fillStyle = "red";
+                ctx.strokeStyle = "black";
+                const numPoints = controlPoints.length;
+                const segWidth = period / (numPoints - 1);
+                for (let i = 0; i < numPoints; i++) {
+                    const x = i * segWidth;
+                    const canvasX = xToCanvas(x);
+                    const canvasY = yToCanvas(controlPoints[i]);
+                    ctx.beginPath();
+                    ctx.arc(canvasX, canvasY, pointRadius, 0, 2 * Math.PI);
+                    ctx.fill();
+                    ctx.stroke();
+                }
+            }
+
+            function clearCanvas() {
+                ctx.clearRect(0, 0, width, height);
+            }
+
+            function exactIntegralCalc() {
+                const numSegments = controlPoints.length - 1;
+                const segmentWidth = period / numSegments;
+                let sum = 0;
+                for (let i = 0; i < numSegments; i++) {
+                    sum += (controlPoints[i] + controlPoints[i + 1]) / 2;
+                }
+                return segmentWidth * sum;
+            }
+
+            function trapezoidalSum(nSteps) {
+                const dx = (b - a) / nSteps;
+                let sum = f(a) + f(b);
+                for (let i = 1; i < nSteps; i++) {
+                    const x = a + i * dx;
+                    sum += 2 * f(x);
+                }
+                return (dx / 2) * sum;
+            }
+
+            function draw() {
+                ({ minY, maxY } = computeYBounds());
+                clearCanvas();
+                drawAxes();
+                drawFunction();
+                const steps = parseInt(
+                    document.getElementById("steps").value,
+                    10,
+                );
+                drawTrapezoids(steps);
+                drawControlPoints();
+
+                document.getElementById("controlPointsDisplay").textContent =
+                    JSON.stringify(controlPoints.map((v) => +v.toFixed(2)));
+            }
+
+            function recalc() {
+                const steps = parseInt(
+                    document.getElementById("steps").value,
+                    10,
+                );
+
+                const t0 = performance.now();
+                const approx = trapezoidalSum(steps);
+                const t1 = performance.now();
+                const compTime = t1 - t0;
+
+                const t0Exact = performance.now();
+                const exact = exactIntegralCalc();
+                const t1Exact = performance.now();
+                const compTimeExact = t1Exact - t0Exact;
+
+                document.getElementById("approxVal").textContent =
+                    approx.toFixed(6);
+                document.getElementById("exactVal").textContent =
+                    exact.toFixed(6);
+                document.getElementById("compTime").textContent =
+                    compTime.toFixed(4);
+                document.getElementById("compTimeExact").textContent =
+                    compTimeExact.toFixed(4);
+
+                draw();
+            }
+
+            document
+                .getElementById("steps")
+                .addEventListener("input", function () {
+                    document.getElementById("stepsValue").textContent =
+                        this.value;
+                    recalc();
+                });
+            document.getElementById("recalc").addEventListener("click", recalc);
+
+            let draggedPoint = null;
+
+            function getMousePos(evt) {
+                const rect = canvas.getBoundingClientRect();
+                return {
+                    x: evt.clientX - rect.left,
+                    y: evt.clientY - rect.top,
+                };
+            }
+
+            canvas.addEventListener("mousedown", function (evt) {
+                const pos = getMousePos(evt);
+                const numPoints = controlPoints.length;
+                const segWidth = period / (numPoints - 1);
+                for (let i = 0; i < numPoints; i++) {
+                    const x = i * segWidth;
+                    const canvasX = xToCanvas(x);
+                    const canvasY = yToCanvas(controlPoints[i]);
+                    const dx = pos.x - canvasX;
+                    const dy = pos.y - canvasY;
+                    if (Math.sqrt(dx * dx + dy * dy) < selectionRadius) {
+                        draggedPoint = i;
+                        break;
+                    }
+                }
+            });
+
+            canvas.addEventListener("mousemove", function (evt) {
+                if (draggedPoint !== null) {
+                    const pos = getMousePos(evt);
+
+                    controlPoints[draggedPoint] = canvasToY(pos.y);
+                    recalc();
+                }
+            });
+
+            canvas.addEventListener("mouseup", function () {
+                draggedPoint = null;
+            });
+            canvas.addEventListener("mouseleave", function () {
+                draggedPoint = null;
+            });
+
+            recalc();
+        </script>
+    </body>
+</html>
