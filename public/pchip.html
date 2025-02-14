@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>PCHIP curve builder</title>
+        <style>
+            body {
+                font-family: sans-serif;
+                margin: 20px;
+                text-align: center;
+            }
+            #controls {
+                margin-bottom: 10px;
+            }
+            #canvasContainer {
+                border: 1px solid #ccc;
+                display: inline-block;
+                margin-top: 20px;
+            }
+            canvas {
+                background-color: #fff;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>PCHIP curve builder</h2>
+        <p>
+            Drag the red control points to adjust the curve.<br />
+            Double-click anywhere on the canvas to add a new control point.
+        </p>
+        <div id="controls">
+            <button id="recalc">Recalculate</button>
+        </div>
+        <div id="results">
+            <p>
+                Exact Integral (PCHIP antiderivative):
+                <span id="exactVal"></span>
+        </div>p>
+            <p>Computation Time: <span id="compTimeExact"></span> ms</p>
+            <p>
+                Control Point Heights:
+                <span id="heights"></span>
+            </p>
+        </div>
+        <div id="canvasContainer">
+            <canvas id="canvas" width="600" height="400"></canvas>
+        </div>
+
+        <script>
+            const canvas = document.getElementById("canvas");
+            const ctx = canvas.getContext("2d");
+            const width = canvas.width;
+            const height = canvas.height;
+            const padding = 40;
+            const a = 0;
+            const b = 2 * Math.PI;
+
+
+            function originalF(x) {
+                return Math.sin(x) * 20 + 25;
+            }
+
+            let controlPoints = [];
+            const numControlPoints = 10;
+            for (let i = 0; i < numControlPoints; i++) {
+                let x = a + ((b - a) * i) / (numControlPoints - 1);
+                let y = originalF(x);
+
+                y = Math.max(0, Math.min(100, y));
+                controlPoints.push({ x: x, y: y });
+            }
+
+
+            let tangents = [];
+            function computeMonotonicTangents() {
+                const n = controlPoints.length;
+                let d = new Array(n);
+                if (n === 0) return d;
+                if (n === 1) {
+                    d[0] = 0;
+                    return d;
+                }
+                let h = [];
+                let delta = [];
+                for (let i = 0; i < n - 1; i++) {
+                    h[i] = controlPoints[i + 1].x - controlPoints[i].x;
+                    delta[i] =
+                        (controlPoints[i + 1].y - controlPoints[i].y) / h[i];
+                }
+                d[0] = delta[0];
+                d[n - 1] = delta[n - 2];
+                for (let i = 1; i < n - 1; i++) {
+                    if (delta[i - 1] * delta[i] > 0) {
+                        let w1 = 2 * h[i] + h[i - 1];
+                        let w2 = h[i] + 2 * h[i - 1];
+                        d[i] = (w1 + w2) / (w1 / delta[i - 1] + w2 / delta[i]);
+                    } else {
+                        d[i] = 0;
+                    }
+                }
+                return d;
+            }
+            function f(x) {
+                if (x <= controlPoints[0].x) return controlPoints[0].y;
+                if (x >= controlPoints[controlPoints.length - 1].x)
+                    return controlPoints[controlPoints.length - 1].y;
+                let i;
+                for (i = 0; i < controlPoints.length - 1; i++) {
+                    if (x < controlPoints[i + 1].x) break;
+                }
+                const p0 = controlPoints[i];
+                const p1 = controlPoints[i + 1];
+                const hSeg = p1.x - p0.x;
+                const t = (x - p0.x) / hSeg;
+                const t2 = t * t;
+                const t3 = t2 * t;
+                const h00 = 2 * t3 - 3 * t2 + 1;
+                const h10 = t3 - 2 * t2 + t;
+                const h01 = -2 * t3 + 3 * t2;
+                const h11 = t3 - t2;
+                return (
+                    h00 * p0.y +
+                    h10 * (hSeg * tangents[i]) +
+                    h01 * p1.y +
+                    h11 * (hSeg * tangents[i + 1])
+                );
+            }
+
+            function computeYBounds() {
+                let maxVal = 0;
+                const numSamples = 1000;
+                for (let i = 0; i <= numSamples; i++) {
+                    let x = a + (i / numSamples) * (b - a);
+                    let yVal = f(x);
+                    if (yVal > maxVal) maxVal = yVal;
+                }
+                let margin = 0.1 * maxVal;
+                let newMax = maxVal + margin;
+                newMax = Math.max(50, newMax);
+                newMax = Math.min(100, newMax);
+                return { minY: 0, maxY: newMax };
+            }
+            let { minY, maxY } = computeYBounds();
+
+
+            function xToCanvas(x) {
+                return padding + ((x - a) / (b - a)) * (width - 2 * padding);
+            }
+            function yToCanvas(y) {
+                return (
+                    padding +
+                    ((maxY - y) / (maxY - minY)) * (height - 2 * padding)
+                );
+            }
+            function canvasToX(cx) {
+                return a + ((cx - padding) / (width - 2 * padding)) * (b - a);
+            }
+            function canvasToY(cy) {
+                return (
+                    maxY -
+                    ((cy - padding) / (height - 2 * padding)) * (maxY - minY)
+                );
+            }
+
+            function drawBaseline() {
+                const y0 = yToCanvas(0);
+                ctx.strokeStyle = "black";
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.moveTo(xToCanvas(a), y0);
+                ctx.lineTo(xToCanvas(b), y0);
+                ctx.stroke();
+            }
+
+
+            function drawFunction() {
+                ctx.beginPath();
+
+                ctx.moveTo(xToCanvas(a), yToCanvas(0));
+                const numPoints = 1000;
+                for (let i = 0; i <= numPoints; i++) {
+                    let x = a + (i / numPoints) * (b - a);
+                    let yVal = f(x);
+                    ctx.lineTo(xToCanvas(x), yToCanvas(yVal));
+                }
+
+                ctx.lineTo(xToCanvas(b), yToCanvas(0));
+                ctx.closePath();
+                ctx.fillStyle = "yellow";
+                ctx.fill();
+                ctx.strokeStyle = "grey";
+                ctx.lineWidth = 2;
+                ctx.stroke();
+            }
+
+            function drawControlPoints() {
+                for (let cp of controlPoints) {
+                    const cx = xToCanvas(cp.x);
+                    const cy = yToCanvas(cp.y);
+                    ctx.beginPath();
+                    ctx.arc(cx, cy, 5, 0, 2 * Math.PI);
+                    ctx.fillStyle = "red";
+                    ctx.fill();
+                    ctx.strokeStyle = "black";
+                    ctx.stroke();
+                }
+            }
+
+            function clearCanvas() {
+                ctx.clearRect(0, 0, width, height);
+            }
+
+            function exactIntegralPCHIP() {
+                let sum = 0;
+                for (let i = 0; i < controlPoints.length - 1; i++) {
+                    const p0 = controlPoints[i];
+                    const p1 = controlPoints[i + 1];
+                    const hSeg = p1.x - p0.x;
+                    const term =
+                        0.5 * (p0.y + p1.y) +
+                        (hSeg / 12) * (tangents[i] - tangents[i + 1]);
+                    sum += hSeg * term;
+                }
+                return sum;
+            }
+
+            function updateHeights() {
+                const heightsSpan = document.getElementById("heights");
+                heightsSpan.textContent = controlPoints
+                    .map((cp) => cp.y.toFixed(2))
+                    .join(", ");
+            }
+
+            function draw() {
+                ({ minY, maxY } = computeYBounds());
+                clearCanvas();
+                drawBaseline();
+                drawFunction();
+                drawControlPoints();
+            }
+
+            function recalc() {
+                tangents = computeMonotonicTangents();
+                const t0Exact = performance.now();
+                const exact = exactIntegralPCHIP();
+                const t1Exact = performance.now();
+                const compTimeExact = t1Exact - t0Exact;
+                document.getElementById("exactVal").textContent =
+                    exact.toFixed(6);
+                document.getElementById("compTimeExact").textContent =
+                    compTimeExact.toFixed(4);
+                updateHeights();
+                draw();
+            }
+
+
+            let draggingPointIndex = null;
+            canvas.addEventListener("mousedown", function (e) {
+                const rect = canvas.getBoundingClientRect();
+                const mouseX = e.clientX - rect.left;
+                const mouseY = e.clientY - rect.top;
+                for (let i = 0; i < controlPoints.length; i++) {
+                    const cp = controlPoints[i];
+                    const cpCanvasX = xToCanvas(cp.x);
+                    const cpCanvasY = yToCanvas(cp.y);
+                    const dx = mouseX - cpCanvasX;
+                    const dy = mouseY - cpCanvasY;
+                    if (Math.hypot(dx, dy) < 7) {
+                        draggingPointIndex = i;
+                        return;
+                    }
+                }
+            });
+            canvas.addEventListener("mousemove", function (e) {
+                if (draggingPointIndex !== null) {
+                    const rect = canvas.getBoundingClientRect();
+                    const mouseY = e.clientY - rect.top;
+                    let newY = canvasToY(mouseY);
+
+                    newY = Math.max(0, Math.min(100, newY));
+                    controlPoints[draggingPointIndex].y = newY;
+                    recalc();
+                }
+            });
+            canvas.addEventListener("mouseup", function () {
+                draggingPointIndex = null;
+            });
+            canvas.addEventListener("mouseleave", function () {
+                draggingPointIndex = null;
+            });
+
+            canvas.addEventListener("dblclick", function (e) {
+                const rect = canvas.getBoundingClientRect();
+                const mouseX = e.clientX - rect.left;
+                const mouseY = e.clientY - rect.top;
+                const newX = canvasToX(mouseX);
+                let newY = canvasToY(mouseY);
+                newY = Math.max(0, Math.min(100, newY));
+                for (let cp of controlPoints) {
+                    if (
+                        Math.hypot(
+                            xToCanvas(cp.x) - mouseX,
+                            yToCanvas(cp.y) - mouseY,
+                        ) < 10
+                    )
+                        return;
+                }
+                controlPoints.push({ x: newX, y: newY });
+                controlPoints.sort((a, b) => a.x - b.x);
+                recalc();
+            });
+
+            document.getElementById("recalc").addEventListener("click", recalc);
+
+            recalc();
+        </script>
+    </body>
+</html>
