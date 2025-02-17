@@ -2,86 +2,343 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>PCHIP curve builder</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PCHIP Curve Builder</title>
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700&display=swap"
+            rel="stylesheet"
+        />
         <style>
+            :root {
+                --bg-gradient: #000000;
+                --glass-bg: rgba(255, 255, 255, 0.05);
+                --accent: #818cf899;
+                --accent-hover: #a5b4fc99;
+                --text-primary: #f8fafc;
+            }
             body {
-                font-family: sans-serif;
-                margin: 20px;
-                text-align: center;
+                font-family: "Unbounded", sans-serif;
+                margin: 0;
+                min-height: 100vh;
+                background: var(--bg-gradient);
+                color: var(--text-primary);
+                display: grid;
+                place-items: center;
             }
-            #controls {
-                margin-bottom: 10px;
+            .container {
+                background: var(--glass-bg);
+                backdrop-filter: blur(16px);
+                padding: 2rem;
+                box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2);
+                border: 2px solid transparent;
+                border-image: linear-gradient(
+                        45deg,
+                        var(--accent),
+                        var(--accent-hover)
+                    )
+                    1;
+                width: 90%;
+                max-width: 1200px;
+                margin: 2rem;
             }
-            #canvasContainer {
-                border: 1px solid #ccc;
-                display: inline-block;
-                margin-top: 20px;
+            .controls {
+                display: flex;
+                gap: 1rem;
+                margin-top: 2rem;
+                flex-wrap: wrap;
+                width: 100%;
+                justify-content: center;
             }
-            canvas {
-                background-color: #fff;
+            button {
+                background: linear-gradient(45deg, var(--accent), #6366f199);
+                border: none;
+                padding: 0.75rem 1.5rem;
+                color: white;
+                border-radius: 12px;
+                cursor: pointer;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                font-weight: 600;
+            }
+            button:hover {
+                background: linear-gradient(
+                    45deg,
+                    var(--accent-hover),
+                    #818cf8
+                );
+                transform: translateY(-2px);
+                box-shadow: 0 4px 16px rgba(129, 140, 248, 0.3);
+            }
+            .remove-point {
+                background: rgba(255, 0, 0, 0.2);
+                padding: 0.5rem 1rem;
+                border-radius: 8px;
+                font-size: 0.8rem;
+                font-weight: 600;
+            }
+            .remove-point:hover {
+                background: rgba(255, 0, 0, 0.4);
+            }
+            .input-group {
+                background: var(--glass-bg);
+                padding: 1.5rem;
+                border-radius: 16px;
+                margin-top: 2rem;
+            }
+            .input-row {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+                margin-bottom: 1rem;
+            }
+            .input-item {
+                background: rgba(255, 255, 255, 0.08);
+                padding: 0.75rem;
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            .input-item input[type="number"] {
+                background: transparent;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                color: white;
+                padding: 0.5rem 0.75rem;
+                border-radius: 6px;
+                width: 80px;
+                transition: all 0.3s;
+            }
+            .input-item input:focus {
+                outline: none;
+                border-color: var(--accent);
+                box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.2);
+            }
+            #graph-container {
+                background: var(--glass-bg);
+                border-radius: 16px;
+                padding: 1rem;
+                overflow: hidden;
+            }
+            #graph {
+                mask-image: linear-gradient(to top, transparent, white 15%),
+                    linear-gradient(to bottom, transparent, white 15%),
+                    linear-gradient(to left, transparent, white 15%),
+                    linear-gradient(to right, transparent, white 15%);
+                mask-mode: alpha;
+                mask-repeat: no-repeat;
+                mask-size: 100% 100%;
+                mask-composite: intersect;
+                -webkit-mask-composite: intersect;
+            }
+            .grid-line {
+                stroke: rgba(255, 255, 255, 0.08);
+            }
+            .control-point {
+                cursor: ns-resize;
+                transition: all 0.3s;
+                filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+            }
+            .control-point:hover {
+                /* Subtle drop shadow on hover only */
+                filter: drop-shadow(0 0 12px var(--accent));
+            }
+            .curve-path {
+                fill: url(#area-gradient);
+                stroke: var(--accent);
+                stroke-width: 2;
+                stroke-linejoin: round;
+            }
+
+            .highlight-area {
+                fill: #01005e22;
+                stroke: none;
+            }
+            .results {
+                margin-top: 2rem;
+                background: var(--glass-bg);
+                padding: 1.5rem;
+                border-radius: 16px;
+                display: grid;
+                gap: 0.5rem;
+            }
+            .results p {
+                margin: 0;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
             }
         </style>
     </head>
     <body>
-        <h2>PCHIP curve builder</h2>
-        <p>
-            Drag the red control points to adjust the curve.<br />
-            Double-click anywhere on the canvas to add a new control point.
-        </p>
-        <div id="controls">
-            <button id="recalc">Recalculate</button>
-        </div>
-        <div id="results">
-            <p>
-                Exact Integral (PCHIP antiderivative):
-                <span id="exactVal"></span>
-        </div
-            <p>Computation Time: <span id="compTimeExact"></span> ms</p>
-            <p>
-                Control Point Heights:
-                <span id="heights"></span>
-            </p>
-        </div>
-        <div id="canvasContainer">
-            <canvas id="canvas" width="600" height="400"></canvas>
+        <div class="container">
+            <h1 style="margin-top: 0; margin-bottom: 1rem">
+                PCHIP Curve Builder
+            </h1>
+
+            <div id="graph-container">
+                <svg id="graph" width="100%" height="400">
+                    <defs>
+                        <linearGradient
+                            id="area-gradient"
+                            x1="0%"
+                            y1="0%"
+                            x2="0%"
+                            y2="100%"
+                        >
+                            <stop
+                                offset="0%"
+                                stop-color="rgba(129, 140, 248, 0.2)"
+                            />
+                            <stop
+                                offset="100%"
+                                stop-color="rgba(129, 140, 248, 0.02)"
+                            />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div class="controls">
+                    <button id="newPoint">
+                        <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path d="M12 5v14M5 12h14" />
+                        </svg>
+                        Add Point
+                    </button>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <h3 style="margin-top: 0">Control Points</h3>
+                <div id="pointInputs" class="input-row"></div>
+            </div>
+
+            <!-- Group for controlling the integration limit -->
+            <div class="input-group">
+                <h3>Area Calculation Limit</h3>
+                <div class="input-item">
+                    <label for="areaP">Percentage (0–100%):</label>
+                    <input
+                        type="range"
+                        id="areaP"
+                        min="0"
+                        max="1"
+                        step="0.01"
+                        value="1"
+                    />
+                    <span id="areaPVal">100%</span>
+                </div>
+            </div>
+
+            <div class="results">
+                <p>
+                    <span style="opacity: 0.8"> Area Under Curve:</span>
+                    <strong id="exactVal">0.0000</strong>
+                </p>
+                <p>
+                    <span style="opacity: 0.8"> Processing Time:</span>
+                    <strong id="compTimeExact">0.00</strong> ms
+                </p>
+            </div>
         </div>
 
         <script>
-            const canvas = document.getElementById("canvas");
-            const ctx = canvas.getContext("2d");
-            const width = canvas.width;
-            const height = canvas.height;
-            const padding = 40;
-            const a = 0;
-            const b = 2 * Math.PI;
-
-
-            function originalF(x) {
-                return Math.sin(x) * 20 + 25;
-            }
+            const config = {
+                width: 800,
+                height: 400,
+                padding: 40,
+                a: 0,
+                b: 100,
+                minY: 0,
+                maxY: 100,
+            };
 
             let controlPoints = [];
-            const numControlPoints = 10;
-            for (let i = 0; i < numControlPoints; i++) {
-                let x = a + ((b - a) * i) / (numControlPoints - 1);
-                let y = originalF(x);
+            let tangents = [];
+            let draggingIndex = null;
+            let areaLimitP = 1;
+            const svg = document.getElementById("graph");
+            let pathElement = null;
 
-                y = Math.max(0, Math.min(100, y));
-                controlPoints.push({ x: x, y: y });
+            function init() {
+                svg.setAttribute(
+                    "viewBox",
+                    `0 0 ${config.width} ${config.height}`,
+                );
+                drawGrid();
+                initializePoints();
+                updateDisplay();
             }
 
+            function drawGrid() {
+                const gridGroup = document.createElementNS(
+                    "http://www.w3.org/2000/svg",
+                    "g",
+                );
+                for (let x = config.a; x <= config.b; x += 10) {
+                    const line = document.createElementNS(
+                        "http://www.w3.org/2000/svg",
+                        "line",
+                    );
+                    line.setAttribute("class", "grid-line");
+                    line.setAttribute("x1", xToSVG(x));
+                    line.setAttribute("x2", xToSVG(x));
+                    line.setAttribute("y1", 0);
+                    line.setAttribute("y2", config.height);
+                    gridGroup.appendChild(line);
+                }
+                for (let y = 0; y <= config.maxY; y += 25) {
+                    const line = document.createElementNS(
+                        "http://www.w3.org/2000/svg",
+                        "line",
+                    );
+                    line.setAttribute("class", "grid-line");
+                    line.setAttribute("y1", yToSVG(y));
+                    line.setAttribute("y2", yToSVG(y));
+                    line.setAttribute("x1", 0);
+                    line.setAttribute("x2", config.width);
+                    gridGroup.appendChild(line);
+                }
+                svg.appendChild(gridGroup);
+            }
 
-            let tangents = [];
+            function initializePoints() {
+                controlPoints = [];
+                const numPoints = 5;
+                for (let i = 0; i < numPoints; i++) {
+                    const x =
+                        config.a +
+                        ((config.b - config.a) * i) / (numPoints - 1);
+                    const y = 50;
+                    controlPoints.push({ x, y: clampY(y) });
+                }
+                redistributeX();
+            }
+
+            function redistributeX() {
+                const n = controlPoints.length;
+                if (n < 2) return;
+                const spacing = (config.b - config.a) / (n - 1);
+                controlPoints.forEach((cp, i) => {
+                    cp.x = config.a + i * spacing;
+                });
+                controlPoints.sort((a, b) => a.x - b.x);
+            }
+
             function computeMonotonicTangents() {
                 const n = controlPoints.length;
-                let d = new Array(n);
-                if (n === 0) return d;
-                if (n === 1) {
-                    d[0] = 0;
-                    return d;
-                }
-                let h = [];
-                let delta = [];
+                const d = new Array(n);
+                if (n < 2) return d;
+                const h = [];
+                const delta = [];
                 for (let i = 0; i < n - 1; i++) {
                     h[i] = controlPoints[i + 1].x - controlPoints[i].x;
                     delta[i] =
@@ -90,124 +347,51 @@
                 d[0] = delta[0];
                 d[n - 1] = delta[n - 2];
                 for (let i = 1; i < n - 1; i++) {
-                    if (delta[i - 1] * delta[i] > 0) {
-                        let w1 = 2 * h[i] + h[i - 1];
-                        let w2 = h[i] + 2 * h[i - 1];
-                        d[i] = (w1 + w2) / (w1 / delta[i - 1] + w2 / delta[i]);
-                    } else {
+                    if (delta[i - 1] * delta[i] <= 0) {
                         d[i] = 0;
+                    } else {
+                        const w1 = 2 * h[i] + h[i - 1];
+                        const w2 = h[i] + 2 * h[i - 1];
+                        d[i] = (w1 + w2) / (w1 / delta[i - 1] + w2 / delta[i]);
                     }
                 }
                 return d;
             }
-            function f(x) {
-                if (x <= controlPoints[0].x) return controlPoints[0].y;
-                if (x >= controlPoints[controlPoints.length - 1].x)
-                    return controlPoints[controlPoints.length - 1].y;
-                let i;
-                for (i = 0; i < controlPoints.length - 1; i++) {
-                    if (x < controlPoints[i + 1].x) break;
+
+            function exactIntegralPCHIPPartial(limitP) {
+                const xLimit = config.a + limitP * (config.b - config.a);
+                let sum = 0;
+                for (let i = 0; i < controlPoints.length - 1; i++) {
+                    const p0 = controlPoints[i];
+                    const p1 = controlPoints[i + 1];
+                    if (p1.x <= xLimit) {
+                        const h = p1.x - p0.x;
+                        sum +=
+                            (h * (p0.y + p1.y)) / 2 +
+                            (h * h * (tangents[i] - tangents[i + 1])) / 12;
+                    } else if (p0.x < xLimit && p1.x > xLimit) {
+                        const h = p1.x - p0.x;
+                        const d = xLimit - p0.x;
+                        const u = d / h;
+                        const I0 = (u * u * u * u) / 2 - u * u * u + u;
+                        const I1 =
+                            (u * u * u * u) / 4 -
+                            (2 * u * u * u) / 3 +
+                            (u * u) / 2;
+                        const I2 = (-u * u * u * u) / 2 + u * u * u;
+                        const I3 = (u * u * u * u) / 4 - (u * u * u) / 3;
+                        sum +=
+                            h *
+                            (p0.y * I0 +
+                                h * tangents[i] * I1 +
+                                p1.y * I2 +
+                                h * tangents[i + 1] * I3);
+                        break;
+                    } else if (p0.x >= xLimit) {
+                        break;
+                    }
                 }
-                const p0 = controlPoints[i];
-                const p1 = controlPoints[i + 1];
-                const hSeg = p1.x - p0.x;
-                const t = (x - p0.x) / hSeg;
-                const t2 = t * t;
-                const t3 = t2 * t;
-                const h00 = 2 * t3 - 3 * t2 + 1;
-                const h10 = t3 - 2 * t2 + t;
-                const h01 = -2 * t3 + 3 * t2;
-                const h11 = t3 - t2;
-                return (
-                    h00 * p0.y +
-                    h10 * (hSeg * tangents[i]) +
-                    h01 * p1.y +
-                    h11 * (hSeg * tangents[i + 1])
-                );
-            }
-
-            function computeYBounds() {
-                let maxVal = 0;
-                const numSamples = 1000;
-                for (let i = 0; i <= numSamples; i++) {
-                    let x = a + (i / numSamples) * (b - a);
-                    let yVal = f(x);
-                    if (yVal > maxVal) maxVal = yVal;
-                }
-                let margin = 0.1 * maxVal;
-                let newMax = maxVal + margin;
-                newMax = Math.max(50, newMax);
-                newMax = Math.min(100, newMax);
-                return { minY: 0, maxY: newMax };
-            }
-            let { minY, maxY } = computeYBounds();
-
-
-            function xToCanvas(x) {
-                return padding + ((x - a) / (b - a)) * (width - 2 * padding);
-            }
-            function yToCanvas(y) {
-                return (
-                    padding +
-                    ((maxY - y) / (maxY - minY)) * (height - 2 * padding)
-                );
-            }
-            function canvasToX(cx) {
-                return a + ((cx - padding) / (width - 2 * padding)) * (b - a);
-            }
-            function canvasToY(cy) {
-                return (
-                    maxY -
-                    ((cy - padding) / (height - 2 * padding)) * (maxY - minY)
-                );
-            }
-
-            function drawBaseline() {
-                const y0 = yToCanvas(0);
-                ctx.strokeStyle = "black";
-                ctx.lineWidth = 1;
-                ctx.beginPath();
-                ctx.moveTo(xToCanvas(a), y0);
-                ctx.lineTo(xToCanvas(b), y0);
-                ctx.stroke();
-            }
-
-
-            function drawFunction() {
-                ctx.beginPath();
-
-                ctx.moveTo(xToCanvas(a), yToCanvas(0));
-                const numPoints = 1000;
-                for (let i = 0; i <= numPoints; i++) {
-                    let x = a + (i / numPoints) * (b - a);
-                    let yVal = f(x);
-                    ctx.lineTo(xToCanvas(x), yToCanvas(yVal));
-                }
-
-                ctx.lineTo(xToCanvas(b), yToCanvas(0));
-                ctx.closePath();
-                ctx.fillStyle = "orange";
-                ctx.fill();
-                ctx.strokeStyle = "grey";
-                ctx.lineWidth = 2;
-                ctx.stroke();
-            }
-
-            function drawControlPoints() {
-                for (let cp of controlPoints) {
-                    const cx = xToCanvas(cp.x);
-                    const cy = yToCanvas(cp.y);
-                    ctx.beginPath();
-                    ctx.arc(cx, cy, 5, 0, 2 * Math.PI);
-                    ctx.fillStyle = "red";
-                    ctx.fill();
-                    ctx.strokeStyle = "black";
-                    ctx.stroke();
-                }
-            }
-
-            function clearCanvas() {
-                ctx.clearRect(0, 0, width, height);
+                return sum;
             }
 
             function exactIntegralPCHIP() {
@@ -215,104 +399,236 @@
                 for (let i = 0; i < controlPoints.length - 1; i++) {
                     const p0 = controlPoints[i];
                     const p1 = controlPoints[i + 1];
-                    const hSeg = p1.x - p0.x;
-                    const term =
-                        0.5 * (p0.y + p1.y) +
-                        (hSeg / 12) * (tangents[i] - tangents[i + 1]);
-                    sum += hSeg * term;
+                    const h = p1.x - p0.x;
+                    sum +=
+                        (h * (p0.y + p1.y)) / 2 +
+                        (h * h * (tangents[i] - tangents[i + 1])) / 12;
                 }
                 return sum;
             }
 
-            function updateHeights() {
-                const heightsSpan = document.getElementById("heights");
-                heightsSpan.textContent = controlPoints
-                    .map((cp) => cp.y.toFixed(2))
-                    .join(", ");
+            function f(x) {
+                if (controlPoints.length === 0) return 0;
+                if (x <= controlPoints[0].x) return controlPoints[0].y;
+                if (x >= controlPoints[controlPoints.length - 1].x)
+                    return controlPoints[controlPoints.length - 1].y;
+                let i = controlPoints.findIndex(
+                    (cp, idx) => x >= cp.x && x < controlPoints[idx + 1].x,
+                );
+                const p0 = controlPoints[i];
+                const p1 = controlPoints[i + 1];
+                const hSeg = p1.x - p0.x;
+                const t = (x - p0.x) / hSeg;
+                const t2 = t * t;
+                const t3 = t2 * t;
+                return (
+                    (2 * t3 - 3 * t2 + 1) * p0.y +
+                    (t3 - 2 * t2 + t) * hSeg * tangents[i] +
+                    (-2 * t3 + 3 * t2) * p1.y +
+                    (t3 - t2) * hSeg * tangents[i + 1]
+                );
             }
 
-            function draw() {
-                ({ minY, maxY } = computeYBounds());
-                clearCanvas();
-                drawBaseline();
-                drawFunction();
-                drawControlPoints();
-            }
-
-            function recalc() {
+            function updateDisplay() {
                 tangents = computeMonotonicTangents();
-                const t0Exact = performance.now();
-                const exact = exactIntegralPCHIP();
-                const t1Exact = performance.now();
-                const compTimeExact = t1Exact - t0Exact;
-                document.getElementById("exactVal").textContent =
-                    exact.toFixed(6);
-                document.getElementById("compTimeExact").textContent =
-                    compTimeExact.toFixed(4);
-                updateHeights();
-                draw();
+                svg.querySelectorAll(
+                    ".control-point, .curve-path, .highlight-area",
+                ).forEach((el) => el.remove());
+                pathElement = null;
+                drawCurve();
+                drawHighlightedArea();
+                drawControlPoints();
+                updateInputs();
+                updateResults();
             }
 
+            function drawCurve() {
+                const pathData = [];
+                pathData.push(`M ${xToSVG(config.a)} ${yToSVG(0)}`);
+                const steps = 200;
+                for (let i = 0; i <= steps; i++) {
+                    const xVal = config.a + (i * (config.b - config.a)) / steps;
+                    const yVal = f(xVal);
+                    pathData.push(`L ${xToSVG(xVal)} ${yToSVG(yVal)}`);
+                }
+                pathData.push(`L ${xToSVG(config.b)} ${yToSVG(0)} Z`);
+                if (!pathElement) {
+                    pathElement = document.createElementNS(
+                        "http://www.w3.org/2000/svg",
+                        "path",
+                    );
+                    svg.appendChild(pathElement);
+                }
+                pathElement.setAttribute("d", pathData.join(" "));
+                pathElement.setAttribute("class", "curve-path");
+            }
 
-            let draggingPointIndex = null;
-            canvas.addEventListener("mousedown", function (e) {
-                const rect = canvas.getBoundingClientRect();
-                const mouseX = e.clientX - rect.left;
-                const mouseY = e.clientY - rect.top;
-                for (let i = 0; i < controlPoints.length; i++) {
-                    const cp = controlPoints[i];
-                    const cpCanvasX = xToCanvas(cp.x);
-                    const cpCanvasY = yToCanvas(cp.y);
-                    const dx = mouseX - cpCanvasX;
-                    const dy = mouseY - cpCanvasY;
-                    if (Math.hypot(dx, dy) < 7) {
-                        draggingPointIndex = i;
-                        return;
+            function drawHighlightedArea() {
+                svg.querySelectorAll(".highlight-area").forEach((el) =>
+                    el.remove(),
+                );
+                const xLimit = config.a + areaLimitP * (config.b - config.a);
+                const pathData = [];
+                pathData.push(`M ${xToSVG(config.a)} ${yToSVG(0)}`);
+                const steps = Math.max(2, Math.floor(200 * areaLimitP));
+                for (let i = 0; i <= steps; i++) {
+                    const xVal = config.a + (i * (xLimit - config.a)) / steps;
+                    const yVal = f(xVal);
+                    pathData.push(`L ${xToSVG(xVal)} ${yToSVG(yVal)}`);
+                }
+                pathData.push(`L ${xToSVG(xLimit)} ${yToSVG(0)}`);
+                pathData.push("Z");
+                const highlightElement = document.createElementNS(
+                    "http://www.w3.org/2000/svg",
+                    "path",
+                );
+                highlightElement.setAttribute("d", pathData.join(" "));
+                highlightElement.setAttribute("class", "highlight-area");
+                svg.appendChild(highlightElement);
+            }
+
+            function drawControlPoints() {
+                controlPoints.forEach((cp, i) => {
+                    const circle = document.createElementNS(
+                        "http://www.w3.org/2000/svg",
+                        "circle",
+                    );
+                    circle.setAttribute("class", "control-point");
+                    circle.setAttribute("cx", xToSVG(cp.x));
+                    circle.setAttribute("cy", yToSVG(cp.y));
+                    circle.setAttribute("r", 5);
+                    circle.setAttribute("fill", "#818cf8");
+                    circle.setAttribute("stroke", "rgba(255, 255, 255, 0.8)");
+                    circle.setAttribute("stroke-width", "1.5");
+                    circle.setAttribute("data-index", i);
+                    svg.appendChild(circle);
+                });
+            }
+
+            function updateInputs() {
+                const container = document.getElementById("pointInputs");
+                container.innerHTML = "";
+                controlPoints.forEach((cp, i) => {
+                    const wrapper = document.createElement("div");
+                    wrapper.className = "input-item";
+                    const label = document.createElement("span");
+                    label.textContent = `X${i + 1}: ${Math.round(cp.x)}`;
+                    const input = document.createElement("input");
+                    input.type = "number";
+                    input.min = config.minY;
+                    input.max = config.maxY;
+                    input.step = 1;
+                    input.value = Math.round(cp.y);
+                    input.addEventListener("input", () => {
+                        const newY = parseFloat(input.value);
+                        if (!isNaN(newY)) {
+                            controlPoints[i].y = clampY(newY);
+                            updateDisplay();
+                        }
+                    });
+                    wrapper.appendChild(label);
+                    wrapper.appendChild(input);
+                    if (controlPoints.length > 2) {
+                        const removeBtn = document.createElement("button");
+                        removeBtn.textContent = "Remove";
+                        removeBtn.className = "remove-point";
+                        removeBtn.addEventListener("click", () => {
+                            controlPoints.splice(i, 1);
+                            redistributeX();
+                            updateDisplay();
+                        });
+                        wrapper.appendChild(removeBtn);
                     }
+                    container.appendChild(wrapper);
+                });
+            }
+
+            function updateResults() {
+                const start = performance.now();
+                const integral = exactIntegralPCHIPPartial(areaLimitP);
+                document.getElementById("exactVal").textContent =
+                    integral.toFixed(2);
+                document.getElementById("compTimeExact").textContent = (
+                    performance.now() - start
+                ).toFixed(2);
+            }
+
+            function xToSVG(x) {
+                return (
+                    config.padding +
+                    ((x - config.a) / (config.b - config.a)) *
+                        (config.width - 2 * config.padding)
+                );
+            }
+
+            function yToSVG(y) {
+                return (
+                    config.height -
+                    config.padding -
+                    (y / config.maxY) * (config.height - 2 * config.padding)
+                );
+            }
+
+            function clampY(y) {
+                return Math.max(config.minY, Math.min(config.maxY, y));
+            }
+
+            svg.addEventListener("mousedown", (e) => {
+                if (e.target.classList.contains("control-point")) {
+                    draggingIndex = parseInt(
+                        e.target.getAttribute("data-index"),
+                    );
                 }
             });
-            canvas.addEventListener("mousemove", function (e) {
-                if (draggingPointIndex !== null) {
-                    const rect = canvas.getBoundingClientRect();
-                    const mouseY = e.clientY - rect.top;
-                    let newY = canvasToY(mouseY);
 
-                    newY = Math.max(0, Math.min(100, newY));
-                    controlPoints[draggingPointIndex].y = newY;
-                    recalc();
+            document.addEventListener("mousemove", (e) => {
+                if (draggingIndex !== null) {
+                    const pt = svg.createSVGPoint();
+                    pt.x = e.clientX;
+                    pt.y = e.clientY;
+                    const cursor = pt.matrixTransform(
+                        svg.getScreenCTM().inverse(),
+                    );
+                    const newY =
+                        ((config.height - cursor.y - config.padding) /
+                            (config.height - 2 * config.padding)) *
+                        config.maxY;
+                    controlPoints[draggingIndex].y = clampY(newY);
+                    updateDisplay();
                 }
             });
-            canvas.addEventListener("mouseup", function () {
-                draggingPointIndex = null;
-            });
-            canvas.addEventListener("mouseleave", function () {
-                draggingPointIndex = null;
+
+            document.addEventListener("mouseup", () => {
+                draggingIndex = null;
             });
 
-            canvas.addEventListener("dblclick", function (e) {
-                const rect = canvas.getBoundingClientRect();
-                const mouseX = e.clientX - rect.left;
-                const mouseY = e.clientY - rect.top;
-                const newX = canvasToX(mouseX);
-                let newY = canvasToY(mouseY);
-                newY = Math.max(0, Math.min(100, newY));
-                for (let cp of controlPoints) {
-                    if (
-                        Math.hypot(
-                            xToCanvas(cp.x) - mouseX,
-                            yToCanvas(cp.y) - mouseY,
-                        ) < 10
-                    )
-                        return;
-                }
-                controlPoints.push({ x: newX, y: newY });
-                controlPoints.sort((a, b) => a.x - b.x);
-                recalc();
-            });
+            document
+                .getElementById("newPoint")
+                .addEventListener("click", () => {
+                    const newX =
+                        controlPoints.length > 0
+                            ? controlPoints[controlPoints.length - 1].x + 10
+                            : (config.b - config.a) / 2;
+                    const newY =
+                        controlPoints.length > 0
+                            ? controlPoints[controlPoints.length - 1].y
+                            : 50;
+                    controlPoints.push({ x: newX, y: newY });
+                    redistributeX();
+                    updateDisplay();
+                });
 
-            document.getElementById("recalc").addEventListener("click", recalc);
+            document
+                .getElementById("areaP")
+                .addEventListener("input", function () {
+                    areaLimitP = parseFloat(this.value);
+                    document.getElementById("areaPVal").textContent =
+                        Math.round(areaLimitP * 100) + "%";
+                    updateResults();
+                    drawHighlightedArea();
+                });
 
-            recalc();
+            init();
         </script>
     </body>
 </html>
