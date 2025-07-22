@@ -96,7 +96,7 @@
             <div class="bg-zinc-800 py-4 pt-0 rounded-3xl flex justify-start flex-col items-center h-full">
               <NuxtImg src="/fad_logo.svg" width="80" class="mt-4" />
               <h3 class="text-md font-semibold m-2">FindADiscord.com</h3>
-              <div class="text-gray-300 text-center">Sole developer<br><div class="text-zinc-400 text-sm">2019-Present</div></div>
+              <div class="text-gray-300 text-center">Sole developer<br><div class="text-zinc-400 text-sm">2019-2024</div></div>
             </div>
           </a>
           <a href="https://handshake.org" class="p-0.5 bg-gradient-to-r from-red-500 to-neon-green rounded-3xl w-48">
