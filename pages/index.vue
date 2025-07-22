@@ -113,6 +113,13 @@
               <div class="text-gray-300 text-center">Founder/CTO <br> <div class="text-zinc-400 text-sm">2023-Present</div></div>
             </div>
           </a>
+               <a href="https://highlayer.io" class="p-0.5 bg-gradient-to-r from-red-500 to-neon-green rounded-3xl w-48">
+            <div class="bg-zinc-800 py-4 pt-0 rounded-3xl flex justify-start flex-col items-center h-full">
+              <NuxtImg src="/nxstudios.png" width="120" class=" mt-4 rounded-3xl bg-[rgb(171,57,21)]" />
+              <h3 class="text-md font-semibold m-2">N^x Studios</h3>
+              <div class="text-gray-300 text-center">CTO <br> <div class="text-zinc-400 text-sm">2025-Present</div></div>
+            </div>
+          </a>
         </div>
       </section>
   
