@@ -9,7 +9,7 @@
     <div>
       <h2 class="text-2xl md:text-3xl font-bold mb-4 text-center md:text-left">About Me</h2>
       <p class="text-gray-300 text-md md:text-base">
-        Hey! I'm Nik Rykov, the technology guy originating from Ukraine and nearing 19.
+        Hey! I'm Nik Rykov, the technology guy originating from Ukraine and nearing 20.
         <br class="hidden md:inline">
         I spend most of my time thinking about software, designing it, implementing it, and helping other people build software of their own.
         <br class="hidden md:inline">
