@@ -584,8 +584,8 @@ druid.emitter.logging.logLevel=info
 # SECURITY CONFIGURATION
 # ============================================
 
-# Host binding (localhost for security)
-druid.host=localhost
+# Host binding (0.0.0.0 for external API access via Router)
+druid.host=0.0.0.0
 druid.bindOnHost=true
 
 # Authentication - Basic Auth with Metadata Store
@@ -630,8 +630,8 @@ configure_services() {
     cat > "$DRUID_HOME/conf/druid/single-server/nano-quickstart/router/runtime.properties" << 'EOF'
 druid.service=druid/router
 druid.plaintextPort=8888
-druid.host=127.0.0.1
-druid.server.http.bindAddress=127.0.0.1
+druid.host=0.0.0.0
+druid.server.http.bindAddress=0.0.0.0
 druid.router.http.numConnections=50
 druid.router.http.readTimeout=PT5M
 druid.router.http.numMaxThreads=100
@@ -862,24 +862,28 @@ EOF
 # Configure Firewall
 # ============================================
 configure_firewall() {
-    log "Configuring firewall (localhost-only access)..."
+    log "Configuring firewall..."
     
     if command -v ufw &> /dev/null; then
         ufw --force enable > /dev/null 2>&1
         ufw default deny incoming > /dev/null 2>&1
         ufw default allow outgoing > /dev/null 2>&1
         ufw allow ssh > /dev/null 2>&1
-        log "UFW firewall configured"
+        ufw allow 8888/tcp comment 'Druid Router API' > /dev/null 2>&1
+        log "UFW firewall configured - Port 8888 open for Druid API"
     elif command -v firewall-cmd &> /dev/null; then
         systemctl start firewalld > /dev/null 2>&1
         systemctl enable firewalld > /dev/null 2>&1
-        firewall-cmd --set-default-zone=drop --permanent > /dev/null 2>&1
-        firewall-cmd --zone=drop --add-service=ssh --permanent > /dev/null 2>&1
+        firewall-cmd --permanent --zone=public --add-port=8888/tcp > /dev/null 2>&1
+        firewall-cmd --permanent --zone=public --add-service=ssh > /dev/null 2>&1
         firewall-cmd --reload > /dev/null 2>&1
-        log "Firewalld configured"
+        log "Firewalld configured - Port 8888 open for Druid API"
     else
-        warning "No firewall found. Services bound to localhost only."
+        warning "No firewall found. Port 8888 will be open if network allows."
+        warning "Consider installing ufw (Ubuntu/Debian) or firewalld (RHEL/CentOS)"
     fi
+    
+    info "Druid Router API will be accessible on port 8888"
 }
 
 # ============================================
@@ -936,10 +940,24 @@ EOF
 
     cat >> "$DRUID_HOME/INSTALLATION_INFO.txt" << EOF
 
-WEB CONSOLE ACCESS
+API ACCESS (EXTERNAL)
 ================================================================================
-Local: http://localhost:8888
-Remote: ssh -L 8888:localhost:8888 $DRUID_USER@$(hostname -I | awk '{print $1}')
+Druid Router API is accessible externally on port 8888
+
+Direct Access:
+  http://$(hostname -I | awk '{print $1}'):8888
+
+Web Console:
+  http://$(hostname -I | awk '{print $1}'):8888/unified-console.html
+
+SQL API Endpoint:
+  http://$(hostname -I | awk '{print $1}'):8888/druid/v2/sql
+
+Native Query API:
+  http://$(hostname -I | awk '{print $1}'):8888/druid/v2
+
+⚠️  SECURITY: All requests require authentication (username/password)
+⚠️  Firewall configured to allow port 8888
 
 SERVICE MANAGEMENT
 ================================================================================
@@ -952,6 +970,17 @@ HEALTH CHECK
 ================================================================================
 $DRUID_HOME/bin/check-status.sh
 
+EXAMPLE API USAGE
+================================================================================
+# Health check
+curl http://$(hostname -I | awk '{print $1}'):8888/status/health
+
+# SQL Query (with authentication)
+curl -X POST -H 'Content-Type: application/json' \\
+  -u admin:YOUR_PASSWORD \\
+  -d '{"query":"SELECT * FROM INFORMATION_SCHEMA.TABLES"}' \\
+  http://$(hostname -I | awk '{print $1}'):8888/druid/v2/sql
+
 NEXT STEPS
 ================================================================================
 1. sudo systemctl start druid
@@ -962,13 +991,13 @@ EOF
     if [[ "$CREATE_READONLY" =~ ^[Yy]$ ]]; then
         cat >> "$DRUID_HOME/INSTALLATION_INFO.txt" << EOF
 4. sudo -u druid $DRUID_HOME/bin/create-users.sh  # Create read-only user
-5. Access via SSH tunnel
-6. Login with admin or read-only credentials
+5. Test API access from external client
+6. Login to web console with admin or read-only credentials
 EOF
     else
         cat >> "$DRUID_HOME/INSTALLATION_INFO.txt" << EOF
-4. Access via SSH tunnel
-5. Login with admin credentials
+4. Test API access from external client
+5. Login to web console with admin credentials
 EOF
     fi
 
@@ -1016,9 +1045,11 @@ main() {
     echo "  • Remove and recreate the Druid system user"
     echo "  • Auto-detect and install the latest Druid version"
     echo "  • Configure authentication and authorization"
-    echo "  • Bind all services to localhost (127.0.0.1) for security"
+    echo "  • Bind Router (API) to 0.0.0.0 for external access on port 8888"
     echo "  • Set up systemd service management"
-    echo "  • Configure firewall rules"
+    echo "  • Configure firewall to allow port 8888"
+    echo ""
+    warning "⚠️  Router API will be externally accessible - ensure strong passwords!"
     echo ""
     
     CONTINUE=$(read_from_tty "Continue with installation? (y/n): ")
@@ -1083,12 +1114,16 @@ main() {
         echo "  3. Create read-only user (after Druid is ready):"
         echo "     sudo -u druid $DRUID_HOME/bin/create-users.sh"
         echo ""
-        echo "  4. Access Web Console (SSH tunnel):"
+        echo "  4. Access Druid API (externally accessible on port 8888):"
     else
-        echo "  3. Access Web Console (SSH tunnel):"
+        echo "  3. Access Druid API (externally accessible on port 8888):"
     fi
-    echo "     ssh -L 8888:localhost:8888 $DRUID_USER@$(hostname -I | awk '{print $1}')"
-    echo "     Then open: http://localhost:8888"
+    echo "     http://$(hostname -I | awk '{print $1}'):8888"
+    echo ""
+    info "API Endpoints:"
+    echo "  Web Console: http://$(hostname -I | awk '{print $1}'):8888/unified-console.html"
+    echo "  SQL API:     http://$(hostname -I | awk '{print $1}'):8888/druid/v2/sql"
+    echo "  Native API:  http://$(hostname -I | awk '{print $1}'):8888/druid/v2"
     echo ""
     info "Full documentation: $DRUID_HOME/INSTALLATION_INFO.txt"
     echo ""
