@@ -451,6 +451,25 @@ download_druid() {
     ln -s "apache-druid-${DRUID_VERSION}" druid
     
     DRUID_HOME="$INSTALL_DIR/druid"
+    
+    # Fix permissions immediately after extraction
+    log "Setting up permissions and directories..."
+    
+    # Make all bin scripts executable
+    chmod +x "$INSTALL_DIR/apache-druid-${DRUID_VERSION}/bin"/*
+    
+    # Create required directories
+    mkdir -p "$INSTALL_DIR/apache-druid-${DRUID_VERSION}/log"
+    mkdir -p "$INSTALL_DIR/apache-druid-${DRUID_VERSION}/var"
+    
+    # Set ownership to druid user
+    chown -R $DRUID_USER:$DRUID_GROUP "$INSTALL_DIR/apache-druid-${DRUID_VERSION}"
+    chown -R $DRUID_USER:$DRUID_GROUP "$DRUID_HOME"
+    
+    # Ensure directories are writable
+    chmod 755 "$INSTALL_DIR/apache-druid-${DRUID_VERSION}/log"
+    chmod 755 "$INSTALL_DIR/apache-druid-${DRUID_VERSION}/var"
+    
     log "Druid extracted to: $DRUID_HOME"
 }
 
@@ -783,6 +802,43 @@ EOF
     chmod +x "$DRUID_HOME/bin/check-status.sh"
     chown $DRUID_USER:$DRUID_GROUP "$DRUID_HOME/bin/check-status.sh"
     
+    # Create permission fix script
+    cat > "$DRUID_HOME/bin/fix-permissions.sh" << 'EOF'
+#!/bin/bash
+# Fix Druid permissions if startup fails
+echo "Fixing Druid permissions..."
+
+sudo systemctl stop druid 2>/dev/null || true
+
+# Make all scripts executable
+sudo chmod +x /opt/druid/bin/* 2>/dev/null || true
+
+# Create and fix directories
+sudo mkdir -p /opt/druid/log /opt/druid/var
+sudo mkdir -p /opt/apache-druid-*/log /opt/apache-druid-*/var 2>/dev/null || true
+
+# Fix ownership
+sudo chown -R druid:druid /opt/druid
+sudo chown -R druid:druid /opt/apache-druid-* 2>/dev/null || true
+sudo chown -R druid:druid /var/druid
+sudo chown -R druid:druid /var/log/druid
+
+# Fix permissions
+sudo chmod 755 /opt/druid/log /opt/druid/var
+sudo chmod 755 /opt/apache-druid-*/log /opt/apache-druid-*/var 2>/dev/null || true
+
+echo "✓ Permissions fixed!"
+echo ""
+echo "Starting Druid..."
+sudo systemctl start druid
+
+echo "Wait 2-3 minutes, then check:"
+echo "  /opt/druid/bin/check-status.sh"
+EOF
+
+    chmod +x "$DRUID_HOME/bin/fix-permissions.sh"
+    chown $DRUID_USER:$DRUID_GROUP "$DRUID_HOME/bin/fix-permissions.sh"
+    
     # Create user setup script (runs after Druid starts)
     if [[ "$CREATE_READONLY" =~ ^[Yy]$ ]]; then
         cat > "$DRUID_HOME/bin/create-users.sh" << EOF
@@ -970,6 +1026,16 @@ HEALTH CHECK
 ================================================================================
 $DRUID_HOME/bin/check-status.sh
 
+TROUBLESHOOTING
+================================================================================
+If Druid fails to start with permission errors:
+  $DRUID_HOME/bin/fix-permissions.sh
+
+Common issues:
+  - Permission denied errors → Run fix-permissions.sh
+  - Services unhealthy → Wait 2-3 minutes for startup
+  - Check logs: sudo journalctl -u druid -f
+
 EXAMPLE API USAGE
 ================================================================================
 # Health check
@@ -1014,11 +1080,23 @@ EOF
 # Final Setup
 # ============================================
 final_setup() {
-    log "Performing final setup..."
+    log "Performing final setup and permission checks..."
     
+    # Ensure all directories exist
+    mkdir -p "$DRUID_HOME/var"
+    mkdir -p "$DRUID_HOME/log"
+    
+    # Make all bin scripts executable
+    chmod +x "$DRUID_HOME/bin"/* 2>/dev/null || true
+    
+    # Set comprehensive ownership
     chown -R $DRUID_USER:$DRUID_GROUP "$DRUID_HOME"
     chown -R $DRUID_USER:$DRUID_GROUP "$DATA_DIR"
     chown -R $DRUID_USER:$DRUID_GROUP "$LOG_DIR"
+    
+    # Verify critical directories are writable by druid user
+    chmod 755 "$DRUID_HOME/log"
+    chmod 755 "$DRUID_HOME/var"
     
     log "Final setup completed"
 }
@@ -1124,6 +1202,9 @@ main() {
     echo "  Web Console: http://$(hostname -I | awk '{print $1}'):8888/unified-console.html"
     echo "  SQL API:     http://$(hostname -I | awk '{print $1}'):8888/druid/v2/sql"
     echo "  Native API:  http://$(hostname -I | awk '{print $1}'):8888/druid/v2"
+    echo ""
+    info "Troubleshooting:"
+    echo "  If services don't start: $DRUID_HOME/bin/fix-permissions.sh"
     echo ""
     info "Full documentation: $DRUID_HOME/INSTALLATION_INFO.txt"
     echo ""
