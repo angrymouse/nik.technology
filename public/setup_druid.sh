@@ -1070,43 +1070,58 @@ VERIFYEOF
     cat > "$DRUID_HOME/bin/fix-permissions.sh" << 'FIXEOF'
 #!/bin/bash
 # Fix Druid permissions if startup fails
+# Must be run as root
+
+if [[ $EUID -ne 0 ]]; then
+    echo "This script must be run as root"
+    echo "Usage: sudo /opt/druid/bin/fix-permissions.sh"
+    exit 1
+fi
+
 echo "Fixing Druid permissions..."
 
-sudo systemctl stop druid 2>/dev/null || true
+systemctl stop druid 2>/dev/null || true
 
 # Make all scripts executable
-sudo chmod +x /opt/druid/bin/* 2>/dev/null || true
+chmod +x /opt/druid/bin/* 2>/dev/null || true
 
 # Create and fix directories
-sudo mkdir -p /opt/druid/log /opt/druid/var
-sudo mkdir -p /opt/apache-druid-*/log /opt/apache-druid-*/var 2>/dev/null || true
+mkdir -p /opt/druid/log /opt/druid/var
+mkdir -p /opt/apache-druid-*/log /opt/apache-druid-*/var 2>/dev/null || true
 
 # Fix ownership
-sudo chown -R druid:druid /opt/druid
-sudo chown -R druid:druid /opt/apache-druid-* 2>/dev/null || true
-sudo chown -R druid:druid /var/druid
-sudo chown -R druid:druid /var/log/druid
+chown -R druid:druid /opt/druid
+chown -R druid:druid /opt/apache-druid-* 2>/dev/null || true
+chown -R druid:druid /var/druid
+chown -R druid:druid /var/log/druid
 
 # Fix permissions
-sudo chmod 755 /opt/druid/log /opt/druid/var
-sudo chmod 755 /opt/apache-druid-*/log /opt/apache-druid-*/var 2>/dev/null || true
+chmod 755 /opt/druid/log /opt/druid/var
+chmod 755 /opt/apache-druid-*/log /opt/apache-druid-*/var 2>/dev/null || true
 
 echo "✓ Permissions fixed!"
 echo ""
 echo "Starting Druid..."
-sudo systemctl start druid
+systemctl start druid
 
 echo "Wait 2-3 minutes, then check:"
 echo "  /opt/druid/bin/check-status.sh"
 FIXEOF
 
     chmod +x "$DRUID_HOME/bin/fix-permissions.sh"
-    chown $DRUID_USER:$DRUID_GROUP "$DRUID_HOME/bin/fix-permissions.sh"
+    chown root:root "$DRUID_HOME/bin/fix-permissions.sh"
     
     # Create password reset helper
     cat > "$DRUID_HOME/bin/reset-password.sh" << 'RESETEOF'
 #!/bin/bash
 # Reset admin password via metadata database cleanup
+# Must be run as root
+
+if [[ $EUID -ne 0 ]]; then
+    echo "This script must be run as root"
+    echo "Usage: sudo /opt/druid/bin/reset-password.sh"
+    exit 1
+fi
 
 echo "╔════════════════════════════════════════════════════════════════╗"
 echo "║           Druid Admin Password Reset Tool                     ║"
@@ -1124,18 +1139,18 @@ fi
 
 echo ""
 echo "Stopping Druid..."
-sudo systemctl stop druid
+systemctl stop druid
 
 echo "Backing up current metadata..."
 BACKUP_DIR="/var/druid-backup-$(date +%Y%m%d-%H%M%S)"
-sudo mkdir -p "$BACKUP_DIR"
-sudo cp -r /var/druid "$BACKUP_DIR/" 2>/dev/null || true
+mkdir -p "$BACKUP_DIR"
+cp -r /var/druid "$BACKUP_DIR/" 2>/dev/null || true
 
 echo "Removing metadata database..."
-sudo rm -rf /var/druid/metadata.db
+rm -rf /var/druid/metadata.db
 
 echo "Starting Druid with fresh metadata..."
-sudo systemctl start druid
+systemctl start druid
 
 echo ""
 echo "✓ Password reset initiated!"
@@ -1147,7 +1162,7 @@ echo "The passwords from /etc/druid/druid.env will now work."
 RESETEOF
 
     chmod +x "$DRUID_HOME/bin/reset-password.sh"
-    chown $DRUID_USER:$DRUID_GROUP "$DRUID_HOME/bin/reset-password.sh"
+    chown root:root "$DRUID_HOME/bin/reset-password.sh"
     
     # Create user setup script (runs after Druid starts)
     if [[ "$CREATE_READONLY" =~ ^[Yy]$ ]]; then
@@ -1304,10 +1319,10 @@ After starting Druid, run this to verify your admin password works:
 
 DOCEOF
     
-    echo "  sudo -u druid ${DRUID_HOME}/bin/verify-credentials.sh" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "  /opt/druid/bin/verify-credentials.sh" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
     echo "" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
     echo "If credentials don't work, it means the metadata database had old credentials." >> "$DRUID_HOME/INSTALLATION_INFO.txt"
-    echo "To reset: sudo -u druid ${DRUID_HOME}/bin/reset-password.sh" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "To reset: sudo /opt/druid/bin/reset-password.sh" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
     echo "" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
 
     cat >> "$DRUID_HOME/INSTALLATION_INFO.txt" << 'DOCEOF'
@@ -1322,8 +1337,8 @@ DOCEOF
         echo "" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
         echo "1. Start Druid: sudo systemctl start druid" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
         echo "2. Wait for Druid to be ready (2-3 minutes)" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
-        echo "3. Verify admin works: sudo -u druid ${DRUID_HOME}/bin/verify-credentials.sh" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
-        echo "4. Run: sudo -u druid ${DRUID_HOME}/bin/create-users.sh" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+        echo "3. Verify admin works: /opt/druid/bin/verify-credentials.sh" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+        echo "4. Run: /opt/druid/bin/create-users.sh" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
         echo "" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
         echo "This will create the read-only user with appropriate permissions." >> "$DRUID_HOME/INSTALLATION_INFO.txt"
     fi
@@ -1392,19 +1407,19 @@ TROUBLESHOOTING
 ================================================================================
 If Druid fails to start with permission errors:
 DOCEOF
-    echo "  ${DRUID_HOME}/bin/fix-permissions.sh" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "  sudo ${DRUID_HOME}/bin/fix-permissions.sh" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
     echo "" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
     echo "If admin password doesn't work:" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
-    echo "  ${DRUID_HOME}/bin/reset-password.sh" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "  sudo ${DRUID_HOME}/bin/reset-password.sh" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
     echo "  (This deletes metadata and starts fresh)" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
     echo "" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
 
     cat >> "$DRUID_HOME/INSTALLATION_INFO.txt" << 'DOCEOF'
 Common issues:
-  - Permission denied errors → Run fix-permissions.sh
+  - Permission denied errors → Run: sudo /opt/druid/bin/fix-permissions.sh
   - Services unhealthy → Wait 2-3 minutes for startup
-  - Login fails → Run verify-credentials.sh to diagnose
-  - Old password works → Old metadata exists, run reset-password.sh
+  - Login fails → Run: /opt/druid/bin/verify-credentials.sh to diagnose
+  - Old password works → Old metadata exists, run: sudo /opt/druid/bin/reset-password.sh
   - Check logs: sudo journalctl -u druid -f
 
 EXAMPLE API USAGE
@@ -1557,11 +1572,11 @@ main() {
     echo "     $DRUID_HOME/bin/check-status.sh"
     echo ""
     echo "  3. VERIFY your password works:"
-    echo "     sudo -u druid $DRUID_HOME/bin/verify-credentials.sh"
+    echo "     $DRUID_HOME/bin/verify-credentials.sh"
     echo ""
     if [[ "$CREATE_READONLY" =~ ^[Yy]$ ]]; then
         echo "  4. Create read-only user (after verification succeeds):"
-        echo "     sudo -u druid $DRUID_HOME/bin/create-users.sh"
+        echo "     $DRUID_HOME/bin/create-users.sh"
         echo ""
         echo "  5. Access Druid API (externally accessible on port $ROUTER_PORT):"
     else
@@ -1579,7 +1594,7 @@ main() {
     echo "  ZooKeeper:    $ZK_PORT (admin: $ZK_ADMIN_PORT)"
     echo ""
     warning "IMPORTANT: If passwords don't work, run:"
-    echo "  sudo -u druid $DRUID_HOME/bin/reset-password.sh"
+    echo "  sudo $DRUID_HOME/bin/reset-password.sh"
     echo ""
     info "Full documentation: $DRUID_HOME/INSTALLATION_INFO.txt"
     echo ""
