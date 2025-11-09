@@ -100,11 +100,11 @@ read_password() {
     while true; do
         if [ -t 0 ]; then
             read -s -p "$prompt (min 12 chars, or press Enter to auto-generate): " password
-            echo
+            echo >&2  # Newline to stderr, not captured in $()
         else
             if [ -e /dev/tty ]; then
                 read -s -p "$prompt (min 12 chars, or press Enter to auto-generate): " password < /dev/tty
-                echo
+                echo >&2  # Newline to stderr, not captured in $()
             else
                 error "Cannot read password in non-interactive mode"
                 exit 1
@@ -117,7 +117,7 @@ read_password() {
             # Send info messages to stderr so they don't get captured in $() substitution
             info "Auto-generated password: $password" >&2
             info "SAVE THIS PASSWORD - it will only be shown once!" >&2
-            echo "$password"
+            echo "$password"  # ONLY the password goes to stdout
             return
         fi
         
@@ -130,11 +130,11 @@ read_password() {
         # Confirm manually entered password
         if [ -t 0 ]; then
             read -s -p "Confirm password: " password_confirm
-            echo
+            echo >&2  # Newline to stderr, not captured in $()
         else
             if [ -e /dev/tty ]; then
                 read -s -p "Confirm password: " password_confirm < /dev/tty
-                echo
+                echo >&2  # Newline to stderr, not captured in $()
             else
                 error "Cannot read password in non-interactive mode"
                 exit 1
@@ -142,7 +142,7 @@ read_password() {
         fi
         
         if [ "$password" = "$password_confirm" ]; then
-            echo "$password"
+            echo "$password"  # ONLY the password goes to stdout
             return
         else
             error "Passwords do not match. Please try again."
