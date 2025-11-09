@@ -519,26 +519,27 @@ prompt_ports() {
     if [[ "$CUSTOMIZE_PORTS" =~ ^[Yy]$ ]]; then
         echo ""
         info "Enter custom ports (press Enter to use default):"
+        echo ""
         
-        read -p "ZooKeeper Client Port [2181]: " ZK_PORT
+        ZK_PORT=$(read_from_tty "ZooKeeper Client Port [2181]: ")
         ZK_PORT=${ZK_PORT:-2181}
         
-        read -p "ZooKeeper Admin Port [8080]: " ZK_ADMIN_PORT
+        ZK_ADMIN_PORT=$(read_from_tty "ZooKeeper Admin Port [8080]: ")
         ZK_ADMIN_PORT=${ZK_ADMIN_PORT:-8080}
         
-        read -p "Router Port [8888]: " ROUTER_PORT
+        ROUTER_PORT=$(read_from_tty "Router Port [8888]: ")
         ROUTER_PORT=${ROUTER_PORT:-8888}
         
-        read -p "Coordinator Port [8081]: " COORDINATOR_PORT
+        COORDINATOR_PORT=$(read_from_tty "Coordinator Port [8081]: ")
         COORDINATOR_PORT=${COORDINATOR_PORT:-8081}
         
-        read -p "Broker Port [8082]: " BROKER_PORT
+        BROKER_PORT=$(read_from_tty "Broker Port [8082]: ")
         BROKER_PORT=${BROKER_PORT:-8082}
         
-        read -p "Historical Port [8083]: " HISTORICAL_PORT
+        HISTORICAL_PORT=$(read_from_tty "Historical Port [8083]: ")
         HISTORICAL_PORT=${HISTORICAL_PORT:-8083}
         
-        read -p "MiddleManager Port [8091]: " MIDDLEMANAGER_PORT
+        MIDDLEMANAGER_PORT=$(read_from_tty "MiddleManager Port [8091]: ")
         MIDDLEMANAGER_PORT=${MIDDLEMANAGER_PORT:-8091}
     else
         ZK_PORT=2181
@@ -549,6 +550,8 @@ prompt_ports() {
         HISTORICAL_PORT=8083
         MIDDLEMANAGER_PORT=8091
     fi
+    
+    echo ""
     
     # Check if ports are in use
     log "Checking if ports are available..."
