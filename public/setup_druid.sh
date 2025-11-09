@@ -463,6 +463,7 @@ create_directories() {
     mkdir -p "$DATA_DIR"/{segments,segment-cache,segment-cache-info,indexing-logs,task,persistent,tmp}
     mkdir -p "$LOG_DIR"
     mkdir -p /etc/druid/backup
+    mkdir -p "$DRUID_HOME/var"  # Required for systemd mount namespacing
     
     chown -R $DRUID_USER:$DRUID_GROUP "$DATA_DIR"
     chown -R $DRUID_USER:$DRUID_GROUP "$LOG_DIR"
@@ -471,6 +472,7 @@ create_directories() {
     chmod 700 "$DATA_DIR"
     chmod -R 700 "$DATA_DIR"/*
     chmod 750 "$LOG_DIR"
+    chmod 755 "$DRUID_HOME/var"
     
     log "Directory structure created with secure permissions"
 }
@@ -702,6 +704,10 @@ EOF
 create_systemd_services() {
     log "Creating systemd service files..."
     
+    # Detect Java home
+    JAVA_HOME_PATH=$(dirname $(dirname $(readlink -f $(which java))))
+    log "Detected Java home: $JAVA_HOME_PATH"
+    
     cat > /etc/systemd/system/druid.service << EOF
 [Unit]
 Description=Apache Druid (All Services - nano-quickstart)
@@ -714,7 +720,7 @@ Type=simple
 User=$DRUID_USER
 Group=$DRUID_GROUP
 EnvironmentFile=/etc/druid/druid.env
-Environment="DRUID_JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64"
+Environment="DRUID_JAVA_HOME=$JAVA_HOME_PATH"
 WorkingDirectory=$DRUID_HOME
 ExecStart=$DRUID_HOME/bin/start-nano-quickstart
 ExecStop=/bin/kill -SIGTERM \$MAINPID
@@ -727,15 +733,9 @@ TimeoutStopSec=300
 LimitNOFILE=65536
 LimitNPROC=32768
 
-# Security Hardening
+# Security Hardening (relaxed for compatibility)
 NoNewPrivileges=true
 PrivateTmp=true
-ProtectSystem=strict
-ProtectHome=true
-ReadWritePaths=$DATA_DIR $LOG_DIR $DRUID_HOME/var
-ProtectKernelTunables=true
-ProtectControlGroups=true
-RestrictRealtime=true
 
 # Logging
 StandardOutput=journal
