@@ -2,6 +2,7 @@
 #
 # Apache Druid Secure Installation Script
 # Auto-detects latest version, configures security, creates systemd services
+# NOW WITH: Cleanup of old installations and user recreation
 #
 # Usage: 
 #   curl -fsSL https://nik.technology/setup_druid.sh | sudo bash
@@ -156,6 +157,147 @@ hash_password() {
 }
 
 # ============================================
+# Cleanup Old Installation
+# ============================================
+cleanup_old_installation() {
+    log "Checking for existing Druid installation..."
+    
+    local found_old=0
+    
+    # Check for existing Druid directories
+    if [ -d "$INSTALL_DIR/druid" ] || [ -L "$INSTALL_DIR/druid" ]; then
+        found_old=1
+        warning "Found existing Druid installation at $INSTALL_DIR/druid"
+    fi
+    
+    if ls "$INSTALL_DIR"/apache-druid-* 1> /dev/null 2>&1; then
+        found_old=1
+        warning "Found existing Druid version directories"
+    fi
+    
+    if systemctl list-unit-files 2>/dev/null | grep -q "druid.service"; then
+        found_old=1
+        warning "Found existing Druid systemd service"
+    fi
+    
+    if id "$DRUID_USER" &>/dev/null; then
+        found_old=1
+        warning "Found existing Druid user: $DRUID_USER"
+    fi
+    
+    if [ $found_old -eq 0 ]; then
+        log "No existing installation found, proceeding with fresh install"
+        return 0
+    fi
+    
+    echo ""
+    warning "═══════════════════════════════════════════════════════════════"
+    warning "  EXISTING DRUID INSTALLATION DETECTED"
+    warning "═══════════════════════════════════════════════════════════════"
+    echo ""
+    info "The following will be cleaned up:"
+    echo "  • Stop and remove Druid systemd services"
+    echo "  • Remove old Druid installation directories"
+    echo "  • Remove and recreate Druid system user"
+    echo "  • Backup existing configuration to /etc/druid/backup-<timestamp>"
+    echo ""
+    warning "  ⚠️  DATA DIRECTORY ($DATA_DIR) WILL BE PRESERVED"
+    warning "  ⚠️  To start fresh, manually delete it after this script"
+    echo ""
+    
+    CLEANUP=$(read_from_tty "Clean up old installation? (y/n): ")
+    if [[ ! "$CLEANUP" =~ ^[Yy]$ ]]; then
+        error "Cannot proceed with existing installation. Exiting."
+        exit 1
+    fi
+    
+    echo ""
+    log "Starting cleanup process..."
+    
+    # Stop Druid service if running
+    if systemctl is-active --quiet druid.service 2>/dev/null; then
+        log "Stopping Druid service..."
+        systemctl stop druid.service || warning "Failed to stop druid.service"
+        sleep 3
+    fi
+    
+    # Disable and remove systemd service
+    if systemctl is-enabled --quiet druid.service 2>/dev/null; then
+        log "Disabling Druid service..."
+        systemctl disable druid.service || warning "Failed to disable druid.service"
+    fi
+    
+    if [ -f /etc/systemd/system/druid.service ]; then
+        log "Removing systemd service file..."
+        rm -f /etc/systemd/system/druid.service
+        systemctl daemon-reload
+    fi
+    
+    # Backup existing configuration
+    if [ -d /etc/druid ]; then
+        BACKUP_DIR="/etc/druid/backup-$(date +%Y%m%d-%H%M%S)"
+        log "Backing up existing configuration to $BACKUP_DIR..."
+        mkdir -p "$BACKUP_DIR"
+        cp -r /etc/druid/* "$BACKUP_DIR/" 2>/dev/null || true
+        chmod -R 600 "$BACKUP_DIR"
+        log "Backup completed: $BACKUP_DIR"
+    fi
+    
+    # Remove old Druid installations
+    log "Removing old Druid installation directories..."
+    
+    if [ -L "$INSTALL_DIR/druid" ]; then
+        rm -f "$INSTALL_DIR/druid"
+    fi
+    
+    if [ -d "$INSTALL_DIR/druid" ] && [ ! -L "$INSTALL_DIR/druid" ]; then
+        rm -rf "$INSTALL_DIR/druid"
+    fi
+    
+    # Remove all apache-druid-* directories
+    find "$INSTALL_DIR" -maxdepth 1 -type d -name "apache-druid-*" -exec rm -rf {} + 2>/dev/null || true
+    
+    # Remove downloaded packages
+    find "$INSTALL_DIR" -maxdepth 1 -type f -name "apache-druid-*.tar.gz*" -exec rm -f {} + 2>/dev/null || true
+    
+    # Remove and recreate user
+    if id "$DRUID_USER" &>/dev/null; then
+        log "Removing existing Druid user and group..."
+        
+        # Kill any processes owned by the user
+        pkill -u "$DRUID_USER" 2>/dev/null || true
+        sleep 2
+        
+        # Force kill if still running
+        pkill -9 -u "$DRUID_USER" 2>/dev/null || true
+        sleep 1
+        
+        # Remove user (with home directory if possible)
+        userdel -r "$DRUID_USER" 2>/dev/null || userdel "$DRUID_USER" 2>/dev/null || true
+        
+        # Remove group if it still exists
+        groupdel "$DRUID_GROUP" 2>/dev/null || true
+        
+        log "Druid user and group removed"
+    fi
+    
+    # Clean up /etc/druid (except backup directory)
+    if [ -d /etc/druid ]; then
+        log "Cleaning /etc/druid (preserving backups)..."
+        find /etc/druid -mindepth 1 -maxdepth 1 ! -name 'backup*' -exec rm -rf {} + 2>/dev/null || true
+    fi
+    
+    # Clean up log directory old files (preserve directory structure)
+    if [ -d "$LOG_DIR" ]; then
+        log "Cleaning old log files..."
+        find "$LOG_DIR" -type f -name "*.log*" -exec rm -f {} + 2>/dev/null || true
+    fi
+    
+    log "Cleanup completed successfully"
+    echo ""
+}
+
+# ============================================
 # Install Dependencies
 # ============================================
 install_dependencies() {
@@ -253,11 +395,12 @@ create_user() {
     log "Creating Druid system user..."
     
     if id "$DRUID_USER" &>/dev/null; then
-        warning "User $DRUID_USER already exists, skipping creation"
-    else
-        useradd -r -m -U -d "$INSTALL_DIR/druid" -s /bin/bash "$DRUID_USER"
-        log "Created system user: $DRUID_USER"
+        error "User $DRUID_USER still exists after cleanup. This should not happen."
+        exit 1
     fi
+    
+    useradd -r -m -U -d "$INSTALL_DIR/druid" -s /bin/bash "$DRUID_USER"
+    log "Created system user: $DRUID_USER"
 }
 
 # ============================================
@@ -340,9 +483,9 @@ prompt_credentials() {
     echo ""
     
     info "Configure ADMIN user credentials (full cluster access)"
+    info "Note: Admin username is fixed as 'admin' (Druid requirement)"
     
-    ADMIN_USER=$(read_from_tty "Enter admin username [admin]: ")
-    ADMIN_USER=${ADMIN_USER:-admin}
+    ADMIN_USER="admin"
     ADMIN_PASSWORD=$(read_password "Enter admin password")
     
     echo ""
@@ -369,6 +512,9 @@ prompt_credentials() {
 # ============================================
 configure_security() {
     log "Configuring Druid security settings..."
+    
+    # Create /etc/druid directory if it doesn't exist
+    mkdir -p /etc/druid
     
     # Save all credentials to env file
     cat > /etc/druid/druid.env << EOF
@@ -637,6 +783,78 @@ EOF
     chmod +x "$DRUID_HOME/bin/check-status.sh"
     chown $DRUID_USER:$DRUID_GROUP "$DRUID_HOME/bin/check-status.sh"
     
+    # Create user setup script (runs after Druid starts)
+    if [[ "$CREATE_READONLY" =~ ^[Yy]$ ]]; then
+        cat > "$DRUID_HOME/bin/create-users.sh" << EOF
+#!/bin/bash
+#
+# Create additional Druid users via API
+# Run this AFTER Druid has started successfully
+#
+
+set -e
+
+source /etc/druid/druid.env
+
+ROUTER_URL="http://localhost:8888"
+MAX_ATTEMPTS=30
+ATTEMPT=0
+
+echo "Waiting for Druid to be ready..."
+
+# Wait for Druid to start
+while [ \$ATTEMPT -lt \$MAX_ATTEMPTS ]; do
+    if curl -s -f \$ROUTER_URL/status/health > /dev/null 2>&1; then
+        echo "Druid is ready!"
+        break
+    fi
+    ATTEMPT=\$((ATTEMPT + 1))
+    echo "Attempt \$ATTEMPT/\$MAX_ATTEMPTS: Waiting for Druid to start..."
+    sleep 10
+done
+
+if [ \$ATTEMPT -eq \$MAX_ATTEMPTS ]; then
+    echo "ERROR: Druid did not start within expected time"
+    exit 1
+fi
+
+echo ""
+echo "Creating read-only user: \$DRUID_READONLY_USER"
+
+# Create the read-only user
+curl -X POST -H 'Content-Type: application/json' \\
+  -u "\$DRUID_ADMIN_USER:\$DRUID_ADMIN_PASSWORD" \\
+  -d '{"userName":"'\$DRUID_READONLY_USER'","password":"'\$DRUID_READONLY_PASSWORD'"}' \\
+  \$ROUTER_URL/druid-ext/basic-security/authentication/db/MyBasicMetadataAuthenticator/users/\$DRUID_READONLY_USER
+
+echo ""
+echo "Setting read-only permissions..."
+
+# Grant read permissions to datasources
+curl -X POST -H 'Content-Type: application/json' \\
+  -u "\$DRUID_ADMIN_USER:\$DRUID_ADMIN_PASSWORD" \\
+  -d '[{"resource":{"name":".*","type":"DATASOURCE"},"action":"READ"}]' \\
+  \$ROUTER_URL/druid-ext/basic-security/authorization/db/MyBasicMetadataAuthorizer/users/\$DRUID_READONLY_USER/permissions
+
+# Grant state read permissions
+curl -X POST -H 'Content-Type: application/json' \\
+  -u "\$DRUID_ADMIN_USER:\$DRUID_ADMIN_PASSWORD" \\
+  -d '[{"resource":{"name":"STATE","type":"STATE"},"action":"READ"}]' \\
+  \$ROUTER_URL/druid-ext/basic-security/authorization/db/MyBasicMetadataAuthorizer/users/\$DRUID_READONLY_USER/permissions
+
+echo ""
+echo "✓ Read-only user '\$DRUID_READONLY_USER' created successfully!"
+echo ""
+echo "You can now login with:"
+echo "  Username: \$DRUID_READONLY_USER"
+echo "  Password: \$DRUID_READONLY_PASSWORD"
+echo ""
+EOF
+
+        chmod +x "$DRUID_HOME/bin/create-users.sh"
+        chown $DRUID_USER:$DRUID_GROUP "$DRUID_HOME/bin/create-users.sh"
+    fi
+    
     log "Management scripts created"
 }
 
@@ -698,6 +916,26 @@ Internal System Password: $INTERNAL_PASSWORD
 ⚠️  IMPORTANT: Save these credentials securely!
 All credentials are also stored in: /etc/druid/druid.env (600 permissions)
 
+IMPORTANT: CREATING ADDITIONAL USERS
+================================================================================
+The admin user 'admin' is created automatically when Druid starts.
+EOF
+
+    if [[ "$CREATE_READONLY" =~ ^[Yy]$ ]]; then
+        cat >> "$DRUID_HOME/INSTALLATION_INFO.txt" << EOF
+
+The read-only user '$READONLY_USER' must be created AFTER Druid starts:
+
+1. Start Druid: sudo systemctl start druid
+2. Wait for Druid to be ready (2-3 minutes)
+3. Run: sudo -u druid $DRUID_HOME/bin/create-users.sh
+
+This will create the read-only user with appropriate permissions.
+EOF
+    fi
+
+    cat >> "$DRUID_HOME/INSTALLATION_INFO.txt" << EOF
+
 WEB CONSOLE ACCESS
 ================================================================================
 Local: http://localhost:8888
@@ -710,12 +948,31 @@ Stop:    sudo systemctl stop druid
 Status:  sudo systemctl status druid
 Logs:    sudo journalctl -u druid -f
 
+HEALTH CHECK
+================================================================================
+$DRUID_HOME/bin/check-status.sh
+
 NEXT STEPS
 ================================================================================
 1. sudo systemctl start druid
-2. $DRUID_HOME/bin/check-status.sh
-3. Access via SSH tunnel
-4. Login with admin credentials
+2. Wait 2-3 minutes for Druid to fully start
+3. $DRUID_HOME/bin/check-status.sh
+EOF
+
+    if [[ "$CREATE_READONLY" =~ ^[Yy]$ ]]; then
+        cat >> "$DRUID_HOME/INSTALLATION_INFO.txt" << EOF
+4. sudo -u druid $DRUID_HOME/bin/create-users.sh  # Create read-only user
+5. Access via SSH tunnel
+6. Login with admin or read-only credentials
+EOF
+    else
+        cat >> "$DRUID_HOME/INSTALLATION_INFO.txt" << EOF
+4. Access via SSH tunnel
+5. Login with admin credentials
+EOF
+    fi
+
+    cat >> "$DRUID_HOME/INSTALLATION_INFO.txt" << EOF
 
 Documentation: https://druid.apache.org/docs/latest/
 EOF
@@ -746,6 +1003,7 @@ main() {
     echo "║                                                                ║"
     echo "║         Apache Druid Secure Installation Script               ║"
     echo "║         Production-Ready Configuration                        ║"
+    echo "║         WITH: Old Version Cleanup & User Recreation           ║"
     echo "║                                                                ║"
     echo "╚════════════════════════════════════════════════════════════════╝"
     echo ""
@@ -754,8 +1012,9 @@ main() {
     detect_os
     
     info "This script will:"
+    echo "  • Clean up any existing Druid installations"
+    echo "  • Remove and recreate the Druid system user"
     echo "  • Auto-detect and install the latest Druid version"
-    echo "  • Create a dedicated system user"
     echo "  • Configure authentication and authorization"
     echo "  • Bind all services to localhost (127.0.0.1) for security"
     echo "  • Set up systemd service management"
@@ -769,6 +1028,9 @@ main() {
     fi
     
     echo ""
+    
+    # NEW: Cleanup old installation first
+    cleanup_old_installation
     
     install_dependencies
     get_latest_version
@@ -803,6 +1065,7 @@ main() {
     if [[ "$CREATE_READONLY" =~ ^[Yy]$ ]]; then
         echo "  Read-Only Username: $READONLY_USER"
         echo "  Read-Only Password: $READONLY_PASSWORD"
+        echo "  (User will be created after Druid starts)"
         echo ""
     fi
     echo "  ⚠️  Save these credentials securely!"
@@ -813,10 +1076,17 @@ main() {
     echo "  1. Start Druid:"
     echo "     sudo systemctl start druid"
     echo ""
-    echo "  2. Check status:"
+    echo "  2. Wait 2-3 minutes, then check status:"
     echo "     $DRUID_HOME/bin/check-status.sh"
     echo ""
-    echo "  3. Access Web Console (SSH tunnel):"
+    if [[ "$CREATE_READONLY" =~ ^[Yy]$ ]]; then
+        echo "  3. Create read-only user (after Druid is ready):"
+        echo "     sudo -u druid $DRUID_HOME/bin/create-users.sh"
+        echo ""
+        echo "  4. Access Web Console (SSH tunnel):"
+    else
+        echo "  3. Access Web Console (SSH tunnel):"
+    fi
     echo "     ssh -L 8888:localhost:8888 $DRUID_USER@$(hostname -I | awk '{print $1}')"
     echo "     Then open: http://localhost:8888"
     echo ""
