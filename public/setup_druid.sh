@@ -114,8 +114,9 @@ read_password() {
         # If empty, auto-generate password
         if [ -z "$password" ]; then
             password=$(generate_password)
-            info "Auto-generated password: $password"
-            info "SAVE THIS PASSWORD - it will only be shown once!"
+            # Send info messages to stderr so they don't get captured in $() substitution
+            info "Auto-generated password: $password" >&2
+            info "SAVE THIS PASSWORD - it will only be shown once!" >&2
             echo "$password"
             return
         fi
@@ -1583,4 +1584,5 @@ main() {
     info "Full documentation: $DRUID_HOME/INSTALLATION_INFO.txt"
     echo ""
 }
+
 main "$@"
