@@ -1,8 +1,8 @@
 #!/bin/bash
 #
-# Apache Druid Secure Installation Script
+# Apache Druid Secure Installation Script - FIXED VERSION
 # Auto-detects latest version, configures security, creates systemd services
-# NOW WITH: Cleanup of old installations and user recreation
+# FIXES: Proper credential handling, metadata cleanup, password verification
 #
 # Usage: 
 #   curl -fsSL https://nik.technology/setup_druid.sh | sudo bash
@@ -149,13 +149,6 @@ read_password() {
     done
 }
 
-# Hash password using OpenSSL (SHA-512)
-hash_password() {
-    local password="$1"
-    # Using SHA-512 (same as Linux /etc/shadow)
-    openssl passwd -6 "$password"
-}
-
 # ============================================
 # Cleanup Old Installation
 # ============================================
@@ -185,6 +178,11 @@ cleanup_old_installation() {
         warning "Found existing Druid user: $DRUID_USER"
     fi
     
+    if [ -f "$DATA_DIR/metadata.db/service.properties" ]; then
+        found_old=1
+        warning "Found existing Druid metadata database"
+    fi
+    
     if [ $found_old -eq 0 ]; then
         log "No existing installation found, proceeding with fresh install"
         return 0
@@ -201,11 +199,25 @@ cleanup_old_installation() {
     echo "  • Remove and recreate Druid system user"
     echo "  • Backup existing configuration to /etc/druid/backup-<timestamp>"
     echo ""
-    warning "  ⚠️  DATA DIRECTORY ($DATA_DIR) WILL BE PRESERVED"
-    warning "  ⚠️  To start fresh, manually delete it after this script"
+    warning "  ⚠️  METADATA DATABASE OPTIONS:"
     echo ""
     
-    CLEANUP=$(read_from_tty "Clean up old installation? (y/n): ")
+    CLEAN_METADATA=$(read_from_tty "Clean metadata database (REQUIRED for new passwords)? (y/n) [y]: ")
+    CLEAN_METADATA=${CLEAN_METADATA:-y}
+    
+    if [[ "$CLEAN_METADATA" =~ ^[Yy]$ ]]; then
+        warning "  ✓ Metadata database will be DELETED (fresh start with new credentials)"
+        warning "  ✓ ALL existing datasources and user accounts will be LOST"
+        CLEAN_DATA_DIR=true
+    else
+        warning "  ✗ Metadata database will be PRESERVED"
+        warning "  ✗ Old user credentials will remain - new passwords will NOT work!"
+        warning "  ✗ You'll need to use your OLD passwords to login"
+        CLEAN_DATA_DIR=false
+    fi
+    
+    echo ""
+    CLEANUP=$(read_from_tty "Continue with cleanup? (y/n): ")
     if [[ ! "$CLEANUP" =~ ^[Yy]$ ]]; then
         error "Cannot proceed with existing installation. Exiting."
         exit 1
@@ -259,6 +271,20 @@ cleanup_old_installation() {
     
     # Remove downloaded packages
     find "$INSTALL_DIR" -maxdepth 1 -type f -name "apache-druid-*.tar.gz*" -exec rm -f {} + 2>/dev/null || true
+    
+    # Clean metadata database if requested
+    if [ "$CLEAN_DATA_DIR" = true ]; then
+        log "Cleaning metadata database and data directory..."
+        if [ -d "$DATA_DIR" ]; then
+            # Backup data dir just in case
+            BACKUP_DATA_DIR="$DATA_DIR-backup-$(date +%Y%m%d-%H%M%S)"
+            log "Backing up data directory to $BACKUP_DATA_DIR..."
+            mv "$DATA_DIR" "$BACKUP_DATA_DIR" 2>/dev/null || rm -rf "$DATA_DIR"
+        fi
+        log "Metadata database cleaned - new credentials will work"
+    else
+        log "Preserving metadata database - old credentials will remain active"
+    fi
     
     # Remove and recreate user
     if id "$DRUID_USER" &>/dev/null; then
@@ -629,33 +655,52 @@ configure_security() {
     # Create /etc/druid directory if it doesn't exist
     mkdir -p /etc/druid
     
-    # Save all credentials to env file
-    cat > /etc/druid/druid.env << EOF
+    # Save all credentials to env file (used by systemd)
+    cat > /etc/druid/druid.env << 'ENVEOF'
 # Druid Security Environment Variables
-# Generated: $(date)
 # DO NOT SHARE THIS FILE - Contains sensitive credentials
-
-DRUID_ADMIN_USER=$ADMIN_USER
-DRUID_ADMIN_PASSWORD=$ADMIN_PASSWORD
-DRUID_INTERNAL_PASSWORD=$INTERNAL_PASSWORD
-EOF
+ENVEOF
+    
+    # Append credentials (avoiding any command substitution in heredoc)
+    echo "# Generated: $(date)" >> /etc/druid/druid.env
+    echo "" >> /etc/druid/druid.env
+    echo "DRUID_ADMIN_USER=${ADMIN_USER}" >> /etc/druid/druid.env
+    echo "DRUID_ADMIN_PASSWORD=${ADMIN_PASSWORD}" >> /etc/druid/druid.env
+    echo "DRUID_INTERNAL_PASSWORD=${INTERNAL_PASSWORD}" >> /etc/druid/druid.env
 
     # Add readonly user if configured
     if [[ "$CREATE_READONLY" =~ ^[Yy]$ ]]; then
-        cat >> /etc/druid/druid.env << EOF
-DRUID_READONLY_USER=$READONLY_USER
-DRUID_READONLY_PASSWORD=$READONLY_PASSWORD
-EOF
+        echo "DRUID_READONLY_USER=${READONLY_USER}" >> /etc/druid/druid.env
+        echo "DRUID_READONLY_PASSWORD=${READONLY_PASSWORD}" >> /etc/druid/druid.env
     fi
     
     chmod 600 /etc/druid/druid.env
     chown $DRUID_USER:$DRUID_GROUP /etc/druid/druid.env
     
+    # Also create a runtime properties extension file that will be sourced
+    cat > /etc/druid/runtime.env << 'RUNTIMEEOF'
+# Druid Runtime Environment
+# This file is sourced to ensure passwords are available
+RUNTIMEEOF
+    echo "export DRUID_ADMIN_PASSWORD='${ADMIN_PASSWORD}'" >> /etc/druid/runtime.env
+    echo "export DRUID_INTERNAL_PASSWORD='${INTERNAL_PASSWORD}'" >> /etc/druid/runtime.env
+    
+    chmod 600 /etc/druid/runtime.env
+    chown $DRUID_USER:$DRUID_GROUP /etc/druid/runtime.env
+    
     cp -r "$DRUID_HOME/conf" /etc/druid/backup/
     
-    cat > "$DRUID_HOME/conf/druid/single-server/nano-quickstart/_common/common.runtime.properties" << EOF
+    # Store config generation date
+    local CONFIG_DATE=$(date)
+    
+    # CRITICAL FIX: Use actual password values instead of environment variable references
+    # Druid's initialAdminPassword/initialInternalClientPassword don't support ${env:} syntax reliably
+    cat > "$DRUID_HOME/conf/druid/single-server/nano-quickstart/_common/common.runtime.properties" << 'CONFIGEOF'
 #
 # Apache Druid - Secure Production Configuration
+CONFIGEOF
+    echo "# Generated: ${CONFIG_DATE}" >> "$DRUID_HOME/conf/druid/single-server/nano-quickstart/_common/common.runtime.properties"
+    cat >> "$DRUID_HOME/conf/druid/single-server/nano-quickstart/_common/common.runtime.properties" << 'CONFIGEOF'
 #
 
 # Extensions (REQUIRED for security)
@@ -664,10 +709,15 @@ druid.extensions.loadList=["druid-basic-security", "druid-histogram", "druid-dat
 # Logging
 druid.startup.logging.logProperties=true
 druid.startup.logging.maskProperties=["password", "key", "secret", "token"]
-
-# Zookeeper
-druid.zk.service.host=localhost:$ZK_PORT
-druid.zk.paths.base=/druid
+CONFIGEOF
+    
+    # Add ZooKeeper config with port substitution
+    echo "" >> "$DRUID_HOME/conf/druid/single-server/nano-quickstart/_common/common.runtime.properties"
+    echo "# Zookeeper" >> "$DRUID_HOME/conf/druid/single-server/nano-quickstart/_common/common.runtime.properties"
+    echo "druid.zk.service.host=localhost:${ZK_PORT}" >> "$DRUID_HOME/conf/druid/single-server/nano-quickstart/_common/common.runtime.properties"
+    echo "druid.zk.paths.base=/druid" >> "$DRUID_HOME/conf/druid/single-server/nano-quickstart/_common/common.runtime.properties"
+    
+    cat >> "$DRUID_HOME/conf/druid/single-server/nano-quickstart/_common/common.runtime.properties" << 'CONFIGEOF'
 
 # Metadata Storage (Derby for testing - USE POSTGRESQL/MYSQL IN PRODUCTION)
 druid.metadata.storage.type=derby
@@ -704,8 +754,17 @@ druid.bindOnHost=true
 # Authentication - Basic Auth with Metadata Store
 druid.auth.authenticatorChain=["MyBasicMetadataAuthenticator"]
 druid.auth.authenticator.MyBasicMetadataAuthenticator.type=basic
-druid.auth.authenticator.MyBasicMetadataAuthenticator.initialAdminPassword=\${env:DRUID_ADMIN_PASSWORD}
-druid.auth.authenticator.MyBasicMetadataAuthenticator.initialInternalClientPassword=\${env:DRUID_INTERNAL_PASSWORD}
+
+# CRITICAL: These passwords are used ONLY on first startup with empty metadata
+# Using literal values instead of env vars for better compatibility
+CONFIGEOF
+    
+    # Add passwords separately to avoid any substitution issues
+    echo "druid.auth.authenticator.MyBasicMetadataAuthenticator.initialAdminPassword=${ADMIN_PASSWORD}" >> "$DRUID_HOME/conf/druid/single-server/nano-quickstart/_common/common.runtime.properties"
+    echo "druid.auth.authenticator.MyBasicMetadataAuthenticator.initialInternalClientPassword=${INTERNAL_PASSWORD}" >> "$DRUID_HOME/conf/druid/single-server/nano-quickstart/_common/common.runtime.properties"
+    
+    cat >> "$DRUID_HOME/conf/druid/single-server/nano-quickstart/_common/common.runtime.properties" << 'CONFIGEOF'
+
 druid.auth.authenticator.MyBasicMetadataAuthenticator.credentialsValidator.type=metadata
 druid.auth.authenticator.MyBasicMetadataAuthenticator.skipOnFailure=false
 druid.auth.authenticator.MyBasicMetadataAuthenticator.authorizerName=MyBasicMetadataAuthorizer
@@ -717,7 +776,11 @@ druid.auth.authorizer.MyBasicMetadataAuthorizer.type=basic
 # Escalator (internal system authentication)
 druid.escalator.type=basic
 druid.escalator.internalClientUsername=druid_system
-druid.escalator.internalClientPassword=\${env:DRUID_INTERNAL_PASSWORD}
+CONFIGEOF
+    
+    echo "druid.escalator.internalClientPassword=${INTERNAL_PASSWORD}" >> "$DRUID_HOME/conf/druid/single-server/nano-quickstart/_common/common.runtime.properties"
+    
+    cat >> "$DRUID_HOME/conf/druid/single-server/nano-quickstart/_common/common.runtime.properties" << 'CONFIGEOF'
 druid.escalator.authorizerName=MyBasicMetadataAuthorizer
 
 # Security Hardening
@@ -725,8 +788,7 @@ druid.server.http.showDetailedJettyErrors=false
 druid.request.logging.type=slf4j
 druid.javascript.enabled=false
 druid.sql.planner.authorizeSystemTablesDirectly=true
-
-EOF
+CONFIGEOF
     
     chmod 600 "$DRUID_HOME/conf/druid/single-server/nano-quickstart/_common/common.runtime.properties"
     chown $DRUID_USER:$DRUID_GROUP "$DRUID_HOME/conf/druid/single-server/nano-quickstart/_common/common.runtime.properties"
@@ -735,16 +797,18 @@ EOF
     log "Configuring ZooKeeper..."
     
     mkdir -p "$DRUID_HOME/conf/zk"
-    cat > "$DRUID_HOME/conf/zk/zoo.cfg" << EOF
+    cat > "$DRUID_HOME/conf/zk/zoo.cfg" << 'ZKEOF'
 # ZooKeeper Configuration
 tickTime=2000
-dataDir=$DATA_DIR/zk
-clientPort=$ZK_PORT
+ZKEOF
+    echo "dataDir=${DATA_DIR}/zk" >> "$DRUID_HOME/conf/zk/zoo.cfg"
+    echo "clientPort=${ZK_PORT}" >> "$DRUID_HOME/conf/zk/zoo.cfg"
+    cat >> "$DRUID_HOME/conf/zk/zoo.cfg" << 'ZKEOF'
 maxClientCnxns=60
 admin.enableServer=true
-admin.serverPort=$ZK_ADMIN_PORT
-4lw.commands.whitelist=*
-EOF
+ZKEOF
+    echo "admin.serverPort=${ZK_ADMIN_PORT}" >> "$DRUID_HOME/conf/zk/zoo.cfg"
+    echo "4lw.commands.whitelist=*" >> "$DRUID_HOME/conf/zk/zoo.cfg"
     
     chown $DRUID_USER:$DRUID_GROUP "$DRUID_HOME/conf/zk/zoo.cfg"
     
@@ -757,9 +821,9 @@ EOF
 configure_services() {
     log "Configuring individual Druid services..."
     
-    cat > "$DRUID_HOME/conf/druid/single-server/nano-quickstart/router/runtime.properties" << EOF
+    # Router configuration
+    cat > "$DRUID_HOME/conf/druid/single-server/nano-quickstart/router/runtime.properties" << 'ROUTEREOF'
 druid.service=druid/router
-druid.plaintextPort=$ROUTER_PORT
 druid.host=0.0.0.0
 druid.server.http.bindAddress=0.0.0.0
 druid.router.http.numConnections=50
@@ -768,11 +832,12 @@ druid.router.http.numMaxThreads=100
 druid.server.http.numThreads=100
 druid.router.managementProxy.enabled=true
 druid.router.sql.enable=true
-EOF
+ROUTEREOF
+    echo "druid.plaintextPort=${ROUTER_PORT}" >> "$DRUID_HOME/conf/druid/single-server/nano-quickstart/router/runtime.properties"
 
-    cat > "$DRUID_HOME/conf/druid/single-server/nano-quickstart/coordinator-overlord/runtime.properties" << EOF
+    # Coordinator configuration
+    cat > "$DRUID_HOME/conf/druid/single-server/nano-quickstart/coordinator-overlord/runtime.properties" << 'COORDINATOREOF'
 druid.service=druid/coordinator
-druid.plaintextPort=$COORDINATOR_PORT
 druid.host=127.0.0.1
 druid.server.http.bindAddress=127.0.0.1
 druid.coordinator.startDelay=PT10S
@@ -780,11 +845,12 @@ druid.coordinator.period=PT30S
 druid.indexer.queue.startDelay=PT5S
 druid.indexer.runner.type=local
 druid.indexer.storage.type=metadata
-EOF
+COORDINATOREOF
+    echo "druid.plaintextPort=${COORDINATOR_PORT}" >> "$DRUID_HOME/conf/druid/single-server/nano-quickstart/coordinator-overlord/runtime.properties"
 
-    cat > "$DRUID_HOME/conf/druid/single-server/nano-quickstart/broker/runtime.properties" << EOF
+    # Broker configuration
+    cat > "$DRUID_HOME/conf/druid/single-server/nano-quickstart/broker/runtime.properties" << 'BROKEREOF'
 druid.service=druid/broker
-druid.plaintextPort=$BROKER_PORT
 druid.host=127.0.0.1
 druid.server.http.bindAddress=127.0.0.1
 druid.processing.buffer.sizeBytes=134217728
@@ -795,11 +861,12 @@ druid.broker.cache.populateCache=true
 druid.cache.type=caffeine
 druid.cache.sizeInBytes=134217728
 druid.sql.enable=true
-EOF
+BROKEREOF
+    echo "druid.plaintextPort=${BROKER_PORT}" >> "$DRUID_HOME/conf/druid/single-server/nano-quickstart/broker/runtime.properties"
 
-    cat > "$DRUID_HOME/conf/druid/single-server/nano-quickstart/historical/runtime.properties" << EOF
+    # Historical configuration
+    cat > "$DRUID_HOME/conf/druid/single-server/nano-quickstart/historical/runtime.properties" << 'HISTORICALEOF'
 druid.service=druid/historical
-druid.plaintextPort=$HISTORICAL_PORT
 druid.host=127.0.0.1
 druid.server.http.bindAddress=127.0.0.1
 druid.processing.buffer.sizeBytes=134217728
@@ -808,11 +875,12 @@ druid.processing.numMergeBuffers=1
 druid.segmentCache.locations=[{"path":"/var/druid/segment-cache","maxSize":1073741824}]
 druid.segmentCache.infoDir=/var/druid/segment-cache-info
 druid.server.maxSize=1073741824
-EOF
+HISTORICALEOF
+    echo "druid.plaintextPort=${HISTORICAL_PORT}" >> "$DRUID_HOME/conf/druid/single-server/nano-quickstart/historical/runtime.properties"
 
-    cat > "$DRUID_HOME/conf/druid/single-server/nano-quickstart/middleManager/runtime.properties" << EOF
+    # MiddleManager configuration
+    cat > "$DRUID_HOME/conf/druid/single-server/nano-quickstart/middleManager/runtime.properties" << 'MIDDLEEOF'
 druid.service=druid/middleManager
-druid.plaintextPort=$MIDDLEMANAGER_PORT
 druid.host=127.0.0.1
 druid.server.http.bindAddress=127.0.0.1
 druid.indexer.runner.javaOpts=-server -Xms256m -Xmx256m -XX:MaxDirectMemorySize=256m -Duser.timezone=UTC -Dfile.encoding=UTF-8 -Djava.util.logging.manager=org.apache.logging.log4j.jul.LogManager -Djava.io.tmpdir=/var/druid/tmp
@@ -821,7 +889,8 @@ druid.indexer.task.restoreTasksOnRestart=false
 druid.worker.capacity=2
 druid.indexer.fork.property.druid.processing.numThreads=1
 druid.indexer.fork.property.druid.processing.buffer.sizeBytes=134217728
-EOF
+MIDDLEEOF
+    echo "druid.plaintextPort=${MIDDLEMANAGER_PORT}" >> "$DRUID_HOME/conf/druid/single-server/nano-quickstart/middleManager/runtime.properties"
     
     log "Service-specific configurations completed"
 }
@@ -836,7 +905,7 @@ create_systemd_services() {
     JAVA_HOME_PATH=$(dirname $(dirname $(readlink -f $(which java))))
     log "Detected Java home: $JAVA_HOME_PATH"
     
-    cat > /etc/systemd/system/druid.service << EOF
+    cat > /etc/systemd/system/druid.service << 'SERVICEEOF'
 [Unit]
 Description=Apache Druid (All Services - nano-quickstart)
 Documentation=https://druid.apache.org/docs/latest/
@@ -845,13 +914,17 @@ Wants=network-online.target
 
 [Service]
 Type=simple
-User=$DRUID_USER
-Group=$DRUID_GROUP
+User=druid
+Group=druid
 EnvironmentFile=/etc/druid/druid.env
-Environment="DRUID_JAVA_HOME=$JAVA_HOME_PATH"
-WorkingDirectory=$DRUID_HOME
-ExecStart=$DRUID_HOME/bin/start-nano-quickstart
-ExecStop=/bin/kill -SIGTERM \$MAINPID
+SERVICEEOF
+    
+    echo "Environment=\"DRUID_JAVA_HOME=${JAVA_HOME_PATH}\"" >> /etc/systemd/system/druid.service
+    echo "WorkingDirectory=${DRUID_HOME}" >> /etc/systemd/system/druid.service
+    echo "ExecStart=${DRUID_HOME}/bin/start-nano-quickstart" >> /etc/systemd/system/druid.service
+    
+    cat >> /etc/systemd/system/druid.service << 'SERVICEEOF'
+ExecStop=/bin/kill -SIGTERM $MAINPID
 Restart=on-failure
 RestartSec=30s
 TimeoutStartSec=300
@@ -872,7 +945,7 @@ SyslogIdentifier=druid
 
 [Install]
 WantedBy=multi-user.target
-EOF
+SERVICEEOF
 
     systemctl daemon-reload
     
@@ -885,18 +958,23 @@ EOF
 create_management_scripts() {
     log "Creating management scripts..."
     
-    cat > "$DRUID_HOME/bin/check-status.sh" << EOF
+    # Create check-status script
+    cat > "$DRUID_HOME/bin/check-status.sh" << 'STATUSEOF'
 #!/bin/bash
 echo "Checking Druid services health..."
 echo ""
 
-services=("coordinator:$COORDINATOR_PORT" "broker:$BROKER_PORT" "historical:$HISTORICAL_PORT" "router:$ROUTER_PORT" "middleManager:$MIDDLEMANAGER_PORT")
-
-for service_port in "\${services[@]}"; do
-    IFS=':' read -r service port <<< "\$service_port"
-    printf "%-15s " "\$service:"
+STATUSEOF
     
-    if curl -s -f http://localhost:\$port/status/health > /dev/null 2>&1; then
+    echo "services=(\"coordinator:${COORDINATOR_PORT}\" \"broker:${BROKER_PORT}\" \"historical:${HISTORICAL_PORT}\" \"router:${ROUTER_PORT}\" \"middleManager:${MIDDLEMANAGER_PORT}\")" >> "$DRUID_HOME/bin/check-status.sh"
+    
+    cat >> "$DRUID_HOME/bin/check-status.sh" << 'STATUSEOF'
+
+for service_port in "${services[@]}"; do
+    IFS=':' read -r service port <<< "$service_port"
+    printf "%-15s " "$service:"
+    
+    if curl -s -f http://localhost:$port/status/health > /dev/null 2>&1; then
         echo -e "\033[0;32mHealthy\033[0m"
     else
         echo -e "\033[0;31mUnhealthy or not running\033[0m"
@@ -904,15 +982,91 @@ for service_port in "\${services[@]}"; do
 done
 
 echo ""
-echo "Web Console: http://localhost:$ROUTER_PORT"
-echo "Use SSH tunnel for remote access: ssh -L $ROUTER_PORT:localhost:$ROUTER_PORT user@server"
-EOF
+STATUSEOF
+    
+    echo "echo \"Web Console: http://localhost:${ROUTER_PORT}\"" >> "$DRUID_HOME/bin/check-status.sh"
+    echo "echo \"Use SSH tunnel for remote access: ssh -L ${ROUTER_PORT}:localhost:${ROUTER_PORT} user@server\"" >> "$DRUID_HOME/bin/check-status.sh"
 
     chmod +x "$DRUID_HOME/bin/check-status.sh"
     chown $DRUID_USER:$DRUID_GROUP "$DRUID_HOME/bin/check-status.sh"
     
+    # Create credential verification script
+    cat > "$DRUID_HOME/bin/verify-credentials.sh" << 'VERIFYEOF'
+#!/bin/bash
+# Verify admin credentials work
+
+source /etc/druid/druid.env
+
+VERIFYEOF
+    
+    echo "ROUTER_URL=\"http://localhost:${ROUTER_PORT}\"" >> "$DRUID_HOME/bin/verify-credentials.sh"
+    
+    cat >> "$DRUID_HOME/bin/verify-credentials.sh" << 'VERIFYEOF'
+MAX_ATTEMPTS=60
+ATTEMPT=0
+
+echo "Waiting for Druid Router to be ready..."
+
+# Wait for Router to start
+while [ $ATTEMPT -lt $MAX_ATTEMPTS ]; do
+    if curl -s -f $ROUTER_URL/status/health > /dev/null 2>&1; then
+        echo "✓ Router is ready!"
+        break
+    fi
+    ATTEMPT=$((ATTEMPT + 1))
+    echo "Attempt $ATTEMPT/$MAX_ATTEMPTS: Waiting..."
+    sleep 5
+done
+
+if [ $ATTEMPT -eq $MAX_ATTEMPTS ]; then
+    echo "✗ ERROR: Router did not start within expected time"
+    exit 1
+fi
+
+echo ""
+echo "Testing admin credentials..."
+echo "Username: $DRUID_ADMIN_USER"
+echo "Password: (hidden)"
+echo ""
+
+# Try to authenticate
+RESPONSE=$(curl -s -w "\n%{http_code}" -u "$DRUID_ADMIN_USER:$DRUID_ADMIN_PASSWORD" \
+    "$ROUTER_URL/druid/coordinator/v1/loadstatus" 2>/dev/null)
+
+HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
+
+if [ "$HTTP_CODE" = "200" ]; then
+    echo "✓ SUCCESS! Admin credentials are working!"
+    echo ""
+    echo "You can now login with:"
+    echo "  Username: $DRUID_ADMIN_USER"
+    echo "  Password: $DRUID_ADMIN_PASSWORD"
+    echo ""
+    exit 0
+elif [ "$HTTP_CODE" = "401" ]; then
+    echo "✗ FAILURE! Authentication failed (401 Unauthorized)"
+    echo ""
+    echo "This means:"
+    echo "  1. The metadata database may contain old credentials"
+    echo "  2. You need to use the OLD password from a previous installation"
+    echo "  3. OR delete /var/druid and reinstall to use new credentials"
+    echo ""
+    exit 1
+else
+    echo "✗ FAILURE! Unexpected response (HTTP $HTTP_CODE)"
+    echo ""
+    echo "Full response:"
+    echo "$RESPONSE" | head -n-1
+    echo ""
+    exit 1
+fi
+VERIFYEOF
+    
+    chmod +x "$DRUID_HOME/bin/verify-credentials.sh"
+    chown $DRUID_USER:$DRUID_GROUP "$DRUID_HOME/bin/verify-credentials.sh"
+    
     # Create permission fix script
-    cat > "$DRUID_HOME/bin/fix-permissions.sh" << 'EOF'
+    cat > "$DRUID_HOME/bin/fix-permissions.sh" << 'FIXEOF'
 #!/bin/bash
 # Fix Druid permissions if startup fails
 echo "Fixing Druid permissions..."
@@ -943,14 +1097,60 @@ sudo systemctl start druid
 
 echo "Wait 2-3 minutes, then check:"
 echo "  /opt/druid/bin/check-status.sh"
-EOF
+FIXEOF
 
     chmod +x "$DRUID_HOME/bin/fix-permissions.sh"
     chown $DRUID_USER:$DRUID_GROUP "$DRUID_HOME/bin/fix-permissions.sh"
     
+    # Create password reset helper
+    cat > "$DRUID_HOME/bin/reset-password.sh" << 'RESETEOF'
+#!/bin/bash
+# Reset admin password via metadata database cleanup
+
+echo "╔════════════════════════════════════════════════════════════════╗"
+echo "║           Druid Admin Password Reset Tool                     ║"
+echo "╚════════════════════════════════════════════════════════════════╝"
+echo ""
+echo "⚠️  WARNING: This will reset the metadata database!"
+echo "⚠️  ALL datasources and user accounts will be lost!"
+echo ""
+
+read -p "Continue? (yes/no): " CONFIRM
+if [ "$CONFIRM" != "yes" ]; then
+    echo "Cancelled."
+    exit 0
+fi
+
+echo ""
+echo "Stopping Druid..."
+sudo systemctl stop druid
+
+echo "Backing up current metadata..."
+BACKUP_DIR="/var/druid-backup-$(date +%Y%m%d-%H%M%S)"
+sudo mkdir -p "$BACKUP_DIR"
+sudo cp -r /var/druid "$BACKUP_DIR/" 2>/dev/null || true
+
+echo "Removing metadata database..."
+sudo rm -rf /var/druid/metadata.db
+
+echo "Starting Druid with fresh metadata..."
+sudo systemctl start druid
+
+echo ""
+echo "✓ Password reset initiated!"
+echo ""
+echo "Wait 2-3 minutes for Druid to start, then run:"
+echo "  /opt/druid/bin/verify-credentials.sh"
+echo ""
+echo "The passwords from /etc/druid/druid.env will now work."
+RESETEOF
+
+    chmod +x "$DRUID_HOME/bin/reset-password.sh"
+    chown $DRUID_USER:$DRUID_GROUP "$DRUID_HOME/bin/reset-password.sh"
+    
     # Create user setup script (runs after Druid starts)
     if [[ "$CREATE_READONLY" =~ ^[Yy]$ ]]; then
-        cat > "$DRUID_HOME/bin/create-users.sh" << EOF
+        cat > "$DRUID_HOME/bin/create-users.sh" << 'USERSEOF'
 #!/bin/bash
 #
 # Create additional Druid users via API
@@ -961,60 +1161,64 @@ set -e
 
 source /etc/druid/druid.env
 
-ROUTER_URL="http://localhost:$ROUTER_PORT"
+USERSEOF
+        
+        echo "ROUTER_URL=\"http://localhost:${ROUTER_PORT}\"" >> "$DRUID_HOME/bin/create-users.sh"
+        
+        cat >> "$DRUID_HOME/bin/create-users.sh" << 'USERSEOF'
 MAX_ATTEMPTS=30
 ATTEMPT=0
 
 echo "Waiting for Druid to be ready..."
 
 # Wait for Druid to start
-while [ \\\$ATTEMPT -lt \\\$MAX_ATTEMPTS ]; do
-    if curl -s -f \\\$ROUTER_URL/status/health > /dev/null 2>&1; then
+while [ $ATTEMPT -lt $MAX_ATTEMPTS ]; do
+    if curl -s -f $ROUTER_URL/status/health > /dev/null 2>&1; then
         echo "Druid is ready!"
         break
     fi
-    ATTEMPT=\\\$((ATTEMPT + 1))
-    echo "Attempt \\\$ATTEMPT/\\\$MAX_ATTEMPTS: Waiting for Druid to start..."
+    ATTEMPT=$((ATTEMPT + 1))
+    echo "Attempt $ATTEMPT/$MAX_ATTEMPTS: Waiting for Druid to start..."
     sleep 10
 done
 
-if [ \\\$ATTEMPT -eq \\\$MAX_ATTEMPTS ]; then
+if [ $ATTEMPT -eq $MAX_ATTEMPTS ]; then
     echo "ERROR: Druid did not start within expected time"
     exit 1
 fi
 
 echo ""
-echo "Creating read-only user: \\\$DRUID_READONLY_USER"
+echo "Creating read-only user: $DRUID_READONLY_USER"
 
 # Create the read-only user
-curl -X POST -H 'Content-Type: application/json' \\\\
-  -u "\\\$DRUID_ADMIN_USER:\\\$DRUID_ADMIN_PASSWORD" \\\\
-  -d '{"userName":"'\\\$DRUID_READONLY_USER'","password":"'\\\$DRUID_READONLY_PASSWORD'"}' \\\\
-  \\\$ROUTER_URL/druid-ext/basic-security/authentication/db/MyBasicMetadataAuthenticator/users/\\\$DRUID_READONLY_USER
+curl -X POST -H 'Content-Type: application/json' \
+  -u "$DRUID_ADMIN_USER:$DRUID_ADMIN_PASSWORD" \
+  -d '{"userName":"'$DRUID_READONLY_USER'","password":"'$DRUID_READONLY_PASSWORD'"}' \
+  $ROUTER_URL/druid-ext/basic-security/authentication/db/MyBasicMetadataAuthenticator/users/$DRUID_READONLY_USER
 
 echo ""
 echo "Setting read-only permissions..."
 
 # Grant read permissions to datasources
-curl -X POST -H 'Content-Type: application/json' \\\\
-  -u "\\\$DRUID_ADMIN_USER:\\\$DRUID_ADMIN_PASSWORD" \\\\
-  -d '[{"resource":{"name":".*","type":"DATASOURCE"},"action":"READ"}]' \\\\
-  \\\$ROUTER_URL/druid-ext/basic-security/authorization/db/MyBasicMetadataAuthorizer/users/\\\$DRUID_READONLY_USER/permissions
+curl -X POST -H 'Content-Type: application/json' \
+  -u "$DRUID_ADMIN_USER:$DRUID_ADMIN_PASSWORD" \
+  -d '[{"resource":{"name":".*","type":"DATASOURCE"},"action":"READ"}]' \
+  $ROUTER_URL/druid-ext/basic-security/authorization/db/MyBasicMetadataAuthorizer/users/$DRUID_READONLY_USER/permissions
 
 # Grant state read permissions
-curl -X POST -H 'Content-Type: application/json' \\\\
-  -u "\\\$DRUID_ADMIN_USER:\\\$DRUID_ADMIN_PASSWORD" \\\\
-  -d '[{"resource":{"name":"STATE","type":"STATE"},"action":"READ"}]' \\\\
-  \\\$ROUTER_URL/druid-ext/basic-security/authorization/db/MyBasicMetadataAuthorizer/users/\\\$DRUID_READONLY_USER/permissions
+curl -X POST -H 'Content-Type: application/json' \
+  -u "$DRUID_ADMIN_USER:$DRUID_ADMIN_PASSWORD" \
+  -d '[{"resource":{"name":"STATE","type":"STATE"},"action":"READ"}]' \
+  $ROUTER_URL/druid-ext/basic-security/authorization/db/MyBasicMetadataAuthorizer/users/$DRUID_READONLY_USER/permissions
 
 echo ""
-echo "✓ Read-only user '\\\$DRUID_READONLY_USER' created successfully!"
+echo "✓ Read-only user '$DRUID_READONLY_USER' created successfully!"
 echo ""
 echo "You can now login with:"
-echo "  Username: \\\$DRUID_READONLY_USER"
-echo "  Password: \\\$DRUID_READONLY_PASSWORD"
+echo "  Username: $DRUID_READONLY_USER"
+echo "  Password: $DRUID_READONLY_PASSWORD"
 echo ""
-EOF
+USERSEOF
 
         chmod +x "$DRUID_HOME/bin/create-users.sh"
         chown $DRUID_USER:$DRUID_GROUP "$DRUID_HOME/bin/create-users.sh"
@@ -1057,83 +1261,116 @@ configure_firewall() {
 create_documentation() {
     log "Creating documentation..."
     
-    cat > "$DRUID_HOME/INSTALLATION_INFO.txt" << EOF
+    # Store generation date to avoid command substitution in heredoc
+    local DOC_DATE=$(date)
+    local SERVER_IP=$(hostname -I | awk '{print $1}')
+    
+    cat > "$DRUID_HOME/INSTALLATION_INFO.txt" << 'DOCEOF'
 ================================================================================
 Apache Druid Secure Installation
 ================================================================================
-Installation Date: $(date)
-Druid Version: $DRUID_VERSION
-
+DOCEOF
+    
+    echo "Installation Date: ${DOC_DATE}" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "Druid Version: ${DRUID_VERSION}" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    
+    cat >> "$DRUID_HOME/INSTALLATION_INFO.txt" << 'DOCEOF'
 AUTHENTICATION CREDENTIALS
 ================================================================================
-Admin Username: $ADMIN_USER
-Admin Password: $ADMIN_PASSWORD
-
-EOF
+DOCEOF
+    
+    echo "Admin Username: ${ADMIN_USER}" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "Admin Password: ${ADMIN_PASSWORD}" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
 
     if [[ "$CREATE_READONLY" =~ ^[Yy]$ ]]; then
-        cat >> "$DRUID_HOME/INSTALLATION_INFO.txt" << EOF
-Read-Only Username: $READONLY_USER
-Read-Only Password: $READONLY_PASSWORD
-
-EOF
+        echo "Read-Only Username: ${READONLY_USER}" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+        echo "Read-Only Password: ${READONLY_PASSWORD}" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+        echo "" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
     fi
 
-    cat >> "$DRUID_HOME/INSTALLATION_INFO.txt" << EOF
-Internal System Password: $INTERNAL_PASSWORD
+    echo "Internal System Password: ${INTERNAL_PASSWORD}" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
 
+    cat >> "$DRUID_HOME/INSTALLATION_INFO.txt" << 'DOCEOF'
 ⚠️  IMPORTANT: Save these credentials securely!
 All credentials are also stored in: /etc/druid/druid.env (600 permissions)
 
+VERIFYING CREDENTIALS WORK
+================================================================================
+After starting Druid, run this to verify your admin password works:
+
+DOCEOF
+    
+    echo "  sudo -u druid ${DRUID_HOME}/bin/verify-credentials.sh" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "If credentials don't work, it means the metadata database had old credentials." >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "To reset: sudo -u druid ${DRUID_HOME}/bin/reset-password.sh" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+
+    cat >> "$DRUID_HOME/INSTALLATION_INFO.txt" << 'DOCEOF'
 IMPORTANT: CREATING ADDITIONAL USERS
 ================================================================================
 The admin user 'admin' is created automatically when Druid starts.
-EOF
+DOCEOF
 
     if [[ "$CREATE_READONLY" =~ ^[Yy]$ ]]; then
-        cat >> "$DRUID_HOME/INSTALLATION_INFO.txt" << EOF
-
-The read-only user '$READONLY_USER' must be created AFTER Druid starts:
-
-1. Start Druid: sudo systemctl start druid
-2. Wait for Druid to be ready (2-3 minutes)
-3. Run: sudo -u druid $DRUID_HOME/bin/create-users.sh
-
-This will create the read-only user with appropriate permissions.
-EOF
+        echo "" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+        echo "The read-only user '${READONLY_USER}' must be created AFTER Druid starts:" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+        echo "" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+        echo "1. Start Druid: sudo systemctl start druid" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+        echo "2. Wait for Druid to be ready (2-3 minutes)" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+        echo "3. Verify admin works: sudo -u druid ${DRUID_HOME}/bin/verify-credentials.sh" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+        echo "4. Run: sudo -u druid ${DRUID_HOME}/bin/create-users.sh" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+        echo "" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+        echo "This will create the read-only user with appropriate permissions." >> "$DRUID_HOME/INSTALLATION_INFO.txt"
     fi
+    
+    echo "" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
 
-    cat >> "$DRUID_HOME/INSTALLATION_INFO.txt" << EOF
+    cat >> "$DRUID_HOME/INSTALLATION_INFO.txt" << 'DOCEOF'
 
 API ACCESS (EXTERNAL)
 ================================================================================
-Druid Router API is accessible externally on port $ROUTER_PORT
+DOCEOF
+    
+    echo "Druid Router API is accessible externally on port ${ROUTER_PORT}" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "Direct Access:" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "  http://${SERVER_IP}:${ROUTER_PORT}" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "Web Console:" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "  http://${SERVER_IP}:${ROUTER_PORT}/unified-console.html" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "SQL API Endpoint:" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "  http://${SERVER_IP}:${ROUTER_PORT}/druid/v2/sql" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "Native Query API:" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "  http://${SERVER_IP}:${ROUTER_PORT}/druid/v2" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
 
-Direct Access:
-  http://$(hostname -I | awk '{print $1}'):$ROUTER_PORT
-
-Web Console:
-  http://$(hostname -I | awk '{print $1}'):$ROUTER_PORT/unified-console.html
-
-SQL API Endpoint:
-  http://$(hostname -I | awk '{print $1}'):$ROUTER_PORT/druid/v2/sql
-
-Native Query API:
-  http://$(hostname -I | awk '{print $1}'):$ROUTER_PORT/druid/v2
-
+    cat >> "$DRUID_HOME/INSTALLATION_INFO.txt" << 'DOCEOF'
 ⚠️  SECURITY: All requests require authentication (username/password)
-⚠️  Firewall configured to allow port $ROUTER_PORT
+DOCEOF
+    echo "⚠️  Firewall configured to allow port ${ROUTER_PORT}" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
 
+    cat >> "$DRUID_HOME/INSTALLATION_INFO.txt" << 'DOCEOF'
 PORTS CONFIGURED
 ================================================================================
-Router (API):        $ROUTER_PORT (0.0.0.0 - External)
-Coordinator:         $COORDINATOR_PORT (localhost)
-Broker:              $BROKER_PORT (localhost)
-Historical:          $HISTORICAL_PORT (localhost)
-MiddleManager:       $MIDDLEMANAGER_PORT (localhost)
-ZooKeeper Client:    $ZK_PORT (localhost)
-ZooKeeper Admin:     $ZK_ADMIN_PORT (localhost)
+DOCEOF
+    
+    echo "Router (API):        ${ROUTER_PORT} (0.0.0.0 - External)" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "Coordinator:         ${COORDINATOR_PORT} (localhost)" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "Broker:              ${BROKER_PORT} (localhost)" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "Historical:          ${HISTORICAL_PORT} (localhost)" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "MiddleManager:       ${MIDDLEMANAGER_PORT} (localhost)" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "ZooKeeper Client:    ${ZK_PORT} (localhost)" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "ZooKeeper Admin:     ${ZK_ADMIN_PORT} (localhost)" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
 
+    cat >> "$DRUID_HOME/INSTALLATION_INFO.txt" << 'DOCEOF'
 SERVICE MANAGEMENT
 ================================================================================
 Start:   sudo systemctl start druid
@@ -1141,55 +1378,67 @@ Stop:    sudo systemctl stop druid
 Status:  sudo systemctl status druid
 Logs:    sudo journalctl -u druid -f
 
-HEALTH CHECK
+HEALTH CHECK & VERIFICATION
 ================================================================================
-$DRUID_HOME/bin/check-status.sh
+DOCEOF
+    
+    echo "Check services: ${DRUID_HOME}/bin/check-status.sh" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "Verify login:   ${DRUID_HOME}/bin/verify-credentials.sh" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
 
+    cat >> "$DRUID_HOME/INSTALLATION_INFO.txt" << 'DOCEOF'
 TROUBLESHOOTING
 ================================================================================
 If Druid fails to start with permission errors:
-  $DRUID_HOME/bin/fix-permissions.sh
+DOCEOF
+    echo "  ${DRUID_HOME}/bin/fix-permissions.sh" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "If admin password doesn't work:" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "  ${DRUID_HOME}/bin/reset-password.sh" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "  (This deletes metadata and starts fresh)" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
 
+    cat >> "$DRUID_HOME/INSTALLATION_INFO.txt" << 'DOCEOF'
 Common issues:
   - Permission denied errors → Run fix-permissions.sh
   - Services unhealthy → Wait 2-3 minutes for startup
+  - Login fails → Run verify-credentials.sh to diagnose
+  - Old password works → Old metadata exists, run reset-password.sh
   - Check logs: sudo journalctl -u druid -f
 
 EXAMPLE API USAGE
 ================================================================================
-# Health check
-curl http://$(hostname -I | awk '{print $1}'):$ROUTER_PORT/status/health
+# Health check (no auth required)
+DOCEOF
+    echo "curl http://${SERVER_IP}:${ROUTER_PORT}/status/health" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "# SQL Query (with authentication)" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "curl -X POST -H 'Content-Type: application/json' \\" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "  -u admin:YOUR_PASSWORD \\" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "  -d '{\"query\":\"SELECT * FROM INFORMATION_SCHEMA.TABLES\"}' \\" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "  http://${SERVER_IP}:${ROUTER_PORT}/druid/v2/sql" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
 
-# SQL Query (with authentication)
-curl -X POST -H 'Content-Type: application/json' \\
-  -u admin:YOUR_PASSWORD \\
-  -d '{"query":"SELECT * FROM INFORMATION_SCHEMA.TABLES"}' \\
-  http://$(hostname -I | awk '{print $1}'):$ROUTER_PORT/druid/v2/sql
-
+    cat >> "$DRUID_HOME/INSTALLATION_INFO.txt" << 'DOCEOF'
 NEXT STEPS
 ================================================================================
 1. sudo systemctl start druid
 2. Wait 2-3 minutes for Druid to fully start
-3. $DRUID_HOME/bin/check-status.sh
-EOF
+DOCEOF
+    echo "3. ${DRUID_HOME}/bin/check-status.sh" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "4. ${DRUID_HOME}/bin/verify-credentials.sh  # VERIFY LOGIN WORKS!" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
 
     if [[ "$CREATE_READONLY" =~ ^[Yy]$ ]]; then
-        cat >> "$DRUID_HOME/INSTALLATION_INFO.txt" << EOF
-4. sudo -u druid $DRUID_HOME/bin/create-users.sh  # Create read-only user
-5. Test API access from external client
-6. Login to web console with admin or read-only credentials
-EOF
+        echo "5. sudo -u druid ${DRUID_HOME}/bin/create-users.sh  # Create read-only user" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+        echo "6. Test API access from external client" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+        echo "7. Login to web console with admin or read-only credentials" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
     else
-        cat >> "$DRUID_HOME/INSTALLATION_INFO.txt" << EOF
-4. Test API access from external client
-5. Login to web console with admin credentials
-EOF
+        echo "5. Test API access from external client" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+        echo "6. Login to web console with admin credentials" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
     fi
-
-    cat >> "$DRUID_HOME/INSTALLATION_INFO.txt" << EOF
-
-Documentation: https://druid.apache.org/docs/latest/
-EOF
+    
+    echo "" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
+    echo "Documentation: https://druid.apache.org/docs/latest/" >> "$DRUID_HOME/INSTALLATION_INFO.txt"
 
     chmod 600 "$DRUID_HOME/INSTALLATION_INFO.txt"
     chown $DRUID_USER:$DRUID_GROUP "$DRUID_HOME/INSTALLATION_INFO.txt"
@@ -1228,8 +1477,7 @@ main() {
     echo "╔════════════════════════════════════════════════════════════════╗"
     echo "║                                                                ║"
     echo "║         Apache Druid Secure Installation Script               ║"
-    echo "║         Production-Ready Configuration                        ║"
-    echo "║         WITH: Old Version Cleanup & User Recreation           ║"
+    echo "║         FIXED: Proper Credential Handling & Verification      ║"
     echo "║                                                                ║"
     echo "╚════════════════════════════════════════════════════════════════╝"
     echo ""
@@ -1239,11 +1487,11 @@ main() {
     
     info "This script will:"
     echo "  • Clean up any existing Druid installations"
-    echo "  • Remove and recreate the Druid system user"
+    echo "  • OPTIONALLY clean metadata database (required for new passwords)"
     echo "  • Auto-detect and install the latest Druid version"
     echo "  • Configure ports (customizable)"
-    echo "  • Configure authentication and authorization"
-    echo "  • Bind Router (API) to 0.0.0.0 for external access"
+    echo "  • Configure authentication with WORKING credentials"
+    echo "  • Provide credential verification tools"
     echo "  • Set up systemd service management"
     echo "  • Configure firewall to allow Router port"
     echo ""
@@ -1258,9 +1506,7 @@ main() {
     
     echo ""
     
-    # NEW: Cleanup old installation first
     cleanup_old_installation
-    
     install_dependencies
     get_latest_version
     create_user
@@ -1309,13 +1555,16 @@ main() {
     echo "  2. Wait 2-3 minutes, then check status:"
     echo "     $DRUID_HOME/bin/check-status.sh"
     echo ""
+    echo "  3. VERIFY your password works:"
+    echo "     sudo -u druid $DRUID_HOME/bin/verify-credentials.sh"
+    echo ""
     if [[ "$CREATE_READONLY" =~ ^[Yy]$ ]]; then
-        echo "  3. Create read-only user (after Druid is ready):"
+        echo "  4. Create read-only user (after verification succeeds):"
         echo "     sudo -u druid $DRUID_HOME/bin/create-users.sh"
         echo ""
-        echo "  4. Access Druid API (externally accessible on port $ROUTER_PORT):"
+        echo "  5. Access Druid API (externally accessible on port $ROUTER_PORT):"
     else
-        echo "  3. Access Druid API (externally accessible on port $ROUTER_PORT):"
+        echo "  4. Access Druid API (externally accessible on port $ROUTER_PORT):"
     fi
     echo "     http://$(hostname -I | awk '{print $1}'):$ROUTER_PORT"
     echo ""
@@ -1328,8 +1577,8 @@ main() {
     echo "  Router (API): $ROUTER_PORT"
     echo "  ZooKeeper:    $ZK_PORT (admin: $ZK_ADMIN_PORT)"
     echo ""
-    info "Troubleshooting:"
-    echo "  If services don't start: $DRUID_HOME/bin/fix-permissions.sh"
+    warning "IMPORTANT: If passwords don't work, run:"
+    echo "  sudo -u druid $DRUID_HOME/bin/reset-password.sh"
     echo ""
     info "Full documentation: $DRUID_HOME/INSTALLATION_INFO.txt"
     echo ""
