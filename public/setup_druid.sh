@@ -1583,5 +1583,4 @@ main() {
     info "Full documentation: $DRUID_HOME/INSTALLATION_INFO.txt"
     echo ""
 }
-
 main "$@"
