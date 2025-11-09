@@ -497,6 +497,95 @@ create_directories() {
 }
 
 # ============================================
+# Prompt for Port Configuration
+# ============================================
+prompt_ports() {
+    log "Configuring service ports..."
+    echo ""
+    
+    info "Default Druid Ports:"
+    echo "  ZooKeeper Client:    2181"
+    echo "  ZooKeeper Admin:     8080"
+    echo "  Router (API):        8888"
+    echo "  Coordinator:         8081"
+    echo "  Broker:              8082"
+    echo "  Historical:          8083"
+    echo "  MiddleManager:       8091"
+    echo ""
+    
+    CUSTOMIZE_PORTS=$(read_from_tty "Customize ports? (y/n) [n]: ")
+    CUSTOMIZE_PORTS=${CUSTOMIZE_PORTS:-n}
+    
+    if [[ "$CUSTOMIZE_PORTS" =~ ^[Yy]$ ]]; then
+        echo ""
+        info "Enter custom ports (press Enter to use default):"
+        
+        read -p "ZooKeeper Client Port [2181]: " ZK_PORT
+        ZK_PORT=${ZK_PORT:-2181}
+        
+        read -p "ZooKeeper Admin Port [8080]: " ZK_ADMIN_PORT
+        ZK_ADMIN_PORT=${ZK_ADMIN_PORT:-8080}
+        
+        read -p "Router Port [8888]: " ROUTER_PORT
+        ROUTER_PORT=${ROUTER_PORT:-8888}
+        
+        read -p "Coordinator Port [8081]: " COORDINATOR_PORT
+        COORDINATOR_PORT=${COORDINATOR_PORT:-8081}
+        
+        read -p "Broker Port [8082]: " BROKER_PORT
+        BROKER_PORT=${BROKER_PORT:-8082}
+        
+        read -p "Historical Port [8083]: " HISTORICAL_PORT
+        HISTORICAL_PORT=${HISTORICAL_PORT:-8083}
+        
+        read -p "MiddleManager Port [8091]: " MIDDLEMANAGER_PORT
+        MIDDLEMANAGER_PORT=${MIDDLEMANAGER_PORT:-8091}
+    else
+        ZK_PORT=2181
+        ZK_ADMIN_PORT=8080
+        ROUTER_PORT=8888
+        COORDINATOR_PORT=8081
+        BROKER_PORT=8082
+        HISTORICAL_PORT=8083
+        MIDDLEMANAGER_PORT=8091
+    fi
+    
+    # Check if ports are in use
+    log "Checking if ports are available..."
+    PORTS_IN_USE=""
+    
+    for port in $ZK_PORT $ZK_ADMIN_PORT $ROUTER_PORT $COORDINATOR_PORT $BROKER_PORT $HISTORICAL_PORT $MIDDLEMANAGER_PORT; do
+        if netstat -tuln 2>/dev/null | grep -q ":$port "; then
+            PORTS_IN_USE="$PORTS_IN_USE $port"
+            warning "Port $port is already in use!"
+        fi
+    done
+    
+    if [ -n "$PORTS_IN_USE" ]; then
+        echo ""
+        error "The following ports are already in use:$PORTS_IN_USE"
+        echo ""
+        echo "Processes using these ports:"
+        for port in $PORTS_IN_USE; do
+            echo "Port $port:"
+            sudo netstat -tulnp 2>/dev/null | grep ":$port " || true
+        done
+        echo ""
+        CONTINUE=$(read_from_tty "Continue anyway? (y/n) [n]: ")
+        if [[ ! "$CONTINUE" =~ ^[Yy]$ ]]; then
+            error "Installation cancelled. Please free up the ports or choose different ports."
+            exit 1
+        fi
+    fi
+    
+    echo ""
+    log "Port configuration completed"
+    log "ZooKeeper Client: $ZK_PORT, Admin: $ZK_ADMIN_PORT"
+    log "Router: $ROUTER_PORT, Coordinator: $COORDINATOR_PORT"
+    log "Broker: $BROKER_PORT, Historical: $HISTORICAL_PORT, MiddleManager: $MIDDLEMANAGER_PORT"
+}
+
+# ============================================
 # Prompt for Credentials
 # ============================================
 prompt_credentials() {
@@ -561,7 +650,7 @@ EOF
     
     cp -r "$DRUID_HOME/conf" /etc/druid/backup/
     
-    cat > "$DRUID_HOME/conf/druid/single-server/nano-quickstart/_common/common.runtime.properties" << 'EOF'
+    cat > "$DRUID_HOME/conf/druid/single-server/nano-quickstart/_common/common.runtime.properties" << EOF
 #
 # Apache Druid - Secure Production Configuration
 #
@@ -574,7 +663,7 @@ druid.startup.logging.logProperties=true
 druid.startup.logging.maskProperties=["password", "key", "secret", "token"]
 
 # Zookeeper
-druid.zk.service.host=localhost:2181
+druid.zk.service.host=localhost:$ZK_PORT
 druid.zk.paths.base=/druid
 
 # Metadata Storage (Derby for testing - USE POSTGRESQL/MYSQL IN PRODUCTION)
@@ -612,8 +701,8 @@ druid.bindOnHost=true
 # Authentication - Basic Auth with Metadata Store
 druid.auth.authenticatorChain=["MyBasicMetadataAuthenticator"]
 druid.auth.authenticator.MyBasicMetadataAuthenticator.type=basic
-druid.auth.authenticator.MyBasicMetadataAuthenticator.initialAdminPassword=${env:DRUID_ADMIN_PASSWORD}
-druid.auth.authenticator.MyBasicMetadataAuthenticator.initialInternalClientPassword=${env:DRUID_INTERNAL_PASSWORD}
+druid.auth.authenticator.MyBasicMetadataAuthenticator.initialAdminPassword=\${env:DRUID_ADMIN_PASSWORD}
+druid.auth.authenticator.MyBasicMetadataAuthenticator.initialInternalClientPassword=\${env:DRUID_INTERNAL_PASSWORD}
 druid.auth.authenticator.MyBasicMetadataAuthenticator.credentialsValidator.type=metadata
 druid.auth.authenticator.MyBasicMetadataAuthenticator.skipOnFailure=false
 druid.auth.authenticator.MyBasicMetadataAuthenticator.authorizerName=MyBasicMetadataAuthorizer
@@ -625,7 +714,7 @@ druid.auth.authorizer.MyBasicMetadataAuthorizer.type=basic
 # Escalator (internal system authentication)
 druid.escalator.type=basic
 druid.escalator.internalClientUsername=druid_system
-druid.escalator.internalClientPassword=${env:DRUID_INTERNAL_PASSWORD}
+druid.escalator.internalClientPassword=\${env:DRUID_INTERNAL_PASSWORD}
 druid.escalator.authorizerName=MyBasicMetadataAuthorizer
 
 # Security Hardening
@@ -639,6 +728,23 @@ EOF
     chmod 600 "$DRUID_HOME/conf/druid/single-server/nano-quickstart/_common/common.runtime.properties"
     chown $DRUID_USER:$DRUID_GROUP "$DRUID_HOME/conf/druid/single-server/nano-quickstart/_common/common.runtime.properties"
     
+    # Configure ZooKeeper with custom ports
+    log "Configuring ZooKeeper..."
+    
+    mkdir -p "$DRUID_HOME/conf/zk"
+    cat > "$DRUID_HOME/conf/zk/zoo.cfg" << EOF
+# ZooKeeper Configuration
+tickTime=2000
+dataDir=$DATA_DIR/zk
+clientPort=$ZK_PORT
+maxClientCnxns=60
+admin.enableServer=true
+admin.serverPort=$ZK_ADMIN_PORT
+4lw.commands.whitelist=*
+EOF
+    
+    chown $DRUID_USER:$DRUID_GROUP "$DRUID_HOME/conf/zk/zoo.cfg"
+    
     log "Security configuration completed"
 }
 
@@ -648,9 +754,9 @@ EOF
 configure_services() {
     log "Configuring individual Druid services..."
     
-    cat > "$DRUID_HOME/conf/druid/single-server/nano-quickstart/router/runtime.properties" << 'EOF'
+    cat > "$DRUID_HOME/conf/druid/single-server/nano-quickstart/router/runtime.properties" << EOF
 druid.service=druid/router
-druid.plaintextPort=8888
+druid.plaintextPort=$ROUTER_PORT
 druid.host=0.0.0.0
 druid.server.http.bindAddress=0.0.0.0
 druid.router.http.numConnections=50
@@ -661,9 +767,9 @@ druid.router.managementProxy.enabled=true
 druid.router.sql.enable=true
 EOF
 
-    cat > "$DRUID_HOME/conf/druid/single-server/nano-quickstart/coordinator-overlord/runtime.properties" << 'EOF'
+    cat > "$DRUID_HOME/conf/druid/single-server/nano-quickstart/coordinator-overlord/runtime.properties" << EOF
 druid.service=druid/coordinator
-druid.plaintextPort=8081
+druid.plaintextPort=$COORDINATOR_PORT
 druid.host=127.0.0.1
 druid.server.http.bindAddress=127.0.0.1
 druid.coordinator.startDelay=PT10S
@@ -673,9 +779,9 @@ druid.indexer.runner.type=local
 druid.indexer.storage.type=metadata
 EOF
 
-    cat > "$DRUID_HOME/conf/druid/single-server/nano-quickstart/broker/runtime.properties" << 'EOF'
+    cat > "$DRUID_HOME/conf/druid/single-server/nano-quickstart/broker/runtime.properties" << EOF
 druid.service=druid/broker
-druid.plaintextPort=8082
+druid.plaintextPort=$BROKER_PORT
 druid.host=127.0.0.1
 druid.server.http.bindAddress=127.0.0.1
 druid.processing.buffer.sizeBytes=134217728
@@ -688,9 +794,9 @@ druid.cache.sizeInBytes=134217728
 druid.sql.enable=true
 EOF
 
-    cat > "$DRUID_HOME/conf/druid/single-server/nano-quickstart/historical/runtime.properties" << 'EOF'
+    cat > "$DRUID_HOME/conf/druid/single-server/nano-quickstart/historical/runtime.properties" << EOF
 druid.service=druid/historical
-druid.plaintextPort=8083
+druid.plaintextPort=$HISTORICAL_PORT
 druid.host=127.0.0.1
 druid.server.http.bindAddress=127.0.0.1
 druid.processing.buffer.sizeBytes=134217728
@@ -701,9 +807,9 @@ druid.segmentCache.infoDir=/var/druid/segment-cache-info
 druid.server.maxSize=1073741824
 EOF
 
-    cat > "$DRUID_HOME/conf/druid/single-server/nano-quickstart/middleManager/runtime.properties" << 'EOF'
+    cat > "$DRUID_HOME/conf/druid/single-server/nano-quickstart/middleManager/runtime.properties" << EOF
 druid.service=druid/middleManager
-druid.plaintextPort=8091
+druid.plaintextPort=$MIDDLEMANAGER_PORT
 druid.host=127.0.0.1
 druid.server.http.bindAddress=127.0.0.1
 druid.indexer.runner.javaOpts=-server -Xms256m -Xmx256m -XX:MaxDirectMemorySize=256m -Duser.timezone=UTC -Dfile.encoding=UTF-8 -Djava.util.logging.manager=org.apache.logging.log4j.jul.LogManager -Djava.io.tmpdir=/var/druid/tmp
@@ -776,18 +882,18 @@ EOF
 create_management_scripts() {
     log "Creating management scripts..."
     
-    cat > "$DRUID_HOME/bin/check-status.sh" << 'EOF'
+    cat > "$DRUID_HOME/bin/check-status.sh" << EOF
 #!/bin/bash
 echo "Checking Druid services health..."
 echo ""
 
-services=("coordinator:8081" "broker:8082" "historical:8083" "router:8888" "middleManager:8091")
+services=("coordinator:$COORDINATOR_PORT" "broker:$BROKER_PORT" "historical:$HISTORICAL_PORT" "router:$ROUTER_PORT" "middleManager:$MIDDLEMANAGER_PORT")
 
-for service_port in "${services[@]}"; do
-    IFS=':' read -r service port <<< "$service_port"
-    printf "%-15s " "$service:"
+for service_port in "\${services[@]}"; do
+    IFS=':' read -r service port <<< "\$service_port"
+    printf "%-15s " "\$service:"
     
-    if curl -s -f http://localhost:$port/status/health > /dev/null 2>&1; then
+    if curl -s -f http://localhost:\$port/status/health > /dev/null 2>&1; then
         echo -e "\033[0;32mHealthy\033[0m"
     else
         echo -e "\033[0;31mUnhealthy or not running\033[0m"
@@ -795,8 +901,8 @@ for service_port in "${services[@]}"; do
 done
 
 echo ""
-echo "Web Console: http://localhost:8888"
-echo "Use SSH tunnel for remote access: ssh -L 8888:localhost:8888 user@server"
+echo "Web Console: http://localhost:$ROUTER_PORT"
+echo "Use SSH tunnel for remote access: ssh -L $ROUTER_PORT:localhost:$ROUTER_PORT user@server"
 EOF
 
     chmod +x "$DRUID_HOME/bin/check-status.sh"
@@ -852,58 +958,58 @@ set -e
 
 source /etc/druid/druid.env
 
-ROUTER_URL="http://localhost:8888"
+ROUTER_URL="http://localhost:$ROUTER_PORT"
 MAX_ATTEMPTS=30
 ATTEMPT=0
 
 echo "Waiting for Druid to be ready..."
 
 # Wait for Druid to start
-while [ \$ATTEMPT -lt \$MAX_ATTEMPTS ]; do
-    if curl -s -f \$ROUTER_URL/status/health > /dev/null 2>&1; then
+while [ \\\$ATTEMPT -lt \\\$MAX_ATTEMPTS ]; do
+    if curl -s -f \\\$ROUTER_URL/status/health > /dev/null 2>&1; then
         echo "Druid is ready!"
         break
     fi
-    ATTEMPT=\$((ATTEMPT + 1))
-    echo "Attempt \$ATTEMPT/\$MAX_ATTEMPTS: Waiting for Druid to start..."
+    ATTEMPT=\\\$((ATTEMPT + 1))
+    echo "Attempt \\\$ATTEMPT/\\\$MAX_ATTEMPTS: Waiting for Druid to start..."
     sleep 10
 done
 
-if [ \$ATTEMPT -eq \$MAX_ATTEMPTS ]; then
+if [ \\\$ATTEMPT -eq \\\$MAX_ATTEMPTS ]; then
     echo "ERROR: Druid did not start within expected time"
     exit 1
 fi
 
 echo ""
-echo "Creating read-only user: \$DRUID_READONLY_USER"
+echo "Creating read-only user: \\\$DRUID_READONLY_USER"
 
 # Create the read-only user
-curl -X POST -H 'Content-Type: application/json' \\
-  -u "\$DRUID_ADMIN_USER:\$DRUID_ADMIN_PASSWORD" \\
-  -d '{"userName":"'\$DRUID_READONLY_USER'","password":"'\$DRUID_READONLY_PASSWORD'"}' \\
-  \$ROUTER_URL/druid-ext/basic-security/authentication/db/MyBasicMetadataAuthenticator/users/\$DRUID_READONLY_USER
+curl -X POST -H 'Content-Type: application/json' \\\\
+  -u "\\\$DRUID_ADMIN_USER:\\\$DRUID_ADMIN_PASSWORD" \\\\
+  -d '{"userName":"'\\\$DRUID_READONLY_USER'","password":"'\\\$DRUID_READONLY_PASSWORD'"}' \\\\
+  \\\$ROUTER_URL/druid-ext/basic-security/authentication/db/MyBasicMetadataAuthenticator/users/\\\$DRUID_READONLY_USER
 
 echo ""
 echo "Setting read-only permissions..."
 
 # Grant read permissions to datasources
-curl -X POST -H 'Content-Type: application/json' \\
-  -u "\$DRUID_ADMIN_USER:\$DRUID_ADMIN_PASSWORD" \\
-  -d '[{"resource":{"name":".*","type":"DATASOURCE"},"action":"READ"}]' \\
-  \$ROUTER_URL/druid-ext/basic-security/authorization/db/MyBasicMetadataAuthorizer/users/\$DRUID_READONLY_USER/permissions
+curl -X POST -H 'Content-Type: application/json' \\\\
+  -u "\\\$DRUID_ADMIN_USER:\\\$DRUID_ADMIN_PASSWORD" \\\\
+  -d '[{"resource":{"name":".*","type":"DATASOURCE"},"action":"READ"}]' \\\\
+  \\\$ROUTER_URL/druid-ext/basic-security/authorization/db/MyBasicMetadataAuthorizer/users/\\\$DRUID_READONLY_USER/permissions
 
 # Grant state read permissions
-curl -X POST -H 'Content-Type: application/json' \\
-  -u "\$DRUID_ADMIN_USER:\$DRUID_ADMIN_PASSWORD" \\
-  -d '[{"resource":{"name":"STATE","type":"STATE"},"action":"READ"}]' \\
-  \$ROUTER_URL/druid-ext/basic-security/authorization/db/MyBasicMetadataAuthorizer/users/\$DRUID_READONLY_USER/permissions
+curl -X POST -H 'Content-Type: application/json' \\\\
+  -u "\\\$DRUID_ADMIN_USER:\\\$DRUID_ADMIN_PASSWORD" \\\\
+  -d '[{"resource":{"name":"STATE","type":"STATE"},"action":"READ"}]' \\\\
+  \\\$ROUTER_URL/druid-ext/basic-security/authorization/db/MyBasicMetadataAuthorizer/users/\\\$DRUID_READONLY_USER/permissions
 
 echo ""
-echo "✓ Read-only user '\$DRUID_READONLY_USER' created successfully!"
+echo "✓ Read-only user '\\\$DRUID_READONLY_USER' created successfully!"
 echo ""
 echo "You can now login with:"
-echo "  Username: \$DRUID_READONLY_USER"
-echo "  Password: \$DRUID_READONLY_PASSWORD"
+echo "  Username: \\\$DRUID_READONLY_USER"
+echo "  Password: \\\$DRUID_READONLY_PASSWORD"
 echo ""
 EOF
 
@@ -925,21 +1031,21 @@ configure_firewall() {
         ufw default deny incoming > /dev/null 2>&1
         ufw default allow outgoing > /dev/null 2>&1
         ufw allow ssh > /dev/null 2>&1
-        ufw allow 8888/tcp comment 'Druid Router API' > /dev/null 2>&1
-        log "UFW firewall configured - Port 8888 open for Druid API"
+        ufw allow $ROUTER_PORT/tcp comment 'Druid Router API' > /dev/null 2>&1
+        log "UFW firewall configured - Port $ROUTER_PORT open for Druid API"
     elif command -v firewall-cmd &> /dev/null; then
         systemctl start firewalld > /dev/null 2>&1
         systemctl enable firewalld > /dev/null 2>&1
-        firewall-cmd --permanent --zone=public --add-port=8888/tcp > /dev/null 2>&1
+        firewall-cmd --permanent --zone=public --add-port=$ROUTER_PORT/tcp > /dev/null 2>&1
         firewall-cmd --permanent --zone=public --add-service=ssh > /dev/null 2>&1
         firewall-cmd --reload > /dev/null 2>&1
-        log "Firewalld configured - Port 8888 open for Druid API"
+        log "Firewalld configured - Port $ROUTER_PORT open for Druid API"
     else
-        warning "No firewall found. Port 8888 will be open if network allows."
+        warning "No firewall found. Port $ROUTER_PORT will be open if network allows."
         warning "Consider installing ufw (Ubuntu/Debian) or firewalld (RHEL/CentOS)"
     fi
     
-    info "Druid Router API will be accessible on port 8888"
+    info "Druid Router API will be accessible on port $ROUTER_PORT"
 }
 
 # ============================================
@@ -998,22 +1104,32 @@ EOF
 
 API ACCESS (EXTERNAL)
 ================================================================================
-Druid Router API is accessible externally on port 8888
+Druid Router API is accessible externally on port $ROUTER_PORT
 
 Direct Access:
-  http://$(hostname -I | awk '{print $1}'):8888
+  http://$(hostname -I | awk '{print $1}'):$ROUTER_PORT
 
 Web Console:
-  http://$(hostname -I | awk '{print $1}'):8888/unified-console.html
+  http://$(hostname -I | awk '{print $1}'):$ROUTER_PORT/unified-console.html
 
 SQL API Endpoint:
-  http://$(hostname -I | awk '{print $1}'):8888/druid/v2/sql
+  http://$(hostname -I | awk '{print $1}'):$ROUTER_PORT/druid/v2/sql
 
 Native Query API:
-  http://$(hostname -I | awk '{print $1}'):8888/druid/v2
+  http://$(hostname -I | awk '{print $1}'):$ROUTER_PORT/druid/v2
 
 ⚠️  SECURITY: All requests require authentication (username/password)
-⚠️  Firewall configured to allow port 8888
+⚠️  Firewall configured to allow port $ROUTER_PORT
+
+PORTS CONFIGURED
+================================================================================
+Router (API):        $ROUTER_PORT (0.0.0.0 - External)
+Coordinator:         $COORDINATOR_PORT (localhost)
+Broker:              $BROKER_PORT (localhost)
+Historical:          $HISTORICAL_PORT (localhost)
+MiddleManager:       $MIDDLEMANAGER_PORT (localhost)
+ZooKeeper Client:    $ZK_PORT (localhost)
+ZooKeeper Admin:     $ZK_ADMIN_PORT (localhost)
 
 SERVICE MANAGEMENT
 ================================================================================
@@ -1039,13 +1155,13 @@ Common issues:
 EXAMPLE API USAGE
 ================================================================================
 # Health check
-curl http://$(hostname -I | awk '{print $1}'):8888/status/health
+curl http://$(hostname -I | awk '{print $1}'):$ROUTER_PORT/status/health
 
 # SQL Query (with authentication)
 curl -X POST -H 'Content-Type: application/json' \\
   -u admin:YOUR_PASSWORD \\
   -d '{"query":"SELECT * FROM INFORMATION_SCHEMA.TABLES"}' \\
-  http://$(hostname -I | awk '{print $1}'):8888/druid/v2/sql
+  http://$(hostname -I | awk '{print $1}'):$ROUTER_PORT/druid/v2/sql
 
 NEXT STEPS
 ================================================================================
@@ -1122,10 +1238,11 @@ main() {
     echo "  • Clean up any existing Druid installations"
     echo "  • Remove and recreate the Druid system user"
     echo "  • Auto-detect and install the latest Druid version"
+    echo "  • Configure ports (customizable)"
     echo "  • Configure authentication and authorization"
-    echo "  • Bind Router (API) to 0.0.0.0 for external access on port 8888"
+    echo "  • Bind Router (API) to 0.0.0.0 for external access"
     echo "  • Set up systemd service management"
-    echo "  • Configure firewall to allow port 8888"
+    echo "  • Configure firewall to allow Router port"
     echo ""
     warning "⚠️  Router API will be externally accessible - ensure strong passwords!"
     echo ""
@@ -1146,6 +1263,7 @@ main() {
     create_user
     download_druid
     create_directories
+    prompt_ports
     prompt_credentials
     configure_security
     configure_services
@@ -1192,16 +1310,20 @@ main() {
         echo "  3. Create read-only user (after Druid is ready):"
         echo "     sudo -u druid $DRUID_HOME/bin/create-users.sh"
         echo ""
-        echo "  4. Access Druid API (externally accessible on port 8888):"
+        echo "  4. Access Druid API (externally accessible on port $ROUTER_PORT):"
     else
-        echo "  3. Access Druid API (externally accessible on port 8888):"
+        echo "  3. Access Druid API (externally accessible on port $ROUTER_PORT):"
     fi
-    echo "     http://$(hostname -I | awk '{print $1}'):8888"
+    echo "     http://$(hostname -I | awk '{print $1}'):$ROUTER_PORT"
     echo ""
     info "API Endpoints:"
-    echo "  Web Console: http://$(hostname -I | awk '{print $1}'):8888/unified-console.html"
-    echo "  SQL API:     http://$(hostname -I | awk '{print $1}'):8888/druid/v2/sql"
-    echo "  Native API:  http://$(hostname -I | awk '{print $1}'):8888/druid/v2"
+    echo "  Web Console: http://$(hostname -I | awk '{print $1}'):$ROUTER_PORT/unified-console.html"
+    echo "  SQL API:     http://$(hostname -I | awk '{print $1}'):$ROUTER_PORT/druid/v2/sql"
+    echo "  Native API:  http://$(hostname -I | awk '{print $1}'):$ROUTER_PORT/druid/v2"
+    echo ""
+    info "Configured Ports:"
+    echo "  Router (API): $ROUTER_PORT"
+    echo "  ZooKeeper:    $ZK_PORT (admin: $ZK_ADMIN_PORT)"
     echo ""
     info "Troubleshooting:"
     echo "  If services don't start: $DRUID_HOME/bin/fix-permissions.sh"
