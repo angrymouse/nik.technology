@@ -115,7 +115,6 @@ read_password() {
             password=$(generate_password)
             info "Auto-generated password: $password"
             info "SAVE THIS PASSWORD - it will only be shown once!"
-            sleep 3
             echo "$password"
             return
         fi
