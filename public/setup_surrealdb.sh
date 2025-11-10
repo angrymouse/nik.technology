@@ -33,14 +33,6 @@ MAX_CONNECTIONS=10000
 QUERY_TIMEOUT="300s"
 TRANSACTION_TIMEOUT="300s"
 
-# RocksDB Configuration Optimized for 770GB RAM, 64 cores
-ROCKSDB_WRITE_BUFFER_SIZE=$((256 * 1024 * 1024))  # 256MB per memtable
-ROCKSDB_MAX_WRITE_BUFFER_NUMBER=8                   # 8 memtables
-ROCKSDB_TARGET_FILE_SIZE_BASE=$((256 * 1024 * 1024))  # 256MB SST files
-ROCKSDB_MAX_BYTES_FOR_LEVEL_BASE=$((2 * 1024 * 1024 * 1024))  # 2GB
-ROCKSDB_BLOCK_CACHE_SIZE=$((50 * 1024 * 1024 * 1024))  # 50GB block cache
-ROCKSDB_MAX_BACKGROUND_JOBS=32                      # Use many cores for compaction
-
 echo "[1/9] Creating system user and group..."
 if ! id -u $SURREALDB_USER > /dev/null 2>&1; then
     groupadd --system $SURREALDB_GROUP
@@ -118,33 +110,11 @@ SURREAL_USER=$ROOT_USERNAME
 SURREAL_PASS=$ROOT_PASSWORD
 SURREAL_BIND=$BIND_ADDRESS
 SURREAL_LOG=info
-
-# Performance Tuning for 64-core, 770GB RAM
-# Optimize for high-throughput workloads
-SURREAL_QUERY_TIMEOUT=$QUERY_TIMEOUT
-SURREAL_TRANSACTION_TIMEOUT=$TRANSACTION_TIMEOUT
-
-# RocksDB Performance Tuning (Optimized for 770GB RAM, 64 cores)
-# These settings maximize throughput for high-performance hardware
-ROCKSDB_WRITE_BUFFER_SIZE=$ROCKSDB_WRITE_BUFFER_SIZE
-ROCKSDB_MAX_WRITE_BUFFER_NUMBER=$ROCKSDB_MAX_WRITE_BUFFER_NUMBER
-ROCKSDB_TARGET_FILE_SIZE_BASE=$ROCKSDB_TARGET_FILE_SIZE_BASE
-ROCKSDB_MAX_BYTES_FOR_LEVEL_BASE=$ROCKSDB_MAX_BYTES_FOR_LEVEL_BASE
-ROCKSDB_BLOCK_CACHE_SIZE=$ROCKSDB_BLOCK_CACHE_SIZE
-ROCKSDB_MAX_BACKGROUND_JOBS=$ROCKSDB_MAX_BACKGROUND_JOBS
-
-# Strict mode for production
-SURREAL_STRICT=true
-
-# Security
-SURREAL_CAPS_ALLOW_ALL=false
-SURREAL_CAPS_ALLOW_SCRIPTING=true
-SURREAL_CAPS_ALLOW_GUESTS=false
 EOF
 
 chmod 640 $ENV_FILE
 chown root:$SURREALDB_GROUP $ENV_FILE
-echo "✓ Environment configuration created with RocksDB tuning"
+echo "✓ Environment configuration created"
 
 echo "[6/9] Configuring system limits for high performance..."
 # Create limits configuration for high-performance
@@ -194,6 +164,8 @@ Description=SurrealDB High-Performance Database
 Documentation=https://surrealdb.com/docs
 After=network-online.target
 Wants=network-online.target
+StartLimitIntervalSec=300
+StartLimitBurst=5
 
 [Service]
 Type=simple
@@ -228,8 +200,6 @@ TasksMax=infinity
 # Restart policy
 Restart=always
 RestartSec=5
-StartLimitBurst=5
-StartLimitIntervalSec=300
 
 # Working directory
 WorkingDirectory=$SURREALDB_HOME
@@ -246,7 +216,6 @@ ExecStart=$SURREALDB_BIN start \\
     --user \${SURREAL_USER} \\
     --pass \${SURREAL_PASS} \\
     --log \${SURREAL_LOG} \\
-    --strict \\
     \${SURREAL_PATH}
 
 # Graceful shutdown
@@ -407,14 +376,15 @@ echo "⚠️  Firewall: If exposing externally, configure firewall:"
 echo "   ufw allow 8000/tcp"
 echo ""
 echo "=== Performance Configuration ==="
-echo "Storage Engine: RocksDB (High-Performance)"
+echo "Storage Engine: RocksDB"
 echo "Optimized for: 64 cores, 770GB RAM"
-echo "- Write buffer: 256MB x 8 memtables = 2GB total"
-echo "- Block cache: 50GB (for hot data)"
-echo "- Background jobs: 32 (parallel compaction)"
 echo "- Max connections: $MAX_CONNECTIONS"
 echo "- Query timeout: $QUERY_TIMEOUT"
 echo "- System limits: Configured for high throughput"
+echo ""
+echo "Note: RocksDB uses internal auto-tuning for your hardware."
+echo "For advanced RocksDB tuning, you may need to build SurrealDB"
+echo "from source with custom RocksDB options."
 echo ""
 echo "=== Next Steps ==="
 echo "1. Review and adjust: $ENV_FILE"
