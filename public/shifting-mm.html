@@ -1,0 +1,1038 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MM Bot Simulator</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "SF Mono", "Cascadia Code", "Consolas", monospace;
+        background: #0a0e17;
+        color: #c8d3e0;
+        font-size: 13px;
+      }
+
+      .layout {
+        display: grid;
+        grid-template-columns: 280px 1fr 280px;
+        grid-template-rows: auto 1fr auto auto;
+        height: 100vh;
+        gap: 1px;
+        background: #1a1f2e;
+      }
+
+      /* Header */
+      .header {
+        grid-column: 1 / -1;
+        background: #0f1320;
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #1a1f2e;
+      }
+      .header h1 {
+        font-size: 14px;
+        font-weight: 600;
+        color: #e2e8f0;
+        letter-spacing: 0.5px;
+      }
+      .price-display {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+      }
+      .price-display .label {
+        color: #64748b;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .price-display .value {
+        font-size: 18px;
+        font-weight: 700;
+        color: #e2e8f0;
+      }
+      .price-display .spread {
+        color: #f59e0b;
+      }
+
+      /* Stats panels */
+      .panel {
+        background: #0f1320;
+        padding: 16px;
+        overflow-y: auto;
+      }
+      .panel h2 {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: #64748b;
+        margin-bottom: 12px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #1a1f2e;
+      }
+      .stat-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 6px 0;
+      }
+      .stat-row .label {
+        color: #64748b;
+      }
+      .stat-row .value {
+        color: #e2e8f0;
+        font-weight: 500;
+      }
+      .stat-row .value.positive {
+        color: #22c55e;
+      }
+      .stat-row .value.negative {
+        color: #ef4444;
+      }
+      .stat-row .value.yes-color {
+        color: #3b82f6;
+      }
+      .stat-row .value.no-color {
+        color: #ef4444;
+      }
+
+      .divider {
+        height: 1px;
+        background: #1a1f2e;
+        margin: 12px 0;
+      }
+
+      /* Order book */
+      .book-container {
+        background: #0a0e17;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      .book-header {
+        display: grid;
+        grid-template-columns: 1fr 80px 1fr;
+        padding: 8px 16px;
+        background: #0f1320;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #64748b;
+        border-bottom: 1px solid #1a1f2e;
+      }
+      .book-header span:last-child {
+        text-align: right;
+      }
+      .book-scroll {
+        flex: 1;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+      }
+      .book-row {
+        display: grid;
+        grid-template-columns: 1fr 80px 1fr;
+        padding: 3px 16px;
+        align-items: center;
+        position: relative;
+        min-height: 24px;
+      }
+      .book-row:hover {
+        background: rgba(255, 255, 255, 0.03);
+      }
+      .book-row .no-bar {
+        height: 20px;
+        background: rgba(239, 68, 68, 0.15);
+        border-right: 2px solid rgba(239, 68, 68, 0.5);
+        justify-self: end;
+        min-width: 0;
+      }
+      .book-row .yes-bar {
+        height: 20px;
+        background: rgba(59, 130, 246, 0.15);
+        border-left: 2px solid rgba(59, 130, 246, 0.5);
+        min-width: 0;
+      }
+      .book-row .price-cell {
+        text-align: center;
+        font-weight: 600;
+        font-size: 12px;
+        z-index: 1;
+      }
+      .book-row .price-cell.mid {
+        color: #f59e0b;
+      }
+      .book-row .amount-no {
+        color: #ef4444;
+        font-size: 11px;
+        text-align: right;
+        padding-right: 8px;
+      }
+      .book-row .amount-yes {
+        color: #3b82f6;
+        font-size: 11px;
+        padding-left: 8px;
+      }
+      .book-mid-marker {
+        background: rgba(245, 158, 11, 0.08);
+        border-top: 1px solid rgba(245, 158, 11, 0.2);
+        border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+      }
+
+      /* Controls */
+      .controls {
+        grid-column: 1 / -1;
+        background: #0f1320;
+        padding: 16px 20px;
+        border-top: 1px solid #1a1f2e;
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .control-group {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .control-group label {
+        color: #64748b;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .control-group input {
+        background: #1a1f2e;
+        border: 1px solid #2a3040;
+        color: #e2e8f0;
+        padding: 6px 10px;
+        border-radius: 4px;
+        width: 80px;
+        font-family: inherit;
+        font-size: 13px;
+      }
+      .control-group input:focus {
+        outline: none;
+        border-color: #3b82f6;
+      }
+      .btn {
+        padding: 8px 20px;
+        border: none;
+        border-radius: 4px;
+        font-family: inherit;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: opacity 0.15s;
+      }
+      .btn:hover {
+        opacity: 0.85;
+      }
+      .btn:active {
+        opacity: 0.7;
+      }
+      .btn-yes {
+        background: #3b82f6;
+        color: white;
+      }
+      .btn-no {
+        background: #ef4444;
+        color: white;
+      }
+      .btn-reset {
+        background: #374151;
+        color: #e2e8f0;
+      }
+
+      /* Trade log */
+      .log {
+        max-height: 200px;
+        overflow-y: auto;
+        margin-top: 8px;
+      }
+      .log-entry {
+        padding: 3px 0;
+        font-size: 11px;
+        color: #64748b;
+        border-bottom: 1px solid #0a0e17;
+      }
+      .log-entry .log-yes {
+        color: #3b82f6;
+      }
+      .log-entry .log-no {
+        color: #ef4444;
+      }
+      .log-entry .log-price {
+        color: #f59e0b;
+      }
+
+      /* User position */
+      .position-bar {
+        display: flex;
+        gap: 8px;
+        margin-top: 8px;
+      }
+      .pos-badge {
+        padding: 4px 8px;
+        border-radius: 3px;
+        font-size: 11px;
+        font-weight: 600;
+      }
+      .pos-badge.yes {
+        background: rgba(59, 130, 246, 0.15);
+        color: #3b82f6;
+      }
+      .pos-badge.no {
+        background: rgba(239, 68, 68, 0.15);
+        color: #ef4444;
+      }
+
+      /* State + Log bottom panel */
+      .bottom-panel {
+        grid-column: 1 / -1;
+        background: #0f1320;
+        border-top: 1px solid #1a1f2e;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1px;
+        max-height: 220px;
+        overflow: hidden;
+      }
+      .bottom-section {
+        padding: 10px 16px;
+        overflow-y: auto;
+      }
+      .bottom-section h2 {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: #64748b;
+        margin-bottom: 8px;
+        padding-bottom: 6px;
+        border-bottom: 1px solid #1a1f2e;
+        position: sticky;
+        top: 0;
+        background: #0f1320;
+      }
+      .state-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 16px;
+      }
+      .state-grid .stat-row {
+        padding: 3px 0;
+        font-size: 12px;
+      }
+      .state-grid .label {
+        font-size: 11px;
+      }
+      .trade-log-bottom {
+        max-height: none;
+      }
+      .trade-log-bottom .log-entry {
+        padding: 4px 0;
+        font-size: 12px;
+        display: grid;
+        grid-template-columns: 50px 1fr;
+        gap: 8px;
+      }
+      .log-time {
+        color: #475569;
+        font-size: 11px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="layout">
+      <div class="header">
+        <h1>MM Bot Simulator</h1>
+        <div class="price-display">
+          <div><span class="label">Price </span><span class="value" id="hdr-price">40.0%</span></div>
+          <div><span class="label">Spread </span><span class="value spread" id="hdr-spread">--</span></div>
+          <div><span class="label">Best Yes </span><span class="value yes-color" id="hdr-best-yes">--</span></div>
+          <div><span class="label">Best No </span><span class="value no-color" id="hdr-best-no">--</span></div>
+        </div>
+      </div>
+
+      <!-- Left panel: User -->
+      <div class="panel">
+        <h2>User</h2>
+        <div class="stat-row"><span class="label">Cash</span><span class="value" id="user-cash">$1,000.00</span></div>
+        <div class="stat-row">
+          <span class="label">Yes Shares</span><span class="value yes-color" id="user-yes">0</span>
+        </div>
+        <div class="stat-row">
+          <span class="label">Avg Yes Price</span><span class="value" id="user-yes-avg">--</span>
+        </div>
+        <div class="stat-row">
+          <span class="label">No Shares</span><span class="value no-color" id="user-no">0</span>
+        </div>
+        <div class="stat-row">
+          <span class="label">Avg No Price</span><span class="value" id="user-no-avg">--</span>
+        </div>
+        <div class="divider"></div>
+        <div class="stat-row">
+          <span class="label">Portfolio Value</span><span class="value" id="user-portfolio">$1,000.00</span>
+        </div>
+        <div class="stat-row">
+          <span class="label">Unrealized P&L</span><span class="value" id="user-pnl">$0.00</span>
+        </div>
+
+        <div class="divider"></div>
+        <h2>Trade Log</h2>
+        <div class="log" id="trade-log"></div>
+      </div>
+
+      <!-- Center: Order book -->
+      <div class="book-container">
+        <div class="book-header">
+          <span>No (Sell)</span>
+          <span style="text-align: center">Price</span>
+          <span>Yes (Buy)</span>
+        </div>
+        <div class="book-scroll" id="book-scroll"></div>
+      </div>
+
+      <!-- Right panel: MM Bot -->
+      <div class="panel">
+        <h2>Market Maker</h2>
+        <div class="stat-row">
+          <span class="label">Capital</span><span class="value" id="mm-capital">$1,000.00</span>
+        </div>
+        <div class="stat-row">
+          <span class="label">Spread Profit</span><span class="value positive" id="mm-profit">$0.00</span>
+        </div>
+        <div class="stat-row"><span class="label">Book Orders</span><span class="value" id="mm-orders">--</span></div>
+        <div class="stat-row">
+          <span class="label">Yes Liquidity</span><span class="value yes-color" id="mm-yes-liq">--</span>
+        </div>
+        <div class="stat-row">
+          <span class="label">No Liquidity</span><span class="value no-color" id="mm-no-liq">--</span>
+        </div>
+        <div class="divider"></div>
+        <h2>Inventory Exposure</h2>
+        <div class="stat-row"><span class="label">Yes Sold</span><span class="value" id="mm-yes-sold">0</span></div>
+        <div class="stat-row"><span class="label">No Sold</span><span class="value" id="mm-no-sold">0</span></div>
+        <div class="stat-row">
+          <span class="label">Net Exposure</span><span class="value" id="mm-net-exposure">0</span>
+        </div>
+        <div class="divider"></div>
+        <h2>Parameters</h2>
+        <div class="stat-row"><span class="label">Spacing</span><span class="value" id="p-spacing">200 bps</span></div>
+        <div class="stat-row">
+          <span class="label">Spread Zone</span><span class="value" id="p-spread">2000 bps</span>
+        </div>
+        <div class="stat-row">
+          <span class="label">Min Spread</span><span class="value" id="p-minspread">1000 bps</span>
+        </div>
+        <div class="stat-row">
+          <span class="label">Order Depth</span><span class="value" id="p-depth">5000 bps</span>
+        </div>
+      </div>
+
+      <!-- State + Trade Log -->
+      <div class="bottom-panel">
+        <div class="bottom-section">
+          <h2>Engine State</h2>
+          <div class="state-grid" id="state-grid"></div>
+        </div>
+        <div class="bottom-section">
+          <h2>Trade Log</h2>
+          <div class="trade-log-bottom" id="trade-log-bottom"></div>
+        </div>
+      </div>
+
+      <!-- Bottom controls -->
+      <div class="controls">
+        <div class="control-group">
+          <label>Amount $</label>
+          <input type="number" id="trade-amount" value="5" min="0.1" step="1" />
+        </div>
+        <button class="btn btn-yes" onclick="executeTrade('yes')">Buy Yes</button>
+        <button class="btn btn-no" onclick="executeTrade('no')">Buy No</button>
+        <div style="width: 1px; height: 24px; background: #2a3040"></div>
+        <button class="btn btn-reset" onclick="resetAll()">Reset</button>
+        <div class="control-group">
+          <label>Auto-walk</label>
+          <button class="btn btn-yes" onclick="autoWalk('yes', 20)" style="padding: 6px 12px; font-size: 11px">
+            +20 Yes
+          </button>
+          <button class="btn btn-no" onclick="autoWalk('no', 20)" style="padding: 6px 12px; font-size: 11px">
+            +20 No
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // ============================================================
+      // PCHIP (inlined from pchip.js)
+      // ============================================================
+      function validatePoints(points) {
+        for (let i = 0; i < points.length; i++) {
+          if (i > 0 && !(points[i].x > points[i - 1].x))
+            throw new RangeError("PCHIP x values must be strictly increasing");
+        }
+        return points;
+      }
+      function findSegmentIndex(points, x) {
+        let low = 0,
+          high = points.length - 2;
+        while (low <= high) {
+          const mid = (low + high) >> 1;
+          if (x < points[mid].x) {
+            high = mid - 1;
+            continue;
+          }
+          if (x >= points[mid + 1].x) {
+            low = mid + 1;
+            continue;
+          }
+          return mid;
+        }
+        return Math.max(0, Math.min(points.length - 2, low));
+      }
+      function integrateSegment(points, tangents, index, t = 1) {
+        const p0 = points[index],
+          p1 = points[index + 1];
+        const h = p1.x - p0.x;
+        const t2 = t * t,
+          t3 = t2 * t,
+          t4 = t3 * t;
+        return (
+          h *
+          (p0.y * (t4 / 2 - t3 + t) +
+            h * tangents[index] * (t4 / 4 - (2 * t3) / 3 + t2 / 2) +
+            p1.y * (-t4 / 2 + t3) +
+            h * tangents[index + 1] * (t4 / 4 - t3 / 3))
+        );
+      }
+      function computePchipTangents(points) {
+        validatePoints(points);
+        const n = points.length;
+        if (n === 0) return [];
+        if (n === 1) return [0];
+        const tangents = new Array(n),
+          h = new Array(n - 1),
+          delta = new Array(n - 1);
+        for (let i = 0; i < n - 1; i++) {
+          h[i] = points[i + 1].x - points[i].x;
+          delta[i] = (points[i + 1].y - points[i].y) / h[i];
+        }
+        if (n === 2) {
+          tangents[0] = delta[0];
+          tangents[1] = delta[0];
+          return tangents;
+        }
+        tangents[0] = ((2 * h[0] + h[1]) * delta[0] - h[0] * delta[1]) / (h[0] + h[1]);
+        if (tangents[0] * delta[0] < 0) tangents[0] = 0;
+        else if (Math.abs(tangents[0]) > 3 * Math.abs(delta[0])) tangents[0] = 3 * delta[0];
+        const last = n - 2;
+        tangents[n - 1] =
+          ((2 * h[last] + h[last - 1]) * delta[last] - h[last] * delta[last - 1]) / (h[last] + h[last - 1]);
+        if (tangents[n - 1] * delta[last] < 0) tangents[n - 1] = 0;
+        else if (Math.abs(tangents[n - 1]) > 3 * Math.abs(delta[last])) tangents[n - 1] = 3 * delta[last];
+        for (let i = 1; i < n - 1; i++) {
+          if (delta[i - 1] * delta[i] <= 0) {
+            tangents[i] = 0;
+            continue;
+          }
+          const w1 = 2 * h[i] + h[i - 1],
+            w2 = h[i] + 2 * h[i - 1];
+          tangents[i] = (w1 + w2) / (w1 / delta[i - 1] + w2 / delta[i]);
+        }
+        return tangents;
+      }
+      function integratePchip(points, x, tangents) {
+        if (points.length < 2) return 0;
+        if (x <= points[0].x) return 0;
+        const limitX = Math.min(x, points[points.length - 1].x);
+        let sum = 0;
+        for (let i = 0; i < points.length - 1; i++) {
+          if (points[i + 1].x <= limitX) {
+            sum += integrateSegment(points, tangents, i, 1);
+            continue;
+          }
+          if (points[i].x < limitX)
+            sum += integrateSegment(points, tangents, i, (limitX - points[i].x) / (points[i + 1].x - points[i].x));
+          break;
+        }
+        return sum;
+      }
+      function createPchip(pts) {
+        const cp = pts.map((p) => ({ x: p.x, y: p.y }));
+        const tan = computePchipTangents(cp);
+        return {
+          integralAt(x) {
+            return integratePchip(cp, x, tan);
+          },
+          totalIntegral() {
+            return integratePchip(cp, cp[cp.length - 1].x, tan);
+          },
+        };
+      }
+
+      // ============================================================
+      // MARKET MAKER ENGINE (from mmbots-v3.js)
+      // ============================================================
+      const capital = 1000;
+      const curvePoints = [
+        { x: 0, y: 0.7557 },
+        { x: 7000, y: 1.4806 },
+        { x: 14000, y: 2.6215 },
+        { x: 21000, y: 4.1945 },
+        { x: 28000, y: 6.0653 },
+        { x: 35000, y: 7.926 },
+        { x: 42000, y: 9.3602 },
+        { x: 50000, y: 10.0 },
+        { x: 58000, y: 9.3602 },
+        { x: 65000, y: 7.926 },
+        { x: 72000, y: 6.0653 },
+        { x: 79000, y: 4.1945 },
+        { x: 86000, y: 2.6215 },
+        { x: 93000, y: 1.4806 },
+        { x: 100000, y: 0.7557 },
+      ];
+      const normalDistro = createPchip(curvePoints);
+      const spacing = 200;
+      const maxPriceBps = 100000;
+      const spreadBps = 2000;
+      const minSpreadBps = 1000;
+      const orderDepthBps = 5000;
+
+      let currentPriceBps = 40000;
+      let profit = 0;
+      let currentBookIdGenerator = 0;
+
+      // Build full book
+      const prefilledIntegralBook = [];
+      for (let i = spacing; i < maxPriceBps; i += spacing) {
+        prefilledIntegralBook.push(normalDistro.integralAt(i) - normalDistro.integralAt(i - spacing));
+      }
+      const totalIntegral = normalDistro.totalIntegral();
+      const fullBook = prefilledIntegralBook.map((seg, i) => ({
+        amount: (seg / totalIntegral) * capital,
+        priceBps: (i + 1) * spacing,
+      }));
+
+      const getIndexByPrice = (price) => Math.round(price / spacing) - 1;
+
+      function getVisibleBook() {
+        return fullBook.filter(
+          (o) =>
+            Math.abs(currentPriceBps - o.priceBps) < orderDepthBps &&
+            Math.abs(currentPriceBps - o.priceBps) > spreadBps,
+        );
+      }
+
+      let currentBook = getVisibleBook().map((order) => ({
+        ...order,
+        oid: ++currentBookIdGenerator,
+        type: order.priceBps > currentPriceBps ? "yes" : "no",
+      }));
+
+      function reconcileBook() {
+        const amountByPrice = new Map();
+        for (const o of currentBook) {
+          amountByPrice.set(o.priceBps, (amountByPrice.get(o.priceBps) || 0) + o.amount);
+        }
+        const newBook = [];
+        for (const fb of fullBook) {
+          const dist = Math.abs(currentPriceBps - fb.priceBps);
+          if (dist >= orderDepthBps) continue;
+          const existing = amountByPrice.get(fb.priceBps);
+          if (dist > spreadBps) {
+            newBook.push({
+              oid: ++currentBookIdGenerator,
+              type: fb.priceBps > currentPriceBps ? "yes" : "no",
+              priceBps: fb.priceBps,
+              amount: existing !== undefined ? Math.min(existing, fb.amount) : fb.amount,
+            });
+          } else if (existing !== undefined && existing > 0) {
+            newBook.push({
+              oid: ++currentBookIdGenerator,
+              type: fb.priceBps > currentPriceBps ? "yes" : "no",
+              priceBps: fb.priceBps,
+              amount: Math.min(existing, fb.amount),
+            });
+          }
+        }
+        currentBook = newBook;
+      }
+
+      function fill(amount, side) {
+        let providerSide = currentBook
+          .filter((o) => o.type == side)
+          .sort((a, b) => Math.abs(currentPriceBps - a.priceBps) - Math.abs(currentPriceBps - b.priceBps));
+        let filled = 0;
+        const fillDetails = []; // track what prices were filled at
+        for (let i = 0; filled < amount && i < providerSide.length; i++) {
+          const fillable = Math.min(providerSide[i].amount, amount - filled);
+          filled += fillable;
+          providerSide[i].amount -= fillable;
+          if (fillable > 0) fillDetails.push({ priceBps: providerSide[i].priceBps, amount: fillable });
+        }
+        const bestProviderLive = providerSide.find((o) => o.amount > 0);
+        let oppositeSide = currentBook
+          .filter((o) => o.type != side)
+          .sort((a, b) => Math.abs(currentPriceBps - a.priceBps) - Math.abs(currentPriceBps - b.priceBps));
+        if (oppositeSide.length === 0) {
+          const exactIdx = currentPriceBps / spacing;
+          const seedIdx = side === "yes" ? Math.ceil(exactIdx) - 2 : Math.floor(exactIdx);
+          if (fullBook[seedIdx]) {
+            const seed = {
+              oid: ++currentBookIdGenerator,
+              type: side === "yes" ? "no" : "yes",
+              priceBps: fullBook[seedIdx].priceBps,
+              amount: 0,
+            };
+            currentBook.push(seed);
+            oppositeSide = [seed];
+          }
+        }
+        let toPropBack = filled;
+        for (let i = 0; i < oppositeSide.length && toPropBack > 0; i++) {
+          const order = oppositeSide[i];
+          const shadowIdx = getIndexByPrice(order.priceBps);
+          const shadowOrder = fullBook[shadowIdx];
+          if (shadowOrder) {
+            const room = shadowOrder.amount - order.amount;
+            if (room > 0) {
+              const allocated = Math.min(toPropBack, room);
+              order.amount += allocated;
+              toPropBack -= allocated;
+            }
+          }
+        }
+        if (toPropBack > 0 && oppositeSide.length > 0) {
+          let origIdx = getIndexByPrice(oppositeSide[0].priceBps);
+          while (toPropBack > 0) {
+            origIdx += side === "yes" ? 1 : -1;
+            const orderToAdd = fullBook[origIdx];
+            if (!orderToAdd) break;
+            if (bestProviderLive && Math.abs(orderToAdd.priceBps - bestProviderLive.priceBps) < minSpreadBps) break;
+            const amt = Math.min(orderToAdd.amount, toPropBack);
+            currentBook.push({
+              oid: ++currentBookIdGenerator,
+              type: side == "yes" ? "no" : "yes",
+              priceBps: orderToAdd.priceBps,
+              amount: amt,
+            });
+            toPropBack -= amt;
+          }
+        }
+        profit += toPropBack;
+        const bestYes = currentBook
+          .filter((o) => o.type == "yes" && o.amount > 0)
+          .sort((a, b) => a.priceBps - b.priceBps)[0];
+        const bestNo = currentBook
+          .filter((o) => o.type == "no" && o.amount > 0)
+          .sort((a, b) => b.priceBps - a.priceBps)[0];
+        if (bestYes && bestNo) currentPriceBps = (bestYes.priceBps + bestNo.priceBps) / 2;
+        reconcileBook();
+        return { filled, fillDetails, partial: filled < amount };
+      }
+
+      // ============================================================
+      // USER STATE
+      // ============================================================
+      let userCash = 1000;
+      let userYesShares = 0;
+      let userNoShares = 0;
+      let userYesCost = 0; // total cost basis
+      let userNoCost = 0;
+      let mmYesSold = 0;
+      let mmNoSold = 0;
+
+      // ============================================================
+      // UI
+      // ============================================================
+      function getSpreadInfo() {
+        const bestYes = currentBook
+          .filter((o) => o.type == "yes" && o.amount > 0)
+          .sort((a, b) => a.priceBps - b.priceBps)[0];
+        const bestNo = currentBook
+          .filter((o) => o.type == "no" && o.amount > 0)
+          .sort((a, b) => b.priceBps - a.priceBps)[0];
+        return { bestYes, bestNo, spread: bestYes && bestNo ? bestYes.priceBps - bestNo.priceBps : null };
+      }
+
+      function formatBps(bps) {
+        return (bps / 1000).toFixed(1) + "%";
+      }
+      function formatDollar(v) {
+        return "$" + v.toFixed(2);
+      }
+
+      function renderBook() {
+        const scroll = document.getElementById("book-scroll");
+        const { bestYes, bestNo } = getSpreadInfo();
+
+        // Collect all price levels with amounts
+        const noOrders = currentBook
+          .filter((o) => o.type == "no" && o.amount > 0)
+          .sort((a, b) => b.priceBps - a.priceBps);
+        const yesOrders = currentBook
+          .filter((o) => o.type == "yes" && o.amount > 0)
+          .sort((a, b) => a.priceBps - b.priceBps);
+
+        const maxAmount = Math.max(...currentBook.filter((o) => o.amount > 0).map((o) => o.amount), 0.01);
+
+        // Build price levels to display: all orders + mid price indicator
+        const allOrders = [...currentBook].filter((o) => o.amount > 0).sort((a, b) => b.priceBps - a.priceBps);
+
+        // Group by price
+        const byPrice = new Map();
+        for (const o of allOrders) {
+          if (!byPrice.has(o.priceBps)) byPrice.set(o.priceBps, { yes: 0, no: 0 });
+          const entry = byPrice.get(o.priceBps);
+          if (o.type === "yes") entry.yes += o.amount;
+          else entry.no += o.amount;
+        }
+
+        const prices = [...byPrice.keys()].sort((a, b) => b - a);
+
+        let html = "";
+        let midInserted = false;
+        for (const price of prices) {
+          // Insert mid-price marker
+          if (!midInserted && price <= currentPriceBps) {
+            html += `<div class="book-row book-mid-marker"><div></div><div class="price-cell mid">${formatBps(currentPriceBps)} mid</div><div></div></div>`;
+            midInserted = true;
+          }
+
+          const d = byPrice.get(price);
+          const noWidth = (d.no / maxAmount) * 100;
+          const yesWidth = (d.yes / maxAmount) * 100;
+
+          html += `<div class="book-row">`;
+          html += `<div style="display:flex;align-items:center;justify-content:flex-end;gap:4px">`;
+          if (d.no > 0) {
+            html += `<span class="amount-no">$${d.no.toFixed(2)}</span>`;
+            html += `<div class="no-bar" style="width:${Math.max(noWidth, 2)}%"></div>`;
+          }
+          html += `</div>`;
+          html += `<div class="price-cell">${formatBps(price)}</div>`;
+          html += `<div style="display:flex;align-items:center;gap:4px">`;
+          if (d.yes > 0) {
+            html += `<div class="yes-bar" style="width:${Math.max(yesWidth, 2)}%"></div>`;
+            html += `<span class="amount-yes">$${d.yes.toFixed(2)}</span>`;
+          }
+          html += `</div>`;
+          html += `</div>`;
+        }
+        if (!midInserted) {
+          html += `<div class="book-row book-mid-marker"><div></div><div class="price-cell mid">${formatBps(currentPriceBps)} mid</div><div></div></div>`;
+        }
+
+        scroll.innerHTML = html;
+
+        // Scroll to mid-price
+        const midRow = scroll.querySelector(".book-mid-marker");
+        if (midRow) midRow.scrollIntoView({ block: "center", behavior: "instant" });
+      }
+
+      function updateStats() {
+        const si = getSpreadInfo();
+
+        // Header
+        document.getElementById("hdr-price").textContent = formatBps(currentPriceBps);
+        document.getElementById("hdr-spread").textContent = si.spread !== null ? si.spread + " bps" : "--";
+        document.getElementById("hdr-best-yes").textContent = si.bestYes ? formatBps(si.bestYes.priceBps) : "--";
+        document.getElementById("hdr-best-no").textContent = si.bestNo ? formatBps(si.bestNo.priceBps) : "--";
+
+        // User
+        document.getElementById("user-cash").textContent = formatDollar(userCash);
+        document.getElementById("user-yes").textContent = userYesShares.toFixed(2);
+        document.getElementById("user-no").textContent = userNoShares.toFixed(2);
+        document.getElementById("user-yes-avg").textContent =
+          userYesShares > 0 ? formatBps((userYesCost / userYesShares) * 100000) : "--";
+        document.getElementById("user-no-avg").textContent =
+          userNoShares > 0 ? formatBps((userNoCost / userNoShares) * 100000) : "--";
+
+        // Portfolio: yes shares worth currentPrice, no shares worth (1-currentPrice)
+        const yesVal = userYesShares * (currentPriceBps / 100000);
+        const noVal = userNoShares * ((100000 - currentPriceBps) / 100000);
+        const portfolioVal = userCash + yesVal + noVal;
+        const pnl = portfolioVal - 1000;
+        document.getElementById("user-portfolio").textContent = formatDollar(portfolioVal);
+        const pnlEl = document.getElementById("user-pnl");
+        pnlEl.textContent = (pnl >= 0 ? "+" : "") + formatDollar(pnl);
+        pnlEl.className = "value " + (pnl >= 0 ? "positive" : "negative");
+
+        // MM
+        document.getElementById("mm-capital").textContent = formatDollar(capital);
+        document.getElementById("mm-profit").textContent = formatDollar(profit);
+        const yesLiq = currentBook.filter((o) => o.type == "yes").reduce((s, o) => s + o.amount, 0);
+        const noLiq = currentBook.filter((o) => o.type == "no").reduce((s, o) => s + o.amount, 0);
+        document.getElementById("mm-orders").textContent = currentBook.filter((o) => o.amount > 0).length;
+        document.getElementById("mm-yes-liq").textContent = formatDollar(yesLiq);
+        document.getElementById("mm-no-liq").textContent = formatDollar(noLiq);
+        document.getElementById("mm-yes-sold").textContent = mmYesSold.toFixed(2);
+        document.getElementById("mm-no-sold").textContent = mmNoSold.toFixed(2);
+        const netExp = mmYesSold - mmNoSold;
+        const netEl = document.getElementById("mm-net-exposure");
+        netEl.textContent = (netExp >= 0 ? "+" : "") + netExp.toFixed(2) + " yes";
+        netEl.className = "value " + (Math.abs(netExp) < 0.01 ? "" : netExp > 0 ? "negative" : "positive");
+      }
+
+      let tradeCounter = 0;
+
+      function addLogEntry(text) {
+        // Left panel log
+        const log = document.getElementById("trade-log");
+        const entry = document.createElement("div");
+        entry.className = "log-entry";
+        entry.innerHTML = text;
+        log.prepend(entry);
+        while (log.children.length > 50) log.removeChild(log.lastChild);
+
+        // Bottom panel log
+        tradeCounter++;
+        const blog = document.getElementById("trade-log-bottom");
+        const bentry = document.createElement("div");
+        bentry.className = "log-entry";
+        bentry.innerHTML = `<span class="log-time">#${tradeCounter}</span><span>${text}</span>`;
+        blog.prepend(bentry);
+        while (blog.children.length > 100) blog.removeChild(blog.lastChild);
+      }
+
+      function updateState() {
+        const si = getSpreadInfo();
+        const yesOrders = currentBook.filter((o) => o.type == "yes" && o.amount > 0);
+        const noOrders = currentBook.filter((o) => o.type == "no" && o.amount > 0);
+        const yesLiq = yesOrders.reduce((s, o) => s + o.amount, 0);
+        const noLiq = noOrders.reduce((s, o) => s + o.amount, 0);
+        const totalDeployed = yesLiq + noLiq;
+        const netExp = mmYesSold - mmNoSold;
+
+        const rows = [
+          ["currentPriceBps", `${currentPriceBps} (${formatBps(currentPriceBps)})`],
+          ["spread", si.spread !== null ? `${si.spread} bps` : "n/a"],
+          ["bestYes", si.bestYes ? `${si.bestYes.priceBps} bps ($${si.bestYes.amount.toFixed(2)})` : "none"],
+          ["bestNo", si.bestNo ? `${si.bestNo.priceBps} bps ($${si.bestNo.amount.toFixed(2)})` : "none"],
+          ["profit", `$${profit.toFixed(4)}`],
+          ["currentBook.length", `${currentBook.length} (${currentBook.filter((o) => o.amount > 0).length} live)`],
+          ["yesLiquidity", `$${yesLiq.toFixed(2)} across ${yesOrders.length} orders`],
+          ["noLiquidity", `$${noLiq.toFixed(2)} across ${noOrders.length} orders`],
+          ["totalDeployed", `$${totalDeployed.toFixed(2)} of $${capital}`],
+          ["mmYesSold", mmYesSold.toFixed(2)],
+          ["mmNoSold", mmNoSold.toFixed(2)],
+          ["netExposure", `${netExp >= 0 ? "+" : ""}${netExp.toFixed(2)} yes`],
+          ["userCash", formatDollar(userCash)],
+          ["userYesShares", userYesShares.toFixed(2)],
+          ["userNoShares", userNoShares.toFixed(2)],
+          ["spacing", `${spacing} bps`],
+          ["spreadBps", `${spreadBps}`],
+          ["minSpreadBps", `${minSpreadBps}`],
+          ["orderDepthBps", `${orderDepthBps}`],
+          ["bookIdGenerator", currentBookIdGenerator],
+        ];
+
+        const grid = document.getElementById("state-grid");
+        grid.innerHTML = rows
+          .map(
+            ([label, value]) =>
+              `<div class="stat-row"><span class="label">${label}</span><span class="value">${value}</span></div>`,
+          )
+          .join("");
+      }
+
+      function executeTrade(side) {
+        const amountInput = document.getElementById("trade-amount");
+        const amount = parseFloat(amountInput.value);
+        if (!amount || amount <= 0) return;
+        if (amount > userCash) {
+          addLogEntry('<span style="color:#f59e0b">Insufficient cash</span>');
+          return;
+        }
+
+        const priceBefore = currentPriceBps;
+        const result = fill(amount, side);
+
+        if (result.filled > 0) {
+          // Compute average fill price
+          let weightedPrice = 0;
+          for (const d of result.fillDetails) {
+            weightedPrice += d.priceBps * d.amount;
+          }
+          const avgPrice = weightedPrice / result.filled;
+          const avgPriceNorm = avgPrice / 100000; // 0-1 range
+
+          // User pays the dollar amount that was filled
+          userCash -= result.filled;
+
+          // Shares received: amount / price_per_share
+          // At price P (in 0-1), buying yes costs P per share, buying no costs (1-P) per share
+          if (side === "yes") {
+            const shares = result.filled / avgPriceNorm;
+            userYesShares += shares;
+            userYesCost += result.filled;
+            mmYesSold += shares;
+          } else {
+            const shares = result.filled / (1 - avgPriceNorm);
+            userNoShares += shares;
+            userNoCost += result.filled;
+            mmNoSold += shares;
+          }
+
+          const sideClass = side === "yes" ? "log-yes" : "log-no";
+          const partialTag = result.partial ? " (partial)" : "";
+          addLogEntry(
+            `Bought <span class="${sideClass}">$${result.filled.toFixed(2)} ${side}</span> @ avg <span class="log-price">${formatBps(avgPrice)}</span>${partialTag}`,
+          );
+        } else {
+          addLogEntry(`<span style="color:#f59e0b">No liquidity for ${side}</span>`);
+        }
+
+        renderBook();
+        updateStats();
+        updateState();
+      }
+
+      function autoWalk(side, count) {
+        const amount = parseFloat(document.getElementById("trade-amount").value) || 5;
+        for (let i = 0; i < count; i++) {
+          if (userCash < amount) break;
+          executeTrade(side);
+        }
+      }
+
+      function resetAll() {
+        currentPriceBps = 40000;
+        profit = 0;
+        currentBookIdGenerator = 0;
+        currentBook = getVisibleBook().map((order) => ({
+          ...order,
+          oid: ++currentBookIdGenerator,
+          type: order.priceBps > currentPriceBps ? "yes" : "no",
+        }));
+        userCash = 1000;
+        userYesShares = 0;
+        userNoShares = 0;
+        userYesCost = 0;
+        userNoCost = 0;
+        mmYesSold = 0;
+        mmNoSold = 0;
+        document.getElementById("trade-log").innerHTML = "";
+        document.getElementById("trade-log-bottom").innerHTML = "";
+        tradeCounter = 0;
+        addLogEntry("System reset");
+        renderBook();
+        updateStats();
+        updateState();
+      }
+
+      // Initial render
+      renderBook();
+      updateStats();
+      updateState();
+    </script>
+  </body>
+</html>
