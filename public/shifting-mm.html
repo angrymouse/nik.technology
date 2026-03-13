@@ -12,35 +12,44 @@
       }
       body {
         font-family: "SF Mono", "Cascadia Code", "Consolas", monospace;
-        background: #0a0e17;
-        color: #c8d3e0;
+        background: #000;
+        color: #bbb;
         font-size: 13px;
+      }
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0a0a0a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #2a2a2a;
+        border-radius: 3px;
       }
 
       .layout {
         display: grid;
         grid-template-columns: 280px 1fr 280px;
-        grid-template-rows: auto 1fr auto auto;
+        grid-template-rows: auto 200px 1fr;
         height: 100vh;
         gap: 1px;
-        background: #1a1f2e;
+        background: #1a1a1a;
       }
 
       /* Header */
       .header {
         grid-column: 1 / -1;
-        background: #0f1320;
-        padding: 12px 20px;
+        background: #0a0a0a;
+        padding: 10px 20px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        border-bottom: 1px solid #1a1f2e;
       }
       .header h1 {
-        font-size: 14px;
+        font-size: 12px;
         font-weight: 600;
-        color: #e2e8f0;
-        letter-spacing: 0.5px;
+        color: #555;
+        letter-spacing: 2px;
       }
       .price-display {
         display: flex;
@@ -48,69 +57,187 @@
         align-items: center;
       }
       .price-display .label {
-        color: #64748b;
-        font-size: 11px;
+        color: #444;
+        font-size: 10px;
         text-transform: uppercase;
         letter-spacing: 1px;
       }
       .price-display .value {
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 700;
-        color: #e2e8f0;
-      }
-      .price-display .spread {
-        color: #f59e0b;
+        color: #ccc;
       }
 
-      /* Stats panels */
+      /* Curve */
+      .curve-section {
+        grid-column: 1 / -1;
+        background: #0a0a0a;
+        position: relative;
+        overflow: hidden;
+      }
+      .curve-section canvas {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      .curve-legend {
+        position: absolute;
+        top: 8px;
+        right: 16px;
+        display: flex;
+        gap: 14px;
+        font-size: 10px;
+        color: #555;
+        letter-spacing: 0.5px;
+      }
+      .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .legend-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 2px;
+      }
+
+      /* Panels */
       .panel {
-        background: #0f1320;
-        padding: 16px;
+        background: #0a0a0a;
+        padding: 14px;
         overflow-y: auto;
       }
       .panel h2 {
-        font-size: 11px;
+        font-size: 10px;
         text-transform: uppercase;
-        letter-spacing: 1.5px;
-        color: #64748b;
-        margin-bottom: 12px;
-        padding-bottom: 8px;
-        border-bottom: 1px solid #1a1f2e;
+        letter-spacing: 2px;
+        color: #444;
+        margin-bottom: 10px;
+        padding-bottom: 6px;
+        border-bottom: 1px solid #1a1a1a;
       }
       .stat-row {
         display: flex;
         justify-content: space-between;
-        padding: 6px 0;
+        padding: 4px 0;
+        font-size: 12px;
       }
       .stat-row .label {
-        color: #64748b;
+        color: #555;
       }
       .stat-row .value {
-        color: #e2e8f0;
+        color: #bbb;
         font-weight: 500;
       }
-      .stat-row .value.positive {
-        color: #22c55e;
+      .positive {
+        color: #22c55e !important;
       }
-      .stat-row .value.negative {
-        color: #ef4444;
+      .negative {
+        color: #ef4444 !important;
       }
-      .stat-row .value.yes-color {
-        color: #3b82f6;
+      .yes-color {
+        color: #22c55e !important;
       }
-      .stat-row .value.no-color {
-        color: #ef4444;
+      .no-color {
+        color: #ef4444 !important;
       }
-
+      .amber {
+        color: #f59e0b !important;
+      }
       .divider {
         height: 1px;
-        background: #1a1f2e;
-        margin: 12px 0;
+        background: #1a1a1a;
+        margin: 10px 0;
+      }
+
+      /* Trade controls */
+      .trade-row {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 8px;
+      }
+      .trade-row label {
+        color: #444;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .trade-row input {
+        background: #151515;
+        border: 1px solid #2a2a2a;
+        color: #bbb;
+        padding: 6px 8px;
+        border-radius: 3px;
+        width: 70px;
+        font-family: inherit;
+        font-size: 13px;
+      }
+      .trade-row input:focus {
+        outline: none;
+        border-color: #444;
+      }
+      .trade-buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+        margin-bottom: 6px;
+      }
+      .btn {
+        padding: 7px 10px;
+        border: none;
+        border-radius: 3px;
+        font-family: inherit;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: opacity 0.15s;
+      }
+      .btn:hover {
+        opacity: 0.8;
+      }
+      .btn:active {
+        opacity: 0.6;
+      }
+      .btn-yes {
+        background: #22c55e;
+        color: #000;
+      }
+      .btn-no {
+        background: #ef4444;
+        color: #fff;
+      }
+      .btn-dim {
+        background: #151515;
+        color: #666;
+        border: 1px solid #2a2a2a;
+        font-size: 11px;
+      }
+
+      /* Trade log */
+      .log {
+        max-height: 300px;
+        overflow-y: auto;
+      }
+      .log-entry {
+        padding: 3px 0;
+        font-size: 11px;
+        color: #444;
+        border-bottom: 1px solid #111;
+      }
+      .log-yes {
+        color: #22c55e;
+      }
+      .log-no {
+        color: #ef4444;
+      }
+      .log-price {
+        color: #f59e0b;
       }
 
       /* Order book */
       .book-container {
-        background: #0a0e17;
+        background: #050505;
         display: flex;
         flex-direction: column;
         overflow: hidden;
@@ -118,13 +245,13 @@
       .book-header {
         display: grid;
         grid-template-columns: 1fr 80px 1fr;
-        padding: 8px 16px;
-        background: #0f1320;
-        font-size: 11px;
+        padding: 6px 12px;
+        background: #0a0a0a;
+        font-size: 10px;
         text-transform: uppercase;
         letter-spacing: 1px;
-        color: #64748b;
-        border-bottom: 1px solid #1a1f2e;
+        color: #444;
+        border-bottom: 1px solid #1a1a1a;
       }
       .book-header span:last-child {
         text-align: right;
@@ -138,32 +265,29 @@
       .book-row {
         display: grid;
         grid-template-columns: 1fr 80px 1fr;
-        padding: 3px 16px;
+        padding: 2px 12px;
         align-items: center;
-        position: relative;
-        min-height: 24px;
+        min-height: 22px;
       }
       .book-row:hover {
-        background: rgba(255, 255, 255, 0.03);
+        background: rgba(255, 255, 255, 0.02);
       }
       .book-row .no-bar {
-        height: 20px;
-        background: rgba(239, 68, 68, 0.15);
-        border-right: 2px solid rgba(239, 68, 68, 0.5);
+        height: 18px;
+        background: rgba(239, 68, 68, 0.12);
+        border-right: 2px solid rgba(239, 68, 68, 0.35);
         justify-self: end;
-        min-width: 0;
       }
       .book-row .yes-bar {
-        height: 20px;
-        background: rgba(59, 130, 246, 0.15);
-        border-left: 2px solid rgba(59, 130, 246, 0.5);
-        min-width: 0;
+        height: 18px;
+        background: rgba(34, 197, 94, 0.12);
+        border-left: 2px solid rgba(34, 197, 94, 0.35);
       }
       .book-row .price-cell {
         text-align: center;
         font-weight: 600;
-        font-size: 12px;
-        z-index: 1;
+        font-size: 11px;
+        color: #666;
       }
       .book-row .price-cell.mid {
         color: #f59e0b;
@@ -172,241 +296,150 @@
         color: #ef4444;
         font-size: 11px;
         text-align: right;
-        padding-right: 8px;
+        padding-right: 6px;
       }
       .book-row .amount-yes {
-        color: #3b82f6;
+        color: #22c55e;
         font-size: 11px;
-        padding-left: 8px;
+        padding-left: 6px;
       }
       .book-mid-marker {
-        background: rgba(245, 158, 11, 0.08);
-        border-top: 1px solid rgba(245, 158, 11, 0.2);
-        border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+        background: rgba(245, 158, 11, 0.04);
+        border-top: 1px solid rgba(245, 158, 11, 0.12);
+        border-bottom: 1px solid rgba(245, 158, 11, 0.12);
       }
 
-      /* Controls */
-      .controls {
-        grid-column: 1 / -1;
-        background: #0f1320;
-        padding: 16px 20px;
-        border-top: 1px solid #1a1f2e;
-        display: flex;
-        gap: 16px;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-      .control-group {
+      /* MM param inputs */
+      .param-row {
         display: flex;
         align-items: center;
-        gap: 8px;
-      }
-      .control-group label {
-        color: #64748b;
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
-      .control-group input {
-        background: #1a1f2e;
-        border: 1px solid #2a3040;
-        color: #e2e8f0;
-        padding: 6px 10px;
-        border-radius: 4px;
-        width: 80px;
-        font-family: inherit;
-        font-size: 13px;
-      }
-      .control-group input:focus {
-        outline: none;
-        border-color: #3b82f6;
-      }
-      .btn {
-        padding: 8px 20px;
-        border: none;
-        border-radius: 4px;
-        font-family: inherit;
-        font-size: 13px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: opacity 0.15s;
-      }
-      .btn:hover {
-        opacity: 0.85;
-      }
-      .btn:active {
-        opacity: 0.7;
-      }
-      .btn-yes {
-        background: #3b82f6;
-        color: white;
-      }
-      .btn-no {
-        background: #ef4444;
-        color: white;
-      }
-      .btn-reset {
-        background: #374151;
-        color: #e2e8f0;
-      }
-
-      /* Trade log */
-      .log {
-        max-height: 200px;
-        overflow-y: auto;
-        margin-top: 8px;
-      }
-      .log-entry {
+        justify-content: space-between;
         padding: 3px 0;
-        font-size: 11px;
-        color: #64748b;
-        border-bottom: 1px solid #0a0e17;
       }
-      .log-entry .log-yes {
-        color: #3b82f6;
+      .param-row label {
+        color: #555;
+        font-size: 12px;
       }
-      .log-entry .log-no {
-        color: #ef4444;
-      }
-      .log-entry .log-price {
-        color: #f59e0b;
-      }
-
-      /* User position */
-      .position-bar {
+      .param-input {
         display: flex;
-        gap: 8px;
-        margin-top: 8px;
+        align-items: center;
+        gap: 4px;
       }
-      .pos-badge {
-        padding: 4px 8px;
+      .param-input input {
+        background: #151515;
+        border: 1px solid #2a2a2a;
+        color: #bbb;
+        padding: 4px 6px;
         border-radius: 3px;
-        font-size: 11px;
-        font-weight: 600;
-      }
-      .pos-badge.yes {
-        background: rgba(59, 130, 246, 0.15);
-        color: #3b82f6;
-      }
-      .pos-badge.no {
-        background: rgba(239, 68, 68, 0.15);
-        color: #ef4444;
-      }
-
-      /* State + Log bottom panel */
-      .bottom-panel {
-        grid-column: 1 / -1;
-        background: #0f1320;
-        border-top: 1px solid #1a1f2e;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1px;
-        max-height: 220px;
-        overflow: hidden;
-      }
-      .bottom-section {
-        padding: 10px 16px;
-        overflow-y: auto;
-      }
-      .bottom-section h2 {
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        color: #64748b;
-        margin-bottom: 8px;
-        padding-bottom: 6px;
-        border-bottom: 1px solid #1a1f2e;
-        position: sticky;
-        top: 0;
-        background: #0f1320;
-      }
-      .state-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0 16px;
-      }
-      .state-grid .stat-row {
-        padding: 3px 0;
+        width: 65px;
+        font-family: inherit;
         font-size: 12px;
+        text-align: right;
       }
-      .state-grid .label {
-        font-size: 11px;
+      .param-input input:focus {
+        outline: none;
+        border-color: #444;
       }
-      .trade-log-bottom {
-        max-height: none;
-      }
-      .trade-log-bottom .log-entry {
-        padding: 4px 0;
-        font-size: 12px;
-        display: grid;
-        grid-template-columns: 50px 1fr;
-        gap: 8px;
-      }
-      .log-time {
-        color: #475569;
-        font-size: 11px;
+      .param-unit {
+        color: #444;
+        font-size: 10px;
+        min-width: 20px;
       }
     </style>
   </head>
   <body>
     <div class="layout">
+      <!-- Header -->
       <div class="header">
-        <h1>MM Bot Simulator</h1>
+        <h1>MM BOT SIMULATOR</h1>
         <div class="price-display">
-          <div><span class="label">Price </span><span class="value" id="hdr-price">40.0%</span></div>
-          <div><span class="label">Spread </span><span class="value spread" id="hdr-spread">--</span></div>
+          <div><span class="label">Price </span><span class="value" id="hdr-price">--</span></div>
+          <div><span class="label">Spread </span><span class="value amber" id="hdr-spread">--</span></div>
           <div><span class="label">Best Yes </span><span class="value yes-color" id="hdr-best-yes">--</span></div>
           <div><span class="label">Best No </span><span class="value no-color" id="hdr-best-no">--</span></div>
         </div>
       </div>
 
-      <!-- Left panel: User -->
+      <!-- Curve -->
+      <div class="curve-section">
+        <canvas id="curve-canvas"></canvas>
+        <div class="curve-legend">
+          <div class="legend-item">
+            <div class="legend-dot" style="background: #ef4444"></div>
+            No Active
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background: #f59e0b"></div>
+            Spread
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background: #22c55e"></div>
+            Yes Active
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background: #333"></div>
+            Hidden
+          </div>
+        </div>
+      </div>
+
+      <!-- Left: Trader -->
       <div class="panel">
-        <h2>User</h2>
+        <h2>Trader</h2>
         <div class="stat-row"><span class="label">Cash</span><span class="value" id="user-cash">$1,000.00</span></div>
         <div class="stat-row">
           <span class="label">Yes Shares</span><span class="value yes-color" id="user-yes">0</span>
         </div>
         <div class="stat-row">
-          <span class="label">Avg Yes Price</span><span class="value" id="user-yes-avg">--</span>
+          <span class="label">Avg Yes Cost</span><span class="value" id="user-yes-avg">--</span>
         </div>
         <div class="stat-row">
           <span class="label">No Shares</span><span class="value no-color" id="user-no">0</span>
         </div>
-        <div class="stat-row">
-          <span class="label">Avg No Price</span><span class="value" id="user-no-avg">--</span>
-        </div>
+        <div class="stat-row"><span class="label">Avg No Cost</span><span class="value" id="user-no-avg">--</span></div>
         <div class="divider"></div>
         <div class="stat-row">
-          <span class="label">Portfolio Value</span><span class="value" id="user-portfolio">$1,000.00</span>
+          <span class="label">Portfolio</span><span class="value" id="user-portfolio">$1,000.00</span>
         </div>
-        <div class="stat-row">
-          <span class="label">Unrealized P&L</span><span class="value" id="user-pnl">$0.00</span>
-        </div>
+        <div class="stat-row"><span class="label">P&L</span><span class="value" id="user-pnl">$0.00</span></div>
 
         <div class="divider"></div>
-        <h2>Trade Log</h2>
+        <h2>Trade</h2>
+        <div class="trade-row">
+          <label>$</label>
+          <input type="number" id="trade-amount" value="5" min="0.1" step="1" />
+        </div>
+        <div class="trade-buttons">
+          <button class="btn btn-yes" onclick="executeTrade('yes')">Buy Yes</button>
+          <button class="btn btn-no" onclick="executeTrade('no')">Buy No</button>
+        </div>
+        <div class="trade-buttons">
+          <button class="btn btn-dim" onclick="autoWalk('yes', 20)">+20 Yes</button>
+          <button class="btn btn-dim" onclick="autoWalk('no', 20)">+20 No</button>
+        </div>
+        <button class="btn btn-dim" onclick="resetAll()" style="width: 100%; margin-top: 4px">Reset</button>
+
+        <div class="divider"></div>
+        <h2>Log</h2>
         <div class="log" id="trade-log"></div>
       </div>
 
-      <!-- Center: Order book -->
+      <!-- Center: Book -->
       <div class="book-container">
         <div class="book-header">
-          <span>No (Sell)</span>
+          <span>No</span>
           <span style="text-align: center">Price</span>
-          <span>Yes (Buy)</span>
+          <span>Yes</span>
         </div>
         <div class="book-scroll" id="book-scroll"></div>
       </div>
 
-      <!-- Right panel: MM Bot -->
+      <!-- Right: Market Maker -->
       <div class="panel">
         <h2>Market Maker</h2>
+        <div class="stat-row"><span class="label">Capital</span><span class="value" id="mm-capital">$1,000</span></div>
         <div class="stat-row">
-          <span class="label">Capital</span><span class="value" id="mm-capital">$1,000.00</span>
-        </div>
-        <div class="stat-row">
-          <span class="label">Spread Profit</span><span class="value positive" id="mm-profit">$0.00</span>
+          <span class="label">Profit</span><span class="value positive" id="mm-profit">$0.00</span>
         </div>
         <div class="stat-row"><span class="label">Book Orders</span><span class="value" id="mm-orders">--</span></div>
         <div class="stat-row">
@@ -415,64 +448,54 @@
         <div class="stat-row">
           <span class="label">No Liquidity</span><span class="value no-color" id="mm-no-liq">--</span>
         </div>
+        <div class="stat-row"><span class="label">Deployed</span><span class="value" id="mm-deployed">--</span></div>
+
         <div class="divider"></div>
-        <h2>Inventory Exposure</h2>
+        <h2>Exposure</h2>
         <div class="stat-row"><span class="label">Yes Sold</span><span class="value" id="mm-yes-sold">0</span></div>
         <div class="stat-row"><span class="label">No Sold</span><span class="value" id="mm-no-sold">0</span></div>
-        <div class="stat-row">
-          <span class="label">Net Exposure</span><span class="value" id="mm-net-exposure">0</span>
-        </div>
+        <div class="stat-row"><span class="label">Net</span><span class="value" id="mm-net">0</span></div>
+
         <div class="divider"></div>
         <h2>Parameters</h2>
-        <div class="stat-row"><span class="label">Spacing</span><span class="value" id="p-spacing">200 bps</span></div>
-        <div class="stat-row">
-          <span class="label">Spread Zone</span><span class="value" id="p-spread">2000 bps</span>
+        <div class="param-row">
+          <label>Spread Zone</label>
+          <div class="param-input">
+            <input type="number" id="p-spread" value="2000" step="200" min="200" />
+            <span class="param-unit">bps</span>
+          </div>
         </div>
-        <div class="stat-row">
-          <span class="label">Min Spread</span><span class="value" id="p-minspread">1000 bps</span>
+        <div class="param-row">
+          <label>Min Spread</label>
+          <div class="param-input">
+            <input type="number" id="p-minspread" value="1000" step="200" min="200" />
+            <span class="param-unit">bps</span>
+          </div>
         </div>
-        <div class="stat-row">
-          <span class="label">Order Depth</span><span class="value" id="p-depth">5000 bps</span>
+        <div class="param-row">
+          <label>Order Depth</label>
+          <div class="param-input">
+            <input type="number" id="p-depth" value="5000" step="500" min="1000" />
+            <span class="param-unit">bps</span>
+          </div>
         </div>
-      </div>
+        <div style="margin-top: 6px">
+          <button class="btn btn-dim" onclick="applyParams()" style="width: 100%">Apply</button>
+        </div>
 
-      <!-- State + Trade Log -->
-      <div class="bottom-panel">
-        <div class="bottom-section">
-          <h2>Engine State</h2>
-          <div class="state-grid" id="state-grid"></div>
+        <div class="divider"></div>
+        <h2>Engine</h2>
+        <div class="stat-row">
+          <span class="label">Spacing</span><span class="value" id="eng-spacing">200 bps</span>
         </div>
-        <div class="bottom-section">
-          <h2>Trade Log</h2>
-          <div class="trade-log-bottom" id="trade-log-bottom"></div>
-        </div>
-      </div>
-
-      <!-- Bottom controls -->
-      <div class="controls">
-        <div class="control-group">
-          <label>Amount $</label>
-          <input type="number" id="trade-amount" value="5" min="0.1" step="1" />
-        </div>
-        <button class="btn btn-yes" onclick="executeTrade('yes')">Buy Yes</button>
-        <button class="btn btn-no" onclick="executeTrade('no')">Buy No</button>
-        <div style="width: 1px; height: 24px; background: #2a3040"></div>
-        <button class="btn btn-reset" onclick="resetAll()">Reset</button>
-        <div class="control-group">
-          <label>Auto-walk</label>
-          <button class="btn btn-yes" onclick="autoWalk('yes', 20)" style="padding: 6px 12px; font-size: 11px">
-            +20 Yes
-          </button>
-          <button class="btn btn-no" onclick="autoWalk('no', 20)" style="padding: 6px 12px; font-size: 11px">
-            +20 No
-          </button>
-        </div>
+        <div class="stat-row"><span class="label">Book IDs</span><span class="value" id="eng-ids">--</span></div>
+        <div class="stat-row"><span class="label">Full Book</span><span class="value" id="eng-full">--</span></div>
       </div>
     </div>
 
     <script>
       // ============================================================
-      // PCHIP (inlined from pchip.js)
+      // PCHIP
       // ============================================================
       function validatePoints(points) {
         for (let i = 0; i < points.length; i++) {
@@ -569,6 +592,24 @@
         const cp = pts.map((p) => ({ x: p.x, y: p.y }));
         const tan = computePchipTangents(cp);
         return {
+          at(x) {
+            if (cp.length < 2) return 0;
+            if (x <= cp[0].x) return cp[0].y;
+            if (x >= cp[cp.length - 1].x) return cp[cp.length - 1].y;
+            const idx = findSegmentIndex(cp, x);
+            const p0 = cp[idx],
+              p1 = cp[idx + 1];
+            const h = p1.x - p0.x,
+              t = (x - p0.x) / h,
+              t2 = t * t,
+              t3 = t2 * t;
+            return (
+              (2 * t3 - 3 * t2 + 1) * p0.y +
+              (t3 - 2 * t2 + t) * h * tan[idx] +
+              (-2 * t3 + 3 * t2) * p1.y +
+              (t3 - t2) * h * tan[idx + 1]
+            );
+          },
           integralAt(x) {
             return integratePchip(cp, x, tan);
           },
@@ -579,7 +620,7 @@
       }
 
       // ============================================================
-      // MARKET MAKER ENGINE (from mmbots-v3.js)
+      // ENGINE
       // ============================================================
       const capital = 1000;
       const curvePoints = [
@@ -602,25 +643,24 @@
       const normalDistro = createPchip(curvePoints);
       const spacing = 200;
       const maxPriceBps = 100000;
-      const spreadBps = 2000;
-      const minSpreadBps = 1000;
-      const orderDepthBps = 5000;
 
-      let currentPriceBps = 40000;
+      let spreadBps = 2000;
+      let minSpreadBps = 1000;
+      let orderDepthBps = 5000;
+      let currentPriceBps = 50000;
       let profit = 0;
       let currentBookIdGenerator = 0;
 
-      // Build full book
       const prefilledIntegralBook = [];
       for (let i = spacing; i < maxPriceBps; i += spacing) {
         prefilledIntegralBook.push(normalDistro.integralAt(i) - normalDistro.integralAt(i - spacing));
       }
       const totalIntegral = normalDistro.totalIntegral();
-      const fullBook = prefilledIntegralBook.map((seg, i) => ({
-        amount: (seg / totalIntegral) * capital,
+      const prefilledPercentages = prefilledIntegralBook.map((s) => s / totalIntegral);
+      const fullBook = prefilledPercentages.map((p, i) => ({
+        amount: p * capital,
         priceBps: (i + 1) * spacing,
       }));
-
       const getIndexByPrice = (price) => Math.round(price / spacing) - 1;
 
       function getVisibleBook() {
@@ -671,7 +711,7 @@
           .filter((o) => o.type == side)
           .sort((a, b) => Math.abs(currentPriceBps - a.priceBps) - Math.abs(currentPriceBps - b.priceBps));
         let filled = 0;
-        const fillDetails = []; // track what prices were filled at
+        const fillDetails = [];
         for (let i = 0; filled < amount && i < providerSide.length; i++) {
           const fillable = Math.min(providerSide[i].amount, amount - filled);
           filled += fillable;
@@ -704,9 +744,9 @@
           if (shadowOrder) {
             const room = shadowOrder.amount - order.amount;
             if (room > 0) {
-              const allocated = Math.min(toPropBack, room);
-              order.amount += allocated;
-              toPropBack -= allocated;
+              const a = Math.min(toPropBack, room);
+              order.amount += a;
+              toPropBack -= a;
             }
           }
         }
@@ -743,15 +783,132 @@
       // USER STATE
       // ============================================================
       let userCash = 1000;
-      let userYesShares = 0;
-      let userNoShares = 0;
-      let userYesCost = 0; // total cost basis
-      let userNoCost = 0;
-      let mmYesSold = 0;
-      let mmNoSold = 0;
+      let userYesShares = 0,
+        userNoShares = 0;
+      let userYesCost = 0,
+        userNoCost = 0;
+      let mmYesSold = 0,
+        mmNoSold = 0;
 
       // ============================================================
-      // UI
+      // CURVE RENDERING
+      // ============================================================
+      function renderCurve() {
+        const canvas = document.getElementById("curve-canvas");
+        const ctx = canvas.getContext("2d");
+        const dpr = window.devicePixelRatio || 1;
+        const rect = canvas.parentElement.getBoundingClientRect();
+        canvas.width = rect.width * dpr;
+        canvas.height = rect.height * dpr;
+        canvas.style.width = rect.width + "px";
+        canvas.style.height = rect.height + "px";
+        ctx.scale(dpr, dpr);
+
+        const w = rect.width,
+          h = rect.height;
+        const pad = { left: 45, right: 16, top: 20, bottom: 24 };
+        const pw = w - pad.left - pad.right;
+        const ph = h - pad.top - pad.bottom;
+
+        ctx.clearRect(0, 0, w, h);
+
+        // Sample curve
+        const numSamples = Math.min(Math.floor(pw), 600);
+        const maxY = 11;
+        const samples = [];
+        for (let i = 0; i <= numSamples; i++) {
+          const bps = (i / numSamples) * maxPriceBps;
+          samples.push({ bps, y: normalDistro.at(bps) });
+        }
+
+        // Fill zones
+        for (let i = 0; i < samples.length - 1; i++) {
+          const s = samples[i];
+          const x1 = pad.left + (i / numSamples) * pw;
+          const x2 = pad.left + ((i + 1) / numSamples) * pw;
+          const barH = (s.y / maxY) * ph;
+          const dist = Math.abs(s.bps - currentPriceBps);
+
+          if (dist >= orderDepthBps) ctx.fillStyle = "rgba(50,50,50,0.2)";
+          else if (dist <= spreadBps) ctx.fillStyle = "rgba(245,158,11,0.22)";
+          else if (s.bps > currentPriceBps) ctx.fillStyle = "rgba(34,197,94,0.18)";
+          else ctx.fillStyle = "rgba(239,68,68,0.18)";
+
+          ctx.fillRect(x1, pad.top + ph - barH, x2 - x1 + 0.5, barH);
+        }
+
+        // Curve line
+        ctx.beginPath();
+        ctx.strokeStyle = "#444";
+        ctx.lineWidth = 1.5;
+        for (let i = 0; i <= numSamples; i++) {
+          const x = pad.left + (i / numSamples) * pw;
+          const y = pad.top + ph - (samples[i].y / maxY) * ph;
+          i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+
+        // Vertical markers
+        function vLine(bps, color, dashed, label) {
+          const x = pad.left + (bps / maxPriceBps) * pw;
+          if (x < pad.left || x > pad.left + pw) return;
+          ctx.beginPath();
+          ctx.strokeStyle = color;
+          ctx.lineWidth = dashed ? 0.8 : 1.5;
+          ctx.setLineDash(dashed ? [4, 4] : []);
+          ctx.moveTo(x, pad.top);
+          ctx.lineTo(x, pad.top + ph);
+          ctx.stroke();
+          ctx.setLineDash([]);
+          if (label) {
+            ctx.fillStyle = color;
+            ctx.font = "9px monospace";
+            ctx.textAlign = "center";
+            ctx.fillText(label, x, pad.top + ph + 11);
+          }
+        }
+
+        vLine(currentPriceBps - orderDepthBps, "#333", true, null);
+        vLine(currentPriceBps + orderDepthBps, "#333", true, null);
+        vLine(currentPriceBps - spreadBps, "rgba(245,158,11,0.4)", true, null);
+        vLine(currentPriceBps + spreadBps, "rgba(245,158,11,0.4)", true, null);
+        vLine(currentPriceBps, "#f59e0b", false, null);
+
+        // Price label above curve
+        const priceX = pad.left + (currentPriceBps / maxPriceBps) * pw;
+        ctx.fillStyle = "#f59e0b";
+        ctx.font = "bold 11px monospace";
+        ctx.textAlign = "center";
+        ctx.fillText((currentPriceBps / 1000).toFixed(1) + "%", priceX, pad.top - 5);
+
+        // X-axis
+        ctx.fillStyle = "#333";
+        ctx.font = "10px monospace";
+        ctx.textAlign = "center";
+        for (let pct = 0; pct <= 100; pct += 10) {
+          const x = pad.left + (pct / 100) * pw;
+          ctx.fillText(pct + "%", x, h - 4);
+        }
+
+        // Y-axis
+        ctx.textAlign = "right";
+        ctx.fillStyle = "#333";
+        for (let v = 0; v <= 10; v += 5) {
+          const y = pad.top + ph - (v / maxY) * ph;
+          ctx.fillText(v, pad.left - 8, y + 4);
+        }
+
+        // Baseline
+        ctx.beginPath();
+        ctx.strokeStyle = "#1a1a1a";
+        ctx.lineWidth = 1;
+        ctx.moveTo(pad.left, pad.top + ph);
+        ctx.lineTo(pad.left + pw, pad.top + ph);
+        ctx.stroke();
+      }
+
+      // ============================================================
+      // BOOK RENDERING
       // ============================================================
       function getSpreadInfo() {
         const bestYes = currentBook
@@ -763,237 +920,153 @@
         return { bestYes, bestNo, spread: bestYes && bestNo ? bestYes.priceBps - bestNo.priceBps : null };
       }
 
-      function formatBps(bps) {
+      function fmt(bps) {
         return (bps / 1000).toFixed(1) + "%";
       }
-      function formatDollar(v) {
+      function fmtD(v) {
         return "$" + v.toFixed(2);
       }
 
       function renderBook() {
         const scroll = document.getElementById("book-scroll");
-        const { bestYes, bestNo } = getSpreadInfo();
-
-        // Collect all price levels with amounts
-        const noOrders = currentBook
-          .filter((o) => o.type == "no" && o.amount > 0)
-          .sort((a, b) => b.priceBps - a.priceBps);
-        const yesOrders = currentBook
-          .filter((o) => o.type == "yes" && o.amount > 0)
-          .sort((a, b) => a.priceBps - b.priceBps);
-
         const maxAmount = Math.max(...currentBook.filter((o) => o.amount > 0).map((o) => o.amount), 0.01);
 
-        // Build price levels to display: all orders + mid price indicator
-        const allOrders = [...currentBook].filter((o) => o.amount > 0).sort((a, b) => b.priceBps - a.priceBps);
-
-        // Group by price
         const byPrice = new Map();
-        for (const o of allOrders) {
+        for (const o of currentBook) {
+          if (o.amount <= 0) continue;
           if (!byPrice.has(o.priceBps)) byPrice.set(o.priceBps, { yes: 0, no: 0 });
-          const entry = byPrice.get(o.priceBps);
-          if (o.type === "yes") entry.yes += o.amount;
-          else entry.no += o.amount;
+          const e = byPrice.get(o.priceBps);
+          o.type === "yes" ? (e.yes += o.amount) : (e.no += o.amount);
         }
-
         const prices = [...byPrice.keys()].sort((a, b) => b - a);
 
         let html = "";
-        let midInserted = false;
+        let midDone = false;
         for (const price of prices) {
-          // Insert mid-price marker
-          if (!midInserted && price <= currentPriceBps) {
-            html += `<div class="book-row book-mid-marker"><div></div><div class="price-cell mid">${formatBps(currentPriceBps)} mid</div><div></div></div>`;
-            midInserted = true;
+          if (!midDone && price <= currentPriceBps) {
+            html += `<div class="book-row book-mid-marker"><div></div><div class="price-cell mid">${fmt(currentPriceBps)} mid</div><div></div></div>`;
+            midDone = true;
           }
-
           const d = byPrice.get(price);
-          const noWidth = (d.no / maxAmount) * 100;
-          const yesWidth = (d.yes / maxAmount) * 100;
-
           html += `<div class="book-row">`;
           html += `<div style="display:flex;align-items:center;justify-content:flex-end;gap:4px">`;
           if (d.no > 0) {
             html += `<span class="amount-no">$${d.no.toFixed(2)}</span>`;
-            html += `<div class="no-bar" style="width:${Math.max(noWidth, 2)}%"></div>`;
+            html += `<div class="no-bar" style="width:${Math.max((d.no / maxAmount) * 100, 2)}%"></div>`;
           }
-          html += `</div>`;
-          html += `<div class="price-cell">${formatBps(price)}</div>`;
+          html += `</div><div class="price-cell">${fmt(price)}</div>`;
           html += `<div style="display:flex;align-items:center;gap:4px">`;
           if (d.yes > 0) {
-            html += `<div class="yes-bar" style="width:${Math.max(yesWidth, 2)}%"></div>`;
+            html += `<div class="yes-bar" style="width:${Math.max((d.yes / maxAmount) * 100, 2)}%"></div>`;
             html += `<span class="amount-yes">$${d.yes.toFixed(2)}</span>`;
           }
-          html += `</div>`;
-          html += `</div>`;
+          html += `</div></div>`;
         }
-        if (!midInserted) {
-          html += `<div class="book-row book-mid-marker"><div></div><div class="price-cell mid">${formatBps(currentPriceBps)} mid</div><div></div></div>`;
+        if (!midDone) {
+          html += `<div class="book-row book-mid-marker"><div></div><div class="price-cell mid">${fmt(currentPriceBps)} mid</div><div></div></div>`;
         }
-
         scroll.innerHTML = html;
-
-        // Scroll to mid-price
-        const midRow = scroll.querySelector(".book-mid-marker");
-        if (midRow) midRow.scrollIntoView({ block: "center", behavior: "instant" });
+        const mid = scroll.querySelector(".book-mid-marker");
+        if (mid) mid.scrollIntoView({ block: "center", behavior: "instant" });
       }
 
+      // ============================================================
+      // STATS
+      // ============================================================
       function updateStats() {
         const si = getSpreadInfo();
 
-        // Header
-        document.getElementById("hdr-price").textContent = formatBps(currentPriceBps);
-        document.getElementById("hdr-spread").textContent = si.spread !== null ? si.spread + " bps" : "--";
-        document.getElementById("hdr-best-yes").textContent = si.bestYes ? formatBps(si.bestYes.priceBps) : "--";
-        document.getElementById("hdr-best-no").textContent = si.bestNo ? formatBps(si.bestNo.priceBps) : "--";
+        document.getElementById("hdr-price").textContent = fmt(currentPriceBps);
+        document.getElementById("hdr-spread").textContent = si.spread !== null ? si.spread + " bps" : "n/a";
+        document.getElementById("hdr-best-yes").textContent = si.bestYes ? fmt(si.bestYes.priceBps) : "none";
+        document.getElementById("hdr-best-no").textContent = si.bestNo ? fmt(si.bestNo.priceBps) : "none";
 
-        // User
-        document.getElementById("user-cash").textContent = formatDollar(userCash);
+        document.getElementById("user-cash").textContent = fmtD(userCash);
         document.getElementById("user-yes").textContent = userYesShares.toFixed(2);
         document.getElementById("user-no").textContent = userNoShares.toFixed(2);
         document.getElementById("user-yes-avg").textContent =
-          userYesShares > 0 ? formatBps((userYesCost / userYesShares) * 100000) : "--";
+          userYesShares > 0 ? fmt((userYesCost / userYesShares) * 100000) : "--";
         document.getElementById("user-no-avg").textContent =
-          userNoShares > 0 ? formatBps((userNoCost / userNoShares) * 100000) : "--";
+          userNoShares > 0 ? fmt((userNoCost / userNoShares) * 100000) : "--";
 
-        // Portfolio: yes shares worth currentPrice, no shares worth (1-currentPrice)
         const yesVal = userYesShares * (currentPriceBps / 100000);
         const noVal = userNoShares * ((100000 - currentPriceBps) / 100000);
-        const portfolioVal = userCash + yesVal + noVal;
-        const pnl = portfolioVal - 1000;
-        document.getElementById("user-portfolio").textContent = formatDollar(portfolioVal);
+        const portfolio = userCash + yesVal + noVal;
+        const pnl = portfolio - 1000;
+        document.getElementById("user-portfolio").textContent = fmtD(portfolio);
         const pnlEl = document.getElementById("user-pnl");
-        pnlEl.textContent = (pnl >= 0 ? "+" : "") + formatDollar(pnl);
+        pnlEl.textContent = (pnl >= 0 ? "+" : "") + fmtD(pnl);
         pnlEl.className = "value " + (pnl >= 0 ? "positive" : "negative");
 
-        // MM
-        document.getElementById("mm-capital").textContent = formatDollar(capital);
-        document.getElementById("mm-profit").textContent = formatDollar(profit);
+        document.getElementById("mm-capital").textContent = fmtD(capital);
+        document.getElementById("mm-profit").textContent = fmtD(profit);
         const yesLiq = currentBook.filter((o) => o.type == "yes").reduce((s, o) => s + o.amount, 0);
         const noLiq = currentBook.filter((o) => o.type == "no").reduce((s, o) => s + o.amount, 0);
-        document.getElementById("mm-orders").textContent = currentBook.filter((o) => o.amount > 0).length;
-        document.getElementById("mm-yes-liq").textContent = formatDollar(yesLiq);
-        document.getElementById("mm-no-liq").textContent = formatDollar(noLiq);
+        const live = currentBook.filter((o) => o.amount > 0).length;
+        document.getElementById("mm-orders").textContent = live + " live / " + currentBook.length;
+        document.getElementById("mm-yes-liq").textContent = fmtD(yesLiq);
+        document.getElementById("mm-no-liq").textContent = fmtD(noLiq);
+        document.getElementById("mm-deployed").textContent = fmtD(yesLiq + noLiq) + " / " + fmtD(capital);
+
         document.getElementById("mm-yes-sold").textContent = mmYesSold.toFixed(2);
         document.getElementById("mm-no-sold").textContent = mmNoSold.toFixed(2);
-        const netExp = mmYesSold - mmNoSold;
-        const netEl = document.getElementById("mm-net-exposure");
-        netEl.textContent = (netExp >= 0 ? "+" : "") + netExp.toFixed(2) + " yes";
-        netEl.className = "value " + (Math.abs(netExp) < 0.01 ? "" : netExp > 0 ? "negative" : "positive");
+        const net = mmYesSold - mmNoSold;
+        const netEl = document.getElementById("mm-net");
+        netEl.textContent = (net >= 0 ? "+" : "") + net.toFixed(2) + (net >= 0 ? " yes" : " no");
+        netEl.className = "value " + (Math.abs(net) < 0.01 ? "" : net > 0 ? "negative" : "positive");
+
+        document.getElementById("eng-spacing").textContent = spacing + " bps";
+        document.getElementById("eng-ids").textContent = currentBookIdGenerator;
+        document.getElementById("eng-full").textContent = fullBook.length + " levels";
       }
 
-      let tradeCounter = 0;
-
+      // ============================================================
+      // ACTIONS
+      // ============================================================
       function addLogEntry(text) {
-        // Left panel log
         const log = document.getElementById("trade-log");
-        const entry = document.createElement("div");
-        entry.className = "log-entry";
-        entry.innerHTML = text;
-        log.prepend(entry);
+        const e = document.createElement("div");
+        e.className = "log-entry";
+        e.innerHTML = text;
+        log.prepend(e);
         while (log.children.length > 50) log.removeChild(log.lastChild);
-
-        // Bottom panel log
-        tradeCounter++;
-        const blog = document.getElementById("trade-log-bottom");
-        const bentry = document.createElement("div");
-        bentry.className = "log-entry";
-        bentry.innerHTML = `<span class="log-time">#${tradeCounter}</span><span>${text}</span>`;
-        blog.prepend(bentry);
-        while (blog.children.length > 100) blog.removeChild(blog.lastChild);
-      }
-
-      function updateState() {
-        const si = getSpreadInfo();
-        const yesOrders = currentBook.filter((o) => o.type == "yes" && o.amount > 0);
-        const noOrders = currentBook.filter((o) => o.type == "no" && o.amount > 0);
-        const yesLiq = yesOrders.reduce((s, o) => s + o.amount, 0);
-        const noLiq = noOrders.reduce((s, o) => s + o.amount, 0);
-        const totalDeployed = yesLiq + noLiq;
-        const netExp = mmYesSold - mmNoSold;
-
-        const rows = [
-          ["currentPriceBps", `${currentPriceBps} (${formatBps(currentPriceBps)})`],
-          ["spread", si.spread !== null ? `${si.spread} bps` : "n/a"],
-          ["bestYes", si.bestYes ? `${si.bestYes.priceBps} bps ($${si.bestYes.amount.toFixed(2)})` : "none"],
-          ["bestNo", si.bestNo ? `${si.bestNo.priceBps} bps ($${si.bestNo.amount.toFixed(2)})` : "none"],
-          ["profit", `$${profit.toFixed(4)}`],
-          ["currentBook.length", `${currentBook.length} (${currentBook.filter((o) => o.amount > 0).length} live)`],
-          ["yesLiquidity", `$${yesLiq.toFixed(2)} across ${yesOrders.length} orders`],
-          ["noLiquidity", `$${noLiq.toFixed(2)} across ${noOrders.length} orders`],
-          ["totalDeployed", `$${totalDeployed.toFixed(2)} of $${capital}`],
-          ["mmYesSold", mmYesSold.toFixed(2)],
-          ["mmNoSold", mmNoSold.toFixed(2)],
-          ["netExposure", `${netExp >= 0 ? "+" : ""}${netExp.toFixed(2)} yes`],
-          ["userCash", formatDollar(userCash)],
-          ["userYesShares", userYesShares.toFixed(2)],
-          ["userNoShares", userNoShares.toFixed(2)],
-          ["spacing", `${spacing} bps`],
-          ["spreadBps", `${spreadBps}`],
-          ["minSpreadBps", `${minSpreadBps}`],
-          ["orderDepthBps", `${orderDepthBps}`],
-          ["bookIdGenerator", currentBookIdGenerator],
-        ];
-
-        const grid = document.getElementById("state-grid");
-        grid.innerHTML = rows
-          .map(
-            ([label, value]) =>
-              `<div class="stat-row"><span class="label">${label}</span><span class="value">${value}</span></div>`,
-          )
-          .join("");
       }
 
       function executeTrade(side) {
-        const amountInput = document.getElementById("trade-amount");
-        const amount = parseFloat(amountInput.value);
+        const amount = parseFloat(document.getElementById("trade-amount").value);
         if (!amount || amount <= 0) return;
         if (amount > userCash) {
           addLogEntry('<span style="color:#f59e0b">Insufficient cash</span>');
           return;
         }
 
-        const priceBefore = currentPriceBps;
         const result = fill(amount, side);
-
         if (result.filled > 0) {
-          // Compute average fill price
-          let weightedPrice = 0;
-          for (const d of result.fillDetails) {
-            weightedPrice += d.priceBps * d.amount;
-          }
-          const avgPrice = weightedPrice / result.filled;
-          const avgPriceNorm = avgPrice / 100000; // 0-1 range
-
-          // User pays the dollar amount that was filled
+          let wp = 0;
+          for (const d of result.fillDetails) wp += d.priceBps * d.amount;
+          const avg = wp / result.filled;
+          const avgN = avg / 100000;
           userCash -= result.filled;
-
-          // Shares received: amount / price_per_share
-          // At price P (in 0-1), buying yes costs P per share, buying no costs (1-P) per share
           if (side === "yes") {
-            const shares = result.filled / avgPriceNorm;
+            const shares = result.filled / avgN;
             userYesShares += shares;
             userYesCost += result.filled;
             mmYesSold += shares;
           } else {
-            const shares = result.filled / (1 - avgPriceNorm);
+            const shares = result.filled / (1 - avgN);
             userNoShares += shares;
             userNoCost += result.filled;
             mmNoSold += shares;
           }
-
-          const sideClass = side === "yes" ? "log-yes" : "log-no";
-          const partialTag = result.partial ? " (partial)" : "";
+          const cls = side === "yes" ? "log-yes" : "log-no";
+          const tag = result.partial ? ' <span style="color:#555">(partial)</span>' : "";
           addLogEntry(
-            `Bought <span class="${sideClass}">$${result.filled.toFixed(2)} ${side}</span> @ avg <span class="log-price">${formatBps(avgPrice)}</span>${partialTag}`,
+            `<span class="${cls}">$${result.filled.toFixed(2)} ${side}</span> @ <span class="log-price">${fmt(avg)}</span>${tag}`,
           );
         } else {
-          addLogEntry(`<span style="color:#f59e0b">No liquidity for ${side}</span>`);
+          addLogEntry('<span style="color:#f59e0b">No liquidity</span>');
         }
-
-        renderBook();
-        updateStats();
-        updateState();
+        renderAll();
       }
 
       function autoWalk(side, count) {
@@ -1004,14 +1077,28 @@
         }
       }
 
+      function applyParams() {
+        const s = parseInt(document.getElementById("p-spread").value);
+        const m = parseInt(document.getElementById("p-minspread").value);
+        const d = parseInt(document.getElementById("p-depth").value);
+        if (s > 0) spreadBps = s;
+        if (m > 0) minSpreadBps = m;
+        if (d > 0) orderDepthBps = d;
+        reconcileBook();
+        renderAll();
+        addLogEntry(
+          `<span style="color:#555">Params: spread=${spreadBps} min=${minSpreadBps} depth=${orderDepthBps}</span>`,
+        );
+      }
+
       function resetAll() {
-        currentPriceBps = 40000;
+        currentPriceBps = 50000;
         profit = 0;
         currentBookIdGenerator = 0;
-        currentBook = getVisibleBook().map((order) => ({
-          ...order,
+        currentBook = getVisibleBook().map((o) => ({
+          ...o,
           oid: ++currentBookIdGenerator,
-          type: order.priceBps > currentPriceBps ? "yes" : "no",
+          type: o.priceBps > currentPriceBps ? "yes" : "no",
         }));
         userCash = 1000;
         userYesShares = 0;
@@ -1021,18 +1108,21 @@
         mmYesSold = 0;
         mmNoSold = 0;
         document.getElementById("trade-log").innerHTML = "";
-        document.getElementById("trade-log-bottom").innerHTML = "";
-        tradeCounter = 0;
-        addLogEntry("System reset");
-        renderBook();
-        updateStats();
-        updateState();
+        renderAll();
+        addLogEntry('<span style="color:#555">Reset</span>');
       }
 
-      // Initial render
-      renderBook();
-      updateStats();
-      updateState();
+      function renderAll() {
+        renderCurve();
+        renderBook();
+        updateStats();
+      }
+
+      // ============================================================
+      // INIT
+      // ============================================================
+      window.addEventListener("resize", renderCurve);
+      renderAll();
     </script>
   </body>
 </html>
