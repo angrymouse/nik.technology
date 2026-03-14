@@ -1,0 +1,1281 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MM Bot Simulator</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "SF Mono", "Cascadia Code", "Consolas", monospace;
+        background: #000;
+        color: #bbb;
+        font-size: 13px;
+      }
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0a0a0a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #2a2a2a;
+        border-radius: 3px;
+      }
+
+      .layout {
+        display: grid;
+        grid-template-columns: 280px 1fr 280px;
+        grid-template-rows: auto 200px 1fr;
+        height: 100vh;
+        gap: 1px;
+        background: #1a1a1a;
+      }
+
+      .header {
+        grid-column: 1 / -1;
+        background: #0a0a0a;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .header-left {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      .header h1 {
+        font-size: 12px;
+        font-weight: 600;
+        color: #555;
+        letter-spacing: 2px;
+      }
+      .price-display {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+      }
+      .price-display .label {
+        color: #444;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .price-display .value {
+        font-size: 16px;
+        font-weight: 700;
+        color: #ccc;
+      }
+
+      .curve-section {
+        grid-column: 1 / -1;
+        background: #0a0a0a;
+        position: relative;
+        overflow: hidden;
+      }
+      .curve-section canvas {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      .curve-legend {
+        position: absolute;
+        top: 8px;
+        right: 16px;
+        display: flex;
+        gap: 14px;
+        font-size: 10px;
+        color: #555;
+        letter-spacing: 0.5px;
+      }
+      .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .legend-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 2px;
+      }
+
+      .panel {
+        background: #0a0a0a;
+        padding: 14px;
+        overflow-y: auto;
+      }
+      .panel h2 {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #444;
+        margin-bottom: 10px;
+        padding-bottom: 6px;
+        border-bottom: 1px solid #1a1a1a;
+      }
+      .stat-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 4px 0;
+        font-size: 12px;
+      }
+      .stat-row .label {
+        color: #555;
+      }
+      .stat-row .value {
+        color: #bbb;
+        font-weight: 500;
+      }
+      .positive {
+        color: #22c55e !important;
+      }
+      .negative {
+        color: #ef4444 !important;
+      }
+      .yes-color {
+        color: #22c55e !important;
+      }
+      .no-color {
+        color: #ef4444 !important;
+      }
+      .amber {
+        color: #f59e0b !important;
+      }
+      .divider {
+        height: 1px;
+        background: #1a1a1a;
+        margin: 10px 0;
+      }
+
+      .trade-row {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 8px;
+      }
+      .trade-row label {
+        color: #444;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .trade-row input {
+        background: #151515;
+        border: 1px solid #2a2a2a;
+        color: #bbb;
+        padding: 6px 8px;
+        border-radius: 3px;
+        width: 70px;
+        font-family: inherit;
+        font-size: 13px;
+      }
+      .trade-row input:focus {
+        outline: none;
+        border-color: #444;
+      }
+      .trade-buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+        margin-bottom: 6px;
+      }
+      .trade-buttons-3 {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+      .btn {
+        padding: 7px 10px;
+        border: none;
+        border-radius: 3px;
+        font-family: inherit;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: opacity 0.15s;
+      }
+      .btn:hover {
+        opacity: 0.8;
+      }
+      .btn:active {
+        opacity: 0.6;
+      }
+      .btn-yes {
+        background: #22c55e;
+        color: #000;
+      }
+      .btn-no {
+        background: #ef4444;
+        color: #fff;
+      }
+      .btn-dim {
+        background: #151515;
+        color: #666;
+        border: 1px solid #2a2a2a;
+        font-size: 11px;
+      }
+      .btn-merge {
+        background: #f59e0b;
+        color: #111;
+      }
+
+      .log {
+        max-height: 300px;
+        overflow-y: auto;
+      }
+      .log-entry {
+        padding: 3px 0;
+        font-size: 11px;
+        color: #444;
+        border-bottom: 1px solid #111;
+      }
+      .log-yes {
+        color: #22c55e;
+      }
+      .log-no {
+        color: #ef4444;
+      }
+      .log-price {
+        color: #f59e0b;
+      }
+      .log-meta {
+        color: #38bdf8;
+      }
+
+      .book-container {
+        background: #050505;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      .book-header {
+        display: grid;
+        grid-template-columns: 1fr 80px 1fr;
+        padding: 6px 12px;
+        background: #0a0a0a;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #444;
+        border-bottom: 1px solid #1a1a1a;
+      }
+      .book-header span:last-child {
+        text-align: right;
+      }
+      .book-scroll {
+        flex: 1;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+      }
+      .book-row {
+        display: grid;
+        grid-template-columns: 1fr 80px 1fr;
+        padding: 2px 12px;
+        align-items: center;
+        min-height: 22px;
+      }
+      .book-row:hover {
+        background: rgba(255, 255, 255, 0.02);
+      }
+      .book-row .no-bar {
+        height: 18px;
+        background: rgba(239, 68, 68, 0.12);
+        border-right: 2px solid rgba(239, 68, 68, 0.35);
+        justify-self: end;
+      }
+      .book-row .yes-bar {
+        height: 18px;
+        background: rgba(34, 197, 94, 0.12);
+        border-left: 2px solid rgba(34, 197, 94, 0.35);
+      }
+      .book-row .price-cell {
+        text-align: center;
+        font-weight: 600;
+        font-size: 11px;
+        color: #666;
+      }
+      .book-row .price-cell.mid {
+        color: #f59e0b;
+      }
+      .book-row .amount-no {
+        color: #ef4444;
+        font-size: 11px;
+        text-align: right;
+        padding-right: 6px;
+      }
+      .book-row .amount-yes {
+        color: #22c55e;
+        font-size: 11px;
+        padding-left: 6px;
+      }
+      .amount-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+        line-height: 1.05;
+      }
+      .amount-stack.right {
+        align-items: flex-end;
+      }
+      .amount-stack.left {
+        align-items: flex-start;
+      }
+      .cover-note {
+        color: #38bdf8;
+        font-size: 9px;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+      }
+      .book-mid-marker {
+        background: rgba(245, 158, 11, 0.04);
+        border-top: 1px solid rgba(245, 158, 11, 0.12);
+        border-bottom: 1px solid rgba(245, 158, 11, 0.12);
+      }
+
+      .param-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 3px 0;
+      }
+      .param-row label {
+        color: #555;
+        font-size: 12px;
+      }
+      .param-input {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+      .param-input input {
+        background: #151515;
+        border: 1px solid #2a2a2a;
+        color: #bbb;
+        padding: 4px 6px;
+        border-radius: 3px;
+        width: 65px;
+        font-family: inherit;
+        font-size: 12px;
+        text-align: right;
+      }
+      .param-input input:focus {
+        outline: none;
+        border-color: #444;
+      }
+      .param-unit {
+        color: #444;
+        font-size: 10px;
+        min-width: 20px;
+      }
+
+      .mini-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+      .mini-card {
+        background: #050505;
+        border: 1px solid #151515;
+        border-radius: 4px;
+        padding: 8px;
+        min-height: 96px;
+      }
+      .mini-card h3 {
+        color: #555;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 6px;
+      }
+      .mini-list {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .mini-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+        font-size: 11px;
+      }
+      .mini-row .key {
+        color: #555;
+      }
+      .mini-row .val {
+        color: #bbb;
+        text-align: right;
+      }
+      .mini-empty {
+        color: #333;
+        font-size: 11px;
+        padding-top: 2px;
+      }
+      .mini-more .key,
+      .mini-more .val {
+        color: #444;
+      }
+
+      @media (max-width: 1100px) {
+        .layout {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto 180px auto minmax(360px, 1fr) auto;
+          height: auto;
+          min-height: 100vh;
+        }
+        .panel,
+        .book-container {
+          min-height: 320px;
+        }
+        .header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+        }
+        .price-display {
+          flex-wrap: wrap;
+          gap: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="layout">
+      <div class="header">
+        <div class="header-left">
+          <h1>MM BOT SIMULATOR</h1>
+        </div>
+        <div class="price-display">
+          <div><span class="label">Price </span><span class="value" id="hdr-price">--</span></div>
+          <div><span class="label">Spread </span><span class="value amber" id="hdr-spread">--</span></div>
+          <div><span class="label">Best Yes </span><span class="value yes-color" id="hdr-best-yes">--</span></div>
+          <div><span class="label">Best No </span><span class="value no-color" id="hdr-best-no">--</span></div>
+        </div>
+      </div>
+
+      <div class="curve-section">
+        <canvas id="curve-canvas"></canvas>
+        <div class="curve-legend">
+          <div class="legend-item">
+            <div class="legend-dot" style="background: #ef4444"></div>
+            No Active
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background: #f59e0b"></div>
+            Spread
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background: #22c55e"></div>
+            Yes Active
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background: #38bdf8"></div>
+            Inv Backed
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background: #333"></div>
+            Hidden
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Trader</h2>
+        <div class="stat-row"><span class="label">Cash</span><span class="value" id="user-cash">--</span></div>
+        <div class="stat-row">
+          <span class="label">Yes Shares</span><span class="value yes-color" id="user-yes">0</span>
+        </div>
+        <div class="stat-row">
+          <span class="label">No Shares</span><span class="value no-color" id="user-no">0</span>
+        </div>
+        <div class="stat-row"><span class="label">Mergeable</span><span class="value amber" id="user-mergeable">0</span></div>
+        <div class="stat-row"><span class="label">Mid Value</span><span class="value" id="user-mid-value">--</span></div>
+        <div class="divider"></div>
+        <h2>Settlement</h2>
+        <div class="stat-row"><span class="label">Yes Outcome</span><span class="value" id="user-settle-yes">--</span></div>
+        <div class="stat-row"><span class="label">No Outcome</span><span class="value" id="user-settle-no">--</span></div>
+        <div class="stat-row"><span class="label">Worst P&L</span><span class="value" id="user-pnl-worst">--</span></div>
+        <div class="stat-row"><span class="label">Best P&L</span><span class="value" id="user-pnl-best">--</span></div>
+        <div class="divider"></div>
+        <h2>Trade</h2>
+        <div class="trade-row">
+          <label>Qty</label>
+          <input type="number" id="trade-amount" value="5" min="0.1" step="1" />
+        </div>
+        <div class="trade-buttons">
+          <button class="btn btn-yes" id="btn-buy-yes">Buy Yes</button>
+          <button class="btn btn-no" id="btn-buy-no">Buy No</button>
+        </div>
+        <div class="trade-buttons trade-buttons-3">
+          <button class="btn btn-merge" id="btn-merge">Merge</button>
+          <button class="btn btn-dim" id="btn-walk-yes">Walk Yes</button>
+          <button class="btn btn-dim" id="btn-walk-no">Walk No</button>
+        </div>
+        <button class="btn btn-dim" id="btn-reset" style="width: 100%; margin-top: 4px">Reset</button>
+        <div class="divider"></div>
+        <h2>Last Action</h2>
+        <div class="stat-row"><span class="label">Action</span><span class="value" id="lt-action">--</span></div>
+        <div class="stat-row"><span class="label">Requested</span><span class="value" id="lt-requested">--</span></div>
+        <div class="stat-row"><span class="label">Approved</span><span class="value" id="lt-approved">--</span></div>
+        <div class="stat-row"><span class="label">Filled</span><span class="value" id="lt-filled">--</span></div>
+        <div class="stat-row"><span class="label">Avg Price</span><span class="value" id="lt-avg">--</span></div>
+        <div class="stat-row"><span class="label">Spent</span><span class="value" id="lt-spent">--</span></div>
+        <div class="stat-row"><span class="label">Minted</span><span class="value" id="lt-minted">--</span></div>
+        <div class="stat-row"><span class="label">Inv Used</span><span class="value" id="lt-inv-used">--</span></div>
+        <div class="stat-row"><span class="label">Rejected</span><span class="value" id="lt-rejected">--</span></div>
+        <div class="stat-row"><span class="label">Bot Merge Pre</span><span class="value" id="lt-pre-merged">--</span></div>
+        <div class="stat-row"><span class="label">Bot Merge Post</span><span class="value" id="lt-post-merged">--</span></div>
+        <div class="stat-row"><span class="label">Merged</span><span class="value" id="lt-merged">--</span></div>
+        <div class="divider"></div>
+        <div class="mini-card">
+          <h3>Fill Path</h3>
+          <div class="mini-list" id="lt-path-list"></div>
+        </div>
+        <div class="divider"></div>
+        <h2>Log</h2>
+        <div class="log" id="trade-log"></div>
+      </div>
+
+      <div class="book-container">
+        <div class="book-header">
+          <span>No</span>
+          <span style="text-align: center">Price</span>
+          <span>Yes</span>
+        </div>
+        <div class="book-scroll" id="book-scroll"></div>
+      </div>
+
+      <div class="panel">
+        <h2>Market Maker</h2>
+        <div class="stat-row"><span class="label">Cash</span><span class="value" id="mm-cash">--</span></div>
+        <div class="stat-row"><span class="label">Mid Value</span><span class="value" id="mm-mid-value">--</span></div>
+        <div class="stat-row"><span class="label">Core Profit</span><span class="value" id="mm-profit">--</span></div>
+        <div class="stat-row"><span class="label">Book Orders</span><span class="value" id="mm-orders">--</span></div>
+        <div class="stat-row">
+          <span class="label">Yes Liquidity</span><span class="value yes-color" id="mm-yes-liq">--</span>
+        </div>
+        <div class="stat-row">
+          <span class="label">No Liquidity</span><span class="value no-color" id="mm-no-liq">--</span>
+        </div>
+        <div class="stat-row"><span class="label">Visible Total</span><span class="value" id="mm-visible">--</span></div>
+        <div class="divider"></div>
+        <h2>Risk</h2>
+        <div class="stat-row"><span class="label">Inventory Side</span><span class="value" id="mm-inventory-side">flat</span></div>
+        <div class="stat-row"><span class="label">Yes Outcome</span><span class="value" id="mm-settle-yes">--</span></div>
+        <div class="stat-row"><span class="label">No Outcome</span><span class="value" id="mm-settle-no">--</span></div>
+        <div class="stat-row"><span class="label">Worst P&L</span><span class="value" id="mm-worst">--</span></div>
+        <div class="stat-row"><span class="label">Best P&L</span><span class="value" id="mm-best">--</span></div>
+        <div class="divider"></div>
+        <h2>Inventory</h2>
+        <div class="stat-row">
+          <span class="label">Yes Shares</span><span class="value yes-color" id="mm-yes-inv">0</span>
+        </div>
+        <div class="stat-row"><span class="label">Yes Avg Basis</span><span class="value" id="mm-yes-basis">--</span></div>
+        <div class="stat-row">
+          <span class="label">No Shares</span><span class="value no-color" id="mm-no-inv">0</span>
+        </div>
+        <div class="stat-row"><span class="label">No Avg Basis</span><span class="value" id="mm-no-basis">--</span></div>
+        <div class="stat-row"><span class="label">Assigned Yes</span><span class="value" id="mm-assigned-yes">--</span></div>
+        <div class="stat-row"><span class="label">Assigned No</span><span class="value" id="mm-assigned-no">--</span></div>
+        <div class="stat-row"><span class="label">Unassigned Yes</span><span class="value" id="mm-unassigned-yes">--</span></div>
+        <div class="stat-row"><span class="label">Unassigned No</span><span class="value" id="mm-unassigned-no">--</span></div>
+        <div class="divider"></div>
+        <h2>Quote Inventory</h2>
+        <div class="mini-grid">
+          <div class="mini-card">
+            <h3>Yes Coverage</h3>
+            <div class="mini-list" id="quote-yes-list"></div>
+          </div>
+          <div class="mini-card">
+            <h3>No Coverage</h3>
+            <div class="mini-list" id="quote-no-list"></div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <h2>Inventory Lots</h2>
+        <div class="mini-grid">
+          <div class="mini-card">
+            <h3>Yes Lots</h3>
+            <div class="mini-list" id="lot-yes-list"></div>
+          </div>
+          <div class="mini-card">
+            <h3>No Lots</h3>
+            <div class="mini-list" id="lot-no-list"></div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <h2>Parameters</h2>
+        <div class="param-row">
+          <label>Spread Zone</label>
+          <div class="param-input">
+            <input type="number" id="p-spread" value="2000" step="200" min="200" /><span class="param-unit">bps</span>
+          </div>
+        </div>
+        <div class="param-row">
+          <label>Min Spread</label>
+          <div class="param-input">
+            <input type="number" id="p-minspread" value="1000" step="200" min="200" /><span class="param-unit"
+              >bps</span
+            >
+          </div>
+        </div>
+        <div class="param-row">
+          <label>Order Depth</label>
+          <div class="param-input">
+            <input type="number" id="p-depth" value="5000" step="500" min="1000" /><span class="param-unit">bps</span>
+          </div>
+        </div>
+        <div style="margin-top: 6px">
+          <button class="btn btn-dim" id="btn-apply" style="width: 100%">Apply + Reset</button>
+        </div>
+        <div class="divider"></div>
+        <h2>Engine</h2>
+        <div class="stat-row"><span class="label">Version</span><span class="value" id="eng-version">--</span></div>
+        <div class="stat-row">
+          <span class="label">Spacing</span><span class="value" id="eng-spacing">200 bps</span>
+        </div>
+        <div class="stat-row"><span class="label">Book IDs</span><span class="value" id="eng-ids">--</span></div>
+        <div class="stat-row"><span class="label">Full Book</span><span class="value" id="eng-full">--</span></div>
+      </div>
+    </div>
+
+    <script type="module">
+      import * as core from "./v3.js";
+      import { PredictionMarketEngine } from "./engine.js";
+
+      const INITIAL_USER_CASH = 10000;
+      const START_PRICE_BPS = 40000;
+      const EPSILON = 1e-8;
+      const MAX_LIST_ROWS = 14;
+
+      const engine = new PredictionMarketEngine({
+        core,
+        botCash: core.capital,
+        userCash: INITIAL_USER_CASH,
+      });
+
+      let lastAction = null;
+      const shadowMax = core.fullBook.reduce((max, order) => Math.max(max, order.amount), 0);
+
+      function fmtPercentBps(bps) {
+        return `${(bps / 1000).toFixed(1)}%`;
+      }
+
+      function fmtMoney(value) {
+        const sign = value < 0 ? "-" : "";
+        return `${sign}$${Math.abs(value).toFixed(2)}`;
+      }
+
+      function fmtShares(value) {
+        return value.toFixed(2);
+      }
+
+      function fmtBasis(probability) {
+        if (probability === null || probability === undefined) return "--";
+        return fmtPercentBps(probability * core.maxPriceBps);
+      }
+
+      function signedClass(value) {
+        if (value > EPSILON) return "positive";
+        if (value < -EPSILON) return "negative";
+        return "";
+      }
+
+      function setValue(id, text, extraClass = "") {
+        const element = document.getElementById(id);
+        element.textContent = text;
+        element.className = `value ${extraClass}`.trim();
+      }
+
+      function setSignedMoney(id, value) {
+        setValue(id, fmtMoney(value), signedClass(value));
+      }
+
+      function getSpreadInfo() {
+        const bestYes = core.yesOrders.find((order) => order.amount > EPSILON) ?? null;
+        let bestNo = null;
+        for (let index = core.noOrders.length - 1; index >= 0; index -= 1) {
+          if (core.noOrders[index].amount > EPSILON) {
+            bestNo = core.noOrders[index];
+            break;
+          }
+        }
+
+        return {
+          bestYes,
+          bestNo,
+          spread: bestYes && bestNo ? bestYes.priceBps - bestNo.priceBps : null,
+        };
+      }
+
+      function aggregateByPrice(orders) {
+        const map = new Map();
+
+        for (const order of orders) {
+          if (order.amount <= EPSILON) continue;
+          if (!map.has(order.priceBps)) map.set(order.priceBps, { yes: 0, no: 0 });
+          const entry = map.get(order.priceBps);
+          entry[order.type] += order.amount;
+        }
+
+        return map;
+      }
+
+      function aggregateRowsByPrice(rows) {
+        const map = new Map();
+        for (const row of rows) {
+          if (row.amount <= EPSILON) continue;
+          map.set(row.priceBps, (map.get(row.priceBps) ?? 0) + row.amount);
+        }
+        return map;
+      }
+
+      function aggregateLotsByBasis(lots) {
+        const grouped = new Map();
+
+        for (const lot of lots) {
+          if (lot.amount <= EPSILON) continue;
+          const key = Math.round(lot.basis * 100000) / 100000;
+          grouped.set(key, (grouped.get(key) ?? 0) + lot.amount);
+        }
+
+        return [...grouped.entries()]
+          .map(([basis, amount]) => ({ basis, amount }))
+          .sort((left, right) => right.basis - left.basis);
+      }
+
+      function getMidPrices() {
+        return {
+          yes: core.currentPriceBps / core.maxPriceBps,
+          no: (core.maxPriceBps - core.currentPriceBps) / core.maxPriceBps,
+        };
+      }
+
+      function getMarkedValue(account) {
+        const mid = getMidPrices();
+        return account.cash + account.yes * mid.yes + account.no * mid.no;
+      }
+
+      function renderCurve(book, spreadInfo, state) {
+        const canvas = document.getElementById("curve-canvas");
+        const ctx = canvas.getContext("2d");
+        const dpr = window.devicePixelRatio || 1;
+        const rect = canvas.parentElement.getBoundingClientRect();
+        canvas.width = rect.width * dpr;
+        canvas.height = rect.height * dpr;
+        canvas.style.width = `${rect.width}px`;
+        canvas.style.height = `${rect.height}px`;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+        const width = rect.width;
+        const height = rect.height;
+        const pad = { left: 45, right: 16, top: 20, bottom: 24 };
+        const plotWidth = width - pad.left - pad.right;
+        const plotHeight = height - pad.top - pad.bottom;
+        ctx.clearRect(0, 0, width, height);
+
+        const numSamples = Math.min(Math.floor(plotWidth), 600);
+        const maxY = 11;
+        const samples = [];
+        for (let index = 0; index <= numSamples; index += 1) {
+          const bps = (index / numSamples) * core.maxPriceBps;
+          samples.push({ bps, y: core.normalDistro.at(bps) });
+        }
+
+        const liveSpreadLo = spreadInfo.bestNo ? spreadInfo.bestNo.priceBps : core.currentPriceBps - core.spreadBps;
+        const liveSpreadHi = spreadInfo.bestYes ? spreadInfo.bestYes.priceBps : core.currentPriceBps + core.spreadBps;
+
+        for (let index = 0; index < samples.length - 1; index += 1) {
+          const sample = samples[index];
+          const x1 = pad.left + (index / numSamples) * plotWidth;
+          const x2 = pad.left + ((index + 1) / numSamples) * plotWidth;
+          const barHeight = (sample.y / maxY) * plotHeight;
+          const distance = Math.abs(sample.bps - core.currentPriceBps);
+
+          if (distance >= core.orderDepthBps) ctx.fillStyle = "rgba(50,50,50,0.2)";
+          else if (sample.bps > liveSpreadLo && sample.bps < liveSpreadHi) ctx.fillStyle = "rgba(245,158,11,0.22)";
+          else if (sample.bps > core.currentPriceBps) ctx.fillStyle = "rgba(34,197,94,0.18)";
+          else ctx.fillStyle = "rgba(239,68,68,0.18)";
+
+          ctx.fillRect(x1, pad.top + plotHeight - barHeight, x2 - x1 + 0.5, barHeight);
+        }
+
+        ctx.beginPath();
+        ctx.strokeStyle = "#444";
+        ctx.lineWidth = 1.5;
+        for (let index = 0; index <= numSamples; index += 1) {
+          const x = pad.left + (index / numSamples) * plotWidth;
+          const y = pad.top + plotHeight - (samples[index].y / maxY) * plotHeight;
+          if (index === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+
+        const yesCoverage = aggregateRowsByPrice(state.quoteInventory.yes);
+        const noCoverage = aggregateRowsByPrice(state.quoteInventory.no);
+        const ordersByPrice = aggregateByPrice(book);
+        const orderBarWidth = Math.max((core.spacing / core.maxPriceBps) * plotWidth, 1.5);
+
+        for (const [priceBps, amounts] of ordersByPrice) {
+          const x = pad.left + (priceBps / core.maxPriceBps) * plotWidth;
+          const total = amounts.yes + amounts.no;
+          const barHeight = (total / shadowMax) * 0.9 * plotHeight;
+          ctx.fillStyle = amounts.yes > amounts.no ? "rgba(34,197,94,0.72)" : "rgba(239,68,68,0.72)";
+          ctx.fillRect(x - orderBarWidth / 2, pad.top + plotHeight - barHeight, orderBarWidth, barHeight);
+
+          const covered = (yesCoverage.get(priceBps) ?? 0) + (noCoverage.get(priceBps) ?? 0);
+          if (covered > EPSILON) {
+            const coverHeight = Math.max((covered / Math.max(total, covered)) * barHeight, 2);
+            ctx.fillStyle = "rgba(56,189,248,0.92)";
+            ctx.fillRect(x - orderBarWidth / 2, pad.top + plotHeight - barHeight, orderBarWidth, coverHeight);
+          }
+        }
+
+        function drawVerticalLine(bps, color, dashed) {
+          const x = pad.left + (bps / core.maxPriceBps) * plotWidth;
+          if (x < pad.left || x > pad.left + plotWidth) return;
+
+          ctx.beginPath();
+          ctx.strokeStyle = color;
+          ctx.lineWidth = dashed ? 0.8 : 1.5;
+          ctx.setLineDash(dashed ? [4, 4] : []);
+          ctx.moveTo(x, pad.top);
+          ctx.lineTo(x, pad.top + plotHeight);
+          ctx.stroke();
+          ctx.setLineDash([]);
+        }
+
+        drawVerticalLine(core.currentPriceBps - core.orderDepthBps, "#333", true);
+        drawVerticalLine(core.currentPriceBps + core.orderDepthBps, "#333", true);
+        drawVerticalLine(liveSpreadLo, "rgba(245,158,11,0.45)", true);
+        drawVerticalLine(liveSpreadHi, "rgba(245,158,11,0.45)", true);
+        drawVerticalLine(core.currentPriceBps, "#f59e0b", false);
+
+        const priceX = pad.left + (core.currentPriceBps / core.maxPriceBps) * plotWidth;
+        ctx.fillStyle = "#f59e0b";
+        ctx.font = "bold 11px monospace";
+        ctx.textAlign = "center";
+        ctx.fillText(fmtPercentBps(core.currentPriceBps), priceX, pad.top - 5);
+
+        ctx.fillStyle = "#333";
+        ctx.font = "10px monospace";
+        ctx.textAlign = "center";
+        for (let pct = 0; pct <= 100; pct += 10) {
+          ctx.fillText(`${pct}%`, pad.left + (pct / 100) * plotWidth, height - 4);
+        }
+
+        ctx.textAlign = "right";
+        for (let value = 0; value <= 10; value += 5) {
+          ctx.fillText(value, pad.left - 8, pad.top + plotHeight - (value / maxY) * plotHeight + 4);
+        }
+
+        ctx.beginPath();
+        ctx.strokeStyle = "#1a1a1a";
+        ctx.lineWidth = 1;
+        ctx.moveTo(pad.left, pad.top + plotHeight);
+        ctx.lineTo(pad.left + plotWidth, pad.top + plotHeight);
+        ctx.stroke();
+      }
+
+      function renderBook(book, state) {
+        const scroll = document.getElementById("book-scroll");
+        const byPrice = aggregateByPrice(book);
+        const yesCoverage = aggregateRowsByPrice(state.quoteInventory.yes);
+        const noCoverage = aggregateRowsByPrice(state.quoteInventory.no);
+
+        let maxAmount = 0.01;
+        for (const entry of byPrice.values()) {
+          maxAmount = Math.max(maxAmount, entry.yes, entry.no);
+        }
+
+        const prices = [...byPrice.keys()].sort((left, right) => right - left);
+        let html = "";
+        let midPlaced = false;
+
+        for (const priceBps of prices) {
+          if (!midPlaced && priceBps <= core.currentPriceBps) {
+            html += `<div class="book-row book-mid-marker"><div></div><div class="price-cell mid">${fmtPercentBps(core.currentPriceBps)} mid</div><div></div></div>`;
+            midPlaced = true;
+          }
+
+          const entry = byPrice.get(priceBps);
+          const yesCover = yesCoverage.get(priceBps) ?? 0;
+          const noCover = noCoverage.get(priceBps) ?? 0;
+
+          html += `<div class="book-row">`;
+          html += `<div style="display:flex;align-items:center;justify-content:flex-end;gap:4px">`;
+          if (entry.no > 0) {
+            html += `<div class="amount-stack right">`;
+            html += `<span class="amount-no">${fmtShares(entry.no)}</span>`;
+            html += noCover > EPSILON ? `<span class="cover-note">${fmtShares(noCover)} inv</span>` : `<span class="cover-note">&nbsp;</span>`;
+            html += `</div>`;
+            html += `<div class="no-bar" style="width:${Math.max((entry.no / maxAmount) * 100, 2)}%"></div>`;
+          }
+          html += `</div>`;
+          html += `<div class="price-cell">${fmtPercentBps(priceBps)}</div>`;
+          html += `<div style="display:flex;align-items:center;gap:4px">`;
+          if (entry.yes > 0) {
+            html += `<div class="yes-bar" style="width:${Math.max((entry.yes / maxAmount) * 100, 2)}%"></div>`;
+            html += `<div class="amount-stack left">`;
+            html += `<span class="amount-yes">${fmtShares(entry.yes)}</span>`;
+            html += yesCover > EPSILON ? `<span class="cover-note">${fmtShares(yesCover)} inv</span>` : `<span class="cover-note">&nbsp;</span>`;
+            html += `</div>`;
+          }
+          html += `</div>`;
+          html += `</div>`;
+        }
+
+        if (!midPlaced) {
+          html += `<div class="book-row book-mid-marker"><div></div><div class="price-cell mid">${fmtPercentBps(core.currentPriceBps)} mid</div><div></div></div>`;
+        }
+
+        scroll.innerHTML = html;
+      }
+
+      function renderMiniList(id, rows, keyFormatter, valueFormatter, emptyText) {
+        const element = document.getElementById(id);
+        if (!rows.length) {
+          element.innerHTML = `<div class="mini-empty">${emptyText}</div>`;
+          return;
+        }
+
+        const visible = rows.slice(0, MAX_LIST_ROWS);
+        let html = visible
+          .map(
+            (row) =>
+              `<div class="mini-row"><span class="key">${keyFormatter(row)}</span><span class="val">${valueFormatter(row)}</span></div>`,
+          )
+          .join("");
+
+        if (rows.length > visible.length) {
+          const remainder = rows.slice(visible.length);
+          const hiddenAmount = remainder.reduce((total, row) => total + (row.amount ?? 0), 0);
+          html += `<div class="mini-row mini-more"><span class="key">+${rows.length - visible.length} more</span><span class="val">${fmtShares(hiddenAmount)} sh</span></div>`;
+        }
+
+        element.innerHTML = html;
+      }
+
+      function renderSideLists(state) {
+        renderMiniList(
+          "quote-yes-list",
+          state.quoteInventory.yes,
+          (row) => fmtPercentBps(row.priceBps),
+          (row) => `${fmtShares(row.amount)} sh`,
+          "No yes quotes are backed",
+        );
+        renderMiniList(
+          "quote-no-list",
+          state.quoteInventory.no,
+          (row) => fmtPercentBps(row.priceBps),
+          (row) => `${fmtShares(row.amount)} sh`,
+          "No no quotes are backed",
+        );
+
+        const yesLots = aggregateLotsByBasis(state.botLots.yes);
+        const noLots = aggregateLotsByBasis(state.botLots.no);
+
+        renderMiniList(
+          "lot-yes-list",
+          yesLots,
+          (row) => `basis ${fmtBasis(row.basis)}`,
+          (row) => `${fmtShares(row.amount)} sh`,
+          "No yes lots",
+        );
+        renderMiniList(
+          "lot-no-list",
+          noLots,
+          (row) => `basis ${fmtBasis(row.basis)}`,
+          (row) => `${fmtShares(row.amount)} sh`,
+          "No no lots",
+        );
+      }
+
+      function updateLastAction() {
+        const pathList = document.getElementById("lt-path-list");
+        if (!lastAction) {
+          for (const id of [
+            "lt-action",
+            "lt-requested",
+            "lt-approved",
+            "lt-filled",
+            "lt-avg",
+            "lt-spent",
+            "lt-minted",
+            "lt-inv-used",
+            "lt-rejected",
+            "lt-pre-merged",
+            "lt-post-merged",
+            "lt-merged",
+          ]) {
+            setValue(id, "--");
+          }
+          pathList.innerHTML = `<div class="mini-empty">No trade yet</div>`;
+          return;
+        }
+
+        if (lastAction.kind === "merge") {
+          setValue("lt-action", "USER MERGE", "amber");
+          setValue("lt-requested", "--");
+          setValue("lt-approved", "--");
+          setValue("lt-filled", "--");
+          setValue("lt-avg", "--");
+          setValue("lt-spent", "--");
+          setValue("lt-minted", "--");
+          setValue("lt-inv-used", "--");
+          setValue("lt-rejected", "--");
+          setValue("lt-pre-merged", "--");
+          setValue("lt-post-merged", "--");
+          setValue("lt-merged", `${fmtShares(lastAction.merged)} sh`, "amber");
+          pathList.innerHTML = `<div class="mini-empty">User merge does not touch the book</div>`;
+          return;
+        }
+
+        const fillCoverage = new Map(
+          (lastAction.preTrade?.quoteInventory?.[lastAction.side] ?? []).map((row) => [row.priceBps, row.amount]),
+        );
+        const pathRows = (lastAction.fillDetails ?? []).map((fill) => {
+          const covered = Math.min(fill.amount, fillCoverage.get(fill.priceBps) ?? 0);
+          fillCoverage.set(fill.priceBps, Math.max(0, (fillCoverage.get(fill.priceBps) ?? 0) - covered));
+          return {
+            priceBps: fill.priceBps,
+            amount: fill.amount,
+            inventory: covered,
+            minted: Math.max(0, fill.amount - covered),
+          };
+        });
+
+        setValue("lt-action", `BUY ${lastAction.side.toUpperCase()}`, lastAction.side === "yes" ? "yes-color" : "no-color");
+        setValue("lt-requested", `${fmtShares(lastAction.requested)} sh`);
+        setValue("lt-approved", `${fmtShares(lastAction.approvedAmount)} sh`);
+        setValue("lt-filled", `${fmtShares(lastAction.filled)} sh`, lastAction.partial ? "amber" : "");
+        setValue(
+          "lt-avg",
+          lastAction.filled > EPSILON ? fmtPercentBps(lastAction.averagePrice * core.maxPriceBps) : "--",
+          "amber",
+        );
+        setValue("lt-spent", fmtMoney(lastAction.spent));
+        setValue("lt-minted", `${fmtShares(lastAction.minted)} sh`);
+        setValue("lt-inv-used", `${fmtShares(lastAction.inventoryUsed)} sh`, "cover-note");
+        setValue("lt-rejected", `${fmtShares(lastAction.rejectedAmount)} sh`, lastAction.rejectedAmount > EPSILON ? "amber" : "");
+        setValue("lt-pre-merged", `${fmtShares(lastAction.preTrade?.merged ?? 0)} sh`);
+        setValue("lt-post-merged", `${fmtShares(lastAction.postTrade?.merged ?? 0)} sh`);
+        setValue("lt-merged", "--");
+        pathList.innerHTML = pathRows.length
+          ? pathRows
+              .map(
+                (row) =>
+                  `<div class="mini-row"><span class="key">${fmtPercentBps(row.priceBps)}</span><span class="val">${fmtShares(row.amount)} sh${row.inventory > EPSILON ? ` | ${fmtShares(row.inventory)} inv` : ""}${row.minted > EPSILON ? ` | ${fmtShares(row.minted)} mint` : ""}</span></div>`,
+              )
+              .join("")
+          : `<div class="mini-empty">No fills</div>`;
+      }
+
+      function updateStats(book, spreadInfo, state) {
+        const midValueUser = getMarkedValue(state.user);
+        const midValueBot = getMarkedValue(state.bot);
+        const userMergeable = Math.min(state.user.yes, state.user.no);
+        const assignedYes = state.quoteInventory.yes.reduce((total, row) => total + row.amount, 0);
+        const assignedNo = state.quoteInventory.no.reduce((total, row) => total + row.amount, 0);
+        const yesBasis = state.bot.yes > EPSILON ? state.inventoryCostBasis.yes / state.bot.yes : null;
+        const noBasis = state.bot.no > EPSILON ? state.inventoryCostBasis.no / state.bot.no : null;
+        const userYesSettlement = engine.getSettlementValue("yes").user;
+        const userNoSettlement = engine.getSettlementValue("no").user;
+        const botYesSettlement = engine.getSettlementValue("yes").bot;
+        const botNoSettlement = engine.getSettlementValue("no").bot;
+        const userYesPnl = userYesSettlement - engine.initialUserCash;
+        const userNoPnl = userNoSettlement - engine.initialUserCash;
+        const botYesPnl = botYesSettlement - engine.initialBotCash;
+        const botNoPnl = botNoSettlement - engine.initialBotCash;
+
+        let yesLiquidity = 0;
+        let noLiquidity = 0;
+        let liveCount = 0;
+        for (const order of book) {
+          if (order.amount <= EPSILON) continue;
+          if (order.type === "yes") yesLiquidity += order.amount;
+          else noLiquidity += order.amount;
+          liveCount += 1;
+        }
+
+        document.getElementById("hdr-price").textContent = fmtPercentBps(core.currentPriceBps);
+        document.getElementById("hdr-spread").textContent = spreadInfo.spread !== null ? `${spreadInfo.spread} bps` : "n/a";
+        document.getElementById("hdr-best-yes").textContent = spreadInfo.bestYes ? fmtPercentBps(spreadInfo.bestYes.priceBps) : "none";
+        document.getElementById("hdr-best-no").textContent = spreadInfo.bestNo ? fmtPercentBps(spreadInfo.bestNo.priceBps) : "none";
+
+        setValue("user-cash", fmtMoney(state.user.cash));
+        setValue("user-yes", `${fmtShares(state.user.yes)} sh`, "yes-color");
+        setValue("user-no", `${fmtShares(state.user.no)} sh`, "no-color");
+        setValue("user-mergeable", `${fmtShares(userMergeable)} sh`, "amber");
+        setValue("user-mid-value", fmtMoney(midValueUser));
+        setValue("user-settle-yes", fmtMoney(userYesSettlement));
+        setValue("user-settle-no", fmtMoney(userNoSettlement));
+        setSignedMoney("user-pnl-worst", Math.min(userYesPnl, userNoPnl));
+        setSignedMoney("user-pnl-best", Math.max(userYesPnl, userNoPnl));
+
+        setValue("mm-cash", fmtMoney(state.bot.cash));
+        setValue("mm-mid-value", fmtMoney(midValueBot));
+        setSignedMoney("mm-profit", core.profit);
+        setValue("mm-orders", `${liveCount} live / ${book.length} total`);
+        setValue("mm-yes-liq", `${fmtShares(yesLiquidity)} sh`, "yes-color");
+        setValue("mm-no-liq", `${fmtShares(noLiquidity)} sh`, "no-color");
+        setValue("mm-visible", `${fmtShares(yesLiquidity + noLiquidity)} sh`);
+        setValue("mm-inventory-side", engine.getInventorySide()?.toUpperCase() ?? "FLAT", "amber");
+        setValue("mm-settle-yes", fmtMoney(botYesSettlement));
+        setValue("mm-settle-no", fmtMoney(botNoSettlement));
+        setSignedMoney("mm-worst", Math.min(botYesPnl, botNoPnl));
+        setSignedMoney("mm-best", Math.max(botYesPnl, botNoPnl));
+        setValue("mm-yes-inv", `${fmtShares(state.bot.yes)} sh`, "yes-color");
+        setValue("mm-yes-basis", fmtBasis(yesBasis));
+        setValue("mm-no-inv", `${fmtShares(state.bot.no)} sh`, "no-color");
+        setValue("mm-no-basis", fmtBasis(noBasis));
+        setValue("mm-assigned-yes", `${fmtShares(assignedYes)} sh`, "cover-note");
+        setValue("mm-assigned-no", `${fmtShares(assignedNo)} sh`, "cover-note");
+        setValue("mm-unassigned-yes", `${fmtShares(state.unassignedInventory.yes)} sh`);
+        setValue("mm-unassigned-no", `${fmtShares(state.unassignedInventory.no)} sh`);
+
+        setValue("eng-version", "v3 + engine");
+        setValue("eng-spacing", `${core.spacing} bps`);
+        setValue("eng-ids", core.currentBookIdGenerator);
+        setValue("eng-full", `${core.fullBook.length} levels`);
+
+        updateLastAction();
+      }
+
+      function addLogEntry(html) {
+        const log = document.getElementById("trade-log");
+        const entry = document.createElement("div");
+        entry.className = "log-entry";
+        entry.innerHTML = html;
+        log.prepend(entry);
+
+        while (log.children.length > 120) {
+          log.removeChild(log.lastChild);
+        }
+      }
+
+      function reasonForNoFill(side, state) {
+        if (state.user.cash <= EPSILON) return "user out of cash";
+        if (engine.getInventorySide() !== side && state.bot.cash <= EPSILON) return "bot out of collateral";
+        if (engine.getInventorySide() === side) return "inventory not safe at the front";
+        return "book empty";
+      }
+
+      function logTrade(side, requested, result) {
+        if (result.filled <= EPSILON) {
+          addLogEntry(`<span style="color:#f59e0b">No ${side} fill</span> <span style="color:#555">${reasonForNoFill(side, engine.getState())}</span>`);
+          return;
+        }
+
+        const classes = side === "yes" ? "log-yes" : "log-no";
+        const tags = [];
+        tags.push(`<span class="log-meta">${fmtMoney(result.spent)}</span>`);
+        if (result.minted > EPSILON) tags.push(`<span style="color:#f59e0b">${fmtShares(result.minted)} minted</span>`);
+        if (result.inventoryUsed > EPSILON) tags.push(`<span class="log-meta">${fmtShares(result.inventoryUsed)} inv</span>`);
+        if (result.rejectedAmount > EPSILON) tags.push(`<span style="color:#666">${fmtShares(result.rejectedAmount)} blocked</span>`);
+        if (result.partial) tags.push(`<span style="color:#555">partial</span>`);
+
+        addLogEntry(
+          `<span class="${classes}">${fmtShares(result.filled)} ${side}</span> @ <span class="log-price">${fmtPercentBps(result.averagePrice * core.maxPriceBps)}</span> ${tags.join(" ")}`,
+        );
+      }
+
+      function doTrade(side, amount) {
+        const result = engine.trade(side, amount);
+        lastAction = {
+          kind: "trade",
+          side,
+          requested: amount,
+          ...result,
+        };
+        logTrade(side, amount, result);
+        return result;
+      }
+
+      function executeTrade(side) {
+        const amount = parseFloat(document.getElementById("trade-amount").value);
+        if (!Number.isFinite(amount) || amount <= 0) return;
+        doTrade(side, amount);
+        renderAll();
+      }
+
+      function autoWalk(side, count) {
+        const amount = parseFloat(document.getElementById("trade-amount").value) || 5;
+        let executed = 0;
+
+        for (let index = 0; index < count; index += 1) {
+          const result = doTrade(side, amount);
+          if (result.filled <= EPSILON) break;
+          executed += 1;
+        }
+
+        addLogEntry(`<span style="color:#555">Walk ${side}: ${executed}/${count} executions</span>`);
+        renderAll();
+      }
+
+      function mergeUser() {
+        const merged = engine.mergeUser();
+        lastAction = { kind: "merge", merged };
+        if (merged > EPSILON) addLogEntry(`<span style="color:#f59e0b">Merged ${fmtShares(merged)} yes/no pairs into ${fmtMoney(merged)}</span>`);
+        else addLogEntry(`<span style="color:#555">No mergeable yes/no pairs</span>`);
+        renderAll();
+      }
+
+      function syncParamInputs() {
+        document.getElementById("p-spread").value = core.spreadBps;
+        document.getElementById("p-minspread").value = core.minSpreadBps;
+        document.getElementById("p-depth").value = core.orderDepthBps;
+      }
+
+      function resetAll(note = "Reset") {
+        engine.reset(START_PRICE_BPS);
+        lastAction = null;
+        document.getElementById("trade-log").innerHTML = "";
+        syncParamInputs();
+        renderAll();
+        addLogEntry(`<span style="color:#555">${note}</span>`);
+      }
+
+      function applyParams() {
+        const spread = parseInt(document.getElementById("p-spread").value, 10);
+        const minSpread = parseInt(document.getElementById("p-minspread").value, 10);
+        const depth = parseInt(document.getElementById("p-depth").value, 10);
+
+        core.setParams({
+          spreadBps: Number.isFinite(spread) ? spread : core.spreadBps,
+          minSpreadBps: Number.isFinite(minSpread) ? minSpread : core.minSpreadBps,
+          orderDepthBps: Number.isFinite(depth) ? depth : core.orderDepthBps,
+        });
+
+        resetAll(`Params applied: spread=${core.spreadBps} min=${core.minSpreadBps} depth=${core.orderDepthBps}`);
+      }
+
+      function renderAll() {
+        const state = engine.getState();
+        const book = [...core.yesOrders, ...core.noOrders];
+        const spreadInfo = getSpreadInfo();
+
+        renderCurve(book, spreadInfo, state);
+        renderBook(book, state);
+        renderSideLists(state);
+        updateStats(book, spreadInfo, state);
+      }
+
+      document.getElementById("btn-buy-yes").addEventListener("click", () => executeTrade("yes"));
+      document.getElementById("btn-buy-no").addEventListener("click", () => executeTrade("no"));
+      document.getElementById("btn-merge").addEventListener("click", mergeUser);
+      document.getElementById("btn-walk-yes").addEventListener("click", () => autoWalk("yes", 20));
+      document.getElementById("btn-walk-no").addEventListener("click", () => autoWalk("no", 20));
+      document.getElementById("btn-reset").addEventListener("click", () => resetAll("Reset"));
+      document.getElementById("btn-apply").addEventListener("click", applyParams);
+      window.addEventListener("resize", renderAll);
+
+      syncParamInputs();
+      renderAll();
+      addLogEntry('<span style="color:#555">Engine ready</span>');
+	    </script>
+  </body>
+</html>
