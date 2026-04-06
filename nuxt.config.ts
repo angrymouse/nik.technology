@@ -33,6 +33,9 @@ export default defineNuxtConfig({
   modules: ['@nuxt/image', '@nuxt/content'],
 
   content: {
+    experimental: {
+      sqliteConnector: 'native',
+    },
     build: {
       markdown: {
         highlight: {
