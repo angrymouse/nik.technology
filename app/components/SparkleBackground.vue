@@ -12,21 +12,41 @@ import { ref, onMounted, onUnmounted } from 'vue'
 const canvas = ref(null)
 let animationId = null
 let particles = []
+let resizeHandler = null
+
+function createSeededRandom(seed) {
+  let state = seed >>> 0
+
+  return () => {
+    state = (state * 1664525 + 1013904223) >>> 0
+    return state / 4294967296
+  }
+}
+
+function createParticleSeed(width, height, count) {
+  return (
+    Math.imul(Math.round(width), 73856093) ^
+    Math.imul(Math.round(height), 19349663) ^
+    Math.imul(count, 83492791)
+  ) >>> 0
+}
 
 function createParticles(width, height) {
   const isMobile = width < 768
   const count = isMobile ? 50 : 100
+  const random = createSeededRandom(createParticleSeed(width, height, count))
+
   particles = []
 
   for (let i = 0; i < count; i++) {
     particles.push({
-      x: Math.random() * width,
-      y: Math.random() * height,
-      size: 0.5 + Math.random() * 1.5,
-      phase: Math.random() * Math.PI * 2,
-      speed: 0.3 + Math.random() * 0.7, // oscillation speed
-      minOpacity: 0.05 + Math.random() * 0.1,
-      maxOpacity: 0.3 + Math.random() * 0.5,
+      x: random() * width,
+      y: random() * height,
+      size: 0.5 + random() * 1.5,
+      phase: random() * Math.PI * 2,
+      speed: 0.3 + random() * 0.7,
+      minOpacity: 0.05 + random() * 0.1,
+      maxOpacity: 0.3 + random() * 0.5,
     })
   }
 }
@@ -69,18 +89,19 @@ onMounted(() => {
     createParticles(window.innerWidth, window.innerHeight)
   }
 
+  resizeHandler = resize
   resize()
-  window.addEventListener('resize', resize)
+  window.addEventListener('resize', resizeHandler)
 
   function animate(time) {
     draw(ctx, time)
     animationId = requestAnimationFrame(animate)
   }
   animationId = requestAnimationFrame(animate)
+})
 
-  onUnmounted(() => {
-    if (animationId) cancelAnimationFrame(animationId)
-    window.removeEventListener('resize', resize)
-  })
+onUnmounted(() => {
+  if (animationId) cancelAnimationFrame(animationId)
+  if (resizeHandler) window.removeEventListener('resize', resizeHandler)
 })
 </script>
