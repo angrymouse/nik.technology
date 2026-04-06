@@ -42,13 +42,51 @@ function createParticles(width, height) {
     particles.push({
       x: random() * width,
       y: random() * height,
-      size: 0.5 + random() * 1.5,
+      size: 1.5 + random() * 2.5,
       phase: random() * Math.PI * 2,
       speed: 0.3 + random() * 0.7,
-      minOpacity: 0.05 + random() * 0.1,
-      maxOpacity: 0.3 + random() * 0.5,
+      rotation: random() * Math.PI * 2,
+      minOpacity: 0.08 + random() * 0.12,
+      maxOpacity: 0.35 + random() * 0.45,
     })
   }
+}
+
+function drawSparkle(ctx, particle, opacity, time) {
+  const outerRadius = particle.size
+  const innerRadius = outerRadius * 0.28
+  const rotation = particle.rotation + time * 0.00015 * particle.speed
+
+  ctx.save()
+  ctx.translate(particle.x, particle.y)
+  ctx.rotate(rotation)
+  ctx.beginPath()
+
+  for (let i = 0; i < 8; i++) {
+    const angle = (Math.PI / 4) * i
+    const radius = i % 2 === 0 ? outerRadius : innerRadius
+    const px = Math.cos(angle) * radius
+    const py = Math.sin(angle) * radius
+
+    if (i === 0) {
+      ctx.moveTo(px, py)
+    }
+    else {
+      ctx.lineTo(px, py)
+    }
+  }
+
+  ctx.closePath()
+  ctx.fillStyle = `rgba(255, 255, 245, ${opacity})`
+  ctx.shadowColor = `rgba(255, 255, 220, ${opacity * 0.9})`
+  ctx.shadowBlur = outerRadius * 4
+  ctx.fill()
+
+  ctx.beginPath()
+  ctx.arc(0, 0, innerRadius * 0.9, 0, Math.PI * 2)
+  ctx.fillStyle = `rgba(255, 255, 255, ${Math.min(1, opacity + 0.2)})`
+  ctx.fill()
+  ctx.restore()
 }
 
 function draw(ctx, time) {
@@ -61,10 +99,7 @@ function draw(ctx, time) {
       (p.maxOpacity - p.minOpacity) *
         (0.5 + 0.5 * Math.sin(time * 0.001 * p.speed + p.phase))
 
-    ctx.beginPath()
-    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2)
-    ctx.fillStyle = `rgba(255, 255, 250, ${opacity})`
-    ctx.fill()
+    drawSparkle(ctx, p, opacity, time)
   }
 }
 
