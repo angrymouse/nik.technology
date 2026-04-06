@@ -35,12 +35,19 @@ function createParticles(width, height) {
   const isMobile = width < 768
   const count = isMobile ? 50 : 100
   const random = createSeededRandom(createParticleSeed(width, height, count))
+  const centerGapRatio = isMobile ? 0.34 : 0.42
+  const sideBandWidth = (width * (1 - centerGapRatio)) / 2
 
   particles = []
 
   for (let i = 0; i < count; i++) {
+    const side = random() < 0.5 ? 'left' : 'right'
+    const x = side === 'left'
+      ? random() * sideBandWidth
+      : width - random() * sideBandWidth
+
     particles.push({
-      x: random() * width,
+      x,
       y: random() * height,
       size: 1.5 + random() * 2.5,
       phase: random() * Math.PI * 2,
