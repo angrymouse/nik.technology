@@ -1,17 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./components/**/*.{js,vue,ts}",
-    "./layouts/**/*.vue",
-    "./pages/**/*.vue",
-    "./plugins/**/*.{js,ts}",
-    "./app.vue",
-    "./error.vue",
+    "./app/components/**/*.{js,vue,ts}",
+    "./app/layouts/**/*.vue",
+    "./app/pages/**/*.vue",
+    "./app/plugins/**/*.{js,ts}",
+    "./app/app.vue",
+    "./app/error.vue",
   ],
   theme: {
     extend: {
       fontFamily:{
-        "sans":['Iosevka Web', 'ui-monospace']
+        "sans":['Iosevka Web', 'ui-monospace'],
+        "display":['Bricolage Grotesque', 'system-ui', 'sans-serif']
       },
       colors: {
         'neon-green': 'var(--neon-green)',
