@@ -1,349 +1,311 @@
 ---
 title: "Turning SVG into the most size-efficient image format in the world"
-description: "How I turned verbose SVG text into a tiny VM-friendly binary by attacking redundancy at every level: symbols, paths, styles, ordering, fixed-point math, and compression."
+description: "How I took SVG apart, treated it like source code, and kept removing repeated bytes until the compiled format beat svgz by a wide margin."
 date: "2026-04-07"
 tags: ["svg", "compression", "bytecode", "graphics", "compilers"]
 ---
 
-SVG is one of those formats that feels elegant right until you try to ship a lot of it over the wire.
+SVG is a great format to work with.
 
-As a *language*, SVG is beautiful. As a *storage format*, SVG is kind of insane.
+It is text. You can open it in an editor, diff it, search it, patch it, and usually figure out what is going on without special tools.
 
-It is text. It repeats itself constantly. It spells out the same attribute names over and over. It stores geometry as human-readable decimal strings. It keeps saying things like `stroke-width`, `translate`, `viewBox`, `fill`, `path`, `xmlns`, and `http://www.w3.org/2000/svg` like bandwidth is free and CPUs are paid by the letter.
+It is also a bad way to store an image if the only thing you care about is size.
 
-That is fine if the goal is readability.
+That is not a philosophical complaint about XML. It is a very literal complaint about repeated bytes.
 
-It is not fine if the goal is: **make this thing as small as physically possible**.
+An SVG keeps saying the same things again and again:
 
-So I started building a weird machine for it.
-
-Not a general-purpose machine. Not JavaScript in disguise. A tiny non-programmable SVG virtual machine whose only job is to represent SVG structure more efficiently than SVG itself.
-
-And once you start looking at SVG through that lens, you realize something important:
-
-> SVG is already a program. It is just written in the most wasteful possible notation.
-
-## The problem with SVG is not that it is complex. The problem is that it is redundant.
-
-Take a simple SVG and squint at it as data instead of markup.
-
-You immediately see the same kinds of waste everywhere:
-
-- tag names repeated across siblings
-- attribute names repeated across every element
-- long namespace strings repeated in every file
+- tag names
+- attribute names
+- namespace strings
 - decimal numbers written as text
-- path commands mixed together with their numeric payloads
-- repeated path structures written out from scratch
-- repeated transforms written out from scratch
-- style patterns repeated from node to node
-- colors written as strings instead of bytes
-- semantically similar siblings serialized in arbitrary order
+- colors written as text
+- path commands mixed in with their numeric payloads
+- the same style combinations on sibling elements
+- the same path structure with slightly different coordinates
 
-A browser can deal with this because browsers are heroic garbage disposals.
+If the goal is authoring, those are reasonable choices.
 
-But if you are trying to build a compact transport or storage format, SVG is basically handing you a giant bag of repeated tokens and begging to be normalized.
+If the goal is making the file as small as possible, they are expensive habits.
 
-## Step one: stop thinking in terms of files, start thinking in terms of a VM
+So I stopped treating SVG as the final format and started treating it as source code.
 
-The first real shift was this: instead of “compressing SVG text,” represent SVG as a compact instruction-driven document format.
+That was the start of `svgvm`.
 
-That gives you a few immediate wins.
+## What a browser does, and what I do not need to ship
 
-You can stop paying text costs for structure.
+A browser does a lot of work before it can draw an SVG.
 
-Instead of writing:
+It reads XML. It resolves tags and attributes. It parses decimal strings into numbers. It parses color strings into channels. It reads a path string like this:
 
 ```xml
 <path d="M0 0 L10 10 L20 0 Z" fill="#00ff00" stroke="black" stroke-width="2"/>
 ```
 
-You can encode the same thing as:
+and turns it into something closer to this:
 
-- node opcode: path element
-- attribute presence bits
-- path reference
-- paint payload
-- paint payload
-- number payload
+- element kind: path
+- path commands: `M L L Z`
+- path numbers: `0 0 10 10 20 0`
+- fill: green
+- stroke: black
+- stroke width: 2
 
-The representation gets much tighter.
+That second representation is much closer to the drawing itself.
 
-Once the representation becomes binary and typed, you stop paying for punctuation, whitespace, quotes, XML syntax, and decimal string parsing overhead. You can encode meaning directly instead of encoding text that later needs to be interpreted as meaning.
+So the core decision was simple: store something closer to what the renderer already wants, not the text that humans happened to write.
 
-That is the foundation the whole project sits on.
+I call it a VM because the output is a compact instruction/data format for drawing, but the important part is not the name. The important part is that the binary stores meaning directly instead of storing markup and asking the decoder to rediscover the meaning every time.
 
-## Then the real work starts: removing every repeated byte you can find
+## SVG is expensive because it repeats itself
 
-The VM alone is not enough. A naive binary format can still be bloated.
+If you look at an SVG as data, the waste is not subtle.
 
-So the rest of the work became a long, mildly obsessive campaign against wasted bytes.
+The same attribute names appear on every sibling. The same path command patterns show up over and over. The same stroke widths and fills get restated on long runs of `<path>` elements. Numbers that would fit comfortably in a byte or two are written as several ASCII characters plus punctuation.
 
-## 1. Symbol tables instead of repeated text
+A browser can afford to be generous here. It is built to accept messy, verbose, irregular input.
 
-The easiest redundancy to kill is repeated strings.
+A storage format should not be generous. It should be strict about what gets a byte and what does not.
 
-SVG loves repeated strings:
+That mindset drove every change that came after it.
 
-- tag names like `svg`, `g`, `path`, `rect`
-- attribute names like `fill`, `stroke`, `transform`
-- namespace values
-- IDs and references
+## Step 1: stop paying for repeated strings
 
-So the format moved those into compact symbol tables and numeric codes. Known tags and attributes got fixed codes. Unknown ones fall back through a string table.
+The first round of savings was straightforward.
 
-This means you are no longer writing `stroke-width` every time. You write a small integer. That is boring, but boring is how you get small.
+Known tags and attributes became numeric codes. Repeated strings moved into tables. Anything common stopped being written as text over and over.
 
-## 2. Section the binary so similar bytes live together
+So instead of shipping `stroke-width` every time a path needs it, the file ships a small symbol. Instead of repeating `http://www.w3.org/2000/svg`, the file stores it once and refers to it.
 
-This was one of the biggest conceptual improvements.
+This part is not clever, but it matters because it removes a tax that the rest of the format would otherwise keep paying.
 
-Early on, path data looked a lot like the original SVG mindset:
+## Step 2: split the document into sections
 
-- command
-- numeric payload
-- command
-- numeric payload
-- command
-- numeric payload
+Early versions of the format still looked too much like the source SVG. They were binary, but they were still interleaving structure and payload in a way that was noisy.
 
-That is convenient to stream, but it is not especially compressible.
-
-Compression algorithms love repetition and homogeneity. They want stretches of similar things sitting next to each other.
-
-So the format was reworked into sections.
-
-Instead of interleaving command bytes and coordinate bytes, it now keeps major payload classes in their own structured blocks:
+The better layout was to separate the file into distinct sections:
 
 - string table
 - path pool
 - transform pool
 - node stream
 
-And within the path pool, commands and data are kept distinct. That means opcode streams cluster with opcode streams, and numeric streams cluster with numeric streams.
+And inside the path pool, split command bytes from numeric data.
 
-That matters a lot once an outer compressor gets involved.
+That means the encoder is no longer writing something equivalent to:
 
-## 3. Pool repeated path programs and transform programs
+- command
+- numbers
+- command
+- numbers
+- command
+- numbers
 
-SVG files often repeat themselves shamelessly.
+It writes command streams together and numeric streams together.
 
-The same icon path shows up multiple times.
-The same transform stack shows up on multiple siblings.
-The same command pattern appears again and again with slightly different coordinates.
+That is better for two reasons.
 
-So instead of storing each path inline every time, the VM builds pools:
+First, it is smaller on its own because the representation gets simpler.
 
-- unique path values
-- unique transform values
-- unique path *patterns*
+Second, it is easier for a general compressor to work with. Compressors like regularity. A run of similar bytes is more useful than a stream that keeps alternating between unrelated kinds of data.
 
-Then nodes reference those pooled entries by index.
+## Step 3: separate path shape from path coordinates
 
-This is where the format started behaving less like “binary SVG” and more like a real compiled artifact.
+This was one of the bigger format changes.
 
-The DOM-like node stream became a graph of references into sectioned payloads. That alone changes the economics dramatically.
+A path really contains two different things:
 
-## 4. Split path command patterns from path numeric data
+1. the command pattern
+2. the numbers attached to it
 
-This changed the format substantially.
+For example, these paths all share the same pattern:
 
-Paths have two parts:
+```text
+M C S Q T L A Z
+```
 
-1. the *shape of the instruction stream* — `M C S Q T L A Z`
-2. the actual numbers
+The coordinates differ, but the structure does not.
 
-If twelve paths all share the same command pattern but have different coordinates, writing the command pattern twelve times is just waste.
+So `svgvm` stores path command patterns separately from path instances. Once I did that, I could stop repeating the same command stream for every similar path.
 
-So the format now stores path command patterns once, separately from path instances.
+It also let me remove another chunk of useless metadata.
 
-A path instance becomes something closer to:
+At one point I was storing a parallel stream of value counts for each path command. That turned out to be nonsense. The opcode already tells you the arity. A cubic curve always needs six numbers. A close-path needs none. The decoder already knows this.
 
-- which command pattern it uses
-- where its numeric data begins
+So that extra bookkeeping disappeared.
 
-Even better, the value count for each command is derived from the opcode itself. There is no need to write parallel metadata explaining that `C` takes 6 values and `Z` takes 0. The opcode already tells you that.
+## Step 4: treat coordinates like storage, not scripture
 
-That removed an entire stream of redundant bookkeeping.
+SVG files often carry far more numeric precision than the image needs.
 
-## 5. Force coordinates into small fixed-width math
+That precision is convenient while editing, but it is expensive once the file becomes an asset.
 
-This is where the format became much more efficient.
+So path coordinates moved into fixed-point storage with adaptive scaling.
 
-Path coordinates were moved away from generic variable-length numeric encoding and into compact fixed-point storage with an aggressive size-first policy.
-
-In practical terms:
+In practice that means:
 
 - coordinates are rounded
-- scales are chosen adaptively
-- path values are forced to fit tiny integer ranges whenever possible
+- the scale is chosen based on size, not on sentiment
+- values are forced into small integer ranges wherever possible
 
-The key realization is that most SVGs do not need arbitrary floating-point dignity. They need to look correct.
+If a control point is written as `10.5432` and `10.54` renders the same image, keeping the extra digits is just paying rent on dead precision.
 
-Human eyes do not care whether a control point was stored as `10.5432` or rounded to a tighter representation that renders identically on screen.
+Once coordinates are rounded into tighter integer ranges, two more things happen:
 
-So the encoder picks the smallest practical scale that preserves enough fidelity while minimizing bytes.
+- the raw path payload shrinks
+- delta encoding starts working much better because nearby paths stay numerically close
 
-That does two things:
+A lot of compression work ends up being number work.
 
-- raw geometry gets smaller
-- delta encoding gets dramatically better because the numbers are closer together
+## Step 5: give `<path>` a dedicated compact encoding
 
-This is where compression stops being only about syntax and starts being about *numerical discipline*.
+Generic element encoding is nice if you want maximum flexibility.
 
-## 6. Use compact path-specialized node opcodes
+It is also wasteful when a file contains long runs of nearly identical `<path>` elements, which is common in real SVG art.
 
-Generic element encoding is flexible, but flexibility costs bytes.
+So `svgvm` gives `<path>` its own compact node form.
 
-A `<path>` element with exactly these attributes:
+Instead of repeatedly spelling out the same structural facts, the compact form assumes a known field order and uses a small bitmask for what is present. In the common case, a path node boils down to:
 
-- `d`
-- `fill`
-- `stroke`
-- `stroke-width`
+- compact-path opcode
+- path reference
+- compact style payload
 
-shows up constantly.
+not:
 
-So instead of serializing it like a generic XML-ish node, the format gives it its own compact encoding.
+- generic element opcode
+- tag symbol
+- attribute count
+- attribute name
+- value opcode
+- attribute name
+- value opcode
+- attribute name
+- value opcode
+- attribute name
+- value opcode
+
+Once a file has dozens or hundreds of paths, that difference matters quickly.
+
+## Step 6: reuse style across path runs
+
+After the compact path node existed, another pattern became obvious.
+
+A lot of neighboring paths share the same style, or almost the same style.
+
+Maybe the fill stays `none` for a whole run. Maybe `stroke-width` is fixed. Maybe the stroke color shifts gradually instead of changing in unrelated jumps.
+
+So the compact path encoding became stateful.
+
+If a path can reuse style from the previous compact path node, it does. If the stroke color only changes a little, the file can store a small RGB delta instead of a full paint payload.
+
+None of these tweaks is dramatic by itself. Together they cut a surprising amount of repetition out of path-heavy files.
+
+## Step 7: pack small vocabularies below one byte
+
+Once the bigger structural waste was gone, the fixed overheads started to matter more.
+
+Path commands live in a small vocabulary. Some compact-path mode values do too. Spending a whole byte on each of them is convenient, but not justified.
+
+So those streams got packed more tightly.
+
+For example:
+
+- path commands are packed into 5-bit codes
+- compact path run metadata uses 4-bit values where that is enough
+
+This is the sort of work that feels tedious when you are doing it, but it is real size reduction, and it compounds well with everything around it.
+
+## Step 8: reorder for locality when it is safe
+
+Two files can describe the same drawing and still behave very differently under compression.
+
+Order matters.
+
+If similar things sit next to each other, deltas get smaller and the outer compressor sees cleaner patterns.
+
+So the encoder now does locality-friendly ordering in places where it is safe:
+
+- path pools are grouped by command pattern
+- paths inside a pattern group are ordered by numeric similarity
+- transform pools are grouped by shape and ordered by value similarity
+- some sibling runs of compact paths are reordered conservatively when the style makes that safe
+
+That last part needs restraint because SVG draw order can affect the result.
+
+I did not want a clever encoder that silently changes the image.
+
+So the reordering rules stay conservative and only apply where the visual result is preserved.
+
+## Step 9: delta-code whatever behaves predictably
+
+Once similar records are adjacent, delta coding becomes useful.
+
+A path index that would have been written as an absolute reference can often be stored as a small delta from the previous one. Similar paths with the same command pattern can store coordinate deltas instead of full coordinate lists. Similar transforms can do the same thing.
+
+The current format uses delta or predictive coding in several places, including:
+
+- path index deltas inside compact path runs
+- coordinate delta mode for same-pattern paths
+- transform delta mode for repeated transform shapes
+- RGB deltas for nearby stroke colors
+
+If the data becomes a stream of small signed changes instead of a stream of unrelated absolute values, the final compressor has less entropy to fight.
+
+## Step 10: stop storing paint as text
+
+SVG color syntax is useful for humans and bad for storage.
+
+These are comfortable to write:
+
+- `#00ff00`
+- `black`
+- `rgba(255,0,0,0.5)`
+
+They are not efficient encodings.
+
+Inside `svgvm`, paint becomes typed byte payloads.
 
 That means:
 
-- dedicated node opcode
-- bitmask for which style fields are present
-- implicit field ordering
-- path reference directly
-- paint payloads in compact form
+- opaque colors use RGB
+- alpha is stored only when it is needed
+- special values like `none` and `currentColor` get dedicated representations
 
-This avoids repeating generic tag and attribute symbols for the most common and most expensive shape in many SVGs.
+There is no reason to ship six hexadecimal characters when three bytes say the same thing.
 
-It is the binary equivalent of removing boilerplate the decoder already knows how to reconstruct.
+## Step 11: only then compress it with zstd
 
-## 7. Reuse style across path runs
+The outer compression layer is Zstandard.
 
-Then I noticed another SVG habit: once someone starts drawing paths, they often keep using the same styling for a while.
+That helps, but it is the last step for a reason.
 
-Maybe the fill stays `none`.
-Maybe `stroke-width` is always `1.5`.
-Maybe stroke colors evolve gradually instead of jumping randomly.
+If the underlying representation is still noisy, switching from one general-purpose compressor to another does not solve the real problem. You just get a slightly smaller version of a messy format.
 
-So compact path encoding became stateful.
+The useful work happened before zstd ever saw the file:
 
-Consecutive path nodes can now reuse previous style fields instead of re-encoding them. And when stroke colors move by small RGB deltas, the VM stores only the delta.
+- deduplicate repeated structures
+- separate commands from data
+- tighten numeric encoding
+- reuse style
+- improve locality
+- pack opcodes and metadata more aggressively
 
-It sounds small, but across a path-heavy illustration it compounds quickly.
+After that, zstd gets a much better byte stream to work with.
 
-## 8. Pack opcodes below one byte when possible
+## Why `svgz` is the comparison that matters
 
-If your opcode vocabulary is small, a full byte per opcode is a luxury.
+Beating raw SVG is easy and not very interesting.
 
-Path command streams and transform opcode streams now use bit-packed representations.
+The real baseline is `svgz`, because gzip is already good at repetitive text, and SVG gives it plenty to work with.
 
-For example, path commands fit in 5 bits, so the format packs them densely instead of wasting 8 bits each. Compact path-run mode values were tightened too, down to 4 bits each.
+That is why I ended up doing structural work instead of just playing with compressors. If you want a serious win over `svgz`, you have to remove the redundancy before the general-purpose compressor gets involved.
 
-This is the sort of thing you do after the bigger architectural fixes are in place. But once you are chasing the last stretch, it matters.
-
-Sub-byte packing is annoying to implement, but it pays off when you are chasing the last few percent.
-
-## 9. Reorder data for locality and better deltas
-
-This is one of the most underrated parts.
-
-Compression is not only about representation. It is also about **ordering**.
-
-If similar things are adjacent, deltas get smaller and outer compressors get happier.
-
-So the encoder now reorders pooled paths and transforms in ways that preserve meaning but improve locality:
-
-- path pools are grouped by command pattern
-- within a pattern group, paths are greedily ordered by numeric similarity
-- transform pools are grouped by shape and ordered by value similarity
-- some compact path sibling runs can be safely reordered when style and opacity rules make order irrelevant
-
-That last point matters because visual order in SVG can affect rendering. So the reordering has to be conservative.
-
-But where it is safe, it pays off.
-
-This is the point where the format stops merely “encoding SVG” and starts arranging bytes for compression.
-
-## 10. Predictive and delta coding for geometry and transforms
-
-Once similar records are adjacent, delta coding becomes much more effective.
-
-The format now uses predictive schemes like:
-
-- path index deltas for consecutive compact path nodes
-- path coordinate delta mode for same-pattern paths
-- transform section delta mode for consecutive transforms with matching shapes
-- RGB deltas for nearby stroke colors
-
-A number like `121` is fine.
-
-A delta like `+3` is much better.
-
-And when a whole stream turns into lots of tiny signed deltas, the outer compressor starts looking like a genius even though you did most of the hard work beforehand.
-
-## 11. Colors are bytes, not strings
-
-A lot of SVG style data is encoded in the least direct possible way.
-
-`#00ff00` is text.
-`black` is text.
-`rgba(255,0,0,0.5)` is text.
-
-The VM turns that into paint opcodes and byte payloads.
-
-It also distinguishes:
-
-- opaque RGB
-- RGBA only when alpha is actually needed
-- special cases like `none`, `inherit`, `currentColor`
-
-That means no more shipping six-character hex strings when three bytes will do.
-
-## 12. Then wrap the whole thing in zstd
-
-After all the structural work, I still wanted the last layer of entropy squeezed out.
-
-So the compiled binary gets wrapped in Zstandard.
-
-This is important: **zstd is not the core idea**. If the binary format is bad, zstd just compresses a bad format.
-
-The real gains came from normalizing the structure first.
-
-But once the data is:
-
-- deduplicated
-- sectioned
-- ordered for locality
-- numerically tightened
-- opcode-packed
-
-…then zstd has a field day.
-
-That is the right order of operations.
-
-Not “throw a compressor at SVG and pray.”
-
-First make the representation worthy of compression. Then compress it.
-
-## The catch: gzip is actually a very strong opponent
-
-People underestimate how good gzip is on SVG.
-
-SVG is repetitive text. Repetitive text is exactly what gzip handles well.
-
-So beating raw SVG is easy.
-Beating **SVGZ** is the real test.
-
-That is why most of the work above was necessary.
-
-You do not get 30–40% wins over gzip-compressed SVG by swapping one library call. You get there by removing structural waste from the data model itself.
+The format has to stop looking like source text and start looking like the drawing.
 
 ## Current results
 
-On the latest tracked fixtures, the compiled `svgvm` output is currently smaller than `svgz` across the board.
-
-Here is the current snapshot:
+On the current fixtures, `svgvm` beats `svgz` across the board.
 
 | Fixture | SVGZ | svgvm | Improvement vs SVGZ |
 |---|---:|---:|---:|
@@ -352,86 +314,57 @@ Here is the current snapshot:
 | `complex-paths.svg` | 761 | 442 | 41.9% smaller |
 | `repeated-complex-paths.svg` | 180 | 113 | 37.2% smaller |
 
-The important one for me is `complex-paths.svg`.
+`complex-paths.svg` was the most useful one while iterating on the format.
 
-That was the hard case. The one that kept exposing waste in path encoding, style encoding, and data ordering. Once that fixture dropped meaningfully below `svgz`, the whole project stopped being a clever trick and started looking like a serious format experiment.
+It kept exposing the places where the representation was still sloppy: path metadata, style payloads, coordinate storage, ordering, and delta behavior. Each time that fixture refused to move, it usually meant there was still some structural waste hiding in the format.
 
-## So what actually happened here?
+## What the VM idea really bought me
 
-If I had to summarize the whole project in one sentence, it would be this:
+Calling the project a VM was useful because it forced the right question.
 
-> I stopped storing SVG as prose and started storing it as intent.
+Not "how do I zip XML a bit better?"
 
-That is the whole game.
+The real question was:
 
-SVG as text is optimized for humans, editors, diff tools, and standards committees.
+**What is the smallest representation that still describes the same drawing?**
 
-SVGVM is optimized for the much harsher question:
+Once you ask that, a lot of decisions become obvious:
 
-**What is the minimum number of bytes required to say the same visual thing?**
+- strings become symbols
+- repeated structures become tables and pools
+- paths become patterns plus numeric payloads
+- generic numbers become fixed-point integers
+- repeated path nodes get their own encoding
+- repeated style becomes state
+- predictable values become deltas
+- small vocabularies get packed below a byte
 
-Once you ask that question honestly, you end up doing all the things above:
+That is a compiler mindset more than a markup mindset.
 
-- symbol tables
-- pooled sections
-- command/data separation
-- fixed-point quantization
-- specialized path opcodes
-- style reuse
-- delta coding
-- sub-byte packing
-- locality-aware ordering
-- outer compression only after structural cleanup
+SVG is still the source language. It just is not the thing I want to ship anymore.
 
-That is how you go from “SVG is nice” to “why is this image format still spelling out `http://www.w3.org/2000/svg` in full every time?”
+## This is not only about SVG
 
-## The bigger lesson
+The same pattern shows up in a lot of formats.
 
-This is not really just about SVG.
+Readable formats are often full of small conveniences that make authoring pleasant and storage expensive. That trade is usually correct. People need to work with the source format.
 
-It is about a pattern that shows up everywhere in software.
+But if the job changes from authoring to distribution, you often get a better result by compiling the source format into something stricter and more specific.
 
-A lot of popular formats are optimized for:
+That is what compilers do. That is what codecs do. This project ended up living somewhere between the two.
 
-- readability
-- debuggability
-- interoperability
-- authoring convenience
+## There is still room left
 
-Those are good goals.
+There is still more I want to try:
 
-But if you care about absolute size, you eventually have to break away from the source format and build a representation that reflects the *semantics* instead of the syntax.
-
-That is what compilers do.
-That is what codecs do.
-That is what this turned into.
-
-SVG was never the final form. SVG was just the source language.
-
-## And no, I still do not think we are done
-
-There are still more optimizations left.
-
-Things like:
-
-- even tighter compact style packing
-- more aggressive transform predictors
+- tighter compact style packing
+- stronger transform predictors
 - command-slot predictors for path geometry
 - smarter safe sibling clustering
 - more specialized small-value modes
 
-This rabbit hole does not really end. It just gets more specialized.
+This kind of project does not really finish. It just gets harder to find the next wasted byte.
 
-Which, to be honest, is exactly why I like it.
+That is fine. At this point the work is mostly about being honest.
 
-:::callout{type="tip"}
-The fun part of this project is that every time the assembly dump gets a little cleaner, the compressed size drops again.
-:::
-
-The goal was never “make SVG slightly smaller.”
-
-The goal was to treat SVG like source code, compile it into something lean, and keep shaving until the remaining bytes had to justify their existence.
-
-That is how you get from XML prose to a tiny graphics VM.
-
-And that is how you start turning SVG into something that has a real shot at being the most size-efficient image format in the room.
+Every byte that stays in the format should be there because it earns its keep, not because the encoder was lazy.
