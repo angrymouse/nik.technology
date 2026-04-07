@@ -1,5 +1,5 @@
 ---
-title: "Turning SVG into most size efficient image format in the world"
+title: "Turning SVG into the most size-efficient image format in the world"
 description: "How I turned verbose SVG text into a tiny VM-friendly binary by attacking redundancy at every level: symbols, paths, styles, ordering, fixed-point math, and compression."
 date: "2026-04-07"
 tags: ["svg", "compression", "bytecode", "graphics", "compilers"]
@@ -46,7 +46,7 @@ But if you are trying to build a compact transport or storage format, SVG is bas
 
 ## Step one: stop thinking in terms of files, start thinking in terms of a VM
 
-The first real shift was this: instead of “compressing SVG text,” represent SVG as a small instruction-driven document format.
+The first real shift was this: instead of “compressing SVG text,” represent SVG as a compact instruction-driven document format.
 
 That gives you a few immediate wins.
 
@@ -67,7 +67,7 @@ You can encode the same thing as:
 - paint payload
 - number payload
 
-That is a very different game.
+The representation gets much tighter.
 
 Once the representation becomes binary and typed, you stop paying for punctuation, whitespace, quotes, XML syntax, and decimal string parsing overhead. You can encode meaning directly instead of encoding text that later needs to be interpreted as meaning.
 
@@ -101,7 +101,7 @@ This was one of the biggest conceptual improvements.
 Early on, path data looked a lot like the original SVG mindset:
 
 - command
-n- numeric payload
+- numeric payload
 - command
 - numeric payload
 - command
@@ -146,7 +146,7 @@ The DOM-like node stream became a graph of references into sectioned payloads. T
 
 ## 4. Split path command patterns from path numeric data
 
-This was a huge one.
+This changed the format substantially.
 
 Paths have two parts:
 
@@ -168,11 +168,11 @@ That removed an entire stream of redundant bookkeeping.
 
 ## 5. Force coordinates into small fixed-width math
 
-This is where things stopped being polite and started being effective.
+This is where the format became much more efficient.
 
 Path coordinates were moved away from generic variable-length numeric encoding and into compact fixed-point storage with an aggressive size-first policy.
 
-In plain English:
+In practical terms:
 
 - coordinates are rounded
 - scales are chosen adaptively
@@ -216,7 +216,7 @@ That means:
 
 This avoids repeating generic tag and attribute symbols for the most common and most expensive shape in many SVGs.
 
-It is the binary equivalent of saying: *we know what you meant, stop over-explaining.*
+It is the binary equivalent of removing boilerplate the decoder already knows how to reconstruct.
 
 ## 7. Reuse style across path runs
 
@@ -226,13 +226,11 @@ Maybe the fill stays `none`.
 Maybe `stroke-width` is always `1.5`.
 Maybe stroke colors evolve gradually instead of jumping randomly.
 
-So compact path encoding grew memory.
+So compact path encoding became stateful.
 
 Consecutive path nodes can now reuse previous style fields instead of re-encoding them. And when stroke colors move by small RGB deltas, the VM stores only the delta.
 
-This is the kind of optimization that sounds tiny until you realize it hits every sibling in a path-heavy illustration.
-
-And then it is not tiny anymore.
+It sounds small, but across a path-heavy illustration it compounds quickly.
 
 ## 8. Pack opcodes below one byte when possible
 
@@ -242,9 +240,9 @@ Path command streams and transform opcode streams now use bit-packed representat
 
 For example, path commands fit in 5 bits, so the format packs them densely instead of wasting 8 bits each. Compact path-run mode values were tightened too, down to 4 bits each.
 
-This is the sort of thing you only do after the bigger architectural fixes are in place. But once you are chasing the final stretch, it matters.
+This is the sort of thing you do after the bigger architectural fixes are in place. But once you are chasing the last stretch, it matters.
 
-Sub-byte packing is annoying to implement, but bytes do not care about your feelings.
+Sub-byte packing is annoying to implement, but it pays off when you are chasing the last few percent.
 
 ## 9. Reorder data for locality and better deltas
 
@@ -265,7 +263,7 @@ That last point matters because visual order in SVG can affect rendering. So the
 
 But where it is safe, it pays off.
 
-This is the point where the format stops merely “encoding SVG” and starts *staging the bytes for compression warfare*.
+This is the point where the format stops merely “encoding SVG” and starts arranging bytes for compression.
 
 ## 10. Predictive and delta coding for geometry and transforms
 
@@ -328,18 +326,18 @@ Not “throw a compressor at SVG and pray.”
 
 First make the representation worthy of compression. Then compress it.
 
-## The funny part: gzip is actually a very strong opponent
+## The catch: gzip is actually a very strong opponent
 
 People underestimate how good gzip is on SVG.
 
-SVG is repetitive text. Repetitive text is exactly what gzip eats for breakfast.
+SVG is repetitive text. Repetitive text is exactly what gzip handles well.
 
 So beating raw SVG is easy.
 Beating **SVGZ** is the real test.
 
 That is why most of the work above was necessary.
 
-You do not get 30–40% wins over gzip-compressed SVG by swapping one library call. You get there by removing structural stupidity from the data model itself.
+You do not get 30–40% wins over gzip-compressed SVG by swapping one library call. You get there by removing structural waste from the data model itself.
 
 ## Current results
 
@@ -356,7 +354,7 @@ Here is the current snapshot:
 
 The important one for me is `complex-paths.svg`.
 
-That was the annoying case. The one that kept exposing waste in path encoding, style encoding, and data ordering. Once that fixture dropped meaningfully below `svgz`, the whole project stopped being a cute trick and started becoming a serious format experiment.
+That was the hard case. The one that kept exposing waste in path encoding, style encoding, and data ordering. Once that fixture dropped meaningfully below `svgz`, the whole project stopped being a clever trick and started looking like a serious format experiment.
 
 ## So what actually happened here?
 
@@ -368,7 +366,7 @@ That is the whole game.
 
 SVG as text is optimized for humans, editors, diff tools, and standards committees.
 
-SVGVM is optimized for the much more savage question:
+SVGVM is optimized for the much harsher question:
 
 **What is the minimum number of bytes required to say the same visual thing?**
 
@@ -385,7 +383,7 @@ Once you ask that question honestly, you end up doing all the things above:
 - locality-aware ordering
 - outer compression only after structural cleanup
 
-That is how you go from “SVG is nice” to “why is this image format still spelling out `http://www.w3.org/2000/svg` like it is writing a Victorian novel?”
+That is how you go from “SVG is nice” to “why is this image format still spelling out `http://www.w3.org/2000/svg` in full every time?”
 
 ## The bigger lesson
 
@@ -412,7 +410,7 @@ SVG was never the final form. SVG was just the source language.
 
 ## And no, I still do not think we are done
 
-There are still more ugly tricks left.
+There are still more optimizations left.
 
 Things like:
 
@@ -422,18 +420,18 @@ Things like:
 - smarter safe sibling clustering
 - more specialized small-value modes
 
-This rabbit hole does not really end. It just gets weirder.
+This rabbit hole does not really end. It just gets more specialized.
 
 Which, to be honest, is exactly why I like it.
 
 :::callout{type="tip"}
-The fun part of this project is that every time the assembly dump looks a little less embarrassing, the compressed size drops again.
+The fun part of this project is that every time the assembly dump gets a little cleaner, the compressed size drops again.
 :::
 
 The goal was never “make SVG slightly smaller.”
 
-The goal was to treat SVG like source code, compile it into something ruthless, and keep shaving until the remaining bytes had to justify their existence.
+The goal was to treat SVG like source code, compile it into something lean, and keep shaving until the remaining bytes had to justify their existence.
 
-That is how you get from XML poetry to a tiny graphics VM.
+That is how you get from XML prose to a tiny graphics VM.
 
 And that is how you start turning SVG into something that has a real shot at being the most size-efficient image format in the room.
