@@ -293,13 +293,5 @@ That is closer to a compiler mindset than a markup mindset.
 
 SVG is still the source language. It just is not the thing I want to ship anymore.
 
-## This is not only about SVG
-
-The same trade shows up in a lot of formats.
-
-Readable formats often include conveniences that help authoring and cost bytes in storage. That is usually the right trade.
-
-But when the job changes from authoring to distribution, compiling the source format into something stricter and more specific can work better.
-
-That is what compilers do. That is what codecs do. This project ended up somewhere between the two.
+Thanks for reading. If you found this interesting, follow my Telegram channel [The Tech Quant](https://t.me/TheTechQuant) for more posts like this.
 
