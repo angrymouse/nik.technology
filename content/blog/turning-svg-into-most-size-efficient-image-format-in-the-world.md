@@ -90,9 +90,6 @@ Instead of interleaving commands and numbers, it writes command streams together
 
 That makes the layout smaller and more compressible because similar bytes stay together.
 
-:::svgcmp-layout-demo
-:::
-
 ## Step 3: separate path shape from path coordinates
 
 A path really contains two different things:
@@ -306,16 +303,3 @@ But when the job changes from authoring to distribution, compiling the source fo
 
 That is what compilers do. That is what codecs do. This project ended up somewhere between the two.
 
-## There is still room left
-
-There is still more I want to try:
-
-- tighter compact style packing
-- stronger transform predictors
-- command-slot predictors for path geometry
-- smarter safe sibling clustering
-- more specialized small-value modes
-
-As the obvious waste disappears, the remaining work gets harder.
-
-Every remaining byte should be there because it does something useful.
