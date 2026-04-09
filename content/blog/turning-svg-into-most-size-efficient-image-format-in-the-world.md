@@ -179,15 +179,7 @@ After the larger structural waste was gone, fixed overhead started to matter mor
 
 Path commands live in a small vocabulary. Some compact-path mode values do too. Spending a whole byte on each of them is convenient, but not justified.
 
-So those streams got packed more tightly.
-
-:::svgcmp-packing-demo
-:::
-
-For example:
-
-- path commands are packed into 5-bit codes
-- compact path run metadata uses 4-bit values where that is enough
+So those streams got packed more tightly. For example, path commands are packed into 5-bit codes and compact path run metadata uses 4-bit values where that is enough.
 
 ## Step 8: reorder for locality when it is safe
 
@@ -216,9 +208,6 @@ The current format uses delta or predictive coding in several places, including:
 - RGB deltas for nearby stroke colors
 
 When the stream turns into small signed changes instead of unrelated absolute values, the final compressor has less entropy to deal with.
-
-:::svgcmp-precision-demo
-:::
 
 ## Step 10: stop storing paint as text
 
