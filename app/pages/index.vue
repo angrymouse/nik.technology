@@ -4,7 +4,7 @@
         <section id="about" class="mb-12 px-1 md:px-0">
   <div class="flex flex-col md:flex-row md:items-center md:space-x-8">
     <div class="flex justify-center mb-6 md:mb-0">
-      <img src="@/assets/photo.png" alt="Your Photo" class="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-neon-green">
+      <img src="@/assets/photo.png" alt="Cartoon mouse" class="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-neon-green">
     </div>
     <div>
       <h2 class="text-2xl md:text-3xl font-bold mb-4 text-center md:text-left">About Me</h2>
