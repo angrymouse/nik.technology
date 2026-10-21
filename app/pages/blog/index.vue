@@ -57,7 +57,7 @@ useSeoMeta({
 
 const { data: posts } = await useAsyncData('blog-list', () =>
   queryCollection('blog')
-    .where('draft', 'IS NOT', true)
+    .orWhere(query => query.where('draft', '=', false).where('draft', 'IS NULL'))
     .order('date', 'DESC')
     .select('title', 'description', 'date', 'tags', 'path')
     .all()

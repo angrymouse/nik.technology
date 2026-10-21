@@ -1,23 +1,13 @@
-# Nuxt 3 Minimal Starter
+# nik.technology
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Nuxt 4 website, generated as static files and hosted on Cloudflare Pages.
 
 ## Setup
 
-Make sure to install the dependencies:
+Use Node 22 and the committed npm lockfile:
 
 ```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+npm ci
 ```
 
 ## Development Server
@@ -25,54 +15,28 @@ bun install
 Start the development server on `http://localhost:3000`:
 
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
 ## Production
 
-Build the application for production:
+Cloudflare Pages project `nik-technology` deploys the `master` branch from the
+repository root. Its build command is `npm run generate` and its output directory
+is `dist`. To reproduce the Cloudflare static build locally:
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+CF_PAGES=1 npm run generate
 ```
 
-Locally preview production build:
+Serve the generated files locally:
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+python -m http.server 4178 --directory dist
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Keep `package-lock.json` committed so deployment installs match the verified
+dependency versions. The blog index and RSS feed include posts with `draft: false`
+or no `draft` field.
 
 ## Group trading research
 

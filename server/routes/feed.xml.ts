@@ -11,7 +11,7 @@ function escapeXml(str: string): string {
 
 export default defineEventHandler(async (event) => {
   const posts = await queryCollection(event, 'blog')
-    .where('draft', 'IS NOT', true)
+    .orWhere(query => query.where('draft', '=', false).where('draft', 'IS NULL'))
     .order('date', 'DESC')
     .all()
 
