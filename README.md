@@ -4,7 +4,8 @@ Nuxt 4 website, generated as static files and hosted on Cloudflare Pages.
 
 ## Setup
 
-Use Node 22 and the committed npm lockfile:
+Use Node 22.23.3 (pinned in `.node-version` and `.nvmrc`) and the committed npm
+lockfile. Cloudflare installs dependencies with npm 10:
 
 ```bash
 npm ci
