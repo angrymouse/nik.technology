@@ -1,0 +1,55 @@
+{
+  "directory": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/live_message_captures/20261021T153519336Z_48f1682d",
+  "protocolSha256": "eb4f0b4bbb6e1636798adf26edcf8d9ba7618f653275b744d4ac7730f722c3bd",
+  "eventsSha256": "6323f91573aef1689f91e324e369bcc8e126eb9401c742cf588176c87d676990",
+  "sourceSha256": "075b3f73e2bec1ccfbe325b9fe71257920eba576f7b73b3eebab803befb77528",
+  "auditorSha256": "05b8b57aff5ff4789e41bc2bd433222b5e15f06c7b03a1626394323151652a5e",
+  "readyAt": "2026-10-21T15:35:22.530Z",
+  "closedAt": "2026-10-21T16:05:22.535Z",
+  "counts": {
+    "connection_state": 2,
+    "history_start": 100,
+    "ready": 1,
+    "new_message": 126,
+    "edit_message": 7,
+    "observation_closed": 1,
+    "history_end": 100,
+    "finished": 1
+  },
+  "verifiedFrames": 338,
+  "verifiedMessageVersions": 333,
+  "uniqueMessages": 226,
+  "messagesWithMultipleObservedVersions": 6,
+  "eligibleOriginalVersions": 126,
+  "capturedOriginalsLaterEdited": 6,
+  "originalLaterEditedIds": [
+    2929768,
+    2929774,
+    2929780,
+    2929804,
+    2929809,
+    2929852
+  ],
+  "receiptDelaySeconds": {
+    "minimum": 0.38,
+    "maximum": 1.511,
+    "median": 0.896
+  },
+  "finalSnapshot": {
+    "messages": 100,
+    "duringWindow": 100,
+    "missedNewUpdateIds": [],
+    "potentiallyTruncated": true
+  },
+  "connectionTransitions": [
+    {
+      "at": "2026-10-21T15:35:19.627Z",
+      "state": "connecting"
+    },
+    {
+      "at": "2026-10-21T15:35:19.681Z",
+      "state": "connected"
+    }
+  ],
+  "scope": "Receipt timestamps and observed versions verified. Initial and final snapshots are not original-text evidence. Final history reconciliation cannot establish completeness for deleted messages or undelivered edits. No trading rule was applied during this capture."
+}

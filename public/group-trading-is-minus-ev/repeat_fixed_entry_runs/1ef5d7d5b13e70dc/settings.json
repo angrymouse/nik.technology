@@ -1,0 +1,235 @@
+{
+  "dataset": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/repeat_call_datasets/b231edbc401e6dd92215",
+  "originalDataset": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/coverage_repairs/evm/combined/datasets/adb4dc66b5bd0a0d3e6f",
+  "compiledArraysSha256": "c44de354d9623d2d1b1c7136e4aac515b63077452a18cdbf75264d44883fd4b9",
+  "datasetAuditSha256": "d06b3f2ffbfd3d4f58333b31bfa213193ccee7508c0eed5816235482d47e89e9",
+  "savedChoiceSource": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/cohort_runs/cdbe9d78885db2c1/results.json",
+  "savedChoiceSha256": "77da004ffc2f2fc35efad2f0eb1c5a2d3a48df4181dfeac070e8d977f1e24df2",
+  "choices": [
+    {
+      "cutoff": 1792281600000,
+      "entry": {
+        "delay": 1,
+        "min_cap": 25000,
+        "min_gain": -0.25,
+        "max_gain": -0.1,
+        "cap_basis": "confirmed",
+        "family": "fine_cap"
+      },
+      "exit": {
+        "hold": 10,
+        "stop": null,
+        "target": null,
+        "trail_at": 1.2,
+        "trail_gap": 0.3,
+        "early_after": null,
+        "early_return": 0.0,
+        "partial_at": null,
+        "partial_fraction": 0.5,
+        "breakeven": false
+      },
+      "policy": {
+        "fraction": 0.02,
+        "profile": "cohort_10",
+        "daily_budget": null,
+        "cooldown_losses": 0,
+        "cooldown_minutes": 0,
+        "halve_after_losses": 0,
+        "drawdown_throttle": null,
+        "one_per_contract": true
+      },
+      "regimeGate": [
+        "wins",
+        5,
+        0.4
+      ]
+    },
+    {
+      "cutoff": 1792368000000,
+      "entry": {
+        "delay": 1,
+        "min_cap": 50000,
+        "min_gain": -0.25,
+        "max_gain": -0.1,
+        "family": "dip_entry",
+        "cap_basis": "quote"
+      },
+      "exit": {
+        "hold": 10,
+        "stop": null,
+        "target": null,
+        "trail_at": 1.5,
+        "trail_gap": 0.3,
+        "early_after": null,
+        "early_return": 0.0,
+        "partial_at": null,
+        "partial_fraction": 0.5,
+        "breakeven": false
+      },
+      "policy": {
+        "fraction": 0.02,
+        "profile": "cohort_10",
+        "daily_budget": null,
+        "cooldown_losses": 0,
+        "cooldown_minutes": 0,
+        "halve_after_losses": 0,
+        "drawdown_throttle": null,
+        "one_per_contract": true
+      },
+      "regimeGate": [
+        "wins",
+        5,
+        0.4
+      ]
+    },
+    {
+      "cutoff": 1792454400000,
+      "entry": {
+        "delay": 1,
+        "min_cap": 50000,
+        "max_cap": 250000,
+        "min_gain": -0.25,
+        "max_gain": -0.1,
+        "cap_basis": "quote",
+        "family": "fine_cap"
+      },
+      "exit": {
+        "hold": 10,
+        "stop": null,
+        "target": null,
+        "trail_at": 1.5,
+        "trail_gap": 0.3,
+        "early_after": null,
+        "early_return": 0.0,
+        "partial_at": null,
+        "partial_fraction": 0.5,
+        "breakeven": false
+      },
+      "policy": {
+        "fraction": 0.05,
+        "profile": "volatility",
+        "daily_budget": 0.04,
+        "cooldown_losses": 0,
+        "cooldown_minutes": 0,
+        "halve_after_losses": 0,
+        "drawdown_throttle": null,
+        "one_per_contract": true
+      },
+      "regimeGate": [
+        "mean",
+        5,
+        -0.1
+      ]
+    }
+  ],
+  "exitCatalog": [
+    {
+      "name": "time_15s",
+      "hold": 15,
+      "family": "time"
+    },
+    {
+      "name": "time_30s",
+      "hold": 30,
+      "family": "time"
+    },
+    {
+      "name": "time_60s",
+      "hold": 60,
+      "family": "time"
+    },
+    {
+      "name": "time_120s",
+      "hold": 120,
+      "family": "time"
+    },
+    {
+      "name": "time_180s",
+      "hold": 180,
+      "family": "time"
+    },
+    {
+      "name": "time_300s",
+      "hold": 300,
+      "family": "time"
+    },
+    {
+      "name": "saved_trail_15s",
+      "hold": 15,
+      "family": "saved_trail"
+    },
+    {
+      "name": "saved_trail_30s",
+      "hold": 30,
+      "family": "saved_trail"
+    },
+    {
+      "name": "saved_trail_60s",
+      "hold": 60,
+      "family": "saved_trail"
+    },
+    {
+      "name": "saved_trail_120s",
+      "hold": 120,
+      "family": "saved_trail"
+    },
+    {
+      "name": "saved_trail_180s",
+      "hold": 180,
+      "family": "saved_trail"
+    },
+    {
+      "name": "saved_trail_300s",
+      "hold": 300,
+      "family": "saved_trail"
+    },
+    {
+      "name": "target_1.2x_300s",
+      "hold": 300,
+      "family": "target",
+      "target": 1.2
+    },
+    {
+      "name": "target_1.5x_300s",
+      "hold": 300,
+      "family": "target",
+      "target": 1.5
+    },
+    {
+      "name": "target_2x_300s",
+      "hold": 300,
+      "family": "target",
+      "target": 2.0
+    },
+    {
+      "name": "target_3x_300s",
+      "hold": 300,
+      "family": "target",
+      "target": 3.0
+    }
+  ],
+  "historyModes": [
+    "original_first",
+    "expanded_first",
+    "recoverable_first"
+  ],
+  "flowDirectory": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/repeat_call_datasets/b231edbc401e6dd92215/trade_flow/384435a4acabd9a3",
+  "flowFeaturesSha256": "2f6784ff6c79e1759c292329135cc282d7145688c26e3b7c0fdc2a1873787630",
+  "sourceHashes": {
+    "repeat_fixed_entry_lab.py": "9600052c65e3026cd9a973c5118be4338e2987fc2cc54f3b0466c43df9f43b72",
+    "repeat_call_dataset.py": "4c1bf9f0a9765642180d4a6129e78bb2226e46000b0c5372b006411c2ed3b377",
+    "second_engine.py": "8bb9dee307d4cfc8b93784d703fe335214403a8aa2563e7e8765d2ea24cb3a9d",
+    "second_lab.py": "a83bdad241ab226100b33b83c5f891162ab9972f4fb9c9ae90b9e1efbc5f6855",
+    "reentry_engine.py": "60ca6dbebed366d300052bd1914a3678c3b732f201e0c3f76d341d9d77f4b2a1",
+    "audit_reentry.py": "25848d2de19342524e04cfe473e602e8848399c7ef36e884d40fafa958ff70b1",
+    "validate_cohort.py": "f387f18373813c227f6b9a0ba9a5126ab1459187040be547fe9831694159249a",
+    "research_dataset.py": "ed998065623d76f5ef78eec13393dc832e44889e9709a6182b0663422050d803",
+    "research_engine.py": "eac78326de0ced1d97ca79e5d7bda8880b7492752fcb4dac477c05a6a25ef31c",
+    "adaptive_features.py": "3d53cbc5bf8a92528cccb2c6ca2260ab47d11ccf2a0bd51f4306c8e0e4a4e66c",
+    "trade_flow_lab.py": "2b01bedc1500da120cd12e90526dc890f1335fc063088aadd52b9e5be7e908aa",
+    "trade_flow_features.py": "b79a929fbec40323984854972a8befa2c938634e2077dbcb15cf0125ff9f577a"
+  },
+  "method": "Use the exact earlier three saved daily entry specifications and sizing policies. Compare 16 fixed short exits without selecting new daily rules. Three reference-history populations: original first calls, first calls after expansion, first recoverable calls. The original cohort reference remains the minute-bar 3-minute paper outcome with a 5% haircut and no per-reference fee deduction.",
+  "execution": "One position and one purchase per contract. $1,000 account; at most 1% of preceding quote-time 60-second economic volume, minimum five swaps and five-second data lag. Fees twice prior median gas/MEV. Entry after the first complete minute plus another minute; one-second exit reaction, ten-second fill wait, missing sale zero. All comparisons require complete planned short-hold observation windows.",
+  "scope": "Previously examined dates, not an independent validation or an optimality claim. Quote-time liquidity and fee proxies can be stale at delayed entry. The original all-text cohort is retained only for parity and history controls; actionable expanded comparisons use recoverable message text."
+}

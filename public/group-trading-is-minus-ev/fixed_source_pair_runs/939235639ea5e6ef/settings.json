@@ -1,0 +1,539 @@
+{
+  "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/fixed_entry_source_runs/1cac24f915ec063b",
+  "sourceResultsSha256": "0ce9743d06ec2bb50d5ec090362e72149391750907d406812200c06eb3faa74e",
+  "sourceAuditSha256": "d5841ebbb084a59a3adb925a16eaace2283cf50b7a70cff7e1f99bfb631b5c42",
+  "sourceHashes": {
+    "fixed_source_risk_pairs.py": "a898bafe2faebf05362239c9203ac17908fe55e8d3f09db48972a201e2956bd0",
+    "fixed_entry_source_lab.py": "5a061ef4e81cc2b143d2581b214461816dd813ddea502dab10f090f5bdeb1cb9",
+    "fixed_entry_replay.py": "de8a20299f0992bd988706fc169612cadd72179baad2dc6fbe8374b62cf4530f",
+    "audit_reentry.py": "25848d2de19342524e04cfe473e602e8848399c7ef36e884d40fafa958ff70b1",
+    "reentry_engine.py": "60ca6dbebed366d300052bd1914a3678c3b732f201e0c3f76d341d9d77f4b2a1",
+    "second_engine.py": "8bb9dee307d4cfc8b93784d703fe335214403a8aa2563e7e8765d2ea24cb3a9d",
+    "repeat_call_dataset.py": "4c1bf9f0a9765642180d4a6129e78bb2226e46000b0c5372b006411c2ed3b377",
+    "trade_flow_lab.py": "2b01bedc1500da120cd12e90526dc890f1335fc063088aadd52b9e5be7e908aa",
+    "trade_flow_features.py": "b79a929fbec40323984854972a8befa2c938634e2077dbcb15cf0125ff9f577a",
+    "research_dataset.py": "ed998065623d76f5ef78eec13393dc832e44889e9709a6182b0663422050d803",
+    "second_lab.py": "a83bdad241ab226100b33b83c5f891162ab9972f4fb9c9ae90b9e1efbc5f6855"
+  },
+  "jointCandidateCount": 21,
+  "riskChoices": [
+    {
+      "drawdownCeiling": 0.0025,
+      "choice": null
+    },
+    {
+      "drawdownCeiling": 0.005,
+      "choice": {
+        "target": 3.0,
+        "policyId": 5,
+        "minimumReturn": 0.004886217856011843,
+        "maximumDrawdownBound": -0.0034497959396077027,
+        "minimumInitialConcentrationReturn": 0.00016403560188815725
+      }
+    },
+    {
+      "drawdownCeiling": 0.0075,
+      "choice": {
+        "target": 3.0,
+        "policyId": 12,
+        "minimumReturn": 0.009718577589470367,
+        "maximumDrawdownBound": -0.0062992489634199345,
+        "minimumInitialConcentrationReturn": 0.0005916161886019289
+      }
+    },
+    {
+      "drawdownCeiling": 0.01,
+      "choice": {
+        "target": 3.0,
+        "policyId": 17,
+        "minimumReturn": 0.013733170899971059,
+        "maximumDrawdownBound": -0.009432058032378898,
+        "minimumInitialConcentrationReturn": 0.0014943590056382128
+      }
+    },
+    {
+      "drawdownCeiling": 0.015,
+      "choice": {
+        "target": 3.0,
+        "policyId": 27,
+        "minimumReturn": 0.0165463672215882,
+        "maximumDrawdownBound": -0.010325474281808855,
+        "minimumInitialConcentrationReturn": 0.0004848047786227827
+      }
+    },
+    {
+      "drawdownCeiling": 0.02,
+      "choice": {
+        "target": 3.0,
+        "policyId": 28,
+        "minimumReturn": 0.024041394035312358,
+        "maximumDrawdownBound": -0.018763938312214123,
+        "minimumInitialConcentrationReturn": 0.0007670123833523057
+      }
+    },
+    {
+      "drawdownCeiling": 0.025,
+      "choice": {
+        "target": 3.0,
+        "policyId": 33,
+        "minimumReturn": 0.028628964238666343,
+        "maximumDrawdownBound": -0.020574627285965708,
+        "minimumInitialConcentrationReturn": 9.695021647737612e-05
+      }
+    },
+    {
+      "drawdownCeiling": 0.05,
+      "choice": {
+        "target": 3.0,
+        "policyId": 33,
+        "minimumReturn": 0.028628964238666343,
+        "maximumDrawdownBound": -0.020574627285965708,
+        "minimumInitialConcentrationReturn": 9.695021647737612e-05
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "history": "original_first",
+      "group": "original_all:human",
+      "target": 3.0,
+      "policyId": 5
+    },
+    {
+      "history": "original_first",
+      "group": "combined_all:human",
+      "target": 3.0,
+      "policyId": 5
+    },
+    {
+      "history": "recoverable_first",
+      "group": "original_all:human",
+      "target": 3.0,
+      "policyId": 5
+    },
+    {
+      "history": "recoverable_first",
+      "group": "combined_all:human",
+      "target": 3.0,
+      "policyId": 5
+    },
+    {
+      "history": "original_first",
+      "group": "original_all:human",
+      "target": 3.0,
+      "policyId": 12
+    },
+    {
+      "history": "original_first",
+      "group": "combined_all:human",
+      "target": 3.0,
+      "policyId": 12
+    },
+    {
+      "history": "recoverable_first",
+      "group": "original_all:human",
+      "target": 3.0,
+      "policyId": 12
+    },
+    {
+      "history": "recoverable_first",
+      "group": "combined_all:human",
+      "target": 3.0,
+      "policyId": 12
+    },
+    {
+      "history": "original_first",
+      "group": "original_all:human",
+      "target": 3.0,
+      "policyId": 17
+    },
+    {
+      "history": "original_first",
+      "group": "combined_all:human",
+      "target": 3.0,
+      "policyId": 17
+    },
+    {
+      "history": "recoverable_first",
+      "group": "original_all:human",
+      "target": 3.0,
+      "policyId": 17
+    },
+    {
+      "history": "recoverable_first",
+      "group": "combined_all:human",
+      "target": 3.0,
+      "policyId": 17
+    },
+    {
+      "history": "original_first",
+      "group": "original_all:human",
+      "target": 3.0,
+      "policyId": 27
+    },
+    {
+      "history": "original_first",
+      "group": "combined_all:human",
+      "target": 3.0,
+      "policyId": 27
+    },
+    {
+      "history": "recoverable_first",
+      "group": "original_all:human",
+      "target": 3.0,
+      "policyId": 27
+    },
+    {
+      "history": "recoverable_first",
+      "group": "combined_all:human",
+      "target": 3.0,
+      "policyId": 27
+    },
+    {
+      "history": "original_first",
+      "group": "original_all:human",
+      "target": 3.0,
+      "policyId": 28
+    },
+    {
+      "history": "original_first",
+      "group": "combined_all:human",
+      "target": 3.0,
+      "policyId": 28
+    },
+    {
+      "history": "recoverable_first",
+      "group": "original_all:human",
+      "target": 3.0,
+      "policyId": 28
+    },
+    {
+      "history": "recoverable_first",
+      "group": "combined_all:human",
+      "target": 3.0,
+      "policyId": 28
+    },
+    {
+      "history": "original_first",
+      "group": "original_all:human",
+      "target": 3.0,
+      "policyId": 33
+    },
+    {
+      "history": "original_first",
+      "group": "combined_all:human",
+      "target": 3.0,
+      "policyId": 33
+    },
+    {
+      "history": "recoverable_first",
+      "group": "original_all:human",
+      "target": 3.0,
+      "policyId": 33
+    },
+    {
+      "history": "recoverable_first",
+      "group": "combined_all:human",
+      "target": 3.0,
+      "policyId": 33
+    }
+  ],
+  "policies": [
+    {
+      "scale": 0.125,
+      "budget": "saved"
+    },
+    {
+      "scale": 0.125,
+      "budget": null
+    },
+    {
+      "scale": 0.125,
+      "budget": 0.01
+    },
+    {
+      "scale": 0.125,
+      "budget": 0.02
+    },
+    {
+      "scale": 0.125,
+      "budget": 0.04
+    },
+    {
+      "scale": 0.25,
+      "budget": "saved"
+    },
+    {
+      "scale": 0.25,
+      "budget": null
+    },
+    {
+      "scale": 0.25,
+      "budget": 0.01
+    },
+    {
+      "scale": 0.25,
+      "budget": 0.02
+    },
+    {
+      "scale": 0.25,
+      "budget": 0.04
+    },
+    {
+      "scale": 0.5,
+      "budget": "saved"
+    },
+    {
+      "scale": 0.5,
+      "budget": null
+    },
+    {
+      "scale": 0.5,
+      "budget": 0.01
+    },
+    {
+      "scale": 0.5,
+      "budget": 0.02
+    },
+    {
+      "scale": 0.5,
+      "budget": 0.04
+    },
+    {
+      "scale": 0.75,
+      "budget": "saved"
+    },
+    {
+      "scale": 0.75,
+      "budget": null
+    },
+    {
+      "scale": 0.75,
+      "budget": 0.01
+    },
+    {
+      "scale": 0.75,
+      "budget": 0.02
+    },
+    {
+      "scale": 0.75,
+      "budget": 0.04
+    },
+    {
+      "scale": 1.0,
+      "budget": "saved"
+    },
+    {
+      "scale": 1.0,
+      "budget": null
+    },
+    {
+      "scale": 1.0,
+      "budget": 0.01
+    },
+    {
+      "scale": 1.0,
+      "budget": 0.02
+    },
+    {
+      "scale": 1.0,
+      "budget": 0.04
+    },
+    {
+      "scale": 1.5,
+      "budget": "saved"
+    },
+    {
+      "scale": 1.5,
+      "budget": null
+    },
+    {
+      "scale": 1.5,
+      "budget": 0.01
+    },
+    {
+      "scale": 1.5,
+      "budget": 0.02
+    },
+    {
+      "scale": 1.5,
+      "budget": 0.04
+    },
+    {
+      "scale": 2.0,
+      "budget": "saved"
+    },
+    {
+      "scale": 2.0,
+      "budget": null
+    },
+    {
+      "scale": 2.0,
+      "budget": 0.01
+    },
+    {
+      "scale": 2.0,
+      "budget": 0.02
+    },
+    {
+      "scale": 2.0,
+      "budget": 0.04
+    }
+  ],
+  "scenarios": [
+    {
+      "entryLagSeconds": 0,
+      "reactionSeconds": 1,
+      "participation": 0.01,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 0,
+      "reactionSeconds": 1,
+      "participation": 0.005,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 0,
+      "reactionSeconds": 3,
+      "participation": 0.01,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 0,
+      "reactionSeconds": 3,
+      "participation": 0.005,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 0,
+      "reactionSeconds": 5,
+      "participation": 0.01,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 0,
+      "reactionSeconds": 5,
+      "participation": 0.005,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 2,
+      "reactionSeconds": 1,
+      "participation": 0.01,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 2,
+      "reactionSeconds": 1,
+      "participation": 0.005,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 2,
+      "reactionSeconds": 3,
+      "participation": 0.01,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 2,
+      "reactionSeconds": 3,
+      "participation": 0.005,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 2,
+      "reactionSeconds": 5,
+      "participation": 0.01,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 2,
+      "reactionSeconds": 5,
+      "participation": 0.005,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 5,
+      "reactionSeconds": 1,
+      "participation": 0.01,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 5,
+      "reactionSeconds": 1,
+      "participation": 0.005,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 5,
+      "reactionSeconds": 3,
+      "participation": 0.01,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 5,
+      "reactionSeconds": 3,
+      "participation": 0.005,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 5,
+      "reactionSeconds": 5,
+      "participation": 0.01,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 5,
+      "reactionSeconds": 5,
+      "participation": 0.005,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 10,
+      "reactionSeconds": 1,
+      "participation": 0.01,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 10,
+      "reactionSeconds": 1,
+      "participation": 0.005,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 10,
+      "reactionSeconds": 3,
+      "participation": 0.01,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 10,
+      "reactionSeconds": 3,
+      "participation": 0.005,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 10,
+      "reactionSeconds": 5,
+      "participation": 0.01,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 10,
+      "reactionSeconds": 5,
+      "participation": 0.005,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 0,
+      "reactionSeconds": 1,
+      "participation": 0.01,
+      "bankrollUSD": 10000.0
+    }
+  ],
+  "cost": 0.1,
+  "selection": "Require eight trades and positive returns in all scenarios and the two initial concentration checks under both original/recoverable reference histories and both original/expanded non-bot populations. For each declared drawdown ceiling, take the largest minimum return across all four history/population controls. Also retain the earlier half-size/one-percent-budget case.",
+  "universe": "Every distinct contract with a fixed-entry signal, valid modeled outcome, positive sizing factor and capacity, and known fee on the three dates. Include signals skipped by the full account. Enumerate every possible pair; different policies remain separate.",
+  "scope": "Retrospective risk comparisons on the same examined dates. A non-bot flag identifies an account category, not proof that a human manually wrote the post. These risk ceilings describe modeled bounds and are not promised future drawdown limits."
+}

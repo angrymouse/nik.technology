@@ -1,0 +1,382 @@
+{
+  "events": [
+    {
+      "frozenChoices": [
+        {
+          "cutoff": 1792281600000,
+          "entry": {
+            "delay": 1,
+            "min_cap": 25000,
+            "min_gain": -0.25,
+            "max_gain": -0.1,
+            "cap_basis": "confirmed",
+            "family": "fine_cap"
+          },
+          "exit": {
+            "hold": 10,
+            "stop": null,
+            "target": null,
+            "trail_at": 1.2,
+            "trail_gap": 0.3,
+            "early_after": null,
+            "early_return": 0.0,
+            "partial_at": null,
+            "partial_fraction": 0.5,
+            "breakeven": false
+          },
+          "policy": {
+            "fraction": 0.02,
+            "profile": "cohort_10",
+            "daily_budget": null,
+            "cooldown_losses": 0,
+            "cooldown_minutes": 0,
+            "halve_after_losses": 0,
+            "drawdown_throttle": null,
+            "one_per_contract": true
+          },
+          "regimeGate": [
+            "wins",
+            5,
+            0.4
+          ]
+        },
+        {
+          "cutoff": 1792368000000,
+          "entry": {
+            "delay": 1,
+            "min_cap": 50000,
+            "min_gain": -0.25,
+            "max_gain": -0.1,
+            "family": "dip_entry",
+            "cap_basis": "quote"
+          },
+          "exit": {
+            "hold": 10,
+            "stop": null,
+            "target": null,
+            "trail_at": 1.5,
+            "trail_gap": 0.3,
+            "early_after": null,
+            "early_return": 0.0,
+            "partial_at": null,
+            "partial_fraction": 0.5,
+            "breakeven": false
+          },
+          "policy": {
+            "fraction": 0.02,
+            "profile": "cohort_10",
+            "daily_budget": null,
+            "cooldown_losses": 0,
+            "cooldown_minutes": 0,
+            "halve_after_losses": 0,
+            "drawdown_throttle": null,
+            "one_per_contract": true
+          },
+          "regimeGate": [
+            "wins",
+            5,
+            0.4
+          ]
+        },
+        {
+          "cutoff": 1792454400000,
+          "entry": {
+            "delay": 1,
+            "min_cap": 50000,
+            "max_cap": 250000,
+            "min_gain": -0.25,
+            "max_gain": -0.1,
+            "cap_basis": "quote",
+            "family": "fine_cap"
+          },
+          "exit": {
+            "hold": 10,
+            "stop": null,
+            "target": null,
+            "trail_at": 1.5,
+            "trail_gap": 0.3,
+            "early_after": null,
+            "early_return": 0.0,
+            "partial_at": null,
+            "partial_fraction": 0.5,
+            "breakeven": false
+          },
+          "policy": {
+            "fraction": 0.05,
+            "profile": "volatility",
+            "daily_budget": 0.04,
+            "cooldown_losses": 0,
+            "cooldown_minutes": 0,
+            "halve_after_losses": 0,
+            "drawdown_throttle": null,
+            "one_per_contract": true
+          },
+          "regimeGate": [
+            "mean",
+            5,
+            -0.1
+          ]
+        }
+      ]
+    },
+    {
+      "stress": {
+        "cost": 0.05,
+        "extraMinutes": 0,
+        "fixedFeePer100": 0,
+        "return": 0.04283878947834996,
+        "dd": -0.016090509568816413,
+        "closedDD": -0.006276411167921103,
+        "trades": 9
+      }
+    },
+    {
+      "stress": {
+        "cost": 0.1,
+        "extraMinutes": 0,
+        "fixedFeePer100": 0,
+        "return": 0.035947287943311146,
+        "dd": -0.015285769579514885,
+        "closedDD": -0.007748278902687367,
+        "trades": 9
+      }
+    },
+    {
+      "stress": {
+        "cost": 0.15,
+        "extraMinutes": 0,
+        "fixedFeePer100": 0,
+        "return": 0.02909082829234677,
+        "dd": -0.015941831813676255,
+        "closedDD": -0.009219003362825773,
+        "trades": 9
+      }
+    },
+    {
+      "stress": {
+        "cost": 0.2,
+        "extraMinutes": 0,
+        "fixedFeePer100": 0,
+        "return": 0.022269276250999726,
+        "dd": -0.017696151828107243,
+        "closedDD": -0.010688585056277566,
+        "trades": 9
+      }
+    },
+    {
+      "stress": {
+        "cost": 0.05,
+        "extraMinutes": 1,
+        "fixedFeePer100": 0,
+        "return": 0.04212264152273826,
+        "dd": -0.021502149684747507,
+        "closedDD": -0.005089180203637911,
+        "trades": 9
+      }
+    },
+    {
+      "stress": {
+        "cost": 0.1,
+        "extraMinutes": 1,
+        "fixedFeePer100": 0,
+        "return": 0.03526943043746389,
+        "dd": -0.02043158400377798,
+        "closedDD": -0.006520135476392852,
+        "trades": 9
+      }
+    },
+    {
+      "stress": {
+        "cost": 0.05,
+        "extraMinutes": 2,
+        "fixedFeePer100": 0,
+        "return": 0.07214339843977702,
+        "dd": -0.022617061874861233,
+        "closedDD": -0.0022064222267280664,
+        "trades": 9
+      }
+    },
+    {
+      "stress": {
+        "cost": 0.05,
+        "extraMinutes": 0,
+        "fixedFeePer100": 0.02,
+        "return": 0.040983205306406756,
+        "dd": -0.016093589287524024,
+        "closedDD": -0.0072746853703011816,
+        "trades": 9
+      }
+    },
+    {
+      "stress": {
+        "cost": 0.05,
+        "extraMinutes": 0,
+        "fixedFeePer100": 0.05,
+        "return": 0.03819982904849306,
+        "dd": -0.01609822502294489,
+        "closedDD": -0.008772096673871244,
+        "trades": 9
+      }
+    },
+    {
+      "removeBestTokens": 1,
+      "return": 0.009074538449533653,
+      "dd": -0.012427157521788912,
+      "trades": 8
+    },
+    {
+      "removeBestTokens": 2,
+      "return": -0.0050553400670131365,
+      "dd": -0.01351559779235656,
+      "trades": 7
+    },
+    {
+      "removeBestTokens": 3,
+      "return": -0.008910648504288465,
+      "dd": -0.010208082391469642,
+      "trades": 6
+    },
+    {
+      "ledger": [
+        {
+          "index": 415,
+          "signalKey": "user:1559791643:2919863:solana:solana:Fd61znB4XAdwqrFexC91aoxKcz1iheqx5j4VZCG4pump",
+          "asset": 405,
+          "entryTime": 1792340340000,
+          "exitTime": 1792340940000,
+          "positionSize": 2.0473874908993657,
+          "netReturn": -0.09526569712957156,
+          "pnl": -0.1950457966148924,
+          "equityAfter": 99.80495420338511,
+          "exitKind": 1,
+          "modelUsed": false,
+          "symbol": "RIOT",
+          "caller": "@trapstarxbt"
+        },
+        {
+          "index": 453,
+          "signalKey": "user:6534206507:2920262:solana:solana:ByQ4cTwVyrZtzb7aFKW8QXPBMXdCWx6UdVMshLZipump",
+          "asset": 299,
+          "entryTime": 1792351980000,
+          "exitTime": 1792352580000,
+          "positionSize": 0.43585173379423614,
+          "netReturn": -0.40510405633919033,
+          "pnl": -0.17656530532251402,
+          "equityAfter": 99.6283888980626,
+          "exitKind": 1,
+          "modelUsed": false,
+          "symbol": "Deadpool ",
+          "caller": "@JamTheLion"
+        },
+        {
+          "index": 465,
+          "signalKey": "user:984722078:2920483:solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+          "asset": 449,
+          "entryTime": 1792355760000,
+          "exitTime": 1792355880000,
+          "positionSize": 0.5536859643165879,
+          "netReturn": -0.15917265949793424,
+          "pnl": -0.08813166746694961,
+          "equityAfter": 99.54025723059564,
+          "exitKind": 2,
+          "modelUsed": false,
+          "symbol": "PIERRE",
+          "caller": "@DomiTraderSol"
+        },
+        {
+          "index": 472,
+          "signalKey": "user:6126376117:2920601:solana:solana:9yMgtrSGUh5LiLf31AFQb6hi6KN3SKkgdsiyU66Jpump",
+          "asset": 248,
+          "entryTime": 1792357440000,
+          "exitTime": 1792358040000,
+          "positionSize": 0.1990805144611913,
+          "netReturn": -0.8244040409028389,
+          "pnl": -0.16412278058682217,
+          "equityAfter": 99.37613445000882,
+          "exitKind": 1,
+          "modelUsed": false,
+          "symbol": "EZECK",
+          "caller": "@rick (bot)"
+        },
+        {
+          "index": 473,
+          "signalKey": "user:6951058971:2920628:solana:solana:ArpPsesHXKbGeJsHdquM6acT3uNs7BChyetJjiNYpump",
+          "asset": 262,
+          "entryTime": 1792358160000,
+          "exitTime": 1792358760000,
+          "positionSize": 0.19875226890001765,
+          "netReturn": -0.01899634566094832,
+          "pnl": -0.0037755668009224843,
+          "equityAfter": 99.3723588832079,
+          "exitKind": 1,
+          "modelUsed": false,
+          "symbol": "godspeed",
+          "caller": "@Netti_chan"
+        },
+        {
+          "index": 517,
+          "signalKey": "user:7994393793:2921203:solana:solana:3xrmyTm2sWrh6SpRegMrrmsP47fALoQBKyEFse5Dpump",
+          "asset": 71,
+          "entryTime": 1792383240000,
+          "exitTime": 1792383840000,
+          "positionSize": 1.1775209115957335,
+          "netReturn": 1.1984956806566474,
+          "pnl": 1.4112537264303644,
+          "equityAfter": 100.78361260963825,
+          "exitKind": 1,
+          "modelUsed": false,
+          "symbol": "Muskito",
+          "caller": "@AquaDias"
+        },
+        {
+          "index": 745,
+          "signalKey": "user:8625951489:2924417:solana:solana:ESABfJpt9cocXgWX7HF8WwSXrcv785oyaA8imwojpump",
+          "asset": 371,
+          "entryTime": 1792437780000,
+          "exitTime": 1792438380000,
+          "positionSize": 1.6238635506200199,
+          "netReturn": 2.076702379421521,
+          "pnl": 3.3722812994284745,
+          "equityAfter": 104.15589390906673,
+          "exitKind": 1,
+          "modelUsed": false,
+          "symbol": "Kim",
+          "caller": "@reljeww"
+        },
+        {
+          "index": 754,
+          "signalKey": "user:6126376117:2924595:solana:solana:45iQ1WLTs8GvEpnuNBV54fT7nTuK9evYnHxJdynNpump",
+          "asset": 78,
+          "entryTime": 1792439280000,
+          "exitTime": 1792439880000,
+          "positionSize": 1.0554691517037684,
+          "netReturn": -0.261593897019759,
+          "pnl": -0.27610428857832797,
+          "equityAfter": 103.87978962048841,
+          "exitKind": 1,
+          "modelUsed": false,
+          "symbol": "KIM",
+          "caller": "@rick (bot)"
+        },
+        {
+          "index": 1016,
+          "signalKey": "user:1308905026:2928332:solana:solana:9vuGTtRoL6GeD4Gwt6mQBm7Bn1AzJWATBvjkiMQXpump",
+          "asset": 247,
+          "entryTime": 1792536960000,
+          "exitTime": 1792537380000,
+          "positionSize": 1.3238644887839794,
+          "netReturn": 0.3052346601711087,
+          "pnl": 0.4040893273465765,
+          "equityAfter": 104.28387894783499,
+          "exitKind": 2,
+          "modelUsed": false,
+          "symbol": "GEMMA",
+          "caller": "@rawrstarxd"
+        }
+      ]
+    }
+  ],
+  "sourceRun": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/adaptive_runs/70fab2c549e7e89e",
+  "datasetId": "845e37f0db6685299fc5",
+  "sourceCodeHash": "cdbe9d78885db2c1f2a93b67b9d78e3e6d3a08f9dfe155db2ee71abd39c5080c"
+}

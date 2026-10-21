@@ -1,0 +1,1592 @@
+{
+  "resultsSha256": "d24ad819142880cac0701b963a28230820a7658c85f1e6b54f2d40b1548786e0",
+  "sourceSha256": "bdf44ad546d56750f2cdae96b0046f6defa7d03279db00460f5d93f14de52558",
+  "matplotlib": "3.11.2",
+  "rows": [
+    {
+      "sourceSelector": "saved_control",
+      "wait": 1,
+      "cost": 0.05,
+      "return": 0.006527528259365978,
+      "drawdownBound": -0.01724599859113951,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 1,
+      "cost": 0.1,
+      "return": 0.0007984452412117538,
+      "drawdownBound": -0.018756613113361298,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 2,
+      "cost": 0.05,
+      "return": 0.005843332568119308,
+      "drawdownBound": -0.01693667957331546,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 2,
+      "cost": 0.1,
+      "return": 0.00015387359635443687,
+      "drawdownBound": -0.018463895901705496,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 3,
+      "cost": 0.05,
+      "return": 0.003953254471773526,
+      "drawdownBound": -0.017060667375797367,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 3,
+      "cost": 0.1,
+      "return": -0.0016306996389776618,
+      "drawdownBound": -0.018581129781592542,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 5,
+      "cost": 0.05,
+      "return": 0.009804916521289675,
+      "drawdownBound": -0.016449916123233987,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 5,
+      "cost": 0.1,
+      "return": 0.0038879545714731734,
+      "drawdownBound": -0.01800324894429306,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 6,
+      "cost": 0.05,
+      "return": 0.010325078559350054,
+      "drawdownBound": -0.016708866768252006,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 6,
+      "cost": 0.1,
+      "return": 0.004378437772146526,
+      "drawdownBound": -0.01824801145436039,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 7,
+      "cost": 0.05,
+      "return": 0.010676380255330686,
+      "drawdownBound": -0.016059384124916254,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 7,
+      "cost": 0.1,
+      "return": 0.004710256217591802,
+      "drawdownBound": -0.01763295098851725,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 10,
+      "cost": 0.05,
+      "return": 0.016539270102001735,
+      "drawdownBound": -0.015350655826402826,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 10,
+      "cost": 0.1,
+      "return": 0.010241069991337559,
+      "drawdownBound": -0.0169622126402329,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 11,
+      "cost": 0.05,
+      "return": 0.01216213048756587,
+      "drawdownBound": -0.015480713002772983,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 11,
+      "cost": 0.1,
+      "return": 0.006109892351664703,
+      "drawdownBound": -0.0170851580094602,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 15,
+      "cost": 0.05,
+      "return": 0.01267336657405993,
+      "drawdownBound": -0.015360430443209117,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 15,
+      "cost": 0.1,
+      "return": 0.006590124095692262,
+      "drawdownBound": -0.016940035901064743,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 16,
+      "cost": 0.05,
+      "return": 0.011763083505265337,
+      "drawdownBound": -0.01657113143268618,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 16,
+      "cost": 0.1,
+      "return": 0.005730851870718645,
+      "drawdownBound": -0.018088541718848772,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 17,
+      "cost": 0.05,
+      "return": -0.0057773863319948715,
+      "drawdownBound": -0.03559900624986867,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 17,
+      "cost": 0.1,
+      "return": -0.010800621621364526,
+      "drawdownBound": -0.03610605180796611,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 20,
+      "cost": 0.05,
+      "return": -0.00530954362629199,
+      "drawdownBound": -0.03510282986387214,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 20,
+      "cost": 0.1,
+      "return": -0.010358417363408257,
+      "drawdownBound": -0.035634555546330215,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 25,
+      "cost": 0.05,
+      "return": -0.005075642921365753,
+      "drawdownBound": -0.03664551736123034,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 25,
+      "cost": 0.1,
+      "return": -0.010138762682471492,
+      "drawdownBound": -0.03710049157369588,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 30,
+      "cost": 0.05,
+      "return": 0.007712667136131612,
+      "drawdownBound": -0.020119034702515415,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 30,
+      "cost": 0.1,
+      "return": 0.00191438765376728,
+      "drawdownBound": -0.021452362860718277,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 31,
+      "cost": 0.05,
+      "return": 0.005977831365916897,
+      "drawdownBound": -0.021222489382593523,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 31,
+      "cost": 0.1,
+      "return": 0.00027814258426439586,
+      "drawdownBound": -0.02249634400177114,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 32,
+      "cost": 0.05,
+      "return": 0.011415523263040184,
+      "drawdownBound": -0.020770320073421944,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 32,
+      "cost": 0.1,
+      "return": 0.005403788474865889,
+      "drawdownBound": -0.022068597649882227,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 35,
+      "cost": 0.05,
+      "return": 0.01329574317790394,
+      "drawdownBound": -0.021221991788696215,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 35,
+      "cost": 0.1,
+      "return": 0.007183754777262186,
+      "drawdownBound": -0.022497619311233286,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 40,
+      "cost": 0.05,
+      "return": 0.023106433739566334,
+      "drawdownBound": -0.019591339469773428,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 40,
+      "cost": 0.1,
+      "return": 0.016438926772579965,
+      "drawdownBound": -0.020954939505151038,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 45,
+      "cost": 0.05,
+      "return": 0.0066171151250744575,
+      "drawdownBound": -0.019857672679057914,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 45,
+      "cost": 0.1,
+      "return": 0.0008766328104841126,
+      "drawdownBound": -0.021202620548094187,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 46,
+      "cost": 0.05,
+      "return": 0.00871050666968487,
+      "drawdownBound": -0.020322628253397257,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 46,
+      "cost": 0.1,
+      "return": 0.0028519185292859017,
+      "drawdownBound": -0.021645063929215502,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 47,
+      "cost": 0.05,
+      "return": 0.008249294803343687,
+      "drawdownBound": -0.020274979831498507,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 47,
+      "cost": 0.1,
+      "return": 0.0024172055638087553,
+      "drawdownBound": -0.021599063193909585,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 50,
+      "cost": 0.05,
+      "return": 0.014739187254394714,
+      "drawdownBound": -0.016215643466285568,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 50,
+      "cost": 0.1,
+      "return": 0.008547661750291091,
+      "drawdownBound": -0.017746368865182105,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 55,
+      "cost": 0.05,
+      "return": 0.014872528716747935,
+      "drawdownBound": -0.014644053039546634,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 55,
+      "cost": 0.1,
+      "return": 0.008666107312278237,
+      "drawdownBound": -0.015031382537942561,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 60,
+      "cost": 0.05,
+      "return": 0.026191994953738806,
+      "drawdownBound": -0.015508709952960054,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 60,
+      "cost": 0.1,
+      "return": 0.019354253853054892,
+      "drawdownBound": -0.017081615588017574,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 61,
+      "cost": 0.05,
+      "return": 0.029663974503535195,
+      "drawdownBound": -0.0167826885206398,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 61,
+      "cost": 0.1,
+      "return": 0.02263524197710498,
+      "drawdownBound": -0.01828658305560238,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 62,
+      "cost": 0.05,
+      "return": 0.029815649501441444,
+      "drawdownBound": -0.0163362024718261,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 62,
+      "cost": 0.1,
+      "return": 0.022779016877377822,
+      "drawdownBound": -0.017863869839134128,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 65,
+      "cost": 0.05,
+      "return": 0.016319519298486185,
+      "drawdownBound": -0.014529132442369752,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 65,
+      "cost": 0.1,
+      "return": 0.010046122491299103,
+      "drawdownBound": -0.014445303071893179,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 70,
+      "cost": 0.05,
+      "return": 0.027899690915819564,
+      "drawdownBound": -0.014487469456977875,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 70,
+      "cost": 0.1,
+      "return": 0.020977273366528326,
+      "drawdownBound": -0.014406307881826952,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 90,
+      "cost": 0.05,
+      "return": 0.03504142652026121,
+      "drawdownBound": -0.026751053788445334,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 90,
+      "cost": 0.1,
+      "return": 0.027744832325130808,
+      "drawdownBound": -0.02773794551508213,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 91,
+      "cost": 0.05,
+      "return": 0.03397155007493091,
+      "drawdownBound": -0.026719764535641954,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 91,
+      "cost": 0.1,
+      "return": 0.026735913068706374,
+      "drawdownBound": -0.027708023680020122,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 92,
+      "cost": 0.05,
+      "return": 0.032678259606728766,
+      "drawdownBound": -0.026761072379202555,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 92,
+      "cost": 0.1,
+      "return": 0.025515556577809573,
+      "drawdownBound": -0.02774660518678229,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 95,
+      "cost": 0.05,
+      "return": 0.022546870239110284,
+      "drawdownBound": -0.028447288608572263,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 95,
+      "cost": 0.1,
+      "return": 0.015948328747044105,
+      "drawdownBound": -0.029347871843714013,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 100,
+      "cost": 0.05,
+      "return": 0.03780332004098086,
+      "drawdownBound": -0.01527210022857095,
+      "trades": 9
+    },
+    {
+      "sourceSelector": "saved_control",
+      "wait": 100,
+      "cost": 0.1,
+      "return": 0.03154044635695441,
+      "drawdownBound": -0.015828111701917558,
+      "trades": 9
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 1,
+      "cost": 0.05,
+      "return": 0.0036377586992173416,
+      "drawdownBound": -0.009433350310379174,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 1,
+      "cost": 0.1,
+      "return": 0.0010509381800374307,
+      "drawdownBound": -0.010578673473791489,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 2,
+      "cost": 0.05,
+      "return": 0.0029774202156971352,
+      "drawdownBound": -0.00979032236942512,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 2,
+      "cost": 0.1,
+      "return": 0.0004268459743155262,
+      "drawdownBound": -0.010916512753578855,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 3,
+      "cost": 0.05,
+      "return": 0.0030556970219284274,
+      "drawdownBound": -0.009652935528028483,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 3,
+      "cost": 0.1,
+      "return": 0.0005008307919571742,
+      "drawdownBound": -0.01078645565160996,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 5,
+      "cost": 0.05,
+      "return": 0.004302380239916026,
+      "drawdownBound": -0.009883446431630638,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 5,
+      "cost": 0.1,
+      "return": 0.001679461015617889,
+      "drawdownBound": -0.01100458438143792,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 6,
+      "cost": 0.05,
+      "return": 0.0048517667302740985,
+      "drawdownBound": -0.009509430770241467,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 6,
+      "cost": 0.1,
+      "return": 0.002198696843219494,
+      "drawdownBound": -0.010650564175205712,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 7,
+      "cost": 0.05,
+      "return": 0.005155537171197988,
+      "drawdownBound": -0.009162423529620267,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 7,
+      "cost": 0.1,
+      "return": 0.002485845904681927,
+      "drawdownBound": -0.010322027141821732,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 10,
+      "cost": 0.05,
+      "return": 0.006121086669855114,
+      "drawdownBound": -0.009199656879789297,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 10,
+      "cost": 0.1,
+      "return": 0.0033986715368401477,
+      "drawdownBound": -0.010357216680025427,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 11,
+      "cost": 0.05,
+      "return": 0.005397643384035922,
+      "drawdownBound": -0.00891255641965838,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 11,
+      "cost": 0.1,
+      "return": 0.0027142974644058793,
+      "drawdownBound": -0.010085499434529521,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 15,
+      "cost": 0.05,
+      "return": 0.004033305039092605,
+      "drawdownBound": -0.008854743977884105,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 15,
+      "cost": 0.1,
+      "return": 0.0014238302048861229,
+      "drawdownBound": -0.010008838537324705,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 16,
+      "cost": 0.05,
+      "return": 0.003327684441641221,
+      "drawdownBound": -0.008871755824607086,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 16,
+      "cost": 0.1,
+      "return": 0.000756550881609197,
+      "drawdownBound": -0.01003370019476546,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 17,
+      "cost": 0.05,
+      "return": -0.0012198427105672982,
+      "drawdownBound": -0.011373919648028585,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 17,
+      "cost": 0.1,
+      "return": -0.0035416322131541778,
+      "drawdownBound": -0.0115193682739414,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 20,
+      "cost": 0.05,
+      "return": -0.001272293497246113,
+      "drawdownBound": -0.011066707360769534,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 20,
+      "cost": 0.1,
+      "return": -0.0035908054566895498,
+      "drawdownBound": -0.011228121686793435,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 25,
+      "cost": 0.05,
+      "return": -0.0027075809089228686,
+      "drawdownBound": -0.011836521437817438,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 25,
+      "cost": 0.1,
+      "return": -0.004948478740445572,
+      "drawdownBound": -0.011958028940023624,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 30,
+      "cost": 0.05,
+      "return": 0.0009294122436658281,
+      "drawdownBound": -0.008912826802498164,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 30,
+      "cost": 0.1,
+      "return": -0.0015108864657521481,
+      "drawdownBound": -0.010085751635527052,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 31,
+      "cost": 0.05,
+      "return": 0.0007557890272402723,
+      "drawdownBound": -0.008959914422450588,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 31,
+      "cost": 0.1,
+      "return": -0.0016748915011265408,
+      "drawdownBound": -0.010122208894709273,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 32,
+      "cost": 0.05,
+      "return": 0.0020582587997171053,
+      "drawdownBound": -0.008883154651088132,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 32,
+      "cost": 0.1,
+      "return": -0.00044381401349402605,
+      "drawdownBound": -0.009981570470543488,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 35,
+      "cost": 0.05,
+      "return": 0.003766751668442758,
+      "drawdownBound": -0.00834073600997387,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 35,
+      "cost": 0.1,
+      "return": 0.0011725921887493218,
+      "drawdownBound": -0.00942582019805338,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 40,
+      "cost": 0.05,
+      "return": 0.008075788945856921,
+      "drawdownBound": -0.008097825462505037,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 40,
+      "cost": 0.1,
+      "return": 0.005243473702092327,
+      "drawdownBound": -0.008516407078551502,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 45,
+      "cost": 0.05,
+      "return": 0.011607779812723651,
+      "drawdownBound": -0.007665636690230793,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 45,
+      "cost": 0.1,
+      "return": 0.008580765539991209,
+      "drawdownBound": -0.008007496974312689,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 46,
+      "cost": 0.05,
+      "return": 0.009524280723681056,
+      "drawdownBound": -0.007958342615704495,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 46,
+      "cost": 0.1,
+      "return": 0.006613377488993599,
+      "drawdownBound": -0.00828509053208859,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 47,
+      "cost": 0.05,
+      "return": 0.009354339063166961,
+      "drawdownBound": -0.007864466269215886,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 47,
+      "cost": 0.1,
+      "return": 0.0064528169978290695,
+      "drawdownBound": -0.00819598255885512,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 50,
+      "cost": 0.05,
+      "return": 0.012467945380874701,
+      "drawdownBound": -0.005732827601320878,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 50,
+      "cost": 0.1,
+      "return": 0.009396816657037954,
+      "drawdownBound": -0.006175073388917429,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 55,
+      "cost": 0.05,
+      "return": 0.014397869965184995,
+      "drawdownBound": -0.0065589180445104756,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 55,
+      "cost": 0.1,
+      "return": 0.011217889075567644,
+      "drawdownBound": -0.006637215069698943,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 60,
+      "cost": 0.05,
+      "return": 0.02080923715622096,
+      "drawdownBound": -0.0076960835559576335,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 60,
+      "cost": 0.1,
+      "return": 0.017275423067953932,
+      "drawdownBound": -0.007714660166806442,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 61,
+      "cost": 0.05,
+      "return": 0.022893436889511953,
+      "drawdownBound": -0.007570637189405982,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 61,
+      "cost": 0.1,
+      "return": 0.01924466212545206,
+      "drawdownBound": -0.007595774583452952,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 62,
+      "cost": 0.05,
+      "return": 0.022621941380412514,
+      "drawdownBound": -0.007571533470214775,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 62,
+      "cost": 0.1,
+      "return": 0.018988097234278856,
+      "drawdownBound": -0.007596611071682524,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 65,
+      "cost": 0.05,
+      "return": 0.016026428363489664,
+      "drawdownBound": -0.00624095231563726,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 65,
+      "cost": 0.1,
+      "return": 0.012759698527462504,
+      "drawdownBound": -0.006757795431274749,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 70,
+      "cost": 0.05,
+      "return": 0.019550821877936553,
+      "drawdownBound": -0.006181119990333439,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 70,
+      "cost": 0.1,
+      "return": 0.016090447157141474,
+      "drawdownBound": -0.006279162413630024,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 90,
+      "cost": 0.05,
+      "return": 0.02540120568548465,
+      "drawdownBound": -0.011507552687924472,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 90,
+      "cost": 0.1,
+      "return": 0.02161952381311183,
+      "drawdownBound": -0.011648584490439706,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 91,
+      "cost": 0.05,
+      "return": 0.022575256617622497,
+      "drawdownBound": -0.011498609999135323,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 91,
+      "cost": 0.1,
+      "return": 0.01895251686130317,
+      "drawdownBound": -0.011640115048225042,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 92,
+      "cost": 0.05,
+      "return": 0.01161576501055217,
+      "drawdownBound": -0.011492310660955796,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 92,
+      "cost": 0.1,
+      "return": 0.008599286346606227,
+      "drawdownBound": -0.011634140144088478,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 95,
+      "cost": 0.05,
+      "return": 0.009824673941342343,
+      "drawdownBound": -0.012444676362664109,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 95,
+      "cost": 0.1,
+      "return": 0.006904742414687304,
+      "drawdownBound": -0.01253758561571161,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 100,
+      "cost": 0.05,
+      "return": 0.01474713951510842,
+      "drawdownBound": -0.008002887258164448,
+      "trades": 9
+    },
+    {
+      "sourceSelector": "risk_2pct",
+      "wait": 100,
+      "cost": 0.1,
+      "return": 0.01186627681679675,
+      "drawdownBound": -0.008688790470084529,
+      "trades": 9
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 1,
+      "cost": 0.05,
+      "return": 0.003936497917442772,
+      "drawdownBound": -0.01724599859113951,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 1,
+      "cost": 0.1,
+      "return": -0.001649528704128933,
+      "drawdownBound": -0.018756613113361298,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 2,
+      "cost": 0.05,
+      "return": 0.0018989641823441428,
+      "drawdownBound": -0.01693667957331546,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 2,
+      "cost": 0.1,
+      "return": -0.003563760137877625,
+      "drawdownBound": -0.018463895901705496,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 3,
+      "cost": 0.05,
+      "return": 0.005652755848881252,
+      "drawdownBound": -0.017060667375797367,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 3,
+      "cost": 0.1,
+      "return": -2.9428109982632122e-05,
+      "drawdownBound": -0.018581129781592542,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 5,
+      "cost": 0.05,
+      "return": 0.00982801244784759,
+      "drawdownBound": -0.016449916123233987,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 5,
+      "cost": 0.1,
+      "return": 0.003909077615796175,
+      "drawdownBound": -0.01800324894429306,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 6,
+      "cost": 0.05,
+      "return": 0.010019426008195165,
+      "drawdownBound": -0.016708866768252006,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 6,
+      "cost": 0.1,
+      "return": 0.004089710545436054,
+      "drawdownBound": -0.01824801145436039,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 7,
+      "cost": 0.05,
+      "return": 0.010371394909078457,
+      "drawdownBound": -0.016059384124916254,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 7,
+      "cost": 0.1,
+      "return": 0.00442216319623423,
+      "drawdownBound": -0.01763295098851725,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 10,
+      "cost": 0.05,
+      "return": 0.017405425044531686,
+      "drawdownBound": -0.015350655826402826,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 10,
+      "cost": 0.1,
+      "return": 0.01104981219647616,
+      "drawdownBound": -0.0169622126402329,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 11,
+      "cost": 0.05,
+      "return": 0.013368993470324053,
+      "drawdownBound": -0.015480713002772983,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 11,
+      "cost": 0.1,
+      "return": 0.007239974486041856,
+      "drawdownBound": -0.0170851580094602,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 15,
+      "cost": 0.05,
+      "return": 0.013820906527077126,
+      "drawdownBound": -0.014708829987533423,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 15,
+      "cost": 0.1,
+      "return": 0.007664193152804977,
+      "drawdownBound": -0.01627230330013174,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 16,
+      "cost": 0.05,
+      "return": 0.013311834994597316,
+      "drawdownBound": -0.015153839866447916,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 16,
+      "cost": 0.1,
+      "return": 0.007183065264440014,
+      "drawdownBound": -0.016753467897387075,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 17,
+      "cost": 0.05,
+      "return": 0.00030561571329745796,
+      "drawdownBound": -0.02783171406255669,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 17,
+      "cost": 0.1,
+      "return": -0.0050747729237372585,
+      "drawdownBound": -0.02875895235740611,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 20,
+      "cost": 0.05,
+      "return": 0.0007804813450891235,
+      "drawdownBound": -0.027353587688920822,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 20,
+      "cost": 0.1,
+      "return": -0.004626082323608394,
+      "drawdownBound": -0.028304744286234973,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 25,
+      "cost": 0.05,
+      "return": 0.00143692876767898,
+      "drawdownBound": -0.03049194291662649,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 25,
+      "cost": 0.1,
+      "return": -0.004008060653576839,
+      "drawdownBound": -0.031280468681498586,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 30,
+      "cost": 0.05,
+      "return": 0.005201515787573108,
+      "drawdownBound": -0.020119034702515415,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 30,
+      "cost": 0.1,
+      "return": -0.0004520124023335015,
+      "drawdownBound": -0.021452362860718277,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 31,
+      "cost": 0.05,
+      "return": 0.0035442262936145053,
+      "drawdownBound": -0.021222489382593523,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 31,
+      "cost": 0.1,
+      "return": -0.002015353160115474,
+      "drawdownBound": -0.02249634400177114,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 32,
+      "cost": 0.05,
+      "return": 0.011882868927688195,
+      "drawdownBound": -0.020770320073421944,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 32,
+      "cost": 0.1,
+      "return": 0.00584356391697205,
+      "drawdownBound": -0.022068597649882227,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 35,
+      "cost": 0.05,
+      "return": 0.013760623906203806,
+      "drawdownBound": -0.021221991788696215,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 35,
+      "cost": 0.1,
+      "return": 0.007621165436058064,
+      "drawdownBound": -0.022497619311233286,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 40,
+      "cost": 0.05,
+      "return": 0.022935290303095934,
+      "drawdownBound": -0.019591339469773428,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 40,
+      "cost": 0.1,
+      "return": 0.016277069327709226,
+      "drawdownBound": -0.020954939505151038,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 45,
+      "cost": 0.05,
+      "return": 0.006176984694163057,
+      "drawdownBound": -0.019857672679057914,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 45,
+      "cost": 0.1,
+      "return": 0.00046105405445207026,
+      "drawdownBound": -0.021202620548094187,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 46,
+      "cost": 0.05,
+      "return": 0.008274375810328305,
+      "drawdownBound": -0.020322628253397257,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 46,
+      "cost": 0.1,
+      "return": 0.00244014970316786,
+      "drawdownBound": -0.021645063929215502,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 47,
+      "cost": 0.05,
+      "return": 0.007816540868132105,
+      "drawdownBound": -0.020274979831498507,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 47,
+      "cost": 0.1,
+      "return": 0.002008619959556146,
+      "drawdownBound": -0.021599063193909585,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 50,
+      "cost": 0.05,
+      "return": 0.014282758322440303,
+      "drawdownBound": -0.016215643466285568,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 50,
+      "cost": 0.1,
+      "return": 0.008116870262280473,
+      "drawdownBound": -0.017746368865182105,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 55,
+      "cost": 0.05,
+      "return": 0.01553692864516698,
+      "drawdownBound": -0.012065539944088544,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 55,
+      "cost": 0.1,
+      "return": 0.00928469490563999,
+      "drawdownBound": -0.013499545108455968,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 60,
+      "cost": 0.05,
+      "return": 0.027289582974699744,
+      "drawdownBound": -0.014007508513738332,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 60,
+      "cost": 0.1,
+      "return": 0.02038034039156522,
+      "drawdownBound": -0.015667289274307272,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 61,
+      "cost": 0.05,
+      "return": 0.02920218738679825,
+      "drawdownBound": -0.0167826885206398,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 61,
+      "cost": 0.1,
+      "return": 0.02219971142062316,
+      "drawdownBound": -0.01828658305560238,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 62,
+      "cost": 0.05,
+      "return": 0.031562329226713315,
+      "drawdownBound": -0.014236543986057004,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 62,
+      "cost": 0.1,
+      "return": 0.024416123814072765,
+      "drawdownBound": -0.01588296765494812,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 65,
+      "cost": 0.05,
+      "return": 0.0180833931128348,
+      "drawdownBound": -0.012397457124889155,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 65,
+      "cost": 0.1,
+      "return": 0.011700675349904266,
+      "drawdownBound": -0.012430757505901169,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 70,
+      "cost": 0.05,
+      "return": 0.028939848408636504,
+      "drawdownBound": -0.013197227864562011,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 70,
+      "cost": 0.1,
+      "return": 0.021949197742000548,
+      "drawdownBound": -0.013342660805827244,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 90,
+      "cost": 0.05,
+      "return": 0.03601669800716123,
+      "drawdownBound": -0.023524017790697904,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 90,
+      "cost": 0.1,
+      "return": 0.02865513572096856,
+      "drawdownBound": -0.024689416839365652,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 91,
+      "cost": 0.05,
+      "return": 0.034941656237395424,
+      "drawdownBound": -0.02348618881281972,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 91,
+      "cost": 0.1,
+      "return": 0.027641403904288486,
+      "drawdownBound": -0.024653306204356906,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 92,
+      "cost": 0.05,
+      "return": 0.033472564089869206,
+      "drawdownBound": -0.02371744586102953,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 92,
+      "cost": 0.1,
+      "return": 0.026255587179290663,
+      "drawdownBound": -0.024871720346846593,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 95,
+      "cost": 0.05,
+      "return": 0.023326673698976563,
+      "drawdownBound": -0.025403744635338232,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 95,
+      "cost": 0.1,
+      "return": 0.01667511998468596,
+      "drawdownBound": -0.026472815365433333,
+      "trades": 10
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 100,
+      "cost": 0.05,
+      "return": 0.037333456399692766,
+      "drawdownBound": -0.01527210022857095,
+      "trades": 9
+    },
+    {
+      "sourceSelector": "risk_5pct",
+      "wait": 100,
+      "cost": 0.1,
+      "return": 0.031096961965931147,
+      "drawdownBound": -0.015828111701917558,
+      "trades": 9
+    }
+  ],
+  "units": "fractional values in this file; percentages in the figure"
+}

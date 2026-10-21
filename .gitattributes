@@ -1,0 +1,2 @@
+# Keep exported research files identical to their source hashes.
+public/group-trading-is-minus-ev/** -text

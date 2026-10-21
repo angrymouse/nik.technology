@@ -1,0 +1,172 @@
+{
+  "kind": "fixed_partial_sale_rule",
+  "frozenAt": "2026-10-21T11:44:19.791125+00:00",
+  "sourceDataset": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/fixed_validation_windows/20261021_111745/validation/combined/datasets/39a9a8328a740b1dc3ce",
+  "trainingDataset": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/coverage_repairs/evm/combined/datasets/adb4dc66b5bd0a0d3e6f",
+  "validationStartMs": 1792581495918,
+  "collectAfterMessage": "2026-10-21T10:55:14.000Z",
+  "validationMessageEnd": "2026-10-21T11:24:19.791125+00:00",
+  "startingCash": 100,
+  "candidates": [
+    {
+      "name": "primary_low_drawdown",
+      "cashOnly": false,
+      "exit": {
+        "hold": 600,
+        "steps": [],
+        "stop": null,
+        "target": null,
+        "trail_at": 1.5,
+        "trail_gap": 0.3,
+        "after_partial_floor": "none"
+      },
+      "sizing": {
+        "fraction": 0.0125,
+        "profile": "volatility",
+        "dailyBudget": null
+      }
+    },
+    {
+      "name": "secondary_return",
+      "cashOnly": false,
+      "exit": {
+        "hold": 600,
+        "steps": [
+          {
+            "target": 1.2,
+            "fraction": 0.25
+          }
+        ],
+        "stop": 0.5,
+        "target": null,
+        "trail_at": 1.5,
+        "trail_gap": 0.3,
+        "after_partial_floor": "none"
+      },
+      "sizing": {
+        "fraction": 0.05,
+        "profile": "volatility",
+        "dailyBudget": null
+      }
+    },
+    {
+      "name": "robust_comparator",
+      "cashOnly": false,
+      "exit": {
+        "hold": 600,
+        "steps": [
+          {
+            "target": 3.0,
+            "fraction": 0.75
+          }
+        ],
+        "stop": 0.5,
+        "target": null,
+        "trail_at": 1.5,
+        "trail_gap": 0.3,
+        "after_partial_floor": "none"
+      },
+      "sizing": {
+        "fraction": 0.025,
+        "profile": "volatility",
+        "dailyBudget": 0.02
+      }
+    },
+    {
+      "name": "original_control",
+      "cashOnly": false,
+      "exit": {
+        "hold": 600,
+        "steps": [],
+        "stop": null,
+        "target": null,
+        "trail_at": 1.5,
+        "trail_gap": 0.3,
+        "after_partial_floor": "none"
+      },
+      "sizing": {
+        "fraction": 0.05,
+        "profile": "volatility",
+        "dailyBudget": 0.04
+      }
+    }
+  ],
+  "primaryCandidate": "primary_low_drawdown",
+  "entry": {
+    "delay": 1,
+    "min_cap": 50000,
+    "max_cap": 250000,
+    "min_gain": -0.25,
+    "max_gain": -0.1,
+    "cap_basis": "quote",
+    "family": "fine_cap"
+  },
+  "regimeGate": [
+    "mean",
+    5,
+    -0.1
+  ],
+  "cohortHistory": {
+    "baselineEntryDelay": 1,
+    "holdMinutes": 3,
+    "proceedsHaircut": 0.05,
+    "returnClip": [
+      -1,
+      1
+    ],
+    "firstCallPerAsset": true,
+    "excludeTargetAsset": true,
+    "strictlyCompletedBeforeFeature": true
+  },
+  "executionExtraMinutes": 1,
+  "execution": {
+    "bankrollUSD": 1000.0,
+    "participation": 0.01,
+    "feeMultiplier": 2.0,
+    "flowLagSeconds": 5,
+    "flowWindowSeconds": 60,
+    "minPriorSwaps": 5,
+    "reactionSeconds": 1,
+    "maxWaitSeconds": 10,
+    "pathHorizonSeconds": 660,
+    "maximumPositionFraction": 0.075,
+    "oneOpenPosition": true,
+    "oneTradePerContract": true,
+    "maximumPossibleFeesReservedBeforeEntry": true,
+    "extraFeePerPartialAttempt": "One preceding median gas/MEV fee"
+  },
+  "costScenarios": [
+    0.05,
+    0.1,
+    0.15
+  ],
+  "reactionStressSeconds": [
+    3,
+    5
+  ],
+  "contextManifestSha256": "86431b72ab3e48c98cad371e9479a6279155ae662685800cd0945117ad958c4b",
+  "trainingManifestSha256": "f23d71886fa44d92fbcbff20a84570a90bc6b00476a57e478df2bd8b177aec44",
+  "sourceHashes": {
+    "fit_partial_fixed.py": "f73e74805db266e2377fe526a9a5758da66a1341ef09f2ee99c21e013c39c68a",
+    "partial_exit_engine.py": "7b45a27dd4bf1003cbb300a8949ed41d6c77340cc5f6e47b25ce11711d59eb91",
+    "partial_saved_entry_lab.py": "6b31384999a4cfb6af0cfde056781fbacca0f9b4aca114709323b0609b31ef01",
+    "second_engine.py": "8bb9dee307d4cfc8b93784d703fe335214403a8aa2563e7e8765d2ea24cb3a9d",
+    "second_lab.py": "a83bdad241ab226100b33b83c5f891162ab9972f4fb9c9ae90b9e1efbc5f6855",
+    "trade_flow_lab.py": "2b01bedc1500da120cd12e90526dc890f1335fc063088aadd52b9e5be7e908aa",
+    "trade_flow_features.py": "b79a929fbec40323984854972a8befa2c938634e2077dbcb15cf0125ff9f577a",
+    "validate_cohort.py": "f387f18373813c227f6b9a0ba9a5126ab1459187040be547fe9831694159249a",
+    "adaptive_features.py": "3d53cbc5bf8a92528cccb2c6ca2260ab47d11ccf2a0bd51f4306c8e0e4a4e66c",
+    "research_engine.py": "eac78326de0ced1d97ca79e5d7bda8880b7492752fcb4dac477c05a6a25ef31c",
+    "research_dataset.py": "ed998065623d76f5ef78eec13393dc832e44889e9709a6182b0663422050d803"
+  },
+  "settingsSha256": "2b2ef2f5f542d913676e09ef3efe15fd4b775ca5d4faa5b03d4e59123a125207",
+  "fitResultsSha256": "2156700d7815342a12a3d055c7e7954a3a4f396c79baba8cae394b30d5ca440f",
+  "sourceProtocol": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/cohort_runs/cdbe9d78885db2c1/forward_protocol.json",
+  "sourceProtocolSha256": "80288c9b84ff315119eddf29e7e03e0734d78d43adef1728dfbaafdb94efd2f1",
+  "retrainingAllowedDuringValidation": false,
+  "validationScope": "Messages after the last known observation deadline, collected only after this freeze. This is an unseen historical collection window, not live execution or a prospective live return.",
+  "priorFrozenProtocol": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/fixed_partial_runs/3d80934062b6022e/forward_protocol.json",
+  "priorFrozenProtocolSha256": "12f2d964f45fd6e2b5ac30d1f8abf97f2282e4436450b2cc324e67f88de4a550",
+  "extensionCodeSha256": "84fe562cf5f6a809986bac479c8c72ddda1f10761b3757d248b5fe23edd26f46",
+  "extensionPurpose": "Unchanged fixed candidates, frozen before retrieving a later historical window. Existing context is not counted again as validation."
+}

@@ -1,0 +1,632 @@
+{
+  "dataset": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/coverage_repairs/evm/combined/datasets/adb4dc66b5bd0a0d3e6f",
+  "datasetManifestSha256": "f23d71886fa44d92fbcbff20a84570a90bc6b00476a57e478df2bd8b177aec44",
+  "sourceChoices": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/cohort_runs/cdbe9d78885db2c1/results.json",
+  "sourceChoicesSha256": "77da004ffc2f2fc35efad2f0eb1c5a2d3a48df4181dfeac070e8d977f1e24df2",
+  "flowDirectory": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/coverage_repairs/evm/combined/datasets/adb4dc66b5bd0a0d3e6f/trade_flow/5bbd83db811e9339",
+  "flowFeaturesSha256": "b0617ebe88b31c784cc6416c9a6691590a67685974fe0012f91244d4959a5eba",
+  "sourceHashes": {
+    "account_risk_lab.py": "94dae07a70799dced95f88c5a68794c169499e6777f6edc11e114ce2024524ee",
+    "account_risk_engine.py": "cfcf65eaf37c9e192111a209a36ad72bed90e5b92b8697bbcd824e64848cd682",
+    "context_decider_lab.py": "92f65b8e8ce39f3125de37fcea823a8e91fdb7104ade3450cb00ac7231e176dd",
+    "activity_policy_lab.py": "360425def11a64600e84b67aadb62c8f4eb4c264614e4df3c1b94cbaad5772de",
+    "partial_exit_engine.py": "7b45a27dd4bf1003cbb300a8949ed41d6c77340cc5f6e47b25ce11711d59eb91",
+    "partial_saved_entry_lab.py": "6b31384999a4cfb6af0cfde056781fbacca0f9b4aca114709323b0609b31ef01",
+    "second_engine.py": "8bb9dee307d4cfc8b93784d703fe335214403a8aa2563e7e8765d2ea24cb3a9d",
+    "second_lab.py": "a83bdad241ab226100b33b83c5f891162ab9972f4fb9c9ae90b9e1efbc5f6855",
+    "trade_flow_lab.py": "2b01bedc1500da120cd12e90526dc890f1335fc063088aadd52b9e5be7e908aa",
+    "trade_flow_features.py": "b79a929fbec40323984854972a8befa2c938634e2077dbcb15cf0125ff9f577a",
+    "validate_cohort.py": "f387f18373813c227f6b9a0ba9a5126ab1459187040be547fe9831694159249a",
+    "research_dataset.py": "ed998065623d76f5ef78eec13393dc832e44889e9709a6182b0663422050d803",
+    "research_engine.py": "eac78326de0ced1d97ca79e5d7bda8880b7492752fcb4dac477c05a6a25ef31c",
+    "adaptive_features.py": "3d53cbc5bf8a92528cccb2c6ca2260ab47d11ccf2a0bd51f4306c8e0e4a4e66c"
+  },
+  "secondResponseSetSha256": "1223975c478e4e4518407167e32a23a1a0f8208ed514a93bb1de724dd3c5da94",
+  "riskRules": [
+    {
+      "kind": "none",
+      "threshold": 0.0,
+      "multiplier": 1.0,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "drawdown",
+      "threshold": 0.005,
+      "multiplier": 0.25,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "drawdown",
+      "threshold": 0.005,
+      "multiplier": 0.5,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "drawdown",
+      "threshold": 0.01,
+      "multiplier": 0.25,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "drawdown",
+      "threshold": 0.01,
+      "multiplier": 0.5,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "drawdown",
+      "threshold": 0.02,
+      "multiplier": 0.25,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "drawdown",
+      "threshold": 0.02,
+      "multiplier": 0.5,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "drawdown",
+      "threshold": 0.04,
+      "multiplier": 0.25,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "drawdown",
+      "threshold": 0.04,
+      "multiplier": 0.5,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "daily_drawdown",
+      "threshold": 0.005,
+      "multiplier": 0.25,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "daily_drawdown",
+      "threshold": 0.005,
+      "multiplier": 0.5,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "daily_drawdown",
+      "threshold": 0.01,
+      "multiplier": 0.25,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "daily_drawdown",
+      "threshold": 0.01,
+      "multiplier": 0.5,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "daily_drawdown",
+      "threshold": 0.02,
+      "multiplier": 0.25,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "daily_drawdown",
+      "threshold": 0.02,
+      "multiplier": 0.5,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "daily_drawdown",
+      "threshold": 0.04,
+      "multiplier": 0.25,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "daily_drawdown",
+      "threshold": 0.04,
+      "multiplier": 0.5,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "profit_lock",
+      "threshold": 0.005,
+      "multiplier": 0.25,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "profit_lock",
+      "threshold": 0.005,
+      "multiplier": 0.5,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "profit_lock",
+      "threshold": 0.01,
+      "multiplier": 0.25,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "profit_lock",
+      "threshold": 0.01,
+      "multiplier": 0.5,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "profit_lock",
+      "threshold": 0.02,
+      "multiplier": 0.25,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "profit_lock",
+      "threshold": 0.02,
+      "multiplier": 0.5,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "profit_lock",
+      "threshold": 0.04,
+      "multiplier": 0.25,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "profit_lock",
+      "threshold": 0.04,
+      "multiplier": 0.5,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "daily_loss",
+      "threshold": 0.005,
+      "multiplier": 1.0,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "daily_loss",
+      "threshold": 0.01,
+      "multiplier": 1.0,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "daily_loss",
+      "threshold": 0.02,
+      "multiplier": 1.0,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "daily_loss",
+      "threshold": 0.04,
+      "multiplier": 1.0,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "smooth_drawdown",
+      "threshold": 0.01,
+      "multiplier": 1.0,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.1,
+      "recovery": 0.25
+    },
+    {
+      "kind": "smooth_drawdown",
+      "threshold": 0.01,
+      "multiplier": 1.0,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "smooth_drawdown",
+      "threshold": 0.01,
+      "multiplier": 1.0,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.5,
+      "recovery": 0.25
+    },
+    {
+      "kind": "smooth_drawdown",
+      "threshold": 0.02,
+      "multiplier": 1.0,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.1,
+      "recovery": 0.25
+    },
+    {
+      "kind": "smooth_drawdown",
+      "threshold": 0.02,
+      "multiplier": 1.0,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "smooth_drawdown",
+      "threshold": 0.02,
+      "multiplier": 1.0,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.5,
+      "recovery": 0.25
+    },
+    {
+      "kind": "smooth_drawdown",
+      "threshold": 0.04,
+      "multiplier": 1.0,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.1,
+      "recovery": 0.25
+    },
+    {
+      "kind": "smooth_drawdown",
+      "threshold": 0.04,
+      "multiplier": 1.0,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "smooth_drawdown",
+      "threshold": 0.04,
+      "multiplier": 1.0,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.5,
+      "recovery": 0.25
+    },
+    {
+      "kind": "loss_streak",
+      "threshold": 0.0,
+      "multiplier": 0.25,
+      "count": 2,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "loss_streak",
+      "threshold": 0.0,
+      "multiplier": 0.5,
+      "count": 2,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "loss_streak",
+      "threshold": 0.0,
+      "multiplier": 0.25,
+      "count": 3,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "loss_streak",
+      "threshold": 0.0,
+      "multiplier": 0.5,
+      "count": 3,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "loss_streak",
+      "threshold": 0.0,
+      "multiplier": 0.25,
+      "count": 4,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "loss_streak",
+      "threshold": 0.0,
+      "multiplier": 0.5,
+      "count": 4,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "loss_pause",
+      "threshold": 0.0,
+      "multiplier": 1.0,
+      "count": 2,
+      "seconds": 60,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "loss_pause",
+      "threshold": 0.0,
+      "multiplier": 1.0,
+      "count": 2,
+      "seconds": 300,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "loss_pause",
+      "threshold": 0.0,
+      "multiplier": 1.0,
+      "count": 2,
+      "seconds": 900,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "loss_pause",
+      "threshold": 0.0,
+      "multiplier": 1.0,
+      "count": 2,
+      "seconds": 3600,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "loss_pause",
+      "threshold": 0.0,
+      "multiplier": 1.0,
+      "count": 3,
+      "seconds": 60,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "loss_pause",
+      "threshold": 0.0,
+      "multiplier": 1.0,
+      "count": 3,
+      "seconds": 300,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "loss_pause",
+      "threshold": 0.0,
+      "multiplier": 1.0,
+      "count": 3,
+      "seconds": 900,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "loss_pause",
+      "threshold": 0.0,
+      "multiplier": 1.0,
+      "count": 3,
+      "seconds": 3600,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "spacing",
+      "threshold": 0.0,
+      "multiplier": 1.0,
+      "count": 0,
+      "seconds": 30,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "spacing",
+      "threshold": 0.0,
+      "multiplier": 1.0,
+      "count": 0,
+      "seconds": 120,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "spacing",
+      "threshold": 0.0,
+      "multiplier": 1.0,
+      "count": 0,
+      "seconds": 300,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "spacing",
+      "threshold": 0.0,
+      "multiplier": 1.0,
+      "count": 0,
+      "seconds": 900,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "loss_recover",
+      "threshold": 0.0,
+      "multiplier": 0.5,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.125
+    },
+    {
+      "kind": "loss_recover",
+      "threshold": 0.0,
+      "multiplier": 0.5,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "loss_recover",
+      "threshold": 0.0,
+      "multiplier": 0.5,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.5,
+      "recovery": 0.125
+    },
+    {
+      "kind": "loss_recover",
+      "threshold": 0.0,
+      "multiplier": 0.5,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.5,
+      "recovery": 0.25
+    },
+    {
+      "kind": "loss_recover",
+      "threshold": 0.0,
+      "multiplier": 0.75,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.125
+    },
+    {
+      "kind": "loss_recover",
+      "threshold": 0.0,
+      "multiplier": 0.75,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.25,
+      "recovery": 0.25
+    },
+    {
+      "kind": "loss_recover",
+      "threshold": 0.0,
+      "multiplier": 0.75,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.5,
+      "recovery": 0.125
+    },
+    {
+      "kind": "loss_recover",
+      "threshold": 0.0,
+      "multiplier": 0.75,
+      "count": 0,
+      "seconds": 0,
+      "floor": 0.5,
+      "recovery": 0.25
+    }
+  ],
+  "scales": [
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "selectors": {
+    "risk_2pct": {
+      "maxDrawdown": 0.02,
+      "minTrades": 10,
+      "minContracts": 8,
+      "removeWinners": false
+    },
+    "risk_5pct": {
+      "maxDrawdown": 0.05,
+      "minTrades": 10,
+      "minContracts": 8,
+      "removeWinners": false
+    },
+    "robust_5pct": {
+      "maxDrawdown": 0.05,
+      "minTrades": 14,
+      "minContracts": 10,
+      "removeWinners": true
+    }
+  },
+  "selection": "Same saved daily entry/cohort rules, budgets and six exits per day. Require positive training returns at 5%/10% sale costs and the named training drawdown ceiling; maximize the 10%-cost return. The robust selector also requires positive training return after removing two best training tokens. Cash is allowed.",
+  "state": "Controls see only realized cash, prior closed-equity high and completed entered-trade results. Loss streaks, recovery factors, daily peaks and pauses reset on the next UTC entry day; overall closed-equity high carries across days. A pause or rejection leaves later calls on an untraded token eligible. Original one-position, fee-reserve and volume limits remain in force.",
+  "scope": "Retrospective daily selections on repeatedly examined dates. Training drawdown constraints are not live loss guarantees. Controls do not change frozen validation protocols."
+}

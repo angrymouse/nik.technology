@@ -41,17 +41,20 @@ or no `draft` field.
 
 ## Group trading research
 
-`/group-trading-is-minus-ev` is a prerendered research page. Its aggregate data and
-SVG figures live in `public/research/group-trading/`. The JSON includes source
-hashes; `manifest.json` hashes the public exports. The page does not fetch market
-data at runtime.
+`/group-trading-is-minus-ev/` serves the original standalone HTML report from
+`public/group-trading-is-minus-ev/index.html`. Its HTML, CSS, figures, tables and
+linked reports are copied from the research workspace. It has no Nuxt page or
+website layout wrapper.
 
 To refresh the saved research snapshot from the local research workspace:
 
 ```sh
-rtk python /home/nik/entryliquidity/analysis/ayugram-token-strategy/publish_group_research.py /home/nik/nik.technology
-rtk npm run generate
+rtk python scripts/publish-group-report.py /home/nik/entryliquidity/analysis/ayugram-token-strategy --large-files-directory /tmp/group-research-release-assets
+rtk proxy env CF_PAGES=1 npm run generate
 ```
 
-The exporter selects aggregate fields and anonymous caller labels explicitly.
-Update its snapshot inputs and the article together when publishing new results.
+`publication-manifest.json` records the source hashes. Files over Cloudflare's
+25 MiB limit are downloaded through redirects to the repository's
+`group-trading-research-2026-10-21` release. Upload the files staged by the exporter
+to that release before deploying a refreshed snapshot. Keep the report's wording
+and original styling intact.

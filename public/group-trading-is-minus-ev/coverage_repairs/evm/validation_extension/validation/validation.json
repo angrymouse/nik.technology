@@ -1,0 +1,251 @@
+{
+  "createdAt": "2026-10-21T08:20:10.753445+00:00",
+  "protocolPath": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/coverage_repairs/evm/validation_extension/forward_protocol.json",
+  "protocolSha256": "e808143bf4371c7576bd3c4e71f87cbddeedac66e4d841278a2574390ad46560",
+  "sourceCodeSha256": "f387f18373813c227f6b9a0ba9a5126ab1459187040be547fe9831694159249a",
+  "datasetPath": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/coverage_repairs/evm/validation_extension/validation/combined/datasets/99f30ba924282d177b95",
+  "protocol": {
+    "version": 1,
+    "frozenAt": "2026-10-21T08:17:19.887243+00:00",
+    "sourceDataset": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/coverage_repairs/evm/validation_extension/warm_history/combined/datasets/2d2b1f6db355adf177f1",
+    "sourceRun": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/adaptive_runs/70fab2c549e7e89e",
+    "sourceCodeHash": "6fe5813971bb93ad4b3e5ba06d5b5d2be3857a877ce327d412a1e8806633311d",
+    "entry": {
+      "delay": 1,
+      "min_cap": 50000,
+      "max_cap": 250000,
+      "min_gain": -0.25,
+      "max_gain": -0.1,
+      "cap_basis": "quote",
+      "family": "fine_cap"
+    },
+    "exit": {
+      "hold": 10,
+      "stop": null,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "early_after": null,
+      "early_return": 0.0,
+      "partial_at": null,
+      "partial_fraction": 0.5,
+      "breakeven": false
+    },
+    "sizing": {
+      "fraction": 0.05,
+      "profile": "volatility",
+      "daily_budget": 0.04,
+      "cooldown_losses": 0,
+      "cooldown_minutes": 0,
+      "halve_after_losses": 0,
+      "drawdown_throttle": null,
+      "one_per_contract": true
+    },
+    "regimeGate": [
+      "mean",
+      5,
+      -0.1
+    ],
+    "executionExtraMinutes": 1,
+    "startingCash": 100,
+    "costScenarios": [
+      0.05,
+      0.1,
+      0.15
+    ],
+    "validationStartMs": 1792567843648,
+    "validationMessageEnd": "2026-10-21T07:57:19.887243+00:00",
+    "trainingQuoteAsOf": "2026-10-21T05:13:07.049000Z",
+    "collectAfterMessage": "2026-10-21T06:59:01.000Z",
+    "cohortHistory": {
+      "baselineEntryDelay": 1,
+      "holdMinutes": 3,
+      "proceedsHaircut": 0.05,
+      "returnClip": [
+        -1,
+        1
+      ],
+      "firstCallPerAsset": true,
+      "excludeTargetAsset": true,
+      "strictlyCompletedBeforeFeature": true
+    },
+    "selectionStatus": "Same fixed trading rule; repaired EVM history and the previously seen 18-message window supply context. This extension was frozen before collecting its new messages or prices.",
+    "retrainingAllowedDuringValidation": false,
+    "priorProtocol": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/cohort_runs/cdbe9d78885db2c1/forward_protocol.json",
+    "priorProtocolSha256": "80288c9b84ff315119eddf29e7e03e0734d78d43adef1728dfbaafdb94efd2f1",
+    "extensionContext": "Earlier window is warm history, not counted again as validation."
+  },
+  "window": {
+    "start": "2026-10-21T07:30:43.648000Z",
+    "lastMessage": "2026-10-21T07:50:22.000Z",
+    "marketAsOf": "2026-10-21T08:17:48.178000Z"
+  },
+  "coverage": {
+    "newArchivedMessages": 21,
+    "newTokenMessages": 8,
+    "newCallRowsInValidationWindow": 4,
+    "newEligibleCallerContractCalls": 3,
+    "passEntryFilter": 0,
+    "passEntryAndCohort": 0,
+    "passFiltersAndFill": 0,
+    "combinedDataset": {
+      "uniqueCallerContractSignals": 1252,
+      "missingEntrySnapshot": 38,
+      "repeatedCallerContractSignals": 621,
+      "staleOrFutureSnapshot": 98,
+      "eligibleCalls": 1116,
+      "authors": 45,
+      "contracts": 527,
+      "archivedMessages": 14312,
+      "callsWithOriginalText": 803
+    }
+  },
+  "audit": {
+    "originalReplayParity": {
+      "trades": 10,
+      "return": 0.0383094604501375,
+      "maximumAllowedDifference": 1e-09
+    },
+    "historicalObservations": {
+      "preservedCalls": 1109,
+      "preservedArrayFields": 19,
+      "assetAndAuthorIdentities": "checked by stable signal metadata"
+    },
+    "causalCohortInputs": 3
+  },
+  "scenarios": [
+    {
+      "return": 0.0,
+      "endingEquity": 100.0,
+      "maxDrawdownCandleBound": 0.0,
+      "maxDrawdownClosedEquity": 0.0,
+      "signals": 0,
+      "entered": 0,
+      "contracts": 0,
+      "winRate": null,
+      "averagePosition": 0,
+      "writtenOffPositions": 0,
+      "cost": 0.05,
+      "fixedFee": 0.0,
+      "modelUsed": false,
+      "sizing": {
+        "fraction": 0.05,
+        "profile": "volatility",
+        "daily_budget": 0.04,
+        "cooldown_losses": 0,
+        "cooldown_minutes": 0,
+        "halve_after_losses": 0,
+        "drawdown_throttle": null,
+        "one_per_contract": true
+      },
+      "dailyPnl": {
+        "20742": 0.0,
+        "20743": 0.0,
+        "20744": 0.0,
+        "20745": 0.0,
+        "20746": 0.0,
+        "20747": 0.0
+      },
+      "trades": [],
+      "equity": [],
+      "state": {
+        "peak": 100.0,
+        "closedPeak": 100.0,
+        "blockedUntil": -1,
+        "currentDay": -1,
+        "dailyStart": 100.0,
+        "lossStreak": 0,
+        "seenAssets": []
+      }
+    },
+    {
+      "return": 0.0,
+      "endingEquity": 100.0,
+      "maxDrawdownCandleBound": 0.0,
+      "maxDrawdownClosedEquity": 0.0,
+      "signals": 0,
+      "entered": 0,
+      "contracts": 0,
+      "winRate": null,
+      "averagePosition": 0,
+      "writtenOffPositions": 0,
+      "cost": 0.1,
+      "fixedFee": 0.0,
+      "modelUsed": false,
+      "sizing": {
+        "fraction": 0.05,
+        "profile": "volatility",
+        "daily_budget": 0.04,
+        "cooldown_losses": 0,
+        "cooldown_minutes": 0,
+        "halve_after_losses": 0,
+        "drawdown_throttle": null,
+        "one_per_contract": true
+      },
+      "dailyPnl": {
+        "20742": 0.0,
+        "20743": 0.0,
+        "20744": 0.0,
+        "20745": 0.0,
+        "20746": 0.0,
+        "20747": 0.0
+      },
+      "trades": [],
+      "equity": [],
+      "state": {
+        "peak": 100.0,
+        "closedPeak": 100.0,
+        "blockedUntil": -1,
+        "currentDay": -1,
+        "dailyStart": 100.0,
+        "lossStreak": 0,
+        "seenAssets": []
+      }
+    },
+    {
+      "return": 0.0,
+      "endingEquity": 100.0,
+      "maxDrawdownCandleBound": 0.0,
+      "maxDrawdownClosedEquity": 0.0,
+      "signals": 0,
+      "entered": 0,
+      "contracts": 0,
+      "winRate": null,
+      "averagePosition": 0,
+      "writtenOffPositions": 0,
+      "cost": 0.15,
+      "fixedFee": 0.0,
+      "modelUsed": false,
+      "sizing": {
+        "fraction": 0.05,
+        "profile": "volatility",
+        "daily_budget": 0.04,
+        "cooldown_losses": 0,
+        "cooldown_minutes": 0,
+        "halve_after_losses": 0,
+        "drawdown_throttle": null,
+        "one_per_contract": true
+      },
+      "dailyPnl": {
+        "20742": 0.0,
+        "20743": 0.0,
+        "20744": 0.0,
+        "20745": 0.0,
+        "20746": 0.0,
+        "20747": 0.0
+      },
+      "trades": [],
+      "equity": [],
+      "state": {
+        "peak": 100.0,
+        "closedPeak": 100.0,
+        "blockedUntil": -1,
+        "currentDay": -1,
+        "dailyStart": 100.0,
+        "lossStreak": 0,
+        "seenAssets": []
+      }
+    }
+  ],
+  "conclusion": "No qualifying trades. This window supplies no evidence for profitability."
+}

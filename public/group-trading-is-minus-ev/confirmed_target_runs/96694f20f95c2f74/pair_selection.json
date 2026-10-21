@@ -1,0 +1,44 @@
+{
+  "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmed_target_runs/96694f20f95c2f74",
+  "settingsSha256": "22c38dd756c401bddb5f96113558737314c60811cf3bcd4c2c5e911efffabf89",
+  "pairSourceSha256": "3890aec9954cf0398c6cd64fb920cbeaa4ffa8b45f11b75be790bcd646e7b799",
+  "riskCeilings": [
+    0.005,
+    0.0075,
+    0.01,
+    0.015,
+    0.02
+  ],
+  "selection": "Among settings passing every flow/history/population/execution and initial concentration screen with at least eight trades, maximize the minimum return below each drawdown ceiling. Break ties by higher drawdown bound, then lower rule ID and policy ID.",
+  "mandatory": [
+    {
+      "rule": {
+        "target": 3.0,
+        "measure": "high",
+        "seconds": 1,
+        "hold": 300
+      },
+      "policyId": 0
+    },
+    {
+      "rule": {
+        "target": 3.0,
+        "measure": "high",
+        "seconds": 1,
+        "hold": 300
+      },
+      "policyId": 1
+    },
+    {
+      "rule": {
+        "target": 3.0,
+        "measure": "low",
+        "seconds": 5,
+        "hold": 300
+      },
+      "policyId": 1
+    }
+  ],
+  "diagnostic": "Keep the five-consecutive-low-seconds 3x comparison even if it fails the initial screen.",
+  "frozenAt": "2026-10-21T14:22:14.008088+00:00"
+}

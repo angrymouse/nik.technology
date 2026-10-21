@@ -1,0 +1,5322 @@
+{
+  "entries": [
+    {
+      "minCap": 0,
+      "maxCap": null,
+      "filter": "all"
+    },
+    {
+      "minCap": 0,
+      "maxCap": null,
+      "filter": "human"
+    },
+    {
+      "minCap": 0,
+      "maxCap": null,
+      "filter": "first_caller"
+    },
+    {
+      "minCap": 0,
+      "maxCap": null,
+      "filter": "cohort_mean"
+    },
+    {
+      "minCap": 0,
+      "maxCap": null,
+      "filter": "caller_nonnegative"
+    },
+    {
+      "minCap": 0,
+      "maxCap": null,
+      "filter": "evm"
+    },
+    {
+      "minCap": 0,
+      "maxCap": null,
+      "filter": "chain:evm:56"
+    },
+    {
+      "minCap": 0,
+      "maxCap": null,
+      "filter": "chain:solana:solana"
+    },
+    {
+      "minCap": 3000,
+      "maxCap": 6000,
+      "filter": "all"
+    },
+    {
+      "minCap": 3000,
+      "maxCap": 6000,
+      "filter": "human"
+    },
+    {
+      "minCap": 3000,
+      "maxCap": 6000,
+      "filter": "first_caller"
+    },
+    {
+      "minCap": 3000,
+      "maxCap": 6000,
+      "filter": "cohort_mean"
+    },
+    {
+      "minCap": 3000,
+      "maxCap": 6000,
+      "filter": "chain:solana:solana"
+    },
+    {
+      "minCap": 6000,
+      "maxCap": 10000,
+      "filter": "all"
+    },
+    {
+      "minCap": 6000,
+      "maxCap": 10000,
+      "filter": "human"
+    },
+    {
+      "minCap": 6000,
+      "maxCap": 10000,
+      "filter": "first_caller"
+    },
+    {
+      "minCap": 6000,
+      "maxCap": 10000,
+      "filter": "cohort_mean"
+    },
+    {
+      "minCap": 6000,
+      "maxCap": 10000,
+      "filter": "caller_nonnegative"
+    },
+    {
+      "minCap": 6000,
+      "maxCap": 10000,
+      "filter": "chain:solana:solana"
+    },
+    {
+      "minCap": 10000,
+      "maxCap": 25000,
+      "filter": "all"
+    },
+    {
+      "minCap": 10000,
+      "maxCap": 25000,
+      "filter": "human"
+    },
+    {
+      "minCap": 10000,
+      "maxCap": 25000,
+      "filter": "first_caller"
+    },
+    {
+      "minCap": 10000,
+      "maxCap": 25000,
+      "filter": "cohort_mean"
+    },
+    {
+      "minCap": 10000,
+      "maxCap": 25000,
+      "filter": "caller_nonnegative"
+    },
+    {
+      "minCap": 10000,
+      "maxCap": 25000,
+      "filter": "chain:solana:solana"
+    },
+    {
+      "minCap": 25000,
+      "maxCap": 50000,
+      "filter": "all"
+    },
+    {
+      "minCap": 25000,
+      "maxCap": 50000,
+      "filter": "human"
+    },
+    {
+      "minCap": 25000,
+      "maxCap": 50000,
+      "filter": "first_caller"
+    },
+    {
+      "minCap": 25000,
+      "maxCap": 50000,
+      "filter": "cohort_mean"
+    },
+    {
+      "minCap": 25000,
+      "maxCap": 50000,
+      "filter": "caller_nonnegative"
+    },
+    {
+      "minCap": 25000,
+      "maxCap": 50000,
+      "filter": "chain:solana:solana"
+    },
+    {
+      "minCap": 50000,
+      "maxCap": 100000,
+      "filter": "all"
+    },
+    {
+      "minCap": 50000,
+      "maxCap": 100000,
+      "filter": "human"
+    },
+    {
+      "minCap": 50000,
+      "maxCap": 100000,
+      "filter": "first_caller"
+    },
+    {
+      "minCap": 50000,
+      "maxCap": 100000,
+      "filter": "cohort_mean"
+    },
+    {
+      "minCap": 50000,
+      "maxCap": 100000,
+      "filter": "caller_nonnegative"
+    },
+    {
+      "minCap": 50000,
+      "maxCap": 100000,
+      "filter": "chain:solana:solana"
+    },
+    {
+      "minCap": 100000,
+      "maxCap": 250000,
+      "filter": "all"
+    },
+    {
+      "minCap": 100000,
+      "maxCap": 250000,
+      "filter": "human"
+    },
+    {
+      "minCap": 100000,
+      "maxCap": 250000,
+      "filter": "first_caller"
+    },
+    {
+      "minCap": 100000,
+      "maxCap": 250000,
+      "filter": "cohort_mean"
+    },
+    {
+      "minCap": 100000,
+      "maxCap": 250000,
+      "filter": "caller_nonnegative"
+    },
+    {
+      "minCap": 100000,
+      "maxCap": 250000,
+      "filter": "chain:solana:solana"
+    },
+    {
+      "minCap": 250000,
+      "maxCap": 1000000,
+      "filter": "all"
+    },
+    {
+      "minCap": 250000,
+      "maxCap": 1000000,
+      "filter": "human"
+    },
+    {
+      "minCap": 250000,
+      "maxCap": 1000000,
+      "filter": "first_caller"
+    },
+    {
+      "minCap": 250000,
+      "maxCap": 1000000,
+      "filter": "cohort_mean"
+    },
+    {
+      "minCap": 1000000,
+      "maxCap": 5000000,
+      "filter": "all"
+    },
+    {
+      "minCap": 1000000,
+      "maxCap": 5000000,
+      "filter": "chain:solana:solana"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 6000,
+      "filter": "all"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 6000,
+      "filter": "human"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 6000,
+      "filter": "first_caller"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 6000,
+      "filter": "cohort_mean"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 6000,
+      "filter": "caller_nonnegative"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 6000,
+      "filter": "chain:solana:solana"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 10000,
+      "filter": "all"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 10000,
+      "filter": "human"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 10000,
+      "filter": "first_caller"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 10000,
+      "filter": "cohort_mean"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 10000,
+      "filter": "caller_nonnegative"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 10000,
+      "filter": "chain:solana:solana"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 25000,
+      "filter": "all"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 25000,
+      "filter": "human"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 25000,
+      "filter": "first_caller"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 25000,
+      "filter": "cohort_mean"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 25000,
+      "filter": "caller_nonnegative"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 25000,
+      "filter": "chain:solana:solana"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 50000,
+      "filter": "all"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 50000,
+      "filter": "human"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 50000,
+      "filter": "first_caller"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 50000,
+      "filter": "cohort_mean"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 50000,
+      "filter": "caller_nonnegative"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 50000,
+      "filter": "evm"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 50000,
+      "filter": "chain:solana:solana"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 100000,
+      "filter": "all"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 100000,
+      "filter": "human"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 100000,
+      "filter": "first_caller"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 100000,
+      "filter": "cohort_mean"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 100000,
+      "filter": "caller_nonnegative"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 100000,
+      "filter": "evm"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 100000,
+      "filter": "chain:solana:solana"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 250000,
+      "filter": "all"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 250000,
+      "filter": "human"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 250000,
+      "filter": "first_caller"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 250000,
+      "filter": "cohort_mean"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 250000,
+      "filter": "caller_nonnegative"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 250000,
+      "filter": "evm"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 250000,
+      "filter": "chain:solana:solana"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 1000000,
+      "filter": "all"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 1000000,
+      "filter": "human"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 1000000,
+      "filter": "first_caller"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 1000000,
+      "filter": "cohort_mean"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 1000000,
+      "filter": "caller_nonnegative"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 1000000,
+      "filter": "chain:solana:solana"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 5000000,
+      "filter": "all"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 5000000,
+      "filter": "human"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 5000000,
+      "filter": "first_caller"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 5000000,
+      "filter": "cohort_mean"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 5000000,
+      "filter": "caller_nonnegative"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 5000000,
+      "filter": "evm"
+    },
+    {
+      "minCap": 0,
+      "maxCap": 5000000,
+      "filter": "chain:solana:solana"
+    },
+    {
+      "minCap": 3000,
+      "maxCap": null,
+      "filter": "all"
+    },
+    {
+      "minCap": 3000,
+      "maxCap": null,
+      "filter": "human"
+    },
+    {
+      "minCap": 3000,
+      "maxCap": null,
+      "filter": "first_caller"
+    },
+    {
+      "minCap": 3000,
+      "maxCap": null,
+      "filter": "cohort_mean"
+    },
+    {
+      "minCap": 3000,
+      "maxCap": null,
+      "filter": "caller_nonnegative"
+    },
+    {
+      "minCap": 3000,
+      "maxCap": null,
+      "filter": "chain:solana:solana"
+    },
+    {
+      "minCap": 6000,
+      "maxCap": null,
+      "filter": "all"
+    },
+    {
+      "minCap": 6000,
+      "maxCap": null,
+      "filter": "human"
+    },
+    {
+      "minCap": 6000,
+      "maxCap": null,
+      "filter": "first_caller"
+    },
+    {
+      "minCap": 6000,
+      "maxCap": null,
+      "filter": "cohort_mean"
+    },
+    {
+      "minCap": 6000,
+      "maxCap": null,
+      "filter": "caller_nonnegative"
+    },
+    {
+      "minCap": 6000,
+      "maxCap": null,
+      "filter": "evm"
+    },
+    {
+      "minCap": 6000,
+      "maxCap": null,
+      "filter": "chain:evm:56"
+    },
+    {
+      "minCap": 6000,
+      "maxCap": null,
+      "filter": "chain:solana:solana"
+    },
+    {
+      "minCap": 10000,
+      "maxCap": null,
+      "filter": "all"
+    },
+    {
+      "minCap": 10000,
+      "maxCap": null,
+      "filter": "human"
+    },
+    {
+      "minCap": 10000,
+      "maxCap": null,
+      "filter": "first_caller"
+    },
+    {
+      "minCap": 10000,
+      "maxCap": null,
+      "filter": "cohort_mean"
+    },
+    {
+      "minCap": 10000,
+      "maxCap": null,
+      "filter": "caller_nonnegative"
+    },
+    {
+      "minCap": 10000,
+      "maxCap": null,
+      "filter": "evm"
+    },
+    {
+      "minCap": 10000,
+      "maxCap": null,
+      "filter": "chain:evm:56"
+    },
+    {
+      "minCap": 10000,
+      "maxCap": null,
+      "filter": "chain:solana:solana"
+    },
+    {
+      "minCap": 25000,
+      "maxCap": null,
+      "filter": "all"
+    },
+    {
+      "minCap": 25000,
+      "maxCap": null,
+      "filter": "human"
+    },
+    {
+      "minCap": 25000,
+      "maxCap": null,
+      "filter": "first_caller"
+    },
+    {
+      "minCap": 25000,
+      "maxCap": null,
+      "filter": "cohort_mean"
+    },
+    {
+      "minCap": 25000,
+      "maxCap": null,
+      "filter": "caller_nonnegative"
+    },
+    {
+      "minCap": 25000,
+      "maxCap": null,
+      "filter": "evm"
+    },
+    {
+      "minCap": 25000,
+      "maxCap": null,
+      "filter": "chain:solana:solana"
+    },
+    {
+      "minCap": 50000,
+      "maxCap": null,
+      "filter": "all"
+    },
+    {
+      "minCap": 50000,
+      "maxCap": null,
+      "filter": "human"
+    },
+    {
+      "minCap": 50000,
+      "maxCap": null,
+      "filter": "first_caller"
+    },
+    {
+      "minCap": 50000,
+      "maxCap": null,
+      "filter": "cohort_mean"
+    },
+    {
+      "minCap": 50000,
+      "maxCap": null,
+      "filter": "caller_nonnegative"
+    },
+    {
+      "minCap": 50000,
+      "maxCap": null,
+      "filter": "evm"
+    },
+    {
+      "minCap": 50000,
+      "maxCap": null,
+      "filter": "chain:solana:solana"
+    },
+    {
+      "minCap": 100000,
+      "maxCap": null,
+      "filter": "all"
+    },
+    {
+      "minCap": 100000,
+      "maxCap": null,
+      "filter": "human"
+    },
+    {
+      "minCap": 100000,
+      "maxCap": null,
+      "filter": "first_caller"
+    },
+    {
+      "minCap": 100000,
+      "maxCap": null,
+      "filter": "cohort_mean"
+    },
+    {
+      "minCap": 100000,
+      "maxCap": null,
+      "filter": "caller_nonnegative"
+    },
+    {
+      "minCap": 100000,
+      "maxCap": null,
+      "filter": "evm"
+    },
+    {
+      "minCap": 100000,
+      "maxCap": null,
+      "filter": "chain:solana:solana"
+    },
+    {
+      "minCap": 250000,
+      "maxCap": null,
+      "filter": "all"
+    },
+    {
+      "minCap": 250000,
+      "maxCap": null,
+      "filter": "human"
+    },
+    {
+      "minCap": 250000,
+      "maxCap": null,
+      "filter": "first_caller"
+    },
+    {
+      "minCap": 250000,
+      "maxCap": null,
+      "filter": "cohort_mean"
+    },
+    {
+      "minCap": 250000,
+      "maxCap": null,
+      "filter": "caller_nonnegative"
+    },
+    {
+      "minCap": 250000,
+      "maxCap": null,
+      "filter": "chain:solana:solana"
+    },
+    {
+      "minCap": 1000000,
+      "maxCap": null,
+      "filter": "all"
+    },
+    {
+      "minCap": 1000000,
+      "maxCap": null,
+      "filter": "human"
+    },
+    {
+      "minCap": 1000000,
+      "maxCap": null,
+      "filter": "first_caller"
+    },
+    {
+      "minCap": 1000000,
+      "maxCap": null,
+      "filter": "cohort_mean"
+    },
+    {
+      "minCap": 1000000,
+      "maxCap": null,
+      "filter": "chain:solana:solana"
+    },
+    {
+      "minCap": 10000,
+      "maxCap": 100000,
+      "filter": "all"
+    },
+    {
+      "minCap": 10000,
+      "maxCap": 100000,
+      "filter": "human"
+    },
+    {
+      "minCap": 10000,
+      "maxCap": 100000,
+      "filter": "first_caller"
+    },
+    {
+      "minCap": 10000,
+      "maxCap": 100000,
+      "filter": "cohort_mean"
+    },
+    {
+      "minCap": 10000,
+      "maxCap": 100000,
+      "filter": "caller_nonnegative"
+    },
+    {
+      "minCap": 10000,
+      "maxCap": 100000,
+      "filter": "evm"
+    },
+    {
+      "minCap": 10000,
+      "maxCap": 100000,
+      "filter": "chain:solana:solana"
+    },
+    {
+      "minCap": 25000,
+      "maxCap": 250000,
+      "filter": "all"
+    },
+    {
+      "minCap": 25000,
+      "maxCap": 250000,
+      "filter": "human"
+    },
+    {
+      "minCap": 25000,
+      "maxCap": 250000,
+      "filter": "first_caller"
+    },
+    {
+      "minCap": 25000,
+      "maxCap": 250000,
+      "filter": "cohort_mean"
+    },
+    {
+      "minCap": 25000,
+      "maxCap": 250000,
+      "filter": "caller_nonnegative"
+    },
+    {
+      "minCap": 25000,
+      "maxCap": 250000,
+      "filter": "evm"
+    },
+    {
+      "minCap": 25000,
+      "maxCap": 250000,
+      "filter": "chain:solana:solana"
+    },
+    {
+      "minCap": 50000,
+      "maxCap": 250000,
+      "filter": "all"
+    },
+    {
+      "minCap": 50000,
+      "maxCap": 250000,
+      "filter": "human"
+    },
+    {
+      "minCap": 50000,
+      "maxCap": 250000,
+      "filter": "first_caller"
+    },
+    {
+      "minCap": 50000,
+      "maxCap": 250000,
+      "filter": "cohort_mean"
+    },
+    {
+      "minCap": 50000,
+      "maxCap": 250000,
+      "filter": "caller_nonnegative"
+    },
+    {
+      "minCap": 50000,
+      "maxCap": 250000,
+      "filter": "chain:solana:solana"
+    }
+  ],
+  "exits": [
+    {
+      "hold": 5,
+      "trigger": null,
+      "stop": null,
+      "target": null
+    },
+    {
+      "hold": 10,
+      "trigger": null,
+      "stop": null,
+      "target": null
+    },
+    {
+      "hold": 15,
+      "trigger": null,
+      "stop": null,
+      "target": null
+    },
+    {
+      "hold": 30,
+      "trigger": null,
+      "stop": null,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": null,
+      "stop": null,
+      "target": null
+    },
+    {
+      "hold": 120,
+      "trigger": null,
+      "stop": null,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": null,
+      "stop": null,
+      "target": null
+    },
+    {
+      "hold": 300,
+      "trigger": null,
+      "stop": null,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": null,
+      "stop": null,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 5,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 5,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 5,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 5,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 5,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 5,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 5,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 5,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 5,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 5,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 5,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 5,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 5,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 5,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 5,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 5,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 5,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 5,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 5,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 5,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 5,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 5,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 5,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 5,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 15,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 15,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 15,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 15,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 15,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 15,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 15,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 15,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 15,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 15,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 15,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 15,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 15,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 15,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 15,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 15,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 15,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 15,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 15,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 15,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 15,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 15,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 15,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 15,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 30,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 30,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 30,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 30,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 30,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 30,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 30,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 30,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 30,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 30,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 30,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 30,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 30,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 30,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 30,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 30,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 30,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 30,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 30,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 30,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 30,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 30,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 30,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "after": 30,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "window": 5,
+        "multiple": 2.0,
+        "activate": 1.1,
+        "kind": "volatility"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "window": 5,
+        "multiple": 2.0,
+        "activate": 1.5,
+        "kind": "volatility"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "window": 5,
+        "multiple": 4.0,
+        "activate": 1.1,
+        "kind": "volatility"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "window": 5,
+        "multiple": 4.0,
+        "activate": 1.5,
+        "kind": "volatility"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "window": 5,
+        "multiple": 8.0,
+        "activate": 1.1,
+        "kind": "volatility"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "window": 5,
+        "multiple": 8.0,
+        "activate": 1.5,
+        "kind": "volatility"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "window": 5,
+        "drop": 0.05,
+        "activate": 1.0,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "window": 5,
+        "drop": 0.05,
+        "activate": 1.1,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "window": 5,
+        "drop": 0.05,
+        "activate": 1.5,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "window": 5,
+        "drop": 0.1,
+        "activate": 1.0,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "window": 5,
+        "drop": 0.1,
+        "activate": 1.1,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "window": 5,
+        "drop": 0.1,
+        "activate": 1.5,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "window": 5,
+        "drop": 0.2,
+        "activate": 1.0,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "window": 5,
+        "drop": 0.2,
+        "activate": 1.1,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "window": 5,
+        "drop": 0.2,
+        "activate": 1.5,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "window": 15,
+        "multiple": 2.0,
+        "activate": 1.1,
+        "kind": "volatility"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "window": 15,
+        "multiple": 2.0,
+        "activate": 1.5,
+        "kind": "volatility"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "window": 15,
+        "multiple": 4.0,
+        "activate": 1.1,
+        "kind": "volatility"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "window": 15,
+        "multiple": 4.0,
+        "activate": 1.5,
+        "kind": "volatility"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "window": 15,
+        "multiple": 8.0,
+        "activate": 1.1,
+        "kind": "volatility"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "window": 15,
+        "multiple": 8.0,
+        "activate": 1.5,
+        "kind": "volatility"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "window": 15,
+        "drop": 0.05,
+        "activate": 1.0,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "window": 15,
+        "drop": 0.05,
+        "activate": 1.1,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "window": 15,
+        "drop": 0.05,
+        "activate": 1.5,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "window": 15,
+        "drop": 0.1,
+        "activate": 1.0,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "window": 15,
+        "drop": 0.1,
+        "activate": 1.1,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "window": 15,
+        "drop": 0.1,
+        "activate": 1.5,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "window": 15,
+        "drop": 0.2,
+        "activate": 1.0,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "window": 15,
+        "drop": 0.2,
+        "activate": 1.1,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "window": 15,
+        "drop": 0.2,
+        "activate": 1.5,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 15,
+        "ratio": 0.1,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 15,
+        "ratio": 0.1,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 15,
+        "ratio": 0.25,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 15,
+        "ratio": 0.25,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 15,
+        "ratio": 0.5,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 15,
+        "ratio": 0.5,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 30,
+        "ratio": 0.1,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 30,
+        "ratio": 0.1,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 30,
+        "ratio": 0.25,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 30,
+        "ratio": 0.25,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 30,
+        "ratio": 0.5,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 60,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 30,
+        "ratio": 0.5,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 5,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 5,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 5,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 5,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 5,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 5,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 5,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 5,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 5,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 5,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 5,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 5,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 5,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 5,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 5,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 5,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 5,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 5,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 5,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 5,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 5,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 5,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 5,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 5,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 15,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 15,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 15,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 15,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 15,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 15,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 15,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 15,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 15,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 15,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 15,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 15,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 15,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 15,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 15,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 15,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 15,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 15,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 15,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 15,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 15,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 15,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 15,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 15,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 30,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 30,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 30,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 30,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 30,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 30,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 30,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 30,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 30,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 30,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 30,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 30,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 30,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 30,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 30,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 30,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 30,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 30,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 30,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 30,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 30,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 30,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 30,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 30,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 60,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 60,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 60,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 60,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 60,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 60,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 60,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 60,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 60,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 60,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 60,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 60,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 60,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 60,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 60,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 60,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 60,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 60,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 60,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 60,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 60,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 60,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 60,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "after": 60,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "window": 5,
+        "multiple": 2.0,
+        "activate": 1.1,
+        "kind": "volatility"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "window": 5,
+        "multiple": 2.0,
+        "activate": 1.5,
+        "kind": "volatility"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "window": 5,
+        "multiple": 4.0,
+        "activate": 1.1,
+        "kind": "volatility"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "window": 5,
+        "multiple": 4.0,
+        "activate": 1.5,
+        "kind": "volatility"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "window": 5,
+        "multiple": 8.0,
+        "activate": 1.1,
+        "kind": "volatility"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "window": 5,
+        "multiple": 8.0,
+        "activate": 1.5,
+        "kind": "volatility"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "window": 5,
+        "drop": 0.05,
+        "activate": 1.0,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "window": 5,
+        "drop": 0.05,
+        "activate": 1.1,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "window": 5,
+        "drop": 0.05,
+        "activate": 1.5,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "window": 5,
+        "drop": 0.1,
+        "activate": 1.0,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "window": 5,
+        "drop": 0.1,
+        "activate": 1.1,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "window": 5,
+        "drop": 0.1,
+        "activate": 1.5,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "window": 5,
+        "drop": 0.2,
+        "activate": 1.0,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "window": 5,
+        "drop": 0.2,
+        "activate": 1.1,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "window": 5,
+        "drop": 0.2,
+        "activate": 1.5,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "window": 15,
+        "multiple": 2.0,
+        "activate": 1.1,
+        "kind": "volatility"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "window": 15,
+        "multiple": 2.0,
+        "activate": 1.5,
+        "kind": "volatility"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "window": 15,
+        "multiple": 4.0,
+        "activate": 1.1,
+        "kind": "volatility"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "window": 15,
+        "multiple": 4.0,
+        "activate": 1.5,
+        "kind": "volatility"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "window": 15,
+        "multiple": 8.0,
+        "activate": 1.1,
+        "kind": "volatility"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "window": 15,
+        "multiple": 8.0,
+        "activate": 1.5,
+        "kind": "volatility"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "window": 15,
+        "drop": 0.05,
+        "activate": 1.0,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "window": 15,
+        "drop": 0.05,
+        "activate": 1.1,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "window": 15,
+        "drop": 0.05,
+        "activate": 1.5,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "window": 15,
+        "drop": 0.1,
+        "activate": 1.0,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "window": 15,
+        "drop": 0.1,
+        "activate": 1.1,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "window": 15,
+        "drop": 0.1,
+        "activate": 1.5,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "window": 15,
+        "drop": 0.2,
+        "activate": 1.0,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "window": 15,
+        "drop": 0.2,
+        "activate": 1.1,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "window": 15,
+        "drop": 0.2,
+        "activate": 1.5,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 15,
+        "ratio": 0.1,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 15,
+        "ratio": 0.1,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 15,
+        "ratio": 0.25,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 15,
+        "ratio": 0.25,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 15,
+        "ratio": 0.5,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 15,
+        "ratio": 0.5,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 30,
+        "ratio": 0.1,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 30,
+        "ratio": 0.1,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 30,
+        "ratio": 0.25,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 30,
+        "ratio": 0.25,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 30,
+        "ratio": 0.5,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 30,
+        "ratio": 0.5,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 60,
+        "ratio": 0.1,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 60,
+        "ratio": 0.1,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 60,
+        "ratio": 0.25,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 60,
+        "ratio": 0.25,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 60,
+        "ratio": 0.5,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 180,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 60,
+        "ratio": 0.5,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 5,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 5,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 5,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 5,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 5,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 5,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 5,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 5,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 5,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 5,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 5,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 5,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 5,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 5,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 5,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 5,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 5,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 5,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 5,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 5,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 5,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 5,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 5,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 5,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 15,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 15,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 15,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 15,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 15,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 15,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 15,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 15,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 15,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 15,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 15,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 15,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 15,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 15,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 15,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 15,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 15,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 15,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 15,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 15,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 15,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 15,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 15,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 15,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 30,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 30,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 30,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 30,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 30,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 30,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 30,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 30,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 30,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 30,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 30,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 30,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 30,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 30,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 30,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 30,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 30,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 30,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 30,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 30,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 30,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 30,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 30,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 30,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 60,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 60,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 60,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 60,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 60,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 60,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 60,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 60,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 60,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 60,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 60,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 60,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.25,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 60,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 60,
+        "loss": 0.05,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 60,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 60,
+        "loss": 0.1,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 60,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 60,
+        "loss": 0.2,
+        "kind": "tighten"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 60,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 60,
+        "minimum_peak": 1.02,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 60,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 60,
+        "minimum_peak": 1.05,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 60,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "after": 60,
+        "minimum_peak": 1.1,
+        "kind": "stall"
+      },
+      "stop": 0.5,
+      "target": 1.5
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "window": 5,
+        "multiple": 2.0,
+        "activate": 1.1,
+        "kind": "volatility"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "window": 5,
+        "multiple": 2.0,
+        "activate": 1.5,
+        "kind": "volatility"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "window": 5,
+        "multiple": 4.0,
+        "activate": 1.1,
+        "kind": "volatility"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "window": 5,
+        "multiple": 4.0,
+        "activate": 1.5,
+        "kind": "volatility"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "window": 5,
+        "multiple": 8.0,
+        "activate": 1.1,
+        "kind": "volatility"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "window": 5,
+        "multiple": 8.0,
+        "activate": 1.5,
+        "kind": "volatility"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "window": 5,
+        "drop": 0.05,
+        "activate": 1.0,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "window": 5,
+        "drop": 0.05,
+        "activate": 1.1,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "window": 5,
+        "drop": 0.05,
+        "activate": 1.5,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "window": 5,
+        "drop": 0.1,
+        "activate": 1.0,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "window": 5,
+        "drop": 0.1,
+        "activate": 1.1,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "window": 5,
+        "drop": 0.1,
+        "activate": 1.5,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "window": 5,
+        "drop": 0.2,
+        "activate": 1.0,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "window": 5,
+        "drop": 0.2,
+        "activate": 1.1,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "window": 5,
+        "drop": 0.2,
+        "activate": 1.5,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "window": 15,
+        "multiple": 2.0,
+        "activate": 1.1,
+        "kind": "volatility"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "window": 15,
+        "multiple": 2.0,
+        "activate": 1.5,
+        "kind": "volatility"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "window": 15,
+        "multiple": 4.0,
+        "activate": 1.1,
+        "kind": "volatility"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "window": 15,
+        "multiple": 4.0,
+        "activate": 1.5,
+        "kind": "volatility"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "window": 15,
+        "multiple": 8.0,
+        "activate": 1.1,
+        "kind": "volatility"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "window": 15,
+        "multiple": 8.0,
+        "activate": 1.5,
+        "kind": "volatility"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "window": 15,
+        "drop": 0.05,
+        "activate": 1.0,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "window": 15,
+        "drop": 0.05,
+        "activate": 1.1,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "window": 15,
+        "drop": 0.05,
+        "activate": 1.5,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "window": 15,
+        "drop": 0.1,
+        "activate": 1.0,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "window": 15,
+        "drop": 0.1,
+        "activate": 1.1,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "window": 15,
+        "drop": 0.1,
+        "activate": 1.5,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "window": 15,
+        "drop": 0.2,
+        "activate": 1.0,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "window": 15,
+        "drop": 0.2,
+        "activate": 1.1,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "window": 15,
+        "drop": 0.2,
+        "activate": 1.5,
+        "kind": "reversal"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 15,
+        "ratio": 0.1,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 15,
+        "ratio": 0.1,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 15,
+        "ratio": 0.25,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 15,
+        "ratio": 0.25,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 15,
+        "ratio": 0.5,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 15,
+        "ratio": 0.5,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 30,
+        "ratio": 0.1,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 30,
+        "ratio": 0.1,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 30,
+        "ratio": 0.25,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 30,
+        "ratio": 0.25,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 30,
+        "ratio": 0.5,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 30,
+        "ratio": 0.5,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 60,
+        "ratio": 0.1,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 60,
+        "ratio": 0.1,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 60,
+        "ratio": 0.25,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 60,
+        "ratio": 0.25,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.5,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 60,
+        "ratio": 0.5,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.25,
+      "target": null
+    },
+    {
+      "hold": 600,
+      "trigger": {
+        "initial": 5,
+        "recent": 5,
+        "after": 60,
+        "ratio": 0.5,
+        "below_peak": 0.95,
+        "kind": "volume_fade"
+      },
+      "stop": 0.5,
+      "target": null
+    }
+  ],
+  "policies": [
+    {
+      "fraction": 0.01,
+      "profile": "flat",
+      "dailyBudget": 0.02
+    },
+    {
+      "fraction": 0.01,
+      "profile": "flat",
+      "dailyBudget": 0.04
+    },
+    {
+      "fraction": 0.01,
+      "profile": "concentration",
+      "dailyBudget": 0.02
+    },
+    {
+      "fraction": 0.01,
+      "profile": "concentration",
+      "dailyBudget": 0.04
+    },
+    {
+      "fraction": 0.01,
+      "profile": "buy_flow",
+      "dailyBudget": 0.02
+    },
+    {
+      "fraction": 0.01,
+      "profile": "buy_flow",
+      "dailyBudget": 0.04
+    },
+    {
+      "fraction": 0.01,
+      "profile": "volatility",
+      "dailyBudget": 0.02
+    },
+    {
+      "fraction": 0.01,
+      "profile": "volatility",
+      "dailyBudget": 0.04
+    },
+    {
+      "fraction": 0.02,
+      "profile": "flat",
+      "dailyBudget": 0.02
+    },
+    {
+      "fraction": 0.02,
+      "profile": "flat",
+      "dailyBudget": 0.04
+    },
+    {
+      "fraction": 0.02,
+      "profile": "concentration",
+      "dailyBudget": 0.02
+    },
+    {
+      "fraction": 0.02,
+      "profile": "concentration",
+      "dailyBudget": 0.04
+    },
+    {
+      "fraction": 0.02,
+      "profile": "buy_flow",
+      "dailyBudget": 0.02
+    },
+    {
+      "fraction": 0.02,
+      "profile": "buy_flow",
+      "dailyBudget": 0.04
+    },
+    {
+      "fraction": 0.02,
+      "profile": "volatility",
+      "dailyBudget": 0.02
+    },
+    {
+      "fraction": 0.02,
+      "profile": "volatility",
+      "dailyBudget": 0.04
+    },
+    {
+      "fraction": 0.05,
+      "profile": "flat",
+      "dailyBudget": 0.02
+    },
+    {
+      "fraction": 0.05,
+      "profile": "flat",
+      "dailyBudget": 0.04
+    },
+    {
+      "fraction": 0.05,
+      "profile": "concentration",
+      "dailyBudget": 0.02
+    },
+    {
+      "fraction": 0.05,
+      "profile": "concentration",
+      "dailyBudget": 0.04
+    },
+    {
+      "fraction": 0.05,
+      "profile": "buy_flow",
+      "dailyBudget": 0.02
+    },
+    {
+      "fraction": 0.05,
+      "profile": "buy_flow",
+      "dailyBudget": 0.04
+    },
+    {
+      "fraction": 0.05,
+      "profile": "volatility",
+      "dailyBudget": 0.02
+    },
+    {
+      "fraction": 0.05,
+      "profile": "volatility",
+      "dailyBudget": 0.04
+    }
+  ],
+  "delays": [
+    5,
+    15,
+    30,
+    60
+  ],
+  "screenFields": [
+    "count",
+    "clippedMean",
+    "meanMinusOneStandardError"
+  ]
+}

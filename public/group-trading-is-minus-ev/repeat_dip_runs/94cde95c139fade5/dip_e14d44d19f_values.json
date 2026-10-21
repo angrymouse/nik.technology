@@ -1,0 +1,137 @@
+{
+  "sourceSha256": "e14d44d19f66397de5c266064781f259993dc9dad85a0e14c95b41799feddd18",
+  "resultsSha256": "aafab49b260309c6f81d904ee5d25f6de6595a60ecf4b397cc89d9d11203f2cf",
+  "values": [
+    {
+      "selector": "original_2pct",
+      "cost": 0.05,
+      "return": -0.027556576890937046,
+      "drawdownBound": -0.04400312230320014,
+      "trades": 24
+    },
+    {
+      "selector": "original_2pct",
+      "cost": 0.1,
+      "return": -0.039165851968062215,
+      "drawdownBound": -0.05344000903647017,
+      "trades": 24
+    },
+    {
+      "selector": "original_5pct",
+      "cost": 0.05,
+      "return": -0.07204874769326464,
+      "drawdownBound": -0.17217474962666424,
+      "trades": 26
+    },
+    {
+      "selector": "original_5pct",
+      "cost": 0.1,
+      "return": -0.11393382628422866,
+      "drawdownBound": -0.19023632810458202,
+      "trades": 26
+    },
+    {
+      "selector": "original_robust",
+      "cost": 0.05,
+      "return": -0.13465245234099465,
+      "drawdownBound": -0.1842948518977482,
+      "trades": 27
+    },
+    {
+      "selector": "original_robust",
+      "cost": 0.1,
+      "return": -0.16996121643610085,
+      "drawdownBound": -0.20784361760774206,
+      "trades": 27
+    },
+    {
+      "selector": "added_2pct",
+      "cost": 0.05,
+      "return": -0.024419806043381787,
+      "drawdownBound": -0.03590400933582605,
+      "trades": 11
+    },
+    {
+      "selector": "added_2pct",
+      "cost": 0.1,
+      "return": -0.028224391176757013,
+      "drawdownBound": -0.037449745461857975,
+      "trades": 11
+    },
+    {
+      "selector": "added_5pct",
+      "cost": 0.05,
+      "return": -0.14266874933448426,
+      "drawdownBound": -0.1713454092844403,
+      "trades": 12
+    },
+    {
+      "selector": "added_5pct",
+      "cost": 0.1,
+      "return": -0.16464126401911283,
+      "drawdownBound": -0.18725499694512604,
+      "trades": 12
+    },
+    {
+      "selector": "added_robust",
+      "cost": 0.05,
+      "return": -0.20269657030668953,
+      "drawdownBound": -0.23418194320833385,
+      "trades": 15
+    },
+    {
+      "selector": "added_robust",
+      "cost": 0.1,
+      "return": -0.22704328552640463,
+      "drawdownBound": -0.25141161683861646,
+      "trades": 15
+    },
+    {
+      "selector": "combined_2pct",
+      "cost": 0.05,
+      "return": -0.07433689385512676,
+      "drawdownBound": -0.09900740936892904,
+      "trades": 15
+    },
+    {
+      "selector": "combined_2pct",
+      "cost": 0.1,
+      "return": -0.08996909684913534,
+      "drawdownBound": -0.10650129099806682,
+      "trades": 15
+    },
+    {
+      "selector": "combined_5pct",
+      "cost": 0.05,
+      "return": -0.1597660242079908,
+      "drawdownBound": -0.19729988292693157,
+      "trades": 15
+    },
+    {
+      "selector": "combined_5pct",
+      "cost": 0.1,
+      "return": -0.18641577352782546,
+      "drawdownBound": -0.21726709311597192,
+      "trades": 15
+    },
+    {
+      "selector": "combined_robust",
+      "cost": 0.05,
+      "return": -0.16031040168651334,
+      "drawdownBound": -0.20109065070998489,
+      "trades": 17
+    },
+    {
+      "selector": "combined_robust",
+      "cost": 0.1,
+      "return": -0.20141041510916724,
+      "drawdownBound": -0.22705608408635303,
+      "trades": 17
+    }
+  ],
+  "imageSha256": {
+    ".png": "1afee93ebbc301a2ca6d4d67c7f4e8df14ec0b0d7d1a1d6a2c4c62d60eb82dd9",
+    ".svg": "8ef9577a1b8441d0eae2a6a48d4ca24986b22f58c7afa0d278eb0c58ed82c974"
+  },
+  "matplotlibVersion": "3.11.2"
+}

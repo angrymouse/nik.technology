@@ -1,0 +1,313 @@
+{
+  "sourceResultsSha256": "0ce9743d06ec2bb50d5ec090362e72149391750907d406812200c06eb3faa74e",
+  "pairResultsSha256": "e666ae7b36fd19b9bece0746a31d0d557fe446261b298718f3adc250c4b7e195",
+  "plotSourceSha256": "8ed51e6e61ee3befabede31880903f85e0cdd882ff6fe6b2c0f444de118986f0",
+  "categoryRows": [
+    {
+      "history": "recoverable_first",
+      "group": "combined_all",
+      "target": 3.0,
+      "policyId": 12,
+      "minimumReturn": 0.006084625491185935,
+      "maximumDrawdownBound": -0.013546241958448002,
+      "minimumTrades": 12,
+      "maximumUnknownTextTrades": 1,
+      "minimumWithoutTwoBest": -0.002791615537219627,
+      "minimumWithoutBestDay": 0.0011448079412421652,
+      "positiveScenarios": 25,
+      "positiveWithoutTwoBest": 8,
+      "positiveWithoutBestDay": 25
+    },
+    {
+      "history": "recoverable_first",
+      "group": "combined_all:human",
+      "population": "combined_all",
+      "source": "human",
+      "target": 3.0,
+      "policyId": 12,
+      "minimumReturn": 0.00997875726372821,
+      "maximumDrawdownBound": -0.0062992489634199345,
+      "minimumTrades": 9,
+      "maximumUnknownTextTrades": 0,
+      "minimumWithoutTwoBest": 0.0008494418012314764,
+      "minimumWithoutBestDay": 0.0038984023121400035,
+      "positiveScenarios": 25,
+      "positiveWithoutTwoBest": 25,
+      "positiveWithoutBestDay": 25
+    },
+    {
+      "history": "recoverable_first",
+      "group": "combined_all:bot",
+      "population": "combined_all",
+      "source": "bot",
+      "target": 3.0,
+      "policyId": 12,
+      "minimumReturn": 0.004433690636680421,
+      "maximumDrawdownBound": -0.01215142231379196,
+      "minimumTrades": 10,
+      "maximumUnknownTextTrades": 6,
+      "minimumWithoutTwoBest": -0.0041185744639473665,
+      "minimumWithoutBestDay": 0.0022627294086401406,
+      "positiveScenarios": 25,
+      "positiveWithoutTwoBest": 0,
+      "positiveWithoutBestDay": 25
+    },
+    {
+      "history": "recoverable_first",
+      "group": "combined_all:requested_bot",
+      "population": "combined_all",
+      "source": "requested_bot",
+      "target": 3.0,
+      "policyId": 12,
+      "minimumReturn": 0.006646807996563586,
+      "maximumDrawdownBound": -0.006530051527008807,
+      "minimumTrades": 8,
+      "maximumUnknownTextTrades": 6,
+      "minimumWithoutTwoBest": -0.0019245251438833044,
+      "minimumWithoutBestDay": 0.003168993742382664,
+      "positiveScenarios": 25,
+      "positiveWithoutTwoBest": 2,
+      "positiveWithoutBestDay": 25
+    },
+    {
+      "history": "recoverable_first",
+      "group": "combined_all:human_or_requested_bot",
+      "population": "combined_all",
+      "source": "human_or_requested_bot",
+      "target": 3.0,
+      "policyId": 12,
+      "minimumReturn": 0.007702594139650021,
+      "maximumDrawdownBound": -0.0072341963646401775,
+      "minimumTrades": 10,
+      "maximumUnknownTextTrades": 1,
+      "minimumWithoutTwoBest": -0.0014061684829926868,
+      "minimumWithoutBestDay": 0.00312452332604618,
+      "positiveScenarios": 25,
+      "positiveWithoutTwoBest": 20,
+      "positiveWithoutBestDay": 25
+    }
+  ],
+  "jointCandidates": [
+    {
+      "target": 2.0,
+      "policyId": 27,
+      "minimumReturn": 0.010931252562213167,
+      "maximumDrawdownBound": -0.010325158752332309,
+      "minimumInitialConcentrationReturn": 0.0004848047786227827
+    },
+    {
+      "target": 2.0,
+      "policyId": 33,
+      "minimumReturn": 0.01906074413922476,
+      "maximumDrawdownBound": -0.020574174282432023,
+      "minimumInitialConcentrationReturn": 9.695021647737612e-05
+    },
+    {
+      "target": 3.0,
+      "policyId": 5,
+      "minimumReturn": 0.004886217856011843,
+      "maximumDrawdownBound": -0.0034497959396077027,
+      "minimumInitialConcentrationReturn": 0.00016403560188815725
+    },
+    {
+      "target": 3.0,
+      "policyId": 6,
+      "minimumReturn": 0.004886217856011843,
+      "maximumDrawdownBound": -0.0034497959396077027,
+      "minimumInitialConcentrationReturn": 0.00016403560188815725
+    },
+    {
+      "target": 3.0,
+      "policyId": 7,
+      "minimumReturn": 0.004886217856011843,
+      "maximumDrawdownBound": -0.0034497959396077027,
+      "minimumInitialConcentrationReturn": 0.00016403560188815725
+    },
+    {
+      "target": 3.0,
+      "policyId": 8,
+      "minimumReturn": 0.004886217856011843,
+      "maximumDrawdownBound": -0.0034497959396077027,
+      "minimumInitialConcentrationReturn": 0.00016403560188815725
+    },
+    {
+      "target": 3.0,
+      "policyId": 9,
+      "minimumReturn": 0.004886217856011843,
+      "maximumDrawdownBound": -0.0034497959396077027,
+      "minimumInitialConcentrationReturn": 0.00016403560188815725
+    },
+    {
+      "target": 3.0,
+      "policyId": 10,
+      "minimumReturn": 0.009644908644692585,
+      "maximumDrawdownBound": -0.006713925992423042,
+      "minimumInitialConcentrationReturn": 0.0005395451579632837
+    },
+    {
+      "target": 3.0,
+      "policyId": 11,
+      "minimumReturn": 0.009644908644692585,
+      "maximumDrawdownBound": -0.006713925992423042,
+      "minimumInitialConcentrationReturn": 0.0005395451579632837
+    },
+    {
+      "target": 3.0,
+      "policyId": 12,
+      "minimumReturn": 0.009718577589470367,
+      "maximumDrawdownBound": -0.0062992489634199345,
+      "minimumInitialConcentrationReturn": 0.0005916161886019289
+    },
+    {
+      "target": 3.0,
+      "policyId": 13,
+      "minimumReturn": 0.009644908644692585,
+      "maximumDrawdownBound": -0.006713925992423042,
+      "minimumInitialConcentrationReturn": 0.0005395451579632837
+    },
+    {
+      "target": 3.0,
+      "policyId": 14,
+      "minimumReturn": 0.009644908644692585,
+      "maximumDrawdownBound": -0.006713925992423042,
+      "minimumInitialConcentrationReturn": 0.0005395451579632837
+    },
+    {
+      "target": 3.0,
+      "policyId": 15,
+      "minimumReturn": 0.01270728863392856,
+      "maximumDrawdownBound": -0.010047146862051215,
+      "minimumInitialConcentrationReturn": 7.279580470376246e-05
+    },
+    {
+      "target": 3.0,
+      "policyId": 16,
+      "minimumReturn": 0.01270728863392856,
+      "maximumDrawdownBound": -0.010047146862051215,
+      "minimumInitialConcentrationReturn": 7.279580470376246e-05
+    },
+    {
+      "target": 3.0,
+      "policyId": 17,
+      "minimumReturn": 0.013733170899971059,
+      "maximumDrawdownBound": -0.009432058032378898,
+      "minimumInitialConcentrationReturn": 0.0014943590056382128
+    },
+    {
+      "target": 3.0,
+      "policyId": 18,
+      "minimumReturn": 0.01270728863392856,
+      "maximumDrawdownBound": -0.010047146862051215,
+      "minimumInitialConcentrationReturn": 7.279580470376246e-05
+    },
+    {
+      "target": 3.0,
+      "policyId": 19,
+      "minimumReturn": 0.01270728863392856,
+      "maximumDrawdownBound": -0.010047146862051215,
+      "minimumInitialConcentrationReturn": 7.279580470376246e-05
+    },
+    {
+      "target": 3.0,
+      "policyId": 22,
+      "minimumReturn": 0.016015740287292468,
+      "maximumDrawdownBound": -0.010325349424433083,
+      "minimumInitialConcentrationReturn": 0.0013883875328426498
+    },
+    {
+      "target": 3.0,
+      "policyId": 27,
+      "minimumReturn": 0.0165463672215882,
+      "maximumDrawdownBound": -0.010325474281808855,
+      "minimumInitialConcentrationReturn": 0.0004848047786227827
+    },
+    {
+      "target": 3.0,
+      "policyId": 28,
+      "minimumReturn": 0.024041394035312358,
+      "maximumDrawdownBound": -0.018763938312214123,
+      "minimumInitialConcentrationReturn": 0.0007670123833523057
+    },
+    {
+      "target": 3.0,
+      "policyId": 33,
+      "minimumReturn": 0.028628964238666343,
+      "maximumDrawdownBound": -0.020574627285965708,
+      "minimumInitialConcentrationReturn": 9.695021647737612e-05
+    }
+  ],
+  "selected": [
+    {
+      "target": 3.0,
+      "policyId": 5,
+      "minimumReturn": 0.004886217856011843,
+      "maximumDrawdownBound": -0.0034497959396077027,
+      "minimumInitialConcentrationReturn": 0.00016403560188815725,
+      "policy": {
+        "scale": 0.25,
+        "budget": "saved"
+      },
+      "minimumAfterAnyPair": 0.00016403560188815725
+    },
+    {
+      "target": 3.0,
+      "policyId": 12,
+      "minimumReturn": 0.009718577589470367,
+      "maximumDrawdownBound": -0.0062992489634199345,
+      "minimumInitialConcentrationReturn": 0.0005916161886019289,
+      "policy": {
+        "scale": 0.5,
+        "budget": 0.01
+      },
+      "minimumAfterAnyPair": 0.0005916161886019289
+    },
+    {
+      "target": 3.0,
+      "policyId": 17,
+      "minimumReturn": 0.013733170899971059,
+      "maximumDrawdownBound": -0.009432058032378898,
+      "minimumInitialConcentrationReturn": 0.0014943590056382128,
+      "policy": {
+        "scale": 0.75,
+        "budget": 0.01
+      },
+      "minimumAfterAnyPair": 0.0014943590056382128
+    },
+    {
+      "target": 3.0,
+      "policyId": 27,
+      "minimumReturn": 0.0165463672215882,
+      "maximumDrawdownBound": -0.010325474281808855,
+      "minimumInitialConcentrationReturn": 0.0004848047786227827,
+      "policy": {
+        "scale": 1.5,
+        "budget": 0.01
+      },
+      "minimumAfterAnyPair": 0.0004848047786227827
+    },
+    {
+      "target": 3.0,
+      "policyId": 28,
+      "minimumReturn": 0.024041394035312358,
+      "maximumDrawdownBound": -0.018763938312214123,
+      "minimumInitialConcentrationReturn": 0.0007670123833523057,
+      "policy": {
+        "scale": 1.5,
+        "budget": 0.02
+      },
+      "minimumAfterAnyPair": 0.0007670123833523057
+    },
+    {
+      "target": 3.0,
+      "policyId": 33,
+      "minimumReturn": 0.028628964238666343,
+      "maximumDrawdownBound": -0.020574627285965708,
+      "minimumInitialConcentrationReturn": 9.695021647737612e-05,
+      "policy": {
+        "scale": 2.0,
+        "budget": 0.02
+      },
+      "minimumAfterAnyPair": 9.695021647737612e-05
+    }
+  ]
+}

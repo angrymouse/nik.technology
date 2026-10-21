@@ -1,0 +1,25 @@
+{
+  "run": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/fixed_source_pair_runs/939235639ea5e6ef",
+  "resultsSha256": "e666ae7b36fd19b9bece0746a31d0d557fe446261b298718f3adc250c4b7e195",
+  "auditorSha256": "ec104f39247d47c4b4a77cf2986e5d6e5bf284c17c262245e5c7d9126a684a51",
+  "jointCandidates": 21,
+  "riskSelections": 8,
+  "completeUniverses": 600,
+  "exhaustivePairPortfolios": 19200,
+  "independentUniverseSaleCases": 132,
+  "membershipChecks": {
+    "senderFlags": 1506,
+    "requestAssociations": 1506,
+    "acceptedRequests": 602,
+    "sourceMembershipValues": 24096,
+    "equivalentMaskClasses": 21
+  },
+  "independentAccounts": {
+    "portfolios": 19200,
+    "stages": 57600,
+    "trades": 126000,
+    "sales": 108,
+    "missingPlannedWindows": 0
+  },
+  "scope": "All joint feasibility and risk-ceiling selections reconstructed from the source summaries. Every eligible universe and every possible pair verified, every pair account independently replayed, and every stored minimum ledger checked. Same examined dates; no independent return claim."
+}

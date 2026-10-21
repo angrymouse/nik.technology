@@ -1,0 +1,219 @@
+{
+  "primaryRun": {
+    "runId": "70fab2c549e7e89e",
+    "path": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/adaptive_runs/70fab2c549e7e89e",
+    "latencyBars": 1,
+    "modelDirections": "supportive",
+    "screened": 3352968,
+    "portfolios": 293166,
+    "seconds": 23.583528487004514,
+    "primaryDaily": {
+      "return": -0.056096443615343494,
+      "maxDrawdownCandleBound": -0.06354621130060623,
+      "entered": 16
+    }
+  },
+  "comparisons": [
+    {
+      "runId": "70fab2c549e7e89e",
+      "path": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/adaptive_runs/70fab2c549e7e89e",
+      "latencyBars": 1,
+      "modelDirections": "supportive",
+      "screened": 3352968,
+      "portfolios": 293166,
+      "seconds": 23.583528487004514,
+      "primaryDaily": {
+        "return": -0.056096443615343494,
+        "maxDrawdownCandleBound": -0.06354621130060623,
+        "entered": 16
+      }
+    },
+    {
+      "runId": "a145d397796bce84",
+      "path": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/adaptive_runs/a145d397796bce84",
+      "latencyBars": 2,
+      "modelDirections": "supportive",
+      "screened": 3318768,
+      "portfolios": 287676,
+      "seconds": 24.37202569100191,
+      "primaryDaily": {
+        "return": -0.06754288992954305,
+        "maxDrawdownCandleBound": -0.07263365597421778,
+        "entered": 27
+      }
+    },
+    {
+      "runId": "d30a3e07f657be13",
+      "path": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/adaptive_runs/d30a3e07f657be13",
+      "latencyBars": 1,
+      "modelDirections": "both",
+      "screened": 4881366,
+      "portfolios": 306342,
+      "seconds": 32.34278797699517,
+      "primaryDaily": {
+        "return": -0.0756985512090812,
+        "maxDrawdownCandleBound": -0.11782900220597792,
+        "entered": 25
+      }
+    }
+  ],
+  "sizingAblations": [
+    {
+      "mode": "selected",
+      "period": "all_data_fit",
+      "cost": 0.05,
+      "return": 0.4371288049229016,
+      "maxDrawdownCandleBound": -0.09396323578349675,
+      "entered": 19,
+      "auditedTrades": 19
+    },
+    {
+      "mode": "selected",
+      "period": "all_data_fit",
+      "cost": 0.1,
+      "return": 0.3418518824553911,
+      "maxDrawdownCandleBound": -0.0901091209008783,
+      "entered": 19,
+      "auditedTrades": 19
+    },
+    {
+      "mode": "flat_same_fraction",
+      "period": "all_data_fit",
+      "cost": 0.05,
+      "return": 0.26928654340240366,
+      "maxDrawdownCandleBound": -0.07266133903417249,
+      "entered": 19,
+      "auditedTrades": 19
+    },
+    {
+      "mode": "flat_same_fraction",
+      "period": "all_data_fit",
+      "cost": 0.1,
+      "return": 0.20088259743379133,
+      "maxDrawdownCandleBound": -0.07592395365930271,
+      "entered": 19,
+      "auditedTrades": 19
+    },
+    {
+      "mode": "flat_without_controls",
+      "period": "all_data_fit",
+      "cost": 0.05,
+      "return": 0.2280391361945424,
+      "maxDrawdownCandleBound": -0.08717318510205596,
+      "entered": 20,
+      "auditedTrades": 20
+    },
+    {
+      "mode": "flat_without_controls",
+      "period": "all_data_fit",
+      "cost": 0.1,
+      "return": 0.15459938926417727,
+      "maxDrawdownCandleBound": -0.10216860822349261,
+      "entered": 20,
+      "auditedTrades": 20
+    },
+    {
+      "mode": "half_size",
+      "period": "all_data_fit",
+      "cost": 0.05,
+      "return": 0.2144461677116991,
+      "maxDrawdownCandleBound": -0.051463021497065276,
+      "entered": 19,
+      "auditedTrades": 19
+    },
+    {
+      "mode": "half_size",
+      "period": "all_data_fit",
+      "cost": 0.1,
+      "return": 0.1718119723324616,
+      "maxDrawdownCandleBound": -0.04907999661886164,
+      "entered": 19,
+      "auditedTrades": 19
+    },
+    {
+      "mode": "selected",
+      "period": "daily_selection",
+      "cost": 0.05,
+      "return": -0.056096443615343494,
+      "maxDrawdownCandleBound": -0.06354621130060623,
+      "entered": 16,
+      "auditedTrades": 16
+    },
+    {
+      "mode": "selected",
+      "period": "daily_selection",
+      "cost": 0.1,
+      "return": -0.06671729737019572,
+      "maxDrawdownCandleBound": -0.0737012118359085,
+      "entered": 16,
+      "auditedTrades": 16
+    },
+    {
+      "mode": "flat_same_fraction",
+      "period": "daily_selection",
+      "cost": 0.05,
+      "return": -0.06410137823312145,
+      "maxDrawdownCandleBound": -0.07190764276130368,
+      "entered": 16,
+      "auditedTrades": 16
+    },
+    {
+      "mode": "flat_same_fraction",
+      "period": "daily_selection",
+      "cost": 0.1,
+      "return": -0.07531340582735269,
+      "maxDrawdownCandleBound": -0.08262647354686026,
+      "entered": 16,
+      "auditedTrades": 16
+    },
+    {
+      "mode": "flat_without_controls",
+      "period": "daily_selection",
+      "cost": 0.05,
+      "return": -0.08565735413070774,
+      "maxDrawdownCandleBound": -0.12456121984722157,
+      "entered": 16,
+      "auditedTrades": 16
+    },
+    {
+      "mode": "flat_without_controls",
+      "period": "daily_selection",
+      "cost": 0.1,
+      "return": -0.11903650138400745,
+      "maxDrawdownCandleBound": -0.14666128668403067,
+      "entered": 16,
+      "auditedTrades": 16
+    },
+    {
+      "mode": "half_size",
+      "period": "daily_selection",
+      "cost": 0.05,
+      "return": -0.043718633571977694,
+      "maxDrawdownCandleBound": -0.047499161906298326,
+      "entered": 16,
+      "auditedTrades": 16
+    },
+    {
+      "mode": "half_size",
+      "period": "daily_selection",
+      "cost": 0.1,
+      "return": -0.05891201344496311,
+      "maxDrawdownCandleBound": -0.062438092625568764,
+      "entered": 16,
+      "auditedTrades": 16
+    }
+  ],
+  "modelUsage": {
+    "requests": 5078,
+    "questions": 25390,
+    "inputTokens": 8070747,
+    "reportedCost": 0.16141493999999962
+  },
+  "auditedTradeReplays": 282,
+  "notes": [
+    "The primary run remains the original supportive-direction search.",
+    "Inverted model gates were added after inspecting score calibration and are exploratory.",
+    "Ablations keep each original training selection fixed and change its sizing policy only.",
+    "Changing a sizing policy can change the entries taken because cash, pauses and loss limits interact."
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "protocolSha256": "12f2d964f45fd6e2b5ac30d1f8abf97f2282e4436450b2cc324e67f88de4a550",
+  "sourceCodeSha256": "54830c409aef4abfb181153bf145430d6fff4b94dc15b648353d58cbf7a3274f",
+  "trainingCalls": 1100,
+  "executionViewCalls": 24,
+  "parityPortfolios": 20,
+  "featureFieldsCompared": 5832,
+  "partialEvents": 72,
+  "scalarOutcomeCases": 288,
+  "independentPortfolioTrades": 280,
+  "secondResponseSetSha256": "677cfc39515e151dff6dd81080c5ef39136f147bf78e0340dbb54bfc72bb2287",
+  "flowResponseSetSha256": "fa76a072e7e7e25539650085010689b015bc62c1004abd08ac21b3fce04d2b42",
+  "checked": [
+    {
+      "candidate": "primary_low_drawdown",
+      "reactionSeconds": 1,
+      "cost": 0.05,
+      "return": 0.06101726721045364,
+      "drawdownBound": -0.0152948028302482,
+      "trades": 14
+    },
+    {
+      "candidate": "primary_low_drawdown",
+      "reactionSeconds": 1,
+      "cost": 0.1,
+      "return": 0.052216468231762514,
+      "drawdownBound": -0.015344583029060721,
+      "trades": 14
+    },
+    {
+      "candidate": "primary_low_drawdown",
+      "reactionSeconds": 1,
+      "cost": 0.15,
+      "return": 0.043460475089295736,
+      "drawdownBound": -0.015725988778393818,
+      "trades": 14
+    },
+    {
+      "candidate": "primary_low_drawdown",
+      "reactionSeconds": 3,
+      "cost": 0.1,
+      "return": 0.05438069853613525,
+      "drawdownBound": -0.016190146232114455,
+      "trades": 14
+    },
+    {
+      "candidate": "primary_low_drawdown",
+      "reactionSeconds": 5,
+      "cost": 0.1,
+      "return": 0.05314828124592896,
+      "drawdownBound": -0.017664430291998157,
+      "trades": 14
+    },
+    {
+      "candidate": "secondary_return",
+      "reactionSeconds": 1,
+      "cost": 0.05,
+      "return": 0.13070824332411468,
+      "drawdownBound": -0.04582280944875061,
+      "trades": 14
+    },
+    {
+      "candidate": "secondary_return",
+      "reactionSeconds": 1,
+      "cost": 0.1,
+      "return": 0.10224153712837092,
+      "drawdownBound": -0.04679201542705802,
+      "trades": 14
+    },
+    {
+      "candidate": "secondary_return",
+      "reactionSeconds": 1,
+      "cost": 0.15,
+      "return": 0.0743538589801489,
+      "drawdownBound": -0.04775927243523603,
+      "trades": 14
+    },
+    {
+      "candidate": "secondary_return",
+      "reactionSeconds": 3,
+      "cost": 0.1,
+      "return": 0.10840514296270487,
+      "drawdownBound": -0.04775596843097385,
+      "trades": 14
+    },
+    {
+      "candidate": "secondary_return",
+      "reactionSeconds": 5,
+      "cost": 0.1,
+      "return": 0.09946501771197092,
+      "drawdownBound": -0.05116379393413806,
+      "trades": 14
+    },
+    {
+      "candidate": "robust_comparator",
+      "reactionSeconds": 1,
+      "cost": 0.05,
+      "return": 0.06386798357265389,
+      "drawdownBound": -0.03036095542105255,
+      "trades": 14
+    },
+    {
+      "candidate": "robust_comparator",
+      "reactionSeconds": 1,
+      "cost": 0.1,
+      "return": 0.04947387595820296,
+      "drawdownBound": -0.030463660815233662,
+      "trades": 14
+    },
+    {
+      "candidate": "robust_comparator",
+      "reactionSeconds": 1,
+      "cost": 0.15,
+      "return": 0.035320763413469125,
+      "drawdownBound": -0.03056589476206495,
+      "trades": 14
+    },
+    {
+      "candidate": "robust_comparator",
+      "reactionSeconds": 3,
+      "cost": 0.1,
+      "return": 0.056329368674463476,
+      "drawdownBound": -0.030660994664104768,
+      "trades": 14
+    },
+    {
+      "candidate": "robust_comparator",
+      "reactionSeconds": 5,
+      "cost": 0.1,
+      "return": 0.056964529379752715,
+      "drawdownBound": -0.030660858830559135,
+      "trades": 14
+    },
+    {
+      "candidate": "original_control",
+      "reactionSeconds": 1,
+      "cost": 0.05,
+      "return": 0.1707027990590948,
+      "drawdownBound": -0.060040518516048524,
+      "trades": 14
+    },
+    {
+      "candidate": "original_control",
+      "reactionSeconds": 1,
+      "cost": 0.1,
+      "return": 0.13634082146656645,
+      "drawdownBound": -0.060258656924758514,
+      "trades": 14
+    },
+    {
+      "candidate": "original_control",
+      "reactionSeconds": 1,
+      "cost": 0.15,
+      "return": 0.10313279333460645,
+      "drawdownBound": -0.060680343906436396,
+      "trades": 14
+    },
+    {
+      "candidate": "original_control",
+      "reactionSeconds": 3,
+      "cost": 0.1,
+      "return": 0.14299955701211586,
+      "drawdownBound": -0.061855098614177484,
+      "trades": 14
+    },
+    {
+      "candidate": "original_control",
+      "reactionSeconds": 5,
+      "cost": 0.1,
+      "return": 0.13729269640511177,
+      "drawdownBound": -0.06638661611833896,
+      "trades": 14
+    }
+  ],
+  "scope": "Real cached training data, no new market retrieval. This checks array slicing, fee/volume features, independent scalar fills and cash/inventory accounting; it is not validation performance."
+}

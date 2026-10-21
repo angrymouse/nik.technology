@@ -1,0 +1,21 @@
+{
+  "protocolSha256": "2806af68f022522b45bb518e4a1fa5b1c15abc0bf768a8e640959565429ec980",
+  "capture": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/live_message_captures/20261021T153519336Z_48f1682d",
+  "captureProtocolSha256": "eb4f0b4bbb6e1636798adf26edcf8d9ba7618f653275b744d4ac7730f722c3bd",
+  "readyAt": "2026-10-21T15:35:22.530Z",
+  "sourceHashes": {
+    "arrival_source_forward.py": "187d37b82e49527e36177b322edb357fef260bef747107d4ef9009c0adaaee74",
+    "arrival_context.py": "d44a5ec5abc7c125607b439350da7018482d58af98d9c44452b1072f5f08a0fc",
+    "fetch_arrival_mobula.mjs": "b6a83b084e767b65ba8cc19c836f0afe5088879a9ec42530f18d94ef1f94795f",
+    "run_arrival_correction.py": "e4f06ea7c35159035f99f4d9dc8a2990ae81b5d08e30d3b6c1cf01987d4a469d",
+    "validate_partial_fixed.py": "a9b8e386f4d552817b878e4a382e7c7b6d1d18f940119183033ff1900e4490e1",
+    "audit_partial_exits.py": "a8d6d84ce4b057ff8b6652999558b2b46726858ca0ab6cf94dc506d62eec069c",
+    "partial_exit_engine.py": "7b45a27dd4bf1003cbb300a8949ed41d6c77340cc5f6e47b25ce11711d59eb91"
+  },
+  "marketRetrieval": "Wait until capture.closedAt + 9 minutes, exceeding the frozen eight-minute minimum and covering the last possible five-minute position.",
+  "newMinuteFeatures": "Rebuild completed minutes from observed positive-volume second bars. Keep context minutes unchanged. Missing minutes remain missing.",
+  "quoteAge": "Both historical quote and swap timestamps must be at or before observed signal availability and no more than 60 seconds old.",
+  "signalMembership": "First observed caller/contract is decided on valid-quote eligibility in the fixed context plus this stream, before entry filters or outcomes. All captured versions remain available even if later edited.",
+  "declaredBeforeMarketRetrieval": true,
+  "codeDirectory": "code_revisions/c8ef2f147f054c95"
+}

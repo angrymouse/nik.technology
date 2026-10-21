@@ -1,0 +1,986 @@
+{
+  "joint": [
+    {
+      "routeId": 0,
+      "policyId": 0,
+      "minimumReturn": 0.007315302338203766,
+      "maximumDrawdownBound": -0.006419155524380216,
+      "minimumTrades": 8,
+      "minimumWithoutTwoBest": -0.0012867098408108069,
+      "minimumWithoutBestDay": 0.002882974335957744,
+      "passes": false
+    },
+    {
+      "routeId": 0,
+      "policyId": 1,
+      "minimumReturn": 0.010802607241023665,
+      "maximumDrawdownBound": -0.009414458552444604,
+      "minimumTrades": 8,
+      "minimumWithoutTwoBest": -0.0007392437206277247,
+      "minimumWithoutBestDay": 0.005023966595464557,
+      "passes": false
+    },
+    {
+      "routeId": 1,
+      "policyId": 0,
+      "minimumReturn": 0.007969937967416962,
+      "maximumDrawdownBound": -0.00641915784396363,
+      "minimumTrades": 8,
+      "minimumWithoutTwoBest": -0.0006487236647396699,
+      "minimumWithoutBestDay": 0.002882974335957744,
+      "passes": false
+    },
+    {
+      "routeId": 1,
+      "policyId": 1,
+      "minimumReturn": 0.0119785595779347,
+      "maximumDrawdownBound": -0.009414458552444604,
+      "minimumTrades": 8,
+      "minimumWithoutTwoBest": 0.00028308659856501883,
+      "minimumWithoutBestDay": 0.005023966595464557,
+      "passes": true
+    },
+    {
+      "routeId": 2,
+      "policyId": 0,
+      "minimumReturn": 0.007969937967416962,
+      "maximumDrawdownBound": -0.00641915784396363,
+      "minimumTrades": 8,
+      "minimumWithoutTwoBest": -0.0006487236647396699,
+      "minimumWithoutBestDay": 0.002882974335957744,
+      "passes": false
+    },
+    {
+      "routeId": 2,
+      "policyId": 1,
+      "minimumReturn": 0.0119785595779347,
+      "maximumDrawdownBound": -0.009414458552444604,
+      "minimumTrades": 8,
+      "minimumWithoutTwoBest": 0.00028308659856501883,
+      "minimumWithoutBestDay": 0.005023966595464557,
+      "passes": true
+    },
+    {
+      "routeId": 3,
+      "policyId": 0,
+      "minimumReturn": 0.007969937967416962,
+      "maximumDrawdownBound": -0.00641915784396363,
+      "minimumTrades": 8,
+      "minimumWithoutTwoBest": -0.0006487236647396699,
+      "minimumWithoutBestDay": 0.002882974335957744,
+      "passes": false
+    },
+    {
+      "routeId": 3,
+      "policyId": 1,
+      "minimumReturn": 0.0119785595779347,
+      "maximumDrawdownBound": -0.009414458552444604,
+      "minimumTrades": 8,
+      "minimumWithoutTwoBest": 0.00028308659856501883,
+      "minimumWithoutBestDay": 0.005023966595464557,
+      "passes": true
+    },
+    {
+      "routeId": 4,
+      "policyId": 0,
+      "minimumReturn": 0.007969937967416962,
+      "maximumDrawdownBound": -0.00641915784396363,
+      "minimumTrades": 8,
+      "minimumWithoutTwoBest": -0.0006487236647396699,
+      "minimumWithoutBestDay": 0.002882974335957744,
+      "passes": false
+    },
+    {
+      "routeId": 4,
+      "policyId": 1,
+      "minimumReturn": 0.0119785595779347,
+      "maximumDrawdownBound": -0.009414458552444604,
+      "minimumTrades": 8,
+      "minimumWithoutTwoBest": 0.00028308659856501883,
+      "minimumWithoutBestDay": 0.005023966595464557,
+      "passes": true
+    },
+    {
+      "routeId": 5,
+      "policyId": 0,
+      "minimumReturn": 0.007969937967416962,
+      "maximumDrawdownBound": -0.00641915784396363,
+      "minimumTrades": 8,
+      "minimumWithoutTwoBest": -0.0006487236647396699,
+      "minimumWithoutBestDay": 0.002882974335957744,
+      "passes": false
+    },
+    {
+      "routeId": 5,
+      "policyId": 1,
+      "minimumReturn": 0.0119785595779347,
+      "maximumDrawdownBound": -0.009414458552444604,
+      "minimumTrades": 8,
+      "minimumWithoutTwoBest": 0.00028308659856501883,
+      "minimumWithoutBestDay": 0.005023966595464557,
+      "passes": true
+    },
+    {
+      "routeId": 6,
+      "policyId": 0,
+      "minimumReturn": 0.007969937967416962,
+      "maximumDrawdownBound": -0.00641915784396363,
+      "minimumTrades": 8,
+      "minimumWithoutTwoBest": -0.0006487236647396699,
+      "minimumWithoutBestDay": 0.002882974335957744,
+      "passes": false
+    },
+    {
+      "routeId": 6,
+      "policyId": 1,
+      "minimumReturn": 0.0119785595779347,
+      "maximumDrawdownBound": -0.009414458552444604,
+      "minimumTrades": 8,
+      "minimumWithoutTwoBest": 0.00028308659856501883,
+      "minimumWithoutBestDay": 0.005023966595464557,
+      "passes": true
+    },
+    {
+      "routeId": 7,
+      "policyId": 0,
+      "minimumReturn": 0.007969937967416962,
+      "maximumDrawdownBound": -0.00641915784396363,
+      "minimumTrades": 8,
+      "minimumWithoutTwoBest": -0.0006487236647396699,
+      "minimumWithoutBestDay": 0.002882974335957744,
+      "passes": false
+    },
+    {
+      "routeId": 7,
+      "policyId": 1,
+      "minimumReturn": 0.0119785595779347,
+      "maximumDrawdownBound": -0.009414458552444604,
+      "minimumTrades": 8,
+      "minimumWithoutTwoBest": 0.00028308659856501883,
+      "minimumWithoutBestDay": 0.005023966595464557,
+      "passes": true
+    },
+    {
+      "routeId": 8,
+      "policyId": 0,
+      "minimumReturn": 0.007969937967416962,
+      "maximumDrawdownBound": -0.00641915784396363,
+      "minimumTrades": 8,
+      "minimumWithoutTwoBest": -0.0006487236647396699,
+      "minimumWithoutBestDay": 0.002882974335957744,
+      "passes": false
+    },
+    {
+      "routeId": 8,
+      "policyId": 1,
+      "minimumReturn": 0.0119785595779347,
+      "maximumDrawdownBound": -0.009414458552444604,
+      "minimumTrades": 8,
+      "minimumWithoutTwoBest": 0.00028308659856501883,
+      "minimumWithoutBestDay": 0.005023966595464557,
+      "passes": true
+    },
+    {
+      "routeId": 9,
+      "policyId": 0,
+      "minimumReturn": 0.007969937967416962,
+      "maximumDrawdownBound": -0.00641915784396363,
+      "minimumTrades": 8,
+      "minimumWithoutTwoBest": -0.0006487236647396699,
+      "minimumWithoutBestDay": 0.002882974335957744,
+      "passes": false
+    },
+    {
+      "routeId": 9,
+      "policyId": 1,
+      "minimumReturn": 0.0119785595779347,
+      "maximumDrawdownBound": -0.009414458552444604,
+      "minimumTrades": 8,
+      "minimumWithoutTwoBest": 0.00028308659856501883,
+      "minimumWithoutBestDay": 0.005023966595464557,
+      "passes": true
+    },
+    {
+      "routeId": 10,
+      "policyId": 0,
+      "minimumReturn": 0.007969937967416962,
+      "maximumDrawdownBound": -0.00641915784396363,
+      "minimumTrades": 8,
+      "minimumWithoutTwoBest": -0.0006487236647396699,
+      "minimumWithoutBestDay": 0.002882974335957744,
+      "passes": false
+    },
+    {
+      "routeId": 10,
+      "policyId": 1,
+      "minimumReturn": 0.0119785595779347,
+      "maximumDrawdownBound": -0.009414458552444604,
+      "minimumTrades": 8,
+      "minimumWithoutTwoBest": 0.00028308659856501883,
+      "minimumWithoutBestDay": 0.005023966595464557,
+      "passes": true
+    },
+    {
+      "routeId": 11,
+      "policyId": 0,
+      "minimumReturn": 0.007969937967416962,
+      "maximumDrawdownBound": -0.00641915784396363,
+      "minimumTrades": 8,
+      "minimumWithoutTwoBest": -0.0006487236647396699,
+      "minimumWithoutBestDay": 0.002882974335957744,
+      "passes": false
+    },
+    {
+      "routeId": 11,
+      "policyId": 1,
+      "minimumReturn": 0.0119785595779347,
+      "maximumDrawdownBound": -0.009414458552444604,
+      "minimumTrades": 8,
+      "minimumWithoutTwoBest": 0.00028308659856501883,
+      "minimumWithoutBestDay": 0.005023966595464557,
+      "passes": true
+    },
+    {
+      "routeId": 12,
+      "policyId": 0,
+      "minimumReturn": 0.007969937967416962,
+      "maximumDrawdownBound": -0.00641915784396363,
+      "minimumTrades": 8,
+      "minimumWithoutTwoBest": -0.0006487236647396699,
+      "minimumWithoutBestDay": 0.002882974335957744,
+      "passes": false
+    },
+    {
+      "routeId": 12,
+      "policyId": 1,
+      "minimumReturn": 0.0119785595779347,
+      "maximumDrawdownBound": -0.009414458552444604,
+      "minimumTrades": 8,
+      "minimumWithoutTwoBest": 0.00028308659856501883,
+      "minimumWithoutBestDay": 0.005023966595464557,
+      "passes": true
+    }
+  ],
+  "routes": [
+    {
+      "lookbackSeconds": null,
+      "minimumShare": 0.0,
+      "modes": [
+        "quote_time",
+        "entry_time",
+        "conservative_both"
+      ]
+    },
+    {
+      "lookbackSeconds": 15,
+      "minimumShare": 0.0,
+      "modes": [
+        "entry_time",
+        "conservative_both"
+      ]
+    },
+    {
+      "lookbackSeconds": 15,
+      "minimumShare": 0.75,
+      "modes": [
+        "entry_time",
+        "conservative_both"
+      ]
+    },
+    {
+      "lookbackSeconds": 15,
+      "minimumShare": 0.9,
+      "modes": [
+        "entry_time",
+        "conservative_both"
+      ]
+    },
+    {
+      "lookbackSeconds": 15,
+      "minimumShare": 0.95,
+      "modes": [
+        "entry_time",
+        "conservative_both"
+      ]
+    },
+    {
+      "lookbackSeconds": 30,
+      "minimumShare": 0.0,
+      "modes": [
+        "entry_time",
+        "conservative_both"
+      ]
+    },
+    {
+      "lookbackSeconds": 30,
+      "minimumShare": 0.75,
+      "modes": [
+        "entry_time",
+        "conservative_both"
+      ]
+    },
+    {
+      "lookbackSeconds": 30,
+      "minimumShare": 0.9,
+      "modes": [
+        "entry_time",
+        "conservative_both"
+      ]
+    },
+    {
+      "lookbackSeconds": 30,
+      "minimumShare": 0.95,
+      "modes": [
+        "entry_time",
+        "conservative_both"
+      ]
+    },
+    {
+      "lookbackSeconds": 60,
+      "minimumShare": 0.0,
+      "modes": [
+        "entry_time",
+        "conservative_both"
+      ]
+    },
+    {
+      "lookbackSeconds": 60,
+      "minimumShare": 0.75,
+      "modes": [
+        "entry_time",
+        "conservative_both"
+      ]
+    },
+    {
+      "lookbackSeconds": 60,
+      "minimumShare": 0.9,
+      "modes": [
+        "entry_time",
+        "conservative_both"
+      ]
+    },
+    {
+      "lookbackSeconds": 60,
+      "minimumShare": 0.95,
+      "modes": [
+        "entry_time",
+        "conservative_both"
+      ]
+    }
+  ],
+  "policies": [
+    {
+      "scale": 0.5,
+      "budget": 0.01
+    },
+    {
+      "scale": 0.75,
+      "budget": 0.01
+    }
+  ],
+  "resultsSha256": "e69f5d83e4d03710983db1537910f3c82e737c8dc5ad81ec18d7b8b92ed5371c",
+  "matchedJoint": [
+    {
+      "routeId": 1,
+      "policyId": 0,
+      "controls": 400,
+      "modes": [
+        "entry_time",
+        "conservative_both"
+      ],
+      "allPoolMatched": {
+        "minimumReturn": 0.007970136790649285,
+        "maximumDrawdownBound": -0.006419155524380216,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.0006485256423358621,
+        "minimumWithoutBestDay": 0.002882974335957744
+      },
+      "chosenPool": {
+        "minimumReturn": 0.007969937967416962,
+        "maximumDrawdownBound": -0.00641915784396363,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.0006487236647396699,
+        "minimumWithoutBestDay": 0.002882974335957744
+      },
+      "minimumPairedReturnDifference": -1.986216114246986e-06,
+      "maximumPairedReturnDifference": 1.9696836606186707e-07
+    },
+    {
+      "routeId": 1,
+      "policyId": 1,
+      "controls": 400,
+      "modes": [
+        "entry_time",
+        "conservative_both"
+      ],
+      "allPoolMatched": {
+        "minimumReturn": 0.011978758857112304,
+        "maximumDrawdownBound": -0.009414458552444604,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": 0.00028328462096882667,
+        "minimumWithoutBestDay": 0.005023966595464557
+      },
+      "chosenPool": {
+        "minimumReturn": 0.0119785595779347,
+        "maximumDrawdownBound": -0.009414458552444604,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": 0.00028308659856501883,
+        "minimumWithoutBestDay": 0.005023966595464557
+      },
+      "minimumPairedReturnDifference": -1.989297772508891e-06,
+      "maximumPairedReturnDifference": 1.9806910067643457e-07
+    },
+    {
+      "routeId": 2,
+      "policyId": 0,
+      "controls": 400,
+      "modes": [
+        "entry_time",
+        "conservative_both"
+      ],
+      "allPoolMatched": {
+        "minimumReturn": 0.007970136790649285,
+        "maximumDrawdownBound": -0.006419155524380216,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.0006485256423358621,
+        "minimumWithoutBestDay": 0.002882974335957744
+      },
+      "chosenPool": {
+        "minimumReturn": 0.007969937967416962,
+        "maximumDrawdownBound": -0.00641915784396363,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.0006487236647396699,
+        "minimumWithoutBestDay": 0.002882974335957744
+      },
+      "minimumPairedReturnDifference": -1.986216114246986e-06,
+      "maximumPairedReturnDifference": 1.9696836606186707e-07
+    },
+    {
+      "routeId": 2,
+      "policyId": 1,
+      "controls": 400,
+      "modes": [
+        "entry_time",
+        "conservative_both"
+      ],
+      "allPoolMatched": {
+        "minimumReturn": 0.011978758857112304,
+        "maximumDrawdownBound": -0.009414458552444604,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": 0.00028328462096882667,
+        "minimumWithoutBestDay": 0.005023966595464557
+      },
+      "chosenPool": {
+        "minimumReturn": 0.0119785595779347,
+        "maximumDrawdownBound": -0.009414458552444604,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": 0.00028308659856501883,
+        "minimumWithoutBestDay": 0.005023966595464557
+      },
+      "minimumPairedReturnDifference": -1.989297772508891e-06,
+      "maximumPairedReturnDifference": 1.9806910067643457e-07
+    },
+    {
+      "routeId": 3,
+      "policyId": 0,
+      "controls": 400,
+      "modes": [
+        "entry_time",
+        "conservative_both"
+      ],
+      "allPoolMatched": {
+        "minimumReturn": 0.007970136790649285,
+        "maximumDrawdownBound": -0.006419155524380216,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.0006485256423358621,
+        "minimumWithoutBestDay": 0.002882974335957744
+      },
+      "chosenPool": {
+        "minimumReturn": 0.007969937967416962,
+        "maximumDrawdownBound": -0.00641915784396363,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.0006487236647396699,
+        "minimumWithoutBestDay": 0.002882974335957744
+      },
+      "minimumPairedReturnDifference": -1.986216114246986e-06,
+      "maximumPairedReturnDifference": 1.9696836606186707e-07
+    },
+    {
+      "routeId": 3,
+      "policyId": 1,
+      "controls": 400,
+      "modes": [
+        "entry_time",
+        "conservative_both"
+      ],
+      "allPoolMatched": {
+        "minimumReturn": 0.011978758857112304,
+        "maximumDrawdownBound": -0.009414458552444604,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": 0.00028328462096882667,
+        "minimumWithoutBestDay": 0.005023966595464557
+      },
+      "chosenPool": {
+        "minimumReturn": 0.0119785595779347,
+        "maximumDrawdownBound": -0.009414458552444604,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": 0.00028308659856501883,
+        "minimumWithoutBestDay": 0.005023966595464557
+      },
+      "minimumPairedReturnDifference": -1.989297772508891e-06,
+      "maximumPairedReturnDifference": 1.9806910067643457e-07
+    },
+    {
+      "routeId": 4,
+      "policyId": 0,
+      "controls": 400,
+      "modes": [
+        "entry_time",
+        "conservative_both"
+      ],
+      "allPoolMatched": {
+        "minimumReturn": 0.007970136790649285,
+        "maximumDrawdownBound": -0.006419155524380216,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.0006485256423358621,
+        "minimumWithoutBestDay": 0.002882974335957744
+      },
+      "chosenPool": {
+        "minimumReturn": 0.007969937967416962,
+        "maximumDrawdownBound": -0.00641915784396363,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.0006487236647396699,
+        "minimumWithoutBestDay": 0.002882974335957744
+      },
+      "minimumPairedReturnDifference": -1.986216114246986e-06,
+      "maximumPairedReturnDifference": 1.9696836606186707e-07
+    },
+    {
+      "routeId": 4,
+      "policyId": 1,
+      "controls": 400,
+      "modes": [
+        "entry_time",
+        "conservative_both"
+      ],
+      "allPoolMatched": {
+        "minimumReturn": 0.011978758857112304,
+        "maximumDrawdownBound": -0.009414458552444604,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": 0.00028328462096882667,
+        "minimumWithoutBestDay": 0.005023966595464557
+      },
+      "chosenPool": {
+        "minimumReturn": 0.0119785595779347,
+        "maximumDrawdownBound": -0.009414458552444604,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": 0.00028308659856501883,
+        "minimumWithoutBestDay": 0.005023966595464557
+      },
+      "minimumPairedReturnDifference": -1.989297772508891e-06,
+      "maximumPairedReturnDifference": 1.9806910067643457e-07
+    },
+    {
+      "routeId": 5,
+      "policyId": 0,
+      "controls": 400,
+      "modes": [
+        "entry_time",
+        "conservative_both"
+      ],
+      "allPoolMatched": {
+        "minimumReturn": 0.007970136790649285,
+        "maximumDrawdownBound": -0.006419155524380216,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.0006485256423358621,
+        "minimumWithoutBestDay": 0.002882974335957744
+      },
+      "chosenPool": {
+        "minimumReturn": 0.007969937967416962,
+        "maximumDrawdownBound": -0.00641915784396363,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.0006487236647396699,
+        "minimumWithoutBestDay": 0.002882974335957744
+      },
+      "minimumPairedReturnDifference": -1.986216114246986e-06,
+      "maximumPairedReturnDifference": 1.9696836606186707e-07
+    },
+    {
+      "routeId": 5,
+      "policyId": 1,
+      "controls": 400,
+      "modes": [
+        "entry_time",
+        "conservative_both"
+      ],
+      "allPoolMatched": {
+        "minimumReturn": 0.011978758857112304,
+        "maximumDrawdownBound": -0.009414458552444604,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": 0.00028328462096882667,
+        "minimumWithoutBestDay": 0.005023966595464557
+      },
+      "chosenPool": {
+        "minimumReturn": 0.0119785595779347,
+        "maximumDrawdownBound": -0.009414458552444604,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": 0.00028308659856501883,
+        "minimumWithoutBestDay": 0.005023966595464557
+      },
+      "minimumPairedReturnDifference": -1.989297772508891e-06,
+      "maximumPairedReturnDifference": 1.9806910067643457e-07
+    },
+    {
+      "routeId": 6,
+      "policyId": 0,
+      "controls": 400,
+      "modes": [
+        "entry_time",
+        "conservative_both"
+      ],
+      "allPoolMatched": {
+        "minimumReturn": 0.007970136790649285,
+        "maximumDrawdownBound": -0.006419155524380216,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.0006485256423358621,
+        "minimumWithoutBestDay": 0.002882974335957744
+      },
+      "chosenPool": {
+        "minimumReturn": 0.007969937967416962,
+        "maximumDrawdownBound": -0.00641915784396363,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.0006487236647396699,
+        "minimumWithoutBestDay": 0.002882974335957744
+      },
+      "minimumPairedReturnDifference": -1.986216114246986e-06,
+      "maximumPairedReturnDifference": 1.9696836606186707e-07
+    },
+    {
+      "routeId": 6,
+      "policyId": 1,
+      "controls": 400,
+      "modes": [
+        "entry_time",
+        "conservative_both"
+      ],
+      "allPoolMatched": {
+        "minimumReturn": 0.011978758857112304,
+        "maximumDrawdownBound": -0.009414458552444604,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": 0.00028328462096882667,
+        "minimumWithoutBestDay": 0.005023966595464557
+      },
+      "chosenPool": {
+        "minimumReturn": 0.0119785595779347,
+        "maximumDrawdownBound": -0.009414458552444604,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": 0.00028308659856501883,
+        "minimumWithoutBestDay": 0.005023966595464557
+      },
+      "minimumPairedReturnDifference": -1.989297772508891e-06,
+      "maximumPairedReturnDifference": 1.9806910067643457e-07
+    },
+    {
+      "routeId": 7,
+      "policyId": 0,
+      "controls": 400,
+      "modes": [
+        "entry_time",
+        "conservative_both"
+      ],
+      "allPoolMatched": {
+        "minimumReturn": 0.007970136790649285,
+        "maximumDrawdownBound": -0.006419155524380216,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.0006485256423358621,
+        "minimumWithoutBestDay": 0.002882974335957744
+      },
+      "chosenPool": {
+        "minimumReturn": 0.007969937967416962,
+        "maximumDrawdownBound": -0.00641915784396363,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.0006487236647396699,
+        "minimumWithoutBestDay": 0.002882974335957744
+      },
+      "minimumPairedReturnDifference": -1.986216114246986e-06,
+      "maximumPairedReturnDifference": 1.9696836606186707e-07
+    },
+    {
+      "routeId": 7,
+      "policyId": 1,
+      "controls": 400,
+      "modes": [
+        "entry_time",
+        "conservative_both"
+      ],
+      "allPoolMatched": {
+        "minimumReturn": 0.011978758857112304,
+        "maximumDrawdownBound": -0.009414458552444604,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": 0.00028328462096882667,
+        "minimumWithoutBestDay": 0.005023966595464557
+      },
+      "chosenPool": {
+        "minimumReturn": 0.0119785595779347,
+        "maximumDrawdownBound": -0.009414458552444604,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": 0.00028308659856501883,
+        "minimumWithoutBestDay": 0.005023966595464557
+      },
+      "minimumPairedReturnDifference": -1.989297772508891e-06,
+      "maximumPairedReturnDifference": 1.9806910067643457e-07
+    },
+    {
+      "routeId": 8,
+      "policyId": 0,
+      "controls": 400,
+      "modes": [
+        "entry_time",
+        "conservative_both"
+      ],
+      "allPoolMatched": {
+        "minimumReturn": 0.007970136790649285,
+        "maximumDrawdownBound": -0.006419155524380216,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.0006485256423358621,
+        "minimumWithoutBestDay": 0.002882974335957744
+      },
+      "chosenPool": {
+        "minimumReturn": 0.007969937967416962,
+        "maximumDrawdownBound": -0.00641915784396363,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.0006487236647396699,
+        "minimumWithoutBestDay": 0.002882974335957744
+      },
+      "minimumPairedReturnDifference": -1.986216114246986e-06,
+      "maximumPairedReturnDifference": 1.9696836606186707e-07
+    },
+    {
+      "routeId": 8,
+      "policyId": 1,
+      "controls": 400,
+      "modes": [
+        "entry_time",
+        "conservative_both"
+      ],
+      "allPoolMatched": {
+        "minimumReturn": 0.011978758857112304,
+        "maximumDrawdownBound": -0.009414458552444604,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": 0.00028328462096882667,
+        "minimumWithoutBestDay": 0.005023966595464557
+      },
+      "chosenPool": {
+        "minimumReturn": 0.0119785595779347,
+        "maximumDrawdownBound": -0.009414458552444604,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": 0.00028308659856501883,
+        "minimumWithoutBestDay": 0.005023966595464557
+      },
+      "minimumPairedReturnDifference": -1.989297772508891e-06,
+      "maximumPairedReturnDifference": 1.9806910067643457e-07
+    },
+    {
+      "routeId": 9,
+      "policyId": 0,
+      "controls": 400,
+      "modes": [
+        "entry_time",
+        "conservative_both"
+      ],
+      "allPoolMatched": {
+        "minimumReturn": 0.007970136790649285,
+        "maximumDrawdownBound": -0.006419155524380216,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.0006485256423358621,
+        "minimumWithoutBestDay": 0.002882974335957744
+      },
+      "chosenPool": {
+        "minimumReturn": 0.007969937967416962,
+        "maximumDrawdownBound": -0.00641915784396363,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.0006487236647396699,
+        "minimumWithoutBestDay": 0.002882974335957744
+      },
+      "minimumPairedReturnDifference": -1.986216114246986e-06,
+      "maximumPairedReturnDifference": 1.9696836606186707e-07
+    },
+    {
+      "routeId": 9,
+      "policyId": 1,
+      "controls": 400,
+      "modes": [
+        "entry_time",
+        "conservative_both"
+      ],
+      "allPoolMatched": {
+        "minimumReturn": 0.011978758857112304,
+        "maximumDrawdownBound": -0.009414458552444604,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": 0.00028328462096882667,
+        "minimumWithoutBestDay": 0.005023966595464557
+      },
+      "chosenPool": {
+        "minimumReturn": 0.0119785595779347,
+        "maximumDrawdownBound": -0.009414458552444604,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": 0.00028308659856501883,
+        "minimumWithoutBestDay": 0.005023966595464557
+      },
+      "minimumPairedReturnDifference": -1.989297772508891e-06,
+      "maximumPairedReturnDifference": 1.9806910067643457e-07
+    },
+    {
+      "routeId": 10,
+      "policyId": 0,
+      "controls": 400,
+      "modes": [
+        "entry_time",
+        "conservative_both"
+      ],
+      "allPoolMatched": {
+        "minimumReturn": 0.007970136790649285,
+        "maximumDrawdownBound": -0.006419155524380216,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.0006485256423358621,
+        "minimumWithoutBestDay": 0.002882974335957744
+      },
+      "chosenPool": {
+        "minimumReturn": 0.007969937967416962,
+        "maximumDrawdownBound": -0.00641915784396363,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.0006487236647396699,
+        "minimumWithoutBestDay": 0.002882974335957744
+      },
+      "minimumPairedReturnDifference": -1.986216114246986e-06,
+      "maximumPairedReturnDifference": 1.9696836606186707e-07
+    },
+    {
+      "routeId": 10,
+      "policyId": 1,
+      "controls": 400,
+      "modes": [
+        "entry_time",
+        "conservative_both"
+      ],
+      "allPoolMatched": {
+        "minimumReturn": 0.011978758857112304,
+        "maximumDrawdownBound": -0.009414458552444604,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": 0.00028328462096882667,
+        "minimumWithoutBestDay": 0.005023966595464557
+      },
+      "chosenPool": {
+        "minimumReturn": 0.0119785595779347,
+        "maximumDrawdownBound": -0.009414458552444604,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": 0.00028308659856501883,
+        "minimumWithoutBestDay": 0.005023966595464557
+      },
+      "minimumPairedReturnDifference": -1.989297772508891e-06,
+      "maximumPairedReturnDifference": 1.9806910067643457e-07
+    },
+    {
+      "routeId": 11,
+      "policyId": 0,
+      "controls": 400,
+      "modes": [
+        "entry_time",
+        "conservative_both"
+      ],
+      "allPoolMatched": {
+        "minimumReturn": 0.007970136790649285,
+        "maximumDrawdownBound": -0.006419155524380216,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.0006485256423358621,
+        "minimumWithoutBestDay": 0.002882974335957744
+      },
+      "chosenPool": {
+        "minimumReturn": 0.007969937967416962,
+        "maximumDrawdownBound": -0.00641915784396363,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.0006487236647396699,
+        "minimumWithoutBestDay": 0.002882974335957744
+      },
+      "minimumPairedReturnDifference": -1.986216114246986e-06,
+      "maximumPairedReturnDifference": 1.9696836606186707e-07
+    },
+    {
+      "routeId": 11,
+      "policyId": 1,
+      "controls": 400,
+      "modes": [
+        "entry_time",
+        "conservative_both"
+      ],
+      "allPoolMatched": {
+        "minimumReturn": 0.011978758857112304,
+        "maximumDrawdownBound": -0.009414458552444604,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": 0.00028328462096882667,
+        "minimumWithoutBestDay": 0.005023966595464557
+      },
+      "chosenPool": {
+        "minimumReturn": 0.0119785595779347,
+        "maximumDrawdownBound": -0.009414458552444604,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": 0.00028308659856501883,
+        "minimumWithoutBestDay": 0.005023966595464557
+      },
+      "minimumPairedReturnDifference": -1.989297772508891e-06,
+      "maximumPairedReturnDifference": 1.9806910067643457e-07
+    },
+    {
+      "routeId": 12,
+      "policyId": 0,
+      "controls": 400,
+      "modes": [
+        "entry_time",
+        "conservative_both"
+      ],
+      "allPoolMatched": {
+        "minimumReturn": 0.007970136790649285,
+        "maximumDrawdownBound": -0.006419155524380216,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.0006485256423358621,
+        "minimumWithoutBestDay": 0.002882974335957744
+      },
+      "chosenPool": {
+        "minimumReturn": 0.007969937967416962,
+        "maximumDrawdownBound": -0.00641915784396363,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.0006487236647396699,
+        "minimumWithoutBestDay": 0.002882974335957744
+      },
+      "minimumPairedReturnDifference": -1.986216114246986e-06,
+      "maximumPairedReturnDifference": 1.9696836606186707e-07
+    },
+    {
+      "routeId": 12,
+      "policyId": 1,
+      "controls": 400,
+      "modes": [
+        "entry_time",
+        "conservative_both"
+      ],
+      "allPoolMatched": {
+        "minimumReturn": 0.011978758857112304,
+        "maximumDrawdownBound": -0.009414458552444604,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": 0.00028328462096882667,
+        "minimumWithoutBestDay": 0.005023966595464557
+      },
+      "chosenPool": {
+        "minimumReturn": 0.0119785595779347,
+        "maximumDrawdownBound": -0.009414458552444604,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": 0.00028308659856501883,
+        "minimumWithoutBestDay": 0.005023966595464557
+      },
+      "minimumPairedReturnDifference": -1.989297772508891e-06,
+      "maximumPairedReturnDifference": 1.9806910067643457e-07
+    }
+  ],
+  "matchedResultsSha256": "55d3565cc9be070a9494834ed471941b654d2b471f3de11c430361ea15db4f5a",
+  "plotSourceSha256": "9ac87118c8d95222495aed3eec5db1e177384de17521937f9089d7c6aac036fe"
+}

@@ -1,0 +1,17 @@
+{
+  "run": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/fixed_entry_pair_runs/01a385dd99ab400d",
+  "resultsSha256": "6f5b8eb958472f46744f636dfef7be05d621bd10f43570e87082c17d8f6ba48e",
+  "auditorSha256": "a444a874c000f3e10df1b69f383edb0697225b914c3d62ded1024f09d59bd359",
+  "completeUniverses": 225,
+  "exhaustivePairPortfolios": 8100,
+  "minimumSelections": 225,
+  "independentUniverseSaleCases": 132,
+  "independentAccounts": {
+    "portfolios": 8100,
+    "stages": 24300,
+    "trades": 56700,
+    "sales": 108,
+    "missingPlannedWindows": 0
+  },
+  "scope": "Every eligible universe reconstructed with scalar sale timing. Every possible pair appears exactly once per candidate/scenario. All 8,100 portfolios independently replayed, and every published minimum checked. Recoverable-text and small-sample limitations remain."
+}

@@ -1,0 +1,28 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Conditional entry research</title>
+<style>body{font:16px/1.6 system-ui;max-width:1100px;margin:40px auto;padding:0 24px}table{border-collapse:collapse;width:100%}
+th,td{text-align:left;padding:10px;border-bottom:1px solid #ccd3dd}pre{white-space:pre-wrap;background:#f2f5f8;padding:16px}</style>
+<h1>Conditional entries and activity sizing</h1>
+<p>1,705,600 entry/exit/filter combinations on the existing historical dataset.
+Entry families: dip, recovery after a dip, breakout of the initial range, momentum and a fixed-wait control.
+Entries expire after 30–180 seconds. Price-collapse cancellation and a 5% maximum chase are compared.
+Market cap uses either the original quote or the price observed when the trigger occurs.</p>
+<h2>Daily retrospective replays</h2><p>Rules are selected from earlier completed outcomes each day.
+The complete period has already been examined; these results are not independent validation.
+The latest fixed validation rule is unchanged.</p>
+<table><tr><th>Training selector</th><th>Proceeds haircut</th><th>Return</th><th>Drawdown bound</th><th>Trades</th></tr><tr><td>risk_5pct</td><td>5%</td><td>-7.04%</td><td>11.94%</td><td>22</td></tr><tr><td>risk_5pct</td><td>10%</td><td>-8.20%</td><td>11.73%</td><td>22</td></tr><tr><td>risk_5pct</td><td>15%</td><td>-9.09%</td><td>11.44%</td><td>22</td></tr><tr><td>risk_2pct</td><td>5%</td><td>-3.70%</td><td>6.51%</td><td>20</td></tr><tr><td>risk_2pct</td><td>10%</td><td>-4.80%</td><td>6.89%</td><td>20</td></tr><tr><td>risk_2pct</td><td>15%</td><td>-5.75%</td><td>7.16%</td><td>20</td></tr><tr><td>robust_5pct</td><td>5%</td><td>-7.04%</td><td>11.94%</td><td>22</td></tr><tr><td>robust_5pct</td><td>10%</td><td>-8.20%</td><td>11.73%</td><td>22</td></tr><tr><td>robust_5pct</td><td>15%</td><td>-9.09%</td><td>11.44%</td><td>22</td></tr></table>
+<p>The 5% and 2% selectors constrain training drawdown, not future losses.
+The robust selector additionally requires a profitable training replay after removing its most profitable token.
+The minimum training sample is ten entered trades and eight contracts.</p>
+<h2>Execution and sizing</h2><p>Every trigger uses completed second candles only. A market entry follows one second later,
+at the next observed trade within ten seconds. Stops and targets also incur a one-second reaction delay.
+No entry fill means no purchase; a missing exit fill is written down to zero.
+Fractions of 1%, 2% and 5% are compared with flat, activity, recent range, relative-volume and combined sizing.
+Only prior activity and relative volume are used; no dollar capacity is inferred from vendor candle volume.</p>
+<p>Portfolios hold one position, trade each contract once, cap allocations at 7.5% of equity and use a full-loss daily budget.
+Costs are modeled haircuts to sale proceeds; actual AMM impact, MEV and transaction failures are not measured.</p>
+<h2>Saved artifacts</h2><ul><li><a href="results.json">Results, stress scenarios and ledgers</a></li>
+<li><a href="catalog.json">Triggers, exits, filters and sizing rules</a></li>
+<li><a href="training_portfolios.csv">Training portfolio evaluations</a></li>
+<li><a href="screens.npz">Every screening count, mean and ranking score</a></li></ul>
+<p>Mobula's <a href="https://docs.mobula.io/rest-api-reference/endpoint/token-ohlcv-history">candle reference</a>
+describes second intervals and empty-candle behavior. The volume field is not explicitly assigned a currency there.</p></html>

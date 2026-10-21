@@ -55,7 +55,7 @@ export default defineNuxtConfig({
 
   nitro: {
     prerender: {
-      routes: ['/feed.xml', '/group-trading-is-minus-ev'],
+      routes: ['/feed.xml'],
     },
   },
 })

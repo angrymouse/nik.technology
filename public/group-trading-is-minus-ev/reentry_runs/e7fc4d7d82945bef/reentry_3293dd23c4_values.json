@@ -1,0 +1,170 @@
+{
+  "resultsSha256": "988fe73d8ab39efdd17f0d9ff7c75d4b23bb51df9c183b3039b2ee453931413d",
+  "sourceSha256": "3293dd23c4599cfa9584d934ea1823f489b95bd011ad3a34e3dc16c225c5afde",
+  "matplotlib": "3.11.2",
+  "rows": [
+    {
+      "selector": "first_only_2pct",
+      "cost": 0.05,
+      "return": -0.01170589624001539,
+      "drawdownBound": -0.015235501928028916,
+      "trades": 9,
+      "contracts": 9,
+      "reentries": 0
+    },
+    {
+      "selector": "first_only_2pct",
+      "cost": 0.1,
+      "return": -0.0150463696773534,
+      "drawdownBound": -0.01627438956263083,
+      "trades": 9,
+      "contracts": 9,
+      "reentries": 0
+    },
+    {
+      "selector": "first_only_5pct",
+      "cost": 0.05,
+      "return": -0.03822097960367432,
+      "drawdownBound": -0.054444259902697856,
+      "trades": 9,
+      "contracts": 9,
+      "reentries": 0
+    },
+    {
+      "selector": "first_only_5pct",
+      "cost": 0.1,
+      "return": -0.05891747343115383,
+      "drawdownBound": -0.06680993354857812,
+      "trades": 9,
+      "contracts": 9,
+      "reentries": 0
+    },
+    {
+      "selector": "first_only_robust",
+      "cost": 0.05,
+      "return": 0.0,
+      "drawdownBound": 0.0,
+      "trades": 0,
+      "contracts": 0,
+      "reentries": 0
+    },
+    {
+      "selector": "first_only_robust",
+      "cost": 0.1,
+      "return": 0.0,
+      "drawdownBound": 0.0,
+      "trades": 0,
+      "contracts": 0,
+      "reentries": 0
+    },
+    {
+      "selector": "additional_repeats_2pct",
+      "cost": 0.05,
+      "return": -0.06508272618532984,
+      "drawdownBound": -0.06576948567386554,
+      "trades": 16,
+      "contracts": 16,
+      "reentries": 0
+    },
+    {
+      "selector": "additional_repeats_2pct",
+      "cost": 0.1,
+      "return": -0.07264355674130352,
+      "drawdownBound": -0.07328938826325992,
+      "trades": 16,
+      "contracts": 16,
+      "reentries": 0
+    },
+    {
+      "selector": "additional_repeats_5pct",
+      "cost": 0.05,
+      "return": -0.04016227540101591,
+      "drawdownBound": -0.06757967734709347,
+      "trades": 13,
+      "contracts": 13,
+      "reentries": 0
+    },
+    {
+      "selector": "additional_repeats_5pct",
+      "cost": 0.1,
+      "return": -0.06555437639288697,
+      "drawdownBound": -0.08234663423132071,
+      "trades": 13,
+      "contracts": 13,
+      "reentries": 0
+    },
+    {
+      "selector": "additional_repeats_robust",
+      "cost": 0.05,
+      "return": -0.03633597222540441,
+      "drawdownBound": -0.06509184234149934,
+      "trades": 17,
+      "contracts": 17,
+      "reentries": 0
+    },
+    {
+      "selector": "additional_repeats_robust",
+      "cost": 0.1,
+      "return": -0.06493446261641234,
+      "drawdownBound": -0.08504242628773617,
+      "trades": 17,
+      "contracts": 17,
+      "reentries": 0
+    },
+    {
+      "selector": "all_recoverable_2pct",
+      "cost": 0.05,
+      "return": -0.01747295866912779,
+      "drawdownBound": -0.039526278933616044,
+      "trades": 22,
+      "contracts": 22,
+      "reentries": 0
+    },
+    {
+      "selector": "all_recoverable_2pct",
+      "cost": 0.1,
+      "return": -0.03954143977179014,
+      "drawdownBound": -0.04958148081762748,
+      "trades": 22,
+      "contracts": 22,
+      "reentries": 0
+    },
+    {
+      "selector": "all_recoverable_5pct",
+      "cost": 0.05,
+      "return": -0.017346909651428932,
+      "drawdownBound": -0.07211844559982072,
+      "trades": 20,
+      "contracts": 20,
+      "reentries": 0
+    },
+    {
+      "selector": "all_recoverable_5pct",
+      "cost": 0.1,
+      "return": -0.06143765001507839,
+      "drawdownBound": -0.09565993233037517,
+      "trades": 20,
+      "contracts": 20,
+      "reentries": 0
+    },
+    {
+      "selector": "all_recoverable_robust",
+      "cost": 0.05,
+      "return": -0.0407716629530015,
+      "drawdownBound": -0.04613053176723858,
+      "trades": 12,
+      "contracts": 12,
+      "reentries": 0
+    },
+    {
+      "selector": "all_recoverable_robust",
+      "cost": 0.1,
+      "return": -0.0518126191690107,
+      "drawdownBound": -0.054851751651802005,
+      "trades": 12,
+      "contracts": 12,
+      "reentries": 0
+    }
+  ],
+  "units": "fractions in this file; percentages in the figure"
+}

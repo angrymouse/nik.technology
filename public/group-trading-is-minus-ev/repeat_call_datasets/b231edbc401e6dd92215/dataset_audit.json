@@ -1,0 +1,23 @@
+{
+  "dataset": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/repeat_call_datasets/b231edbc401e6dd92215",
+  "settingsSha256": "4d8a972709faa2057d7a5aeb9442a86c26681adb32df551a02689a6464d0a4cc",
+  "compiledArraysSha256": "c44de354d9623d2d1b1c7136e4aac515b63077452a18cdbf75264d44883fd4b9",
+  "flowFeaturesSha256": "2f6784ff6c79e1759c292329135cc282d7145688c26e3b7c0fdc2a1873787630",
+  "sourceResultsSha256": "fcc35e9f72cbe11cdfecf4fadc709157cca8ee37865ddbe694abc472100545e7",
+  "sourceCodeSha256": "3f068ebd668c73b2b7396af8945026a315aea5ffc92685f74620daa68c5e0051",
+  "originalCallsPreserved": 1100,
+  "originalNumericFieldsPreserved": 19,
+  "originalTradeFeatureValuesPreserved": 267300,
+  "addedCallsIndependentlyReconstructed": 406,
+  "excludedCallsIndependentlyReconstructed": 212,
+  "exclusionReasons": {
+    "original_message_version_unknown": 170,
+    "stale_quote": 31,
+    "missing_valid_quote": 11
+  },
+  "reusedResponsesVerified": 1615,
+  "newMinuteSlotsChecked": 19488,
+  "originalPortfoliosReproduced": 9,
+  "originalRawSecondPriceValuesPreserved": 8448000,
+  "scope": "Independent repeated-call census and exclusions, original numeric arrays and metadata, copied raw responses, rebuilt minute bars, unchanged original transaction features and nine original portfolios on the expanded arrays. Repeated calls come from already examined dates. Excluding edited messages reflects unavailable original text and may bias this recoverable-text sample; it is not a live prediction feature."
+}

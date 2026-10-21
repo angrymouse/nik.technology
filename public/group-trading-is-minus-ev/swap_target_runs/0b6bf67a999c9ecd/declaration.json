@@ -1,0 +1,6 @@
+{
+  "frozenAt": "2026-10-21T14:52:21.326290+00:00",
+  "settingsSha256": "754d7b10be4b0da1f06ffa040541cc7c32ebe7ecaa19397a4ffb4043cde910d5",
+  "selection": "Require the same rule and allocation to have at least eight trades and positive base, two-best-token removal and best-day removal returns across every price source, flow mode, history, population and execution scenario at 10% proceeds cost plus fees. At each drawdown ceiling maximize minimum return; break ties by higher drawdown bound, then lower rule ID and policy ID. A selected rule still needs exhaustive pair checks before promotion.",
+  "scope": "Retrospective reuse of the existing 28-rule catalogue and two allocation policies. New swap prices stress all settings, including earlier failures. Vendor comparisons are reused from their audited source. The frozen prospective rules remain unchanged; these repeatedly examined trades are not independent validation."
+}

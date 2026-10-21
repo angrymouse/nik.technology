@@ -1,0 +1,105 @@
+<!doctype html><html lang="en"><meta charset="utf-8">
+<title>Frozen cohort strategy validation</title><style>
+body{font:16px/1.6 system-ui;max-width:1050px;margin:40px auto;padding:0 24px;color:#172231}
+table{border-collapse:collapse;width:100%}td,th{padding:10px;border-bottom:1px solid #ccd3dd;text-align:left}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f2f5f8;padding:16px}h1,h2{line-height:1.2}
+</style><h1>Frozen cohort strategy validation</h1>
+<p>New messages from 2026-10-21T05:13:07.049000Z through 2026-10-21T06:59:01.000Z.
+The rule was frozen before these messages and prices were collected. No parameters were refitted.</p>
+<p><strong>No qualifying trades. This window supplies no evidence for profitability.</strong></p>
+<table><thead><tr><th>Sale proceeds haircut</th><th>Portfolio return</th><th>Candle drawdown bound</th><th>Trades</th></tr></thead>
+<tbody><tr><td>5%</td><td>+0.00%</td><td>0.00%</td><td>0</td></tr><tr><td>10%</td><td>+0.00%</td><td>0.00%</td><td>0</td></tr><tr><td>15%</td><td>+0.00%</td><td>0.00%</td><td>0</td></tr></tbody></table>
+<p>Returns are simulations with one position, no leverage and starting equity of 100 units.
+Each cost is applied once to sale proceeds. They are stress assumptions, not measured execution costs.
+Minute candle highs and lows cannot establish exact fills or the actual order of intraminute prices.
+This is a newly collected chronological holdout, not live executed trading.</p>
+<h2>Coverage</h2><pre>{
+  &quot;newArchivedMessages&quot;: 18,
+  &quot;newTokenMessages&quot;: 11,
+  &quot;newCallRowsInValidationWindow&quot;: 9,
+  &quot;newEligibleCallerContractCalls&quot;: 8,
+  &quot;passEntryFilter&quot;: 0,
+  &quot;passEntryAndCohort&quot;: 0,
+  &quot;passFiltersAndFill&quot;: 0,
+  &quot;combinedDataset&quot;: {
+    &quot;uniqueCallerContractSignals&quot;: 1216,
+    &quot;missingEntrySnapshot&quot;: 45,
+    &quot;repeatedCallerContractSignals&quot;: 609,
+    &quot;staleOrFutureSnapshot&quot;: 96,
+    &quot;eligibleCalls&quot;: 1075,
+    &quot;authors&quot;: 44,
+    &quot;contracts&quot;: 516,
+    &quot;archivedMessages&quot;: 14291,
+    &quot;callsWithOriginalText&quot;: 765
+  }
+}</pre>
+<h2>Frozen rule</h2><pre>{
+  &quot;version&quot;: 1,
+  &quot;frozenAt&quot;: &quot;2026-10-21T07:27:56.930679+00:00&quot;,
+  &quot;sourceDataset&quot;: &quot;/home/nik/entryliquidity/analysis/ayugram-token-strategy/datasets/845e37f0db6685299fc5&quot;,
+  &quot;sourceRun&quot;: &quot;/home/nik/entryliquidity/analysis/ayugram-token-strategy/adaptive_runs/70fab2c549e7e89e&quot;,
+  &quot;sourceCodeHash&quot;: &quot;cdbe9d78885db2c1f2a93b67b9d78e3e6d3a08f9dfe155db2ee71abd39c5080c&quot;,
+  &quot;entry&quot;: {
+    &quot;delay&quot;: 1,
+    &quot;min_cap&quot;: 50000,
+    &quot;max_cap&quot;: 250000,
+    &quot;min_gain&quot;: -0.25,
+    &quot;max_gain&quot;: -0.1,
+    &quot;cap_basis&quot;: &quot;quote&quot;,
+    &quot;family&quot;: &quot;fine_cap&quot;
+  },
+  &quot;exit&quot;: {
+    &quot;hold&quot;: 10,
+    &quot;stop&quot;: null,
+    &quot;target&quot;: null,
+    &quot;trail_at&quot;: 1.5,
+    &quot;trail_gap&quot;: 0.3,
+    &quot;early_after&quot;: null,
+    &quot;early_return&quot;: 0.0,
+    &quot;partial_at&quot;: null,
+    &quot;partial_fraction&quot;: 0.5,
+    &quot;breakeven&quot;: false
+  },
+  &quot;sizing&quot;: {
+    &quot;fraction&quot;: 0.05,
+    &quot;profile&quot;: &quot;volatility&quot;,
+    &quot;daily_budget&quot;: 0.04,
+    &quot;cooldown_losses&quot;: 0,
+    &quot;cooldown_minutes&quot;: 0,
+    &quot;halve_after_losses&quot;: 0,
+    &quot;drawdown_throttle&quot;: null,
+    &quot;one_per_contract&quot;: true
+  },
+  &quot;regimeGate&quot;: [
+    &quot;mean&quot;,
+    5,
+    -0.1
+  ],
+  &quot;executionExtraMinutes&quot;: 1,
+  &quot;startingCash&quot;: 100,
+  &quot;costScenarios&quot;: [
+    0.05,
+    0.1,
+    0.15
+  ],
+  &quot;validationStartMs&quot;: 1792559587049,
+  &quot;validationMessageEnd&quot;: &quot;2026-10-21T07:07:56.930679+00:00&quot;,
+  &quot;trainingQuoteAsOf&quot;: &quot;2026-10-21T05:13:07.049000Z&quot;,
+  &quot;collectAfterMessage&quot;: &quot;2026-10-21T04:44:03.000Z&quot;,
+  &quot;cohortHistory&quot;: {
+    &quot;baselineEntryDelay&quot;: 1,
+    &quot;holdMinutes&quot;: 3,
+    &quot;proceedsHaircut&quot;: 0.05,
+    &quot;returnClip&quot;: [
+      -1,
+      1
+    ],
+    &quot;firstCallPerAsset&quot;: true,
+    &quot;excludeTargetAsset&quot;: true,
+    &quot;strictlyCompletedBeforeFeature&quot;: true
+  },
+  &quot;selectionStatus&quot;: &quot;Fixed before reading new messages/prices. This is a newly collected chronological holdout, not a live executed test.&quot;,
+  &quot;retrainingAllowedDuringValidation&quot;: false
+}</pre>
+<p>Audit data: <a href="validation.json">JSON</a>; <a href="signals.csv">signal decisions</a>;</p>
+</html>

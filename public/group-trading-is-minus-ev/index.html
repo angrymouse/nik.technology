@@ -1,0 +1,1058 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Telegram token strategy research</title><style>
+body{font:16px/1.65 system-ui;margin:40px auto;max-width:1150px;padding:0 24px;color:#172231;background:#fff}
+h1,h2{line-height:1.2}h1{font-size:2.2rem}.note{border-left:4px solid #c99221;background:#fff8e8;padding:16px 22px}
+table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:10px 12px;border-bottom:1px solid #d6dfe9}
+th{background:#eef3f8}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f3f6fa;padding:16px}
+a{color:#1459ac}.scroll{overflow-x:auto}li{margin:7px 0}</style>
+<h1>Telegram token strategy research</h1>
+<p>Group −1002282015815 · available historical messages: October 16–21, 2026 · saved, reproducible simulations.</p>
+<div class="note"><strong>Current findings:</strong> Causal pool selection and volume-share filters pass 12 of 24 route/allocation combinations through the initial price and concentration screen. With identical capacity-timing controls, restricting to one pool changes the minimum return by only -0.000020 percentage points. The positive initial margin is already present in the matched all-pool control. The selected route retains +0.0283% after its worst tested token-pair removal; independent future trades are still needed. An exit-time diagnostic finds 161 chosen-pool sale cases above or without the volume-capacity proxy. This unresolved execution assumption prevents treating the simulated edge as established. The non-bot source-filter paper protocol was frozen before a new 30-minute receipt-time capture; audited outcomes are pending. The 2 completed source-filter observation windows contain 47 eligible calls and 0 account trades. These windows provide no profitability evidence. 
+The current fixed candidates have 7 separately reserved windows with 2 eligible calls. Including the collection gaps finds 6 archived eligible calls after the original candidate freeze and 0 matching entries. 
+The earlier fixed rule's 3 separately collected validation windows contain 15 eligible calls and
+0 trades. A reliable profitable strategy has not been established. A bounded 30-minute arrival capture preserves 126 eligible observed originals and 7 edit events; availability is the local receipt time. </div>
+<h2>Choose a pool before entry and stay in it</h2>
+<p>48,000 new accounts compare 12 routing rules at both saved allocations. Another
+6,000 accounts reproduce the earlier all-pool recorded-price controls. Selection and rejection criteria were
+saved at 2026-10-21T15:21:17.490162+00:00, before this sweep.</p>
+<p>The chosen pool has the largest economic volume over 15, 30 or 60 seconds ending five seconds before scheduled entry plus its
+execution lag. Its minimum share of all observed economic volume is 0%, 75%, 90% or 95%. Selection uses no later pool activity.
+The position stays in that pool through its 3× target or five-minute timeout. A missing entry is skipped; a missing sale receives zero
+recovery. Bars combine only the selected pool's valid observed swaps, with no synthetic seconds.</p>
+<p>Target quantities are netted within each transaction and recipient across all returned pools. Absolute net notional is then allocated
+to pools in proportion to their gross USD legs. Cross-pool round trips therefore do not inflate the capacity estimate.
+Capacity uses the selected pool's allocated 60-second volume; estimated fees use its prior transaction gas plus MEV median.
+The two capacity controls use these entry-time estimates alone, or the smaller capacity and larger fee of entry and original-quote estimates.</p>
+<p>The table gives separate extrema at a 10% proceeds haircut plus fees. Each new setting spans 400 combinations of ordinary/adverse
+swap prices, capacity estimates, reference histories, caller populations and execution cases. The all-pool control also retains its
+third quote-time-only capacity mode, giving 600 combinations. At least eight trades and positive base, two-best-token-removal and
+best-day-removal returns are required. <strong>12 of 24 new combinations pass this initial screen.</strong></p>
+<div class="scroll"><table><tr><th>Pool rule</th><th>Allocation</th><th>Smallest return</th><th>Largest DD bound</th>
+<th>After two best tokens</th><th>After best entry day</th><th>Fewest trades</th><th>Initial screen</th></tr><tr><td>All returned pools</td><td>0.5×</td><td>+0.732%</td><td>0.642%</td><td>-0.1287%</td><td>+0.288%</td><td>8</td><td>Fail</td></tr><tr><td>All returned pools</td><td>0.75×</td><td>+1.080%</td><td>0.941%</td><td>-0.0739%</td><td>+0.502%</td><td>8</td><td>Fail</td></tr><tr><td>15s lookback · 0% minimum share</td><td>0.5×</td><td>+0.797%</td><td>0.642%</td><td>-0.0649%</td><td>+0.288%</td><td>8</td><td>Fail</td></tr><tr><td>15s lookback · 0% minimum share</td><td>0.75×</td><td>+1.198%</td><td>0.941%</td><td>+0.0283%</td><td>+0.502%</td><td>8</td><td>Pass</td></tr><tr><td>15s lookback · 75% minimum share</td><td>0.5×</td><td>+0.797%</td><td>0.642%</td><td>-0.0649%</td><td>+0.288%</td><td>8</td><td>Fail</td></tr><tr><td>15s lookback · 75% minimum share</td><td>0.75×</td><td>+1.198%</td><td>0.941%</td><td>+0.0283%</td><td>+0.502%</td><td>8</td><td>Pass</td></tr><tr><td>15s lookback · 90% minimum share</td><td>0.5×</td><td>+0.797%</td><td>0.642%</td><td>-0.0649%</td><td>+0.288%</td><td>8</td><td>Fail</td></tr><tr><td>15s lookback · 90% minimum share</td><td>0.75×</td><td>+1.198%</td><td>0.941%</td><td>+0.0283%</td><td>+0.502%</td><td>8</td><td>Pass</td></tr><tr><td>15s lookback · 95% minimum share</td><td>0.5×</td><td>+0.797%</td><td>0.642%</td><td>-0.0649%</td><td>+0.288%</td><td>8</td><td>Fail</td></tr><tr><td>15s lookback · 95% minimum share</td><td>0.75×</td><td>+1.198%</td><td>0.941%</td><td>+0.0283%</td><td>+0.502%</td><td>8</td><td>Pass</td></tr><tr><td>30s lookback · 0% minimum share</td><td>0.5×</td><td>+0.797%</td><td>0.642%</td><td>-0.0649%</td><td>+0.288%</td><td>8</td><td>Fail</td></tr><tr><td>30s lookback · 0% minimum share</td><td>0.75×</td><td>+1.198%</td><td>0.941%</td><td>+0.0283%</td><td>+0.502%</td><td>8</td><td>Pass</td></tr><tr><td>30s lookback · 75% minimum share</td><td>0.5×</td><td>+0.797%</td><td>0.642%</td><td>-0.0649%</td><td>+0.288%</td><td>8</td><td>Fail</td></tr><tr><td>30s lookback · 75% minimum share</td><td>0.75×</td><td>+1.198%</td><td>0.941%</td><td>+0.0283%</td><td>+0.502%</td><td>8</td><td>Pass</td></tr><tr><td>30s lookback · 90% minimum share</td><td>0.5×</td><td>+0.797%</td><td>0.642%</td><td>-0.0649%</td><td>+0.288%</td><td>8</td><td>Fail</td></tr><tr><td>30s lookback · 90% minimum share</td><td>0.75×</td><td>+1.198%</td><td>0.941%</td><td>+0.0283%</td><td>+0.502%</td><td>8</td><td>Pass</td></tr><tr><td>30s lookback · 95% minimum share</td><td>0.5×</td><td>+0.797%</td><td>0.642%</td><td>-0.0649%</td><td>+0.288%</td><td>8</td><td>Fail</td></tr><tr><td>30s lookback · 95% minimum share</td><td>0.75×</td><td>+1.198%</td><td>0.941%</td><td>+0.0283%</td><td>+0.502%</td><td>8</td><td>Pass</td></tr><tr><td>60s lookback · 0% minimum share</td><td>0.5×</td><td>+0.797%</td><td>0.642%</td><td>-0.0649%</td><td>+0.288%</td><td>8</td><td>Fail</td></tr><tr><td>60s lookback · 0% minimum share</td><td>0.75×</td><td>+1.198%</td><td>0.941%</td><td>+0.0283%</td><td>+0.502%</td><td>8</td><td>Pass</td></tr><tr><td>60s lookback · 75% minimum share</td><td>0.5×</td><td>+0.797%</td><td>0.642%</td><td>-0.0649%</td><td>+0.288%</td><td>8</td><td>Fail</td></tr><tr><td>60s lookback · 75% minimum share</td><td>0.75×</td><td>+1.198%</td><td>0.941%</td><td>+0.0283%</td><td>+0.502%</td><td>8</td><td>Pass</td></tr><tr><td>60s lookback · 90% minimum share</td><td>0.5×</td><td>+0.797%</td><td>0.642%</td><td>-0.0649%</td><td>+0.288%</td><td>8</td><td>Fail</td></tr><tr><td>60s lookback · 90% minimum share</td><td>0.75×</td><td>+1.198%</td><td>0.941%</td><td>+0.0283%</td><td>+0.502%</td><td>8</td><td>Pass</td></tr><tr><td>60s lookback · 95% minimum share</td><td>0.5×</td><td>+0.797%</td><td>0.642%</td><td>-0.0649%</td><td>+0.288%</td><td>8</td><td>Fail</td></tr><tr><td>60s lookback · 95% minimum share</td><td>0.75×</td><td>+1.198%</td><td>0.941%</td><td>+0.0283%</td><td>+0.502%</td><td>8</td><td>Pass</td></tr></table></div>
+<figure><a href="pool_route_runs/e66b2ccb15936ba6/pools_9ac87118c8.svg"><img src="pool_route_runs/e66b2ccb15936ba6/pools_9ac87118c8.png"
+style="width:100%;height:auto" alt="Return, drawdown and winner-removal effects of pool volume share thresholds"></a></figure>
+<p>The audit independently decodes 17,491 raw records, checks
+132 pre-entry pool selections covering 9 chosen pools, rebuilds
+38,412 selected-pool seconds, checks 6,600
+capacity/fee pairs, all 54,000 accounts and every earlier swap-price control.</p>
+<p>These are repeatedly examined historical observations. Complete response pagination establishes the saved pages, not universal
+pool coverage. Recorded prices and volume participation remain proxies for execution; pool reserves and executable depth are unmeasured.</p>
+<p><a href="pool_route_runs/e66b2ccb15936ba6/declaration.json">Selection declaration</a> · <a href="pool_route_runs/e66b2ccb15936ba6/pool_choices.json">Every pre-entry pool choice</a> ·
+<a href="pool_route_runs/e66b2ccb15936ba6/metrics.json">Every comparison</a> · <a href="pool_route_runs/e66b2ccb15936ba6/portfolios.jsonl.gz">Every ledger</a> ·
+<a href="pool_route_runs/e66b2ccb15936ba6/pool_route_audit.json">Independent pool and account audit</a> ·
+<a href="pool_route_runs/e66b2ccb15936ba6/pools_9ac87118c8_values.json">Figure values</a>.</p><h3>Keep the control modes identical</h3>
+<p>The original all-pool comparison includes a third, quote-time-only capacity estimate. New pool routes require entry-time pool data,
+so that old mode is absent from their comparison. Attributing the difference in their headline minima to pool choice would be incorrect.</p>
+<p>A matched comparison pairs all 48,000 new accounts with the same price, capacity mode, history, population,
+allocation, execution scenario, cost and removal definition. The table restricts both sides to entry-time capacity and its conservative
+combination with quote-time data. The positive margin is already present in this all-pool control; selecting a pool barely changes it.</p>
+<div class="scroll"><table><tr><th>Matched comparison</th><th>Allocation</th><th>Smallest return</th><th>Largest DD bound</th>
+<th>After two best tokens</th></tr><tr><td>All pools · same two capacity modes</td><td>0.5×</td><td>+0.797014%</td><td>0.641916%</td><td>-0.064853%</td></tr><tr><td>Chosen pool · same two capacity modes</td><td>0.5×</td><td>+0.796994%</td><td>0.641916%</td><td>-0.064872%</td></tr><tr><td>All pools · same two capacity modes</td><td>0.75×</td><td>+1.197876%</td><td>0.941446%</td><td>+0.028328%</td></tr><tr><td>Chosen pool · same two capacity modes</td><td>0.75×</td><td>+1.197856%</td><td>0.941446%</td><td>+0.028309%</td></tr></table></div>
+<p><a href="pool_matched_runs/37670c55140375aa/settings.json">Matching definitions</a> · <a href="pool_matched_runs/37670c55140375aa/comparisons.jsonl.gz">All matched accounts</a> ·
+<a href="pool_matched_runs/37670c55140375aa/results.json">Matched minima and differences</a>.</p><h3>Remove every possible token pair</h3>
+<p>166,400 exhaustive removals cover 5,200 opportunity universes for every initially passing
+route/allocation, plus the half-allocation version of the route selected by the earlier risk ranking. Universes include potential
+entries skipped by the original account. This preserves the effect of freed cash, occupancy and daily budget.</p>
+<div class="scroll"><table><tr><th>Pool rule</th><th>Allocation</th><th>Smallest return after any pair</th></tr><tr><td>15s lookback · 0% minimum share</td><td>0.5×</td><td>-0.0649%</td></tr><tr><td>15s lookback · 0% minimum share</td><td>0.75×</td><td>+0.0283%</td></tr><tr><td>15s lookback · 75% minimum share</td><td>0.75×</td><td>+0.0283%</td></tr><tr><td>15s lookback · 90% minimum share</td><td>0.75×</td><td>+0.0283%</td></tr><tr><td>15s lookback · 95% minimum share</td><td>0.75×</td><td>+0.0283%</td></tr><tr><td>30s lookback · 0% minimum share</td><td>0.75×</td><td>+0.0283%</td></tr><tr><td>30s lookback · 75% minimum share</td><td>0.75×</td><td>+0.0283%</td></tr><tr><td>30s lookback · 90% minimum share</td><td>0.75×</td><td>+0.0283%</td></tr><tr><td>30s lookback · 95% minimum share</td><td>0.75×</td><td>+0.0283%</td></tr><tr><td>60s lookback · 0% minimum share</td><td>0.75×</td><td>+0.0283%</td></tr><tr><td>60s lookback · 75% minimum share</td><td>0.75×</td><td>+0.0283%</td></tr><tr><td>60s lookback · 90% minimum share</td><td>0.75×</td><td>+0.0283%</td></tr><tr><td>60s lookback · 95% minimum share</td><td>0.75×</td><td>+0.0283%</td></tr></table></div>
+<p>The audit checks each pair exactly once against a scalar opportunity universe. The tester computes
+30,700 accounts and reuses 135,700 only when every account input
+and the entire normalized price-path digest agree. Matching base ledgers alone is insufficient for reuse.</p>
+<p><a href="pool_route_pair_runs/9983a565c6852c8b/declaration.json">Pair-study declaration</a> · <a href="pool_route_pair_runs/9983a565c6852c8b/universes.json">Complete opportunity universes</a> ·
+<a href="pool_route_pair_runs/9983a565c6852c8b/pairs.jsonl.gz">Every pair ledger</a> · <a href="pool_route_pair_runs/9983a565c6852c8b/results.json">Pair minima and risk selections</a> ·
+<a href="pool_route_pair_runs/9983a565c6852c8b/pair_audit.json">Independent pair audit</a>.</p><h3>Check capacity again at the modeled sale</h3>
+<p>A separate diagnostic inspects all 10,800 original accounts at 10% proceeds cost. Their 91,800
+repeated trade usages collapse to 9,260 distinct sale cases, with 130
+independently checked exit-time volume estimates. The comparison uses the same participation fraction of economic volume over
+60 seconds ending five seconds before each modeled sale. It does not reject historical entries using later information.</p>
+<p>401 distinct sale cases exceed or lack this capacity proxy; 1,672
+have a higher exit-time gas/MEV estimate than half the modeled round-trip fee. Among chosen-pool cases specifically, these counts are
+161 and 656. These cases remain repeated scenarios on the same tokens,
+not independent observations. No adjusted return or actual fill is claimed.</p>
+<p><a href="exit_capacity_runs/bda9d7cbbf30c386/settings.json">Diagnostic definitions</a> · <a href="exit_capacity_runs/bda9d7cbbf30c386/sale_cases.json">Every distinct sale case</a> ·
+<a href="exit_capacity_runs/bda9d7cbbf30c386/results.json">Capacity and fee findings</a>.</p>
+<h2>How strongly should position size follow the saved factors?</h2>
+<p>This separate study keeps the earlier 3× one-second-high exit trigger and five-minute timeout. It changes the response to the saved
+volatility/cohort sizing factor, while preserving entry masks, reference histories, capacity, fees and the 1% daily full-loss budget.</p>
+<p>For a valid positive factor <em>f</em>, the new factor is <code>clip(1 + a × (f − 1), 0.1, 1.5)</code>.
+The seven strengths <em>a</em> range from 0 to 1.5. Zero makes valid factors constant at one; actual order sizes still depend on capital,
+capacity and the daily budget. One preserves the old arrays exactly. Larger values strengthen the original variation within the same
+factor bounds. Missing and invalid factors never become eligible.</p>
+<p>63,000 accounts cross all three price sources, both allocations and the previous flow/history/population/execution
+controls. The declaration at 2026-10-21T14:59:50.801660+00:00 precedes this sweep. Each row below gives
+separate extrema over 900 controls at a 10% proceeds haircut plus estimated fees. The initial screen requires at least eight trades and
+positive returns in the base account and both concentration removals.</p>
+<div class="scroll"><table><tr><th>Strength a</th><th>Allocation</th><th>Smallest return</th><th>Largest DD bound</th>
+<th>After two best tokens</th><th>After best entry day</th><th>Fewest trades</th><th>Initial screen</th></tr><tr><td>0</td><td>0.5×</td><td>+0.926%</td><td>1.366%</td><td>-0.4362%</td><td>+0.137%</td><td>8</td><td>Fail</td></tr><tr><td>0</td><td>0.75×</td><td>+0.632%</td><td>1.601%</td><td>-0.4532%</td><td>-0.139%</td><td>8</td><td>Fail</td></tr><tr><td>0.25</td><td>0.5×</td><td>+1.089%</td><td>1.161%</td><td>-0.4624%</td><td>+0.340%</td><td>8</td><td>Fail</td></tr><tr><td>0.25</td><td>0.75×</td><td>+0.827%</td><td>1.454%</td><td>-0.4449%</td><td>+0.048%</td><td>8</td><td>Fail</td></tr><tr><td>0.5</td><td>0.5×</td><td>+1.138%</td><td>0.936%</td><td>-0.3768%</td><td>+0.576%</td><td>8</td><td>Fail</td></tr><tr><td>0.5</td><td>0.75×</td><td>+1.012%</td><td>1.271%</td><td>-0.4364%</td><td>+0.234%</td><td>8</td><td>Fail</td></tr><tr><td>0.75</td><td>0.5×</td><td>+0.938%</td><td>0.738%</td><td>-0.2823%</td><td>+0.470%</td><td>8</td><td>Fail</td></tr><tr><td>0.75</td><td>0.75×</td><td>+1.338%</td><td>1.041%</td><td>-0.2593%</td><td>+0.653%</td><td>8</td><td>Fail</td></tr><tr><td>1</td><td>0.5×</td><td>+0.732%</td><td>0.642%</td><td>-0.1287%</td><td>+0.288%</td><td>8</td><td>Fail</td></tr><tr><td>1</td><td>0.75×</td><td>+1.080%</td><td>0.943%</td><td>-0.0739%</td><td>+0.502%</td><td>8</td><td>Fail</td></tr><tr><td>1.25</td><td>0.5×</td><td>+0.256%</td><td>0.528%</td><td>-0.1207%</td><td>-0.113%</td><td>8</td><td>Fail</td></tr><tr><td>1.25</td><td>0.75×</td><td>+0.415%</td><td>0.791%</td><td>-0.1445%</td><td>-0.050%</td><td>8</td><td>Fail</td></tr><tr><td>1.5</td><td>0.5×</td><td>+0.306%</td><td>0.426%</td><td>-0.0669%</td><td>-0.026%</td><td>8</td><td>Fail</td></tr><tr><td>1.5</td><td>0.75×</td><td>+0.448%</td><td>0.638%</td><td>-0.0468%</td><td>+0.038%</td><td>8</td><td>Fail</td></tr></table></div>
+<figure><a href="allocation_strength_runs/9ac3b5267bfe5ab3/strength_fcb5cd2df3.svg"><img src="allocation_strength_runs/9ac3b5267bfe5ab3/strength_fcb5cd2df3.png" style="width:100%;height:auto"
+alt="Return, drawdown and concentration sensitivity across seven sizing strengths"></a></figure>
+<p>The audit independently reconstructs 94,878 factor values, checks every saved account,
+and reproduces all 9,000 previous accounts when strength equals one.
+Only eight or nine historical trades support these comparisons. The new receipt-time observations retain their earlier rules.</p>
+<p><a href="allocation_strength_runs/9ac3b5267bfe5ab3/declaration.json">Sizing declaration</a> · <a href="allocation_strength_runs/9ac3b5267bfe5ab3/metrics.json">Every sizing comparison</a> ·
+<a href="allocation_strength_runs/9ac3b5267bfe5ab3/portfolios.jsonl.gz">Every ledger</a> · <a href="allocation_strength_runs/9ac3b5267bfe5ab3/strength_audit.json">Factor and account audit</a> ·
+<a href="allocation_strength_runs/9ac3b5267bfe5ab3/strength_fcb5cd2df3_values.json">Figure data</a>.</p>
+<h2>Recheck the full exit catalogue with recorded swap prices</h2>
+<p>168,000 additional accounts extend all 28 existing exit rules to ordinary and unfavorable swap prices.
+The 84,000 vendor-price controls remain bound to their earlier audit. This keeps both saved allocation levels,
+three volume/fee estimates, both reference histories, both original/expanded non-bot populations, 25 execution scenarios,
+5%/10%/15% proceeds haircuts, and concentration removals at 10% cost.</p>
+<p>The selection criteria were saved at 2026-10-21T14:52:21.326290+00:00, before this sweep.
+One rule and allocation must survive all three price sources, with at least eight trades and positive returns after the two best tokens
+or best entry day are removed. Five declared drawdown ceilings range from 0.5% to 2%. <strong>No setting qualifies at any ceiling.</strong></p>
+<div class="scroll"><table><tr><th>Price model considered separately</th><th>Passing rule/allocation combinations</th></tr><tr><td>Vendor candles</td><td>26 / 56</td></tr><tr><td>Recorded swaps</td><td>12 / 56</td></tr><tr><td>Unfavorable prints</td><td>0 / 56</td></tr></table></div>
+<p>All 56 combinations have a negative two-best-token removal in at least one control. The closest margin is -0.0739%.
+That explicit losing pair already disproves an all-pairs-positive claim for each setting, so no additional exhaustive pair search is needed
+to reject this catalogue under the declared criterion. This result concerns the tested catalogue and stresses, not every possible strategy.</p>
+<figure><a href="swap_target_runs/0b6bf67a999c9ecd/grid_fcb5cd2df3.svg"><img src="swap_target_runs/0b6bf67a999c9ecd/grid_fcb5cd2df3.png" style="width:100%;height:auto"
+alt="Two-best-token removal returns for all 28 exit rules under three price models"></a></figure>
+<p>The account cache reused 112,628 exact input matches and computed
+55,372 accounts, finishing in 305.6 seconds. Each source has a separate cache.
+This avoids 67.0% of duplicate account computations; it is not a claim of
+the same percentage reduction in wall-clock time. The independent audit checks all 168,000 records,
+7,392 potential scalar sales, all 6,000 previous swap-price controls and every risk selection.</p>
+<p><a href="swap_target_runs/0b6bf67a999c9ecd/declaration.json">Selection declaration</a> · <a href="swap_target_runs/0b6bf67a999c9ecd/metrics.json">Every comparison</a> ·
+<a href="swap_target_runs/0b6bf67a999c9ecd/portfolios.jsonl.gz">Every ledger</a> · <a href="swap_target_runs/0b6bf67a999c9ecd/swap_target_audit.json">Independent audit</a> ·
+<a href="swap_target_runs/0b6bf67a999c9ecd/grid_fcb5cd2df3_values.json">Figure data</a>.</p>
+<h2>Target confirmation and prices observed in swaps</h2>
+<p><strong>160,200 additional historical account comparisons</strong> keep the three saved daily entry rules, both reference histories,
+both non-bot entry populations, half/three-quarter allocations and a 1% daily full-loss budget. These comparisons reuse the examined dates.
+The price study tests the earlier 3× rule even when its concentration screen fails; it does not select a replacement using the new results.</p>
+<h3>Does waiting for a more persistent target help?</h3>
+<p>84,000 accounts test 2×/3×/4× targets using the high, close or low of 1, 3 or 5 consecutive observed seconds,
+plus a 300-second timeout. Missing seconds reset confirmation. A trigger is observed at the confirming second's close, followed by the
+declared 1/3/5-second reaction delay and the next observed market price within ten seconds. The model never assumes a fill at the target.</p>
+<p>The declaration made before the sweep completed selects the greatest minimum return beneath each drawdown ceiling, subject to the
+sample and concentration requirements. It retains the original 3× one-second-high rule. A one-second-close trigger has the same aggregate
+extrema; longer confirmation does not improve the selected comparison. The table uses three-quarter allocations and separate extrema over
+300 history/population/execution/flow controls at a 10% proceeds haircut plus estimated fees.</p>
+<div class="scroll"><table><tr><th>Exit condition</th><th>Smallest return</th><th>Largest DD bound</th><th>After two best tokens</th><th>Initial screen</th></tr><tr><td>3× high, 1 second</td><td>+1.364%</td><td>0.943%</td><td>+0.1494%</td><td>Pass</td></tr><tr><td>3× high, 3 seconds</td><td>+1.255%</td><td>0.943%</td><td>+0.1494%</td><td>Pass</td></tr><tr><td>3× close, 1 second</td><td>+1.364%</td><td>0.943%</td><td>+0.1494%</td><td>Pass</td></tr><tr><td>3× close, 3 seconds</td><td>+1.016%</td><td>0.993%</td><td>+0.1494%</td><td>Pass</td></tr><tr><td>3× low, 5 seconds</td><td>+0.984%</td><td>1.158%</td><td>-0.0815%</td><td>Fail</td></tr><tr><td>300-second timeout only</td><td>+0.984%</td><td>1.158%</td><td>-0.0815%</td><td>Fail</td></tr></table></div>
+<p>The 28,800 exhaustive pair replays retain both original allocation controls and the strict five-second-low
+diagnostic. The latter reaches -0.0815% after a pair removal. All 84,000 saved
+target accounts were checked, including 3,696 potential scalar sales and 3,000 earlier control ledgers.</p>
+<h3>Replace candle fills with recorded swap prices</h3>
+<p>Complete transaction pages cover all eleven potential entry opportunities, including those skipped by a full account. The independent
+audit decodes 17,491 raw rows and rebuilds 3,215 seconds from
+17,087 valid target-token swaps. Every one of the 171 modeled price points
+has a swap in that second; 128 have a price within 1%, and 170
+within 5%. The largest closest-price discrepancy is 5.85%.</p>
+<p>9,000 replays compare the vendor candles, candles rebuilt from time-ordered swap prices, and an adverse stress that
+buys at the entry second's highest print and sells at the exit second's lowest print. The adverse case is a hindsight price bound within each
+fill second, not an order-placement rule. Entry features stay fixed to isolate the effect of execution prices. Earlier capacity and fee controls remain.</p>
+<div class="scroll"><table><tr><th>Price model</th><th>Allocation</th><th>Smallest return</th><th>Largest DD bound</th><th>After any token pair</th><th>Fewest trades</th></tr><tr><td>Vendor candles</td><td>0.5×</td><td>+0.972%</td><td>0.630%</td><td>+0.0592%</td><td>8</td></tr><tr><td>Vendor candles</td><td>0.75×</td><td>+1.364%</td><td>0.943%</td><td>+0.1494%</td><td>8</td></tr><tr><td>Recorded swap candles</td><td>0.5×</td><td>+0.919%</td><td>0.629%</td><td>-0.0029%</td><td>8</td></tr><tr><td>Recorded swap candles</td><td>0.75×</td><td>+1.362%</td><td>0.941%</td><td>+0.0700%</td><td>8</td></tr><tr><td>Entry-second high / exit-second low</td><td>0.5×</td><td>+0.732%</td><td>0.642%</td><td>-0.1287%</td><td>8</td></tr><tr><td>Entry-second high / exit-second low</td><td>0.75×</td><td>+1.080%</td><td>0.862%</td><td>-0.0739%</td><td>8</td></tr></table></div>
+<p>The recorded-swap model at three-quarter allocation retains +0.0700% after its worst pair removal.
+The adverse model fails that check at both allocations. Lower drawdown in one stress row is not a guarantee of lower future risk:
+changed entry prices also alter target timing and subsequent account decisions, and each column reports a separate scenario extremum.</p>
+<figure><a href="execution_price_pair_runs/a5a5c06bd9d1c0e8/execution_8b659ad73e.svg"><img src="execution_price_pair_runs/a5a5c06bd9d1c0e8/execution_8b659ad73e.png"
+style="width:100%;height:auto" alt="Target confirmation and recorded swap price sensitivity at three-quarter allocation"></a></figure>
+<p>The second pair study checks all 38,400 removals across 1,200 complete opportunity universes,
+including all failed settings. Its audit compares every stored ledger and minimum. Price caches are separated by source.
+These swaps may come from different pools; an observed print does not establish an executable route for a new order of the modeled size.</p>
+<p><a href="confirmed_target_runs/96694f20f95c2f74/metrics.json">All target comparisons</a> ·
+<a href="confirmed_target_runs/96694f20f95c2f74/confirmation_audit.json">Target audit</a> ·
+<a href="confirmed_target_runs/96694f20f95c2f74/pair_selection.json">Predeclared selection</a> ·
+<a href="confirmed_target_pair_runs/7109fbf2cf2f22be/pair_audit.json">Target pair audit</a> ·
+<a href="execution_trade_runs/c086dd62f77f03fa/price_points.json">Every price-point comparison</a> ·
+<a href="execution_price_runs/8f1bef0d6d9c23e9/metrics.json">All price comparisons</a> ·
+<a href="execution_price_runs/8f1bef0d6d9c23e9/price_audit.json">Independent swap-price audit</a> ·
+<a href="execution_price_pair_runs/a5a5c06bd9d1c0e8/pairs.jsonl.gz">Every price pair ledger</a> ·
+<a href="execution_price_pair_runs/a5a5c06bd9d1c0e8/pair_audit.json">Price pair audit</a> ·
+<a href="execution_price_pair_runs/a5a5c06bd9d1c0e8/execution_8b659ad73e_values.json">Figure data</a>.</p>
+<h2>Frozen observation of the non-bot candidates</h2>
+<p>The new protocol was frozen at 2026-10-21T15:34:55.468+00:00, before capture readiness at 2026-10-21T15:35:22.530Z.
+It compares half/three-quarter non-bot allocations with first-observed and all-observed caller/contract populations, plus two unfiltered
+half-allocation controls. All six candidates keep the latest saved cap/dip/cohort entry, 3× target, five-minute timeout and 1% daily budget.
+The reference and flow experiments above do not change these frozen rules.</p>
+<p>The context preserves all 1,194 previously audited calls, including repeated arrival calls and their observation deadlines.
+Unobserved gaps remain explicit. The full implementation was hashed before capture; every repeated call receives its own price-series request.
+Market retrieval waits until nine minutes after the 30-minute capture closes. Historical responses are used for a paper replay, not live execution.</p>
+<p>Capture state at report generation: <strong>complete</strong>. No audited result is available yet.</p><h3>Completed source-filter windows</h3><p>Each window retains its own frozen protocol and context. The table counts eligible call observations and account trades across every cost/execution comparison; it does not count independent profitable trades or combine returns.</p><div class='scroll'><table><tr><th>Capture ready at</th><th>Eligible calls</th><th>Comparisons</th><th>Account trades</th><th>Evidence</th></tr><tr><td>2026-10-21T13:59:09.926Z</td><td>25</td><td>24</td><td>0</td><td><a href='arrival_source_protocols/20261021_135905_240102/validation/results.json'>Results</a> · <a href='arrival_source_protocols/20261021_135905_240102/validation/arrival_audit.json'>Audit</a></td></tr><tr><td>2026-10-21T14:53:17.549Z</td><td>22</td><td>24</td><td>0</td><td><a href='arrival_source_protocols/20261021_145308_051950/validation/results.json'>Results</a> · <a href='arrival_source_protocols/20261021_145308_051950/validation/arrival_audit.json'>Audit</a></td></tr></table></div><p><a href="arrival_source_protocols/20261021_153455_468399/protocol.json">Frozen source-filter protocol</a> ·
+<a href="arrival_source_protocols/20261021_153455_468399/validation/validator_manifest.json">Pinned validator</a> · <a href="live_message_captures/20261021T153519336Z_48f1682d/protocol.json">Capture protocol</a>.</p>
+<h2>Reference history and transaction conditions at entry</h2>
+<p>Two separate follow-ups retain the three saved daily entries, non-bot entry accounts, a 3× full-position target, a five-minute
+timeout, and a 1% daily full-loss budget. Half and three-quarter saved allocations remain fixed. The studies use previously examined dates;
+their apparent improvements are not combined into a newly optimized result.</p>
+<h3>Which completed calls should define market conditions?</h3>
+<p>The reference study crosses three account sources, five maximum reference ages and four matching rules: global, same chain,
+same cap bucket, or both. The cap edges are $6k, $10k, $25k, $50k, $100k, $250k and $1m. Reference age is measured from completion of
+the reference's three-minute outcome to the target's feature time. All references require recoverable text, exclude the target contract,
+and finish strictly before the feature is observed. Source selection chooses the first eligible call for a contract before examining its outcome.</p>
+<p>30,000 accounts cover all 60 reference definitions, both call populations, two allocations, 25 execution scenarios,
+three cost haircuts, and concentration removals at 10% cost. Only the unrestricted global histories from all recoverable accounts or
+non-bot accounts pass the full screen at both allocations. The screen requires at least eight trades in every control and positive returns
+after removing the two best tokens or the best entry day. Same-chain references can have higher returns but fewer than eight trades.
+Freshness and cap matching do not pass this complete criterion.</p>
+<p>The following extrema span both original/expanded entry populations and 25 execution scenarios at a 10% proceeds haircut plus fees.
+Non-bot references slightly improve the result. This changes the source of the market-condition estimate, separately from filtering the entry caller.</p>
+<div class="scroll"><table><tr><th>Measurement</th><th>Allocation</th><th>Smallest return</th><th>Largest DD bound</th><th>After any token pair</th><th>Fewest trades</th></tr><tr><td>All recoverable references</td><td>0.5×</td><td>+0.998%</td><td>0.630%</td><td>+0.0849%</td><td>8</td></tr><tr><td>All recoverable references</td><td>0.75×</td><td>+1.411%</td><td>0.943%</td><td>+0.1881%</td><td>8</td></tr><tr><td>Non-bot references</td><td>0.5×</td><td>+1.052%</td><td>0.630%</td><td>+0.1390%</td><td>8</td></tr><tr><td>Non-bot references</td><td>0.75×</td><td>+1.482%</td><td>0.943%</td><td>+0.2692%</td><td>8</td></tr></table></div>
+<h3>Use transactions from just before the planned entry</h3>
+<p>Earlier accounts size against a 60-second volume and fee estimate measured near the original call. The delayed entry can make that
+estimate stale. New complete transaction windows cover all 11 potentially eligible opportunities, including calls the
+full account skips. 4,057 raw rows across 11 requests supply four entry-delay cases.</p>
+<p>The entry-time estimate ends five seconds before the scheduled entry plus its declared delay. Capacity is still 0.5% or 1% of prior
+economic volume, with at least five swaps, and fees are twice prior median gas/MEV. The conservative comparison requires both estimates,
+uses their smaller capacity and charges their higher fee. Source message timestamps and price paths remain intact.</p>
+<p>The 3,000 accounts cross both reference-history controls, both call populations, two allocations, 25 execution scenarios,
+5%/10%/15% haircuts, and concentration removals at 10% cost. The table gives separate return and drawdown extrema across 100 controls
+per row at 10% cost. The higher pre-entry result is not a claim that this liquidity estimate measures executable AMM depth.</p>
+<div class="scroll"><table><tr><th>Measurement</th><th>Allocation</th><th>Smallest return</th><th>Largest DD bound</th><th>After any token pair</th><th>Fewest trades</th></tr><tr><td>Call-time flow</td><td>0.5×</td><td>+0.972%</td><td>0.630%</td><td>+0.0592%</td><td>8</td></tr><tr><td>Call-time flow</td><td>0.75×</td><td>+1.373%</td><td>0.943%</td><td>+0.1494%</td><td>8</td></tr><tr><td>Pre-entry flow</td><td>0.5×</td><td>+1.205%</td><td>0.630%</td><td>+0.1184%</td><td>8</td></tr><tr><td>Pre-entry flow</td><td>0.75×</td><td>+1.815%</td><td>0.943%</td><td>+0.2506%</td><td>8</td></tr><tr><td>Smaller capacity / higher fee</td><td>0.5×</td><td>+0.992%</td><td>0.630%</td><td>+0.1013%</td><td>8</td></tr><tr><td>Smaller capacity / higher fee</td><td>0.75×</td><td>+1.364%</td><td>0.943%</td><td>+0.2124%</td><td>8</td></tr></table></div>
+<figure><a href="followup_pair_runs/2536d242cf7fae96/followup_0aecdcd5f1.svg"><img src="followup_pair_runs/2536d242cf7fae96/followup_0aecdcd5f1.png" style="width:100%;height:auto"
+alt="Separate historical reference and pre-entry transaction comparisons at three-quarter allocation"></a></figure>
+<p>The follow-up pair study enumerates 16,000 token-pair removals across 500 complete universes.
+Every pair is checked, including contracts skipped in the base account. All reported pair margins remain positive.
+The reference audit reconstructs 3,795,120 feature values and all 30,000
+accounts. The flow audit independently decodes raw trade legs, nets route quantities and reconstructs every capacity/fee input,
+then checks all 3,000 accounts. Together they reproduce 1,000 earlier control ledgers exactly.</p>
+<p>Eight or nine historical trades and repeated searches on the same dates remain the main evidence limit. Drawdown bounds describe
+these modeled accounts; they are not future loss guarantees. Prospective source-filter observation is reported separately below.</p>
+<p><a href="reference_filter_runs/70bba72c2f2987ea/metrics.json">Every reference comparison</a> · <a href="reference_filter_runs/70bba72c2f2987ea/reference_audit.json">Reference audit</a> ·
+<a href="delayed_flow_runs/c12ced6c070e710c/metrics.json">Every flow comparison</a> · <a href="delayed_flow_runs/c12ced6c070e710c/delayed_flow_audit.json">Raw-flow audit</a> ·
+<a href="followup_pair_runs/2536d242cf7fae96/pairs.jsonl.gz">Every pair ledger</a> · <a href="followup_pair_runs/2536d242cf7fae96/pair_audit.json">Pair audit</a> ·
+<a href="followup_pair_runs/2536d242cf7fae96/followup_0aecdcd5f1_values.json">Figure data</a>.</p>
+<h2>Caller category improves the historical risk comparison</h2>
+<p>The new study applies four caller filters to the exact earlier daily entries: non-bot senders, bot senders, bot replies linked to verified
+requests from non-bot accounts, and non-bot senders plus those requested scans. The filter uses Telegram's bot-account flag; a non-bot account may still
+use automation. Request attribution uses the previously audited parent message, full address, timestamps and same-chat reply header.</p>
+<p>All four original/expanded and all/recoverable-text populations remain, with both original and recoverable reference histories,
+35 allocation/budget settings, 2×/3× targets, 25 execution scenarios and 5%/10% proceeds haircuts plus fees.
+This produces 224,000 portfolios, including 112,000 base comparisons and matching concentration replays.</p>
+<p>There are 205 policy/history/population combinations passing every initial scenario and concentration check with
+at least eight trades, representing 65 distinct observed ledger sets. Non-bot portfolios pass with both
+all-text and recoverable-text entry populations. Their executed trades happen to have recovered text, so an explicit text-recovery entry filter
+is unnecessary for those ledgers. The reference-history controls still carry their stated historical data limitations.</p>
+<p>Bot-only and requested-bot-only settings do not pass the full criterion. Some have positive unablated returns, so this is evidence of
+concentration sensitivity in this sample, rather than proof that every future bot call has negative expected value.
+Adding requested scans to non-bot posts passes some recoverable-text cases but fails the all-text controls.</p>
+<h3>A common policy across all four controls</h3>
+<p>The next comparison requires the same target and sizing policy to pass both reference histories and both original/expanded non-bot
+call sets. 21 settings satisfy that requirement. Eight declared drawdown ceilings, from 0.25% to 5%, select the
+largest minimum return below each ceiling; the preceding half-size/1%-budget comparison is also retained. None of these grid settings meets the 0.25% ceiling.</p>
+<p>Six distinct settings are selected. All use a 3× full-position target, a five-minute timeout and no initial price stop.
+The table gives separate extrema across 100 history/population/execution combinations at a 10% proceeds haircut plus estimated fees.
+The allocation multiplier applies to the three different saved daily entry/sizing procedures described below.</p>
+<div class="scroll"><table><tr><th>Allocation multiplier</th><th>Daily full-loss budget</th><th>Smallest return</th>
+<th>Largest DD bound</th><th>Smallest return after any token pair</th></tr><tr><td>0.25×</td><td>Saved daily budgets</td><td>+0.489%</td><td>0.345%</td><td>+0.0164%</td></tr><tr><td>0.5×</td><td>1%</td><td>+0.972%</td><td>0.630%</td><td>+0.0592%</td></tr><tr><td>0.75×</td><td>1%</td><td>+1.373%</td><td>0.943%</td><td>+0.1494%</td></tr><tr><td>1.5×</td><td>1%</td><td>+1.655%</td><td>1.033%</td><td>+0.0485%</td></tr><tr><td>1.5×</td><td>2%</td><td>+2.404%</td><td>1.876%</td><td>+0.0767%</td></tr><tr><td>2×</td><td>2%</td><td>+2.863%</td><td>2.057%</td><td>+0.0097%</td></tr></table></div>
+<p>The 0.75× allocation with a 1% budget gives the highest minimum return among the settings whose modeled drawdown stays below 1%.
+At the larger allocations, some pair-removal margins are less than 0.01%. These are historical risk/return comparisons; the drawdown
+ceilings are not guarantees or live account stop rules.</p>
+<p>Every possible pair is removed from each full eligible contract universe, including contracts the original account may skip.
+The 19,200 pair replays span 600 universes and remain positive throughout.
+Their independent audit reconstructs every universe, checks pair completeness, recalculates every account and verifies each stored minimum ledger.</p>
+<figure><a href="fixed_source_pair_runs/939235639ea5e6ef/caller_risk_8ed51e6e61.svg"><img src="fixed_source_pair_runs/939235639ea5e6ef/caller_risk_8ed51e6e61.png"
+style="width:100%;height:auto" alt="Caller-category risk comparison and six allocation choices under joint history and population controls"></a></figure>
+<p>The source audit independently rebuilds 1,506 sender flags and
+602 accepted request links. It checks all 224,000 ledgers,
+1,476,782 executed-trade calculations and 19,688 complete admission replays.
+All planned observation windows are complete.</p>
+<p>Clock bounds allow the tester to reuse 77,000 equivalent replays. Runtime falls from 89.2 to
+71.4 seconds. All 112,000 metric rows and all 224,000
+complete portfolio records exactly match the unpruned run. The bounds and every reused membership/factor class are checked separately.</p>
+<p>These caller filters were investigated after examining the earlier results. Eight or nine trades, shared winners and repeated use of
+the same dates do not establish a durable edge or an optimum. The earlier observation window had zero trades and supplies
+no return evidence for this new caller filter.</p>
+<p><a href="fixed_entry_source_runs/1cac24f915ec063b/metrics.csv">All caller-category comparisons</a> ·
+<a href="fixed_entry_source_runs/1cac24f915ec063b/portfolios.jsonl.gz">Every saved ledger</a> ·
+<a href="fixed_entry_source_runs/1cac24f915ec063b/source_audit.json">Independent source audit and cache parity</a> ·
+<a href="fixed_source_pair_runs/939235639ea5e6ef/settings.json">Joint selection rules</a> ·
+<a href="fixed_source_pair_runs/939235639ea5e6ef/pairs.csv">Every token-pair replay</a> ·
+<a href="fixed_source_pair_runs/939235639ea5e6ef/pair_audit.json">Independent pair audit</a> ·
+<a href="fixed_source_pair_runs/939235639ea5e6ef/caller_risk_8ed51e6e61_values.json">Figure data</a>.</p>
+<h2>Frozen short-target replay on observed message versions</h2>
+<p>The trading protocol froze at 2026-10-21T13:07:25.426+00:00. The bounded capture then ran from
+2026-10-21T13:07:40.157Z to 2026-10-21T13:17:40.163Z. It preserved
+63 eligible originals, including 6 later edited messages.
+Extraction produced 22 token signals across 8 contracts; 0
+first mentions appeared in later edits. Signal availability is the local receipt timestamp. Later edits never replace an earlier signal.</p>
+<p>The unchanged entry requires quoted cap $50k–$250k, a 10–25% decline in the first complete clock minute, and a last-five mean
+of completed other-contract reference outcomes of at least −10%. Entry follows one additional minute. The full position exits at
+the next modeled fill after a 3× trigger or a five-minute timeout. No fixed price stop or trailing stop applies.</p>
+<p>The primary candidate uses the first valid observed call for each caller/contract and a 2.5% base allocation weighted by volatility.
+Two controls admit repeated calls at 2.5% or 1.25%. Every candidate has a 1% daily full-loss budget, one open position and one purchase
+per contract. Historical volume participation and fee estimates still limit entries. These rules were not retuned after the window.</p>
+<p><strong>Documented acquisition correction.</strong> The reused collector fetched minute candles only for the first caller/contract call, omitting 5 repeated-call series. The initial 12-call replay is preserved. After identifying this implementation error, a separate replay adds every missing series, retaining all original quotes, existing series, the original market cutoff and the identical trading-protocol hash. This is a correction of the same observation, not another independent window. <a href="arrival_protocols/20261021_130725_426526/implementation_corrections/9f0fda5c6b7ca095/correction.json">Correction and acquisition manifest</a>.</p>
+<p>Both historical quote and swap timestamps must precede receipt and be no more than 60 seconds old.
+There are 17 valid-quote calls and 5 excluded quotes, with 0 calls meeting the entry/cohort conditions.
+Of the valid calls, 7 pass the cap range, 1 pass the dip condition,
+and 0 pass both. There are 14 first observed caller/contract calls.
+All 1,130 fixed-context calls are preserved. The gap between context retrieval and capture readiness remains unobserved;
+first-call membership refers to this observed history. New completed-minute features are reconstructed from positive-volume second bars.</p>
+<div class="scroll"><table><tr><th>Candidate</th><th>Execution scenario</th><th>Proceeds haircut</th><th>Return</th>
+<th>DD bound</th><th>Trades</th></tr><tr><td>primary_first_half</td><td>Base</td><td>5%</td><td>+0.000%</td><td>0.000%</td><td>0</td></tr><tr><td>primary_first_half</td><td>Base</td><td>10%</td><td>+0.000%</td><td>0.000%</td><td>0</td></tr><tr><td>primary_first_half</td><td>Base</td><td>15%</td><td>+0.000%</td><td>0.000%</td><td>0</td></tr><tr><td>combined_half</td><td>Base</td><td>5%</td><td>+0.000%</td><td>0.000%</td><td>0</td></tr><tr><td>combined_half</td><td>Base</td><td>10%</td><td>+0.000%</td><td>0.000%</td><td>0</td></tr><tr><td>combined_half</td><td>Base</td><td>15%</td><td>+0.000%</td><td>0.000%</td><td>0</td></tr><tr><td>combined_quarter</td><td>Base</td><td>5%</td><td>+0.000%</td><td>0.000%</td><td>0</td></tr><tr><td>combined_quarter</td><td>Base</td><td>10%</td><td>+0.000%</td><td>0.000%</td><td>0</td></tr><tr><td>combined_quarter</td><td>Base</td><td>15%</td><td>+0.000%</td><td>0.000%</td><td>0</td></tr><tr><td>primary_first_half</td><td>5s entry/reaction, half volume</td><td>10%</td><td>+0.000%</td><td>0.000%</td><td>0</td></tr><tr><td>combined_half</td><td>5s entry/reaction, half volume</td><td>10%</td><td>+0.000%</td><td>0.000%</td><td>0</td></tr><tr><td>combined_quarter</td><td>5s entry/reaction, half volume</td><td>10%</td><td>+0.000%</td><td>0.000%</td><td>0</td></tr></table></div>
+<p>No frozen candidate traded. This window provides no return or drawdown evidence. Market data was retrieved after the price windows matured. This is a frozen-rule replay on prospectively observed
+message versions; it does not measure actual historical API delivery latency, executable AMM prices or transaction success.</p>
+<p>The independent audit verifies all signal-version links and quote decisions, rebuilds minute features from raw second bars,
+checks scalar cohort histories, perturbs future values and independently recalculates every paper account.</p>
+<p><a href="arrival_protocols/20261021_130725_426526/protocol.json">Frozen trading protocol</a> ·
+<a href="arrival_protocols/20261021_130725_426526/implementation_corrections/9f0fda5c6b7ca095/validation/validator_manifest.json">Validator and declared pre-market revision</a> ·
+<a href="live_message_captures/20261021T130737288Z_f62bfed9/arrival_mentions/db6a0a9cf8c0c65f/signals.json">Observed signal identities</a> ·
+<a href="arrival_protocols/20261021_130725_426526/implementation_corrections/9f0fda5c6b7ca095/validation/results.json">All calls, exclusions and ledgers</a> ·
+<a href="arrival_protocols/20261021_130725_426526/implementation_corrections/9f0fda5c6b7ca095/validation/call_decisions.csv">Per-call entry decisions</a> ·
+<a href="arrival_protocols/20261021_130725_426526/implementation_corrections/9f0fda5c6b7ca095/validation/arrival_audit.json">Independent arrival replay audit</a>.</p>
+<h2>Smaller positions improve historical concentration tolerance</h2>
+<p>Seven multipliers on the saved daily allocations, from 0.125× to 2×, combine with five daily-budget settings.
+The study retains both 2× and 3× targets, both reference-history populations, original and expanded calls, and controls that include
+unavailable original text. It runs 56,000 portfolios in 40.8 seconds using cached prices and flow.
+There are 28,000 base portfolios and 28,000 token/day-removal replays. Every planned observation window is complete.</p>
+<p>Nine policy/history combinations pass all 25 execution scenarios and both initial concentration checks at a 10% proceeds haircut
+plus fees. They represent 6 distinct observed ledger sets. All use a 3× target, a five-minute timeout,
+and nine original calls whose text was recovered. Before caller-category filtering, none of the settings using all original text states or expanded calls passes every check.</p>
+<p>The table reports minima and maxima across scenarios, not one jointly observed account path. The allocation multiplier applies
+to the three different saved daily policies described below. The budget caps the amount that could be lost at purchase; it is not an intratrade
+price stop. All rows are retrospective comparisons on the same three dates.</p>
+<div class="scroll"><table><tr><th>Reference history</th><th>Allocation multiplier</th><th>Daily budget</th>
+<th>Minimum return</th><th>Maximum DD bound</th><th>Minimum after any token pair</th><th>Minimum without best day</th></tr><tr><td>Original</td><td>0.75×</td><td>1%</td><td>+1.291%</td><td>0.922%</td><td>+0.055%</td><td>+0.510%</td></tr><tr><td>Original</td><td>1×</td><td>1%</td><td>+1.493%</td><td>1.033%</td><td>+0.013%</td><td>+0.664%</td></tr><tr><td>Recoverable</td><td>0.5×</td><td>Saved daily policy</td><td>+0.930%</td><td>0.671%</td><td>+0.017%</td><td>+0.277%</td></tr><tr><td>Recoverable</td><td>0.5×</td><td>None</td><td>+0.930%</td><td>0.671%</td><td>+0.017%</td><td>+0.277%</td></tr><tr><td>Recoverable</td><td>0.5×</td><td>1%</td><td>+0.934%</td><td>0.630%</td><td>+0.022%</td><td>+0.312%</td></tr><tr><td>Recoverable</td><td>0.5×</td><td>2%</td><td>+0.930%</td><td>0.671%</td><td>+0.017%</td><td>+0.277%</td></tr><tr><td>Recoverable</td><td>0.5×</td><td>4%</td><td>+0.930%</td><td>0.671%</td><td>+0.017%</td><td>+0.277%</td></tr><tr><td>Recoverable</td><td>0.75×</td><td>1%</td><td>+1.329%</td><td>0.943%</td><td>+0.094%</td><td>+0.538%</td></tr><tr><td>Recoverable</td><td>1×</td><td>1%</td><td>+1.532%</td><td>1.033%</td><td>+0.050%</td><td>+0.702%</td></tr></table></div>
+<p>Removing the two highest recorded profits can miss budget-driven changes in later purchases. A second study therefore enumerates
+all 36 pairs from each nine-contract eligible universe in every scenario, including contracts that an account might skip.
+All 8,100 pair portfolios remain positive. The smallest margins are only a few hundredths of a percent.</p>
+<p>One traded signal has unavailable original text: KIM from the scan bot. Including it changes some pass/fail results. These controls
+measure numerical sensitivity; they cannot establish that an edited-away address was available at the historical entry time.
+Text recovery is not a deployable rule for excluding future edits.</p>
+<figure><a href="fixed_entry_size_runs/4bc799c236dfe4bf/sizing_24e6c0ae41.svg"><img src="fixed_entry_size_runs/4bc799c236dfe4bf/sizing_24e6c0ae41.png"
+style="width:100%;height:auto" alt="Sizing return and drawdown comparisons, plus concentration sensitivity for four call populations"></a></figure>
+<p>The audit checks every one of the 56,000 saved ledgers, including
+528,959 trade calculations. Separate admission replays cover
+1,771 portfolios. The exhaustive-pair audit independently replays all
+8,100 accounts and rebuilds their eligible universes. A large number of correlated replays does not add independent trading observations.</p>
+<p><a href="fixed_entry_size_runs/4bc799c236dfe4bf/metrics.csv">All base comparisons</a> ·
+<a href="fixed_entry_size_runs/4bc799c236dfe4bf/portfolios.jsonl.gz">All saved ledgers</a> ·
+<a href="fixed_entry_size_runs/4bc799c236dfe4bf/size_audit.json">Sizing audit</a> ·
+<a href="fixed_entry_pair_runs/01a385dd99ab400d/pairs.csv">Every token-pair removal</a> ·
+<a href="fixed_entry_pair_runs/01a385dd99ab400d/pair_audit.json">Independent pair audit</a> ·
+<a href="fixed_entry_size_runs/4bc799c236dfe4bf/sizing_24e6c0ae41_values.json">Figure data</a>.</p>
+<h2>Earlier fixed entries with short exits: a promising historical comparison</h2>
+<p>The earlier saved daily entries are transferred to the expanded call dataset without another entry search. Their exact cohort reference
+remains a three-minute minute-bar paper outcome with a 5% haircut. The original-history control reproduces all earlier entry masks,
+cohort gates and sizing factors, plus the full ten-minute control ledger at three costs. Two other history populations add newly
+eligible first calls and then restrict first calls to recoverable message text.</p>
+<p>The saved daily entries differ: October 18 uses confirmed cap ≥$25k and at least two wins among the last five completed other-token
+references; October 19 uses quoted cap ≥$50k and the same gate; October 20 uses quoted cap $50k–$250k and a last-five mean ≥−10%.
+All require the first complete minute to close 10–25% below the quote, followed by another minute before entry.
+The first two days use 2% allocations weighted by ten prior reference outcomes; the last uses 5% weighted by observed volatility and
+a 4% daily full-loss budget. Liquidity limits, fees, one open position and one purchase per token still apply.</p>
+<p>Six fixed timeouts from 15 to 300 seconds, six shortened versions of the saved trailing exits and four five-minute profit targets
+give 16 exits. There are 576 fixed comparisons and 576 winner/day-removal replays. No short-hold comparison lacks its planned price
+observation window. The table shows the 3× target with a five-minute timeout and no stop; sales occur after a trigger and reaction delay,
+at the next observed price, rather than being guaranteed at exactly 3×. The target was identified retrospectively from the catalog.</p>
+<div class="scroll"><table><tr><th>Call population</th><th>Return, 5% cost</th><th>DD bound, 5%</th><th>Return, 10%</th>
+<th>Without two best tokens, 10%</th><th>Without best day, 10%</th><th>Trades</th></tr><tr><td>Original calls with recoverable text</td><td>+2.98%</td><td>1.21%</td><td>+2.33%</td><td>+0.50%</td><td>+0.87%</td><td>9</td></tr><tr><td>Added calls</td><td>+2.44%</td><td>1.97%</td><td>+1.93%</td><td>-0.16%</td><td>-0.13%</td><td>6</td></tr><tr><td>Combined recoverable calls</td><td>+3.18%</td><td>2.32%</td><td>+2.30%</td><td>+0.47%</td><td>+0.85%</td><td>12</td></tr></table></div>
+<p>The highest-return combined comparison is the plain three-minute timeout at +3.21%, but it loses after removing its two best tokens.
+The 3× five-minute target retains more profit under those baseline concentration checks. These historical comparisons contain only
+nine or twelve trades on three dates, and original-text recovery restricts the sample.</p>
+<p>Recoverable text is a historical data restriction, not a rule that can exclude future edits at entry time. The all-text original-call
+control is retained in the full tables. New arrival captures are needed to evaluate every observed original version without this restriction.</p>
+<p>A further 600 execution portfolios compare added entry delay of 0/2/5/10 seconds, exit reaction of 1/3/5 seconds, half/full volume
+participation, and a $10k account case. All 25 scenarios remain positive at 10% cost for both 2× and 3× targets, under both reference
+history controls. Another 400 concentration replays expose the remaining weakness: for the 3× target with recoverable reference
+history, two-token removal remains positive in 20/25 original-call cases and 11/25 combined-call cases. Worst returns after a
+concentration removal are −0.17% and −0.72%, respectively. Before removal, the minimum scenario returns are +1.52% and +0.96%; the
+largest drawdown bounds are 1.34% and 3.14%.</p>
+<figure><a href="fixed_entry_execution_runs/448c5af9aa62a451/execution_a8c34af676.svg"><img src="fixed_entry_execution_runs/448c5af9aa62a451/execution_a8c34af676.png"
+style="width:100%;height:auto" alt="All 25 execution scenarios, with returns before and after removing two best tokens"></a></figure>
+<p>The feature audit independently rebuilds 1,506 minute references,
+13,554 history selections and 54,216 feature values.
+Future perturbations preserve 293,328 earlier values. Separate debit-at-entry and
+settle-at-exit calculations check all 1,155 transfer portfolios and all 1,000 execution portfolios. Together they check 18,988 trade
+cash calculations and 554 scalar exit checks across the two studies. The execution baseline exactly preserves all 24 matching ledgers.</p>
+<p>These results justify fresh paper observation. They do not establish an optimum or executable AMM returns: the selected exits reuse
+examined dates, and quote-time volume and fee estimates may be stale at entry.</p>
+<p><a href="repeat_fixed_entry_runs/1ef5d7d5b13e70dc/report.html">Every fixed-entry comparison</a> · <a href="repeat_fixed_entry_runs/1ef5d7d5b13e70dc/portfolios.csv">All 576 rows</a> ·
+<a href="repeat_fixed_entry_runs/1ef5d7d5b13e70dc/fixed_entry_audit.json">Independent feature audit</a> ·
+<a href="fixed_entry_execution_runs/448c5af9aa62a451/results.json">Execution scenarios and every ledger</a> ·
+<a href="fixed_entry_execution_runs/448c5af9aa62a451/execution_a8c34af676_values.json">Figure values</a>.</p>
+<h2>Prospective message versions</h2><p>A bounded read-only capture ran from
+2026-10-21T15:35:22.530Z to 2026-10-21T16:05:22.535Z. It recorded 126 new-message updates,
+7 edits and 0 deletion events from this group.
+It preserves 126 eligible observed originals, including 6
+messages subsequently edited during the capture. Initial and final history snapshots are stored separately and are not treated as
+original text available at posting time.</p><p>Each event retains observed receipt time, posting/edit times, version hash and connection
+state. A chained hash audit checks all 338 frames and 333 message-version records.
+The final snapshot contains 100 messages posted during the window, of which 0 lacked a recorded new-message update. Its 100-message limit covers only the end of the window; it cannot reconcile the entire capture. This reconciliation cannot establish
+completeness for deleted messages or missed edits. No strategy was traded or paper-evaluated during the capture.</p>
+<p>Telegram's <a href="https://core.telegram.org/api/updates">update protocol</a> includes sequence state and gap recovery;
+the local SDK handles that transport layer. The saved receipt log records what this collector actually observed.</p>
+<p><a href="live_message_captures/20261021T153519336Z_48f1682d/protocol.json">Frozen capture protocol</a> ·
+<a href="live_message_captures/20261021T153519336Z_48f1682d/versions.json">Observed versions and availability</a> ·
+<a href="live_message_captures/20261021T153519336Z_48f1682d/capture_audit.json">Capture audit</a>.</p>
+<h2>Short windows, dips and recent-token outcomes</h2>
+<p>This study compares 15/30/60-second windows after quote availability with the first full clock minute. Every price feature is rebuilt
+from observed positive-volume second candles. Entries wait 1/15/60 seconds after the window completes; all 32 exit rules hold for
+15–300 seconds. No added call lacks the full requested observation horizon for these catalog settings. Missing entry observations and
+missing sale fills remain separate execution restrictions.</p>
+<p>The same catalog is fitted to 791 original calls with recoverable text,
+all 406 added calls, and their 1,197-call combination.
+Cap bands run from below $3k/$6k/$10k through above $1m. Price filters compare several declines and increases, with activity, range or
+close-position checks. Gates use the last five or ten completed reference outcomes from distinct other contracts. Those references enter
+five seconds after the earliest recoverable quote and hold 60 or 180 seconds; their clipped returns include costs and estimated fees.
+An unavailable first outcome is not replaced with a later success, and the current contract is excluded from its own cohort.</p>
+<p>12,150 entry rules × four observation windows × three waits × 32 exits give
+4,665,600 catalog combinations. Canonical earlier-training masks reduce the work to 3,122,240 stored
+screen rows across four fits, with 48 membership caches. The heuristic shortlist receives
+13,824 full portfolios in 63.28 seconds. Screening scores are not confidence bounds.
+The 36 sizing policies compare flat, observed volatility, active-second fraction and prior-cohort weights,
+with 1%/2.5%/5% allocations and no/2%/4% daily full-loss budgets.</p>
+<div class="scroll"><table><tr><th>Daily selector</th><th>Return, 5% cost</th><th>Drawdown bound</th>
+<th>Return, 10% cost</th><th>Trades</th></tr><tr><td>Original calls · 2% training ceiling</td><td>-2.76%</td><td>4.40%</td><td>-3.92%</td><td>24</td></tr><tr><td>Original calls · 5% training ceiling</td><td>-7.20%</td><td>17.22%</td><td>-11.39%</td><td>26</td></tr><tr><td>Original calls · strict training checks</td><td>-13.47%</td><td>18.43%</td><td>-17.00%</td><td>27</td></tr><tr><td>Added calls · 2% training ceiling</td><td>-2.44%</td><td>3.59%</td><td>-2.82%</td><td>11</td></tr><tr><td>Added calls · 5% training ceiling</td><td>-14.27%</td><td>17.13%</td><td>-16.46%</td><td>12</td></tr><tr><td>Added calls · strict training checks</td><td>-20.27%</td><td>23.42%</td><td>-22.70%</td><td>15</td></tr><tr><td>Combined calls · 2% training ceiling</td><td>-7.43%</td><td>9.90%</td><td>-9.00%</td><td>15</td></tr><tr><td>Combined calls · 5% training ceiling</td><td>-15.98%</td><td>19.73%</td><td>-18.64%</td><td>15</td></tr><tr><td>Combined calls · strict training checks</td><td>-16.03%</td><td>20.11%</td><td>-20.14%</td><td>17</td></tr></table></div>
+<p>Strict selectors require fourteen trades, ten contracts, three trading days and positive training returns after removing two best
+contracts and after removing the best entry day. They pass these checks in later fits and still lose during the following daily replay.
+The smallest observed loss is -2.44% with a 3.59% drawdown bound for the added-call 2% selector. The strict added-call selector loses
+20.27% with a 23.42% drawdown bound. These names describe training constraints; evaluation drawdown can exceed them.</p>
+<figure><a href="repeat_dip_runs/94cde95c139fade5/dip_e14d44d19f.svg"><img src="repeat_dip_runs/94cde95c139fade5/dip_e14d44d19f.png" style="width:100%;height:auto"
+alt="Nine short-window selections lose in the daily replay at two cost settings"></a></figure>
+<p>The raw-data audit checks all 6,024 completed windows and 30,120 price-feature values,
+3,012 scalar reference returns, 12,048 distinct-token history selections and
+48,192 cohort values. Mutating future prices, quote times and message availability preserves
+121,056 earlier feature values. All catalog masks and 24,096 sizing factors are checked.
+The audit independently checks 448 screens including the entire shortlist, reconstructs all four shortlists from
+every saved score, replays 532 sampled training portfolios and all 90 saved
+portfolios, and checks 24 ordinary selection maxima. It verifies 1,823 scalar sales,
+9,274 trade cash/drawdown calculations and all saved training exclusions.</p>
+<p>Original and added calls use the same rebuilt price windows. Across 1,165 recoverable calls with both
+versions, no clock-minute close-return difference exceeds five percentage points relative to the saved minute series. The cohort
+references and timing grid are specific to this study; the earlier saved minute/cohort procedures remain separately reported.
+These dates were already examined. Original-text availability restricts the sample, and pre-quote fees and volume limits may be stale
+at a delayed entry. The fixed candidates and later collected observations are unchanged.</p>
+<p><a href="repeat_dip_runs/94cde95c139fade5/report.html">Short-window study</a> · <a href="repeat_dip_runs/94cde95c139fade5/results.json">Results, stress cases and ledgers</a> ·
+<a href="repeat_dip_runs/94cde95c139fade5/dip_audit.json">Independent audit</a> · <a href="repeat_call_datasets/b231edbc401e6dd92215/dip_context/d56a67b7456db9e3/settings.json">Feature definitions</a> ·
+<a href="repeat_dip_runs/94cde95c139fade5/screens.npz">Compressed screening table</a> · <a href="repeat_dip_runs/94cde95c139fade5/dip_e14d44d19f_values.json">Figure values</a>.</p>
+<h2>Bot replies attributed to their checked requesters</h2>
+<p>All 740 requested Telegram reply headers were retrieved. They corroborate
+602 archived associations to a human parent containing the same full token address, with the parent's
+saved text available by the response. The headers confirm the sender, posting time, parent message ID and same-chat scope.
+304 associations have recoverable original response text for this study, including
+115 of the 232 added bot calls. This attributes a scanner request, not ownership of a token or wallet.</p>
+<p>Only four earlier-quote fields change: count, previous index, time gap and price change for the same attributed requester.
+Unassigned bot replies retain bot identity. Actual human/bot filters, prices, entry times and execution inputs stay the same. The added repeated-call group changes from
+277 to 265 calls: 25 become eligible and
+37 cease to qualify. 331 recoverable calls have a different prior count.
+Equal-time quotes do not provide ordered history.</p>
+<p>The experiment reuses the exact sender-based shortlist selected before each cutoff. It replays every candidate and policy under both
+identities, then applies identical training selection rules. 85,176 portfolios complete in 51.58 seconds;
+all 42,588 original training portfolios and 27 daily portfolios reproduce.
+Requester-specific rules outside that original shortlist are not searched.</p>
+<div class="scroll"><table><tr><th>Daily selector</th><th>Sender return / DD, 5% cost</th><th>Requester return / DD, 5% cost</th>
+<th>Requester return, 10% cost</th><th>Requester trades</th></tr><tr><td>Added calls · 2% training ceiling</td><td>-6.51% / 6.58%</td><td>-3.42% / 4.08%</td><td>-4.09%</td><td>13</td></tr><tr><td>Added calls · 5% training ceiling</td><td>-4.02% / 6.76%</td><td>-9.36% / 10.91%</td><td>-11.63%</td><td>13</td></tr><tr><td>Added calls · strict training checks</td><td>-3.63% / 6.51%</td><td>+0.00% / 0.00%</td><td>+0.00%</td><td>0</td></tr></table></div>
+<p>The seven requester selections that trade all lose at 5%, 10% and 15% costs. Original-call and combined-call daily ledgers are unchanged.
+The strict added-call selection stays in cash on all evaluation days. All 18 checks that remove attribution after
+fitting requester choices reproduce their daily ledgers. The changed results therefore come from training selection, not changed admission
+under those chosen rules on the replay days. With original choices fixed, adding attribution changes the larger added-call return to
+-5.49% and the strict added-call return to -6.10% at 5% cost. Neither is profitable.</p>
+<figure><a href="repeat_requester_runs/776d83dde0c22e9f/requester_7c11d3051e.svg"><img src="repeat_requester_runs/776d83dde0c22e9f/requester_7c11d3051e.png" style="width:100%;height:auto"
+alt="Sender and requester daily replay returns and drawdown bounds"></a></figure>
+<p>The independent audit checks 1,506 attribution decisions, 6,024 requester
+history values, 201,804 entry-mask values, 1,308 scalar sales and
+10,815 trade cash/drawdown calculations. It covers 606 sampled training
+portfolios, 48 ordinary selection maxima, 3,029 stored token exclusions,
+58 day exclusions and all 145 saved portfolios. Future quotes and identities
+preserve earlier history values. Completed data, search and figure commands reuse their saved artifacts without rewriting them.</p>
+<p>These dates were already examined. Unavailable original message versions restrict coverage. Current Telegram metadata corroborates saved
+reply links; it is not a separately collected historical event stream. Field meanings follow the official
+<a href="https://core.telegram.org/constructor/messageReplyHeader">Telegram reply-header documentation</a>.</p>
+<p><a href="repeat_requester_runs/776d83dde0c22e9f/report.html">Paired attribution study</a> · <a href="repeat_requester_runs/776d83dde0c22e9f/results.json">All costs and ledgers</a> ·
+<a href="repeat_requester_runs/776d83dde0c22e9f/requester_audit.json">Independent audit</a> · <a href="repeat_call_datasets/b231edbc401e6dd92215/requester_context/d7ce4967c5b182ba/attribution.json">Exact associations</a> ·
+<a href="repeat_call_datasets/b231edbc401e6dd92215/reply_metadata/cc7af4ac7409dc86/responses.json">Saved reply metadata</a> · <a href="repeat_requester_runs/776d83dde0c22e9f/requester_7c11d3051e_values.json">Figure values</a>.</p>
+<h2>Repeated calls and buying the same token again</h2>
+<p>The original archive contains 618 later sender/contract calls omitted by its first-call compiler.
+576 have usable historical quotes. Of those, 170 have later-edited messages whose original
+contents cannot be recovered. The separate dataset adds 406 calls, including 174 human and 232 bot calls,
+while preserving all 1,100 original calls. It contains 1,506 calls across
+547 contracts. These are additional observations from already examined dates.</p>
+<p>The search uses 1,197 calls with recoverable original messages. The added-call group also requires a strictly
+earlier quote from the same sender, leaving 277 calls. Features describe time since earlier quotes,
+price change since the first/latest/same-sender quote, earlier quote peaks and repeated-sender counts. Equal-time quotes do not supply one
+another with ordered history. Excluding unavailable message versions can bias the sample; it is a data restriction, not a live future-edit filter.</p>
+<p>4,725 entry rules combine those features with cap bands from below $3k through above $1m, actual sender type and
+5/15/30-second entry delays. There are 32 exits with 15–300-second holds, stops, 1.2×/1.5×/2×/3× targets and trailing exits.
+Seven purchase rules allow one, two or three trades per token, compare a two-minute cooldown, or allow another purchase only after a
+profitable or losing completed position. One global position remains. 453,600 entry/exit/delay combinations feed
+42,588 full training portfolios in 33.51 seconds. The screen is a heuristic shortlist.</p>
+<div class="scroll"><table><tr><th>Scope / training selector</th><th>Return, 5% cost</th><th>Drawdown bound</th>
+<th>Return, 10% cost</th><th>Trades</th><th>Repeat purchases</th></tr><tr><td>Original calls · 2% training ceiling</td><td>-1.17%</td><td>1.52%</td><td>-1.50%</td><td>9</td><td>0</td></tr><tr><td>Original calls · 5% training ceiling</td><td>-3.82%</td><td>5.44%</td><td>-5.89%</td><td>9</td><td>0</td></tr><tr><td>Original calls · strict training checks</td><td>+0.00%</td><td>0.00%</td><td>+0.00%</td><td>0</td><td>0</td></tr><tr><td>Later repeated calls · 2% training ceiling</td><td>-6.51%</td><td>6.58%</td><td>-7.26%</td><td>16</td><td>0</td></tr><tr><td>Later repeated calls · 5% training ceiling</td><td>-4.02%</td><td>6.76%</td><td>-6.56%</td><td>13</td><td>0</td></tr><tr><td>Later repeated calls · strict training checks</td><td>-3.63%</td><td>6.51%</td><td>-6.49%</td><td>17</td><td>0</td></tr><tr><td>Combined calls · 2% training ceiling</td><td>-1.75%</td><td>3.95%</td><td>-3.95%</td><td>22</td><td>0</td></tr><tr><td>Combined calls · 5% training ceiling</td><td>-1.73%</td><td>7.21%</td><td>-6.14%</td><td>20</td><td>0</td></tr><tr><td>Combined calls · strict training checks</td><td>-4.08%</td><td>4.61%</td><td>-5.18%</td><td>12</td><td>0</td></tr></table></div>
+<p>The same quote-entry catalog is fitted separately to the original, added and combined call groups. The earlier minute-dip procedures
+are shown in the other sections. These new selectors require positive training returns at both costs and a training drawdown ceiling;
+the strict selectors additionally require enough trades/contracts/dates and positive returns without two best training contracts and
+without the best entry day. Token ranking aggregates every entered trade on that contract. The strict repeated-call and combined-call
+procedures pass those training checks and still lose later. Training drawdown ceilings do not constrain evaluation losses.</p>
+<p>9,794 training policy rows contain repeat purchases at 10% cost. The selected daily portfolios make no repeat purchases:
+most choices allow one purchase, and the selected conditional repeat rule has no qualifying second entry. Forcing one purchase leaves
+all nine 10%-cost daily ledgers unchanged. This does not establish that repeat purchases are always unprofitable.</p>
+<figure><a href="reentry_runs/e7fc4d7d82945bef/reentry_3293dd23c4.svg"><img src="reentry_runs/e7fc4d7d82945bef/reentry_3293dd23c4.png"
+alt="Negative returns and drawdown bounds for the repeated-call study at two cost settings" style="width:100%;height:auto"></a></figure>
+<p>The dataset audit preserves 19 original numeric fields,
+267,300 transaction-feature values and 9 original portfolios.
+It verifies 1,615 reused responses and 19,488 rebuilt minute slots.
+The strategy audit independently checks 19,578 quote-history values, 1,186 sale outcomes,
+11,772 cash/drawdown calculations, 425 screens including the entire shortlist,
+and 77 saved portfolios. An independent account credits proceeds only at the exit event.
+Future quotes and outcomes leave earlier features and entry decisions unchanged.</p>
+<p><a href="reentry_runs/e7fc4d7d82945bef/report.html">Repeated-call study</a> · <a href="reentry_runs/e7fc4d7d82945bef/results.json">Results and ledgers</a> ·
+<a href="reentry_runs/e7fc4d7d82945bef/reentry_audit.json">Strategy audit</a> · <a href="repeat_call_datasets/b231edbc401e6dd92215/dataset_audit.json">Dataset audit</a> ·
+<a href="repeat_call_datasets/b231edbc401e6dd92215/exclusions.json">Every excluded repeated call</a> · <a href="reentry_runs/e7fc4d7d82945bef/reentry_3293dd23c4_values.json">Figure values</a>.</p>
+<h2>Entry waits and added execution delay</h2>
+<p>The search preserves each saved day's entry/cohort filters, exits, sizing and daily budget. It compares waits of
+1/5/15/30/45/60/90 seconds after the first minute is complete. The old procedure waits 60 seconds at that point.
+An additional 0/1/2/5/10 seconds tests delay sensitivity. These are hypothetical market-price fills, not measured execution latency.</p>
+<p>594 earlier-data training portfolios cover 33 distinct waits including stress.
+Ordinary selection maximizes 10%-cost return under a training drawdown ceiling. Selection with the delay requirement
+maximizes the worst 10%-cost result across all five delays and requires every scenario to pass its sample/return/drawdown conditions.
+Each evaluation day's choice uses completed earlier outcomes only. The overall study reuses previously examined dates.</p>
+<div class="scroll"><table><tr><th>Procedure</th><th>Original return / DD</th><th>Retimed return / DD</th><th>Trades</th>
+<th>Worst added delay, 10% cost</th><th>Without two best tokens</th><th>Without best day</th></tr><tr><td>Earlier choices, retimed</td><td>+2.62% / 1.55%</td><td>+2.70% / 2.79%</td><td>10</td><td>+1.12%</td><td>-2.17%</td><td>-1.17%</td></tr><tr><td>Smaller partial sales, retimed</td><td>+2.08% / 0.77%</td><td>+2.56% / 1.12%</td><td>10</td><td>+0.66%</td><td>-0.53%</td><td>-0.02%</td></tr><tr><td>Smaller partial sales, delay requirement</td><td>+2.08% / 0.77%</td><td>+2.55% / 1.12%</td><td>5</td><td>+1.01%</td><td>-0.54%</td><td>-0.03%</td></tr><tr><td>Larger partial sales, retimed</td><td>+2.73% / 1.40%</td><td>+3.68% / 2.40%</td><td>10</td><td>+1.64%</td><td>-1.24%</td><td>-0.22%</td></tr></table></div>
+<p>Return/DD and exclusions use 5% sale costs plus estimated fees, except the explicitly marked 10% column.
+Higher return comes with higher drawdown in these comparisons. The smaller delay-constrained procedure trades only five times.
+All trading selections lose under both concentration exclusions at 5% and 10% costs. These exclusions retain fitted choices and
+observed history while recomputing the portfolio. The stricter selector requires fourteen training trades; the three fits offer
+at most 11, 13 and 11, so it performs zero training winner/day removal checks.</p>
+<figure><a href="entry_wait_runs/577564bbc4f5c41a/entry_wait_bdf44ad546.svg"><img src="entry_wait_runs/577564bbc4f5c41a/entry_wait_bdf44ad546.png"
+alt="Fixed-wait return and drawdown curves for three saved procedures at two cost settings" style="width:100%;height:auto"></a>
+<figcaption>Fixed waits on the same saved daily rules. Selecting the best point after viewing these curves would use evaluation outcomes.</figcaption></figure>
+<p>The audit reproduced 9 original portfolios, 594 training portfolios and
+455 saved evaluation portfolios. It independently checked 36,300 entry fills,
+2,194 sale outcomes, 10,183
+trade cash/drawdown calculations and 45 choices. Altering all post-cutoff prices leaves all
+594 earlier training portfolios unchanged.</p>
+<p><a href="entry_wait_runs/577564bbc4f5c41a/report.html">Timing study</a> · <a href="entry_wait_runs/577564bbc4f5c41a/results.json">Every scenario and ledger</a> ·
+<a href="entry_wait_runs/577564bbc4f5c41a/entry_wait_audit.json">Independent audit</a> · <a href="entry_wait_runs/577564bbc4f5c41a/entry_wait_bdf44ad546_values.json">Figure values</a>.</p><h3>Does the one-position limit skip useful opportunities?</h3>
+<p>An overlap audit reproduces 72 original portfolios from 24 saved procedures at three costs,
+including cash selections. It checks 1,182 eligible outcome calls with both interval lookup and
+an independent scalar traversal. None of the twelve earlier leading procedures has an otherwise eligible, untraded contract
+while another position is open. Additional position slots therefore do not change those saved entries.</p>
+<p>Two losing short-hold procedures each have one possible extra call at 5% cost, on the same token. No additions occur at 10% or 15% cost.
+These counts omit cash and daily-reserve checks, so they are upper bounds on extra trades. No concurrent return is inferred.
+<a href="position_overlap_runs/b0f4559d360ae242/report.html">Overlap evidence and per-call reasons</a>.</p>
+<h2>Human attention, repeated quotes and 15–300-second exits</h2>
+<p>The archive contains 2,141 exact contract-address mentions across message bodies and entity URLs,
+including 758 non-forwarded mentions from non-bot user accounts. Their authors are counted
+once per rolling window. A requester and a scanner replying to them therefore contribute only one human author.</p>
+<p>Counts use every archived message, including messages without usable market quotes. They are fixed when the current
+quote became available, before the entry delay. The saved text of 615 edited mention events
+is available only at the later edit timestamp; earlier versions cannot be recovered. Same-time events also require an
+earlier or equal message ID. Human-account status and distinct authors do not prove independent information, endorsement,
+or wallet ownership.</p>
+<div class="scroll"><table><tr><th>Earlier window</th><th>Calls with two senders</th><th>Two original human authors</th>
+<th>Three original human authors</th><th>Two senders without two humans</th></tr><tr><td>30 seconds</td><td>233</td><td>4</td><td>0</td><td>229</td></tr><tr><td>60 seconds</td><td>252</td><td>8</td><td>0</td><td>244</td></tr><tr><td>120 seconds</td><td>277</td><td>13</td><td>0</td><td>264</td></tr><tr><td>300 seconds</td><td>307</td><td>28</td><td>0</td><td>279</td></tr><tr><td>900 seconds</td><td>329</td><td>43</td><td>2</td><td>286</td></tr></table></div>
+<p>The fixed catalog compares 7,392 rules, 32 exits and three entry delays:
+709,632 entry/exit/delay combinations. Attention groups distinguish two or three human authors,
+two senders including bots, one human author, and no attention requirement. Cap boundaries include $3k, $6k, $10k,
+$25k, $50k, $100k, $250k and $1m. Price filters compare the current quote against the first or latest strictly earlier
+available quote of the same token. Both pullbacks and increases are included.</p>
+<p>Entries wait 5, 15 or 30 seconds. Holds range from 15 seconds to five minutes, with 1.2×, 1.5×, 2× and 3× targets,
+25–50% stops, and trailing exits. Allocations of 1%, 2.5% and 5% use flat, prior-volatility or mention-count sizing;
+daily budgets are 2%, 4% or absent. The $1,000 account, prior-volume limits, estimated fees and missing-fill writeoffs apply.</p>
+<h3>Selection uses earlier completed contracts</h3>
+<p>Equivalent masks are deduplicated only on completed training calls. Screening uses one earliest executable call per
+contract, a $20-or-volume-limit position, estimated fees and a 10% sale haircut. Returns are clipped to −100% through
++100% for the screening score. At least twelve contracts are required. The score's standard-error penalty is a search
+heuristic, not a confidence interval. The ordinary screen retains at most sixteen entry/exit candidates per attention group.
+Including the human-only expansion below, the study runs 133,110 training portfolios across 66,555 policies, with twelve
+cached training-membership sets. The measured run took 64.72 seconds.</p>
+<p>All 2,336 human-confirmation screens meeting the twelve-contract minimum have negative reference means
+at the 10% cost setting across the four fits. The follow-up removes the clipped-mean gate and both shortlist limits for human confirmation. It portfolio-tests all 2,336 distinct training combinations that have twelve contracts, under all 27 sizing/budget policies: 63,072 human policy fits at both cost settings. Every one has a negative portfolio return at 10% cost. The rejection therefore survives using uncapped portfolio PnL. All 27 non-human daily portfolios reproduce the ordinary-screen control exactly. Their selectors remain in cash; zero trades provide no
+positive return evidence. The last fit uses the full training dataset and does not add a fourth
+evaluation day.</p>
+<div class="scroll"><table><tr><th>Daily selector</th><th>Return, 5% cost</th><th>Drawdown bound</th><th>Trades, 5% cost</th>
+<th>Return, 10% cost</th><th>Trades, 10% cost</th></tr><tr><td>Two senders · 2% training ceiling</td><td>-5.40%</td><td>5.59%</td><td>17</td><td>-6.31%</td><td>17</td></tr><tr><td>Two senders · 5% training ceiling</td><td>-8.61%</td><td>8.69%</td><td>17</td><td>-10.20%</td><td>17</td></tr><tr><td>Two senders · training exclusions required</td><td>-1.60%</td><td>2.07%</td><td>5</td><td>-1.69%</td><td>5</td></tr><tr><td>One human author · 2% training ceiling</td><td>-4.51%</td><td>5.06%</td><td>19</td><td>-5.34%</td><td>19</td></tr><tr><td>One human author · 5% training ceiling</td><td>-10.97%</td><td>11.94%</td><td>39</td><td>-12.12%</td><td>37</td></tr><tr><td>No attention requirement · 2% training ceiling</td><td>-3.44%</td><td>4.48%</td><td>19</td><td>-4.67%</td><td>19</td></tr><tr><td>No attention requirement · 5% training ceiling</td><td>-8.27%</td><td>10.25%</td><td>36</td><td>-10.09%</td><td>34</td></tr></table></div>
+<p>The stricter sender selector requires profitable training replays after removing its two best tokens and its best
+entry day, plus fourteen trades, ten contracts and three active training days. It stays in cash for the first two
+evaluation dates, then trades five times and loses 1.60% at 5% cost. Passing those training checks does not establish
+future profitability. The 2% and 5% ceilings constrain training drawdown; the table shows that later drawdown can exceed them.</p>
+<p>The audit independently reconstructs 2,141 raw mention events and
+22,000 feature values, checks 77,040 values after deleting future
+messages and changing future quotes, and verifies 12 training-mask invariance cases.
+It checks 1,248 scalar price exits, 2582 earlier-data screens,
+288 uncached training portfolios and 5,793 trade
+calculations. All 36 chronological ledgers and the four selected robust training exclusions
+pass. This remains retrospective research on repeatedly examined dates.</p>
+<p><a href="confirmation_runs/25741e241616d62a/report.html">Full attention/exit comparison</a> ·
+<a href="confirmation_runs/25741e241616d62a/results.json">Selections, ledgers, concentration and execution sensitivity</a> ·
+<a href="confirmation_runs/25741e241616d62a/settings.json">Complete candidate catalog</a> ·
+<a href="coverage_repairs/evm/combined/datasets/adb4dc66b5bd0a0d3e6f/confirmation/61671c35e08dd3e6/events.json">Exact mention provenance</a> ·
+<a href="confirmation_runs/25741e241616d62a/confirmation_audit.json">Independent audit</a>.</p>
+<h2>Gains depend on one trading day</h2>
+<p><strong>All 12 compared procedures lose when October 19 is excluded.</strong> This holds at both modeled cost
+settings, across partial sales, activity weights, Decider scores, uniform exposure controls, caller histories and account
+risk controls. Each procedure traded on only three UTC days. The rows share calls and dates and are not independent trials.</p>
+<figure style="margin:24px 0"><a href="day_dependence_runs/0e2f8a51e1ccdee5/day_dependence.svg"><img
+src="day_dependence_runs/0e2f8a51e1ccdee5/day_dependence.png" alt="All twelve compared procedures have negative returns when October 19 entries are excluded, at both 5% and 10% sale-proceeds haircuts."
+style="width:100%;height:auto"></a><figcaption>Portfolio return after excluding all entries on each UTC day. Full-size SVG
+and <a href="day_dependence_runs/0e2f8a51e1ccdee5/plot_values.json">plotted values</a> are saved.</figcaption></figure>
+<div class="scroll"><table><tr><th>Daily procedure</th><th>Original return, 5% cost</th><th>Drawdown bound</th>
+<th>Without Oct 19, 5% cost</th><th>Without Oct 19, 10% cost</th><th>Original trades</th></tr><tr><td>Earlier saved choices</td><td>+2.62%</td><td>1.55%</td><td>-0.74%</td><td>-1.07%</td><td>10</td></tr><tr><td>Smaller partial sales</td><td>+2.08%</td><td>0.77%</td><td>-0.15%</td><td>-0.28%</td><td>10</td></tr><tr><td>Larger partial sales</td><td>+2.73%</td><td>1.40%</td><td>-0.64%</td><td>-0.97%</td><td>10</td></tr><tr><td>Activity sizing</td><td>+2.63%</td><td>1.32%</td><td>-0.73%</td><td>-0.92%</td><td>10</td></tr><tr><td>Raw Decider, smaller</td><td>+1.96%</td><td>0.73%</td><td>-0.33%</td><td>-0.50%</td><td>10</td></tr><tr><td>Uniform control, smaller raw model</td><td>+1.95%</td><td>0.83%</td><td>-0.52%</td><td>-0.66%</td><td>10</td></tr><tr><td>Uniform control, larger calibrated model</td><td>+2.96%</td><td>1.33%</td><td>-0.41%</td><td>-0.62%</td><td>10</td></tr><tr><td>Sender history, smaller</td><td>+2.38%</td><td>0.95%</td><td>-0.27%</td><td>-0.40%</td><td>9</td></tr><tr><td>Requester history, smaller</td><td>+1.43%</td><td>0.64%</td><td>-0.13%</td><td>-0.24%</td><td>8</td></tr><tr><td>Requester history, larger</td><td>+3.09%</td><td>1.32%</td><td>-0.29%</td><td>-0.52%</td><td>9</td></tr><tr><td>Account risk, smaller</td><td>+1.73%</td><td>0.88%</td><td>-0.39%</td><td>-0.54%</td><td>10</td></tr><tr><td>Account risk, larger</td><td>+2.62%</td><td>1.55%</td><td>-0.74%</td><td>-1.07%</td><td>10</td></tr></table></div>
+<p>The adapter reproduced all 36 original portfolios at 5%, 10% and 15% costs
+before running 72 day exclusions. Exclusions replay the full eligible call stream,
+recomputing cash, overlap, contract eligibility, budgets and any active account controls. Later callers on an untraded
+contract remain eligible. Removing a day leaves the observed group history and previously fitted daily choices available.</p>
+<p>This is a descriptive concentration check on repeatedly examined data. It is not a new chronological validation,
+a confidence interval, or a reason to trade only on the profitable calendar date.</p>
+<p>A separate ledger audit checks 72 excluded-day ledgers, verifies that all earlier
+trade prefixes remain unchanged, and reconstructs 696 sale-ledger PnL
+calculations. It does not independently reprice the underlying candles.</p>
+<p><a href="day_dependence_runs/0e2f8a51e1ccdee5/report.html">All day exclusions</a> ·
+<a href="day_dependence_runs/0e2f8a51e1ccdee5/results.json">Exact ledgers, source hashes and daily contributions</a> ·
+<a href="day_dependence_runs/0e2f8a51e1ccdee5/day_audit.json">Exclusion and ledger audit</a>.</p>
+<h2>Completed-trade account risk controls</h2>
+<p>The new catalog compares 64 configurations: closed-equity drawdown scaling, daily drawdown scaling,
+daily loss stops, size reductions after profits, loss-streak scaling, loss pauses, spacing and gradual size recovery.
+Allocation uses only cash and outcomes of trades already completed before the next entry. Daily states reset at the next
+UTC entry day; the overall closed-equity high carries across days.</p>
+<p>The comparison retains the earlier daily entry/cohort rules, budgets, four allocation scales and six exits per day.
+It considers 4,608 policies through 9,216 closed-trade plans. Caching identical
+entered sizes reduces candle accounting to 3,529 replays, with 5,687
+cache hits. The measured study took 12.23 seconds.</p>
+<div class="scroll"><table><tr><th>Procedure</th><th>Risk controls</th><th>Return, 5% cost</th><th>Drawdown bound</th>
+<th>Return, 10% cost</th><th>Trades</th></tr><tr><td>Smaller positions</td><td>With selected controls</td><td>+1.73%</td><td>0.88%</td><td>+1.34%</td><td>10</td></tr><tr><td>Smaller positions</td><td>Controls removed</td><td>+1.83%</td><td>0.88%</td><td>+1.45%</td><td>10</td></tr><tr><td>Larger positions</td><td>With selected controls</td><td>+2.62%</td><td>1.55%</td><td>+1.94%</td><td>10</td></tr><tr><td>Larger positions</td><td>Controls removed</td><td>+2.62%</td><td>1.55%</td><td>+1.94%</td><td>10</td></tr></table></div>
+<p>Removing the smaller procedure's controls preserves its chosen exits and sizes and improves return with essentially
+the same drawdown. The larger procedure reproduces the earlier original ledger. The controls therefore add no observed
+benefit here. Training drawdown ceilings are selection criteria, not guarantees on future losses.</p>
+<p>The stricter selector requires fourteen training trades and ten contracts before checking returns without the two best
+tokens. The maximum available training trade counts are 11, 13, 11 across the three dates, so it selects
+cash throughout. Its 0 winner-removal checks reflect an unmet sample requirement; this is
+not evidence of a successful robust strategy. The trading procedures still lose without their two best tokens.</p>
+<p>The audit reconstructed 228,652 risk weights from prior entered-trade history,
+checked 768 planning/accounting cases, 492 uncached training
+portfolios and 9,854 independent trade calculations. All
+2,304 current/future-outcome mutations preserved earlier allocation decisions.
+All controller families activated on cached data; the unmodified planner reproduced the existing portfolio engine in
+12 cases. Training CSV counts are recorded separately for each cost because costs can
+change pauses, budgets and later entries.</p>
+<p><a href="account_risk_runs/e8c729aef446701e/report.html">Risk-control comparison</a> ·
+<a href="account_risk_runs/e8c729aef446701e/results.json">Daily rules, ablations and execution sensitivity</a> ·
+<a href="account_risk_runs/e8c729aef446701e/training.csv">All training policies</a> ·
+<a href="account_risk_runs/e8c729aef446701e/risk_audit.json">Independent causal and accounting audit</a>.</p>
+<h2>Caller weights learned from earlier calls</h2>
+<p>The comparison uses sender identity and a separate requester attribution. Of 508 bot-authored eligible
+calls, 487 explicitly reply to a human message containing the same full contract address.
+Three possible matches were excluded because the parent was edited after the response; exact address boundaries also
+exclude substring matches. The call keeps its original timestamp, price, contract and sender metadata.</p>
+<p>Requester attribution reduces 1,100 sender/contract history events to
+614 requester/contract events. The original request and scanner response therefore do not get
+duplicate credit. Replies without sufficient evidence retain their actual sender, including the scanner bot.</p>
+<p>History freezes before each UTC day. It excludes the token being scored, uses at most twenty earlier distinct contracts
+per caller, and shrinks caller means toward peer outcomes. Peer history uses the earliest group call per contract and
+excludes the current caller. Reference outcomes use 60 or 180 seconds after a five-second delay from the available quote,
+or 180 seconds after the existing confirmation wait. Prior volume and fee estimates apply. Returns are clipped to −100%
+through +100% before ranking; these scores are not uncapped expected-value estimates.</p>
+<p>Variants use all preceding history or 24 hours, and all tokens or the same chain/cap band. Cap boundaries are $6k,
+$10k, $25k, $50k, $100k, $250k and $1m. Conditions cover shrunken means, performance relative to peers, win/loss frequencies
+and the mean after removing the best earlier outcome. At least 3, 5 or 10 caller tokens and twenty peer tokens are required.
+Failed conditions reject or halve the position; unknown callers are explicitly allowed or excluded.</p>
+<p>The 2,305 modifiers, four sizes and six daily exit choices produced 165,960 policy rows.
+Caching identical stake vectors on completed training calls reduced this to 14,148 distinct
+portfolio replays. The measured run took 15.98 seconds. Every fit uses earlier outcomes, while the overall
+research still reuses dates already examined many times.</p>
+<div class="scroll"><table><tr><th>Daily procedure</th><th>Return, 5% cost</th><th>Drawdown bound</th><th>Return, 10% cost</th><th>Without two best, 5% cost</th><th>Trades</th></tr><tr><td>Earlier saved choices</td><td>+2.62%</td><td>1.55%</td><td>+1.94%</td><td>−1.02% (earlier check)</td><td>10</td></tr><tr><td>Sender history · smaller</td><td>+2.38%</td><td>0.95%</td><td>+2.01%</td><td>-0.37%</td><td>9</td></tr><tr><td>Sender history · larger</td><td>+1.42%</td><td>1.34%</td><td>+0.92%</td><td>-1.21%</td><td>9</td></tr><tr><td>Requester history · smaller</td><td>+1.43%</td><td>0.64%</td><td>+1.14%</td><td>-0.34%</td><td>8</td></tr><tr><td>Requester history · larger</td><td>+3.09%</td><td>1.32%</td><td>+2.50%</td><td>-0.56%</td><td>9</td></tr></table></div>
+<p>The smaller requester procedure reduces both return and drawdown to +1.43% / 0.64%.
+Removing caller modifiers while retaining its selected exits and sizes gives +2.65% / 1.04%. These are risk tradeoffs on
+small samples. All caller variants lose without their two best tokens. Existing frozen candidates are unchanged.</p>
+<h3>The apparent caller benefit is also a chain effect</h3>
+<p>The larger requester procedure omits one losing BNB Chain trade from the earlier ten-trade ledger. A post-hoc
+Solana-only control and a BNB-exclusion control reproduce its complete ledger exactly at 5%, 10% and 15% sale costs.
+The observed improvement therefore cannot distinguish caller skill from this single changed chain exposure. It does
+not establish that BNB Chain tokens or this caller are generally unprofitable.</p>
+<p><a href="caller_control_runs/2ae0d8b92e00fb6c/report.html">Chain and sender controls</a> ·
+<a href="caller_control_runs/2ae0d8b92e00fb6c/results.json">All ledgers and exact comparisons</a>.</p>
+<h3>Historical requester ranking</h3>
+<p>This snapshot is fixed at October 21, 00:00 UTC, using up to twenty earlier three-minute reference outcomes per identity.
+Only identities with at least ten observations are shown. The mean is clipped and shrunk toward earlier peer outcomes;
+the excess is its difference from that peer mean. A positive excess can still have a negative mean. These figures describe
+modeled outcomes after calls, not members' own PnL or a proven profitable/unprofitable classification.</p>
+<div class="scroll"><table><tr><th>Attributed requester</th><th>Prior tokens</th><th>Shrunken clipped mean</th><th>Excess over peers</th><th>Mean without best prior outcome</th></tr><tr><td>@wMincy</td><td>20</td><td>-2.05%</td><td>+15.64 pp</td><td>-5.57%</td></tr><tr><td>@flipski07</td><td>15</td><td>-4.53%</td><td>+11.70 pp</td><td>-8.15%</td></tr><tr><td>@DomiTraderSol</td><td>13</td><td>-14.42%</td><td>+1.22 pp</td><td>-19.62%</td></tr><tr><td>@xenquant</td><td>10</td><td>-14.61%</td><td>+1.01 pp</td><td>-19.04%</td></tr><tr><td>@rick (bot)</td><td>13</td><td>-16.76%</td><td>-1.13 pp</td><td>-19.40%</td></tr><tr><td>@Netti_chan</td><td>20</td><td>-16.94%</td><td>-1.40 pp</td><td>-18.77%</td></tr><tr><td>@CoCoCookerr</td><td>11</td><td>-16.97%</td><td>-1.47 pp</td><td>-20.89%</td></tr><tr><td>@Limfork</td><td>10</td><td>-18.70%</td><td>-3.16 pp</td><td>-19.93%</td></tr><tr><td>@dov707</td><td>20</td><td>-18.97%</td><td>-3.85 pp</td><td>-21.61%</td></tr><tr><td>@bryptocaracal</td><td>12</td><td>-23.00%</td><td>-7.61 pp</td><td>-26.65%</td></tr><tr><td>@marismmmn</td><td>20</td><td>-23.88%</td><td>-8.81 pp</td><td>-27.59%</td></tr><tr><td>@reljeww</td><td>15</td><td>-26.00%</td><td>-10.88 pp</td><td>-28.62%</td></tr><tr><td>@AquaDias</td><td>20</td><td>-27.73%</td><td>-11.53 pp</td><td>-32.13%</td></tr><tr><td>@Riseracks77</td><td>20</td><td>-26.94%</td><td>-12.18 pp</td><td>-31.32%</td></tr><tr><td>@angermouse</td><td>12</td><td>-28.64%</td><td>-13.74 pp</td><td>-32.29%</td></tr></table></div>
+<p>The audit independently checked 1,100 attribution decisions,
+17,520 history fields, 1,752 future/current-token label mutations,
+219 reference returns, 168,265 modifier values,
+502 uncached portfolios and 3,276 training-trade calculations.
+All 15 main chronological portfolios reproduced.</p>
+<ul><li><a href="caller_policy_runs/bacc3ef466017840/report.html">Caller-policy comparison</a></li>
+<li><a href="caller_policy_runs/bacc3ef466017840/caller_decisions.csv">Scores and weights known before each evaluated call</a></li>
+<li><a href="coverage_repairs/evm/combined/datasets/adb4dc66b5bd0a0d3e6f/caller_history/6ee12c70828bcb72/caller_snapshot.csv">Full historical caller ranking</a></li>
+<li><a href="coverage_repairs/evm/combined/datasets/adb4dc66b5bd0a0d3e6f/caller_history/6ee12c70828bcb72/attribution.json">Explicit reply attribution evidence</a></li>
+<li><a href="caller_policy_runs/bacc3ef466017840/results.json">Daily rules, ablations and execution sensitivity</a></li>
+<li><a href="caller_policy_runs/bacc3ef466017840/caller_audit.json">History, attribution and accounting audit</a></li></ul>
+<h2>Decider with activity and recurring-address context</h2>
+<p>The research used <a href="https://openrouter.ai/perplexity/pplx-decider-v1.2/">perplexity/pplx-decider-v1.2-20261016</a>
+through the native Decisions API.
+The 1,066 saved requests produced six scores per call: 60/180-second profit, 180-second expected value,
+a 50% loss, a target-before-stop event, and expected value under a ten-minute trailing exit.</p>
+<p>Inputs contain numeric first-minute price measurements, historical cap/age, earlier caller and cohort summaries,
+pre-call activity, and completed outcomes of other tokens previously bought by recurring recipients. They contain no
+token addresses, names, tickers, handles, caller IDs, raw messages or absolute dates. Chain identifiers are the only string values.
+Recipient outcomes describe what happened to earlier called tokens; they are not wallet profits or member identities.</p>
+<p>Responses are cached. Reported API usage is 3,864,186 input tokens,
+6,396 output tokens and $0.07728. Median latency was
+547 ms and p95 was 656 ms; all 1,066 responses met the
+one-minute budget. The replay waits one minute after the first full candle. Measured request latency is not historical
+live bot latency.</p>
+<h3>Matched daily selections</h3>
+<p>All families retain the same three saved daily entry/cohort filters, budgets, four allocation scales and six exits per day.
+They can select unmodified sizing or cash. The comparison considered 29,160 training policies,
+requiring 20,244 distinct portfolio evaluations after caching equivalent completed-training stake vectors.
+The measured run took 20.42 seconds. All nine earlier activity/control ledgers reproduced exactly.</p>
+<p><strong>These are changing daily selections on dates already examined repeatedly.</strong> Each daily fit uses earlier
+completed outcomes, but this is still retrospective research. The account model remains $1,000, the position cap is 1% of
+prior economic volume, and prior transaction fees are added to the sale-proceeds haircut.</p>
+<div class="scroll"><table><tr><th>Procedure</th><th>Return, 5% cost</th><th>Drawdown</th><th>Return, 10% cost</th><th>Drawdown, 10% cost</th><th>Without two best, 5% cost</th><th>Trades</th></tr><tr><td>Activity · smaller</td><td>+1.43%</td><td>1.35%</td><td>+1.04%</td><td>1.51%</td><td>-0.83%</td><td>10</td></tr><tr><td>Activity · larger</td><td>+2.63%</td><td>1.32%</td><td>+2.09%</td><td>1.49%</td><td>-1.00%</td><td>10</td></tr><tr><td>Raw Decider · smaller</td><td>+1.96%</td><td>0.73%</td><td>+1.54%</td><td>0.81%</td><td>-0.61%</td><td>10</td></tr><tr><td>Raw Decider · larger</td><td>+0.30%</td><td>1.19%</td><td>-0.09%</td><td>1.35%</td><td>-1.20%</td><td>9</td></tr><tr><td>Calibrated Decider · smaller</td><td>+1.46%</td><td>0.96%</td><td>+1.02%</td><td>1.11%</td><td>-1.11%</td><td>10</td></tr><tr><td>Calibrated Decider · larger</td><td>+2.62%</td><td>1.33%</td><td>+1.99%</td><td>1.49%</td><td>-1.01%</td><td>10</td></tr></table></div>
+<p>Removing the smaller raw-model procedure's modifiers while retaining its selected exits and allocations gives
++2.72% / 1.23% drawdown. Its lower drawdown therefore comes with less exposure
+and less profit. This ablation was examined after selection; it is not a newly validated strategy. The larger calibrated
+procedure's model modifiers have no effect on its entered ledger.</p>
+<h3>Calibration using previous days only</h3>
+<p>Calibration uses completed outcomes before the current UTC day, one earliest usable event per token, and excludes the
+token being scored. Fixed score bins shrink toward the earlier base rate; at least 30 earlier tokens are required.
+The diagnostic sample uses one evaluation event per token. Expected-value questions remain scores and are not treated
+as probabilities of a profitable trade.</p>
+<div class="scroll"><table><tr><th>Question</th><th>Tokens</th><th>Observed rate</th><th>Raw AUC</th><th>Calibrated AUC</th><th>Raw Brier</th><th>Calibrated Brier</th><th>Prior-only Brier</th></tr><tr><td>Profitable after 60 seconds</td><td>352</td><td>29.5%</td><td>0.545</td><td>0.540</td><td>0.2114</td><td>0.2123</td><td>0.2128</td></tr><tr><td>Profitable after 180 seconds</td><td>352</td><td>30.4%</td><td>0.533</td><td>0.457</td><td>0.2196</td><td>0.2146</td><td>0.2135</td></tr><tr><td>Loss of at least 50% after 180 seconds</td><td>352</td><td>23.0%</td><td>0.559</td><td>0.516</td><td>0.1771</td><td>0.1779</td><td>0.1795</td></tr></table></div>
+<p>AUC measures ranking, with 0.5 representing chance; lower Brier error is better. Ranking is weak. Calibration reduces
+three-minute profit probability error, but does not beat the previous-day base-rate estimate. These diagnostics do not
+establish a trading edge.</p>
+<p>The audit checked 1,066 anonymous inputs, 3,300 reference labels,
+249 independent binary calibration cases, 249
+future/same-token label mutations, 83 return-calibration cases,
+342 uncached portfolios and 3,272 trade-accounting calculations.</p>
+<ul><li><a href="context_decider_runs/037514af3811ab7c/report.html">Model comparison and sensitivity</a></li>
+<li><a href="context_decider_runs/037514af3811ab7c/results.json">Daily choices, ledgers, ablations and stress scenarios</a></li>
+<li><a href="context_calibration_runs/804c8759d7e04b4e/results.json">Calibration diagnostics and training events</a></li>
+<li><a href="context_decider_runs/037514af3811ab7c/context_audit.json">Independent calibration and accounting audit</a></li></ul>
+<h2>Caller dependence and replacement calls</h2>
+<p>Each exclusion removes entries from a caller and replays cash, overlap, daily budgets and later entries. Observed
+group history remains available. The 24 original portfolios at three cost levels
+reproduced exactly. Caller ranking uses observed contribution at the 5% cost setting.</p>
+<div class="scroll"><table><tr><th>Procedure</th><th>Original return</th><th>Active callers</th><th>Without best caller</th><th>Without two best callers</th><th>Single-caller exclusions with same-token replacements</th></tr><tr><td>Earlier saved choices</td><td>+2.62%</td><td>9</td><td>+0.41%</td><td>+0.41%</td><td>6/9</td></tr><tr><td>Smaller partial-sale procedure</td><td>+2.08%</td><td>9</td><td>+0.43%</td><td>+0.43%</td><td>6/9</td></tr><tr><td>Larger partial-sale procedure</td><td>+2.73%</td><td>9</td><td>+0.51%</td><td>+0.51%</td><td>6/9</td></tr><tr><td>Activity sizing</td><td>+2.63%</td><td>9</td><td>+0.42%</td><td>+0.42%</td><td>6/9</td></tr><tr><td>Raw Decider · smaller</td><td>+1.96%</td><td>9</td><td>-0.25%</td><td>-0.25%</td><td>6/9</td></tr><tr><td>Raw Decider · larger</td><td>+0.30%</td><td>8</td><td>+0.30%</td><td>+0.30%</td><td>6/8</td></tr><tr><td>Calibrated Decider · smaller</td><td>+1.46%</td><td>9</td><td>-0.76%</td><td>-0.76%</td><td>6/9</td></tr><tr><td>Calibrated Decider · larger</td><td>+2.62%</td><td>9</td><td>+0.41%</td><td>+0.41%</td><td>6/9</td></tr></table></div>
+<p>Every caller here contributes only one or two entered trades. In six exclusion scenarios per procedure, another sender's
+call replaces the removed sender on the same token. Similar returns after removing a caller therefore do not show
+independence from that winning token. The smaller raw-model procedure becomes negative without its best caller.</p>
+<p>These are descriptive rankings. An exclusion chosen after observing its losses is not evidence of a profitable blacklist.
+The CSV includes caller labels, contribution, full-portfolio exclusion results and replacement counts.</p>
+<p><a href="caller_dependency_runs/fc295c899ae96460/caller_ranking.csv">Per-caller ranking</a> ·
+<a href="caller_dependency_runs/fc295c899ae96460/report.html">Caller report</a> · <a href="caller_dependency_runs/fc295c899ae96460/results.json">All exclusion ledgers</a>.</p>
+<h2>Does the model beat a uniform exposure reduction?</h2>
+<p>This control keeps each model procedure's saved daily entry/exit, allocation and budget. For each day it removes the
+per-call modifier and fits one uniform multiplier to the model's total entry capital on earlier completed training trades.
+It compares 201 multipliers from zero to one, using only absolute exposure difference; return is not the selection criterion.
+There were 2,424 training portfolios, and every chosen match is within 0.40% of its training target.</p>
+<p>The uniform control still inherits the model-selected rules and earlier training exposure. It is an ablation of per-call
+scores, not an independently selected model-free strategy. Matching earlier exposure does not ensure equal future exposure.
+Entry capital below is total turnover in units per initial 100, not simultaneous risk.</p>
+<div class="scroll"><table><tr><th>Source procedure</th><th>Evaluation sizing</th><th>Return, 5% cost</th><th>Drawdown</th><th>Return, 10% cost</th><th>Without two best, 5% cost</th><th>Entry capital</th></tr><tr><td>Raw Decider · smaller</td><td>Per-call scores</td><td>+1.96%</td><td>0.73%</td><td>+1.54%</td><td>-0.61%</td><td>5.85</td></tr><tr><td>Raw Decider · smaller</td><td>Uniform reduction</td><td>+1.95%</td><td>0.83%</td><td>+1.56%</td><td>-0.68%</td><td>5.31</td></tr><tr><td>Raw Decider · larger</td><td>Per-call scores</td><td>+0.30%</td><td>1.19%</td><td>-0.09%</td><td>-1.20%</td><td>7.08</td></tr><tr><td>Raw Decider · larger</td><td>Uniform reduction</td><td>+2.66%</td><td>1.27%</td><td>+2.07%</td><td>-0.85%</td><td>8.42</td></tr><tr><td>Calibrated Decider · smaller</td><td>Per-call scores</td><td>+1.46%</td><td>0.96%</td><td>+1.02%</td><td>-1.11%</td><td>6.73</td></tr><tr><td>Calibrated Decider · smaller</td><td>Uniform reduction</td><td>+2.02%</td><td>0.76%</td><td>+1.66%</td><td>-0.60%</td><td>4.77</td></tr><tr><td>Calibrated Decider · larger</td><td>Per-call scores</td><td>+2.62%</td><td>1.33%</td><td>+1.99%</td><td>-1.01%</td><td>9.44</td></tr><tr><td>Calibrated Decider · larger</td><td>Uniform reduction</td><td>+2.96%</td><td>1.33%</td><td>+2.39%</td><td>-0.68%</td><td>7.79</td></tr></table></div>
+<p>The smaller raw model and its uniform control return about 1.96% and 1.95%, respectively. The model's drawdown bound
+is lower by about 0.10 percentage point, on ten trades. Uniform reductions improve both return and drawdown over the smaller
+calibrated procedure. The larger calibrated procedure's uniform control returns 2.96% with a 1.33% bound, but loses 0.68%
+without its two best tokens. These comparisons do not resolve concentration or establish an independent edge.</p>
+<p>The check reproduced 12 saved training portfolios and
+20 evaluation/ablation ledgers. It independently checked
+277 training-trade calculations and
+24 mutations of future factors.</p>
+<p><a href="matched_exposure_runs/b88dd51883328300/report.html">All costs and exposure controls</a> ·
+<a href="matched_exposure_runs/b88dd51883328300/results.json">Daily multipliers, ledgers and concentration checks</a> ·
+<a href="matched_exposure_runs/b88dd51883328300/training.csv">Every training exposure match</a>.</p>
+<h2>Recent activity and size reductions</h2>
+<p>The new search keeps the earlier saved daily entry/cohort gates. It compares 207 activity policies,
+four allocation scales and six exits per day. Inputs include 15-second versus 180-second volume rates, changes in buy share,
+within-transaction net flow, trading gaps, active seconds, recipient concentration and breadth, short price changes,
+and reference transaction-fee burden. A failing condition rejects the call or reduces its size to 25% or 50%.</p>
+<p>Only trades timestamped before the call supply these inputs, with a five-second lag. The previous raw-trade audit remains
+in force. The net/gross flow ratio describes routed or offsetting transaction flow; it does not establish wash trading.</p>
+<p>The search considered 14,904 training policies. Equivalent stake vectors on completed
+training calls shared results, leaving 13,476 distinct 5%/10%-cost portfolio evaluations.
+Each day's choice uses earlier completed outcomes. All these dates have already been examined repeatedly.</p>
+<div class="scroll"><table><tr><th>Procedure</th><th>Return, 5% cost</th><th>Drawdown bound</th><th>Return, 10% cost</th><th>Without two best, 5% cost</th><th>Trades</th></tr><tr><td>Earlier saved choices</td><td>+2.62%</td><td>1.55%</td><td>+1.94%</td><td>See earlier control</td><td>10</td></tr><tr><td>Activity sizing · 5% training limit</td><td>+2.63%</td><td>1.32%</td><td>+2.09%</td><td>-1.00%</td><td>10</td></tr><tr><td>Activity sizing · 2% training limit</td><td>+1.43%</td><td>1.35%</td><td>+1.04%</td><td>-0.83%</td><td>10</td></tr><tr><td>Winner-removal selector · only three trades</td><td>+3.37%</td><td>1.07%</td><td>+3.02%</td><td>-0.28%</td><td>3</td></tr></table></div>
+<p>The 5% selector retained the earlier full-position exits and reduced allocations when recent volume was weak.
+Its return increased by only 0.014 percentage points, while its drawdown bound
+fell by 0.233 points. Removing activity modifiers restores
+the exact original saved-choice result. The 2% selector underperformed: removing its activity modifiers while retaining
+its new exits/sizes produces +2.52%, versus +1.43% with them.</p>
+<p>The three-trade winner-removal selector stayed in cash on two days. Its three entered trades and returns are identical
+with its activity filter removed. Its higher displayed return therefore does not demonstrate an activity-filter advantage;
+removing its two best evaluation tokens makes it lose. None of these selections replaces the frozen fixed rules.</p>
+<p><img src="activity_policy_runs/6d2be12e1a8dd1db/risk_return.svg" alt="Return and drawdown comparisons for ten-trade retrospective procedures at 5% and 10% cost assumptions" style="width:100%;height:auto"></p>
+<p>The plot compares procedures with ten trades over the same earlier evaluation days. Lines connect nondominated displayed
+results under each cost assumption. They are descriptive and do not estimate future performance.</p>
+<p>The new audit independently checked 29,700 derived feature values,
+62,100 sizing multipliers, 580 uncached training portfolios,
+5,458 trade-accounting calculations and all 12
+main chronological ledgers. Future-feature and future-cohort perturbations left earlier inputs unchanged.</p>
+<ul><li><a href="activity_policy_runs/6d2be12e1a8dd1db/report.html">Activity policies, daily choices and stress scenarios</a></li>
+<li><a href="activity_policy_runs/6d2be12e1a8dd1db/risk_return.svg">Exportable risk/return plot</a></li>
+<li><a href="activity_policy_runs/6d2be12e1a8dd1db/risk_return.json">Plot data and displayed dominance comparisons</a></li>
+<li><a href="activity_policy_runs/6d2be12e1a8dd1db/activity_audit.json">Feature, replay and accounting audit</a></li></ul>
+<h2>Nearby parameters and dependence on winning tokens</h2>
+<p>This sensitivity check changes one parameter at a time around the three fixed candidates: cap boundaries, dip range,
+cohort threshold/count, hold length, trailing activation/gap, allocation, and partial-sale target/quantity where applicable.
+It evaluated 178 portfolios and 89 additional winner-removal
+portfolios on the same full training dataset. These are correlated in-sample perturbations, not independent trials.</p>
+<div class="scroll"><table><tr><th>Fixed candidate</th><th>Neighbors</th><th>Profitable at 10% cost</th><th>Median return</th><th>Lowest return</th><th>Profitable without two best</th><th>Median without two best</th></tr><tr><td>Smaller positions, no partial sales</td><td>26</td><td>100%</td><td>+4.96%</td><td>+0.42%</td><td>1/26</td><td>-0.70%</td></tr><tr><td>25% partial sale at 1.2×</td><td>30</td><td>100%</td><td>+9.76%</td><td>+0.00%</td><td>1/30</td><td>-2.90%</td></tr><tr><td>75% partial sale at 3×</td><td>30</td><td>100%</td><td>+4.36%</td><td>+0.47%</td><td>10/30</td><td>-0.22%</td></tr></table></div>
+<p>Nearby variants remain profitable before removing winners, but that stability largely disappears after removing the
+two best tokens from each variant. The smaller-position candidate passes only one of 26 such checks. The comparator
+passes ten of 30. A profitable neighborhood therefore does not resolve the small-sample concentration problem.</p>
+<p><a href="local_robustness_runs/25c02fac7709da98/neighbors.csv">Every parameter perturbation</a> · <a href="local_robustness_runs/25c02fac7709da98/results.json">Exact settings and signal sets</a>.</p>
+<h2>New fixed candidates</h2>
+<p>The fixed fit retains the earlier $50k–$250k entry band, 10–25% first-minute dip, additional one-minute wait,
+and five-token cohort gate. It evaluated 7,254 portfolios using 403 distinct exits
+and 9 size/budget policies. The primary selector required a training drawdown bound within 2%,
+positive results at 5% and 10% costs, at least ten trades and eight contracts, then maximized the 10%-cost return.
+The secondary selector permits 5% training drawdown. The comparator also requires fourteen trades, ten tokens and
+a positive 10%-cost return after removing the two best training tokens.</p>
+<p><strong>These are full training fits on the original corrected 1,100-call dataset.</strong> They have fourteen trades,
+including dates used to fit the earlier daily procedures. Their returns cannot be compared directly with the ten-trade
+daily replays as evidence of improvement. The repeated search can overfit even the winner-removal check.</p>
+<div class="scroll"><table><tr><th>Fixed candidate</th><th>Training return, 5% cost</th><th>Training drawdown</th><th>Training return, 10% cost</th><th>Without two best, 10% cost</th><th>Trades</th></tr><tr><td>Primary: lower drawdown</td><td>+6.10%</td><td>1.53%</td><td>+5.22%</td><td>-0.62%</td><td>14</td></tr><tr><td>Secondary: higher training return</td><td>+13.07%</td><td>4.58%</td><td>+10.22%</td><td>-2.66%</td><td>14</td></tr><tr><td>Comparator: positive without two best tokens</td><td>+6.39%</td><td>3.04%</td><td>+4.95%</td><td>+0.28%</td><td>14</td></tr><tr><td>Earlier fixed rule</td><td>+17.07%</td><td>6.00%</td><td>+13.63%</td><td>-1.79%</td><td>14</td></tr></table></div>
+<h3>Frozen position and exit settings</h3>
+<p>Allocation is the base fraction below multiplied by clip(0.15 / max(0.01, first-minute range/open), 0.25, 1.5).
+Every candidate holds for at most ten minutes and activates a 30% trailing gap at 1.5×.
+The account model is $1,000, with positions capped at 1% of preceding 60-second economic volume.
+Prior swaps estimate gas/MEV fees; every possible partial-sale fee is reserved before entry.</p>
+<div class="scroll"><table><tr><th>Candidate</th><th>Base equity fraction</th><th>Daily full-loss budget</th><th>Partial sales</th><th>Initial stop</th></tr><tr><td>Primary: lower drawdown</td><td>1.25%</td><td>None</td><td>No partial sales</td><td>None</td></tr><tr><td>Secondary: higher training return</td><td>5.00%</td><td>None</td><td>25% at 1.2× trigger</td><td>50%</td></tr><tr><td>Comparator: positive without two best tokens</td><td>2.50%</td><td>2%</td><td>75% at 3× trigger</td><td>50%</td></tr><tr><td>Earlier fixed rule</td><td>5.00%</td><td>4%</td><td>No partial sales</td><td>None</td></tr></table></div>
+<h3>New collection under frozen rules</h3>
+<p>Frozen at 2026-10-21T09:33:36.374286+00:00. The reserved window is 2026-10-21T08:50:50.285000Z
+through 2026-10-21T09:13:36.374286+00:00. The pull added 14 messages,
+but 0 were inside that window, producing 0 eligible calls and zero trades.
+All 1,122 earlier call records and their 19 numeric fields were preserved.
+That combined archive contains 14,340 messages and
+1,124 eligible calls. No profitability conclusion follows from an empty window.</p>
+<p>The execution collector now targets only new calls. An offline parity check passed 20 portfolios,
+288 independent scalar outcomes, 280 trade-accounting checks and
+5,832 fee/volume feature values. This checks the implementation, not future performance.</p>
+<ul><li><a href="fixed_partial_runs/3d80934062b6022e/forward_protocol.json">Frozen candidate definitions and source hashes</a></li>
+<li><a href="fixed_partial_runs/3d80934062b6022e/validation/report.html">New collection results</a></li>
+<li><a href="fixed_partial_runs/3d80934062b6022e/results.json">Training ledgers, cost and reaction-delay sensitivity</a></li>
+<li><a href="fixed_partial_runs/3d80934062b6022e/training.csv">Every training portfolio</a></li>
+<li><a href="fixed_partial_runs/3d80934062b6022e/training_parity/audit.json">Execution-view and accounting audit</a></li></ul><h3>Later collection under the preregistered rules</h3>
+<p>This window was frozen at 2026-10-21T10:04:54.838622+00:00 before retrieval. It runs from
+2026-10-21T09:33:54.237000Z through 2026-10-21T09:44:54.838622+00:00. The pull added
+19 messages; 0 lie inside the reserved window.
+There are 0 eligible validation calls and at most 0 trades per candidate/cost scenario.
+No eligible calls means no new evidence of profitability. All 1,124 older eligible calls and nineteen numeric fields
+were preserved. This combined archive contains 14,359 messages and
+1,124 eligible calls.</p>
+<p><a href="fixed_validation_windows/20261021_100454/validation/report.html">Window results and preservation audit</a> ·
+<a href="fixed_validation_windows/20261021_100454/forward_protocol.json">Unchanged candidate definitions and new bounds</a>.</p>
+<h3>Later collection under the preregistered rules</h3>
+<p>This window was frozen at 2026-10-21T10:29:35.798976+00:00 before retrieval. It runs from
+2026-10-21T10:05:02.180000Z through 2026-10-21T10:09:35.798976+00:00. The pull added
+7 messages; 0 lie inside the reserved window.
+There are 0 eligible validation calls and at most 0 trades per candidate/cost scenario.
+No eligible calls means no new evidence of profitability. All 1,124 older eligible calls and nineteen numeric fields
+were preserved. This combined archive contains 14,366 messages and
+1,124 eligible calls.</p>
+<p><a href="fixed_validation_windows/20261021_102935/validation/report.html">Window results and preservation audit</a> ·
+<a href="fixed_validation_windows/20261021_102935/forward_protocol.json">Unchanged candidate definitions and new bounds</a>.</p>
+<h3>Later collection under the preregistered rules</h3>
+<p>This window was frozen at 2026-10-21T10:54:57.349406+00:00 before retrieval. It runs from
+2026-10-21T10:29:42.484000Z through 2026-10-21T10:34:57.349406+00:00. The pull added
+20 messages; 0 lie inside the reserved window.
+There are 0 eligible validation calls and at most 0 trades per candidate/cost scenario.
+No eligible calls means no new evidence of profitability. All 1,124 older eligible calls and nineteen numeric fields
+were preserved. This combined archive contains 14,386 messages and
+1,126 eligible calls.</p>
+<p><a href="fixed_validation_windows/20261021_105457/validation/report.html">Window results and preservation audit</a> ·
+<a href="fixed_validation_windows/20261021_105457/forward_protocol.json">Unchanged candidate definitions and new bounds</a>.</p>
+<h3>Later collection under the preregistered rules</h3>
+<p>This window was frozen at 2026-10-21T11:17:45.230714+00:00 before retrieval. It runs from
+2026-10-21T10:55:03.051000Z through 2026-10-21T10:57:45.230714+00:00. The pull added
+18 messages; 1 lie inside the reserved window.
+There are 0 eligible validation calls and at most 0 trades per candidate/cost scenario.
+No eligible calls means no new evidence of profitability. All 1,126 older eligible calls and nineteen numeric fields
+were preserved. This combined archive contains 14,404 messages and
+1,126 eligible calls.</p>
+<p><a href="fixed_validation_windows/20261021_111745/validation/report.html">Window results and preservation audit</a> ·
+<a href="fixed_validation_windows/20261021_111745/forward_protocol.json">Unchanged candidate definitions and new bounds</a>.</p>
+<h3>Later collection under the preregistered rules</h3>
+<p>This window was frozen at 2026-10-21T11:44:19.791125+00:00 before retrieval. It runs from
+2026-10-21T11:18:15.918000Z through 2026-10-21T11:24:19.791125+00:00. The pull added
+16 messages; 1 lie inside the reserved window.
+There are 0 eligible validation calls and at most 0 trades per candidate/cost scenario.
+No eligible calls means no new evidence of profitability. All 1,126 older eligible calls and nineteen numeric fields
+were preserved. This combined archive contains 14,420 messages and
+1,128 eligible calls.</p>
+<p><a href="fixed_validation_windows/20261021_114419/validation/report.html">Window results and preservation audit</a> ·
+<a href="fixed_validation_windows/20261021_114419/forward_protocol.json">Unchanged candidate definitions and new bounds</a>.</p>
+<h3>Later collection under the preregistered rules</h3>
+<p>This window was frozen at 2026-10-21T12:18:31.597730+00:00 before retrieval. It runs from
+2026-10-21T11:44:24.543000Z through 2026-10-21T11:58:31.597730+00:00. The pull added
+20 messages; 6 lie inside the reserved window.
+There are 2 eligible validation calls and at most 0 trades per candidate/cost scenario.
+No trades means no evidence of profitability. Newly collected historical prices remain a candle execution model; actual fills are unmeasured. All 1,128 older eligible calls and nineteen numeric fields
+were preserved. This combined archive contains 14,440 messages and
+1,130 eligible calls.</p>
+<p><a href="fixed_validation_windows/20261021_121831/validation/report.html">Window results and preservation audit</a> ·
+<a href="fixed_validation_windows/20261021_121831/forward_protocol.json">Unchanged candidate definitions and new bounds</a>.</p>
+<h3>Accounting for the gaps between collection windows</h3>
+<p>A separate coverage check includes every archived eligible call posted after the original candidate freeze at
+2026-10-21T09:33:36.374286+00:00, through 2026-10-21T11:58:31.597000Z. It includes
+81 messages and 6 eligible calls on 3
+contracts. Of those calls, 2 lie inside the separately reserved windows.</p>
+<p>The unchanged minimum cap is $50,000; 4 calls fall below it.
+No call passes the unchanged entry/cohort conditions. The omitted collection gaps add no qualifying entries or profitability evidence. The coverage check was specified after collection, uses
+the original frozen rules, and does not retroactively turn the gaps into preregistered validation windows.</p>
+<p><a href="fixed_observation_audits/08fa18aff14279d4/report.html">All calls after the original freeze</a> ·
+<a href="fixed_observation_audits/08fa18aff14279d4/results.json">Interval gaps, fixed entry decisions and earlier-history references</a>.</p>
+<h2>Partial profit-taking</h2>
+<p>The new simulator sells fractions of the original token quantity, tracks the remaining inventory and realized cash,
+and charges an extra historical gas/MEV estimate for every partial attempt. Maximum possible fees are reserved before
+entry. Orders are serialized; each sale waits for a completed-candle trigger and the reaction delay, then uses the next
+observed open. A target is not a guaranteed fill price. Failed fractions are written off after ten seconds.</p>
+<p>The broad catalog tested 282,100 combinations including full-exit controls.
+Its primary selector chose no partial sales and returned -2.63%.
+Keeping the earlier daily entry filters and choosing exits/sizes from each day's earlier data then evaluated
+21,816 portfolios. Both new non-cash selections made two partial sales across ten trades.</p>
+<p>Modeled account: $1,000, 1% of preceding 60-second economic volume per position, plus transaction fee estimates.
+The table uses a 5% proceeds haircut unless stated otherwise. Named risk limits constrain training, not future losses.</p>
+<table><tr><th>Procedure</th><th>Return</th><th>Drawdown bound</th><th>Return at 10% haircut</th><th>Partial sales</th></tr><tr><td>Earlier saved choices</td><td>+2.62%</td><td>1.55%</td><td>+1.94%</td><td>0</td></tr><tr><td>5% training-risk selector</td><td>+2.73%</td><td>1.40%</td><td>+2.04%</td><td>2</td></tr><tr><td>2% training-risk selector</td><td>+2.08%</td><td>0.77%</td><td>+1.73%</td><td>2</td></tr></table>
+<p>Removing only partial sales, while retaining the selected exits and daily sizes, changes the 5% selector to
++2.62% / 1.55% drawdown and the 2% selector to
++1.99% / 0.86%. All comparisons enter the same calls.
+This isolates a small benefit from the partial sales. <a href="partial_saved_entry_runs/a10dbacbac7180bb/ablation.json">Controlled comparisons and ledgers</a>.</p>
+<h3>Daily choices for the lower-risk selection</h3>
+<p>The earlier daily entry filters remain in force. These dates use different exits and allocations; this is not one
+unchanged trading rule. Allocation percentages multiply the earlier sizing profile.</p>
+<table><tr><th>Evaluation day UTC</th><th>Original allocation</th><th>Exit rule</th><th>Maximum hold</th></tr><tr><td>2026-10-18</td><td>50%</td><td>Sell 25% at a 3x trigger; initial stop 50%; trail activates at 1.5x with a 30% gap</td><td>600s</td></tr><tr><td>2026-10-19</td><td>50%</td><td>Sell 25% at a 3x trigger; initial stop 50%; trail activates at 1.5x with a 30% gap</td><td>600s</td></tr><tr><td>2026-10-20</td><td>25%</td><td>Earlier saved full-position exit</td><td>600s</td></tr></table>
+<p>Removing the two best tokens gives -0.91% for the 5% selector and -0.29%
+for the 2% selector. The stricter sample-size requirement still leaves the procedure in cash. These are exploratory
+results on examined dates. The separately collected windows below evaluate the earlier frozen rule.</p>
+<p>The independent audit checked 12,750 event sequences, 11,532
+portfolio trades and 24,200 first decisions after changing later prices.
+With partials disabled, 44,000 outcomes and 16 portfolios
+agreed with the previous simulator. The optimized search now prepares 1 price path and
+404 distinct outcome banks across the daily fits; results are unchanged.
+<a href="partial_saved_entry_runs/a10dbacbac7180bb/partial_exit_audit.json">Accounting and execution audit</a> ·
+<a href="partial_saved_entry_runs/a10dbacbac7180bb/report.html">Full search, stress scenarios and source code</a>.</p>
+<h2>Full-position exits and allocation size</h2>
+<p>Keeping each day's earlier saved entry filters, a second comparison evaluated
+22,248 portfolios across 412 exits and
+9 size/budget policies. Its 5% training-drawdown selector returned +1.97%
+with a 1.36% drawdown bound. Its 2% selector returned +0.78%
+with a 0.46% bound, using quarter-size allocations. No candidate met the stricter selector's sample-size requirements, so it stayed in cash.</p>
+<p>Simply keeping the original saved exits and reducing allocation to one quarter returned +0.89%
+with a 0.46% drawdown bound. Those full-position exit variants did not improve that matched-size comparison.
+The original full-size ledger reproduced exactly.</p>
+<p>The table below changes only the allocation multiplier of the original saved choices. The 7.5% maximum
+allocation, original daily budgets, 1% volume cap and historical gas/MEV estimates still apply.
+This is retrospective size sensitivity on the same ten trades, not an independently selected strategy.</p>
+<table><tr><th>Original allocation</th><th>Return at 5% haircut</th><th>Drawdown bound</th><th>Return at 10% haircut</th><th>Return excluding two best tokens</th></tr><tr><td>10%</td><td>+0.32%</td><td>0.20%</td><td>+0.25%</td><td>-0.15%</td></tr><tr><td>25%</td><td>+0.89%</td><td>0.46%</td><td>+0.70%</td><td>-0.29%</td></tr><tr><td>50%</td><td>+1.83%</td><td>0.88%</td><td>+1.45%</td><td>-0.53%</td></tr><tr><td>75%</td><td>+2.51%</td><td>1.26%</td><td>+1.95%</td><td>-0.78%</td></tr><tr><td>100%</td><td>+2.62%</td><td>1.55%</td><td>+1.94%</td><td>-1.02%</td></tr><tr><td>150%</td><td>+2.84%</td><td>2.14%</td><td>+1.90%</td><td>-1.50%</td></tr><tr><td>200%</td><td>+3.15%</td><td>2.64%</td><td>+1.97%</td><td>-1.89%</td></tr></table>
+<p>At 75% allocation, the replay keeps most of the full-size profit with a smaller drawdown bound.
+Every tested size still loses when the two best tokens are removed.
+<a href="saved_entry_exit_runs/388ac3490c265d30/size_frontier.json">Sizing results and ledgers</a> ·
+<a href="saved_entry_exit_runs/388ac3490c265d30/report.html">Exit comparison and daily training choices</a>.</p>
+<h2>Exits that react after entry</h2>
+<p>The next search tested 411 exit rules: stops that tighten over time, stalled-price exits,
+volatility-adjusted trails, falling volume and short-term price reversals. All decisions use completed
+one-second candles and fills wait for the next observed open after the reaction delay.
+Maximum holds range from five seconds to ten minutes.</p>
+<p>Across 287,700 combinations and 4,224 portfolio evaluations,
+the primary daily selector returned -3.77% with a 4.56% drawdown bound.
+It did not improve the saved candidate. An independent scalar implementation checked
+38,473 actual-data decisions and fills; 83,600 future-price
+perturbations left earlier decisions unchanged. <a href="dynamic_exit_runs/c040b04a89bd9d6b/exit_audit.json">Execution audit</a>.</p>
+<h2>Pre-call transactions, trade size and fees</h2>
+<p>The new cache contains 487,906 trade rows from 595
+complete request windows and 607 cursor pages, covering all 1,100 corrected calls.
+Features describe the preceding 15, 60 or 180 seconds with indexing lags of 1, 5 or 15 seconds.
+They include buy/sell balance, wallet concentration, routing-adjusted volume, activity bursts,
+price momentum, fees and pool withdrawals. Present-day wallet labels are excluded.</p>
+<p>The search screened 236,800 entry/exit combinations in 0.43 seconds
+after loading and evaluated 6,144 portfolios.
+Its training selector required profit after removing the two best training tokens, but its later daily replay
+lost 8.41% with a 8.48%
+drawdown bound. Price losses explain nearly all of the loss. This search did not improve the earlier saved choices.</p>
+<p>The following table replays those earlier saved daily choices, without refitting. A position cannot exceed
+1% of the preceding 60-second economic volume. Economic volume nets routed target-token swaps within each
+transaction and recipient. The fee estimate is twice the prior median transaction gas plus MEV, in addition to
+the 5% proceeds haircut. At least five prior swaps are required. These are volume and fee proxies;
+historical pool reserves, executable size and transaction success remain unmeasured.</p>
+<table><tr><th>Starting account</th><th>Return</th><th>Drawdown bound</th><th>Trades</th></tr><tr><td>$100</td><td>+3.23%</td><td>1.98%</td><td>10</td></tr><tr><td>$1,000</td><td>+2.62%</td><td>1.55%</td><td>10</td></tr><tr><td>$10,000</td><td>+0.96%</td><td>1.12%</td><td>10</td></tr></table>
+<p>At $1,000, excluding the best two tokens changes the result to -1.02%.
+<a href="trade_flow_runs/b3bb841f1fb8e9f7/saved_choice_sensitivity.json">Full account-size, participation, cost and concentration results</a>.</p>
+<p>The audit independently checked 13,938 field values,
+1,197 windows with changed future data and
+425 portfolio trades. The API sometimes reports the requested token on
+the quote leg, so direction and amount must be normalized. One BSC receipt independently confirms that conversion.
+<a href="trade_flow_runs/b3bb841f1fb8e9f7/flow_audit.json">Feature and accounting audit</a> ·
+<a href="trade_flow/quote_leg_audit.json">On-chain direction check</a> ·
+<a href="https://docs.mobula.io/rest-api-reference/endpoint/trades-filters">Mobula batch trade endpoint</a>.</p>
+<h2>Recurring addresses before calls</h2>
+<p>The cached trades contain 37,086 chain-scoped recipient addresses
+with at least $5 of net buying during a pre-call window. The context asks whether tokens associated with those
+addresses subsequently rose or fell after their first eligible group call. Its baselines wait five seconds,
+hold 60 or 180 seconds and apply a 10% proceeds haircut. This measures signal history, not wallet profits.</p>
+<p>Each earlier token supplies one outcome. Only outcomes fully completed before the later call enter its context,
+and the target token's own outcomes are always excluded. Histories cover the prior day or all prior data,
+use at most 20 earlier tokens per address, and shrink scores toward zero. No address is linked to a Telegram member.</p>
+<p>The search screened 156,160 combinations in 0.57 seconds,
+then evaluated 6,144 portfolios. Its primary daily replay returned
+-5.57% with a 5.57% drawdown bound across 38 trades.
+This is another rejected strategy family. The previous saved-choice benchmark reproduced exactly after sharing the search runner.</p>
+<p>The history audit compared 17,955 values against a direct scan of prior token events
+and checked 1,197 windows after changing future and target-token outcomes.
+Both history implementations use the same aggregation formulas, so this specifically audits event selection and causality.
+<a href="wallet_context_runs/e6cd205cf91a23a5/report.html">Rules, sizing and stress results</a> ·
+<a href="wallet_context_runs/e6cd205cf91a23a5/history_audit.json">History audit</a>.</p>
+<h2>EVM coverage correction</h2>
+<p>The corrected dataset has 1,100 eligible calls, 520 contracts and 45 callers. It adds 34 eligible calls.
+The collector had omitted direct EVM body addresses and used Robinhood testnet ID 46630 for mainnet tokens.
+The <a href="https://docs.robinhood.com/chain/add-network-to-wallet/">official mainnet ID is 4663</a>.
+The repair preserved all original quotes and candles, recomputed caller-order and history features,
+and reused all 1,066 original second-bar windows. One address posted three times remains unresolved.</p>
+<p>The saved choices add one losing BSC trade. A separate corrected search evaluated
+67,200 combinations in 1.47 seconds after loading.
+<a href="coverage_repairs/evm/research/3bb3410a3806ad08/report.html">Corrected ledgers, caller rankings, cap/chain baselines and sensitivity results</a>.
+The older rows below retain their original dataset and are not directly interchangeable with corrected runs.</p>
+<h2>Returns and drawdown</h2><p>Starting equity is 100 units. Costs are applied once as a haircut to sale proceeds.
+Drawdown is a conservative bound from candle highs and lows. The following rows are retrospective daily selection
+procedures: their entry and sizing rules can change after each training day. These dates have already been examined.</p>
+<div class="scroll"><table><tr><th>Procedure</th><th>Cost assumption</th><th>Portfolio return</th><th>Drawdown bound</th><th>Trades</th></tr><tr><td>Corrected data · saved choices · second candles</td><td>5%</td><td>+3.77%</td><td>1.69%</td><td>10</td></tr><tr><td>Corrected data · saved choices · second candles</td><td>10%</td><td>+2.99%</td><td>1.84%</td><td>10</td></tr><tr><td>Corrected data · saved choices · second candles</td><td>15%</td><td>+2.21%</td><td>1.99%</td><td>10</td></tr><tr><td>Corrected data · short holds and chain filters</td><td>5%</td><td>-2.05%</td><td>4.47%</td><td>15</td></tr><tr><td>Corrected data · short holds and chain filters</td><td>10%</td><td>-3.71%</td><td>5.24%</td><td>15</td></tr><tr><td>Corrected data · short holds and chain filters</td><td>15%</td><td>-5.01%</td><td>5.76%</td><td>15</td></tr><tr><td>Original data · cohort choices · minute candles</td><td>5%</td><td>+4.28%</td><td>1.61%</td><td>9</td></tr><tr><td>Original data · cohort choices · minute candles</td><td>10%</td><td>+3.59%</td><td>1.53%</td><td>9</td></tr><tr><td>Original data · cohort choices · minute candles</td><td>15%</td><td>+2.91%</td><td>1.59%</td><td>9</td></tr><tr><td>Original data · same choices · second candles</td><td>5%</td><td>+4.22%</td><td>1.40%</td><td>9</td></tr><tr><td>Original data · same choices · second candles</td><td>10%</td><td>+3.54%</td><td>1.47%</td><td>9</td></tr><tr><td>Original data · same choices · second candles</td><td>15%</td><td>+2.86%</td><td>1.64%</td><td>9</td></tr><tr><td>5–180 second hold search · daily selection</td><td>5%</td><td>-0.16%</td><td>2.36%</td><td>7</td></tr><tr><td>5–180 second hold search · daily selection</td><td>10%</td><td>-1.32%</td><td>2.23%</td><td>7</td></tr><tr><td>5–180 second hold search · daily selection</td><td>15%</td><td>-2.28%</td><td>2.44%</td><td>7</td></tr><tr><td>Conditional entries and activity sizing</td><td>5%</td><td>-7.04%</td><td>11.94%</td><td>22</td></tr><tr><td>Conditional entries and activity sizing</td><td>10%</td><td>-8.20%</td><td>11.73%</td><td>22</td></tr><tr><td>Conditional entries and activity sizing</td><td>15%</td><td>-9.09%</td><td>11.44%</td><td>22</td></tr><tr><td>Reported liquidity and holder features</td><td>5%</td><td>-7.28%</td><td>7.51%</td><td>9</td></tr><tr><td>Reported liquidity and holder features</td><td>10%</td><td>-7.78%</td><td>7.99%</td><td>9</td></tr><tr><td>Reported liquidity and holder features</td><td>15%</td><td>-8.26%</td><td>8.43%</td><td>9</td></tr><tr><td>Pre-call trading flow</td><td>5%</td><td>-8.41%</td><td>8.48%</td><td>15</td></tr><tr><td>Pre-call trading flow</td><td>10%</td><td>-8.53%</td><td>8.53%</td><td>15</td></tr><tr><td>Pre-call trading flow</td><td>15%</td><td>-8.64%</td><td>8.64%</td><td>13</td></tr><tr><td>Recurring address context</td><td>5%</td><td>-5.57%</td><td>5.57%</td><td>38</td></tr><tr><td>Recurring address context</td><td>10%</td><td>-5.62%</td><td>5.62%</td><td>34</td></tr><tr><td>Recurring address context</td><td>15%</td><td>-5.67%</td><td>5.67%</td><td>31</td></tr><tr><td>Dynamic exits with quote-time filters</td><td>5%</td><td>-3.77%</td><td>4.56%</td><td>19</td></tr><tr><td>Dynamic exits with quote-time filters</td><td>10%</td><td>-5.40%</td><td>5.57%</td><td>19</td></tr><tr><td>Dynamic exits with quote-time filters</td><td>15%</td><td>-6.58%</td><td>6.75%</td><td>19</td></tr><tr><td>Saved entries with refitted exits</td><td>5%</td><td>+1.97%</td><td>1.36%</td><td>10</td></tr><tr><td>Saved entries with refitted exits</td><td>10%</td><td>+1.32%</td><td>1.52%</td><td>10</td></tr><tr><td>Saved entries with refitted exits</td><td>15%</td><td>+0.68%</td><td>1.69%</td><td>10</td></tr><tr><td>Partial-profit catalog with quote-time filters</td><td>5%</td><td>-2.63%</td><td>2.81%</td><td>10</td></tr><tr><td>Partial-profit catalog with quote-time filters</td><td>10%</td><td>-3.29%</td><td>3.47%</td><td>10</td></tr><tr><td>Partial-profit catalog with quote-time filters</td><td>15%</td><td>-3.80%</td><td>3.96%</td><td>10</td></tr><tr><td>Saved entries with partial-profit exits</td><td>5%</td><td>+2.08%</td><td>0.77%</td><td>10</td></tr><tr><td>Saved entries with partial-profit exits</td><td>10%</td><td>+1.73%</td><td>0.77%</td><td>10</td></tr><tr><td>Saved entries with partial-profit exits</td><td>15%</td><td>+1.38%</td><td>0.77%</td><td>10</td></tr><tr><td>Activity filters and size reductions</td><td>5%</td><td>+2.63%</td><td>1.32%</td><td>10</td></tr><tr><td>Activity filters and size reductions</td><td>10%</td><td>+2.09%</td><td>1.49%</td><td>10</td></tr><tr><td>Activity filters and size reductions</td><td>15%</td><td>+1.55%</td><td>1.66%</td><td>10</td></tr></table></div>
+<p>Removing the best token from the minute replay leaves +0.91%; removing the best two gives −0.51%.
+The earlier Decider-assisted search did not improve the daily replay; see the model comparison below.</p>
+<h2>Earlier fixed rule used in the first three validation windows</h2>
+<ul><li>Historical quote market cap from $50,000 up to $250,000.</li>
+<li>The first completed full minute closes 10–25% below the historical quote. Wait one additional minute before entry.</li>
+<li>The last five completed first calls on other tokens average at least −10% after the baseline 5% haircut.
+Those baseline calls wait one minute and hold for three minutes.</li>
+<li>Maximum hold: ten minutes. Trail activates at 1.5× with a 30% gap. There is no initial fixed price stop.</li>
+<li>Base allocation: 5% of equity × clip(0.15 / max(0.01, first-candle range/open), 0.25, 1.5),
+with a 7.5% allocation cap and a remaining daily full-loss budget of 4% of day-start equity plus realized PnL.</li>
+<li>One open position and one trade per contract. The fixed rule does not use Decider scores.</li></ul>
+<p>This earlier rule is one result of daily training selection. Its own fresh-window result is shown separately below;
+the saved-choice returns above are not the returns of this single unchanged rule.</p>
+<h2>Newly collected chronological check</h2>
+<p>The protocol was frozen at 2026-10-21T07:27:56.930679+00:00 before the new messages or prices were collected.
+The replay window starts at 2026-10-21T05:13:07.049000Z; the last new message is
+2026-10-21T06:59:01.000Z. It contains
+8 eligible calls and <strong>zero qualifying trades</strong>.
+This does not confirm profitability. It is a historical holdout collected after the freeze, not live trading.</p>
+<h3>Unchanged-rule extension</h3>
+<p>A second protocol froze the same entry, exit and sizing fields before collecting the next window.
+Repaired EVM history and the first window supplied its earlier context. The extension starts at
+2026-10-21T07:30:43.648000Z; its last message is 2026-10-21T07:50:22.000Z.
+It archived 21 messages and includes
+3 eligible calls inside the reserved window,
+with 0 trades. That archive contains 14,312 messages and 1,116 eligible calls.
+<a href="coverage_repairs/evm/validation_extension/validation/report.html">Extension protocol, results and per-call decisions</a>.</p><h3>Further unchanged-rule window</h3><p>The rule froze before retrieval.
+This window runs from 2026-10-21T08:17:48.178000Z through
+2026-10-21T08:30:00.000Z. It adds 14 archived messages,
+4 eligible calls inside its reserved window and
+0 trades. The combined archive contains
+14,326 messages and 1,122 eligible calls.
+<a href="validation_windows/20261021_0851/validation/report.html">Protocol, results and per-call decisions</a>.</p>
+<h2>Data and implementation checks</h2>
+<p>The original archive has 14,273 messages and 1,066 eligible caller-contract calls from 44 senders.
+The additional archive has 18 messages. All original call metadata and 19 original numeric array fields were preserved.
+The separate validator reproduced the original nine-trade minute ledger.</p>
+<p>The one-second cache has 600,201 observed seconds, including duplicate call windows,
+from 986 unique requests. Five calls have no usable second bars.
+Of 19,008 reconstructed minute bars, 18 differ by over 5%.
+Independent scalar replay agreed on 1,920 cases across 128 calls, five exit rules and three entry delays.</p>
+<p>The shorter-hold search evaluated 49,920 combinations offline in
+1.24 seconds after loading the data. Its full catalog, screening arrays, shortlist,
+selected ledgers and source code are saved. The replay loader now decompresses the entry masks once per run.</p>
+<h2>Reports and reproducibility</h2><ul>
+<li><a href="second_runs/328171df98915b04/report.html">Second-resolution execution and shorter-hold research</a></li>
+<li><a href="cohort_runs/cdbe9d78885db2c1/validation/report.html">Frozen-rule validation</a></li>
+<li><a href="cohort_runs/cdbe9d78885db2c1/results.json">Cohort stress results and nine-trade ledger</a></li>
+<li><a href="adaptive_report.html">Decider, cap bands, caller rankings and sizing comparisons</a></li>
+<li><a href="entry_runs/d3d323a273a50890/report.html">Conditional entries and activity sizing</a></li><li><a href="reported_metrics_runs/e38f66791836dc47/report.html">Reported liquidity and holder features</a></li><li><a href="trade_flow_runs/b3bb841f1fb8e9f7/report.html">Pre-call trading flow</a></li><li><a href="wallet_context_runs/e6cd205cf91a23a5/report.html">Recurring address context</a></li><li><a href="dynamic_exit_runs/c040b04a89bd9d6b/report.html">Dynamic exits with quote-time filters</a></li><li><a href="saved_entry_exit_runs/388ac3490c265d30/report.html">Saved entries with refitted exits</a></li><li><a href="partial_exit_runs/ce568e6e9f861a42/report.html">Partial-profit catalog with quote-time filters</a></li><li><a href="partial_saved_entry_runs/a10dbacbac7180bb/report.html">Saved entries with partial-profit exits</a></li><li><a href="activity_policy_runs/6d2be12e1a8dd1db/report.html">Activity filters and size reductions</a></li>
+<li><a href="README.md">Commands, assumptions and data collection</a></li></ul>
+<h2>Practical limits</h2><p>The search has tested millions of overlapping variants on a short history. Small samples,
+reused dates and token concentration prevent a claim of optimality. Missing second-resolution entry fills are skipped;
+an exit without an observed trade within ten seconds is written down to zero. These are simulation assumptions.
+Historical pool capacity, AMM price impact and transaction failures are not measured. The new transaction cache
+provides historical gas/MEV estimates; actual execution costs remain unknown.</p>
+<p>Mobula's <a href="https://docs.mobula.io/rest-api-reference/endpoint/token-ohlcv-history">OHLCV reference</a>
+documents second intervals and the behavior of empty candles. Caller tables describe outcomes following their messages;
+they do not establish members' own trading returns or ownership of wallets.</p></html>

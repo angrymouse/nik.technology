@@ -1,0 +1,8 @@
+{
+  "featureDirectory": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/coverage_repairs/evm/combined/datasets/adb4dc66b5bd0a0d3e6f/wallet_context/e53107eaca461fd3",
+  "sourceCodeSha256": "373bf3ae340aecb5c37f1a676b5b49c71d2fd4564546d578353de6386975d8b4",
+  "sampledCalls": 133,
+  "eventSelectionFieldComparisons": 17955,
+  "futureAndTargetOutcomePerturbations": 1197,
+  "scope": "Indexed address history compared with scanning first-token events. Both use the same summary formula; this is a history-selection and causality audit."
+}

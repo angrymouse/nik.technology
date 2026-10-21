@@ -1,0 +1,2589 @@
+[
+  {
+    "sourceIndex": 602,
+    "assetKey": "solana:solana:Fd61znB4XAdwqrFexC91aoxKcz1iheqx5j4VZCG4pump",
+    "at": 1792340340000,
+    "expectedPriceUSD": 4.8153996918140505e-05,
+    "recordedSwaps": 3,
+    "minimumRelativePriceError": 0.022611245502752064,
+    "markets": [
+      "9NUXbp7BGWJoXx3CdZ1hrKU1vrfCmVy1j3V6jTxwZJox"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 602,
+    "assetKey": "solana:solana:Fd61znB4XAdwqrFexC91aoxKcz1iheqx5j4VZCG4pump",
+    "at": 1792340642000,
+    "expectedPriceUSD": 4.7828622489970415e-05,
+    "recordedSwaps": 3,
+    "minimumRelativePriceError": 0.0006819519975367339,
+    "markets": [
+      "9NUXbp7BGWJoXx3CdZ1hrKU1vrfCmVy1j3V6jTxwZJox"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 650,
+    "assetKey": "solana:solana:ByQ4cTwVyrZtzb7aFKW8QXPBMXdCWx6UdVMshLZipump",
+    "at": 1792351980000,
+    "expectedPriceUSD": 6.702770408774012e-05,
+    "recordedSwaps": 1,
+    "minimumRelativePriceError": 0.0009116790652978768,
+    "markets": [
+      "GcoRoPBwpWK4nE1cwByuPnogHepJQhrggrwg5pyYZ4X1"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 650,
+    "assetKey": "solana:solana:ByQ4cTwVyrZtzb7aFKW8QXPBMXdCWx6UdVMshLZipump",
+    "at": 1792352283000,
+    "expectedPriceUSD": 4.874620290346829e-05,
+    "recordedSwaps": 1,
+    "minimumRelativePriceError": 0.005307552758337719,
+    "markets": [
+      "GcoRoPBwpWK4nE1cwByuPnogHepJQhrggrwg5pyYZ4X1"
+    ],
+    "uses": 56,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 663,
+    "assetKey": "solana:solana:ByQ4cTwVyrZtzb7aFKW8QXPBMXdCWx6UdVMshLZipump",
+    "at": 1792355220000,
+    "expectedPriceUSD": 0.0001087704296646239,
+    "recordedSwaps": 1,
+    "minimumRelativePriceError": 0.003226137929820405,
+    "markets": [
+      "GcoRoPBwpWK4nE1cwByuPnogHepJQhrggrwg5pyYZ4X1"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 663,
+    "assetKey": "solana:solana:ByQ4cTwVyrZtzb7aFKW8QXPBMXdCWx6UdVMshLZipump",
+    "at": 1792355522000,
+    "expectedPriceUSD": 0.00011892349025199822,
+    "recordedSwaps": 2,
+    "minimumRelativePriceError": 0.00264833419251298,
+    "markets": [
+      "GcoRoPBwpWK4nE1cwByuPnogHepJQhrggrwg5pyYZ4X1"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792355760000,
+    "expectedPriceUSD": 3.1146055491150117e-05,
+    "recordedSwaps": 12,
+    "minimumRelativePriceError": 0.0015539724028845736,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792355991000,
+    "expectedPriceUSD": 5.828108468445371e-05,
+    "recordedSwaps": 21,
+    "minimumRelativePriceError": 0.0009389545279502309,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 3,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 675,
+    "assetKey": "solana:solana:ArpPsesHXKbGeJsHdquM6acT3uNs7BChyetJjiNYpump",
+    "at": 1792358160000,
+    "expectedPriceUSD": 0.00013336868702103715,
+    "recordedSwaps": 8,
+    "minimumRelativePriceError": 0.0012197040254156022,
+    "markets": [
+      "CkEeZKJpcro2dEp8RXJpSYfjF3TPoijmH8xVGuEAxoue"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 675,
+    "assetKey": "solana:solana:ArpPsesHXKbGeJsHdquM6acT3uNs7BChyetJjiNYpump",
+    "at": 1792358461000,
+    "expectedPriceUSD": 6.863952869086847e-05,
+    "recordedSwaps": 22,
+    "minimumRelativePriceError": 0.0008526334513704326,
+    "markets": [
+      "CkEeZKJpcro2dEp8RXJpSYfjF3TPoijmH8xVGuEAxoue"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 735,
+    "assetKey": "solana:solana:3xrmyTm2sWrh6SpRegMrrmsP47fALoQBKyEFse5Dpump",
+    "at": 1792383240000,
+    "expectedPriceUSD": 2.697272438386806e-05,
+    "recordedSwaps": 6,
+    "minimumRelativePriceError": 0.020609508577630442,
+    "markets": [
+      "QxWB59DYacTPnG2DQ1TmLCdb1eorCjX9yqPBN2dTfVD"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 735,
+    "assetKey": "solana:solana:3xrmyTm2sWrh6SpRegMrrmsP47fALoQBKyEFse5Dpump",
+    "at": 1792383541000,
+    "expectedPriceUSD": 4.632248059707947e-05,
+    "recordedSwaps": 6,
+    "minimumRelativePriceError": 0.058455640530090336,
+    "markets": [
+      "QxWB59DYacTPnG2DQ1TmLCdb1eorCjX9yqPBN2dTfVD"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1064,
+    "assetKey": "solana:solana:ESABfJpt9cocXgWX7HF8WwSXrcv785oyaA8imwojpump",
+    "at": 1792437780000,
+    "expectedPriceUSD": 0.00014504462418003528,
+    "recordedSwaps": 1,
+    "minimumRelativePriceError": 0.006613455192146622,
+    "markets": [
+      "2sA5714M6Bst4zdPxS5TRfPPEAz1pCAmDYhGGatFrAZW"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 1064,
+    "assetKey": "solana:solana:ESABfJpt9cocXgWX7HF8WwSXrcv785oyaA8imwojpump",
+    "at": 1792438081000,
+    "expectedPriceUSD": 0.00027824110727608416,
+    "recordedSwaps": 5,
+    "minimumRelativePriceError": 0.0002350283884839932,
+    "markets": [
+      "2sA5714M6Bst4zdPxS5TRfPPEAz1pCAmDYhGGatFrAZW"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1077,
+    "assetKey": "solana:solana:3Ckrmzsp6NbnW6zLcrj3z8BSn1H1gRN3fh6Un15DJcbf",
+    "at": 1792439460000,
+    "expectedPriceUSD": 0.00016348984237534535,
+    "recordedSwaps": 3,
+    "minimumRelativePriceError": 0.001486907564380413,
+    "markets": [
+      "9h51k8vijv2YdNQUGvpzKTKPzwLfd9gqpGrvFwy3cK6H"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 1077,
+    "assetKey": "solana:solana:3Ckrmzsp6NbnW6zLcrj3z8BSn1H1gRN3fh6Un15DJcbf",
+    "at": 1792439761000,
+    "expectedPriceUSD": 0.00017512042893785593,
+    "recordedSwaps": 1,
+    "minimumRelativePriceError": 0.00024390322020351185,
+    "markets": [
+      "9h51k8vijv2YdNQUGvpzKTKPzwLfd9gqpGrvFwy3cK6H"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1082,
+    "assetKey": "solana:solana:ESABfJpt9cocXgWX7HF8WwSXrcv785oyaA8imwojpump",
+    "at": 1792439940000,
+    "expectedPriceUSD": 0.0006651827303948918,
+    "recordedSwaps": 2,
+    "minimumRelativePriceError": 0.0001019261493118151,
+    "markets": [
+      "2sA5714M6Bst4zdPxS5TRfPPEAz1pCAmDYhGGatFrAZW"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 1082,
+    "assetKey": "solana:solana:ESABfJpt9cocXgWX7HF8WwSXrcv785oyaA8imwojpump",
+    "at": 1792440241000,
+    "expectedPriceUSD": 0.0004384745463017305,
+    "recordedSwaps": 13,
+    "minimumRelativePriceError": 0.006178322791238422,
+    "markets": [
+      "2sA5714M6Bst4zdPxS5TRfPPEAz1pCAmDYhGGatFrAZW",
+      "5YPF5H2b1wHeke4QJdh1Ux5CiQPBTbT4Mnpy3yRDxREW",
+      "BEqa2cZ42GF6GHcJ6hyKwLNSzuQk5g4Yzb8q2j8vKxbx"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1389,
+    "assetKey": "evm:56:0x214df818241e3f51eeff6fa190865c2c0f2f7777",
+    "at": 1792527060000,
+    "expectedPriceUSD": 9.637886921567196e-05,
+    "recordedSwaps": 2,
+    "minimumRelativePriceError": 0.004885805351858563,
+    "markets": [
+      "0xb1a9950b503188f185fbbf19eb26f63acd05a44f"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 1389,
+    "assetKey": "evm:56:0x214df818241e3f51eeff6fa190865c2c0f2f7777",
+    "at": 1792527361000,
+    "expectedPriceUSD": 9.214232489426611e-05,
+    "recordedSwaps": 4,
+    "minimumRelativePriceError": 0.03961410512012287,
+    "markets": [
+      "0xb1a9950b503188f185fbbf19eb26f63acd05a44f"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1437,
+    "assetKey": "solana:solana:9vuGTtRoL6GeD4Gwt6mQBm7Bn1AzJWATBvjkiMQXpump",
+    "at": 1792536960000,
+    "expectedPriceUSD": 3.2315375755206414e-05,
+    "recordedSwaps": 4,
+    "minimumRelativePriceError": 0.00026505879486493633,
+    "markets": [
+      "6imLxoFtJfzdZuMALc3MVVLBg299bLgG5siMXYQzds9t"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 1437,
+    "assetKey": "solana:solana:9vuGTtRoL6GeD4Gwt6mQBm7Bn1AzJWATBvjkiMQXpump",
+    "at": 1792537261000,
+    "expectedPriceUSD": 6.014173109156044e-05,
+    "recordedSwaps": 4,
+    "minimumRelativePriceError": 0.0013551628581081054,
+    "markets": [
+      "6imLxoFtJfzdZuMALc3MVVLBg299bLgG5siMXYQzds9t"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 602,
+    "assetKey": "solana:solana:Fd61znB4XAdwqrFexC91aoxKcz1iheqx5j4VZCG4pump",
+    "at": 1792340645000,
+    "expectedPriceUSD": 4.7300314854893335e-05,
+    "recordedSwaps": 1,
+    "minimumRelativePriceError": 0.007108774636725768,
+    "markets": [
+      "9NUXbp7BGWJoXx3CdZ1hrKU1vrfCmVy1j3V6jTxwZJox"
+    ],
+    "uses": 84,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 663,
+    "assetKey": "solana:solana:ByQ4cTwVyrZtzb7aFKW8QXPBMXdCWx6UdVMshLZipump",
+    "at": 1792355524000,
+    "expectedPriceUSD": 0.00011784408110543958,
+    "recordedSwaps": 4,
+    "minimumRelativePriceError": 0.0020886703029424636,
+    "markets": [
+      "2cpMAuQUC38FTdhkZfSgxMTdeQFfhVoFh7LPEYKLjRZW",
+      "GcoRoPBwpWK4nE1cwByuPnogHepJQhrggrwg5pyYZ4X1"
+    ],
+    "uses": 56,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792355993000,
+    "expectedPriceUSD": 5.9575498313359026e-05,
+    "recordedSwaps": 20,
+    "minimumRelativePriceError": 0.004755352371215493,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 3,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 675,
+    "assetKey": "solana:solana:ArpPsesHXKbGeJsHdquM6acT3uNs7BChyetJjiNYpump",
+    "at": 1792358463000,
+    "expectedPriceUSD": 0.0001009972732020253,
+    "recordedSwaps": 3,
+    "minimumRelativePriceError": 0.002075919636061574,
+    "markets": [
+      "CkEeZKJpcro2dEp8RXJpSYfjF3TPoijmH8xVGuEAxoue"
+    ],
+    "uses": 56,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 735,
+    "assetKey": "solana:solana:3xrmyTm2sWrh6SpRegMrrmsP47fALoQBKyEFse5Dpump",
+    "at": 1792383543000,
+    "expectedPriceUSD": 4.333117754625558e-05,
+    "recordedSwaps": 3,
+    "minimumRelativePriceError": 0.0032651960086735876,
+    "markets": [
+      "QxWB59DYacTPnG2DQ1TmLCdb1eorCjX9yqPBN2dTfVD"
+    ],
+    "uses": 56,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1064,
+    "assetKey": "solana:solana:ESABfJpt9cocXgWX7HF8WwSXrcv785oyaA8imwojpump",
+    "at": 1792438083000,
+    "expectedPriceUSD": 0.00027715519751215427,
+    "recordedSwaps": 1,
+    "minimumRelativePriceError": 0.012450927610609619,
+    "markets": [
+      "2sA5714M6Bst4zdPxS5TRfPPEAz1pCAmDYhGGatFrAZW"
+    ],
+    "uses": 56,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1077,
+    "assetKey": "solana:solana:3Ckrmzsp6NbnW6zLcrj3z8BSn1H1gRN3fh6Un15DJcbf",
+    "at": 1792439765000,
+    "expectedPriceUSD": 0.00017350566388332395,
+    "recordedSwaps": 5,
+    "minimumRelativePriceError": 0.010569842800374318,
+    "markets": [
+      "9h51k8vijv2YdNQUGvpzKTKPzwLfd9gqpGrvFwy3cK6H",
+      "FuHUv7BhcJU7R6bomiS9xMfUhznK6s77ogz1TjMQvq62"
+    ],
+    "uses": 112,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1082,
+    "assetKey": "solana:solana:ESABfJpt9cocXgWX7HF8WwSXrcv785oyaA8imwojpump",
+    "at": 1792440243000,
+    "expectedPriceUSD": 0.0004468756622040824,
+    "recordedSwaps": 5,
+    "minimumRelativePriceError": 0.00019021326285528772,
+    "markets": [
+      "2sA5714M6Bst4zdPxS5TRfPPEAz1pCAmDYhGGatFrAZW"
+    ],
+    "uses": 56,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1389,
+    "assetKey": "evm:56:0x214df818241e3f51eeff6fa190865c2c0f2f7777",
+    "at": 1792527367000,
+    "expectedPriceUSD": 8.754506836496828e-05,
+    "recordedSwaps": 4,
+    "minimumRelativePriceError": 0.020560361743067634,
+    "markets": [
+      "0xb1a9950b503188f185fbbf19eb26f63acd05a44f"
+    ],
+    "uses": 168,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1437,
+    "assetKey": "solana:solana:9vuGTtRoL6GeD4Gwt6mQBm7Bn1AzJWATBvjkiMQXpump",
+    "at": 1792537263000,
+    "expectedPriceUSD": 6.004849405444685e-05,
+    "recordedSwaps": 3,
+    "minimumRelativePriceError": 0.00046694915166600737,
+    "markets": [
+      "6imLxoFtJfzdZuMALc3MVVLBg299bLgG5siMXYQzds9t"
+    ],
+    "uses": 56,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 650,
+    "assetKey": "solana:solana:ByQ4cTwVyrZtzb7aFKW8QXPBMXdCWx6UdVMshLZipump",
+    "at": 1792352287000,
+    "expectedPriceUSD": 4.771835127455296e-05,
+    "recordedSwaps": 1,
+    "minimumRelativePriceError": 0.005009624648778632,
+    "markets": [
+      "GcoRoPBwpWK4nE1cwByuPnogHepJQhrggrwg5pyYZ4X1"
+    ],
+    "uses": 84,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 663,
+    "assetKey": "solana:solana:ByQ4cTwVyrZtzb7aFKW8QXPBMXdCWx6UdVMshLZipump",
+    "at": 1792355526000,
+    "expectedPriceUSD": 0.00011556629456135614,
+    "recordedSwaps": 1,
+    "minimumRelativePriceError": 0.019797979143625244,
+    "markets": [
+      "GcoRoPBwpWK4nE1cwByuPnogHepJQhrggrwg5pyYZ4X1"
+    ],
+    "uses": 56,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792355995000,
+    "expectedPriceUSD": 6.576589045081434e-05,
+    "recordedSwaps": 17,
+    "minimumRelativePriceError": 0.002047193489356003,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 5,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 675,
+    "assetKey": "solana:solana:ArpPsesHXKbGeJsHdquM6acT3uNs7BChyetJjiNYpump",
+    "at": 1792358465000,
+    "expectedPriceUSD": 9.816168899594471e-05,
+    "recordedSwaps": 9,
+    "minimumRelativePriceError": 0.00028455671427973783,
+    "markets": [
+      "CkEeZKJpcro2dEp8RXJpSYfjF3TPoijmH8xVGuEAxoue"
+    ],
+    "uses": 56,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 735,
+    "assetKey": "solana:solana:3xrmyTm2sWrh6SpRegMrrmsP47fALoQBKyEFse5Dpump",
+    "at": 1792383545000,
+    "expectedPriceUSD": 4.4270181588714464e-05,
+    "recordedSwaps": 2,
+    "minimumRelativePriceError": 0.005263861056740371,
+    "markets": [
+      "QxWB59DYacTPnG2DQ1TmLCdb1eorCjX9yqPBN2dTfVD"
+    ],
+    "uses": 56,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1064,
+    "assetKey": "solana:solana:ESABfJpt9cocXgWX7HF8WwSXrcv785oyaA8imwojpump",
+    "at": 1792438085000,
+    "expectedPriceUSD": 0.00027332285377342793,
+    "recordedSwaps": 5,
+    "minimumRelativePriceError": 0.0002722381583510902,
+    "markets": [
+      "2sA5714M6Bst4zdPxS5TRfPPEAz1pCAmDYhGGatFrAZW"
+    ],
+    "uses": 56,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1082,
+    "assetKey": "solana:solana:ESABfJpt9cocXgWX7HF8WwSXrcv785oyaA8imwojpump",
+    "at": 1792440245000,
+    "expectedPriceUSD": 0.00044772512268960544,
+    "recordedSwaps": 3,
+    "minimumRelativePriceError": 0.0013813352864912032,
+    "markets": [
+      "2sA5714M6Bst4zdPxS5TRfPPEAz1pCAmDYhGGatFrAZW"
+    ],
+    "uses": 56,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1437,
+    "assetKey": "solana:solana:9vuGTtRoL6GeD4Gwt6mQBm7Bn1AzJWATBvjkiMQXpump",
+    "at": 1792537265000,
+    "expectedPriceUSD": 5.973260986810324e-05,
+    "recordedSwaps": 5,
+    "minimumRelativePriceError": 0.007964869756908688,
+    "markets": [
+      "6imLxoFtJfzdZuMALc3MVVLBg299bLgG5siMXYQzds9t"
+    ],
+    "uses": 56,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792355997000,
+    "expectedPriceUSD": 6.287757898858964e-05,
+    "recordedSwaps": 12,
+    "minimumRelativePriceError": 0.0009914818051668384,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 7,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792355999000,
+    "expectedPriceUSD": 6.859561421460525e-05,
+    "recordedSwaps": 8,
+    "minimumRelativePriceError": 0.0010268983562097267,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 13,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792356001000,
+    "expectedPriceUSD": 6.566376905712991e-05,
+    "recordedSwaps": 8,
+    "minimumRelativePriceError": 6.745169325750311e-06,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 15,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792356003000,
+    "expectedPriceUSD": 6.736013524581626e-05,
+    "recordedSwaps": 6,
+    "minimumRelativePriceError": 0.004453669505488644,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 13,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792355996000,
+    "expectedPriceUSD": 6.592963329557548e-05,
+    "recordedSwaps": 9,
+    "minimumRelativePriceError": 0.0034714119465781845,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 2,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792355998000,
+    "expectedPriceUSD": 6.973588936505421e-05,
+    "recordedSwaps": 27,
+    "minimumRelativePriceError": 0.001970080680934294,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 4,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792356000000,
+    "expectedPriceUSD": 6.634414153731182e-05,
+    "recordedSwaps": 7,
+    "minimumRelativePriceError": 0.002290802877100484,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 6,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792356002000,
+    "expectedPriceUSD": 6.79407857126557e-05,
+    "recordedSwaps": 12,
+    "minimumRelativePriceError": 0.0006202962494843423,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 4,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792356004000,
+    "expectedPriceUSD": 6.861761778205338e-05,
+    "recordedSwaps": 4,
+    "minimumRelativePriceError": 0.0009725833097655734,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 3,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792356005000,
+    "expectedPriceUSD": 6.75905988626815e-05,
+    "recordedSwaps": 16,
+    "minimumRelativePriceError": 0.003287236127706872,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 10,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792356007000,
+    "expectedPriceUSD": 7.55735713902776e-05,
+    "recordedSwaps": 11,
+    "minimumRelativePriceError": 0.007469057580034466,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 7,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792356009000,
+    "expectedPriceUSD": 7.925589564469124e-05,
+    "recordedSwaps": 18,
+    "minimumRelativePriceError": 0.010657883678194313,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 4,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792356015000,
+    "expectedPriceUSD": 9.450963949621423e-05,
+    "recordedSwaps": 16,
+    "minimumRelativePriceError": 0.00013799613937715005,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 8,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792356017000,
+    "expectedPriceUSD": 9.875916651130497e-05,
+    "recordedSwaps": 28,
+    "minimumRelativePriceError": 0.007671011177595277,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 14,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792356019000,
+    "expectedPriceUSD": 9.860344087972631e-05,
+    "recordedSwaps": 10,
+    "minimumRelativePriceError": 0.006080256680063734,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 19,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792356021000,
+    "expectedPriceUSD": 9.044980951111897e-05,
+    "recordedSwaps": 14,
+    "minimumRelativePriceError": 0.0005000642464580984,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 11,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792356023000,
+    "expectedPriceUSD": 9.276198892865288e-05,
+    "recordedSwaps": 20,
+    "minimumRelativePriceError": 0.0005160558928629655,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 5,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792356018000,
+    "expectedPriceUSD": 9.524690982583859e-05,
+    "recordedSwaps": 19,
+    "minimumRelativePriceError": 0.0008165399830486475,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 2,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792356020000,
+    "expectedPriceUSD": 9.359809337071919e-05,
+    "recordedSwaps": 22,
+    "minimumRelativePriceError": 0.01562213067597329,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 2,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792356022000,
+    "expectedPriceUSD": 9.265712833607362e-05,
+    "recordedSwaps": 10,
+    "minimumRelativePriceError": 0.0011317056168513862,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 2,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792356061000,
+    "expectedPriceUSD": 5.561564346917012e-05,
+    "recordedSwaps": 28,
+    "minimumRelativePriceError": 0.002156006718158743,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 12,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792356063000,
+    "expectedPriceUSD": 6.542033396667199e-05,
+    "recordedSwaps": 5,
+    "minimumRelativePriceError": 0.00038938543871713804,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 26,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792356065000,
+    "expectedPriceUSD": 6.636008433756194e-05,
+    "recordedSwaps": 11,
+    "minimumRelativePriceError": 0.011145318054490705,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 26,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 602,
+    "assetKey": "solana:solana:Fd61znB4XAdwqrFexC91aoxKcz1iheqx5j4VZCG4pump",
+    "at": 1792340343000,
+    "expectedPriceUSD": 4.51991592365236e-05,
+    "recordedSwaps": 1,
+    "minimumRelativePriceError": 0.0010694294912051427,
+    "markets": [
+      "9NUXbp7BGWJoXx3CdZ1hrKU1vrfCmVy1j3V6jTxwZJox"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 650,
+    "assetKey": "solana:solana:ByQ4cTwVyrZtzb7aFKW8QXPBMXdCWx6UdVMshLZipump",
+    "at": 1792351983000,
+    "expectedPriceUSD": 6.64730091190883e-05,
+    "recordedSwaps": 1,
+    "minimumRelativePriceError": 0.013820677839106343,
+    "markets": [
+      "GcoRoPBwpWK4nE1cwByuPnogHepJQhrggrwg5pyYZ4X1"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 650,
+    "assetKey": "solana:solana:ByQ4cTwVyrZtzb7aFKW8QXPBMXdCWx6UdVMshLZipump",
+    "at": 1792352284000,
+    "expectedPriceUSD": 4.8487479859789496e-05,
+    "recordedSwaps": 1,
+    "minimumRelativePriceError": 0.01586241618373674,
+    "markets": [
+      "GcoRoPBwpWK4nE1cwByuPnogHepJQhrggrwg5pyYZ4X1"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 663,
+    "assetKey": "solana:solana:ByQ4cTwVyrZtzb7aFKW8QXPBMXdCWx6UdVMshLZipump",
+    "at": 1792355223000,
+    "expectedPriceUSD": 0.0001091213380734078,
+    "recordedSwaps": 1,
+    "minimumRelativePriceError": 0.020186999772216496,
+    "markets": [
+      "GcoRoPBwpWK4nE1cwByuPnogHepJQhrggrwg5pyYZ4X1"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792355762000,
+    "expectedPriceUSD": 3.183172025706928e-05,
+    "recordedSwaps": 9,
+    "minimumRelativePriceError": 0.0007776260120707645,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 675,
+    "assetKey": "solana:solana:ArpPsesHXKbGeJsHdquM6acT3uNs7BChyetJjiNYpump",
+    "at": 1792358162000,
+    "expectedPriceUSD": 0.0001326871488287129,
+    "recordedSwaps": 6,
+    "minimumRelativePriceError": 0.0008482033726926463,
+    "markets": [
+      "CkEeZKJpcro2dEp8RXJpSYfjF3TPoijmH8xVGuEAxoue"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 735,
+    "assetKey": "solana:solana:3xrmyTm2sWrh6SpRegMrrmsP47fALoQBKyEFse5Dpump",
+    "at": 1792383242000,
+    "expectedPriceUSD": 2.6599816650288928e-05,
+    "recordedSwaps": 10,
+    "minimumRelativePriceError": 0.0021961652501065743,
+    "markets": [
+      "QxWB59DYacTPnG2DQ1TmLCdb1eorCjX9yqPBN2dTfVD"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 1064,
+    "assetKey": "solana:solana:ESABfJpt9cocXgWX7HF8WwSXrcv785oyaA8imwojpump",
+    "at": 1792437782000,
+    "expectedPriceUSD": 0.00014377271475916615,
+    "recordedSwaps": 1,
+    "minimumRelativePriceError": 0.010524614467447346,
+    "markets": [
+      "2sA5714M6Bst4zdPxS5TRfPPEAz1pCAmDYhGGatFrAZW"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 1077,
+    "assetKey": "solana:solana:3Ckrmzsp6NbnW6zLcrj3z8BSn1H1gRN3fh6Un15DJcbf",
+    "at": 1792439462000,
+    "expectedPriceUSD": 0.00016324674809201808,
+    "recordedSwaps": 3,
+    "minimumRelativePriceError": 0.0005664599055358321,
+    "markets": [
+      "9h51k8vijv2YdNQUGvpzKTKPzwLfd9gqpGrvFwy3cK6H"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 1082,
+    "assetKey": "solana:solana:ESABfJpt9cocXgWX7HF8WwSXrcv785oyaA8imwojpump",
+    "at": 1792439942000,
+    "expectedPriceUSD": 0.0006588915258301957,
+    "recordedSwaps": 15,
+    "minimumRelativePriceError": 3.698835903565012e-06,
+    "markets": [
+      "2sA5714M6Bst4zdPxS5TRfPPEAz1pCAmDYhGGatFrAZW",
+      "3oehCFaUJrCzkJWkUCnm7f5Fws2LGuMSEbXSSihd7t6w",
+      "5YPF5H2b1wHeke4QJdh1Ux5CiQPBTbT4Mnpy3yRDxREW",
+      "BZJ4B6WWc1cBegcZyEdpRbNcSv94cB2q22ePDSzdfmCu"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 1389,
+    "assetKey": "evm:56:0x214df818241e3f51eeff6fa190865c2c0f2f7777",
+    "at": 1792527062000,
+    "expectedPriceUSD": 0.00010244112274343994,
+    "recordedSwaps": 1,
+    "minimumRelativePriceError": 0.023531157763716948,
+    "markets": [
+      "0xb1a9950b503188f185fbbf19eb26f63acd05a44f"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 1437,
+    "assetKey": "solana:solana:9vuGTtRoL6GeD4Gwt6mQBm7Bn1AzJWATBvjkiMQXpump",
+    "at": 1792536962000,
+    "expectedPriceUSD": 3.410698334939643e-05,
+    "recordedSwaps": 3,
+    "minimumRelativePriceError": 0.005144809475100098,
+    "markets": [
+      "6imLxoFtJfzdZuMALc3MVVLBg299bLgG5siMXYQzds9t"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 602,
+    "assetKey": "solana:solana:Fd61znB4XAdwqrFexC91aoxKcz1iheqx5j4VZCG4pump",
+    "at": 1792340646000,
+    "expectedPriceUSD": 4.6964067576343724e-05,
+    "recordedSwaps": 2,
+    "minimumRelativePriceError": 0.007612263073298875,
+    "markets": [
+      "9NUXbp7BGWJoXx3CdZ1hrKU1vrfCmVy1j3V6jTxwZJox"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 602,
+    "assetKey": "solana:solana:Fd61znB4XAdwqrFexC91aoxKcz1iheqx5j4VZCG4pump",
+    "at": 1792340652000,
+    "expectedPriceUSD": 4.5431411288486225e-05,
+    "recordedSwaps": 2,
+    "minimumRelativePriceError": 0.0055814101251808745,
+    "markets": [
+      "9NUXbp7BGWJoXx3CdZ1hrKU1vrfCmVy1j3V6jTxwZJox"
+    ],
+    "uses": 112,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 650,
+    "assetKey": "solana:solana:ByQ4cTwVyrZtzb7aFKW8QXPBMXdCWx6UdVMshLZipump",
+    "at": 1792352294000,
+    "expectedPriceUSD": 4.7479300245808885e-05,
+    "recordedSwaps": 1,
+    "minimumRelativePriceError": 0.000842242888764444,
+    "markets": [
+      "GcoRoPBwpWK4nE1cwByuPnogHepJQhrggrwg5pyYZ4X1"
+    ],
+    "uses": 140,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 663,
+    "assetKey": "solana:solana:ByQ4cTwVyrZtzb7aFKW8QXPBMXdCWx6UdVMshLZipump",
+    "at": 1792355528000,
+    "expectedPriceUSD": 0.00011294945941145132,
+    "recordedSwaps": 2,
+    "minimumRelativePriceError": 0.00010838409165558893,
+    "markets": [
+      "GcoRoPBwpWK4nE1cwByuPnogHepJQhrggrwg5pyYZ4X1"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 675,
+    "assetKey": "solana:solana:ArpPsesHXKbGeJsHdquM6acT3uNs7BChyetJjiNYpump",
+    "at": 1792358467000,
+    "expectedPriceUSD": 9.662857955126143e-05,
+    "recordedSwaps": 35,
+    "minimumRelativePriceError": 0.009302424887853267,
+    "markets": [
+      "CkEeZKJpcro2dEp8RXJpSYfjF3TPoijmH8xVGuEAxoue"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 735,
+    "assetKey": "solana:solana:3xrmyTm2sWrh6SpRegMrrmsP47fALoQBKyEFse5Dpump",
+    "at": 1792383547000,
+    "expectedPriceUSD": 4.240076667107868e-05,
+    "recordedSwaps": 7,
+    "minimumRelativePriceError": 0.005388025518097583,
+    "markets": [
+      "QxWB59DYacTPnG2DQ1TmLCdb1eorCjX9yqPBN2dTfVD"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1064,
+    "assetKey": "solana:solana:ESABfJpt9cocXgWX7HF8WwSXrcv785oyaA8imwojpump",
+    "at": 1792438087000,
+    "expectedPriceUSD": 0.0002769026657240784,
+    "recordedSwaps": 4,
+    "minimumRelativePriceError": 0.019157490965577173,
+    "markets": [
+      "2sA5714M6Bst4zdPxS5TRfPPEAz1pCAmDYhGGatFrAZW"
+    ],
+    "uses": 56,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1077,
+    "assetKey": "solana:solana:3Ckrmzsp6NbnW6zLcrj3z8BSn1H1gRN3fh6Un15DJcbf",
+    "at": 1792439767000,
+    "expectedPriceUSD": 0.00017015098640861458,
+    "recordedSwaps": 2,
+    "minimumRelativePriceError": 0.0003921977969145729,
+    "markets": [
+      "9h51k8vijv2YdNQUGvpzKTKPzwLfd9gqpGrvFwy3cK6H"
+    ],
+    "uses": 56,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1082,
+    "assetKey": "solana:solana:ESABfJpt9cocXgWX7HF8WwSXrcv785oyaA8imwojpump",
+    "at": 1792440247000,
+    "expectedPriceUSD": 0.00046172059713657184,
+    "recordedSwaps": 8,
+    "minimumRelativePriceError": 0.0048436307671678724,
+    "markets": [
+      "2sA5714M6Bst4zdPxS5TRfPPEAz1pCAmDYhGGatFrAZW",
+      "5YPF5H2b1wHeke4QJdh1Ux5CiQPBTbT4Mnpy3yRDxREW",
+      "BEqa2cZ42GF6GHcJ6hyKwLNSzuQk5g4Yzb8q2j8vKxbx"
+    ],
+    "uses": 56,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1437,
+    "assetKey": "solana:solana:9vuGTtRoL6GeD4Gwt6mQBm7Bn1AzJWATBvjkiMQXpump",
+    "at": 1792537267000,
+    "expectedPriceUSD": 5.864788398416606e-05,
+    "recordedSwaps": 3,
+    "minimumRelativePriceError": 0.0099970410067729,
+    "markets": [
+      "6imLxoFtJfzdZuMALc3MVVLBg299bLgG5siMXYQzds9t"
+    ],
+    "uses": 56,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792356067000,
+    "expectedPriceUSD": 6.910207450073295e-05,
+    "recordedSwaps": 14,
+    "minimumRelativePriceError": 0.009168352769557186,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 14,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 602,
+    "assetKey": "solana:solana:Fd61znB4XAdwqrFexC91aoxKcz1iheqx5j4VZCG4pump",
+    "at": 1792340346000,
+    "expectedPriceUSD": 4.338398821742142e-05,
+    "recordedSwaps": 1,
+    "minimumRelativePriceError": 0.03960534472907973,
+    "markets": [
+      "9NUXbp7BGWJoXx3CdZ1hrKU1vrfCmVy1j3V6jTxwZJox"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 602,
+    "assetKey": "solana:solana:Fd61znB4XAdwqrFexC91aoxKcz1iheqx5j4VZCG4pump",
+    "at": 1792340647000,
+    "expectedPriceUSD": 4.645507471720584e-05,
+    "recordedSwaps": 2,
+    "minimumRelativePriceError": 0.011161539767759687,
+    "markets": [
+      "9NUXbp7BGWJoXx3CdZ1hrKU1vrfCmVy1j3V6jTxwZJox"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 650,
+    "assetKey": "solana:solana:ByQ4cTwVyrZtzb7aFKW8QXPBMXdCWx6UdVMshLZipump",
+    "at": 1792351986000,
+    "expectedPriceUSD": 6.739171116311919e-05,
+    "recordedSwaps": 1,
+    "minimumRelativePriceError": 0.012351106291576097,
+    "markets": [
+      "GcoRoPBwpWK4nE1cwByuPnogHepJQhrggrwg5pyYZ4X1"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 663,
+    "assetKey": "solana:solana:ByQ4cTwVyrZtzb7aFKW8QXPBMXdCWx6UdVMshLZipump",
+    "at": 1792355229000,
+    "expectedPriceUSD": 0.00010805235861690382,
+    "recordedSwaps": 2,
+    "minimumRelativePriceError": 0.007207788748539334,
+    "markets": [
+      "GcoRoPBwpWK4nE1cwByuPnogHepJQhrggrwg5pyYZ4X1"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 663,
+    "assetKey": "solana:solana:ByQ4cTwVyrZtzb7aFKW8QXPBMXdCWx6UdVMshLZipump",
+    "at": 1792355536000,
+    "expectedPriceUSD": 0.00011293721748689002,
+    "recordedSwaps": 1,
+    "minimumRelativePriceError": 0.00011640556085046327,
+    "markets": [
+      "GcoRoPBwpWK4nE1cwByuPnogHepJQhrggrwg5pyYZ4X1"
+    ],
+    "uses": 168,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792355765000,
+    "expectedPriceUSD": 3.0386859038440564e-05,
+    "recordedSwaps": 3,
+    "minimumRelativePriceError": 0.006592318973038136,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 675,
+    "assetKey": "solana:solana:ArpPsesHXKbGeJsHdquM6acT3uNs7BChyetJjiNYpump",
+    "at": 1792358165000,
+    "expectedPriceUSD": 0.00012854359436975513,
+    "recordedSwaps": 6,
+    "minimumRelativePriceError": 0.007831633335601773,
+    "markets": [
+      "4DBcYcCYv1CoFpmsuDq2TDsCdFpADKwWnYesL3d5kFTY",
+      "CkEeZKJpcro2dEp8RXJpSYfjF3TPoijmH8xVGuEAxoue"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 675,
+    "assetKey": "solana:solana:ArpPsesHXKbGeJsHdquM6acT3uNs7BChyetJjiNYpump",
+    "at": 1792358466000,
+    "expectedPriceUSD": 9.705111900082607e-05,
+    "recordedSwaps": 9,
+    "minimumRelativePriceError": 0.0010406535128950622,
+    "markets": [
+      "4DBcYcCYv1CoFpmsuDq2TDsCdFpADKwWnYesL3d5kFTY",
+      "CkEeZKJpcro2dEp8RXJpSYfjF3TPoijmH8xVGuEAxoue"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 735,
+    "assetKey": "solana:solana:3xrmyTm2sWrh6SpRegMrrmsP47fALoQBKyEFse5Dpump",
+    "at": 1792383245000,
+    "expectedPriceUSD": 2.229986060529283e-05,
+    "recordedSwaps": 5,
+    "minimumRelativePriceError": 0.0018966843227530283,
+    "markets": [
+      "QxWB59DYacTPnG2DQ1TmLCdb1eorCjX9yqPBN2dTfVD"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 735,
+    "assetKey": "solana:solana:3xrmyTm2sWrh6SpRegMrrmsP47fALoQBKyEFse5Dpump",
+    "at": 1792383489000,
+    "expectedPriceUSD": 4.6828754530661075e-05,
+    "recordedSwaps": 5,
+    "minimumRelativePriceError": 0.0034646042564572266,
+    "markets": [
+      "QxWB59DYacTPnG2DQ1TmLCdb1eorCjX9yqPBN2dTfVD"
+    ],
+    "uses": 2,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1064,
+    "assetKey": "solana:solana:ESABfJpt9cocXgWX7HF8WwSXrcv785oyaA8imwojpump",
+    "at": 1792437786000,
+    "expectedPriceUSD": 0.0001436119618333248,
+    "recordedSwaps": 2,
+    "minimumRelativePriceError": 0.0005979875518209443,
+    "markets": [
+      "2sA5714M6Bst4zdPxS5TRfPPEAz1pCAmDYhGGatFrAZW"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 1077,
+    "assetKey": "solana:solana:3Ckrmzsp6NbnW6zLcrj3z8BSn1H1gRN3fh6Un15DJcbf",
+    "at": 1792439465000,
+    "expectedPriceUSD": 0.00015385697236364667,
+    "recordedSwaps": 20,
+    "minimumRelativePriceError": 1.0537475816252417e-05,
+    "markets": [
+      "9h51k8vijv2YdNQUGvpzKTKPzwLfd9gqpGrvFwy3cK6H",
+      "FuHUv7BhcJU7R6bomiS9xMfUhznK6s77ogz1TjMQvq62"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 1082,
+    "assetKey": "solana:solana:ESABfJpt9cocXgWX7HF8WwSXrcv785oyaA8imwojpump",
+    "at": 1792439946000,
+    "expectedPriceUSD": 0.0006740555755135542,
+    "recordedSwaps": 3,
+    "minimumRelativePriceError": 0.0004586293049152479,
+    "markets": [
+      "2sA5714M6Bst4zdPxS5TRfPPEAz1pCAmDYhGGatFrAZW",
+      "43HSwFEn2uRHrDaBrsvcApNFwGfG6G9fMyvwf39CA3o7"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 1389,
+    "assetKey": "evm:56:0x214df818241e3f51eeff6fa190865c2c0f2f7777",
+    "at": 1792527065000,
+    "expectedPriceUSD": 0.00010003056452267176,
+    "recordedSwaps": 1,
+    "minimumRelativePriceError": 0.028835014765091316,
+    "markets": [
+      "0xb1a9950b503188f185fbbf19eb26f63acd05a44f"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 1437,
+    "assetKey": "solana:solana:9vuGTtRoL6GeD4Gwt6mQBm7Bn1AzJWATBvjkiMQXpump",
+    "at": 1792536965000,
+    "expectedPriceUSD": 3.5024333664381324e-05,
+    "recordedSwaps": 6,
+    "minimumRelativePriceError": 0.0025093366999662248,
+    "markets": [
+      "6imLxoFtJfzdZuMALc3MVVLBg299bLgG5siMXYQzds9t"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 675,
+    "assetKey": "solana:solana:ArpPsesHXKbGeJsHdquM6acT3uNs7BChyetJjiNYpump",
+    "at": 1792358468000,
+    "expectedPriceUSD": 0.00010827621620967616,
+    "recordedSwaps": 34,
+    "minimumRelativePriceError": 0.0002796635972266426,
+    "markets": [
+      "4DBcYcCYv1CoFpmsuDq2TDsCdFpADKwWnYesL3d5kFTY",
+      "CkEeZKJpcro2dEp8RXJpSYfjF3TPoijmH8xVGuEAxoue"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 735,
+    "assetKey": "solana:solana:3xrmyTm2sWrh6SpRegMrrmsP47fALoQBKyEFse5Dpump",
+    "at": 1792383491000,
+    "expectedPriceUSD": 4.496157416551629e-05,
+    "recordedSwaps": 12,
+    "minimumRelativePriceError": 0.0003875087694980017,
+    "markets": [
+      "QxWB59DYacTPnG2DQ1TmLCdb1eorCjX9yqPBN2dTfVD"
+    ],
+    "uses": 4,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1064,
+    "assetKey": "solana:solana:ESABfJpt9cocXgWX7HF8WwSXrcv785oyaA8imwojpump",
+    "at": 1792438089000,
+    "expectedPriceUSD": 0.00028231328868280804,
+    "recordedSwaps": 2,
+    "minimumRelativePriceError": 0.0017134943556982307,
+    "markets": [
+      "2sA5714M6Bst4zdPxS5TRfPPEAz1pCAmDYhGGatFrAZW"
+    ],
+    "uses": 29,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1077,
+    "assetKey": "solana:solana:3Ckrmzsp6NbnW6zLcrj3z8BSn1H1gRN3fh6Un15DJcbf",
+    "at": 1792439768000,
+    "expectedPriceUSD": 0.00016921278548366264,
+    "recordedSwaps": 2,
+    "minimumRelativePriceError": 0.019861732576403446,
+    "markets": [
+      "9h51k8vijv2YdNQUGvpzKTKPzwLfd9gqpGrvFwy3cK6H"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1082,
+    "assetKey": "solana:solana:ESABfJpt9cocXgWX7HF8WwSXrcv785oyaA8imwojpump",
+    "at": 1792440249000,
+    "expectedPriceUSD": 0.00046574790352554694,
+    "recordedSwaps": 12,
+    "minimumRelativePriceError": 0.00298714072027928,
+    "markets": [
+      "2sA5714M6Bst4zdPxS5TRfPPEAz1pCAmDYhGGatFrAZW",
+      "5YPF5H2b1wHeke4QJdh1Ux5CiQPBTbT4Mnpy3yRDxREW",
+      "BEqa2cZ42GF6GHcJ6hyKwLNSzuQk5g4Yzb8q2j8vKxbx"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1389,
+    "assetKey": "evm:56:0x214df818241e3f51eeff6fa190865c2c0f2f7777",
+    "at": 1792527368000,
+    "expectedPriceUSD": 9.025185599041704e-05,
+    "recordedSwaps": 1,
+    "minimumRelativePriceError": 0.030613403084336133,
+    "markets": [
+      "0xb1a9950b503188f185fbbf19eb26f63acd05a44f"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1437,
+    "assetKey": "solana:solana:9vuGTtRoL6GeD4Gwt6mQBm7Bn1AzJWATBvjkiMQXpump",
+    "at": 1792537268000,
+    "expectedPriceUSD": 5.746654524192482e-05,
+    "recordedSwaps": 5,
+    "minimumRelativePriceError": 0.0002844297545147034,
+    "markets": [
+      "6imLxoFtJfzdZuMALc3MVVLBg299bLgG5siMXYQzds9t"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 675,
+    "assetKey": "solana:solana:ArpPsesHXKbGeJsHdquM6acT3uNs7BChyetJjiNYpump",
+    "at": 1792358470000,
+    "expectedPriceUSD": 0.00011004367688045201,
+    "recordedSwaps": 7,
+    "minimumRelativePriceError": 0.00011639782820371813,
+    "markets": [
+      "CkEeZKJpcro2dEp8RXJpSYfjF3TPoijmH8xVGuEAxoue"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 735,
+    "assetKey": "solana:solana:3xrmyTm2sWrh6SpRegMrrmsP47fALoQBKyEFse5Dpump",
+    "at": 1792383493000,
+    "expectedPriceUSD": 4.4865052458301766e-05,
+    "recordedSwaps": 9,
+    "minimumRelativePriceError": 0.013970897608313937,
+    "markets": [
+      "QxWB59DYacTPnG2DQ1TmLCdb1eorCjX9yqPBN2dTfVD"
+    ],
+    "uses": 5,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1064,
+    "assetKey": "solana:solana:ESABfJpt9cocXgWX7HF8WwSXrcv785oyaA8imwojpump",
+    "at": 1792438092000,
+    "expectedPriceUSD": 0.0002825901045449951,
+    "recordedSwaps": 2,
+    "minimumRelativePriceError": 0.0006262657475362143,
+    "markets": [
+      "2sA5714M6Bst4zdPxS5TRfPPEAz1pCAmDYhGGatFrAZW"
+    ],
+    "uses": 56,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1077,
+    "assetKey": "solana:solana:3Ckrmzsp6NbnW6zLcrj3z8BSn1H1gRN3fh6Un15DJcbf",
+    "at": 1792439770000,
+    "expectedPriceUSD": 0.00017345863408103868,
+    "recordedSwaps": 2,
+    "minimumRelativePriceError": 0.016471238483054984,
+    "markets": [
+      "9h51k8vijv2YdNQUGvpzKTKPzwLfd9gqpGrvFwy3cK6H"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1082,
+    "assetKey": "solana:solana:ESABfJpt9cocXgWX7HF8WwSXrcv785oyaA8imwojpump",
+    "at": 1792440251000,
+    "expectedPriceUSD": 0.0004772913078869558,
+    "recordedSwaps": 18,
+    "minimumRelativePriceError": 3.196288420392879e-05,
+    "markets": [
+      "2sA5714M6Bst4zdPxS5TRfPPEAz1pCAmDYhGGatFrAZW",
+      "BEqa2cZ42GF6GHcJ6hyKwLNSzuQk5g4Yzb8q2j8vKxbx"
+    ],
+    "uses": 56,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1389,
+    "assetKey": "evm:56:0x214df818241e3f51eeff6fa190865c2c0f2f7777",
+    "at": 1792527371000,
+    "expectedPriceUSD": 9.30034581779638e-05,
+    "recordedSwaps": 2,
+    "minimumRelativePriceError": 0.00695770885978253,
+    "markets": [
+      "0xb1a9950b503188f185fbbf19eb26f63acd05a44f"
+    ],
+    "uses": 56,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1437,
+    "assetKey": "solana:solana:9vuGTtRoL6GeD4Gwt6mQBm7Bn1AzJWATBvjkiMQXpump",
+    "at": 1792537270000,
+    "expectedPriceUSD": 5.728206759274631e-05,
+    "recordedSwaps": 3,
+    "minimumRelativePriceError": 0.008267662020096656,
+    "markets": [
+      "6imLxoFtJfzdZuMALc3MVVLBg299bLgG5siMXYQzds9t"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 735,
+    "assetKey": "solana:solana:3xrmyTm2sWrh6SpRegMrrmsP47fALoQBKyEFse5Dpump",
+    "at": 1792383495000,
+    "expectedPriceUSD": 4.325395519884889e-05,
+    "recordedSwaps": 6,
+    "minimumRelativePriceError": 0.00037014204858065725,
+    "markets": [
+      "QxWB59DYacTPnG2DQ1TmLCdb1eorCjX9yqPBN2dTfVD"
+    ],
+    "uses": 3,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 735,
+    "assetKey": "solana:solana:3xrmyTm2sWrh6SpRegMrrmsP47fALoQBKyEFse5Dpump",
+    "at": 1792383497000,
+    "expectedPriceUSD": 4.2399639473645116e-05,
+    "recordedSwaps": 8,
+    "minimumRelativePriceError": 8.270011398958665e-05,
+    "markets": [
+      "QxWB59DYacTPnG2DQ1TmLCdb1eorCjX9yqPBN2dTfVD"
+    ],
+    "uses": 1,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 735,
+    "assetKey": "solana:solana:3xrmyTm2sWrh6SpRegMrrmsP47fALoQBKyEFse5Dpump",
+    "at": 1792383509000,
+    "expectedPriceUSD": 4.75755259082086e-05,
+    "recordedSwaps": 6,
+    "minimumRelativePriceError": 0.01356883965869582,
+    "markets": [
+      "QxWB59DYacTPnG2DQ1TmLCdb1eorCjX9yqPBN2dTfVD"
+    ],
+    "uses": 1,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 735,
+    "assetKey": "solana:solana:3xrmyTm2sWrh6SpRegMrrmsP47fALoQBKyEFse5Dpump",
+    "at": 1792383511000,
+    "expectedPriceUSD": 4.651620914277331e-05,
+    "recordedSwaps": 2,
+    "minimumRelativePriceError": 0.0014617671508589947,
+    "markets": [
+      "QxWB59DYacTPnG2DQ1TmLCdb1eorCjX9yqPBN2dTfVD"
+    ],
+    "uses": 1,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 735,
+    "assetKey": "solana:solana:3xrmyTm2sWrh6SpRegMrrmsP47fALoQBKyEFse5Dpump",
+    "at": 1792383513000,
+    "expectedPriceUSD": 4.603517663765164e-05,
+    "recordedSwaps": 7,
+    "minimumRelativePriceError": 0.0064762376980326275,
+    "markets": [
+      "QxWB59DYacTPnG2DQ1TmLCdb1eorCjX9yqPBN2dTfVD"
+    ],
+    "uses": 2,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 735,
+    "assetKey": "solana:solana:3xrmyTm2sWrh6SpRegMrrmsP47fALoQBKyEFse5Dpump",
+    "at": 1792383490000,
+    "expectedPriceUSD": 4.5808896118145447e-05,
+    "recordedSwaps": 3,
+    "minimumRelativePriceError": 0.0014755671207834498,
+    "markets": [
+      "QxWB59DYacTPnG2DQ1TmLCdb1eorCjX9yqPBN2dTfVD"
+    ],
+    "uses": 2,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 735,
+    "assetKey": "solana:solana:3xrmyTm2sWrh6SpRegMrrmsP47fALoQBKyEFse5Dpump",
+    "at": 1792383492000,
+    "expectedPriceUSD": 4.3464552684678245e-05,
+    "recordedSwaps": 12,
+    "minimumRelativePriceError": 0.012577577133237705,
+    "markets": [
+      "QxWB59DYacTPnG2DQ1TmLCdb1eorCjX9yqPBN2dTfVD"
+    ],
+    "uses": 3,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 735,
+    "assetKey": "solana:solana:3xrmyTm2sWrh6SpRegMrrmsP47fALoQBKyEFse5Dpump",
+    "at": 1792383494000,
+    "expectedPriceUSD": 4.5491857512388336e-05,
+    "recordedSwaps": 6,
+    "minimumRelativePriceError": 0.005212109410841381,
+    "markets": [
+      "QxWB59DYacTPnG2DQ1TmLCdb1eorCjX9yqPBN2dTfVD"
+    ],
+    "uses": 3,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 735,
+    "assetKey": "solana:solana:3xrmyTm2sWrh6SpRegMrrmsP47fALoQBKyEFse5Dpump",
+    "at": 1792383496000,
+    "expectedPriceUSD": 4.2409748086047705e-05,
+    "recordedSwaps": 3,
+    "minimumRelativePriceError": 0.0002383558700249644,
+    "markets": [
+      "QxWB59DYacTPnG2DQ1TmLCdb1eorCjX9yqPBN2dTfVD"
+    ],
+    "uses": 1,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 735,
+    "assetKey": "solana:solana:3xrmyTm2sWrh6SpRegMrrmsP47fALoQBKyEFse5Dpump",
+    "at": 1792383516000,
+    "expectedPriceUSD": 4.328591450481718e-05,
+    "recordedSwaps": 2,
+    "minimumRelativePriceError": 0.00032311586459110586,
+    "markets": [
+      "QxWB59DYacTPnG2DQ1TmLCdb1eorCjX9yqPBN2dTfVD"
+    ],
+    "uses": 1,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 735,
+    "assetKey": "solana:solana:3xrmyTm2sWrh6SpRegMrrmsP47fALoQBKyEFse5Dpump",
+    "at": 1792383517000,
+    "expectedPriceUSD": 4.329990087050702e-05,
+    "recordedSwaps": 5,
+    "minimumRelativePriceError": 0.011295299605988296,
+    "markets": [
+      "QxWB59DYacTPnG2DQ1TmLCdb1eorCjX9yqPBN2dTfVD"
+    ],
+    "uses": 1,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 735,
+    "assetKey": "solana:solana:3xrmyTm2sWrh6SpRegMrrmsP47fALoQBKyEFse5Dpump",
+    "at": 1792383546000,
+    "expectedPriceUSD": 4.47296635016351e-05,
+    "recordedSwaps": 2,
+    "minimumRelativePriceError": 0.004292668560202717,
+    "markets": [
+      "QxWB59DYacTPnG2DQ1TmLCdb1eorCjX9yqPBN2dTfVD"
+    ],
+    "uses": 19,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 735,
+    "assetKey": "solana:solana:3xrmyTm2sWrh6SpRegMrrmsP47fALoQBKyEFse5Dpump",
+    "at": 1792383548000,
+    "expectedPriceUSD": 4.1781867785691076e-05,
+    "recordedSwaps": 3,
+    "minimumRelativePriceError": 0.0035510238738740707,
+    "markets": [
+      "QxWB59DYacTPnG2DQ1TmLCdb1eorCjX9yqPBN2dTfVD"
+    ],
+    "uses": 19,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 735,
+    "assetKey": "solana:solana:3xrmyTm2sWrh6SpRegMrrmsP47fALoQBKyEFse5Dpump",
+    "at": 1792383550000,
+    "expectedPriceUSD": 4.24280271849067e-05,
+    "recordedSwaps": 1,
+    "minimumRelativePriceError": 0.013837326301166186,
+    "markets": [
+      "QxWB59DYacTPnG2DQ1TmLCdb1eorCjX9yqPBN2dTfVD"
+    ],
+    "uses": 19,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792356066000,
+    "expectedPriceUSD": 6.778806094027146e-05,
+    "recordedSwaps": 6,
+    "minimumRelativePriceError": 0.019384144379336554,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 12,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792356068000,
+    "expectedPriceUSD": 7.176009630376594e-05,
+    "recordedSwaps": 7,
+    "minimumRelativePriceError": 0.002896303959151747,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 12,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792356070000,
+    "expectedPriceUSD": 7.643347957614806e-05,
+    "recordedSwaps": 14,
+    "minimumRelativePriceError": 0.006300599076660918,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 12,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 602,
+    "assetKey": "solana:solana:Fd61znB4XAdwqrFexC91aoxKcz1iheqx5j4VZCG4pump",
+    "at": 1792340350000,
+    "expectedPriceUSD": 4.152388950074039e-05,
+    "recordedSwaps": 6,
+    "minimumRelativePriceError": 0.011856567649613514,
+    "markets": [
+      "9NUXbp7BGWJoXx3CdZ1hrKU1vrfCmVy1j3V6jTxwZJox"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 650,
+    "assetKey": "solana:solana:ByQ4cTwVyrZtzb7aFKW8QXPBMXdCWx6UdVMshLZipump",
+    "at": 1792351990000,
+    "expectedPriceUSD": 6.65593489753723e-05,
+    "recordedSwaps": 1,
+    "minimumRelativePriceError": 0.00174087674990564,
+    "markets": [
+      "GcoRoPBwpWK4nE1cwByuPnogHepJQhrggrwg5pyYZ4X1"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 663,
+    "assetKey": "solana:solana:ByQ4cTwVyrZtzb7aFKW8QXPBMXdCWx6UdVMshLZipump",
+    "at": 1792355231000,
+    "expectedPriceUSD": 0.00010883728258994006,
+    "recordedSwaps": 3,
+    "minimumRelativePriceError": 0.02004409437563337,
+    "markets": [
+      "GcoRoPBwpWK4nE1cwByuPnogHepJQhrggrwg5pyYZ4X1"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792355770000,
+    "expectedPriceUSD": 3.329792195645154e-05,
+    "recordedSwaps": 7,
+    "minimumRelativePriceError": 0.004153307908936421,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 675,
+    "assetKey": "solana:solana:ArpPsesHXKbGeJsHdquM6acT3uNs7BChyetJjiNYpump",
+    "at": 1792358170000,
+    "expectedPriceUSD": 0.0001261093594494626,
+    "recordedSwaps": 4,
+    "minimumRelativePriceError": 0.0036666140020749083,
+    "markets": [
+      "CkEeZKJpcro2dEp8RXJpSYfjF3TPoijmH8xVGuEAxoue"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 675,
+    "assetKey": "solana:solana:ArpPsesHXKbGeJsHdquM6acT3uNs7BChyetJjiNYpump",
+    "at": 1792358471000,
+    "expectedPriceUSD": 0.00010618105546810178,
+    "recordedSwaps": 12,
+    "minimumRelativePriceError": 0.0026484737885066334,
+    "markets": [
+      "CkEeZKJpcro2dEp8RXJpSYfjF3TPoijmH8xVGuEAxoue"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 735,
+    "assetKey": "solana:solana:3xrmyTm2sWrh6SpRegMrrmsP47fALoQBKyEFse5Dpump",
+    "at": 1792383250000,
+    "expectedPriceUSD": 2.4018729527641838e-05,
+    "recordedSwaps": 2,
+    "minimumRelativePriceError": 0.013499370946933986,
+    "markets": [
+      "QxWB59DYacTPnG2DQ1TmLCdb1eorCjX9yqPBN2dTfVD"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 1064,
+    "assetKey": "solana:solana:ESABfJpt9cocXgWX7HF8WwSXrcv785oyaA8imwojpump",
+    "at": 1792437790000,
+    "expectedPriceUSD": 0.00014369783999879372,
+    "recordedSwaps": 1,
+    "minimumRelativePriceError": 0.0004918217895227839,
+    "markets": [
+      "2sA5714M6Bst4zdPxS5TRfPPEAz1pCAmDYhGGatFrAZW"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 1077,
+    "assetKey": "solana:solana:3Ckrmzsp6NbnW6zLcrj3z8BSn1H1gRN3fh6Un15DJcbf",
+    "at": 1792439470000,
+    "expectedPriceUSD": 0.00015798866411917582,
+    "recordedSwaps": 3,
+    "minimumRelativePriceError": 6.015515364032886e-05,
+    "markets": [
+      "9h51k8vijv2YdNQUGvpzKTKPzwLfd9gqpGrvFwy3cK6H"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 1077,
+    "assetKey": "solana:solana:3Ckrmzsp6NbnW6zLcrj3z8BSn1H1gRN3fh6Un15DJcbf",
+    "at": 1792439771000,
+    "expectedPriceUSD": 0.00017920836698750466,
+    "recordedSwaps": 3,
+    "minimumRelativePriceError": 0.04856771741703725,
+    "markets": [
+      "9h51k8vijv2YdNQUGvpzKTKPzwLfd9gqpGrvFwy3cK6H",
+      "FuHUv7BhcJU7R6bomiS9xMfUhznK6s77ogz1TjMQvq62"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1082,
+    "assetKey": "solana:solana:ESABfJpt9cocXgWX7HF8WwSXrcv785oyaA8imwojpump",
+    "at": 1792439950000,
+    "expectedPriceUSD": 0.0006801323704128232,
+    "recordedSwaps": 1,
+    "minimumRelativePriceError": 0.002557706034501006,
+    "markets": [
+      "2sA5714M6Bst4zdPxS5TRfPPEAz1pCAmDYhGGatFrAZW"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 1389,
+    "assetKey": "evm:56:0x214df818241e3f51eeff6fa190865c2c0f2f7777",
+    "at": 1792527070000,
+    "expectedPriceUSD": 9.71461817177001e-05,
+    "recordedSwaps": 1,
+    "minimumRelativePriceError": 0.027601355009115647,
+    "markets": [
+      "0xb1a9950b503188f185fbbf19eb26f63acd05a44f"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 1437,
+    "assetKey": "solana:solana:9vuGTtRoL6GeD4Gwt6mQBm7Bn1AzJWATBvjkiMQXpump",
+    "at": 1792536970000,
+    "expectedPriceUSD": 3.3624545965770344e-05,
+    "recordedSwaps": 3,
+    "minimumRelativePriceError": 0.013250669842366225,
+    "markets": [
+      "6imLxoFtJfzdZuMALc3MVVLBg299bLgG5siMXYQzds9t"
+    ],
+    "uses": 84,
+    "phases": [
+      "entry"
+    ]
+  },
+  {
+    "sourceIndex": 1437,
+    "assetKey": "solana:solana:9vuGTtRoL6GeD4Gwt6mQBm7Bn1AzJWATBvjkiMQXpump",
+    "at": 1792537271000,
+    "expectedPriceUSD": 5.6808478818077156e-05,
+    "recordedSwaps": 2,
+    "minimumRelativePriceError": 0.011891194466289057,
+    "markets": [
+      "6imLxoFtJfzdZuMALc3MVVLBg299bLgG5siMXYQzds9t"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 602,
+    "assetKey": "solana:solana:Fd61znB4XAdwqrFexC91aoxKcz1iheqx5j4VZCG4pump",
+    "at": 1792340653000,
+    "expectedPriceUSD": 4.491669794834615e-05,
+    "recordedSwaps": 1,
+    "minimumRelativePriceError": 0.00014844652216738918,
+    "markets": [
+      "9NUXbp7BGWJoXx3CdZ1hrKU1vrfCmVy1j3V6jTxwZJox"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 675,
+    "assetKey": "solana:solana:ArpPsesHXKbGeJsHdquM6acT3uNs7BChyetJjiNYpump",
+    "at": 1792358473000,
+    "expectedPriceUSD": 0.00010513920095470097,
+    "recordedSwaps": 22,
+    "minimumRelativePriceError": 0.0008657257130291196,
+    "markets": [
+      "CkEeZKJpcro2dEp8RXJpSYfjF3TPoijmH8xVGuEAxoue"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1077,
+    "assetKey": "solana:solana:3Ckrmzsp6NbnW6zLcrj3z8BSn1H1gRN3fh6Un15DJcbf",
+    "at": 1792439773000,
+    "expectedPriceUSD": 0.0001640300488449129,
+    "recordedSwaps": 4,
+    "minimumRelativePriceError": 0.00035876260797007564,
+    "markets": [
+      "9h51k8vijv2YdNQUGvpzKTKPzwLfd9gqpGrvFwy3cK6H",
+      "FuHUv7BhcJU7R6bomiS9xMfUhznK6s77ogz1TjMQvq62"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1082,
+    "assetKey": "solana:solana:ESABfJpt9cocXgWX7HF8WwSXrcv785oyaA8imwojpump",
+    "at": 1792440253000,
+    "expectedPriceUSD": 0.00048717152094103364,
+    "recordedSwaps": 11,
+    "minimumRelativePriceError": 0.009794366044280856,
+    "markets": [
+      "2sA5714M6Bst4zdPxS5TRfPPEAz1pCAmDYhGGatFrAZW",
+      "5YPF5H2b1wHeke4QJdh1Ux5CiQPBTbT4Mnpy3yRDxREW",
+      "BEqa2cZ42GF6GHcJ6hyKwLNSzuQk5g4Yzb8q2j8vKxbx"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1389,
+    "assetKey": "evm:56:0x214df818241e3f51eeff6fa190865c2c0f2f7777",
+    "at": 1792527378000,
+    "expectedPriceUSD": 9.429987839758408e-05,
+    "recordedSwaps": 1,
+    "minimumRelativePriceError": 0.019872031089257503,
+    "markets": [
+      "0xb1a9950b503188f185fbbf19eb26f63acd05a44f"
+    ],
+    "uses": 56,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1437,
+    "assetKey": "solana:solana:9vuGTtRoL6GeD4Gwt6mQBm7Bn1AzJWATBvjkiMQXpump",
+    "at": 1792537273000,
+    "expectedPriceUSD": 5.615734077089507e-05,
+    "recordedSwaps": 2,
+    "minimumRelativePriceError": 0.00015280049316279687,
+    "markets": [
+      "6imLxoFtJfzdZuMALc3MVVLBg299bLgG5siMXYQzds9t"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 602,
+    "assetKey": "solana:solana:Fd61znB4XAdwqrFexC91aoxKcz1iheqx5j4VZCG4pump",
+    "at": 1792340655000,
+    "expectedPriceUSD": 4.497695345891762e-05,
+    "recordedSwaps": 2,
+    "minimumRelativePriceError": 0.008230448820674807,
+    "markets": [
+      "9NUXbp7BGWJoXx3CdZ1hrKU1vrfCmVy1j3V6jTxwZJox"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 650,
+    "assetKey": "solana:solana:ByQ4cTwVyrZtzb7aFKW8QXPBMXdCWx6UdVMshLZipump",
+    "at": 1792352296000,
+    "expectedPriceUSD": 4.743931114281334e-05,
+    "recordedSwaps": 3,
+    "minimumRelativePriceError": 0.0012215624881678488,
+    "markets": [
+      "GcoRoPBwpWK4nE1cwByuPnogHepJQhrggrwg5pyYZ4X1"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 675,
+    "assetKey": "solana:solana:ArpPsesHXKbGeJsHdquM6acT3uNs7BChyetJjiNYpump",
+    "at": 1792358475000,
+    "expectedPriceUSD": 0.00010443035596323899,
+    "recordedSwaps": 10,
+    "minimumRelativePriceError": 0.0044292398026736235,
+    "markets": [
+      "CkEeZKJpcro2dEp8RXJpSYfjF3TPoijmH8xVGuEAxoue"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1064,
+    "assetKey": "solana:solana:ESABfJpt9cocXgWX7HF8WwSXrcv785oyaA8imwojpump",
+    "at": 1792438093000,
+    "expectedPriceUSD": 0.0002827670810480643,
+    "recordedSwaps": 1,
+    "minimumRelativePriceError": 0.0016035632147866075,
+    "markets": [
+      "2sA5714M6Bst4zdPxS5TRfPPEAz1pCAmDYhGGatFrAZW"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1077,
+    "assetKey": "solana:solana:3Ckrmzsp6NbnW6zLcrj3z8BSn1H1gRN3fh6Un15DJcbf",
+    "at": 1792439776000,
+    "expectedPriceUSD": 0.00016570928772000626,
+    "recordedSwaps": 1,
+    "minimumRelativePriceError": 0.0006419231878380671,
+    "markets": [
+      "9h51k8vijv2YdNQUGvpzKTKPzwLfd9gqpGrvFwy3cK6H"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1082,
+    "assetKey": "solana:solana:ESABfJpt9cocXgWX7HF8WwSXrcv785oyaA8imwojpump",
+    "at": 1792440255000,
+    "expectedPriceUSD": 0.00046332051980748154,
+    "recordedSwaps": 5,
+    "minimumRelativePriceError": 0.00220947063844279,
+    "markets": [
+      "2sA5714M6Bst4zdPxS5TRfPPEAz1pCAmDYhGGatFrAZW",
+      "5YPF5H2b1wHeke4QJdh1Ux5CiQPBTbT4Mnpy3yRDxREW"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1437,
+    "assetKey": "solana:solana:9vuGTtRoL6GeD4Gwt6mQBm7Bn1AzJWATBvjkiMQXpump",
+    "at": 1792537275000,
+    "expectedPriceUSD": 5.7851898439649506e-05,
+    "recordedSwaps": 4,
+    "minimumRelativePriceError": 0.005271899895418208,
+    "markets": [
+      "6imLxoFtJfzdZuMALc3MVVLBg299bLgG5siMXYQzds9t"
+    ],
+    "uses": 28,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 735,
+    "assetKey": "solana:solana:3xrmyTm2sWrh6SpRegMrrmsP47fALoQBKyEFse5Dpump",
+    "at": 1792383552000,
+    "expectedPriceUSD": 4.1840936728434395e-05,
+    "recordedSwaps": 4,
+    "minimumRelativePriceError": 0.04492929721841221,
+    "markets": [
+      "QxWB59DYacTPnG2DQ1TmLCdb1eorCjX9yqPBN2dTfVD"
+    ],
+    "uses": 27,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 735,
+    "assetKey": "solana:solana:3xrmyTm2sWrh6SpRegMrrmsP47fALoQBKyEFse5Dpump",
+    "at": 1792383553000,
+    "expectedPriceUSD": 3.839323603188058e-05,
+    "recordedSwaps": 11,
+    "minimumRelativePriceError": 0.011187606340770762,
+    "markets": [
+      "QxWB59DYacTPnG2DQ1TmLCdb1eorCjX9yqPBN2dTfVD"
+    ],
+    "uses": 27,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 735,
+    "assetKey": "solana:solana:3xrmyTm2sWrh6SpRegMrrmsP47fALoQBKyEFse5Dpump",
+    "at": 1792383555000,
+    "expectedPriceUSD": 4.139931881279338e-05,
+    "recordedSwaps": 1,
+    "minimumRelativePriceError": 0.013373967793240737,
+    "markets": [
+      "QxWB59DYacTPnG2DQ1TmLCdb1eorCjX9yqPBN2dTfVD"
+    ],
+    "uses": 27,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 1064,
+    "assetKey": "solana:solana:ESABfJpt9cocXgWX7HF8WwSXrcv785oyaA8imwojpump",
+    "at": 1792438095000,
+    "expectedPriceUSD": 0.000283875534280816,
+    "recordedSwaps": 2,
+    "minimumRelativePriceError": 0.001039085596882594,
+    "markets": [
+      "2sA5714M6Bst4zdPxS5TRfPPEAz1pCAmDYhGGatFrAZW"
+    ],
+    "uses": 27,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792356011000,
+    "expectedPriceUSD": 7.987708787959418e-05,
+    "recordedSwaps": 7,
+    "minimumRelativePriceError": 0.0009264020814989671,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 1,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792356006000,
+    "expectedPriceUSD": 8.06467151164049e-05,
+    "recordedSwaps": 13,
+    "minimumRelativePriceError": 0.02401235390889167,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 2,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792356008000,
+    "expectedPriceUSD": 8.199521685687992e-05,
+    "recordedSwaps": 6,
+    "minimumRelativePriceError": 0.014767380948649933,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 3,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792356010000,
+    "expectedPriceUSD": 8.381032307182741e-05,
+    "recordedSwaps": 18,
+    "minimumRelativePriceError": 0.00751847842399922,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 2,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792356012000,
+    "expectedPriceUSD": 8.528582863331745e-05,
+    "recordedSwaps": 16,
+    "minimumRelativePriceError": 0.0006029515794035989,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 1,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792356071000,
+    "expectedPriceUSD": 7.474017577421869e-05,
+    "recordedSwaps": 14,
+    "minimumRelativePriceError": 0.0005225096931548157,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 17,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792356073000,
+    "expectedPriceUSD": 7.32983402570641e-05,
+    "recordedSwaps": 11,
+    "minimumRelativePriceError": 0.0007397563095137283,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 17,
+    "phases": [
+      "exit"
+    ]
+  },
+  {
+    "sourceIndex": 665,
+    "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+    "at": 1792356075000,
+    "expectedPriceUSD": 7.537944001554746e-05,
+    "recordedSwaps": 12,
+    "minimumRelativePriceError": 5.7672465851865695e-05,
+    "markets": [
+      "Aj8fhavw2WhvBZrhFppHgXrgnJB5wSWroAAoJ8Ahpcyo"
+    ],
+    "uses": 17,
+    "phases": [
+      "exit"
+    ]
+  }
+]

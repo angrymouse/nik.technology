@@ -1,0 +1,20 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Dynamic exit research</title>
+<style>body{font:16px/1.6 system-ui;max-width:1150px;margin:40px auto;padding:0 24px;color:#172231}th,td{padding:9px;border-bottom:1px solid #ccd3dd;text-align:left}table{border-collapse:collapse;width:100%}</style>
+<h1>Dynamic exit research</h1><p>487,906 raw trade rows in 595 complete merged windows across 1,100 calls.
+41,177 trades required quote-side normalization. Current wallet labels are excluded.</p>
+<p>287,700 combinations, 4,224 portfolio evaluations.
+Screening took 8.37 seconds. All evaluation dates were previously examined.</p>
+<h2>Daily selection replay</h2><p>The primary account size is $1,000. Stakes cannot exceed 1% of the preceding 60-second economic volume.
+Entry and exit each incur a cost proxy equal to the median prior transaction gas plus MEV fees, in addition to the proceeds haircut.
+At least five earlier swaps are needed for those estimates. These are sensitivity assumptions, not executable-size measurements.</p>
+<p>Primary robust_5pct requires positive 5%/10% haircut training, at least 14 trades/10 contracts, &lt;=5% candle drawdown, and positive 10%-cost replay after excluding the two best training tokens. Selection maximizes 10%-cost training return.</p><table><tr><th>Selector</th><th>Proceeds haircut</th><th>Return</th><th>Drawdown bound</th><th>Trades</th></tr><tr><td>robust_5pct</td><td>5%</td><td>-3.77%</td><td>4.56%</td><td>19</td></tr><tr><td>robust_5pct</td><td>10%</td><td>-5.40%</td><td>5.57%</td><td>19</td></tr><tr><td>robust_5pct</td><td>15%</td><td>-6.58%</td><td>6.75%</td><td>19</td></tr><tr><td>risk_5pct</td><td>5%</td><td>-1.23%</td><td>3.59%</td><td>15</td></tr><tr><td>risk_5pct</td><td>10%</td><td>-3.11%</td><td>4.63%</td><td>15</td></tr><tr><td>risk_5pct</td><td>15%</td><td>-4.57%</td><td>5.65%</td><td>15</td></tr><tr><td>risk_2pct</td><td>5%</td><td>-0.71%</td><td>2.68%</td><td>15</td></tr><tr><td>risk_2pct</td><td>10%</td><td>-2.43%</td><td>3.63%</td><td>15</td></tr><tr><td>risk_2pct</td><td>15%</td><td>-3.83%</td><td>4.69%</td><td>15</td></tr></table>
+<h2>Previously saved choices with the same volume and fee restrictions</h2>
+<table><tr><th>Account size</th><th>Return</th><th>Drawdown bound</th><th>Trades</th></tr><tr><td>$100</td><td>+3.23%</td><td>1.98%</td><td>10</td></tr><tr><td>$1,000</td><td>+2.62%</td><td>1.55%</td><td>10</td></tr><tr><td>$10,000</td><td>+0.96%</td><td>1.12%</td><td>10</td></tr></table>
+<h2>What was measured</h2><p>Time-dependent stops, stalled-price exits, volatility-adjusted trailing stops, volume fade and short-term price reversals. Maximum holds range from five seconds to ten minutes. All trigger decisions use completed one-second candles; exits fill at the next observed open after the reaction delay, with a ten-second wait limit. Training combines fine cap, caller, cohort and chain filters with flow-based sizing. Pre-call lag sensitivity affects volume, fees and sizing; it does not change the quote-time metadata filters.</p>
+<p>Default features stop five seconds before the call. One- and fifteen-second lags are saved as sensitivity replays.
+Routes net target-token quantities per transaction and recipient. Fees count once per transaction.
+No wallet is attributed to a Telegram member. The volume window does not establish historical pool reserves or AMM impact.</p>
+<ul><li><a href="results.json">Rules, ledgers, capital/latency/fee stresses and concentration</a></li>
+<li><a href="catalog.json">Full candidate catalog</a></li><li><a href="training_portfolios.csv">Training portfolios</a></li></ul>
+<p><a href="https://docs.mobula.io/rest-api-reference/endpoint/trades-filters">Mobula trade-download documentation</a>.
+The API sometimes retains the target on the quote side, so the code checks and normalizes both legs.</p></html>

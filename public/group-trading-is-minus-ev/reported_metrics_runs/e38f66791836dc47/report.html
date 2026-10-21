@@ -1,0 +1,15 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Reported token metrics research</title>
+<style>body{font:16px/1.6 system-ui;max-width:1100px;margin:40px auto;padding:0 24px}table{border-collapse:collapse;width:100%}
+td,th{padding:10px;text-align:left;border-bottom:1px solid #ccd3dd}</style><h1>Reported liquidity and holder metrics</h1>
+<p>261 gates and 36 sizing policies; 346,320 portfolio evaluations.
+Bot snapshots become available only at their final edit time. Later edits cannot supply earlier features.</p>
+<p>Fields include reported liquidity/FDV, holder count and age, concentration, bundled and sniper shares,
+developer holdings, new-wallet shares, buy/sell proportions and bonding progress. Missing fields either fail the gate
+or pass explicitly, according to the saved rule. Reported values are bot assertions, not verified historical chain state.</p>
+<h2>Daily retrospective selection</h2><p>The period has already been examined. Baseline uses the same training rule pool
+and traditional sizing; the reported selector must use a reported-data gate or sizing factor. Drawdown ceilings apply to training.</p>
+<table><tr><th>Selector</th><th>Proceeds haircut</th><th>Return</th><th>Drawdown bound</th><th>Trades</th></tr><tr><td>all_5pct</td><td>5%</td><td>-7.28%</td><td>7.51%</td><td>9</td></tr><tr><td>all_5pct</td><td>10%</td><td>-7.78%</td><td>7.99%</td><td>9</td></tr><tr><td>all_5pct</td><td>15%</td><td>-8.26%</td><td>8.43%</td><td>9</td></tr><tr><td>baseline_5pct</td><td>5%</td><td>-3.00%</td><td>8.46%</td><td>18</td></tr><tr><td>baseline_5pct</td><td>10%</td><td>-4.12%</td><td>8.68%</td><td>18</td></tr><tr><td>baseline_5pct</td><td>15%</td><td>-5.05%</td><td>8.84%</td><td>18</td></tr><tr><td>reported_5pct</td><td>5%</td><td>-7.28%</td><td>7.51%</td><td>9</td></tr><tr><td>reported_5pct</td><td>10%</td><td>-7.78%</td><td>7.99%</td><td>9</td></tr><tr><td>reported_5pct</td><td>15%</td><td>-8.26%</td><td>8.43%</td><td>9</td></tr><tr><td>all_2pct</td><td>5%</td><td>-5.22%</td><td>5.30%</td><td>12</td></tr><tr><td>all_2pct</td><td>10%</td><td>-5.64%</td><td>5.72%</td><td>12</td></tr><tr><td>all_2pct</td><td>15%</td><td>-6.01%</td><td>6.09%</td><td>12</td></tr></table>
+<p>One-minute next-open execution with an extra full minute after feature observation. One position, one trade per contract,
+maximum 7.5% allocation and 2% or 4% full-loss daily budget. Historical AMM impact, transaction failures and MEV are unmodeled.</p>
+<p><a href="results.json">Results and ledgers</a> · <a href="catalog.json">Feature gates and sizing</a> ·
+<a href="training_portfolios.csv">All portfolio evaluations</a></p></html>

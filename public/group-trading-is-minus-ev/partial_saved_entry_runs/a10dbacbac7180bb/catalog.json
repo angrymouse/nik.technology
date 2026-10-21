@@ -1,0 +1,5686 @@
+{
+  "dynamicExits": [
+    {
+      "hold": 5,
+      "steps": [],
+      "stop": null,
+      "target": null,
+      "trail_at": null,
+      "trail_gap": null,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 5,
+      "steps": [],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": null,
+      "trail_gap": null,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 5,
+      "steps": [],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": null,
+      "trail_gap": null,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 15,
+      "steps": [],
+      "stop": null,
+      "target": null,
+      "trail_at": null,
+      "trail_gap": null,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 15,
+      "steps": [],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": null,
+      "trail_gap": null,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 15,
+      "steps": [],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": null,
+      "trail_gap": null,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 30,
+      "steps": [],
+      "stop": null,
+      "target": null,
+      "trail_at": null,
+      "trail_gap": null,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 30,
+      "steps": [],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": null,
+      "trail_gap": null,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 30,
+      "steps": [],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": null,
+      "trail_gap": null,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [],
+      "stop": null,
+      "target": null,
+      "trail_at": null,
+      "trail_gap": null,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": null,
+      "trail_gap": null,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": null,
+      "trail_gap": null,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [],
+      "stop": null,
+      "target": null,
+      "trail_at": null,
+      "trail_gap": null,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": null,
+      "trail_gap": null,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": null,
+      "trail_gap": null,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [],
+      "stop": null,
+      "target": null,
+      "trail_at": null,
+      "trail_gap": null,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": null,
+      "trail_gap": null,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": null,
+      "trail_gap": null,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [],
+      "stop": null,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 30,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.1,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 2.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.5
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 3.0,
+          "fraction": 0.75
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "gross_principal"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.25
+        },
+        {
+          "target": 1.5,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.25
+        },
+        {
+          "target": 1.5,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.25
+        },
+        {
+          "target": 1.5,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.25
+        },
+        {
+          "target": 1.5,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.5
+        },
+        {
+          "target": 2.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.5
+        },
+        {
+          "target": 2.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.5
+        },
+        {
+          "target": 2.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 60,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.5
+        },
+        {
+          "target": 2.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.25
+        },
+        {
+          "target": 1.5,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.25
+        },
+        {
+          "target": 1.5,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.25
+        },
+        {
+          "target": 1.5,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.25
+        },
+        {
+          "target": 1.5,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.5
+        },
+        {
+          "target": 2.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.5
+        },
+        {
+          "target": 2.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.5
+        },
+        {
+          "target": 2.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 180,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.5
+        },
+        {
+          "target": 2.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.25
+        },
+        {
+          "target": 1.5,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.25
+        },
+        {
+          "target": 1.5,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.25
+        },
+        {
+          "target": 1.5,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.2,
+          "fraction": 0.25
+        },
+        {
+          "target": 1.5,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.5
+        },
+        {
+          "target": 2.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.5
+        },
+        {
+          "target": 2.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.25,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.5
+        },
+        {
+          "target": 2.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "none"
+    },
+    {
+      "hold": 600,
+      "steps": [
+        {
+          "target": 1.5,
+          "fraction": 0.5
+        },
+        {
+          "target": 2.0,
+          "fraction": 0.25
+        }
+      ],
+      "stop": 0.5,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3,
+      "after_partial_floor": "entry_price"
+    }
+  ],
+  "policies": [
+    {
+      "scale": 0.25,
+      "dailyBudget": null
+    },
+    {
+      "scale": 0.25,
+      "dailyBudget": 0.02
+    },
+    {
+      "scale": 0.25,
+      "dailyBudget": 0.04
+    },
+    {
+      "scale": 0.5,
+      "dailyBudget": null
+    },
+    {
+      "scale": 0.5,
+      "dailyBudget": 0.02
+    },
+    {
+      "scale": 0.5,
+      "dailyBudget": 0.04
+    },
+    {
+      "scale": 1.0,
+      "dailyBudget": null
+    },
+    {
+      "scale": 1.0,
+      "dailyBudget": 0.02
+    },
+    {
+      "scale": 1.0,
+      "dailyBudget": 0.04
+    }
+  ],
+  "exitIdZero": "The original saved exit for that stage; dynamic IDs begin at one."
+}

@@ -1,0 +1,27 @@
+{
+  "resultsSha256": "a3042159ff72a8cbea146412892b9b075b5591087f5949c84737fd9346d94188",
+  "auditorSha256": "84a4a5285177ffe14fdc66c8b97167349c0dd98c678a65355bac76534e394a73",
+  "checks": {
+    "completePages": 11,
+    "rawRows": 17491,
+    "completeRequests": 11,
+    "validSwapUsages": 17087,
+    "rebuiltSeconds": 3215,
+    "barValuesIncludingMissing": 84480,
+    "nextObservedSecondChecks": 16896,
+    "pricePointReconciliations": 171,
+    "scalarPotentialSales": 396,
+    "coveredPotentialAdmissions": 1440,
+    "priorFlowLedgerParities": 3000,
+    "independentPortfolioReplays": 9000,
+    "jointSummaries": 6
+  },
+  "replayChecks": {
+    "portfolios": 9000,
+    "stages": 27000,
+    "trades": 68385,
+    "sales": 324,
+    "missingPlannedWindows": 0
+  },
+  "scope": "Independently decodes raw target-leg prices and complete pagination, reconstructs all stored bars and price-point comparisons, checks all potential scalar sales and admissions, replays every account without cross-price-source cache reuse, and reproduces every prior vendor-price ledger. This does not measure executable routes or actual fills."
+}

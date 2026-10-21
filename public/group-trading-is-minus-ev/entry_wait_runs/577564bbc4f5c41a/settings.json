@@ -1,0 +1,78 @@
+{
+  "dataset": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/coverage_repairs/evm/combined/datasets/adb4dc66b5bd0a0d3e6f",
+  "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/partial_saved_entry_runs/a10dbacbac7180bb",
+  "sourceResultsSha256": "fcc35e9f72cbe11cdfecf4fadc709157cca8ee37865ddbe694abc472100545e7",
+  "sourceSelectors": [
+    "saved_control",
+    "risk_2pct",
+    "risk_5pct"
+  ],
+  "datasetManifestSha256": "f23d71886fa44d92fbcbff20a84570a90bc6b00476a57e478df2bd8b177aec44",
+  "flowFeaturesSha256": "b0617ebe88b31c784cc6416c9a6691590a67685974fe0012f91244d4959a5eba",
+  "secondResponseSetSha256": "1223975c478e4e4518407167e32a23a1a0f8208ed514a93bb1de724dd3c5da94",
+  "sourceHashes": {
+    "entry_wait_lab.py": "844d0d8d679dc09af2fada9320c2393c05efd0c6e2c45bd0d60e5dcc4ff96355",
+    "saved_procedure_replay.py": "2843373532b8f27f51ceada16aa4bc2ddf8d31f4346eef2617cd54fb3b10a822",
+    "account_risk_engine.py": "cfcf65eaf37c9e192111a209a36ad72bed90e5b92b8697bbcd824e64848cd682",
+    "partial_exit_engine.py": "7b45a27dd4bf1003cbb300a8949ed41d6c77340cc5f6e47b25ce11711d59eb91",
+    "partial_saved_entry_lab.py": "6b31384999a4cfb6af0cfde056781fbacca0f9b4aca114709323b0609b31ef01",
+    "second_engine.py": "8bb9dee307d4cfc8b93784d703fe335214403a8aa2563e7e8765d2ea24cb3a9d",
+    "second_lab.py": "a83bdad241ab226100b33b83c5f891162ab9972f4fb9c9ae90b9e1efbc5f6855",
+    "trade_flow_lab.py": "2b01bedc1500da120cd12e90526dc890f1335fc063088aadd52b9e5be7e908aa",
+    "validate_cohort.py": "f387f18373813c227f6b9a0ba9a5126ab1459187040be547fe9831694159249a",
+    "research_dataset.py": "ed998065623d76f5ef78eec13393dc832e44889e9709a6182b0663422050d803",
+    "research_engine.py": "eac78326de0ced1d97ca79e5d7bda8880b7492752fcb4dac477c05a6a25ef31c",
+    "adaptive_features.py": "3d53cbc5bf8a92528cccb2c6ca2260ab47d11ccf2a0bd51f4306c8e0e4a4e66c"
+  },
+  "waits": [
+    1,
+    5,
+    15,
+    30,
+    45,
+    60,
+    90
+  ],
+  "lags": [
+    0,
+    1,
+    2,
+    5,
+    10
+  ],
+  "selectors": {
+    "nominal_2pct": [
+      0.02,
+      false,
+      false
+    ],
+    "nominal_5pct": [
+      0.05,
+      false,
+      false
+    ],
+    "latency_2pct": [
+      0.02,
+      true,
+      false
+    ],
+    "latency_5pct": [
+      0.05,
+      true,
+      false
+    ],
+    "robust_latency_5pct": [
+      0.05,
+      true,
+      true
+    ]
+  },
+  "costs": [
+    0.05,
+    0.1,
+    0.15
+  ],
+  "scope": "Retrospective timing study on the original 1,100-call dataset. Preserve each saved day's entry/cohort filter, sizing, fees, volume limits and exit. Vary the wait after that filter's completed first minute. These dates have been repeatedly examined; this is not fresh validation. Frozen forward candidates are unchanged.",
+  "selection": "For each source procedure and evaluation day, use only outcomes fully observed before its existing cutoff. Choose among seven nominal waits. Require positive training return at both 5% and 10% sale costs, ten trades/eight contracts and the stated drawdown ceiling. Latency selectors require every 0/1/2/5/10-second added delay to pass and maximize the worst 10%-cost return. Robust selection requires fourteen trades/ten contracts/three trading dates and positive return without two best tokens and without the best entry day at every lag. Ties retain the earlier catalog wait; cash is allowed.",
+  "execution": "At least one second after first-minute features are known. Market fill at the first observed second within ten seconds. Preserve the existing delayed exit, fee reserve, $1,000 account, 1% pre-call volume limit, one-position and one-trade-per-contract assumptions. Pre-call fee and capacity estimates stay fixed and may be stale for longer waits. These are price-path scenarios, not measured execution latency or AMM fills."
+}

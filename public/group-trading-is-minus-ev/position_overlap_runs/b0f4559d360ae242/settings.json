@@ -1,0 +1,18 @@
+{
+  "dataset": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/coverage_repairs/evm/combined/datasets/adb4dc66b5bd0a0d3e6f",
+  "dayDependenceRun": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/day_dependence_runs/0e2f8a51e1ccdee5",
+  "daySettingsSha256": "573ce84ef97fa52172241c7dbf9cb6aa2319b6d13ccbd9eac7c90fe5edf87fdb",
+  "confirmationRun": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+  "confirmationResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
+  "sourceHashes": {
+    "position_overlap_audit.py": "9c80b4851b63ba8706b348787aeb3c6c89783e8f8c16fc30f6aba7ed3f48391a",
+    "saved_procedure_replay.py": "2843373532b8f27f51ceada16aa4bc2ddf8d31f4346eef2617cd54fb3b10a822",
+    "confirmation_lab.py": "18ff64738ce5b13fd317642cdb5536bb9a811f4c0a0a97b10bb14257b7922c68",
+    "second_engine.py": "8bb9dee307d4cfc8b93784d703fe335214403a8aa2563e7e8765d2ea24cb3a9d",
+    "account_risk_engine.py": "cfcf65eaf37c9e192111a209a36ad72bed90e5b92b8697bbcd824e64848cd682",
+    "partial_exit_engine.py": "7b45a27dd4bf1003cbb300a8949ed41d6c77340cc5f6e47b25ce11711d59eb91",
+    "trade_flow_lab.py": "2b01bedc1500da120cd12e90526dc890f1335fc063088aadd52b9e5be7e908aa",
+    "research_dataset.py": "ed998065623d76f5ef78eec13393dc832e44889e9709a6182b0663422050d803"
+  },
+  "scope": "Diagnostic of already saved daily selections at 5%, 10% and 15% sale haircuts. Reproduce each original ledger and return/drawdown measure first. Count distinct, not-yet-entered contracts that otherwise pass feature, outcome coverage, factor, fee and capacity checks during an existing holding interval. Cash, daily reserves and controller restrictions are intentionally not required for these potential additions. Counts are an upper bound, not a concurrent portfolio backtest. No parameter fitting or strategy change."
+}

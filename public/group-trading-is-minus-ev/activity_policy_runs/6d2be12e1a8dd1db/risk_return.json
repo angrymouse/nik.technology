@@ -1,0 +1,133 @@
+{
+  "rows": [
+    {
+      "label": "Earlier choices",
+      "cost": 0.05,
+      "return": 0.026191994953738806,
+      "drawdownBound": -0.015508709952960054,
+      "trades": 10,
+      "dominated": true
+    },
+    {
+      "label": "Earlier choices",
+      "cost": 0.1,
+      "return": 0.019354253853054892,
+      "drawdownBound": -0.017081615588017574,
+      "trades": 10,
+      "dominated": true
+    },
+    {
+      "label": "Activity sizing",
+      "cost": 0.05,
+      "return": 0.026336408718987014,
+      "drawdownBound": -0.013173959898214238,
+      "trades": 10,
+      "dominated": false
+    },
+    {
+      "label": "Activity sizing",
+      "cost": 0.1,
+      "return": 0.020905434630593023,
+      "drawdownBound": -0.014903951311405539,
+      "trades": 10,
+      "dominated": false
+    },
+    {
+      "label": "Stricter activity selector",
+      "cost": 0.05,
+      "return": 0.014271293207936742,
+      "drawdownBound": -0.01345384713818465,
+      "trades": 10,
+      "dominated": true
+    },
+    {
+      "label": "Stricter activity selector",
+      "cost": 0.1,
+      "return": 0.010415221645535766,
+      "drawdownBound": -0.015090965824425262,
+      "trades": 10,
+      "dominated": true
+    },
+    {
+      "label": "Smaller partial-sale procedure",
+      "cost": 0.05,
+      "return": 0.02080923715622096,
+      "drawdownBound": -0.0076960835559576335,
+      "trades": 10,
+      "dominated": false
+    },
+    {
+      "label": "Smaller partial-sale procedure",
+      "cost": 0.1,
+      "return": 0.017275423067953932,
+      "drawdownBound": -0.007714660166806442,
+      "trades": 10,
+      "dominated": false
+    },
+    {
+      "label": "Larger partial-sale procedure",
+      "cost": 0.05,
+      "return": 0.027289582974699744,
+      "drawdownBound": -0.014007508513738332,
+      "trades": 10,
+      "dominated": false
+    },
+    {
+      "label": "Larger partial-sale procedure",
+      "cost": 0.1,
+      "return": 0.02038034039156522,
+      "drawdownBound": -0.015667289274307272,
+      "trades": 10,
+      "dominated": true
+    },
+    {
+      "label": "Earlier choices × 0.25",
+      "cost": 0.05,
+      "return": 0.0088927291262626,
+      "drawdownBound": -0.0045818412767963945,
+      "trades": 10,
+      "dominated": false
+    },
+    {
+      "label": "Earlier choices × 0.25",
+      "cost": 0.1,
+      "return": 0.006971502528742901,
+      "drawdownBound": -0.004950975487763687,
+      "trades": 10,
+      "dominated": false
+    },
+    {
+      "label": "Earlier choices × 0.5",
+      "cost": 0.05,
+      "return": 0.018318566488123578,
+      "drawdownBound": -0.008824048654964445,
+      "trades": 10,
+      "dominated": true
+    },
+    {
+      "label": "Earlier choices × 0.5",
+      "cost": 0.1,
+      "return": 0.014455732396859933,
+      "drawdownBound": -0.009562904278130557,
+      "trades": 10,
+      "dominated": true
+    },
+    {
+      "label": "Earlier choices × 0.75",
+      "cost": 0.05,
+      "return": 0.02508553291661908,
+      "drawdownBound": -0.012614106266201297,
+      "trades": 10,
+      "dominated": false
+    },
+    {
+      "label": "Earlier choices × 0.75",
+      "cost": 0.1,
+      "return": 0.019521752682755578,
+      "drawdownBound": -0.013750846126505789,
+      "trades": 10,
+      "dominated": false
+    }
+  ],
+  "scope": "Same previously examined daily evaluation period, all ten-trade procedures. Lines connect nondominated displayed results; this is not independent validation. The separate three-trade robustness selector is excluded from this ten-trade comparison."
+}

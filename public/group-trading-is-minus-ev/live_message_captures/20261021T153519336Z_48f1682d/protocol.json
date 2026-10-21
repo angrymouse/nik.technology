@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "chatId": "-1002282015815",
+  "createdAt": "2026-10-21T15:35:19.336Z",
+  "durationSeconds": 1800,
+  "sourceSha256": "075b3f73e2bec1ccfbe325b9fe71257920eba576f7b73b3eebab803befb77528",
+  "accountIndex": 0,
+  "originalVersionRule": "A new-message update, received while connected after readyAt, with no edit date, posted strictly after readyAt and before receipt. This records an observed version, not a guarantee that no unobserved edit occurred.",
+  "availabilityRule": "Use observedAt, never postedAt, as the earliest availability of this version. Exclude initial/final history snapshots from original-version eligibility. Retain edits, deletions, duplicates, and connection transitions.",
+  "persistence": "One ordered append writer. Each event hashes its exact payload JSON and the preceding event hash. Only the target channel is persisted. No auth keys or environment contents are saved.",
+  "coverage": "New/edit/delete update listeners, with one initial and one final 100-message history snapshot. Final snapshot reconciliation cannot prove completeness for deleted messages or more than 100 arrivals. This is data collection, with no paper or live trading decisions."
+}

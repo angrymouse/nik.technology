@@ -1,0 +1,26 @@
+{
+  "protocol": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/arrival_protocols/20261021_130725_426526/implementation_corrections/9f0fda5c6b7ca095/protocol.json",
+  "protocolSha256": "83cd0c935bc464db7c2cef1e1b6be561f49e55586329cbc5da3048dc7d5e7d70",
+  "resultsSha256": "357a077ea73b6f05f37c99a431eb0d46968e45295043c54fcbd0e67b69f79c89",
+  "auditorSha256": "29db0d3c3c21083432079ba0fbbfb81be355193acea7fa88b49ccff66eb6bb35",
+  "checks": {
+    "verifiedSignalVersions": 22,
+    "preservedContextValues": 291540,
+    "quoteEligibilityChecks": 22,
+    "rawSecondCandles": 7202,
+    "rebuiltMinuteValues": 4080,
+    "scalarReferenceOutcomes": 1147,
+    "scalarFeatureValues": 48174,
+    "futurePerturbedFeatureValues": 335034,
+    "scalarExitChecks": 204,
+    "independentAccounts": 12
+  },
+  "scope": "Checks recorded source versions, all quote exclusions and first-call flags, preserved context, raw second-bar minute reconstruction, scalar cohort features, future perturbations and all paper accounts. It does not prove completeness of undelivered Telegram updates, actual historical API availability or executable AMM fills.",
+  "acquisitionCorrection": {
+    "supplementalSeries": 5,
+    "originalSignalRowsPreserved": 22,
+    "tradingProtocolUnchanged": true,
+    "historicalCutoffUnchanged": true,
+    "correctionSha256": "03cc4b7d05468d8272edfc3f1591a1db66702815252bdc9241307cf7372ecbb9"
+  }
+}

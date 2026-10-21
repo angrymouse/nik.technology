@@ -1,0 +1,30 @@
+{
+  "path": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/exit_capacity_runs/bda9d7cbbf30c386",
+  "baseAccounts": 10800,
+  "tradeUsages": 91800,
+  "distinctSaleCases": 9260,
+  "independentExitVolumeChecks": 130,
+  "groups": {
+    "all_pools": {
+      "tradeUsages": 10200,
+      "zeroRecovery": 0,
+      "saleExceedsProxyCapacity": 764,
+      "capacityUnavailable": 0,
+      "higherExitFeeEstimate": 1712
+    },
+    "chosen_pool": {
+      "tradeUsages": 81600,
+      "zeroRecovery": 0,
+      "saleExceedsProxyCapacity": 6336,
+      "capacityUnavailable": 0,
+      "higherExitFeeEstimate": 10368
+    }
+  },
+  "distinctCasesAboveCapacity": 401,
+  "distinctCasesWithHigherExitFee": 1672,
+  "chosenPoolCasesAboveCapacity": 161,
+  "chosenPoolCasesWithHigherExitFee": 656,
+  "maximumSaleToCapacity": 11.836058463962662,
+  "responseSetSha256": "1d49966a1ed6264f8b3729166a027d94375f60b8b18dd99fbdbb2ea908f81074",
+  "scope": "Descriptive check of the original no-removal accounts at 10% proceeds haircut. Compare gross modeled sale USD with the same participation fraction of economic volume in the 60 seconds ending five seconds before the modeled sale. This is an exit-time diagnostic, never a future-dependent entry filter. No return is recomputed or claimed executable. Empty or missing sale capacity is explicit; zero-recovery sales are separate. Fee comparisons use the prior exit-pool gas/MEV median against one half of the modeled round-trip fee."
+}

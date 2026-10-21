@@ -1,0 +1,24 @@
+{
+  "resultsSha256": "ca1c4b860c14aebc71a2ca76214bee50a448b07886ab0095fc55a7ae343782f5",
+  "auditorSha256": "75dbf234e5e00779805fe9f10655793ce4c4313b0735c34c3d873f6667636fe7",
+  "checks": {
+    "scalarPotentialSales": 7392,
+    "coveredPotentialAdmissions": 26880,
+    "independentAccountReplays": 55372,
+    "savedPortfolioChecks": 168000,
+    "identicalInputReuses": 112628,
+    "previousPriceLedgerParities": 6000,
+    "scenarioSummaries": 504,
+    "priceSummaries": 168,
+    "allPriceSummaries": 56,
+    "declaredRiskSelections": 5
+  },
+  "replayChecks": {
+    "portfolios": 55372,
+    "stages": 166116,
+    "trades": 435931,
+    "sales": 2376,
+    "missingPlannedWindows": 0
+  },
+  "scope": "Checks every saved account, all potential scalar sales and opportunity membership, separate price-source paths, every source/flow summary, the predeclared risk selections, and all 6,000 prior swap-price controls. Equal-input audit reuse also includes the complete normalized-path hash. Vendor-grid values remain bound to their earlier audited artifacts."
+}

@@ -1,0 +1,14 @@
+{
+  "run": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/context_decider_runs/037514af3811ab7c",
+  "sourceCodeSha256": "e0184f576ee4e4996cc14776669586599fbcec138b4830700257453f1db50d3c",
+  "responseSetSha256": "291e2efa571d68aa6aac944ad7233b0b997911e4e8df4760e8387c08e6b63511",
+  "calibrationFeaturesSha256": "d510026e8aee65a1d82a1e43dcccaee30e6a1ac0f30456485f1e8522a45fc5a3",
+  "anonymousRequestStates": 1066,
+  "referenceLabelValues": 3300,
+  "independentCalibrationCases": 249,
+  "futureAndTargetLabelMutations": 249,
+  "independentReturnCalibrationCases": 83,
+  "uncachedPortfolioComparisons": 342,
+  "independentPortfolioTrades": 3272,
+  "scope": "Numeric request privacy shape, first-bar timing, scalar calibration excluding future and target-token labels, reference outcomes and sampled uncached portfolio/accounting checks. Prior wallet-history and raw-trade audits remain separate. No independent profit validation."
+}

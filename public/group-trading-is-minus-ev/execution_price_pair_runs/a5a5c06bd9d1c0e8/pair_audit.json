@@ -1,0 +1,16 @@
+{
+  "resultsSha256": "ce17ffb5ea1716eb09d17d2d8741565d647bf3330da2f2a648dd9a007a072e4a",
+  "auditorSha256": "7be6ee8d0b3b806169699e32a49edfccd179443df4b59ca53ecd0705b805af70",
+  "pairsChecked": 38400,
+  "completeUniverses": 1200,
+  "independentAccounts": 37800,
+  "identicalInputReuses": 600,
+  "replayChecks": {
+    "portfolios": 37800,
+    "stages": 113400,
+    "trades": 248100,
+    "sales": 216,
+    "missingPlannedWindows": 0
+  },
+  "scope": "Checks every pair exactly once against scalar opportunity universes and independent account replay. Equal-input reuse is confined to one price source, and every saved ledger and minimum is verified."
+}

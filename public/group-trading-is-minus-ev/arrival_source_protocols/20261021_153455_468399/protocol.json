@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 2,
+  "sourceCategoryValidation": true,
+  "kind": "arrival_short_target_replay",
+  "frozenAt": "2026-10-21T15:34:55.468+00:00",
+  "chatId": "-1002282015815",
+  "contextDataset": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/arrival_contexts/641be915d4ab240889ef",
+  "contextAsOfMs": 1792596737896,
+  "contextManifestSha256": "9c0401c4dd259b105ce686033ffa07a5512cd654598802110efd8ac86387b54b",
+  "contextCompiledMetadataPath": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/arrival_source_protocols/20261021_153455_468399/context_metadata.json",
+  "contextCompiledMetadataSha256": "eb2501bd49e00f76e416a13f09703f98c56a00831dbee58c4eee0470f24d09ae",
+  "selectionStudy": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/fixed_entry_source_runs/1cac24f915ec063b",
+  "selectionStudyResultsSha256": "0ce9743d06ec2bb50d5ec090362e72149391750907d406812200c06eb3faa74e",
+  "selectionStudyAuditSha256": "d5841ebbb084a59a3adb925a16eaace2283cf50b7a70cff7e1f99bfb631b5c42",
+  "sourceHashes": {
+    "prepare_arrival_source_protocol.py": "4ecaf7231d6e96017faccbcc4337b05e8ec7a0a037939ddebd44ea190a715dad",
+    "arrival_context.py": "d44a5ec5abc7c125607b439350da7018482d58af98d9c44452b1072f5f08a0fc",
+    "arrival_source_forward.py": "187d37b82e49527e36177b322edb357fef260bef747107d4ef9009c0adaaee74",
+    "audit_arrival_source_forward.py": "981fc621cc3a6bbc0ee98a7618cc7a76cb895157b01dbd205f3f1f6752c22030",
+    "fetch_arrival_mobula.mjs": "b6a83b084e767b65ba8cc19c836f0afe5088879a9ec42530f18d94ef1f94795f",
+    "run_arrival_correction.py": "e4f06ea7c35159035f99f4d9dc8a2990ae81b5d08e30d3b6c1cf01987d4a469d",
+    "validate_partial_fixed.py": "a9b8e386f4d552817b878e4a382e7c7b6d1d18f940119183033ff1900e4490e1",
+    "audit_partial_exits.py": "a8d6d84ce4b057ff8b6652999558b2b46726858ca0ab6cf94dc506d62eec069c",
+    "partial_exit_engine.py": "7b45a27dd4bf1003cbb300a8949ed41d6c77340cc5f6e47b25ce11711d59eb91",
+    "second_lab.py": "a83bdad241ab226100b33b83c5f891162ab9972f4fb9c9ae90b9e1efbc5f6855",
+    "capture_message_versions.mjs": "075b3f73e2bec1ccfbe325b9fe71257920eba576f7b73b3eebab803befb77528",
+    "audit_message_capture.py": "05b8b57aff5ff4789e41bc2bd433222b5e15f06c7b03a1626394323151652a5e",
+    "arrival_mentions.mjs": "01d1d3d228c7804ecb8ab3d6a1372111cb6bd70fed4f6900ec234799cc39d35e",
+    "fetch_mentions.mjs": "86dc783450c0cb7b6c8a8fc486ac76d76c571a5a292ba7e775e1917790a639e1",
+    "fetch_mobula.mjs": "c55af3308fcd1c767e7abdd3227d5daa0cf67914a68cf3b8101c948f2be71744",
+    "fetch_second_bars.mjs": "921a5241761a7fdf37294d62d3fd3923c35a8bb65977e242a9df2a8377c12f03",
+    "fetch_trade_flow.mjs": "3057e3b57601b54457688ee93499181b9a1f1d8b1a7855cc5a456f037f4229c6",
+    "prepare_trade_flow.py": "3f56e54580cc2dc512bb92e4ea0c29dccb0c4972a502581487f48f0450184c83",
+    "repeat_fixed_entry_lab.py": "9600052c65e3026cd9a973c5118be4338e2987fc2cc54f3b0466c43df9f43b72",
+    "repeat_call_dataset.py": "4c1bf9f0a9765642180d4a6129e78bb2226e46000b0c5372b006411c2ed3b377",
+    "second_engine.py": "8bb9dee307d4cfc8b93784d703fe335214403a8aa2563e7e8765d2ea24cb3a9d",
+    "reentry_engine.py": "60ca6dbebed366d300052bd1914a3678c3b732f201e0c3f76d341d9d77f4b2a1",
+    "validate_cohort.py": "f387f18373813c227f6b9a0ba9a5126ab1459187040be547fe9831694159249a",
+    "research_dataset.py": "ed998065623d76f5ef78eec13393dc832e44889e9709a6182b0663422050d803",
+    "research_engine.py": "eac78326de0ced1d97ca79e5d7bda8880b7492752fcb4dac477c05a6a25ef31c",
+    "adaptive_features.py": "3d53cbc5bf8a92528cccb2c6ca2260ab47d11ccf2a0bd51f4306c8e0e4a4e66c",
+    "trade_flow_features.py": "b79a929fbec40323984854972a8befa2c938634e2077dbcb15cf0125ff9f577a",
+    "trade_flow_lab.py": "2b01bedc1500da120cd12e90526dc890f1335fc063088aadd52b9e5be7e908aa",
+    "audit_reentry.py": "25848d2de19342524e04cfe473e602e8848399c7ef36e884d40fafa958ff70b1"
+  },
+  "retrainingAllowedDuringValidation": false,
+  "entry": {
+    "delay": 1,
+    "min_cap": 50000,
+    "max_cap": 250000,
+    "min_gain": -0.25,
+    "max_gain": -0.1,
+    "cap_basis": "quote",
+    "family": "fine_cap"
+  },
+  "regimeGate": [
+    "mean",
+    5,
+    -0.1
+  ],
+  "referenceHistory": "recoverable_first",
+  "cohortHistory": {
+    "baselineEntryDelayMinutes": 1,
+    "holdMinutes": 3,
+    "proceedsHaircut": 0.05,
+    "returnClip": [
+      -1,
+      1
+    ],
+    "firstEligibleCallPerContract": true,
+    "excludeTargetContract": true,
+    "strictlyCompleteBeforeFeature": true,
+    "referenceFeeAdjustment": false
+  },
+  "signalAvailability": "The local observedAt timestamp of the first observed address/chain mention in a newly captured message. Eligible new originals and subsequent observed edits are processed in arrival order. Later edits do not rewrite earlier signals. One signal per original Telegram message and contract; local version IDs retain a mapping to the real message ID. No hindsight exclusion based on later edits.",
+  "scopeOfHistory": "Use the fixed context dataset and subsequently observed eligible signals. Gaps between the context as-of time and capture readiness remain unobserved. Do not fill those gaps with retrospectively discovered calls during this validation. Candidate original-call membership is first eligible observed caller/contract in this context plus the stream, not a claim about unavailable history.",
+  "quote": {
+    "priceAt": "Observed arrival timestamp, floored to seconds",
+    "maxAgeSeconds": 60,
+    "futureSnapshotsAllowed": false,
+    "currentMetadataAsFeature": false
+  },
+  "entryTiming": "Use the first complete clock minute after the later of signal availability and its valid historical snapshot time. Observe its 10–25% decline relative to the snapshot. Place the paper entry one additional full minute after that minute ends. The next positive-volume second within ten seconds is the modeled fill.",
+  "candidates": [
+    {
+      "name": "non_bot_first_half",
+      "source": "non_bot",
+      "callPopulation": "first_observed_caller_contract",
+      "fraction": 0.025,
+      "dailyBudget": 0.01
+    },
+    {
+      "name": "non_bot_all_half",
+      "source": "non_bot",
+      "callPopulation": "all_observed_calls",
+      "fraction": 0.025,
+      "dailyBudget": 0.01
+    },
+    {
+      "name": "non_bot_first_three_quarters",
+      "source": "non_bot",
+      "callPopulation": "first_observed_caller_contract",
+      "fraction": 0.0375,
+      "dailyBudget": 0.01
+    },
+    {
+      "name": "non_bot_all_three_quarters",
+      "source": "non_bot",
+      "callPopulation": "all_observed_calls",
+      "fraction": 0.0375,
+      "dailyBudget": 0.01
+    },
+    {
+      "name": "control_first_half",
+      "source": "all",
+      "callPopulation": "first_observed_caller_contract",
+      "fraction": 0.025,
+      "dailyBudget": 0.01
+    },
+    {
+      "name": "control_all_half",
+      "source": "all",
+      "callPopulation": "all_observed_calls",
+      "fraction": 0.025,
+      "dailyBudget": 0.01
+    }
+  ],
+  "primaryCandidate": "non_bot_first_half",
+  "sizingProfile": "volatility",
+  "startingCashUSD": 1000.0,
+  "sourceFilter": "Non-bot means the observed Telegram author isBot flag is false. It does not establish manual authorship. This filters entries only; cohort references remain all recoverable first-contract calls.",
+  "volatilityFactor": {
+    "formula": ".15 / max(.01, first-minute (high-low)/open)",
+    "minimum": 0.25,
+    "maximum": 1.5
+  },
+  "exit": {
+    "hold": 300,
+    "stop": null,
+    "target": 3.0,
+    "trail_at": null,
+    "trail_gap": null
+  },
+  "execution": {
+    "entryLagSeconds": 0,
+    "reactionSeconds": 1,
+    "maxWaitSeconds": 10,
+    "pathHorizonSeconds": 340,
+    "participation": 0.01,
+    "flowLagSeconds": 5,
+    "flowWindowSeconds": 60,
+    "minimumPriorSwaps": 5,
+    "feeMultiplier": 2.0,
+    "maximumPositionFraction": 0.075,
+    "oneOpenPosition": true,
+    "onePurchasePerContract": true,
+    "missingSaleValue": 0.0,
+    "requireCompletePlannedObservation": true
+  },
+  "costScenarios": [
+    0.05,
+    0.1,
+    0.15
+  ],
+  "executionStress": [
+    {
+      "entryLagSeconds": 5,
+      "reactionSeconds": 5,
+      "participation": 0.005
+    }
+  ],
+  "observation": {
+    "captureDurationSeconds": 1800,
+    "marketCollectionEarliest": "capture.closedAt plus nine minutes",
+    "availabilityUses": "observedAt, never Telegram postedAt",
+    "retrospectivePriceIndexing": true
+  },
+  "validationClaim": "A frozen rule replay on message versions observed after the freeze. Historical price/transaction responses are retrieved after the observation window, so this is not live execution and does not measure actual market-data retrieval latency, executable AMM size, or transaction success. Unfilled windows and missing market data remain reported.",
+  "decisionRule": "Retain every eligible signal and report every frozen candidate/cost/stress case, including zero trades. Do not choose a replacement after viewing these outcomes. One window or a handful of trades cannot establish optimality or an edge."
+}

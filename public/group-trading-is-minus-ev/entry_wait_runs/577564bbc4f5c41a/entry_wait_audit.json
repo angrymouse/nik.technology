@@ -1,0 +1,19 @@
+{
+  "run": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/entry_wait_runs/577564bbc4f5c41a",
+  "resultsSha256": "d24ad819142880cac0701b963a28230820a7658c85f1e6b54f2d40b1548786e0",
+  "auditorSha256": "7e4e3324a2aa700e056912d759361a10b84fdb2bf84d2fef67bd6ae64ae150d6",
+  "auditHelperHashes": {
+    "audit_partial_exits.py": "a8d6d84ce4b057ff8b6652999558b2b46726858ca0ab6cf94dc506d62eec069c",
+    "audit_day_dependence.py": "300497bbdd486e7443f7db465a7c734556241412c552902f9e36fea844b8174c"
+  },
+  "trainingPortfolios": 594,
+  "independentTrainingTradeCalculations": 6870,
+  "scalarSaleOutcomes": 2194,
+  "rawEntryFillChecks": 36300,
+  "selectionMaxima": 45,
+  "independentDailyTradeCalculations": 3313,
+  "replayedSavedPortfolios": 455,
+  "futurePerturbedTrainingPortfolios": 594,
+  "baselinePortfolios": 9,
+  "scope": "All training rows and saved evaluation portfolios replayed. Independent raw entry scan, scalar sale decisions, cash/fee/inventory/candle drawdown, training selection and sample-funnel checks. All post-cutoff candles alternately scaled by 20 or 0.05 leave earlier training portfolios unchanged. This validates these computations, not profitability or actual execution."
+}

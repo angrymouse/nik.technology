@@ -1,0 +1,23 @@
+{
+  "resultsSha256": "dab99846a5cee71ce6674efc70859a376c6c4af919baaf467703ec3a4662b10f",
+  "auditorSha256": "6ef74309d6228cc18567f3e5b4227c39806a099dab551b6d9262a569362d5ba8",
+  "checks": {
+    "scalarReferenceOutcomes": 1506,
+    "rawSenderFlags": 1506,
+    "strictPriorReferences": 275797,
+    "scalarFeatureValues": 3795120,
+    "savedPortfolioReplays": 30000,
+    "priorStudyLedgerParities": 200,
+    "scenarioSummaries": 240,
+    "jointSummaries": 120
+  },
+  "replayChecks": {
+    "portfolios": 30000,
+    "stages": 90000,
+    "trades": 60951,
+    "sales": 252,
+    "missingPlannedWindows": 0
+  },
+  "distinctPassingLedgerSets": 4,
+  "scope": "Reconstructs every source flag, clipped reference outcome, prior-reference membership, clock/cap matching, gate and sizing factor. Independently checks every saved portfolio admission and account, reference-control parity, exclusions and aggregate summaries. Retrospective research does not prove live execution or an edge."
+}

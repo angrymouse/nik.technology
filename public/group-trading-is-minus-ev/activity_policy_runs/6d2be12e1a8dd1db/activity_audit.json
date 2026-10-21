@@ -1,0 +1,13 @@
+{
+  "run": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/activity_policy_runs/6d2be12e1a8dd1db",
+  "sourceCodeSha256": "155c4d89187ba7be29842298199942faae61748164756847dbe6be810e709dea",
+  "resultsSha256": "bd55d149dbf7aadacf7316eb3c7395037c2cd03e177f1c4618106712801cac67",
+  "independentScalarFeatureFields": 29700,
+  "independentModifierValues": 62100,
+  "futureFeaturePerturbationValues": 15111,
+  "futureCohortPerturbationCalls": 1679,
+  "uncachedTrainingPortfolios": 580,
+  "independentPortfolioTrades": 5458,
+  "chronologicalPortfoliosReproduced": 12,
+  "scope": "All 1,100 calls for derived feature arithmetic; sampled uncached training portfolios and every main chronological ledger. Earlier raw trade parsing and second-fill audits remain separate. No independent profitability evidence."
+}
