@@ -1,0 +1,13 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Human-only Decider check</title>
+<style>body{font:16px/1.65 system-ui;margin:40px auto;max-width:1150px;padding:0 24px;color:#172231;background:#fff}
+table{border-collapse:collapse;width:100%}td,th{padding:10px 12px;text-align:left;border-bottom:1px solid #d6dfe9}</style>
+<h1>Human-only Decider check</h1>
+<p>576 of 592 human-authored historical calls had enough context to query.
+Prompts contain numeric market measurements,
+pre-call on-chain flow and execution estimates. Caller, group and recurring-wallet histories were omitted.
+The first completed minute is observed before a further one-minute entry delay.</p>
+<p>Rows below use a 10% sale haircut, 1% allocation and 4% daily loss budget. The earlier/later split is within
+the repeatedly examined archive; it is not an independent holdout. Recorded prices do not prove executable fills.</p>
+<table><tr><th>Entry gate</th><th>Period</th><th>Return</th><th>Drawdown bound</th><th>Trades</th></tr><tr><td>all_human</td><td>earlier</td><td>-11.52%</td><td>11.52%</td><td>92</td></tr><tr><td>all_human</td><td>later</td><td>-9.45%</td><td>9.46%</td><td>61</td></tr><tr><td>positive_ev_180s_high_0.50</td><td>earlier</td><td>-7.20%</td><td>7.33%</td><td>60</td></tr><tr><td>positive_ev_180s_high_0.50</td><td>later</td><td>-7.83%</td><td>8.76%</td><td>66</td></tr><tr><td>profit_60s_high_0.50</td><td>earlier</td><td>-7.97%</td><td>7.99%</td><td>61</td></tr><tr><td>profit_60s_high_0.50</td><td>later</td><td>-7.33%</td><td>8.33%</td><td>61</td></tr><tr><td>loss_50pct_180s_low_0.25</td><td>earlier</td><td>-11.52%</td><td>11.52%</td><td>62</td></tr><tr><td>loss_50pct_180s_low_0.25</td><td>later</td><td>-8.41%</td><td>8.94%</td><td>44</td></tr></table>
+<p><a href="results.json">All gates, sizes and exits</a> · <a href="manifest.json">Request provenance</a> ·
+<a href="../../human_decider_lab.py">Replay code</a></p></html>

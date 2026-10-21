@@ -53,8 +53,8 @@ rtk python scripts/publish-group-report.py /home/nik/entryliquidity/analysis/ayu
 rtk proxy env CF_PAGES=1 npm run generate
 ```
 
-`publication-manifest.json` records the source hashes. Files over Cloudflare's
-25 MiB limit are downloaded through redirects to the repository's
-`group-trading-research-2026-10-21` release. Upload the files staged by the exporter
-to that release before deploying a refreshed snapshot. Keep the report's wording
-and original styling intact.
+`publication-manifest.json` records the source hashes. If a refreshed report
+includes files over Cloudflare's 25 MiB limit, the exporter stages them for the
+`group-trading-research-2026-10-21` release and creates download redirects.
+Upload those staged files before deploying. Keep the report's wording and
+original styling intact.

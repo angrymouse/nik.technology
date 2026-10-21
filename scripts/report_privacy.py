@@ -19,6 +19,26 @@ class PublicationPrivacy:
     def __init__(self, source: Path, files: set[Path]):
         self.aliases = {}
         self.next_number = 1
+        for path in sorted(files):
+            if path.name != "results.json" or "human_only_runs" not in path.parts:
+                continue
+            data = json.loads(path.read_text())
+            for row in data.get("callerRanking", []):
+                self.aliases[self._key(row["authorKey"])] = row["publicLabel"]
+                number = int(row["publicLabel"].split()[-1])
+                self.next_number = max(self.next_number, number + 1)
+
+            def pair_ledger(value):
+                if isinstance(value, dict):
+                    if "authorKey" in value and "authorLabel" in value:
+                        self._pair(value["authorKey"], value["authorLabel"])
+                    for child in value.values():
+                        pair_ledger(child)
+                elif isinstance(value, list):
+                    for child in value:
+                        pair_ledger(child)
+
+            pair_ledger(data)
         snapshots = sorted(path for path in files if path.name == "caller_snapshot.csv")
         for path in snapshots:
             with path.open(newline="") as stream:
@@ -87,6 +107,24 @@ class PublicationPrivacy:
         return json.dumps(data, ensure_ascii=False, indent=2) + "\n"
 
     @staticmethod
+    def _redact_human_results(content):
+        data = json.loads(content)
+
+        def remove_identity(value):
+            if isinstance(value, dict):
+                for key in ("authorKey", "authorLabel", "signalKey", "messageId"):
+                    value.pop(key, None)
+                for child in value.values():
+                    remove_identity(child)
+            elif isinstance(value, list):
+                for child in value:
+                    remove_identity(child)
+
+        remove_identity(data)
+        data["publicationRedaction"] = "Caller identities and message identifiers removed from public results."
+        return json.dumps(data, ensure_ascii=False, indent=2) + "\n"
+
+    @staticmethod
     def _omit_automated_rankings(content):
         reader = csv.DictReader(io.StringIO(content))
         output = io.StringIO()
@@ -112,6 +150,8 @@ class PublicationPrivacy:
         text = content.decode("utf-8")
         if path.name == "versions.json" and "live_message_captures" in path.parts:
             text = self._redact_message_versions(text)
+        if path.name == "results.json" and "human_only_runs" in path.parts:
+            text = self._redact_human_results(text)
         if path.name in {"caller_snapshot.csv", "caller_ranking.csv"}:
             text = self._omit_automated_rankings(text)
         return self._sanitize_text(text).encode("utf-8")

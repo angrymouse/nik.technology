@@ -1,9 +1,0 @@
-{
-  "source": "research/pool_route_runs/e66b2ccb15936ba6",
-  "sourceResultsSha256": "e69f5d83e4d03710983db1537910f3c82e737c8dc5ad81ec18d7b8b92ed5371c",
-  "sourceAuditSha256": "76a34d64c68f7491cc751706f5ce3fd43a01afcccab0309ae8f8da3a917b1f5b",
-  "ledgerSha256": "8fcfcba96cd13d2e3d00c7d1f6b10ea0f929fa2df440ab6776a490822e542305",
-  "metricsSha256": "9a3cd8cc1d37c71ce847e99cc4b18e115e9ada1afca0b8337d40f5a19cc06fc5",
-  "sourceCodeSha256": "2d05655b80074e4afca441671fd34b15dd57ff4385576f98046e3f5ed465db7a",
-  "scope": "Compare every new route with the all-pool control under the identical price model, flow mode, history, population, allocation, execution scenario, proceeds cost and removal definition. This prevents attributing removal of the quote-time-only control to pool selection. Matching initial concentration definitions can remove different tokens if their original profits differ; both full ledgers remain preserved in the source."
-}

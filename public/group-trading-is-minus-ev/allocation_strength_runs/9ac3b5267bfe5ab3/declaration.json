@@ -1,6 +1,0 @@
-{
-  "frozenAt": "2026-10-21T14:59:50.801660+00:00",
-  "settingsSha256": "0cd511f31ca273a92ce889b8f33c49a26aa9e7a9271f1b7cd2951200346027db",
-  "selection": "Require one strength/allocation combination to pass every price source, flow mode, history, population and execution scenario at 10% proceeds cost plus fees, with at least eight trades and positive returns after two-best-token and best-day removal. At each drawdown ceiling maximize minimum return, then higher drawdown bound, then lower strength and policy ID. Exhaustive pair checks are required before treating a selection as passing.",
-  "scope": "Retrospective sizing sensitivity on the existing examined dates. Factors derive only from the earlier saved causal features. It can propose a later paper candidate but is not independent validation. Existing prospective rules remain unchanged."
-}

@@ -1,0 +1,34 @@
+{
+  "sourceDataset": "research/repeat_call_datasets/b231edbc401e6dd92215",
+  "datasetManifestSha256": "de2de4e1bdc987640a6a45b887354de38ba95ff79f072a9b65f4a6035f146084",
+  "secondResponseSetSha256": "790955adcc381fbd5914ab7d94a3d0accf8a658adfb4f7473402f304193a942c",
+  "codeHashes": {
+    "human_only_lab.py": "2ab745086684fdd4282fe80150d4dcb61a8538224e9fbb5717cb0f38edd0731a",
+    "second_lab.py": "4f22ef4e1bdd00c20fda0a2a6b48bd7ea13e32330182dcbb65c48e4632c320ac",
+    "second_engine.py": "8bb9dee307d4cfc8b93784d703fe335214403a8aa2563e7e8765d2ea24cb3a9d",
+    "repeat_call_dataset.py": "4c1bf9f0a9765642180d4a6129e78bb2226e46000b0c5372b006411c2ed3b377"
+  },
+  "definition": "Only Telegram messages whose saved authorIsBot flag is false can enter, train a caller score, or appear in an account replay.",
+  "callCount": 1506,
+  "humanCalls": 766,
+  "entryMasks": 160,
+  "exitRules": 64,
+  "entryDelaysSeconds": [
+    1,
+    3,
+    5,
+    10,
+    30,
+    60
+  ],
+  "saleHaircuts": [
+    0.05,
+    0.1,
+    0.15
+  ],
+  "minimumTrainingCalls": 20,
+  "concentration": [
+    "two_best_tokens",
+    "best_entry_day"
+  ]
+}

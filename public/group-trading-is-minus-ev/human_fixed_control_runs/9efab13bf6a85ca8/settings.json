@@ -1,0 +1,194 @@
+{
+  "source": "research/repeat_fixed_entry_runs/1ef5d7d5b13e70dc",
+  "sourceSettingsSha256": "1dda9f48ce485f430d2b5e5973a03c98c8b8f50e81160418c1e22ff079ef9e04",
+  "sourceResultsSha256": "0ce9743d06ec2bb50d5ec090362e72149391750907d406812200c06eb3faa74e",
+  "codeHashes": {
+    "human_fixed_control.py": "0640ef4826dd3febba9269cbeea5885d6f87e7ba6e1154738fa0d34e5085570f",
+    "fixed_entry_replay.py": "de8a20299f0992bd988706fc169612cadd72179baad2dc6fbe8374b62cf4530f",
+    "reference_filter_lab.py": "7ffbe3052569e811b790374679477fcd20058ff93957f0999225b7482bdc6ab3"
+  },
+  "references": [
+    {
+      "name": "reference_20",
+      "source": "non_bot",
+      "maxAgeMinutes": null,
+      "matching": "global"
+    },
+    {
+      "name": "reference_21",
+      "source": "non_bot",
+      "maxAgeMinutes": null,
+      "matching": "same_chain"
+    }
+  ],
+  "groups": [
+    "original_human",
+    "combined_human"
+  ],
+  "policies": [
+    {
+      "scale": 0.5,
+      "budget": 0.01
+    },
+    {
+      "scale": 0.75,
+      "budget": 0.01
+    }
+  ],
+  "scenarios": [
+    {
+      "entryLagSeconds": 0,
+      "reactionSeconds": 1,
+      "participation": 0.01,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 0,
+      "reactionSeconds": 1,
+      "participation": 0.005,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 0,
+      "reactionSeconds": 3,
+      "participation": 0.01,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 0,
+      "reactionSeconds": 3,
+      "participation": 0.005,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 0,
+      "reactionSeconds": 5,
+      "participation": 0.01,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 0,
+      "reactionSeconds": 5,
+      "participation": 0.005,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 2,
+      "reactionSeconds": 1,
+      "participation": 0.01,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 2,
+      "reactionSeconds": 1,
+      "participation": 0.005,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 2,
+      "reactionSeconds": 3,
+      "participation": 0.01,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 2,
+      "reactionSeconds": 3,
+      "participation": 0.005,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 2,
+      "reactionSeconds": 5,
+      "participation": 0.01,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 2,
+      "reactionSeconds": 5,
+      "participation": 0.005,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 5,
+      "reactionSeconds": 1,
+      "participation": 0.01,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 5,
+      "reactionSeconds": 1,
+      "participation": 0.005,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 5,
+      "reactionSeconds": 3,
+      "participation": 0.01,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 5,
+      "reactionSeconds": 3,
+      "participation": 0.005,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 5,
+      "reactionSeconds": 5,
+      "participation": 0.01,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 5,
+      "reactionSeconds": 5,
+      "participation": 0.005,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 10,
+      "reactionSeconds": 1,
+      "participation": 0.01,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 10,
+      "reactionSeconds": 1,
+      "participation": 0.005,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 10,
+      "reactionSeconds": 3,
+      "participation": 0.01,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 10,
+      "reactionSeconds": 3,
+      "participation": 0.005,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 10,
+      "reactionSeconds": 5,
+      "participation": 0.01,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 10,
+      "reactionSeconds": 5,
+      "participation": 0.005,
+      "bankrollUSD": 1000.0
+    },
+    {
+      "entryLagSeconds": 0,
+      "reactionSeconds": 1,
+      "participation": 0.01,
+      "bankrollUSD": 10000.0
+    }
+  ],
+  "target": 3.0,
+  "holdSeconds": 300,
+  "saleHaircut": 0.1,
+  "selectionProvenance": "Fixed daily entry settings inherited from a previously examined broader historical sample; no new fitting in this control."
+}

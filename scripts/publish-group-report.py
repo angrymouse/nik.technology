@@ -69,6 +69,16 @@ def main():
             target.write_bytes(content)
             manifest['files'][relative] = metadata
 
+    keep = set(manifest['files']) | {'index.html', 'publication-manifest.json'}
+    for stale in destination.rglob('*'):
+        if stale.is_file() and stale.relative_to(destination).as_posix() not in keep:
+            stale.unlink()
+    for empty in sorted((path for path in destination.rglob('*') if path.is_dir()),
+                        key=lambda path: len(path.parts), reverse=True):
+        try:
+            empty.rmdir()
+        except OSError:
+            pass
     shutil.copyfile(destination / 'latest_research_report.html', destination / 'index.html')
     manifest['files']['index.html'] = manifest['files']['latest_research_report.html']
     (destination / 'publication-manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')

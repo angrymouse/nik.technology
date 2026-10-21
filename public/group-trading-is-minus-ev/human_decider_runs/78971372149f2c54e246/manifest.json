@@ -1,0 +1,31 @@
+{
+  "dataset": "research/coverage_repairs/evm/combined/datasets/adb4dc66b5bd0a0d3e6f",
+  "datasetManifestSha256": "f23d71886fa44d92fbcbff20a84570a90bc6b00476a57e478df2bd8b177aec44",
+  "requestFileSha256": "f9a5d0d7b5242abe448a2041fb5bd2676a24221202b93e6b7762491e4f3faa0e",
+  "model": "perplexity/pplx-decider-v1.2-20261016",
+  "questions": [
+    "profit_60s",
+    "profit_180s",
+    "positive_ev_180s",
+    "loss_50pct_180s",
+    "target_first_180s",
+    "positive_ev_trail_600s"
+  ],
+  "requests": 576,
+  "uniqueRequests": 576,
+  "sourceHashes": {
+    "human_decider_lab.py": "42c6d849e77bac8b6bc25b9148d5a8846b2d0820c7609377c97cc66f312b1b7f",
+    "context_decider.py": "4f49afacbafe85056bd84151594adb7b0d3c4185f244d845595b25710981fdfc",
+    "second_engine.py": "8bb9dee307d4cfc8b93784d703fe335214403a8aa2563e7e8765d2ea24cb3a9d"
+  },
+  "inputs": "Human-authored calls only; market, message-forwarding flag, pre-call on-chain flow and execution estimate. Caller, cohort and recurring-wallet histories omitted.",
+  "sourceContext": {
+    "flowDirectory": "research/coverage_repairs/evm/combined/datasets/adb4dc66b5bd0a0d3e6f/trade_flow/5bbd83db811e9339",
+    "historyDirectory": "research/coverage_repairs/evm/combined/datasets/adb4dc66b5bd0a0d3e6f/wallet_context/e53107eaca461fd3",
+    "flowCacheSha256": "b0617ebe88b31c784cc6416c9a6691590a67685974fe0012f91244d4959a5eba",
+    "historyCacheSha256": "9d7f59e7339c7dbbd04bb48b512e68ec521e56162223caf3a70ebc79cb71cbbe",
+    "tradeResponseSetSha256": "99b02e2976dec1416cc4c3ea065f97753ac5300982a845ada0a5efff1ea5a10f",
+    "historySourceSha256": "4f81229491568bd86e137ac157c3e124dfdb87239a85afe6bc34998ffda3f6e9",
+    "historyAuditSha256": "a2d65094a72d0e13b87136752feda43b2a6244d0a8de54c2ff72279e23d85790"
+  }
+}
