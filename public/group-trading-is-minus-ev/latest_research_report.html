@@ -7,7 +7,7 @@ th{background:#eef3f8}pre{white-space:pre-wrap;overflow-wrap:anywhere;background
 a{color:#1459ac}.scroll{overflow-x:auto}li{margin:7px 0}</style>
 <h1>Telegram token strategy research</h1>
 <p>Group −1002282015815 · available historical messages: October 16–21, 2026 · saved, reproducible simulations.</p>
-<div class="note"><strong>Current findings:</strong> Causal pool selection and volume-share filters pass 12 of 24 route/allocation combinations through the initial price and concentration screen. With identical capacity-timing controls, restricting to one pool changes the minimum return by only -0.000020 percentage points. The positive initial margin is already present in the matched all-pool control. The selected route retains +0.0283% after its worst tested token-pair removal; independent future trades are still needed. An exit-time diagnostic finds 161 chosen-pool sale cases above or without the volume-capacity proxy. This unresolved execution assumption prevents treating the simulated edge as established. With the saved trade roster and sizes fixed, a single sale capped by observed pre-exit flow cuts the leading route's worst return to +0.0141%. Staged sales through 60 seconds raise that fixed-roster minimum to +0.6120% with higher estimated fees. Executable swap size and full account replay remain unmeasured. The new frozen source-filter observation contains 19 eligible calls and 0 account trades across all 24 candidate/scenario comparisons. This window provides no profitability evidence. 
+<div class="note"><strong>Current findings:</strong> Causal pool selection and volume-share filters pass 12 of 24 route/allocation combinations through the initial price and concentration screen. With identical capacity-timing controls, restricting to one pool changes the minimum return by only -0.000020 percentage points. The positive initial margin is already present in the matched all-pool control. The selected route retains +0.0283% after its worst tested token-pair removal; independent future trades are still needed. An exit-time diagnostic finds 161 chosen-pool sale cases above or without the volume-capacity proxy. This unresolved execution assumption prevents treating the simulated edge as established. With the saved trade roster and sizes fixed, a single sale capped by observed pre-exit flow cuts the leading route's worst return to +0.0141%. Staged sales through 60 seconds raise that fixed-roster minimum to +0.6120% with higher estimated fees. Executable swap size remains unmeasured. A full staged-sale account replay exactly reproduces all 1,600 original matched controls before changing execution. Its strongest tested 30-second chosen-pool case has a +0.3103% worst return, but -0.7394% without two best tokens and -0.1092% without its best day. No tested setting passes both removals. The new frozen source-filter observation contains 19 eligible calls and 0 account trades across all 24 candidate/scenario comparisons. This window provides no profitability evidence. 
 The current fixed candidates have 7 separately reserved windows with 2 eligible calls. Including the collection gaps finds 6 archived eligible calls after the original candidate freeze and 0 matching entries. 
 The earlier fixed rule's 3 separately collected validation windows contain 15 eligible calls and
 0 trades. A reliable profitable strategy has not been established. A bounded 30-minute arrival capture preserves 126 eligible observed originals and 7 edit events; availability is the local receipt time. </div>
@@ -86,8 +86,8 @@ requests add 905 later rows; all
 <th>Losing accounts</th><th>Worst closed-equity DD</th><th>Extra order attempts</th></tr><tr><td>Half</td><td>15s</td><td>+0.1322%</td><td>0/400</td><td>0.7957%</td><td>404</td></tr><tr><td>Half</td><td>30s</td><td>+0.2282%</td><td>0/400</td><td>0.7146%</td><td>720</td></tr><tr><td>Half</td><td>60s</td><td>+0.2352%</td><td>0/400</td><td>0.7294%</td><td>1,392</td></tr><tr><td>Three-quarter</td><td>15s</td><td>+0.3652%</td><td>0/400</td><td>0.8048%</td><td>452</td></tr><tr><td>Three-quarter</td><td>30s</td><td>+0.6050%</td><td>0/400</td><td>0.7228%</td><td>814</td></tr><tr><td>Three-quarter</td><td>60s</td><td>+0.6120%</td><td>0/400</td><td>0.7375%</td><td>1,498</td></tr></table></div>
 <p>Closed-equity drawdown excludes price movement while positions are open. Both sweeps hold entry admission and ticket size
 fixed; changed sale cash can change later admissions in a full replay. Recorded flow and prices do not establish actual
-swap depth, order success or live fees. The 400 accounts per row reuse eight or nine historical trades. Two-best-token and
-best-day exclusions have not been recomputed under staged selling.</p>
+swap depth, order success or live fees. The 400 accounts per row reuse eight or nine historical trades. This fixed-roster
+sweep does not recompute two-best-token and best-day exclusions.</p>
 <p><a href="exit_capacity_replay_runs/b10465ff3ec983ae/settings.json">Single-sale assumptions</a> ·
 <a href="exit_capacity_replay_runs/b10465ff3ec983ae/results.json">Single-sale results</a> ·
 <a href="exit_capacity_replay_runs/b10465ff3ec983ae/accounts.jsonl.gz">Single-sale accounts</a> ·
@@ -98,7 +98,37 @@ best-day exclusions have not been recomputed under staged selling.</p>
 <a href="staged_exit_capacity_runs/e5d3ccc54cfc8bd1/staged_exit_audit.json">Independent staged-sale audit</a> ·
 <a href="staged_exit_flow_runs/3adb93d7d4f5cc65/requests.json">Extended trade requests</a> ·
 <a href="staged_exit_flow_runs/3adb93d7d4f5cc65/collection.json">Collection status</a>.</p>
-<p>Extended response files: <a href="staged_exit_flow_runs/3adb93d7d4f5cc65/responses/call_602.json.gz">call_602</a> · <a href="staged_exit_flow_runs/3adb93d7d4f5cc65/responses/call_650.json.gz">call_650</a> · <a href="staged_exit_flow_runs/3adb93d7d4f5cc65/responses/call_665.json.gz">call_665</a> · <a href="staged_exit_flow_runs/3adb93d7d4f5cc65/responses/call_675.json.gz">call_675</a> · <a href="staged_exit_flow_runs/3adb93d7d4f5cc65/responses/call_735.json.gz">call_735</a> · <a href="staged_exit_flow_runs/3adb93d7d4f5cc65/responses/call_1064.json.gz">call_1064</a> · <a href="staged_exit_flow_runs/3adb93d7d4f5cc65/responses/call_1077.json.gz">call_1077</a> · <a href="staged_exit_flow_runs/3adb93d7d4f5cc65/responses/call_1389.json.gz">call_1389</a> · <a href="staged_exit_flow_runs/3adb93d7d4f5cc65/responses/call_1437.json.gz">call_1437</a>.</p>
+<p>Extended response files: <a href="staged_exit_flow_runs/3adb93d7d4f5cc65/responses/call_602.json.gz">call_602</a> · <a href="staged_exit_flow_runs/3adb93d7d4f5cc65/responses/call_650.json.gz">call_650</a> · <a href="staged_exit_flow_runs/3adb93d7d4f5cc65/responses/call_665.json.gz">call_665</a> · <a href="staged_exit_flow_runs/3adb93d7d4f5cc65/responses/call_675.json.gz">call_675</a> · <a href="staged_exit_flow_runs/3adb93d7d4f5cc65/responses/call_735.json.gz">call_735</a> · <a href="staged_exit_flow_runs/3adb93d7d4f5cc65/responses/call_1064.json.gz">call_1064</a> · <a href="staged_exit_flow_runs/3adb93d7d4f5cc65/responses/call_1077.json.gz">call_1077</a> · <a href="staged_exit_flow_runs/3adb93d7d4f5cc65/responses/call_1389.json.gz">call_1389</a> · <a href="staged_exit_flow_runs/3adb93d7d4f5cc65/responses/call_1437.json.gz">call_1437</a>.</p><h3>Replay admissions and cash after staged sales</h3>
+<p>The full account replay uses all eleven historically eligible execution opportunities. It first reproduces every one of the
+1,600 saved matched all-pool and chosen-pool accounts exactly. It then recalculates position size, daily budget, cash,
+overlap and later admissions after each staged liquidation. Entry reserves the maximum number of possible saved-fee
+half-orders using only its pre-entry fee estimate; the later observed fee is paid when selling. Excluding two best
+tokens or the best entry day triggers another complete account replay.</p>
+<p>The two additional complete Mobula windows add 692 later trade rows. Their
+3,632 original-window rows match the earlier saved data. The table covers the chosen-pool
+route across the same 400 price, history, population, entry-capacity and execution controls per allocation and horizon,
+at a 10% proceeds haircut plus the higher observed exit-fee estimate.</p>
+<div class="scroll"><table><tr><th>Allocation</th><th>Extra sale horizon</th><th>Smallest return</th>
+<th>Worst closed-equity DD</th><th>Without two best tokens</th><th>Without best entry day</th>
+<th>Fewest trades</th></tr><tr><td>Half</td><td>15s</td><td>-0.1370%</td><td>0.7957%</td><td>-0.8494%</td><td>-0.4580%</td><td>8</td></tr><tr><td>Half</td><td>30s</td><td>+0.0107%</td><td>0.7146%</td><td>-0.7018%</td><td>-0.3104%</td><td>8</td></tr><tr><td>Half</td><td>60s</td><td>+0.0080%</td><td>0.7293%</td><td>-0.7046%</td><td>-0.3131%</td><td>8</td></tr><tr><td>Three-quarter</td><td>15s</td><td>+0.0194%</td><td>0.8047%</td><td>-0.8870%</td><td>-0.3738%</td><td>8</td></tr><tr><td>Three-quarter</td><td>30s</td><td>+0.3103%</td><td>0.7228%</td><td>-0.7394%</td><td>-0.1092%</td><td>8</td></tr><tr><td>Three-quarter</td><td>60s</td><td>+0.3076%</td><td>0.7375%</td><td>-0.7423%</td><td>-0.1275%</td><td>8</td></tr></table></div>
+<p>The 30-second three-quarter case has the highest worst return and lowest worst closed-cash drawdown of its tested
+horizons: +0.3103% and 0.7228%. Its matched all-pool control
+has a +0.3104% worst return, so choosing one pool adds no measured improvement. Every one of the
+24 tested route, allocation, horizon and fee combinations loses in at least one two-best-token removal and in at least
+one best-day removal. These comparisons still reuse eight or nine trades from previously examined dates.</p>
+<p>The independent audit recalculates 81,600 sales from raw netted flow and later prints,
+then checks 9,600 cash ledgers and all summary extrema. Closed-equity drawdown omits
+intratrade price lows. The audit does not independently reconstruct every exclusion admission path. Observed prints and
+flow are not executable AMM quotes, so no live return or drawdown guarantee follows.</p>
+<p><a href="full_staged_account_runs/385b7c053982cd04/settings.json">Full replay assumptions</a> ·
+<a href="full_staged_account_runs/385b7c053982cd04/results.json">Full replay results</a> ·
+<a href="full_staged_account_runs/385b7c053982cd04/accounts.jsonl.gz">Account ledgers and removals</a> ·
+<a href="full_staged_account_runs/385b7c053982cd04/full_staged_audit.json">Independent audit</a> ·
+<a href="full_staged_account_lab.py">Replay code</a> ·
+<a href="audit_full_staged_accounts.py">Audit code</a> ·
+<a href="full_staged_exit_flow_runs/f52fa14cddbedcdb/requests.json">Two added requests</a> ·
+<a href="full_staged_exit_flow_runs/f52fa14cddbedcdb/collection.json">Collection status</a>.</p>
+<p>Added response files: <a href="full_staged_exit_flow_runs/f52fa14cddbedcdb/responses/call_663.json.gz">call_663</a> · <a href="full_staged_exit_flow_runs/f52fa14cddbedcdb/responses/call_1082.json.gz">call_1082</a>.</p>
 <h2>How strongly should position size follow the saved factors?</h2>
 <p>This separate study keeps the earlier 3× one-second-high exit trigger and five-minute timeout. It changes the response to the saved
 volatility/cohort sizing factor, while preserving entry masks, reference histories, capacity, fees and the 1% daily full-loss budget.</p>

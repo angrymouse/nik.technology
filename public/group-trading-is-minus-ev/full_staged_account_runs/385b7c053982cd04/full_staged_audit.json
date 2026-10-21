@@ -1,0 +1,11 @@
+{
+  "resultsSha256": "98cad255407a8a68b23801a684d26c2d1babf6b3bf593919ca4f39599f98fff4",
+  "accountsSha256": "c598d65141abf399b24b6d4a60604eaaed65ddb7c5671b82886eca5b035ef3c1",
+  "auditorSha256": "20db37770036a063895aa8e6ec319ea67a1063687e2ca36767f29b4cc42b5b35",
+  "checks": {
+    "scalarSaleChecks": 81600,
+    "accountChecks": 9600,
+    "summaryChecks": 24
+  },
+  "scope": "Recomputes every recorded sale with independently netted raw target-token flow and future trade prints; checks double-entry cash, settlement overlap, token uniqueness, winner/day selection, and summary extrema. Exact source-account baseline parity is checked by the lab itself. Exclusion-account admissions are not independently replayed by this audit."
+}

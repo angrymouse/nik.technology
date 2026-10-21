@@ -1,0 +1,52 @@
+{
+  "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/pool_route_runs/e66b2ccb15936ba6",
+  "nineFlow": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/staged_exit_flow_runs/3adb93d7d4f5cc65",
+  "extraFlow": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/full_staged_exit_flow_runs/f52fa14cddbedcdb",
+  "sourceResultsSha256": "e69f5d83e4d03710983db1537910f3c82e737c8dc5ad81ec18d7b8b92ed5371c",
+  "sourceLedgerSha256": "8fcfcba96cd13d2e3d00c7d1f6b10ea0f929fa2df440ab6776a490822e542305",
+  "nineRequestsSha256": "050c8ea1856b9fe3a7aee5f1dbe830bb2f4cbc62f76fece67e55935051552e2a",
+  "extraRequestsSha256": "bb58d99d42ada0c6aa992ff0ab8896856db79db21cb44f073814a3ae5e5e557c",
+  "responseHashes": {
+    "3adb93d7d4f5cc65/call_602": "6fdadcf12228f936742856ea5f0cf319f6c5a86f213904a406f68ef5012993cf",
+    "3adb93d7d4f5cc65/call_650": "f8d2c88016405644d3ccbb41973eceeccf7c883e8c9a50c7da85232c5139f3a8",
+    "3adb93d7d4f5cc65/call_665": "2436c92d33eaff8e86872b742f5677419b09c655cb1e832f8199587c85b15647",
+    "3adb93d7d4f5cc65/call_675": "c1efc49ebbdc51123278c0fa0a8f1ecf9a63a77fd92e91335d06ef6e502dfed8",
+    "3adb93d7d4f5cc65/call_735": "8597c6da28f8ebd9a1e6591a3262037aa3839cfe43ef84cbe85d3824860d2971",
+    "3adb93d7d4f5cc65/call_1064": "04fb74f98f6cbef62fd9c3de0176e19b3d9c9ff8e746da697f0372d5b31c5216",
+    "3adb93d7d4f5cc65/call_1077": "b38f125dd314133d451ff93efab0f0471e67f16582000cf2b226be82c6e65cbb",
+    "3adb93d7d4f5cc65/call_1389": "f0e91091546f03253ba2c63658b7736925bc3bb6ba28de3e64c619eda1b7d646",
+    "3adb93d7d4f5cc65/call_1437": "ff7dd7f930efe1046f955ccd299f3b0b5c144704fa958316a6ed94c046a46fb6",
+    "f52fa14cddbedcdb/call_663": "493bbf82915135e627b4f94053c8951cecc113f3c0477c8e12dc46484480d43a",
+    "f52fa14cddbedcdb/call_1082": "0ff733105eac11c2d3a8ee36e0729ee8d3c7a585dca4c8de2fe8f0a05284efdc"
+  },
+  "sourceCodeSha256": "a7bf9b15a22f0199bff58c9f872953f0efc0e375780a481385d79b1e802f7922",
+  "helperCodeSha256": {
+    "pool_route_engine.py": "8d0d1cdb7d5e84386a17bed67a4bbe7981f37de91852a53569bfa4f2318c4b6a",
+    "staged_exit_capacity_lab.py": "e9afecf16a2982566c01cb717a8ea69b83981b1b9bd8b923ec94c4dda363f2f8",
+    "confirmed_target_engine.py": "6fe0b646b00380da0cda24a1536225befb294028d87357fca4fded895e37b6f4"
+  },
+  "routeIds": [
+    0,
+    1
+  ],
+  "modes": [
+    "entry_time",
+    "conservative_both"
+  ],
+  "cost": 0.1,
+  "horizonsSeconds": [
+    15,
+    30,
+    60
+  ],
+  "feeModes": [
+    "saved_per_order",
+    "higher_prior_median"
+  ],
+  "stepSeconds": 5,
+  "informationLagSeconds": 5,
+  "saleWaitSeconds": 10,
+  "minimumTrades": 8,
+  "model": "Replay every eligible call under the original fixed daily entry rules, cap and fee controls, price variants, 3x target and 300-second timeout. At the original exit sell up to participation times pre-exit 60-second economic volume ending five seconds earlier. Attempt additional sales at exit+10, +15, ... through the named horizon. Each attempt is limited to fresh nonoverlapping five-second economic volume ending five seconds before submission, uses the next recorded swap price within ten seconds, and pays an order fee. Unsold inventory is written to zero at horizon plus the sale wait. One position remains open until settlement; later admissions, sizes, budgets, winner removals and day removals are replayed. Reserve the maximum number of possible extra saved-fee half-orders from cash and daily budget at entry, using only its pre-entry fee estimate. The alternate exit fee uses the higher of that saved allowance and the pre-exit median gas plus MEV, which is observed only when selling. This is retrospective recorded-flow sensitivity, not an executable AMM quotation.",
+  "scope": "Eleven historical candidate calls across repeatedly examined days, including two newly collected raw windows. Initial capacity and all later prices are market-data proxies. Closed-equity drawdown omits open-position lows; exposure and margin remain uncertain without executable reserves and prospective qualifying entries."
+}
