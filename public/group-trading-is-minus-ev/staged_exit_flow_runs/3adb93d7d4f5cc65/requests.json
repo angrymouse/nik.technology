@@ -1,0 +1,132 @@
+{
+  "endpoint": "https://api.mobula.io/api/2/trades/filters",
+  "sourcePlan": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/execution_trade_runs/c086dd62f77f03fa/view/trade_flow/requests.json",
+  "requests": [
+    {
+      "id": "call_602",
+      "parentIndex": 602,
+      "localIndex": 0,
+      "originalRequestTo": 1792340676000,
+      "request": {
+        "chainId": "solana:solana",
+        "tokenAddress": "Fd61znB4XAdwqrFexC91aoxKcz1iheqx5j4VZCG4pump",
+        "from": 1792340275000,
+        "to": 1792340730000,
+        "limit": 5000,
+        "sortOrder": "asc"
+      }
+    },
+    {
+      "id": "call_650",
+      "parentIndex": 650,
+      "localIndex": 1,
+      "originalRequestTo": 1792352316000,
+      "request": {
+        "chainId": "solana:solana",
+        "tokenAddress": "ByQ4cTwVyrZtzb7aFKW8QXPBMXdCWx6UdVMshLZipump",
+        "from": 1792351915000,
+        "to": 1792352371000,
+        "limit": 5000,
+        "sortOrder": "asc"
+      }
+    },
+    {
+      "id": "call_665",
+      "parentIndex": 665,
+      "localIndex": 3,
+      "originalRequestTo": 1792356096000,
+      "request": {
+        "chainId": "solana:solana",
+        "tokenAddress": "GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+        "from": 1792355695000,
+        "to": 1792356096000,
+        "limit": 5000,
+        "sortOrder": "asc"
+      }
+    },
+    {
+      "id": "call_675",
+      "parentIndex": 675,
+      "localIndex": 4,
+      "originalRequestTo": 1792358496000,
+      "request": {
+        "chainId": "solana:solana",
+        "tokenAddress": "ArpPsesHXKbGeJsHdquM6acT3uNs7BChyetJjiNYpump",
+        "from": 1792358095000,
+        "to": 1792358550000,
+        "limit": 5000,
+        "sortOrder": "asc"
+      }
+    },
+    {
+      "id": "call_735",
+      "parentIndex": 735,
+      "localIndex": 5,
+      "originalRequestTo": 1792383576000,
+      "request": {
+        "chainId": "solana:solana",
+        "tokenAddress": "3xrmyTm2sWrh6SpRegMrrmsP47fALoQBKyEFse5Dpump",
+        "from": 1792383175000,
+        "to": 1792383630000,
+        "limit": 5000,
+        "sortOrder": "asc"
+      }
+    },
+    {
+      "id": "call_1064",
+      "parentIndex": 1064,
+      "localIndex": 6,
+      "originalRequestTo": 1792438116000,
+      "request": {
+        "chainId": "solana:solana",
+        "tokenAddress": "ESABfJpt9cocXgWX7HF8WwSXrcv785oyaA8imwojpump",
+        "from": 1792437715000,
+        "to": 1792438170000,
+        "limit": 5000,
+        "sortOrder": "asc"
+      }
+    },
+    {
+      "id": "call_1077",
+      "parentIndex": 1077,
+      "localIndex": 7,
+      "originalRequestTo": 1792439796000,
+      "request": {
+        "chainId": "solana:solana",
+        "tokenAddress": "3Ckrmzsp6NbnW6zLcrj3z8BSn1H1gRN3fh6Un15DJcbf",
+        "from": 1792439395000,
+        "to": 1792439851000,
+        "limit": 5000,
+        "sortOrder": "asc"
+      }
+    },
+    {
+      "id": "call_1389",
+      "parentIndex": 1389,
+      "localIndex": 9,
+      "originalRequestTo": 1792527396000,
+      "request": {
+        "chainId": "evm:56",
+        "tokenAddress": "0x214df818241e3f51eeff6fa190865c2c0f2f7777",
+        "from": 1792526995000,
+        "to": 1792527453000,
+        "limit": 5000,
+        "sortOrder": "asc"
+      }
+    },
+    {
+      "id": "call_1437",
+      "parentIndex": 1437,
+      "localIndex": 10,
+      "originalRequestTo": 1792537296000,
+      "request": {
+        "chainId": "solana:solana",
+        "tokenAddress": "9vuGTtRoL6GeD4Gwt6mQBm7Bn1AzJWATBvjkiMQXpump",
+        "from": 1792536895000,
+        "to": 1792537350000,
+        "limit": 5000,
+        "sortOrder": "asc"
+      }
+    }
+  ]
+}

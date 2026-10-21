@@ -9,10 +9,11 @@ The original saved data covers the available group history from October 16 throu
 Open `latest_research_report.html` for the current comparison and links to the detailed runs.
 
 The public research page is [group-trading-is-minus-ev](https://nik.technology/group-trading-is-minus-ev).
-Its Nuxt route lives in `~/nik.technology/app/pages/group-trading-is-minus-ev.vue`.
-`publish_group_research.py ~/nik.technology` exports explicitly selected aggregate results, anonymous caller rows,
-the baseline CSV and SVG figures. Update its dated source snapshot and the article together when publishing new findings.
-The public page uses a separate snapshot from this continually updated local report.
+It serves `latest_research_report.html` as the original static HTML, with the report's linked files under
+`~/nik.technology/public/group-trading-is-minus-ev/`. Refresh the local report with
+`rtk python context_research_report.py`, then run `rtk python scripts/publish-group-report.py
+/home/nik/entryliquidity/analysis/ayugram-token-strategy --large-files-directory /tmp/group-research-release-assets`
+from `~/nik.technology`. The publisher preserves report and dependency bytes; large linked files use release-asset redirects.
 
 ### Pool execution, matched controls and sale capacity
 
@@ -31,9 +32,13 @@ These are separate extrema over ordinary and unfavorable swap prices, both refer
 
 The pair tester computes 30,700 accounts and reuses 135,700 exact input/path matches, avoiding 81.6% of duplicate account calculations. Equality covers potential opportunities, sizing, capacity, fees, exits and excluded tokens, plus the complete normalized-path digest. Comparing only realized base ledgers would miss trades made possible by removing a token.
 
-`exit_capacity_runs/bda9d7cbbf30c386` checks the exit assumption separately. It inspects 10,800 original accounts, or 91,800 repeated trade usages, and stores 9,260 distinct sale cases. **161 chosen-pool sale cases exceed the entry model's volume-participation limit when measured again before the sale.** At a $1,000 bankroll, the largest chosen-pool sale is approximately 2.38 times that proxy limit; the three-quarter allocation has affected scenarios on two original opportunities. Another 656 chosen-pool cases have a higher exit-time gas/MEV estimate than half the modeled round-trip fee. This diagnostic does not filter entries using future information and does not compute an adjusted profit. Sale liquidity and fees must be modeled before the small positive margin can support a trading conclusion.
+`exit_capacity_runs/bda9d7cbbf30c386` checks the exit assumption separately. It inspects 10,800 original accounts, or 91,800 repeated trade usages, and stores 9,260 distinct sale cases. **161 chosen-pool sale cases exceed the entry model's volume-participation limit when measured again before the sale.** At a $1,000 bankroll, the largest chosen-pool sale is approximately 2.38 times that proxy limit; the three-quarter allocation has affected scenarios on two original opportunities. Another 656 chosen-pool cases have a higher exit-time gas/MEV estimate than half the modeled round-trip fee.
 
-The second unchanged source-filter observation is complete and audited: **185 original message updates, 32 token signals, 22 eligible quotes and zero trades** across 24 paper accounts. Five quotes lacked valid prices and five violated timestamp rules. The first two source-filter windows now contain 47 eligible calls and no qualifying entries. A third unchanged protocol froze at **15:34:55 UTC on October 21**, carries all **1,194 audited context calls**, and began its 30-minute capture at **15:35:22 UTC**. Its automatic validator will wait nine minutes after closure for full price horizons. Observation gaps remain unobserved.
+`exit_capacity_replay_runs/b10465ff3ec983ae` revalues all 10,800 saved no-removal accounts under one-order sale capacity and higher exit fees. With the original trade roster and ticket sizes held fixed, the selected pool route at three-quarter allocation falls from a +1.1979% worst return without an exit cap to **+0.0141%** at the observed volume proxy. The independent cash audit checks 1,101,600 trade calculations across 129,600 account sensitivities. This is a fixed-roster sensitivity, not a full new admission replay.
+
+`staged_exit_flow_runs/3adb93d7d4f5cc65` extends Mobula trade coverage for the nine traded calls. The nine complete requests add 905 later rows; all 13,859 overlapping rows match the original records. `staged_exit_capacity_runs/e5d3ccc54cfc8bd1` uses nonoverlapping five-second flow windows ending five seconds before each later sale attempt, records the next swap price within ten seconds, and charges per-order fees. Across 400 saved controls for the selected route and allocation, the worst fixed-roster return is **+0.3652%** with 15 seconds of extra attempts, **+0.6050%** with 30 seconds, and **+0.6120%** with 60 seconds under the higher fee estimate. These values use eight or nine historical trades. The independent staged audit checks all 12,000 account sensitivities and 102,000 sale calculations. Closed-equity drawdowns exclude open-position price movement; full re-admission, concentration removals and executable AMM depth remain to be assessed.
+
+The third unchanged source-filter observation is complete and audited: **29 token signals, 19 eligible quotes and zero trades** across 24 paper accounts. The three completed 30-minute windows contain **66 eligible calls and zero trades**. Their gaps remain unobserved; zero-trade windows cannot validate profitability.
 
 Reproduce the studies and report:
 
@@ -44,6 +49,10 @@ rtk python pool_route_pairs.py run
 rtk python pool_route_pairs.py audit
 rtk python pool_matched_controls.py
 rtk python exit_capacity_diagnostics.py
+rtk python exit_capacity_replay.py run
+rtk python audit_exit_capacity_replay.py
+rtk python staged_exit_capacity_lab.py run
+rtk python audit_staged_exit_capacity.py
 rtk .plot-venv/bin/python plot_pool_routes.py
 rtk python context_research_report.py
 rtk python check_pool_research.py
