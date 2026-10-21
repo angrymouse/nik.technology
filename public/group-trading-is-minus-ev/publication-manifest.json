@@ -774,8 +774,8 @@
       "sha256": "493bbf82915135e627b4f94053c8951cecc113f3c0477c8e12dc46484480d43a"
     },
     "latest_research_report.html": {
-      "bytes": 160368,
-      "sha256": "b6fc6b6486741da190632a8e3af2dde81f832f5d2e8a856080c7eba144772c22"
+      "bytes": 160408,
+      "sha256": "e2346209d3e2c10967d39f804ff71cacdc8d04acb46f0b9fa03fcb8fb89b75a2"
     },
     "live_message_captures/20261021T130737288Z_f62bfed9/arrival_mentions/db6a0a9cf8c0c65f/signals.json": {
       "bytes": 12808,
@@ -1282,8 +1282,8 @@
       "sha256": "0a9c9ec22cacdab490595cdbe1c36710e5f1b585a3695ec0f6b56394a415b1f8"
     },
     "index.html": {
-      "bytes": 160368,
-      "sha256": "b6fc6b6486741da190632a8e3af2dde81f832f5d2e8a856080c7eba144772c22"
+      "bytes": 160408,
+      "sha256": "e2346209d3e2c10967d39f804ff71cacdc8d04acb46f0b9fa03fcb8fb89b75a2"
     }
   },
   "largeFiles": {
