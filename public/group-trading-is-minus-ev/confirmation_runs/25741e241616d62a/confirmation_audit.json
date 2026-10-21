@@ -1,5 +1,5 @@
 {
-  "run": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+  "run": "research/confirmation_runs/25741e241616d62a",
   "sourceCodeSha256": "c21977242017deacfc2601e65f3ddfecaebaa554c3701e22e16e943de73a4f34",
   "resultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
   "independentRawMentionEvents": 2141,
@@ -14,7 +14,7 @@
   "ordinarySelections": 32,
   "robustSelectedTrainingReplays": 4,
   "screenControl": {
-    "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/466748cfa7e5ca29",
+    "source": "research/confirmation_runs/466748cfa7e5ca29",
     "sourceResultsSha256": "1f84daf76072c833bef348d64d9e23ccb6b05c382447c76239923719fd028c2c",
     "unchangedNonHumanPortfolios": 27,
     "humanCombinationsChecked": 2336,

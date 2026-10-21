@@ -1,5 +1,5 @@
 {
-  "protocol": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/arrival_source_protocols/20261021_135905_240102/protocol.json",
+  "protocol": "research/arrival_source_protocols/20261021_135905_240102/protocol.json",
   "protocolSha256": "4cb3b629f83c911da5037900fd68ee1dea42b90bf428e55f36246733f63acbbd",
   "resultsSha256": "0a78677528aed3bb0e23072c074a60880a95f744ab7f58cf5e427bffb236e785",
   "auditorSha256": "981fc621cc3a6bbc0ee98a7618cc7a76cb895157b01dbd205f3f1f6752c22030",

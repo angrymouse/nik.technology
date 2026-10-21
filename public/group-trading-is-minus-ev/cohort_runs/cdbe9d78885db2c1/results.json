@@ -240,7 +240,7 @@
       "ledger": [
         {
           "index": 415,
-          "signalKey": "user:1559791643:2919863:solana:solana:Fd61znB4XAdwqrFexC91aoxKcz1iheqx5j4VZCG4pump",
+          "signalKey": "Caller 37:2919863:solana:solana:Fd61znB4XAdwqrFexC91aoxKcz1iheqx5j4VZCG4pump",
           "asset": 405,
           "entryTime": 1792340340000,
           "exitTime": 1792340940000,
@@ -251,11 +251,11 @@
           "exitKind": 1,
           "modelUsed": false,
           "symbol": "RIOT",
-          "caller": "@trapstarxbt"
+          "caller": "Caller 37"
         },
         {
           "index": 453,
-          "signalKey": "user:6534206507:2920262:solana:solana:ByQ4cTwVyrZtzb7aFKW8QXPBMXdCWx6UdVMshLZipump",
+          "signalKey": "Caller 30:2920262:solana:solana:ByQ4cTwVyrZtzb7aFKW8QXPBMXdCWx6UdVMshLZipump",
           "asset": 299,
           "entryTime": 1792351980000,
           "exitTime": 1792352580000,
@@ -266,11 +266,11 @@
           "exitKind": 1,
           "modelUsed": false,
           "symbol": "Deadpool ",
-          "caller": "@JamTheLion"
+          "caller": "Caller 30"
         },
         {
           "index": 465,
-          "signalKey": "user:984722078:2920483:solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+          "signalKey": "Caller 03:2920483:solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
           "asset": 449,
           "entryTime": 1792355760000,
           "exitTime": 1792355880000,
@@ -281,11 +281,11 @@
           "exitKind": 2,
           "modelUsed": false,
           "symbol": "PIERRE",
-          "caller": "@DomiTraderSol"
+          "caller": "Caller 03"
         },
         {
           "index": 472,
-          "signalKey": "user:6126376117:2920601:solana:solana:9yMgtrSGUh5LiLf31AFQb6hi6KN3SKkgdsiyU66Jpump",
+          "signalKey": "Caller 32:2920601:solana:solana:9yMgtrSGUh5LiLf31AFQb6hi6KN3SKkgdsiyU66Jpump",
           "asset": 248,
           "entryTime": 1792357440000,
           "exitTime": 1792358040000,
@@ -296,11 +296,11 @@
           "exitKind": 1,
           "modelUsed": false,
           "symbol": "EZECK",
-          "caller": "@rick (bot)"
+          "caller": "Caller 32 (bot)"
         },
         {
           "index": 473,
-          "signalKey": "user:6951058971:2920628:solana:solana:ArpPsesHXKbGeJsHdquM6acT3uNs7BChyetJjiNYpump",
+          "signalKey": "Caller 05:2920628:solana:solana:ArpPsesHXKbGeJsHdquM6acT3uNs7BChyetJjiNYpump",
           "asset": 262,
           "entryTime": 1792358160000,
           "exitTime": 1792358760000,
@@ -311,11 +311,11 @@
           "exitKind": 1,
           "modelUsed": false,
           "symbol": "godspeed",
-          "caller": "@Netti_chan"
+          "caller": "Caller 05"
         },
         {
           "index": 517,
-          "signalKey": "user:7994393793:2921203:solana:solana:3xrmyTm2sWrh6SpRegMrrmsP47fALoQBKyEFse5Dpump",
+          "signalKey": "Caller 12:2921203:solana:solana:3xrmyTm2sWrh6SpRegMrrmsP47fALoQBKyEFse5Dpump",
           "asset": 71,
           "entryTime": 1792383240000,
           "exitTime": 1792383840000,
@@ -326,11 +326,11 @@
           "exitKind": 1,
           "modelUsed": false,
           "symbol": "Muskito",
-          "caller": "@AquaDias"
+          "caller": "Caller 12"
         },
         {
           "index": 745,
-          "signalKey": "user:8625951489:2924417:solana:solana:ESABfJpt9cocXgWX7HF8WwSXrcv785oyaA8imwojpump",
+          "signalKey": "Caller 11:2924417:solana:solana:ESABfJpt9cocXgWX7HF8WwSXrcv785oyaA8imwojpump",
           "asset": 371,
           "entryTime": 1792437780000,
           "exitTime": 1792438380000,
@@ -341,11 +341,11 @@
           "exitKind": 1,
           "modelUsed": false,
           "symbol": "Kim",
-          "caller": "@reljeww"
+          "caller": "Caller 11"
         },
         {
           "index": 754,
-          "signalKey": "user:6126376117:2924595:solana:solana:45iQ1WLTs8GvEpnuNBV54fT7nTuK9evYnHxJdynNpump",
+          "signalKey": "Caller 32:2924595:solana:solana:45iQ1WLTs8GvEpnuNBV54fT7nTuK9evYnHxJdynNpump",
           "asset": 78,
           "entryTime": 1792439280000,
           "exitTime": 1792439880000,
@@ -356,11 +356,11 @@
           "exitKind": 1,
           "modelUsed": false,
           "symbol": "KIM",
-          "caller": "@rick (bot)"
+          "caller": "Caller 32 (bot)"
         },
         {
           "index": 1016,
-          "signalKey": "user:1308905026:2928332:solana:solana:9vuGTtRoL6GeD4Gwt6mQBm7Bn1AzJWATBvjkiMQXpump",
+          "signalKey": "Caller 16:2928332:solana:solana:9vuGTtRoL6GeD4Gwt6mQBm7Bn1AzJWATBvjkiMQXpump",
           "asset": 247,
           "entryTime": 1792536960000,
           "exitTime": 1792537380000,
@@ -371,12 +371,12 @@
           "exitKind": 2,
           "modelUsed": false,
           "symbol": "GEMMA",
-          "caller": "@rawrstarxd"
+          "caller": "Caller 16"
         }
       ]
     }
   ],
-  "sourceRun": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/adaptive_runs/70fab2c549e7e89e",
+  "sourceRun": "research/adaptive_runs/70fab2c549e7e89e",
   "datasetId": "845e37f0db6685299fc5",
   "sourceCodeHash": "cdbe9d78885db2c1f2a93b67b9d78e3e6d3a08f9dfe155db2ee71abd39c5080c"
 }

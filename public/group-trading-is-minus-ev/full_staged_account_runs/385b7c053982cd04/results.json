@@ -1,5 +1,5 @@
 {
-  "path": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/full_staged_account_runs/385b7c053982cd04",
+  "path": "research/full_staged_account_runs/385b7c053982cd04",
   "checks": {
     "exactBaselineAccounts": 1600,
     "builtExitPlans": 1800,

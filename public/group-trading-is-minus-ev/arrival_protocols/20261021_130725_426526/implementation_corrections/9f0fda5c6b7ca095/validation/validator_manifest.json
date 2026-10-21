@@ -1,6 +1,6 @@
 {
   "protocolSha256": "83cd0c935bc464db7c2cef1e1b6be561f49e55586329cbc5da3048dc7d5e7d70",
-  "capture": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/live_message_captures/20261021T130737288Z_f62bfed9",
+  "capture": "research/live_message_captures/20261021T130737288Z_f62bfed9",
   "captureProtocolSha256": "dbd0f2f036f113b53528bcd7329e360fab56b4697605c0a246af03fd13bd48c0",
   "readyAt": "2026-10-21T13:07:40.157Z",
   "sourceHashes": {
@@ -15,7 +15,7 @@
   "signalMembership": "First observed caller/contract is decided on valid-quote eligibility in the fixed context plus this stream, before entry filters or outcomes. All captured versions remain available even if later edited.",
   "declaredBeforeMarketRetrieval": true,
   "supersedes": {
-    "manifest": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/arrival_protocols/20261021_130725_426526/validation/validator_revisions/7c342999d7481c3253a5a936dad3b4c29cfadb2a865785b2003078e83276ec24/manifest.json",
+    "manifest": "research/arrival_protocols/20261021_130725_426526/validation/validator_revisions/7c342999d7481c3253a5a936dad3b4c29cfadb2a865785b2003078e83276ec24/manifest.json",
     "sha256": "7c342999d7481c3253a5a936dad3b4c29cfadb2a865785b2003078e83276ec24",
     "reason": "Before any market retrieval: make completed phases reuse immutable caches and retain complete merged raw metadata. Trading rules are unchanged."
   },

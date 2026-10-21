@@ -1,6 +1,6 @@
 {
   "protocolSha256": "2806af68f022522b45bb518e4a1fa5b1c15abc0bf768a8e640959565429ec980",
-  "capture": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/live_message_captures/20261021T153519336Z_48f1682d",
+  "capture": "research/live_message_captures/20261021T153519336Z_48f1682d",
   "captureProtocolSha256": "eb4f0b4bbb6e1636798adf26edcf8d9ba7618f653275b744d4ac7730f722c3bd",
   "readyAt": "2026-10-21T15:35:22.530Z",
   "sourceHashes": {

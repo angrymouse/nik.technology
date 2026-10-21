@@ -11,8 +11,8 @@
       "telegramPostedAt": "2026-10-21T13:07:42.000Z",
       "sourceVersionSha256": "dc295ae40057d5e078c0e77a7cf9bc21756861f976056690419702a0cfcf0de0",
       "author": {
-        "key": "user:7643981631",
-        "label": "@wMincy",
+        "key": "Caller 01",
+        "label": "Caller 01",
         "senderType": "user",
         "isBot": false
       }
@@ -28,8 +28,8 @@
       "telegramPostedAt": "2026-10-21T13:07:42.000Z",
       "sourceVersionSha256": "7b0fa90ecf091c5f7291f77bee5944e4cae3488dc722fdb9cb33251daf3805fe",
       "author": {
-        "key": "user:6126376117",
-        "label": "@rick",
+        "key": "Caller 32",
+        "label": "Caller 32",
         "senderType": "user",
         "isBot": true
       }
@@ -45,8 +45,8 @@
       "telegramPostedAt": "2026-10-21T13:08:20.000Z",
       "sourceVersionSha256": "31ad5563884b46da3156a3bb06f29fb58e0b77afda41604f19d8c35ff9e16a41",
       "author": {
-        "key": "user:7643981631",
-        "label": "@wMincy",
+        "key": "Caller 01",
+        "label": "Caller 01",
         "senderType": "user",
         "isBot": false
       }
@@ -62,8 +62,8 @@
       "telegramPostedAt": "2026-10-21T13:08:20.000Z",
       "sourceVersionSha256": "84a2e6e230a5bb930dde12deb26692358ccb82cc2b2022b42feaa131dd15b476",
       "author": {
-        "key": "user:6126376117",
-        "label": "@rick",
+        "key": "Caller 32",
+        "label": "Caller 32",
         "senderType": "user",
         "isBot": true
       }
@@ -79,8 +79,8 @@
       "telegramPostedAt": "2026-10-21T13:09:03.000Z",
       "sourceVersionSha256": "4d1abcc7092d4a34ddeed375a158d9f907e016620ac48dcb76df70f24b3db8c3",
       "author": {
-        "key": "user:6126376117",
-        "label": "@rick",
+        "key": "Caller 32",
+        "label": "Caller 32",
         "senderType": "user",
         "isBot": true
       }
@@ -96,8 +96,8 @@
       "telegramPostedAt": "2026-10-21T13:10:03.000Z",
       "sourceVersionSha256": "3fd43b1aa00b11e3fc0fc7201ca2d13ea186aaad469eb6b111028fa5ad22372a",
       "author": {
-        "key": "user:6126376117",
-        "label": "@rick",
+        "key": "Caller 32",
+        "label": "Caller 32",
         "senderType": "user",
         "isBot": true
       }
@@ -113,8 +113,8 @@
       "telegramPostedAt": "2026-10-21T13:10:52.000Z",
       "sourceVersionSha256": "50ddfd80f3eab43b11875cf9da107232cfb3243e5128cb3d792e8fff726fc8fa",
       "author": {
-        "key": "user:7643981631",
-        "label": "@wMincy",
+        "key": "Caller 01",
+        "label": "Caller 01",
         "senderType": "user",
         "isBot": false
       }
@@ -130,8 +130,8 @@
       "telegramPostedAt": "2026-10-21T13:10:52.000Z",
       "sourceVersionSha256": "de675c802b7606727ed606d51084062a417a158643b1fd816711d4cf36bb8d35",
       "author": {
-        "key": "user:6126376117",
-        "label": "@rick",
+        "key": "Caller 32",
+        "label": "Caller 32",
         "senderType": "user",
         "isBot": true
       }
@@ -147,8 +147,8 @@
       "telegramPostedAt": "2026-10-21T13:11:51.000Z",
       "sourceVersionSha256": "00256268c8185f0ce9e1913a4a6ecf2be85279cbc9db31c34f705fa73ddc911c",
       "author": {
-        "key": "user:7643981631",
-        "label": "@wMincy",
+        "key": "Caller 01",
+        "label": "Caller 01",
         "senderType": "user",
         "isBot": false
       }
@@ -164,8 +164,8 @@
       "telegramPostedAt": "2026-10-21T13:11:52.000Z",
       "sourceVersionSha256": "76560bc54822e134d25cc8596c73c10b2e6edbf707bbca81a658ac38a4f6884f",
       "author": {
-        "key": "user:6126376117",
-        "label": "@rick",
+        "key": "Caller 32",
+        "label": "Caller 32",
         "senderType": "user",
         "isBot": true
       }
@@ -181,8 +181,8 @@
       "telegramPostedAt": "2026-10-21T13:12:21.000Z",
       "sourceVersionSha256": "a0fa71c6a4c2fa3e03cb15caac3b67d66b5e5271ba862ea7dfc8047dea447e1c",
       "author": {
-        "key": "user:1380080413",
-        "label": "@Riseracks77",
+        "key": "Caller 13",
+        "label": "Caller 13",
         "senderType": "user",
         "isBot": false
       }
@@ -198,8 +198,8 @@
       "telegramPostedAt": "2026-10-21T13:12:22.000Z",
       "sourceVersionSha256": "14eac1fe46c977a04d8f2d2d58c1d317dd6aa3096eb24172042300fe08947e4a",
       "author": {
-        "key": "user:6126376117",
-        "label": "@rick",
+        "key": "Caller 32",
+        "label": "Caller 32",
         "senderType": "user",
         "isBot": true
       }
@@ -215,8 +215,8 @@
       "telegramPostedAt": "2026-10-21T13:12:37.000Z",
       "sourceVersionSha256": "80840cce96169b5426f3280187f50960bb1e8cd0a5aee5a34cc3635ce2a54670",
       "author": {
-        "key": "user:7643981631",
-        "label": "@wMincy",
+        "key": "Caller 01",
+        "label": "Caller 01",
         "senderType": "user",
         "isBot": false
       }
@@ -232,8 +232,8 @@
       "telegramPostedAt": "2026-10-21T13:12:37.000Z",
       "sourceVersionSha256": "6ad3fb4cee7c34351dab4fb2473cdbaa38bff0030324dd976c35e08967ce70ff",
       "author": {
-        "key": "user:6126376117",
-        "label": "@rick",
+        "key": "Caller 32",
+        "label": "Caller 32",
         "senderType": "user",
         "isBot": true
       }
@@ -249,8 +249,8 @@
       "telegramPostedAt": "2026-10-21T13:12:47.000Z",
       "sourceVersionSha256": "f85647a14221d29df8d0ff6d6fcb2b2e767c78733d7406d84d3098968eaa015e",
       "author": {
-        "key": "user:8625951489",
-        "label": "@reljeww",
+        "key": "Caller 11",
+        "label": "Caller 11",
         "senderType": "user",
         "isBot": false
       }
@@ -266,8 +266,8 @@
       "telegramPostedAt": "2026-10-21T13:12:48.000Z",
       "sourceVersionSha256": "55f00a3944bf301748e1a6df636b1bc284fe621f651efee8fbd5e4051d79d4fa",
       "author": {
-        "key": "user:6126376117",
-        "label": "@rick",
+        "key": "Caller 32",
+        "label": "Caller 32",
         "senderType": "user",
         "isBot": true
       }
@@ -283,8 +283,8 @@
       "telegramPostedAt": "2026-10-21T13:14:15.000Z",
       "sourceVersionSha256": "f024782f4f59dabe23db9574863df7325aa851ae41f3073c7e8a933b3358de2b",
       "author": {
-        "key": "user:696313964",
-        "label": "@msri1337",
+        "key": "Caller 50",
+        "label": "Caller 49",
         "senderType": "user",
         "isBot": false
       }
@@ -300,8 +300,8 @@
       "telegramPostedAt": "2026-10-21T13:14:16.000Z",
       "sourceVersionSha256": "c16ad4ec35da8eb570eb144b4f7960dce070f623fb9a7ad555b3e61cdb695c34",
       "author": {
-        "key": "user:6126376117",
-        "label": "@rick",
+        "key": "Caller 32",
+        "label": "Caller 32",
         "senderType": "user",
         "isBot": true
       }
@@ -317,8 +317,8 @@
       "telegramPostedAt": "2026-10-21T13:16:27.000Z",
       "sourceVersionSha256": "cdf2f9e41e82b9bd39219f648c4589e11661515c1be95421583233acf640be42",
       "author": {
-        "key": "user:6968518970",
-        "label": "@Zakidge",
+        "key": "Caller 31",
+        "label": "Caller 31",
         "senderType": "user",
         "isBot": false
       }
@@ -334,8 +334,8 @@
       "telegramPostedAt": "2026-10-21T13:16:28.000Z",
       "sourceVersionSha256": "5d81e8942903357ccc58f88019d6b919213b677ee2c73d32bd959d4a6862de8e",
       "author": {
-        "key": "user:6126376117",
-        "label": "@rick",
+        "key": "Caller 32",
+        "label": "Caller 32",
         "senderType": "user",
         "isBot": true
       }
@@ -351,8 +351,8 @@
       "telegramPostedAt": "2026-10-21T13:17:03.000Z",
       "sourceVersionSha256": "94f5f536bdd4803a6e1c02e19286eeb6271c28074b7a62054bd7acc368fd0b17",
       "author": {
-        "key": "user:7994393793",
-        "label": "@AquaDias",
+        "key": "Caller 12",
+        "label": "Caller 12",
         "senderType": "user",
         "isBot": false
       }
@@ -368,8 +368,8 @@
       "telegramPostedAt": "2026-10-21T13:17:04.000Z",
       "sourceVersionSha256": "b58635148cdbb028e70c9071d481d91aa228af2c0df76f69da7b60baa6ab678a",
       "author": {
-        "key": "user:6126376117",
-        "label": "@rick",
+        "key": "Caller 32",
+        "label": "Caller 32",
         "senderType": "user",
         "isBot": true
       }

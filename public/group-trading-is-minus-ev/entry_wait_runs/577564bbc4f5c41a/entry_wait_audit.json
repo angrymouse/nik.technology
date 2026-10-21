@@ -1,5 +1,5 @@
 {
-  "run": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/entry_wait_runs/577564bbc4f5c41a",
+  "run": "research/entry_wait_runs/577564bbc4f5c41a",
   "resultsSha256": "d24ad819142880cac0701b963a28230820a7658c85f1e6b54f2d40b1548786e0",
   "auditorSha256": "7e4e3324a2aa700e056912d759361a10b84fdb2bf84d2fef67bd6ae64ae150d6",
   "auditHelperHashes": {

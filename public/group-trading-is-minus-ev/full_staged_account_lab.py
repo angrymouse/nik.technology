@@ -31,7 +31,7 @@ ROOT = Path(__file__).resolve().parent
 read = lambda path: json.loads(Path(path).read_text())
 
 
-@dataclass(frozen=True)
+Caller 51(frozen=True)
 class ExitPlan:
     source_index: int
     entry_time: int
@@ -43,7 +43,7 @@ class ExitPlan:
     later: tuple
 
 
-@dataclass(frozen=True)
+Caller 51(frozen=True)
 class Sale:
     recovered_usd: float
     extra_fee_usd: float

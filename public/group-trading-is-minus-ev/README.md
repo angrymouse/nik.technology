@@ -9,11 +9,11 @@ The original saved data covers the available group history from October 16 throu
 Open `latest_research_report.html` for the current comparison and links to the detailed runs.
 
 The public research page is [group-trading-is-minus-ev](https://nik.technology/group-trading-is-minus-ev).
-It serves `latest_research_report.html` as the original static HTML, with the report's linked files under
-`~/nik.technology/public/group-trading-is-minus-ev/`. Refresh the local report with
-`rtk python context_research_report.py`, then run `rtk python scripts/publish-group-report.py
-/home/nik/entryliquidity/analysis/ayugram-token-strategy --large-files-directory /tmp/group-research-release-assets`
-from `~/nik.technology`. The publisher preserves report and dependency bytes; large linked files use release-asset redirects.
+It serves the report as static HTML with linked artifacts. Refresh the local report with
+`rtk python research_status.py`, then run `rtk python scripts/publish-group-report.py
+/path/to/research --large-files-directory /tmp/group-research-release-assets`
+from the site checkout. The publisher removes direct Telegram identifiers and raw message text from public copies;
+embedded source hashes refer to the private originals. Large linked files use release-asset redirects.
 
 ### Pool execution, matched controls and sale capacity
 

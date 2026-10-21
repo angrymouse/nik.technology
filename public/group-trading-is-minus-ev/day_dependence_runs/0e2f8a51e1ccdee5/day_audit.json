@@ -1,5 +1,5 @@
 {
-  "run": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/day_dependence_runs/0e2f8a51e1ccdee5",
+  "run": "research/day_dependence_runs/0e2f8a51e1ccdee5",
   "resultsSha256": "5d48e5e829fb459262ef1fb826ae325f91a1fa035791ccb7db4497808cb953e4",
   "sourceCodeSha256": "300497bbdd486e7443f7db465a7c734556241412c552902f9e36fea844b8174c",
   "baselineLedgers": 24,

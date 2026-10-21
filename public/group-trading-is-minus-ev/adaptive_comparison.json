@@ -1,7 +1,7 @@
 {
   "primaryRun": {
     "runId": "70fab2c549e7e89e",
-    "path": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/adaptive_runs/70fab2c549e7e89e",
+    "path": "research/adaptive_runs/70fab2c549e7e89e",
     "latencyBars": 1,
     "modelDirections": "supportive",
     "screened": 3352968,
@@ -16,7 +16,7 @@
   "comparisons": [
     {
       "runId": "70fab2c549e7e89e",
-      "path": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/adaptive_runs/70fab2c549e7e89e",
+      "path": "research/adaptive_runs/70fab2c549e7e89e",
       "latencyBars": 1,
       "modelDirections": "supportive",
       "screened": 3352968,
@@ -30,7 +30,7 @@
     },
     {
       "runId": "a145d397796bce84",
-      "path": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/adaptive_runs/a145d397796bce84",
+      "path": "research/adaptive_runs/a145d397796bce84",
       "latencyBars": 2,
       "modelDirections": "supportive",
       "screened": 3318768,
@@ -44,7 +44,7 @@
     },
     {
       "runId": "d30a3e07f657be13",
-      "path": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/adaptive_runs/d30a3e07f657be13",
+      "path": "research/adaptive_runs/d30a3e07f657be13",
       "latencyBars": 1,
       "modelDirections": "both",
       "screened": 4881366,

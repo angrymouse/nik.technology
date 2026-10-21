@@ -1,5 +1,5 @@
 {
-  "run": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/fixed_entry_size_runs/4bc799c236dfe4bf",
+  "run": "research/fixed_entry_size_runs/4bc799c236dfe4bf",
   "resultsSha256": "b6fcf006e10ce0830b9d97485433b45dd7223d067e494546971197547a23a5df",
   "auditorSha256": "5978bfd547d760fb2192dc592fafabfc823386b2d558beef03bd503725b753ee",
   "checks": {
@@ -20,13 +20,13 @@
   "unknownTextSignals": [
     {
       "index": 1074,
-      "signalKey": "user:6126376117:2924595:solana:solana:45iQ1WLTs8GvEpnuNBV54fT7nTuK9evYnHxJdynNpump",
+      "signalKey": "Caller 32:2924595:solana:solana:45iQ1WLTs8GvEpnuNBV54fT7nTuK9evYnHxJdynNpump",
       "assetKey": "solana:solana:45iQ1WLTs8GvEpnuNBV54fT7nTuK9evYnHxJdynNpump",
       "address": "45iQ1WLTs8GvEpnuNBV54fT7nTuK9evYnHxJdynNpump",
       "chainId": "solana:solana",
       "messageId": 2924595,
-      "authorKey": "user:6126376117",
-      "authorLabel": "@rick (bot)",
+      "authorKey": "Caller 32",
+      "authorLabel": "Caller 32 (bot)",
       "symbol": "KIM"
     }
   ],

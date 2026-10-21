@@ -1,5 +1,5 @@
 {
-  "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/pool_route_runs/e66b2ccb15936ba6",
+  "source": "research/pool_route_runs/e66b2ccb15936ba6",
   "sourceResultsSha256": "e69f5d83e4d03710983db1537910f3c82e737c8dc5ad81ec18d7b8b92ed5371c",
   "sourceAuditSha256": "76a34d64c68f7491cc751706f5ce3fd43a01afcccab0309ae8f8da3a917b1f5b",
   "ledgerSha256": "8fcfcba96cd13d2e3d00c7d1f6b10ea0f929fa2df440ab6776a490822e542305",

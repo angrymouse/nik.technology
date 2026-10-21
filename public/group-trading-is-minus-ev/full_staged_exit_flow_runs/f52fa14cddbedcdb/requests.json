@@ -1,6 +1,6 @@
 {
   "endpoint": "https://api.mobula.io/api/2/trades/filters",
-  "sourcePlan": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/execution_trade_runs/c086dd62f77f03fa/view/trade_flow/requests.json",
+  "sourcePlan": "research/execution_trade_runs/c086dd62f77f03fa/view/trade_flow/requests.json",
   "requests": [
     {
       "id": "call_663",

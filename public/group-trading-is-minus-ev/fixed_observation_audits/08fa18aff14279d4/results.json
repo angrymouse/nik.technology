@@ -1,7 +1,7 @@
 {
-  "sourceDataset": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/fixed_validation_windows/20261021_121831/validation/combined/datasets/f1aa7fb9954332ce404e",
+  "sourceDataset": "research/fixed_validation_windows/20261021_121831/validation/combined/datasets/f1aa7fb9954332ce404e",
   "datasetManifestSha256": "29bec56de572a4758ad69415beb7b6cfb7c6affecce701213f952cce82f7ead4",
-  "originalProtocol": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/fixed_partial_runs/3d80934062b6022e/forward_protocol.json",
+  "originalProtocol": "research/fixed_partial_runs/3d80934062b6022e/forward_protocol.json",
   "originalProtocolSha256": "12f2d964f45fd6e2b5ac30d1f8abf97f2282e4436450b2cc324e67f88de4a550",
   "candidateRulesFrozenAt": "2026-10-21T09:33:36.374286+00:00",
   "start": "2026-10-21T09:33:36.374000Z",
@@ -13,13 +13,13 @@
     "research_dataset.py": "ed998065623d76f5ef78eec13393dc832e44889e9709a6182b0663422050d803"
   },
   "windowResultHashes": {
-    "/home/nik/entryliquidity/analysis/ayugram-token-strategy/fixed_partial_runs/3d80934062b6022e/validation/validation.json": "f9aab10c3ab8778dae1f0d1779ce8592d27603e05285cf800cf64ca7eeee7aab",
-    "/home/nik/entryliquidity/analysis/ayugram-token-strategy/fixed_validation_windows/20261021_100454/validation/validation.json": "31503935e672b88e0c1e1814da90363df45f4f3ef7569306287cb01ea961006f",
-    "/home/nik/entryliquidity/analysis/ayugram-token-strategy/fixed_validation_windows/20261021_102935/validation/validation.json": "fd5c3bf48648df0884de19d495a84ed3e7a0fe1181d261a684ca2174d8060efd",
-    "/home/nik/entryliquidity/analysis/ayugram-token-strategy/fixed_validation_windows/20261021_105457/validation/validation.json": "b33fce675a1bd82d09a3bb346413ec644f131a0c08e2f312f8d49e809289a795",
-    "/home/nik/entryliquidity/analysis/ayugram-token-strategy/fixed_validation_windows/20261021_111745/validation/validation.json": "4a3d626a6e28f888cce290c8a1c1c7d4ed39305cfba961a040f28795575278c5",
-    "/home/nik/entryliquidity/analysis/ayugram-token-strategy/fixed_validation_windows/20261021_114419/validation/validation.json": "42b6846c577e22e39db9f312562b1dc0ba1140816ea064baaa04d7f6dc9dea7e",
-    "/home/nik/entryliquidity/analysis/ayugram-token-strategy/fixed_validation_windows/20261021_121831/validation/validation.json": "fdd6822dddb79a4c2a3a06207c1cceed78248b5dc62db1f85b3023a8f2322d55"
+    "research/fixed_partial_runs/3d80934062b6022e/validation/validation.json": "f9aab10c3ab8778dae1f0d1779ce8592d27603e05285cf800cf64ca7eeee7aab",
+    "research/fixed_validation_windows/20261021_100454/validation/validation.json": "31503935e672b88e0c1e1814da90363df45f4f3ef7569306287cb01ea961006f",
+    "research/fixed_validation_windows/20261021_102935/validation/validation.json": "fd5c3bf48648df0884de19d495a84ed3e7a0fe1181d261a684ca2174d8060efd",
+    "research/fixed_validation_windows/20261021_105457/validation/validation.json": "b33fce675a1bd82d09a3bb346413ec644f131a0c08e2f312f8d49e809289a795",
+    "research/fixed_validation_windows/20261021_111745/validation/validation.json": "4a3d626a6e28f888cce290c8a1c1c7d4ed39305cfba961a040f28795575278c5",
+    "research/fixed_validation_windows/20261021_114419/validation/validation.json": "42b6846c577e22e39db9f312562b1dc0ba1140816ea064baaa04d7f6dc9dea7e",
+    "research/fixed_validation_windows/20261021_121831/validation/validation.json": "fdd6822dddb79a4c2a3a06207c1cceed78248b5dc62db1f85b3023a8f2322d55"
   },
   "scope": "Coverage and fixed entry-decision audit specified after collection. Includes every archived eligible call posted after the original candidate freeze through the latest completed collection bound, including gaps between reserved windows. No candidates are fitted or changed. This does not retroactively make the gaps preregistered validation windows or measure live performance.",
   "auditedAt": "2026-10-21T12:20:38.634769+00:00",
@@ -96,7 +96,7 @@
   ],
   "calls": [
     {
-      "signalKey": "user:7147559151:2928779:solana:solana:2Dy6RY7GzUGLu9ZqNuboWrJP6Xo6WR9zJZsmbtzPpump",
+      "signalKey": "Caller 41:2928779:solana:solana:2Dy6RY7GzUGLu9ZqNuboWrJP6Xo6WR9zJZsmbtzPpump",
       "assetKey": "solana:solana:2Dy6RY7GzUGLu9ZqNuboWrJP6Xo6WR9zJZsmbtzPpump",
       "messageId": 2928779,
       "postedAt": "2026-10-21T10:11:07Z",
@@ -108,15 +108,15 @@
       "bothPassed": false,
       "featureTime": "2026-10-21T10:13:00Z",
       "historySignals": [
-        "user:6534206507:2928719:solana:solana:cpuxtvVNNVGDHpk1MHyv4cC6d1rFmHBf7xAJCPHF3NY",
-        "user:7185780723:2928724:solana:solana:F7WeFKekxVBPgkWvfBMjgdVDGW2GYfPTezX9S5KQpump",
-        "user:7185780723:2928734:solana:solana:8FmvTvUpHoNwW19dr4eGaWLXKcZqX2cRbuZ8VKaVpump",
-        "user:7185780723:2928736:solana:solana:GeyUyTuEbVnXwiUao7a7GmWcT4cDmLXb1WHcHLp4pump",
-        "user:6126376117:2928752:solana:solana:98kfF7rmsg1QDUEoCqNE7g7M1FdrTt92TEp2CLzypump"
+        "Caller 30:2928719:solana:solana:cpuxtvVNNVGDHpk1MHyv4cC6d1rFmHBf7xAJCPHF3NY",
+        "Caller 10:2928724:solana:solana:F7WeFKekxVBPgkWvfBMjgdVDGW2GYfPTezX9S5KQpump",
+        "Caller 10:2928734:solana:solana:8FmvTvUpHoNwW19dr4eGaWLXKcZqX2cRbuZ8VKaVpump",
+        "Caller 10:2928736:solana:solana:GeyUyTuEbVnXwiUao7a7GmWcT4cDmLXb1WHcHLp4pump",
+        "Caller 32:2928752:solana:solana:98kfF7rmsg1QDUEoCqNE7g7M1FdrTt92TEp2CLzypump"
       ]
     },
     {
-      "signalKey": "user:6126376117:2928781:solana:solana:2Dy6RY7GzUGLu9ZqNuboWrJP6Xo6WR9zJZsmbtzPpump",
+      "signalKey": "Caller 32:2928781:solana:solana:2Dy6RY7GzUGLu9ZqNuboWrJP6Xo6WR9zJZsmbtzPpump",
       "assetKey": "solana:solana:2Dy6RY7GzUGLu9ZqNuboWrJP6Xo6WR9zJZsmbtzPpump",
       "messageId": 2928781,
       "postedAt": "2026-10-21T10:11:09Z",
@@ -128,15 +128,15 @@
       "bothPassed": false,
       "featureTime": "2026-10-21T10:13:00Z",
       "historySignals": [
-        "user:6534206507:2928719:solana:solana:cpuxtvVNNVGDHpk1MHyv4cC6d1rFmHBf7xAJCPHF3NY",
-        "user:7185780723:2928724:solana:solana:F7WeFKekxVBPgkWvfBMjgdVDGW2GYfPTezX9S5KQpump",
-        "user:7185780723:2928734:solana:solana:8FmvTvUpHoNwW19dr4eGaWLXKcZqX2cRbuZ8VKaVpump",
-        "user:7185780723:2928736:solana:solana:GeyUyTuEbVnXwiUao7a7GmWcT4cDmLXb1WHcHLp4pump",
-        "user:6126376117:2928752:solana:solana:98kfF7rmsg1QDUEoCqNE7g7M1FdrTt92TEp2CLzypump"
+        "Caller 30:2928719:solana:solana:cpuxtvVNNVGDHpk1MHyv4cC6d1rFmHBf7xAJCPHF3NY",
+        "Caller 10:2928724:solana:solana:F7WeFKekxVBPgkWvfBMjgdVDGW2GYfPTezX9S5KQpump",
+        "Caller 10:2928734:solana:solana:8FmvTvUpHoNwW19dr4eGaWLXKcZqX2cRbuZ8VKaVpump",
+        "Caller 10:2928736:solana:solana:GeyUyTuEbVnXwiUao7a7GmWcT4cDmLXb1WHcHLp4pump",
+        "Caller 32:2928752:solana:solana:98kfF7rmsg1QDUEoCqNE7g7M1FdrTt92TEp2CLzypump"
       ]
     },
     {
-      "signalKey": "user:1105631388:2928818:solana:solana:HZoEXNHu4xwZNbcWgm3URBsnF51g2F2xvLRhUCvxpump",
+      "signalKey": "Caller 07:2928818:solana:solana:HZoEXNHu4xwZNbcWgm3URBsnF51g2F2xvLRhUCvxpump",
       "assetKey": "solana:solana:HZoEXNHu4xwZNbcWgm3URBsnF51g2F2xvLRhUCvxpump",
       "messageId": 2928818,
       "postedAt": "2026-10-21T10:59:30Z",
@@ -148,15 +148,15 @@
       "bothPassed": false,
       "featureTime": "2026-10-21T11:01:00Z",
       "historySignals": [
-        "user:7185780723:2928724:solana:solana:F7WeFKekxVBPgkWvfBMjgdVDGW2GYfPTezX9S5KQpump",
-        "user:7185780723:2928734:solana:solana:8FmvTvUpHoNwW19dr4eGaWLXKcZqX2cRbuZ8VKaVpump",
-        "user:7185780723:2928736:solana:solana:GeyUyTuEbVnXwiUao7a7GmWcT4cDmLXb1WHcHLp4pump",
-        "user:6126376117:2928752:solana:solana:98kfF7rmsg1QDUEoCqNE7g7M1FdrTt92TEp2CLzypump",
-        "user:7147559151:2928779:solana:solana:2Dy6RY7GzUGLu9ZqNuboWrJP6Xo6WR9zJZsmbtzPpump"
+        "Caller 10:2928724:solana:solana:F7WeFKekxVBPgkWvfBMjgdVDGW2GYfPTezX9S5KQpump",
+        "Caller 10:2928734:solana:solana:8FmvTvUpHoNwW19dr4eGaWLXKcZqX2cRbuZ8VKaVpump",
+        "Caller 10:2928736:solana:solana:GeyUyTuEbVnXwiUao7a7GmWcT4cDmLXb1WHcHLp4pump",
+        "Caller 32:2928752:solana:solana:98kfF7rmsg1QDUEoCqNE7g7M1FdrTt92TEp2CLzypump",
+        "Caller 41:2928779:solana:solana:2Dy6RY7GzUGLu9ZqNuboWrJP6Xo6WR9zJZsmbtzPpump"
       ]
     },
     {
-      "signalKey": "user:6126376117:2928819:solana:solana:HZoEXNHu4xwZNbcWgm3URBsnF51g2F2xvLRhUCvxpump",
+      "signalKey": "Caller 32:2928819:solana:solana:HZoEXNHu4xwZNbcWgm3URBsnF51g2F2xvLRhUCvxpump",
       "assetKey": "solana:solana:HZoEXNHu4xwZNbcWgm3URBsnF51g2F2xvLRhUCvxpump",
       "messageId": 2928819,
       "postedAt": "2026-10-21T10:59:32Z",
@@ -168,15 +168,15 @@
       "bothPassed": false,
       "featureTime": "2026-10-21T11:01:00Z",
       "historySignals": [
-        "user:7185780723:2928724:solana:solana:F7WeFKekxVBPgkWvfBMjgdVDGW2GYfPTezX9S5KQpump",
-        "user:7185780723:2928734:solana:solana:8FmvTvUpHoNwW19dr4eGaWLXKcZqX2cRbuZ8VKaVpump",
-        "user:7185780723:2928736:solana:solana:GeyUyTuEbVnXwiUao7a7GmWcT4cDmLXb1WHcHLp4pump",
-        "user:6126376117:2928752:solana:solana:98kfF7rmsg1QDUEoCqNE7g7M1FdrTt92TEp2CLzypump",
-        "user:7147559151:2928779:solana:solana:2Dy6RY7GzUGLu9ZqNuboWrJP6Xo6WR9zJZsmbtzPpump"
+        "Caller 10:2928724:solana:solana:F7WeFKekxVBPgkWvfBMjgdVDGW2GYfPTezX9S5KQpump",
+        "Caller 10:2928734:solana:solana:8FmvTvUpHoNwW19dr4eGaWLXKcZqX2cRbuZ8VKaVpump",
+        "Caller 10:2928736:solana:solana:GeyUyTuEbVnXwiUao7a7GmWcT4cDmLXb1WHcHLp4pump",
+        "Caller 32:2928752:solana:solana:98kfF7rmsg1QDUEoCqNE7g7M1FdrTt92TEp2CLzypump",
+        "Caller 41:2928779:solana:solana:2Dy6RY7GzUGLu9ZqNuboWrJP6Xo6WR9zJZsmbtzPpump"
       ]
     },
     {
-      "signalKey": "user:204418455:2928856:solana:solana:35zAdop7rqmqdpLJU7swEhd3DJRqhFdSJXkBwYaDpump",
+      "signalKey": "Caller 22:2928856:solana:solana:35zAdop7rqmqdpLJU7swEhd3DJRqhFdSJXkBwYaDpump",
       "assetKey": "solana:solana:35zAdop7rqmqdpLJU7swEhd3DJRqhFdSJXkBwYaDpump",
       "messageId": 2928856,
       "postedAt": "2026-10-21T11:54:28Z",
@@ -188,15 +188,15 @@
       "bothPassed": false,
       "featureTime": "2026-10-21T11:59:00Z",
       "historySignals": [
-        "user:7185780723:2928734:solana:solana:8FmvTvUpHoNwW19dr4eGaWLXKcZqX2cRbuZ8VKaVpump",
-        "user:7185780723:2928736:solana:solana:GeyUyTuEbVnXwiUao7a7GmWcT4cDmLXb1WHcHLp4pump",
-        "user:6126376117:2928752:solana:solana:98kfF7rmsg1QDUEoCqNE7g7M1FdrTt92TEp2CLzypump",
-        "user:7147559151:2928779:solana:solana:2Dy6RY7GzUGLu9ZqNuboWrJP6Xo6WR9zJZsmbtzPpump",
-        "user:1105631388:2928818:solana:solana:HZoEXNHu4xwZNbcWgm3URBsnF51g2F2xvLRhUCvxpump"
+        "Caller 10:2928734:solana:solana:8FmvTvUpHoNwW19dr4eGaWLXKcZqX2cRbuZ8VKaVpump",
+        "Caller 10:2928736:solana:solana:GeyUyTuEbVnXwiUao7a7GmWcT4cDmLXb1WHcHLp4pump",
+        "Caller 32:2928752:solana:solana:98kfF7rmsg1QDUEoCqNE7g7M1FdrTt92TEp2CLzypump",
+        "Caller 41:2928779:solana:solana:2Dy6RY7GzUGLu9ZqNuboWrJP6Xo6WR9zJZsmbtzPpump",
+        "Caller 07:2928818:solana:solana:HZoEXNHu4xwZNbcWgm3URBsnF51g2F2xvLRhUCvxpump"
       ]
     },
     {
-      "signalKey": "user:6126376117:2928857:solana:solana:35zAdop7rqmqdpLJU7swEhd3DJRqhFdSJXkBwYaDpump",
+      "signalKey": "Caller 32:2928857:solana:solana:35zAdop7rqmqdpLJU7swEhd3DJRqhFdSJXkBwYaDpump",
       "assetKey": "solana:solana:35zAdop7rqmqdpLJU7swEhd3DJRqhFdSJXkBwYaDpump",
       "messageId": 2928857,
       "postedAt": "2026-10-21T11:54:29Z",
@@ -208,11 +208,11 @@
       "bothPassed": false,
       "featureTime": "2026-10-21T11:59:00Z",
       "historySignals": [
-        "user:7185780723:2928734:solana:solana:8FmvTvUpHoNwW19dr4eGaWLXKcZqX2cRbuZ8VKaVpump",
-        "user:7185780723:2928736:solana:solana:GeyUyTuEbVnXwiUao7a7GmWcT4cDmLXb1WHcHLp4pump",
-        "user:6126376117:2928752:solana:solana:98kfF7rmsg1QDUEoCqNE7g7M1FdrTt92TEp2CLzypump",
-        "user:7147559151:2928779:solana:solana:2Dy6RY7GzUGLu9ZqNuboWrJP6Xo6WR9zJZsmbtzPpump",
-        "user:1105631388:2928818:solana:solana:HZoEXNHu4xwZNbcWgm3URBsnF51g2F2xvLRhUCvxpump"
+        "Caller 10:2928734:solana:solana:8FmvTvUpHoNwW19dr4eGaWLXKcZqX2cRbuZ8VKaVpump",
+        "Caller 10:2928736:solana:solana:GeyUyTuEbVnXwiUao7a7GmWcT4cDmLXb1WHcHLp4pump",
+        "Caller 32:2928752:solana:solana:98kfF7rmsg1QDUEoCqNE7g7M1FdrTt92TEp2CLzypump",
+        "Caller 41:2928779:solana:solana:2Dy6RY7GzUGLu9ZqNuboWrJP6Xo6WR9zJZsmbtzPpump",
+        "Caller 07:2928818:solana:solana:HZoEXNHu4xwZNbcWgm3URBsnF51g2F2xvLRhUCvxpump"
       ]
     }
   ],

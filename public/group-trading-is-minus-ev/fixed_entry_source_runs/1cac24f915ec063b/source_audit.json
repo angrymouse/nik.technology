@@ -1,5 +1,5 @@
 {
-  "run": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/fixed_entry_source_runs/1cac24f915ec063b",
+  "run": "research/fixed_entry_source_runs/1cac24f915ec063b",
   "resultsSha256": "0ce9743d06ec2bb50d5ec090362e72149391750907d406812200c06eb3faa74e",
   "auditorSha256": "e7f525ed7a101171ab07d4a0b2226f99b8f81065d1e8cc55704acd946ae57c15",
   "membershipChecks": {
@@ -29,73 +29,73 @@
     "baseMetricRows": 112000,
     "completePortfolioRecords": 224000,
     "logicalLedgerSha256": "25a56f6138030468612dd4fbd9a3d097b3e4a34588915fc260ae8f928e732933",
-    "reference": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/fixed_entry_source_runs/a55f74353d3a8e95"
+    "reference": "research/fixed_entry_source_runs/a55f74353d3a8e95"
   },
   "unknownTextSignals": [
     {
       "index": 603,
-      "signalKey": "user:6126376117:2919864:solana:solana:Fd61znB4XAdwqrFexC91aoxKcz1iheqx5j4VZCG4pump",
+      "signalKey": "Caller 32:2919864:solana:solana:Fd61znB4XAdwqrFexC91aoxKcz1iheqx5j4VZCG4pump",
       "assetKey": "solana:solana:Fd61znB4XAdwqrFexC91aoxKcz1iheqx5j4VZCG4pump",
       "address": "Fd61znB4XAdwqrFexC91aoxKcz1iheqx5j4VZCG4pump",
       "chainId": "solana:solana",
       "messageId": 2919864,
-      "authorKey": "user:6126376117",
-      "authorLabel": "@rick (bot)",
+      "authorKey": "Caller 32",
+      "authorLabel": "Caller 32 (bot)",
       "symbol": "RIOT"
     },
     {
       "index": 651,
-      "signalKey": "user:6126376117:2920263:solana:solana:ByQ4cTwVyrZtzb7aFKW8QXPBMXdCWx6UdVMshLZipump",
+      "signalKey": "Caller 32:2920263:solana:solana:ByQ4cTwVyrZtzb7aFKW8QXPBMXdCWx6UdVMshLZipump",
       "assetKey": "solana:solana:ByQ4cTwVyrZtzb7aFKW8QXPBMXdCWx6UdVMshLZipump",
       "address": "ByQ4cTwVyrZtzb7aFKW8QXPBMXdCWx6UdVMshLZipump",
       "chainId": "solana:solana",
       "messageId": 2920263,
-      "authorKey": "user:6126376117",
-      "authorLabel": "@rick (bot)",
+      "authorKey": "Caller 32",
+      "authorLabel": "Caller 32 (bot)",
       "symbol": "Deadpool "
     },
     {
       "index": 666,
-      "signalKey": "user:6126376117:2920484:solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
+      "signalKey": "Caller 32:2920484:solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
       "assetKey": "solana:solana:GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
       "address": "GwyTG9Mt8N66Rjje9PkTRne8Po8aFRhuTyBYfHdApump",
       "chainId": "solana:solana",
       "messageId": 2920484,
-      "authorKey": "user:6126376117",
-      "authorLabel": "@rick (bot)",
+      "authorKey": "Caller 32",
+      "authorLabel": "Caller 32 (bot)",
       "symbol": "PIERRE"
     },
     {
       "index": 676,
-      "signalKey": "user:6126376117:2920629:solana:solana:ArpPsesHXKbGeJsHdquM6acT3uNs7BChyetJjiNYpump",
+      "signalKey": "Caller 32:2920629:solana:solana:ArpPsesHXKbGeJsHdquM6acT3uNs7BChyetJjiNYpump",
       "assetKey": "solana:solana:ArpPsesHXKbGeJsHdquM6acT3uNs7BChyetJjiNYpump",
       "address": "ArpPsesHXKbGeJsHdquM6acT3uNs7BChyetJjiNYpump",
       "chainId": "solana:solana",
       "messageId": 2920629,
-      "authorKey": "user:6126376117",
-      "authorLabel": "@rick (bot)",
+      "authorKey": "Caller 32",
+      "authorLabel": "Caller 32 (bot)",
       "symbol": "godspeed"
     },
     {
       "index": 736,
-      "signalKey": "user:6126376117:2921204:solana:solana:3xrmyTm2sWrh6SpRegMrrmsP47fALoQBKyEFse5Dpump",
+      "signalKey": "Caller 32:2921204:solana:solana:3xrmyTm2sWrh6SpRegMrrmsP47fALoQBKyEFse5Dpump",
       "assetKey": "solana:solana:3xrmyTm2sWrh6SpRegMrrmsP47fALoQBKyEFse5Dpump",
       "address": "3xrmyTm2sWrh6SpRegMrrmsP47fALoQBKyEFse5Dpump",
       "chainId": "solana:solana",
       "messageId": 2921204,
-      "authorKey": "user:6126376117",
-      "authorLabel": "@rick (bot)",
+      "authorKey": "Caller 32",
+      "authorLabel": "Caller 32 (bot)",
       "symbol": "Muskito"
     },
     {
       "index": 1074,
-      "signalKey": "user:6126376117:2924595:solana:solana:45iQ1WLTs8GvEpnuNBV54fT7nTuK9evYnHxJdynNpump",
+      "signalKey": "Caller 32:2924595:solana:solana:45iQ1WLTs8GvEpnuNBV54fT7nTuK9evYnHxJdynNpump",
       "assetKey": "solana:solana:45iQ1WLTs8GvEpnuNBV54fT7nTuK9evYnHxJdynNpump",
       "address": "45iQ1WLTs8GvEpnuNBV54fT7nTuK9evYnHxJdynNpump",
       "chainId": "solana:solana",
       "messageId": 2924595,
-      "authorKey": "user:6126376117",
-      "authorLabel": "@rick (bot)",
+      "authorKey": "Caller 32",
+      "authorLabel": "Caller 32 (bot)",
       "symbol": "KIM"
     }
   ],

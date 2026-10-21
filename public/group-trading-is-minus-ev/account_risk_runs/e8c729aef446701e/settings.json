@@ -1,9 +1,9 @@
 {
-  "dataset": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/coverage_repairs/evm/combined/datasets/adb4dc66b5bd0a0d3e6f",
+  "dataset": "research/coverage_repairs/evm/combined/datasets/adb4dc66b5bd0a0d3e6f",
   "datasetManifestSha256": "f23d71886fa44d92fbcbff20a84570a90bc6b00476a57e478df2bd8b177aec44",
-  "sourceChoices": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/cohort_runs/cdbe9d78885db2c1/results.json",
+  "sourceChoices": "research/cohort_runs/cdbe9d78885db2c1/results.json",
   "sourceChoicesSha256": "77da004ffc2f2fc35efad2f0eb1c5a2d3a48df4181dfeac070e8d977f1e24df2",
-  "flowDirectory": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/coverage_repairs/evm/combined/datasets/adb4dc66b5bd0a0d3e6f/trade_flow/5bbd83db811e9339",
+  "flowDirectory": "research/coverage_repairs/evm/combined/datasets/adb4dc66b5bd0a0d3e6f/trade_flow/5bbd83db811e9339",
   "flowFeaturesSha256": "b0617ebe88b31c784cc6416c9a6691590a67685974fe0012f91244d4959a5eba",
   "sourceHashes": {
     "account_risk_lab.py": "94dae07a70799dced95f88c5a68794c169499e6777f6edc11e114ce2024524ee",

@@ -1,5 +1,5 @@
 {
-  "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/fixed_entry_source_runs/1cac24f915ec063b",
+  "source": "research/fixed_entry_source_runs/1cac24f915ec063b",
   "sourceResultsSha256": "0ce9743d06ec2bb50d5ec090362e72149391750907d406812200c06eb3faa74e",
   "sourceAuditSha256": "d5841ebbb084a59a3adb925a16eaace2283cf50b7a70cff7e1f99bfb631b5c42",
   "sourceHashes": {

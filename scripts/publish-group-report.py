@@ -9,6 +9,8 @@ from pathlib import Path
 import shutil
 from urllib.parse import unquote, urlsplit
 
+from report_privacy import PublicationPrivacy
+
 
 class Links(HTMLParser):
     def __init__(self, text):
@@ -47,25 +49,27 @@ def main():
             if not parsed.scheme and not parsed.netloc and parsed.path:
                 queue.append((path.parent / unquote(parsed.path)).resolve())
 
-    manifest = {'sourceReport': 'latest_research_report.html', 'files': {}, 'largeFiles': {}}
+    privacy = PublicationPrivacy(source, files)
+    manifest = {'sourceReport': 'latest_research_report.html', 'files': {}, 'largeFiles': {},
+                'publicationRedaction': 'Direct Telegram identities and raw message text are removed from public copies.'}
     redirects = []
     for path in sorted(files):
         relative = path.relative_to(source).as_posix()
-        content = path.read_bytes()
+        content = privacy.transform(path, path.read_bytes())
         metadata = {'bytes': len(content), 'sha256': hashlib.sha256(content).hexdigest()}
         if len(content) > 25 * 1024 * 1024:
             asset_name = relative.replace('/', '--')
             url = f'https://github.com/angrymouse/nik.technology/releases/download/{args.release_tag}/{asset_name}'
-            shutil.copyfile(path, args.large_files_directory / asset_name)
+            (args.large_files_directory / asset_name).write_bytes(content)
             manifest['largeFiles'][relative] = {**metadata, 'asset': asset_name, 'url': url}
             redirects.append(f'/group-trading-is-minus-ev/{relative} {url} 302')
         else:
             target = destination / relative
             target.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copyfile(path, target)
+            target.write_bytes(content)
             manifest['files'][relative] = metadata
 
-    shutil.copyfile(source / 'latest_research_report.html', destination / 'index.html')
+    shutil.copyfile(destination / 'latest_research_report.html', destination / 'index.html')
     manifest['files']['index.html'] = manifest['files']['latest_research_report.html']
     (destination / 'publication-manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
     start, end = '# BEGIN GROUP RESEARCH DOWNLOADS', '# END GROUP RESEARCH DOWNLOADS'

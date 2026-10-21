@@ -1,7 +1,7 @@
 {
-  "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/pool_route_runs/e66b2ccb15936ba6",
-  "diagnostic": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/exit_capacity_runs/bda9d7cbbf30c386",
-  "flow": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/staged_exit_flow_runs/3adb93d7d4f5cc65",
+  "source": "research/pool_route_runs/e66b2ccb15936ba6",
+  "diagnostic": "research/exit_capacity_runs/bda9d7cbbf30c386",
+  "flow": "research/staged_exit_flow_runs/3adb93d7d4f5cc65",
   "sourceResultsSha256": "e69f5d83e4d03710983db1537910f3c82e737c8dc5ad81ec18d7b8b92ed5371c",
   "sourceLedgerSha256": "8fcfcba96cd13d2e3d00c7d1f6b10ea0f929fa2df440ab6776a490822e542305",
   "sourceCasesSha256": "5ceae6154be2e06bce0160f16caff2e6c853e383dc63a586035b4d6bac9d9971",

@@ -1,7 +1,7 @@
 {
-  "dataset": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/repeat_call_datasets/b231edbc401e6dd92215",
+  "dataset": "research/repeat_call_datasets/b231edbc401e6dd92215",
   "compiledArraysSha256": "c44de354d9623d2d1b1c7136e4aac515b63077452a18cdbf75264d44883fd4b9",
-  "featureDirectory": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/repeat_call_datasets/b231edbc401e6dd92215/dip_context/d56a67b7456db9e3",
+  "featureDirectory": "research/repeat_call_datasets/b231edbc401e6dd92215/dip_context/d56a67b7456db9e3",
   "featuresSha256": "6b3b1374b93ed59c0c82cbb622b7dd29884ed24c36b7ea179234a5507caf1ac0",
   "featureSettingsSha256": "cf47ca032333566b53aff0e4c757d4ef87569a32577fbfeb076324af4b362b0b",
   "sourceHashes": {

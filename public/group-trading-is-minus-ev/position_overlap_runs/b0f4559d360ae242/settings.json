@@ -1,8 +1,8 @@
 {
-  "dataset": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/coverage_repairs/evm/combined/datasets/adb4dc66b5bd0a0d3e6f",
-  "dayDependenceRun": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/day_dependence_runs/0e2f8a51e1ccdee5",
+  "dataset": "research/coverage_repairs/evm/combined/datasets/adb4dc66b5bd0a0d3e6f",
+  "dayDependenceRun": "research/day_dependence_runs/0e2f8a51e1ccdee5",
   "daySettingsSha256": "573ce84ef97fa52172241c7dbf9cb6aa2319b6d13ccbd9eac7c90fe5edf87fdb",
-  "confirmationRun": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+  "confirmationRun": "research/confirmation_runs/25741e241616d62a",
   "confirmationResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
   "sourceHashes": {
     "position_overlap_audit.py": "9c80b4851b63ba8706b348787aeb3c6c89783e8f8c16fc30f6aba7ed3f48391a",

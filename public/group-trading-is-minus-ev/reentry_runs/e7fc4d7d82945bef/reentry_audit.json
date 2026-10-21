@@ -1,5 +1,5 @@
 {
-  "run": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/reentry_runs/e7fc4d7d82945bef",
+  "run": "research/reentry_runs/e7fc4d7d82945bef",
   "resultsSha256": "988fe73d8ab39efdd17f0d9ff7c75d4b23bb51df9c183b3039b2ee453931413d",
   "auditorSha256": "25848d2de19342524e04cfe473e602e8848399c7ef36e884d40fafa958ff70b1",
   "independentFeatureValues": 19578,

@@ -1,5 +1,5 @@
 {
-  "run": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/account_risk_runs/e8c729aef446701e",
+  "run": "research/account_risk_runs/e8c729aef446701e",
   "sourceCodeSha256": "064bff96b77dc4d526aef44d00556e5b149e17ed7aedee2e55ef92370d258f11",
   "engineSha256": "cfcf65eaf37c9e192111a209a36ad72bed90e5b92b8697bbcd824e64848cd682",
   "resultsSha256": "b102fa06f78f21a23183a8acd79f75341c1d739149cfdef0fb29e019d3979744",

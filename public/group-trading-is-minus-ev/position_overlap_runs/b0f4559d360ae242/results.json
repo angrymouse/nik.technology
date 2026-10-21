@@ -1,8 +1,8 @@
 {
-  "dataset": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/coverage_repairs/evm/combined/datasets/adb4dc66b5bd0a0d3e6f",
-  "dayDependenceRun": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/day_dependence_runs/0e2f8a51e1ccdee5",
+  "dataset": "research/coverage_repairs/evm/combined/datasets/adb4dc66b5bd0a0d3e6f",
+  "dayDependenceRun": "research/day_dependence_runs/0e2f8a51e1ccdee5",
   "daySettingsSha256": "573ce84ef97fa52172241c7dbf9cb6aa2319b6d13ccbd9eac7c90fe5edf87fdb",
-  "confirmationRun": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+  "confirmationRun": "research/confirmation_runs/25741e241616d62a",
   "confirmationResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
   "sourceHashes": {
     "position_overlap_audit.py": "9c80b4851b63ba8706b348787aeb3c6c89783e8f8c16fc30f6aba7ed3f48391a",
@@ -21,7 +21,7 @@
   "rows": [
     {
       "label": "Earlier saved choices",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/partial_saved_entry_runs/a10dbacbac7180bb",
+      "source": "research/partial_saved_entry_runs/a10dbacbac7180bb",
       "sourceResultsSha256": "fcc35e9f72cbe11cdfecf4fadc709157cca8ee37865ddbe694abc472100545e7",
       "selector": "saved_control",
       "mode": null,
@@ -38,7 +38,7 @@
     },
     {
       "label": "Earlier saved choices",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/partial_saved_entry_runs/a10dbacbac7180bb",
+      "source": "research/partial_saved_entry_runs/a10dbacbac7180bb",
       "sourceResultsSha256": "fcc35e9f72cbe11cdfecf4fadc709157cca8ee37865ddbe694abc472100545e7",
       "selector": "saved_control",
       "mode": null,
@@ -55,7 +55,7 @@
     },
     {
       "label": "Earlier saved choices",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/partial_saved_entry_runs/a10dbacbac7180bb",
+      "source": "research/partial_saved_entry_runs/a10dbacbac7180bb",
       "sourceResultsSha256": "fcc35e9f72cbe11cdfecf4fadc709157cca8ee37865ddbe694abc472100545e7",
       "selector": "saved_control",
       "mode": null,
@@ -72,7 +72,7 @@
     },
     {
       "label": "Smaller partial sales",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/partial_saved_entry_runs/a10dbacbac7180bb",
+      "source": "research/partial_saved_entry_runs/a10dbacbac7180bb",
       "sourceResultsSha256": "fcc35e9f72cbe11cdfecf4fadc709157cca8ee37865ddbe694abc472100545e7",
       "selector": "risk_2pct",
       "mode": null,
@@ -89,7 +89,7 @@
     },
     {
       "label": "Smaller partial sales",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/partial_saved_entry_runs/a10dbacbac7180bb",
+      "source": "research/partial_saved_entry_runs/a10dbacbac7180bb",
       "sourceResultsSha256": "fcc35e9f72cbe11cdfecf4fadc709157cca8ee37865ddbe694abc472100545e7",
       "selector": "risk_2pct",
       "mode": null,
@@ -106,7 +106,7 @@
     },
     {
       "label": "Smaller partial sales",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/partial_saved_entry_runs/a10dbacbac7180bb",
+      "source": "research/partial_saved_entry_runs/a10dbacbac7180bb",
       "sourceResultsSha256": "fcc35e9f72cbe11cdfecf4fadc709157cca8ee37865ddbe694abc472100545e7",
       "selector": "risk_2pct",
       "mode": null,
@@ -123,7 +123,7 @@
     },
     {
       "label": "Larger partial sales",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/partial_saved_entry_runs/a10dbacbac7180bb",
+      "source": "research/partial_saved_entry_runs/a10dbacbac7180bb",
       "sourceResultsSha256": "fcc35e9f72cbe11cdfecf4fadc709157cca8ee37865ddbe694abc472100545e7",
       "selector": "risk_5pct",
       "mode": null,
@@ -140,7 +140,7 @@
     },
     {
       "label": "Larger partial sales",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/partial_saved_entry_runs/a10dbacbac7180bb",
+      "source": "research/partial_saved_entry_runs/a10dbacbac7180bb",
       "sourceResultsSha256": "fcc35e9f72cbe11cdfecf4fadc709157cca8ee37865ddbe694abc472100545e7",
       "selector": "risk_5pct",
       "mode": null,
@@ -157,7 +157,7 @@
     },
     {
       "label": "Larger partial sales",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/partial_saved_entry_runs/a10dbacbac7180bb",
+      "source": "research/partial_saved_entry_runs/a10dbacbac7180bb",
       "sourceResultsSha256": "fcc35e9f72cbe11cdfecf4fadc709157cca8ee37865ddbe694abc472100545e7",
       "selector": "risk_5pct",
       "mode": null,
@@ -174,7 +174,7 @@
     },
     {
       "label": "Activity sizing",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/activity_policy_runs/6d2be12e1a8dd1db",
+      "source": "research/activity_policy_runs/6d2be12e1a8dd1db",
       "sourceResultsSha256": "bd55d149dbf7aadacf7316eb3c7395037c2cd03e177f1c4618106712801cac67",
       "selector": "risk_5pct",
       "mode": null,
@@ -191,7 +191,7 @@
     },
     {
       "label": "Activity sizing",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/activity_policy_runs/6d2be12e1a8dd1db",
+      "source": "research/activity_policy_runs/6d2be12e1a8dd1db",
       "sourceResultsSha256": "bd55d149dbf7aadacf7316eb3c7395037c2cd03e177f1c4618106712801cac67",
       "selector": "risk_5pct",
       "mode": null,
@@ -208,7 +208,7 @@
     },
     {
       "label": "Activity sizing",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/activity_policy_runs/6d2be12e1a8dd1db",
+      "source": "research/activity_policy_runs/6d2be12e1a8dd1db",
       "sourceResultsSha256": "bd55d149dbf7aadacf7316eb3c7395037c2cd03e177f1c4618106712801cac67",
       "selector": "risk_5pct",
       "mode": null,
@@ -225,7 +225,7 @@
     },
     {
       "label": "Raw Decider, smaller",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/context_decider_runs/037514af3811ab7c",
+      "source": "research/context_decider_runs/037514af3811ab7c",
       "sourceResultsSha256": "2d1653c581c009b3bf4989b676a2157284ec3822f66b8089a8c23ad299a1b6f6",
       "selector": "raw_model_2pct",
       "mode": null,
@@ -242,7 +242,7 @@
     },
     {
       "label": "Raw Decider, smaller",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/context_decider_runs/037514af3811ab7c",
+      "source": "research/context_decider_runs/037514af3811ab7c",
       "sourceResultsSha256": "2d1653c581c009b3bf4989b676a2157284ec3822f66b8089a8c23ad299a1b6f6",
       "selector": "raw_model_2pct",
       "mode": null,
@@ -259,7 +259,7 @@
     },
     {
       "label": "Raw Decider, smaller",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/context_decider_runs/037514af3811ab7c",
+      "source": "research/context_decider_runs/037514af3811ab7c",
       "sourceResultsSha256": "2d1653c581c009b3bf4989b676a2157284ec3822f66b8089a8c23ad299a1b6f6",
       "selector": "raw_model_2pct",
       "mode": null,
@@ -276,7 +276,7 @@
     },
     {
       "label": "Uniform control, smaller raw model",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/matched_exposure_runs/b88dd51883328300",
+      "source": "research/matched_exposure_runs/b88dd51883328300",
       "sourceResultsSha256": "fc3ef2864e2b44a642fd1448e4a11f4bd6f2feb6f048a19496583ba197b9c15f",
       "selector": "raw_model_2pct",
       "mode": "uniform",
@@ -293,7 +293,7 @@
     },
     {
       "label": "Uniform control, smaller raw model",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/matched_exposure_runs/b88dd51883328300",
+      "source": "research/matched_exposure_runs/b88dd51883328300",
       "sourceResultsSha256": "fc3ef2864e2b44a642fd1448e4a11f4bd6f2feb6f048a19496583ba197b9c15f",
       "selector": "raw_model_2pct",
       "mode": "uniform",
@@ -310,7 +310,7 @@
     },
     {
       "label": "Uniform control, smaller raw model",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/matched_exposure_runs/b88dd51883328300",
+      "source": "research/matched_exposure_runs/b88dd51883328300",
       "sourceResultsSha256": "fc3ef2864e2b44a642fd1448e4a11f4bd6f2feb6f048a19496583ba197b9c15f",
       "selector": "raw_model_2pct",
       "mode": "uniform",
@@ -327,7 +327,7 @@
     },
     {
       "label": "Uniform control, larger calibrated model",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/matched_exposure_runs/b88dd51883328300",
+      "source": "research/matched_exposure_runs/b88dd51883328300",
       "sourceResultsSha256": "fc3ef2864e2b44a642fd1448e4a11f4bd6f2feb6f048a19496583ba197b9c15f",
       "selector": "calibrated_model_5pct",
       "mode": "uniform",
@@ -344,7 +344,7 @@
     },
     {
       "label": "Uniform control, larger calibrated model",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/matched_exposure_runs/b88dd51883328300",
+      "source": "research/matched_exposure_runs/b88dd51883328300",
       "sourceResultsSha256": "fc3ef2864e2b44a642fd1448e4a11f4bd6f2feb6f048a19496583ba197b9c15f",
       "selector": "calibrated_model_5pct",
       "mode": "uniform",
@@ -361,7 +361,7 @@
     },
     {
       "label": "Uniform control, larger calibrated model",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/matched_exposure_runs/b88dd51883328300",
+      "source": "research/matched_exposure_runs/b88dd51883328300",
       "sourceResultsSha256": "fc3ef2864e2b44a642fd1448e4a11f4bd6f2feb6f048a19496583ba197b9c15f",
       "selector": "calibrated_model_5pct",
       "mode": "uniform",
@@ -378,7 +378,7 @@
     },
     {
       "label": "Sender history, smaller",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/caller_policy_runs/bacc3ef466017840",
+      "source": "research/caller_policy_runs/bacc3ef466017840",
       "sourceResultsSha256": "c869f3493800362e039b34fba87c6b9414fd23c03cdd511c08d86aefbdd5a9a9",
       "selector": "sender_2pct",
       "mode": null,
@@ -396,7 +396,7 @@
     },
     {
       "label": "Sender history, smaller",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/caller_policy_runs/bacc3ef466017840",
+      "source": "research/caller_policy_runs/bacc3ef466017840",
       "sourceResultsSha256": "c869f3493800362e039b34fba87c6b9414fd23c03cdd511c08d86aefbdd5a9a9",
       "selector": "sender_2pct",
       "mode": null,
@@ -414,7 +414,7 @@
     },
     {
       "label": "Sender history, smaller",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/caller_policy_runs/bacc3ef466017840",
+      "source": "research/caller_policy_runs/bacc3ef466017840",
       "sourceResultsSha256": "c869f3493800362e039b34fba87c6b9414fd23c03cdd511c08d86aefbdd5a9a9",
       "selector": "sender_2pct",
       "mode": null,
@@ -432,7 +432,7 @@
     },
     {
       "label": "Requester history, smaller",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/caller_policy_runs/bacc3ef466017840",
+      "source": "research/caller_policy_runs/bacc3ef466017840",
       "sourceResultsSha256": "c869f3493800362e039b34fba87c6b9414fd23c03cdd511c08d86aefbdd5a9a9",
       "selector": "requester_2pct",
       "mode": null,
@@ -450,7 +450,7 @@
     },
     {
       "label": "Requester history, smaller",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/caller_policy_runs/bacc3ef466017840",
+      "source": "research/caller_policy_runs/bacc3ef466017840",
       "sourceResultsSha256": "c869f3493800362e039b34fba87c6b9414fd23c03cdd511c08d86aefbdd5a9a9",
       "selector": "requester_2pct",
       "mode": null,
@@ -468,7 +468,7 @@
     },
     {
       "label": "Requester history, smaller",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/caller_policy_runs/bacc3ef466017840",
+      "source": "research/caller_policy_runs/bacc3ef466017840",
       "sourceResultsSha256": "c869f3493800362e039b34fba87c6b9414fd23c03cdd511c08d86aefbdd5a9a9",
       "selector": "requester_2pct",
       "mode": null,
@@ -486,7 +486,7 @@
     },
     {
       "label": "Requester history, larger",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/caller_policy_runs/bacc3ef466017840",
+      "source": "research/caller_policy_runs/bacc3ef466017840",
       "sourceResultsSha256": "c869f3493800362e039b34fba87c6b9414fd23c03cdd511c08d86aefbdd5a9a9",
       "selector": "requester_5pct",
       "mode": null,
@@ -504,7 +504,7 @@
     },
     {
       "label": "Requester history, larger",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/caller_policy_runs/bacc3ef466017840",
+      "source": "research/caller_policy_runs/bacc3ef466017840",
       "sourceResultsSha256": "c869f3493800362e039b34fba87c6b9414fd23c03cdd511c08d86aefbdd5a9a9",
       "selector": "requester_5pct",
       "mode": null,
@@ -522,7 +522,7 @@
     },
     {
       "label": "Requester history, larger",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/caller_policy_runs/bacc3ef466017840",
+      "source": "research/caller_policy_runs/bacc3ef466017840",
       "sourceResultsSha256": "c869f3493800362e039b34fba87c6b9414fd23c03cdd511c08d86aefbdd5a9a9",
       "selector": "requester_5pct",
       "mode": null,
@@ -540,7 +540,7 @@
     },
     {
       "label": "Account risk, smaller",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/account_risk_runs/e8c729aef446701e",
+      "source": "research/account_risk_runs/e8c729aef446701e",
       "sourceResultsSha256": "b102fa06f78f21a23183a8acd79f75341c1d739149cfdef0fb29e019d3979744",
       "selector": "risk_2pct",
       "mode": null,
@@ -557,7 +557,7 @@
     },
     {
       "label": "Account risk, smaller",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/account_risk_runs/e8c729aef446701e",
+      "source": "research/account_risk_runs/e8c729aef446701e",
       "sourceResultsSha256": "b102fa06f78f21a23183a8acd79f75341c1d739149cfdef0fb29e019d3979744",
       "selector": "risk_2pct",
       "mode": null,
@@ -574,7 +574,7 @@
     },
     {
       "label": "Account risk, smaller",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/account_risk_runs/e8c729aef446701e",
+      "source": "research/account_risk_runs/e8c729aef446701e",
       "sourceResultsSha256": "b102fa06f78f21a23183a8acd79f75341c1d739149cfdef0fb29e019d3979744",
       "selector": "risk_2pct",
       "mode": null,
@@ -591,7 +591,7 @@
     },
     {
       "label": "Account risk, larger",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/account_risk_runs/e8c729aef446701e",
+      "source": "research/account_risk_runs/e8c729aef446701e",
       "sourceResultsSha256": "b102fa06f78f21a23183a8acd79f75341c1d739149cfdef0fb29e019d3979744",
       "selector": "risk_5pct",
       "mode": null,
@@ -608,7 +608,7 @@
     },
     {
       "label": "Account risk, larger",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/account_risk_runs/e8c729aef446701e",
+      "source": "research/account_risk_runs/e8c729aef446701e",
       "sourceResultsSha256": "b102fa06f78f21a23183a8acd79f75341c1d739149cfdef0fb29e019d3979744",
       "selector": "risk_5pct",
       "mode": null,
@@ -625,7 +625,7 @@
     },
     {
       "label": "Account risk, larger",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/account_risk_runs/e8c729aef446701e",
+      "source": "research/account_risk_runs/e8c729aef446701e",
       "sourceResultsSha256": "b102fa06f78f21a23183a8acd79f75341c1d739149cfdef0fb29e019d3979744",
       "selector": "risk_5pct",
       "mode": null,
@@ -642,7 +642,7 @@
     },
     {
       "label": "human_confirmation_2pct",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+      "source": "research/confirmation_runs/25741e241616d62a",
       "sourceResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
       "selector": "human_confirmation_2pct",
       "mode": null,
@@ -657,7 +657,7 @@
     },
     {
       "label": "human_confirmation_2pct",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+      "source": "research/confirmation_runs/25741e241616d62a",
       "sourceResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
       "selector": "human_confirmation_2pct",
       "mode": null,
@@ -672,7 +672,7 @@
     },
     {
       "label": "human_confirmation_2pct",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+      "source": "research/confirmation_runs/25741e241616d62a",
       "sourceResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
       "selector": "human_confirmation_2pct",
       "mode": null,
@@ -687,7 +687,7 @@
     },
     {
       "label": "human_confirmation_5pct",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+      "source": "research/confirmation_runs/25741e241616d62a",
       "sourceResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
       "selector": "human_confirmation_5pct",
       "mode": null,
@@ -702,7 +702,7 @@
     },
     {
       "label": "human_confirmation_5pct",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+      "source": "research/confirmation_runs/25741e241616d62a",
       "sourceResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
       "selector": "human_confirmation_5pct",
       "mode": null,
@@ -717,7 +717,7 @@
     },
     {
       "label": "human_confirmation_5pct",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+      "source": "research/confirmation_runs/25741e241616d62a",
       "sourceResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
       "selector": "human_confirmation_5pct",
       "mode": null,
@@ -732,7 +732,7 @@
     },
     {
       "label": "human_confirmation_robust",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+      "source": "research/confirmation_runs/25741e241616d62a",
       "sourceResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
       "selector": "human_confirmation_robust",
       "mode": null,
@@ -747,7 +747,7 @@
     },
     {
       "label": "human_confirmation_robust",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+      "source": "research/confirmation_runs/25741e241616d62a",
       "sourceResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
       "selector": "human_confirmation_robust",
       "mode": null,
@@ -762,7 +762,7 @@
     },
     {
       "label": "human_confirmation_robust",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+      "source": "research/confirmation_runs/25741e241616d62a",
       "sourceResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
       "selector": "human_confirmation_robust",
       "mode": null,
@@ -777,7 +777,7 @@
     },
     {
       "label": "sender_confirmation_2pct",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+      "source": "research/confirmation_runs/25741e241616d62a",
       "sourceResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
       "selector": "sender_confirmation_2pct",
       "mode": null,
@@ -795,7 +795,7 @@
     },
     {
       "label": "sender_confirmation_2pct",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+      "source": "research/confirmation_runs/25741e241616d62a",
       "sourceResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
       "selector": "sender_confirmation_2pct",
       "mode": null,
@@ -813,7 +813,7 @@
     },
     {
       "label": "sender_confirmation_2pct",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+      "source": "research/confirmation_runs/25741e241616d62a",
       "sourceResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
       "selector": "sender_confirmation_2pct",
       "mode": null,
@@ -831,7 +831,7 @@
     },
     {
       "label": "sender_confirmation_5pct",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+      "source": "research/confirmation_runs/25741e241616d62a",
       "sourceResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
       "selector": "sender_confirmation_5pct",
       "mode": null,
@@ -848,7 +848,7 @@
     },
     {
       "label": "sender_confirmation_5pct",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+      "source": "research/confirmation_runs/25741e241616d62a",
       "sourceResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
       "selector": "sender_confirmation_5pct",
       "mode": null,
@@ -865,7 +865,7 @@
     },
     {
       "label": "sender_confirmation_5pct",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+      "source": "research/confirmation_runs/25741e241616d62a",
       "sourceResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
       "selector": "sender_confirmation_5pct",
       "mode": null,
@@ -882,7 +882,7 @@
     },
     {
       "label": "sender_confirmation_robust",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+      "source": "research/confirmation_runs/25741e241616d62a",
       "sourceResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
       "selector": "sender_confirmation_robust",
       "mode": null,
@@ -899,7 +899,7 @@
     },
     {
       "label": "sender_confirmation_robust",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+      "source": "research/confirmation_runs/25741e241616d62a",
       "sourceResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
       "selector": "sender_confirmation_robust",
       "mode": null,
@@ -916,7 +916,7 @@
     },
     {
       "label": "sender_confirmation_robust",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+      "source": "research/confirmation_runs/25741e241616d62a",
       "sourceResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
       "selector": "sender_confirmation_robust",
       "mode": null,
@@ -933,7 +933,7 @@
     },
     {
       "label": "single_human_2pct",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+      "source": "research/confirmation_runs/25741e241616d62a",
       "sourceResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
       "selector": "single_human_2pct",
       "mode": null,
@@ -950,7 +950,7 @@
     },
     {
       "label": "single_human_2pct",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+      "source": "research/confirmation_runs/25741e241616d62a",
       "sourceResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
       "selector": "single_human_2pct",
       "mode": null,
@@ -967,7 +967,7 @@
     },
     {
       "label": "single_human_2pct",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+      "source": "research/confirmation_runs/25741e241616d62a",
       "sourceResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
       "selector": "single_human_2pct",
       "mode": null,
@@ -984,7 +984,7 @@
     },
     {
       "label": "single_human_5pct",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+      "source": "research/confirmation_runs/25741e241616d62a",
       "sourceResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
       "selector": "single_human_5pct",
       "mode": null,
@@ -1013,7 +1013,7 @@
     },
     {
       "label": "single_human_5pct",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+      "source": "research/confirmation_runs/25741e241616d62a",
       "sourceResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
       "selector": "single_human_5pct",
       "mode": null,
@@ -1031,7 +1031,7 @@
     },
     {
       "label": "single_human_5pct",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+      "source": "research/confirmation_runs/25741e241616d62a",
       "sourceResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
       "selector": "single_human_5pct",
       "mode": null,
@@ -1049,7 +1049,7 @@
     },
     {
       "label": "single_human_robust",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+      "source": "research/confirmation_runs/25741e241616d62a",
       "sourceResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
       "selector": "single_human_robust",
       "mode": null,
@@ -1064,7 +1064,7 @@
     },
     {
       "label": "single_human_robust",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+      "source": "research/confirmation_runs/25741e241616d62a",
       "sourceResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
       "selector": "single_human_robust",
       "mode": null,
@@ -1079,7 +1079,7 @@
     },
     {
       "label": "single_human_robust",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+      "source": "research/confirmation_runs/25741e241616d62a",
       "sourceResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
       "selector": "single_human_robust",
       "mode": null,
@@ -1094,7 +1094,7 @@
     },
     {
       "label": "unfiltered_2pct",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+      "source": "research/confirmation_runs/25741e241616d62a",
       "sourceResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
       "selector": "unfiltered_2pct",
       "mode": null,
@@ -1111,7 +1111,7 @@
     },
     {
       "label": "unfiltered_2pct",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+      "source": "research/confirmation_runs/25741e241616d62a",
       "sourceResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
       "selector": "unfiltered_2pct",
       "mode": null,
@@ -1128,7 +1128,7 @@
     },
     {
       "label": "unfiltered_2pct",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+      "source": "research/confirmation_runs/25741e241616d62a",
       "sourceResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
       "selector": "unfiltered_2pct",
       "mode": null,
@@ -1145,7 +1145,7 @@
     },
     {
       "label": "unfiltered_5pct",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+      "source": "research/confirmation_runs/25741e241616d62a",
       "sourceResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
       "selector": "unfiltered_5pct",
       "mode": null,
@@ -1174,7 +1174,7 @@
     },
     {
       "label": "unfiltered_5pct",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+      "source": "research/confirmation_runs/25741e241616d62a",
       "sourceResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
       "selector": "unfiltered_5pct",
       "mode": null,
@@ -1192,7 +1192,7 @@
     },
     {
       "label": "unfiltered_5pct",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+      "source": "research/confirmation_runs/25741e241616d62a",
       "sourceResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
       "selector": "unfiltered_5pct",
       "mode": null,
@@ -1210,7 +1210,7 @@
     },
     {
       "label": "unfiltered_robust",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+      "source": "research/confirmation_runs/25741e241616d62a",
       "sourceResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
       "selector": "unfiltered_robust",
       "mode": null,
@@ -1225,7 +1225,7 @@
     },
     {
       "label": "unfiltered_robust",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+      "source": "research/confirmation_runs/25741e241616d62a",
       "sourceResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
       "selector": "unfiltered_robust",
       "mode": null,
@@ -1240,7 +1240,7 @@
     },
     {
       "label": "unfiltered_robust",
-      "source": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/confirmation_runs/25741e241616d62a",
+      "source": "research/confirmation_runs/25741e241616d62a",
       "sourceResultsSha256": "9e1bde355cf28f571a61663bb69a35a05bb23cab39c5bc84ca7eb4c5c306843d",
       "selector": "unfiltered_robust",
       "mode": null,

@@ -1,10 +1,10 @@
 {
-  "protocol": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/fixed_validation_windows/20261021_111745/forward_protocol.json",
+  "protocol": "research/fixed_validation_windows/20261021_111745/forward_protocol.json",
   "protocolSha256": "259f0fa5479c1f8d06233bf3ed4187d51436984fcfb1723bd99b69095559c195",
   "frozenAt": "2026-10-21T11:17:45.230714+00:00",
   "collectionFetchedAt": "2026-10-21T11:18:15.036Z",
-  "combinedDataset": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/fixed_validation_windows/20261021_111745/validation/combined/datasets/39a9a8328a740b1dc3ce",
-  "executionView": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/fixed_validation_windows/20261021_111745/validation/execution_view",
+  "combinedDataset": "research/fixed_validation_windows/20261021_111745/validation/combined/datasets/39a9a8328a740b1dc3ce",
+  "executionView": "research/fixed_validation_windows/20261021_111745/validation/execution_view",
   "combinedCoverage": {
     "uniqueCallerContractSignals": 1264,
     "missingEntrySnapshot": 38,

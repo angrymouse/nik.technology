@@ -1,14 +1,14 @@
 {
   "createdAt": "2026-10-21T08:52:56.241664+00:00",
-  "protocolPath": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/validation_windows/20261021_0851/forward_protocol.json",
+  "protocolPath": "research/validation_windows/20261021_0851/forward_protocol.json",
   "protocolSha256": "e6bdfc803090172cad47948d49251825a49a25bfe1b231cda217d48467351e33",
   "sourceCodeSha256": "f387f18373813c227f6b9a0ba9a5126ab1459187040be547fe9831694159249a",
-  "datasetPath": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/validation_windows/20261021_0851/validation/combined/datasets/10b82614de6108c243b2",
+  "datasetPath": "research/validation_windows/20261021_0851/validation/combined/datasets/10b82614de6108c243b2",
   "protocol": {
     "version": 1,
     "frozenAt": "2026-10-21T08:50:47.525642+00:00",
-    "sourceDataset": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/coverage_repairs/evm/validation_extension/validation/combined/datasets/99f30ba924282d177b95",
-    "sourceRun": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/adaptive_runs/70fab2c549e7e89e",
+    "sourceDataset": "research/coverage_repairs/evm/validation_extension/validation/combined/datasets/99f30ba924282d177b95",
+    "sourceRun": "research/adaptive_runs/70fab2c549e7e89e",
     "sourceCodeHash": "b04b409426c657faa49879985c971567727ba1412fd84234c1f54a9bd67ffd9e",
     "entry": {
       "delay": 1,
@@ -71,7 +71,7 @@
     },
     "selectionStatus": "Same fixed trading rule; repaired EVM history and previously seen windows supply context. This extension was frozen before collecting its new messages or prices.",
     "retrainingAllowedDuringValidation": false,
-    "priorProtocol": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/cohort_runs/cdbe9d78885db2c1/forward_protocol.json",
+    "priorProtocol": "research/cohort_runs/cdbe9d78885db2c1/forward_protocol.json",
     "priorProtocolSha256": "80288c9b84ff315119eddf29e7e03e0734d78d43adef1728dfbaafdb94efd2f1",
     "contextManifestSha256": "ca4e6c4713e4bb46e9ed60112216f532cb46c6b3792661d54d71e217b413ed1d",
     "extensionContext": "Earlier window is warm history, not counted again as validation."

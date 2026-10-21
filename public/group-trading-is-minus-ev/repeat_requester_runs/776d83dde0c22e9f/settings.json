@@ -1,10 +1,10 @@
 {
-  "sourceRun": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/reentry_runs/e7fc4d7d82945bef",
+  "sourceRun": "research/reentry_runs/e7fc4d7d82945bef",
   "sourceResultsSha256": "988fe73d8ab39efdd17f0d9ff7c75d4b23bb51df9c183b3039b2ee453931413d",
   "sourceSettingsSha256": "3c374f9d6cdfefa2db4dc1515d21eb8275dc34b7e404b5e451b7b8f35db0f23a",
   "sourceTrainingSha256": "fd83972a0d9e5a017ef42edee4a04226e3ecc4120f9223f70a110da883d04df1",
   "sourceAuditSha256": "5a262c0c6d225e3c4ef71329aa6b8f34e17899c240199fe8ed9338b8874f6496",
-  "featureDirectory": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/repeat_call_datasets/b231edbc401e6dd92215/requester_context/d7ce4967c5b182ba",
+  "featureDirectory": "research/repeat_call_datasets/b231edbc401e6dd92215/requester_context/d7ce4967c5b182ba",
   "featuresSha256": "fb6e2632ddbcdd3f8a0cef74f8a534f3672889a128ca0f2eecd7d3d3b73ba0f5",
   "featureSettingsSha256": "df851bc08214f9d729fe96fbc7e7ec3338fd3904a30838265cc2661b6af549a3",
   "sourceHashes": {

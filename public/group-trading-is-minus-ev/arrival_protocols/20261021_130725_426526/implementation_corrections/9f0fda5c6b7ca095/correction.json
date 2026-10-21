@@ -84,8 +84,8 @@
   "correctedAt": "2026-10-21T13:29:19.060Z",
   "supplementalSeries": 5,
   "preservedOriginalCallSignals": 22,
-  "originalValidation": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/arrival_protocols/20261021_130725_426526/validation",
-  "correctedValidation": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/arrival_protocols/20261021_130725_426526/implementation_corrections/9f0fda5c6b7ca095/validation",
+  "originalValidation": "research/arrival_protocols/20261021_130725_426526/validation",
+  "correctedValidation": "research/arrival_protocols/20261021_130725_426526/implementation_corrections/9f0fda5c6b7ca095/validation",
   "unchangedProtocolSha256": "83cd0c935bc464db7c2cef1e1b6be561f49e55586329cbc5da3048dc7d5e7d70",
   "correctedMarketSha256": "1d04006eaaaeb5220d51f53f1d11f0eff577e83163c860a6a48a5836ca2dda84",
   "responses": {

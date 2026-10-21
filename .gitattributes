@@ -1,2 +1,2 @@
-# Keep exported research files identical to their source hashes.
+# Keep published research artifacts byte-stable with the publication manifest.
 public/group-trading-is-minus-ev/** -text

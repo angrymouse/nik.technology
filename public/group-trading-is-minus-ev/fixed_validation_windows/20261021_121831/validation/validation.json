@@ -1,10 +1,10 @@
 {
-  "protocol": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/fixed_validation_windows/20261021_121831/forward_protocol.json",
+  "protocol": "research/fixed_validation_windows/20261021_121831/forward_protocol.json",
   "protocolSha256": "96eb0753d9593b6354fdf941bacad83d1fc0fa7cc85909111d00ce0d847228a1",
   "frozenAt": "2026-10-21T12:18:31.597730+00:00",
   "collectionFetchedAt": "2026-10-21T12:18:37.904Z",
-  "combinedDataset": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/fixed_validation_windows/20261021_121831/validation/combined/datasets/f1aa7fb9954332ce404e",
-  "executionView": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/fixed_validation_windows/20261021_121831/validation/execution_view",
+  "combinedDataset": "research/fixed_validation_windows/20261021_121831/validation/combined/datasets/f1aa7fb9954332ce404e",
+  "executionView": "research/fixed_validation_windows/20261021_121831/validation/execution_view",
   "combinedCoverage": {
     "uniqueCallerContractSignals": 1268,
     "missingEntrySnapshot": 38,
@@ -28,13 +28,13 @@
   "entryAndCohortPassed": 0,
   "calls": [
     {
-      "signalKey": "user:204418455:2928856:solana:solana:35zAdop7rqmqdpLJU7swEhd3DJRqhFdSJXkBwYaDpump",
+      "signalKey": "Caller 22:2928856:solana:solana:35zAdop7rqmqdpLJU7swEhd3DJRqhFdSJXkBwYaDpump",
       "assetKey": "solana:solana:35zAdop7rqmqdpLJU7swEhd3DJRqhFdSJXkBwYaDpump",
       "address": "35zAdop7rqmqdpLJU7swEhd3DJRqhFdSJXkBwYaDpump",
       "chainId": "solana:solana",
       "messageId": 2928856,
-      "authorKey": "user:204418455",
-      "authorLabel": "@luigiv996",
+      "authorKey": "Caller 22",
+      "authorLabel": "Caller 22",
       "symbol": "VI",
       "parentIndex": 1128,
       "cap": 490440.2351826053,
@@ -42,24 +42,24 @@
       "cohortPassed": false,
       "featureTime": 1792583940000,
       "historySignals": [
-        "user:7185780723:2928734:solana:solana:8FmvTvUpHoNwW19dr4eGaWLXKcZqX2cRbuZ8VKaVpump",
-        "user:7185780723:2928736:solana:solana:GeyUyTuEbVnXwiUao7a7GmWcT4cDmLXb1WHcHLp4pump",
-        "user:6126376117:2928752:solana:solana:98kfF7rmsg1QDUEoCqNE7g7M1FdrTt92TEp2CLzypump",
-        "user:7147559151:2928779:solana:solana:2Dy6RY7GzUGLu9ZqNuboWrJP6Xo6WR9zJZsmbtzPpump",
-        "user:1105631388:2928818:solana:solana:HZoEXNHu4xwZNbcWgm3URBsnF51g2F2xvLRhUCvxpump"
+        "Caller 10:2928734:solana:solana:8FmvTvUpHoNwW19dr4eGaWLXKcZqX2cRbuZ8VKaVpump",
+        "Caller 10:2928736:solana:solana:GeyUyTuEbVnXwiUao7a7GmWcT4cDmLXb1WHcHLp4pump",
+        "Caller 32:2928752:solana:solana:98kfF7rmsg1QDUEoCqNE7g7M1FdrTt92TEp2CLzypump",
+        "Caller 41:2928779:solana:solana:2Dy6RY7GzUGLu9ZqNuboWrJP6Xo6WR9zJZsmbtzPpump",
+        "Caller 07:2928818:solana:solana:HZoEXNHu4xwZNbcWgm3URBsnF51g2F2xvLRhUCvxpump"
       ],
       "executionPriceAvailable": false,
       "feeAndVolumeAvailable": false,
       "positionLimitUSD": null
     },
     {
-      "signalKey": "user:6126376117:2928857:solana:solana:35zAdop7rqmqdpLJU7swEhd3DJRqhFdSJXkBwYaDpump",
+      "signalKey": "Caller 32:2928857:solana:solana:35zAdop7rqmqdpLJU7swEhd3DJRqhFdSJXkBwYaDpump",
       "assetKey": "solana:solana:35zAdop7rqmqdpLJU7swEhd3DJRqhFdSJXkBwYaDpump",
       "address": "35zAdop7rqmqdpLJU7swEhd3DJRqhFdSJXkBwYaDpump",
       "chainId": "solana:solana",
       "messageId": 2928857,
-      "authorKey": "user:6126376117",
-      "authorLabel": "@rick (bot)",
+      "authorKey": "Caller 32",
+      "authorLabel": "Caller 32 (bot)",
       "symbol": "VI",
       "parentIndex": 1129,
       "cap": 490440.2351826053,
@@ -67,11 +67,11 @@
       "cohortPassed": false,
       "featureTime": 1792583940000,
       "historySignals": [
-        "user:7185780723:2928734:solana:solana:8FmvTvUpHoNwW19dr4eGaWLXKcZqX2cRbuZ8VKaVpump",
-        "user:7185780723:2928736:solana:solana:GeyUyTuEbVnXwiUao7a7GmWcT4cDmLXb1WHcHLp4pump",
-        "user:6126376117:2928752:solana:solana:98kfF7rmsg1QDUEoCqNE7g7M1FdrTt92TEp2CLzypump",
-        "user:7147559151:2928779:solana:solana:2Dy6RY7GzUGLu9ZqNuboWrJP6Xo6WR9zJZsmbtzPpump",
-        "user:1105631388:2928818:solana:solana:HZoEXNHu4xwZNbcWgm3URBsnF51g2F2xvLRhUCvxpump"
+        "Caller 10:2928734:solana:solana:8FmvTvUpHoNwW19dr4eGaWLXKcZqX2cRbuZ8VKaVpump",
+        "Caller 10:2928736:solana:solana:GeyUyTuEbVnXwiUao7a7GmWcT4cDmLXb1WHcHLp4pump",
+        "Caller 32:2928752:solana:solana:98kfF7rmsg1QDUEoCqNE7g7M1FdrTt92TEp2CLzypump",
+        "Caller 41:2928779:solana:solana:2Dy6RY7GzUGLu9ZqNuboWrJP6Xo6WR9zJZsmbtzPpump",
+        "Caller 07:2928818:solana:solana:HZoEXNHu4xwZNbcWgm3URBsnF51g2F2xvLRhUCvxpump"
       ],
       "executionPriceAvailable": false,
       "feeAndVolumeAvailable": false,

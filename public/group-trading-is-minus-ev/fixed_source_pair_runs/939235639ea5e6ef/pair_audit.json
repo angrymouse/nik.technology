@@ -1,5 +1,5 @@
 {
-  "run": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/fixed_source_pair_runs/939235639ea5e6ef",
+  "run": "research/fixed_source_pair_runs/939235639ea5e6ef",
   "resultsSha256": "e666ae7b36fd19b9bece0746a31d0d557fe446261b298718f3adc250c4b7e195",
   "auditorSha256": "ec104f39247d47c4b4a77cf2986e5d6e5bf284c17c262245e5c7d9126a684a51",
   "jointCandidates": 21,

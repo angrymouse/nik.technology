@@ -1,14 +1,14 @@
 {
   "createdAt": "2026-10-21T07:32:33.387381+00:00",
-  "protocolPath": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/cohort_runs/cdbe9d78885db2c1/forward_protocol.json",
+  "protocolPath": "research/cohort_runs/cdbe9d78885db2c1/forward_protocol.json",
   "protocolSha256": "80288c9b84ff315119eddf29e7e03e0734d78d43adef1728dfbaafdb94efd2f1",
   "sourceCodeSha256": "25c0da703d6a954bb4412082672c40f023da5a38c0b8fdc254b056a32b2a5bcf",
-  "datasetPath": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/cohort_runs/cdbe9d78885db2c1/validation/combined/datasets/15d5abb45686a9bfdc73",
+  "datasetPath": "research/cohort_runs/cdbe9d78885db2c1/validation/combined/datasets/15d5abb45686a9bfdc73",
   "protocol": {
     "version": 1,
     "frozenAt": "2026-10-21T07:27:56.930679+00:00",
-    "sourceDataset": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/datasets/845e37f0db6685299fc5",
-    "sourceRun": "/home/nik/entryliquidity/analysis/ayugram-token-strategy/adaptive_runs/70fab2c549e7e89e",
+    "sourceDataset": "research/datasets/845e37f0db6685299fc5",
+    "sourceRun": "research/adaptive_runs/70fab2c549e7e89e",
     "sourceCodeHash": "cdbe9d78885db2c1f2a93b67b9d78e3e6d3a08f9dfe155db2ee71abd39c5080c",
     "entry": {
       "delay": 1,
