@@ -1,0 +1,1749 @@
+{
+  "schemaVersion": 1,
+  "researchSnapshot": "2026-10-21T15:41:37Z",
+  "period": {
+    "from": "2026-10-16",
+    "to": "2026-10-21"
+  },
+  "dataset": {
+    "archivedMessages": 14273,
+    "eligibleFirstCalls": 1100,
+    "firstCallContracts": 520,
+    "senders": 45,
+    "callsIncludingRepeats": 1506,
+    "contractsIncludingRepeats": 547
+  },
+  "units": "Returns and drawdowns are fractions of account equity unless labelled per-call. Drawdown bounds are stored as negative fractions.",
+  "baselines": [
+    {
+      "entryDelaySeconds": 1,
+      "holdSeconds": 5,
+      "period": "earlier",
+      "return": -0.11526400000000014,
+      "drawdownBound": -0.11544343570018167,
+      "trades": 182,
+      "writeoffs": 7
+    },
+    {
+      "entryDelaySeconds": 1,
+      "holdSeconds": 5,
+      "period": "later",
+      "return": -0.10515385244343467,
+      "drawdownBound": -0.1058115792301334,
+      "trades": 111,
+      "writeoffs": 8
+    },
+    {
+      "entryDelaySeconds": 1,
+      "holdSeconds": 10,
+      "period": "earlier",
+      "return": -0.11526400000000014,
+      "drawdownBound": -0.11544343570018167,
+      "trades": 123,
+      "writeoffs": 9
+    },
+    {
+      "entryDelaySeconds": 1,
+      "holdSeconds": 10,
+      "period": "later",
+      "return": -0.08962526731627196,
+      "drawdownBound": -0.09208571762795092,
+      "trades": 161,
+      "writeoffs": 7
+    },
+    {
+      "entryDelaySeconds": 1,
+      "holdSeconds": 15,
+      "period": "earlier",
+      "return": -0.11526400000000014,
+      "drawdownBound": -0.11607276466469907,
+      "trades": 154,
+      "writeoffs": 9
+    },
+    {
+      "entryDelaySeconds": 1,
+      "holdSeconds": 15,
+      "period": "later",
+      "return": -0.09869448592200869,
+      "drawdownBound": -0.10179565164221516,
+      "trades": 141,
+      "writeoffs": 6
+    },
+    {
+      "entryDelaySeconds": 1,
+      "holdSeconds": 30,
+      "period": "earlier",
+      "return": -0.11526400000000014,
+      "drawdownBound": -0.11702749129344836,
+      "trades": 165,
+      "writeoffs": 10
+    },
+    {
+      "entryDelaySeconds": 1,
+      "holdSeconds": 30,
+      "period": "later",
+      "return": -0.11056722685838904,
+      "drawdownBound": -0.11393350595889995,
+      "trades": 200,
+      "writeoffs": 6
+    },
+    {
+      "entryDelaySeconds": 1,
+      "holdSeconds": 45,
+      "period": "earlier",
+      "return": -0.08096402551960136,
+      "drawdownBound": -0.08279588489840128,
+      "trades": 156,
+      "writeoffs": 4
+    },
+    {
+      "entryDelaySeconds": 1,
+      "holdSeconds": 45,
+      "period": "later",
+      "return": -0.09867578516532438,
+      "drawdownBound": -0.10269543229073741,
+      "trades": 144,
+      "writeoffs": 6
+    },
+    {
+      "entryDelaySeconds": 1,
+      "holdSeconds": 60,
+      "period": "earlier",
+      "return": -0.10644289166959542,
+      "drawdownBound": -0.10822396555009706,
+      "trades": 107,
+      "writeoffs": 8
+    },
+    {
+      "entryDelaySeconds": 1,
+      "holdSeconds": 60,
+      "period": "later",
+      "return": -0.10478857221265359,
+      "drawdownBound": -0.10906683307710807,
+      "trades": 162,
+      "writeoffs": 9
+    },
+    {
+      "entryDelaySeconds": 1,
+      "holdSeconds": 90,
+      "period": "earlier",
+      "return": -0.08716443684361297,
+      "drawdownBound": -0.08898393731378285,
+      "trades": 135,
+      "writeoffs": 6
+    },
+    {
+      "entryDelaySeconds": 1,
+      "holdSeconds": 90,
+      "period": "later",
+      "return": -0.09004633204909085,
+      "drawdownBound": -0.0950059334624902,
+      "trades": 181,
+      "writeoffs": 10
+    },
+    {
+      "entryDelaySeconds": 1,
+      "holdSeconds": 120,
+      "period": "earlier",
+      "return": -0.0727608561904175,
+      "drawdownBound": -0.07460906645546006,
+      "trades": 96,
+      "writeoffs": 8
+    },
+    {
+      "entryDelaySeconds": 1,
+      "holdSeconds": 120,
+      "period": "later",
+      "return": -0.09701978211427897,
+      "drawdownBound": -0.1063302541543788,
+      "trades": 108,
+      "writeoffs": 7
+    },
+    {
+      "entryDelaySeconds": 1,
+      "holdSeconds": 180,
+      "period": "earlier",
+      "return": -0.08806459635328201,
+      "drawdownBound": -0.09113439500881404,
+      "trades": 119,
+      "writeoffs": 10
+    },
+    {
+      "entryDelaySeconds": 1,
+      "holdSeconds": 180,
+      "period": "later",
+      "return": -0.1032085992911439,
+      "drawdownBound": -0.10549559274016773,
+      "trades": 105,
+      "writeoffs": 8
+    },
+    {
+      "entryDelaySeconds": 3,
+      "holdSeconds": 5,
+      "period": "earlier",
+      "return": -0.11310861145525708,
+      "drawdownBound": -0.11310861145525708,
+      "trades": 202,
+      "writeoffs": 6
+    },
+    {
+      "entryDelaySeconds": 3,
+      "holdSeconds": 5,
+      "period": "later",
+      "return": -0.1063454729822324,
+      "drawdownBound": -0.10806271596535388,
+      "trades": 120,
+      "writeoffs": 9
+    },
+    {
+      "entryDelaySeconds": 3,
+      "holdSeconds": 10,
+      "period": "earlier",
+      "return": -0.10662012847201208,
+      "drawdownBound": -0.10662012847201208,
+      "trades": 187,
+      "writeoffs": 8
+    },
+    {
+      "entryDelaySeconds": 3,
+      "holdSeconds": 10,
+      "period": "later",
+      "return": -0.09507219464977068,
+      "drawdownBound": -0.09673154083961844,
+      "trades": 187,
+      "writeoffs": 7
+    },
+    {
+      "entryDelaySeconds": 3,
+      "holdSeconds": 15,
+      "period": "earlier",
+      "return": -0.11526400000000014,
+      "drawdownBound": -0.11668943067960413,
+      "trades": 186,
+      "writeoffs": 8
+    },
+    {
+      "entryDelaySeconds": 3,
+      "holdSeconds": 15,
+      "period": "later",
+      "return": -0.0985146895229666,
+      "drawdownBound": -0.10069367679450691,
+      "trades": 140,
+      "writeoffs": 6
+    },
+    {
+      "entryDelaySeconds": 3,
+      "holdSeconds": 30,
+      "period": "earlier",
+      "return": -0.11314921722983473,
+      "drawdownBound": -0.11457805511366836,
+      "trades": 162,
+      "writeoffs": 9
+    },
+    {
+      "entryDelaySeconds": 3,
+      "holdSeconds": 30,
+      "period": "later",
+      "return": -0.10949736734482995,
+      "drawdownBound": -0.11292915209593579,
+      "trades": 192,
+      "writeoffs": 6
+    },
+    {
+      "entryDelaySeconds": 3,
+      "holdSeconds": 45,
+      "period": "earlier",
+      "return": -0.05797090308039643,
+      "drawdownBound": -0.06224020407755493,
+      "trades": 154,
+      "writeoffs": 4
+    },
+    {
+      "entryDelaySeconds": 3,
+      "holdSeconds": 45,
+      "period": "later",
+      "return": -0.09679120805773,
+      "drawdownBound": -0.10003976387800129,
+      "trades": 143,
+      "writeoffs": 6
+    },
+    {
+      "entryDelaySeconds": 3,
+      "holdSeconds": 60,
+      "period": "earlier",
+      "return": -0.08605029072845072,
+      "drawdownBound": -0.08752278868853236,
+      "trades": 105,
+      "writeoffs": 6
+    },
+    {
+      "entryDelaySeconds": 3,
+      "holdSeconds": 60,
+      "period": "later",
+      "return": -0.10328419663870092,
+      "drawdownBound": -0.10673567201694745,
+      "trades": 161,
+      "writeoffs": 9
+    },
+    {
+      "entryDelaySeconds": 3,
+      "holdSeconds": 90,
+      "period": "earlier",
+      "return": -0.07413000870289965,
+      "drawdownBound": -0.07562171186736855,
+      "trades": 132,
+      "writeoffs": 5
+    },
+    {
+      "entryDelaySeconds": 3,
+      "holdSeconds": 90,
+      "period": "later",
+      "return": -0.09075395476189518,
+      "drawdownBound": -0.09957785547258691,
+      "trades": 168,
+      "writeoffs": 8
+    },
+    {
+      "entryDelaySeconds": 3,
+      "holdSeconds": 120,
+      "period": "earlier",
+      "return": -0.057821413010318845,
+      "drawdownBound": -0.059339391552574394,
+      "trades": 127,
+      "writeoffs": 7
+    },
+    {
+      "entryDelaySeconds": 3,
+      "holdSeconds": 120,
+      "period": "later",
+      "return": -0.09759316575714305,
+      "drawdownBound": -0.11357268812025922,
+      "trades": 122,
+      "writeoffs": 8
+    },
+    {
+      "entryDelaySeconds": 3,
+      "holdSeconds": 180,
+      "period": "earlier",
+      "return": -0.0712268336845292,
+      "drawdownBound": -0.07453464508536178,
+      "trades": 123,
+      "writeoffs": 8
+    },
+    {
+      "entryDelaySeconds": 3,
+      "holdSeconds": 180,
+      "period": "later",
+      "return": -0.10373095281156564,
+      "drawdownBound": -0.10601520417192956,
+      "trades": 104,
+      "writeoffs": 8
+    },
+    {
+      "entryDelaySeconds": 5,
+      "holdSeconds": 5,
+      "period": "earlier",
+      "return": -0.11526400000000014,
+      "drawdownBound": -0.11526400000000014,
+      "trades": 187,
+      "writeoffs": 7
+    },
+    {
+      "entryDelaySeconds": 5,
+      "holdSeconds": 5,
+      "period": "later",
+      "return": -0.09544363425866476,
+      "drawdownBound": -0.0980761811317804,
+      "trades": 109,
+      "writeoffs": 7
+    },
+    {
+      "entryDelaySeconds": 5,
+      "holdSeconds": 10,
+      "period": "earlier",
+      "return": -0.11526400000000014,
+      "drawdownBound": -0.11529431355250563,
+      "trades": 136,
+      "writeoffs": 7
+    },
+    {
+      "entryDelaySeconds": 5,
+      "holdSeconds": 10,
+      "period": "later",
+      "return": -0.09708666826663115,
+      "drawdownBound": -0.09955232247573886,
+      "trades": 147,
+      "writeoffs": 7
+    },
+    {
+      "entryDelaySeconds": 5,
+      "holdSeconds": 15,
+      "period": "earlier",
+      "return": -0.10588753049304711,
+      "drawdownBound": -0.107645176742168,
+      "trades": 187,
+      "writeoffs": 7
+    },
+    {
+      "entryDelaySeconds": 5,
+      "holdSeconds": 15,
+      "period": "later",
+      "return": -0.09647271842213556,
+      "drawdownBound": -0.09983286030678973,
+      "trades": 95,
+      "writeoffs": 6
+    },
+    {
+      "entryDelaySeconds": 5,
+      "holdSeconds": 30,
+      "period": "earlier",
+      "return": -0.11526400000000014,
+      "drawdownBound": -0.1170032139858197,
+      "trades": 133,
+      "writeoffs": 10
+    },
+    {
+      "entryDelaySeconds": 5,
+      "holdSeconds": 30,
+      "period": "later",
+      "return": -0.09667626260081719,
+      "drawdownBound": -0.10258225231619422,
+      "trades": 190,
+      "writeoffs": 3
+    },
+    {
+      "entryDelaySeconds": 5,
+      "holdSeconds": 45,
+      "period": "earlier",
+      "return": -0.06870986990886263,
+      "drawdownBound": -0.07057900615562951,
+      "trades": 143,
+      "writeoffs": 3
+    },
+    {
+      "entryDelaySeconds": 5,
+      "holdSeconds": 45,
+      "period": "later",
+      "return": -0.09357166848059606,
+      "drawdownBound": -0.09774907883141148,
+      "trades": 198,
+      "writeoffs": 6
+    },
+    {
+      "entryDelaySeconds": 5,
+      "holdSeconds": 60,
+      "period": "earlier",
+      "return": -0.10157088412108495,
+      "drawdownBound": -0.10333701603343404,
+      "trades": 106,
+      "writeoffs": 7
+    },
+    {
+      "entryDelaySeconds": 5,
+      "holdSeconds": 60,
+      "period": "later",
+      "return": -0.09080625435765821,
+      "drawdownBound": -0.09720913511409923,
+      "trades": 166,
+      "writeoffs": 8
+    },
+    {
+      "entryDelaySeconds": 5,
+      "holdSeconds": 90,
+      "period": "earlier",
+      "return": -0.0828342744717494,
+      "drawdownBound": -0.08463723881043705,
+      "trades": 131,
+      "writeoffs": 5
+    },
+    {
+      "entryDelaySeconds": 5,
+      "holdSeconds": 90,
+      "period": "later",
+      "return": -0.08492330138729387,
+      "drawdownBound": -0.09309725634065547,
+      "trades": 180,
+      "writeoffs": 9
+    },
+    {
+      "entryDelaySeconds": 5,
+      "holdSeconds": 120,
+      "period": "earlier",
+      "return": -0.060743045933995043,
+      "drawdownBound": -0.06258943720866894,
+      "trades": 102,
+      "writeoffs": 6
+    },
+    {
+      "entryDelaySeconds": 5,
+      "holdSeconds": 120,
+      "period": "later",
+      "return": -0.10438410941724774,
+      "drawdownBound": -0.11380423535136253,
+      "trades": 106,
+      "writeoffs": 8
+    },
+    {
+      "entryDelaySeconds": 5,
+      "holdSeconds": 180,
+      "period": "earlier",
+      "return": -0.08313409068328648,
+      "drawdownBound": -0.08493646564328006,
+      "trades": 111,
+      "writeoffs": 8
+    },
+    {
+      "entryDelaySeconds": 5,
+      "holdSeconds": 180,
+      "period": "later",
+      "return": -0.08936048774240879,
+      "drawdownBound": -0.09380092403294671,
+      "trades": 90,
+      "writeoffs": 5
+    },
+    {
+      "entryDelaySeconds": 10,
+      "holdSeconds": 5,
+      "period": "earlier",
+      "return": -0.11526400000000014,
+      "drawdownBound": -0.11601387029548738,
+      "trades": 76,
+      "writeoffs": 9
+    },
+    {
+      "entryDelaySeconds": 10,
+      "holdSeconds": 5,
+      "period": "later",
+      "return": -0.09261213176996308,
+      "drawdownBound": -0.09273416938721823,
+      "trades": 142,
+      "writeoffs": 5
+    },
+    {
+      "entryDelaySeconds": 10,
+      "holdSeconds": 10,
+      "period": "earlier",
+      "return": -0.11083080827087499,
+      "drawdownBound": -0.11347066658124905,
+      "trades": 195,
+      "writeoffs": 7
+    },
+    {
+      "entryDelaySeconds": 10,
+      "holdSeconds": 10,
+      "period": "later",
+      "return": -0.09252826056858243,
+      "drawdownBound": -0.0934899740723546,
+      "trades": 103,
+      "writeoffs": 6
+    },
+    {
+      "entryDelaySeconds": 10,
+      "holdSeconds": 15,
+      "period": "earlier",
+      "return": -0.11344378741374017,
+      "drawdownBound": -0.11604727124353709,
+      "trades": 198,
+      "writeoffs": 6
+    },
+    {
+      "entryDelaySeconds": 10,
+      "holdSeconds": 15,
+      "period": "later",
+      "return": -0.08982301905936607,
+      "drawdownBound": -0.09202265880718119,
+      "trades": 86,
+      "writeoffs": 5
+    },
+    {
+      "entryDelaySeconds": 10,
+      "holdSeconds": 30,
+      "period": "earlier",
+      "return": -0.10859658454177135,
+      "drawdownBound": -0.11121361831558119,
+      "trades": 189,
+      "writeoffs": 9
+    },
+    {
+      "entryDelaySeconds": 10,
+      "holdSeconds": 30,
+      "period": "later",
+      "return": -0.08481198861136463,
+      "drawdownBound": -0.09106769528755232,
+      "trades": 153,
+      "writeoffs": 4
+    },
+    {
+      "entryDelaySeconds": 10,
+      "holdSeconds": 45,
+      "period": "earlier",
+      "return": -0.0725174449171676,
+      "drawdownBound": -0.07654593201637072,
+      "trades": 142,
+      "writeoffs": 5
+    },
+    {
+      "entryDelaySeconds": 10,
+      "holdSeconds": 45,
+      "period": "later",
+      "return": -0.08586757841102755,
+      "drawdownBound": -0.09269487709799906,
+      "trades": 121,
+      "writeoffs": 6
+    },
+    {
+      "entryDelaySeconds": 10,
+      "holdSeconds": 60,
+      "period": "earlier",
+      "return": -0.08603905547552071,
+      "drawdownBound": -0.08996268168837473,
+      "trades": 107,
+      "writeoffs": 7
+    },
+    {
+      "entryDelaySeconds": 10,
+      "holdSeconds": 60,
+      "period": "later",
+      "return": -0.08736394911934897,
+      "drawdownBound": -0.09568489396061852,
+      "trades": 137,
+      "writeoffs": 8
+    },
+    {
+      "entryDelaySeconds": 10,
+      "holdSeconds": 90,
+      "period": "earlier",
+      "return": -0.07719784250892858,
+      "drawdownBound": -0.08090537257530317,
+      "trades": 156,
+      "writeoffs": 6
+    },
+    {
+      "entryDelaySeconds": 10,
+      "holdSeconds": 90,
+      "period": "later",
+      "return": -0.08074993792933527,
+      "drawdownBound": -0.08475796271972857,
+      "trades": 127,
+      "writeoffs": 7
+    },
+    {
+      "entryDelaySeconds": 10,
+      "holdSeconds": 120,
+      "period": "earlier",
+      "return": -0.07182536293531494,
+      "drawdownBound": -0.07458089739912288,
+      "trades": 96,
+      "writeoffs": 8
+    },
+    {
+      "entryDelaySeconds": 10,
+      "holdSeconds": 120,
+      "period": "later",
+      "return": -0.08140897755732024,
+      "drawdownBound": -0.09241910473364845,
+      "trades": 147,
+      "writeoffs": 7
+    },
+    {
+      "entryDelaySeconds": 10,
+      "holdSeconds": 180,
+      "period": "earlier",
+      "return": -0.09862095919553115,
+      "drawdownBound": -0.10309195620011935,
+      "trades": 109,
+      "writeoffs": 9
+    },
+    {
+      "entryDelaySeconds": 10,
+      "holdSeconds": 180,
+      "period": "later",
+      "return": -0.08986749366668922,
+      "drawdownBound": -0.09320370432231406,
+      "trades": 103,
+      "writeoffs": 6
+    },
+    {
+      "entryDelaySeconds": 30,
+      "holdSeconds": 5,
+      "period": "earlier",
+      "return": -0.11192875328168428,
+      "drawdownBound": -0.11208731856887855,
+      "trades": 200,
+      "writeoffs": 6
+    },
+    {
+      "entryDelaySeconds": 30,
+      "holdSeconds": 5,
+      "period": "later",
+      "return": -0.09141102124574596,
+      "drawdownBound": -0.09298561949252526,
+      "trades": 176,
+      "writeoffs": 4
+    },
+    {
+      "entryDelaySeconds": 30,
+      "holdSeconds": 10,
+      "period": "earlier",
+      "return": -0.10308126751755198,
+      "drawdownBound": -0.10355827772875137,
+      "trades": 166,
+      "writeoffs": 5
+    },
+    {
+      "entryDelaySeconds": 30,
+      "holdSeconds": 10,
+      "period": "later",
+      "return": -0.08786635894065653,
+      "drawdownBound": -0.08804820819056569,
+      "trades": 174,
+      "writeoffs": 6
+    },
+    {
+      "entryDelaySeconds": 30,
+      "holdSeconds": 15,
+      "period": "earlier",
+      "return": -0.10408287733431076,
+      "drawdownBound": -0.10437279147247425,
+      "trades": 145,
+      "writeoffs": 8
+    },
+    {
+      "entryDelaySeconds": 30,
+      "holdSeconds": 15,
+      "period": "later",
+      "return": -0.08729089863040362,
+      "drawdownBound": -0.08912295458915498,
+      "trades": 173,
+      "writeoffs": 6
+    },
+    {
+      "entryDelaySeconds": 30,
+      "holdSeconds": 30,
+      "period": "earlier",
+      "return": -0.08345055977876992,
+      "drawdownBound": -0.08372744874953753,
+      "trades": 137,
+      "writeoffs": 6
+    },
+    {
+      "entryDelaySeconds": 30,
+      "holdSeconds": 30,
+      "period": "later",
+      "return": -0.09586237087215765,
+      "drawdownBound": -0.0977235487522532,
+      "trades": 202,
+      "writeoffs": 10
+    },
+    {
+      "entryDelaySeconds": 30,
+      "holdSeconds": 45,
+      "period": "earlier",
+      "return": -0.07580076315811479,
+      "drawdownBound": -0.07607996312730747,
+      "trades": 119,
+      "writeoffs": 8
+    },
+    {
+      "entryDelaySeconds": 30,
+      "holdSeconds": 45,
+      "period": "later",
+      "return": -0.09546609706474218,
+      "drawdownBound": -0.10507035882926097,
+      "trades": 143,
+      "writeoffs": 9
+    },
+    {
+      "entryDelaySeconds": 30,
+      "holdSeconds": 60,
+      "period": "earlier",
+      "return": -0.07710657662505382,
+      "drawdownBound": -0.07738538210887447,
+      "trades": 138,
+      "writeoffs": 5
+    },
+    {
+      "entryDelaySeconds": 30,
+      "holdSeconds": 60,
+      "period": "later",
+      "return": -0.10168131575222672,
+      "drawdownBound": -0.11284058366863503,
+      "trades": 161,
+      "writeoffs": 11
+    },
+    {
+      "entryDelaySeconds": 30,
+      "holdSeconds": 90,
+      "period": "earlier",
+      "return": -0.07461292861537261,
+      "drawdownBound": -0.07489248742858334,
+      "trades": 128,
+      "writeoffs": 6
+    },
+    {
+      "entryDelaySeconds": 30,
+      "holdSeconds": 90,
+      "period": "later",
+      "return": -0.08698047051998059,
+      "drawdownBound": -0.08986285048413523,
+      "trades": 97,
+      "writeoffs": 9
+    },
+    {
+      "entryDelaySeconds": 30,
+      "holdSeconds": 120,
+      "period": "earlier",
+      "return": -0.10244123465413435,
+      "drawdownBound": -0.10271238655476722,
+      "trades": 117,
+      "writeoffs": 8
+    },
+    {
+      "entryDelaySeconds": 30,
+      "holdSeconds": 120,
+      "period": "later",
+      "return": -0.0937172168208471,
+      "drawdownBound": -0.10221355289061262,
+      "trades": 114,
+      "writeoffs": 9
+    },
+    {
+      "entryDelaySeconds": 30,
+      "holdSeconds": 180,
+      "period": "earlier",
+      "return": -0.09433007751854905,
+      "drawdownBound": -0.09460367979430895,
+      "trades": 106,
+      "writeoffs": 6
+    },
+    {
+      "entryDelaySeconds": 30,
+      "holdSeconds": 180,
+      "period": "later",
+      "return": -0.09291313997101402,
+      "drawdownBound": -0.0990280253068323,
+      "trades": 106,
+      "writeoffs": 8
+    },
+    {
+      "entryDelaySeconds": 60,
+      "holdSeconds": 5,
+      "period": "earlier",
+      "return": -0.11465766284885415,
+      "drawdownBound": -0.11465766284885415,
+      "trades": 191,
+      "writeoffs": 6
+    },
+    {
+      "entryDelaySeconds": 60,
+      "holdSeconds": 5,
+      "period": "later",
+      "return": -0.09029011700389522,
+      "drawdownBound": -0.09057018030402786,
+      "trades": 80,
+      "writeoffs": 8
+    },
+    {
+      "entryDelaySeconds": 60,
+      "holdSeconds": 10,
+      "period": "earlier",
+      "return": -0.11526400000000014,
+      "drawdownBound": -0.11567915146532848,
+      "trades": 152,
+      "writeoffs": 8
+    },
+    {
+      "entryDelaySeconds": 60,
+      "holdSeconds": 10,
+      "period": "later",
+      "return": -0.09134557597494619,
+      "drawdownBound": -0.09265073812571378,
+      "trades": 101,
+      "writeoffs": 7
+    },
+    {
+      "entryDelaySeconds": 60,
+      "holdSeconds": 15,
+      "period": "earlier",
+      "return": -0.10643172723791705,
+      "drawdownBound": -0.10685102313839834,
+      "trades": 171,
+      "writeoffs": 8
+    },
+    {
+      "entryDelaySeconds": 60,
+      "holdSeconds": 15,
+      "period": "later",
+      "return": -0.0833877526843636,
+      "drawdownBound": -0.08597401557474005,
+      "trades": 97,
+      "writeoffs": 6
+    },
+    {
+      "entryDelaySeconds": 60,
+      "holdSeconds": 30,
+      "period": "earlier",
+      "return": -0.11526400000000014,
+      "drawdownBound": -0.11567915146532848,
+      "trades": 146,
+      "writeoffs": 9
+    },
+    {
+      "entryDelaySeconds": 60,
+      "holdSeconds": 30,
+      "period": "later",
+      "return": -0.08668085045528073,
+      "drawdownBound": -0.08853856190988685,
+      "trades": 159,
+      "writeoffs": 5
+    },
+    {
+      "entryDelaySeconds": 60,
+      "holdSeconds": 45,
+      "period": "earlier",
+      "return": -0.11056584942979542,
+      "drawdownBound": -0.11098320544438323,
+      "trades": 123,
+      "writeoffs": 9
+    },
+    {
+      "entryDelaySeconds": 60,
+      "holdSeconds": 45,
+      "period": "later",
+      "return": -0.09207861969135078,
+      "drawdownBound": -0.09651455421461486,
+      "trades": 84,
+      "writeoffs": 7
+    },
+    {
+      "entryDelaySeconds": 60,
+      "holdSeconds": 60,
+      "period": "earlier",
+      "return": -0.11520348979659756,
+      "drawdownBound": -0.11563280378236396,
+      "trades": 144,
+      "writeoffs": 8
+    },
+    {
+      "entryDelaySeconds": 60,
+      "holdSeconds": 60,
+      "period": "later",
+      "return": -0.09064323818475983,
+      "drawdownBound": -0.09381654810451245,
+      "trades": 71,
+      "writeoffs": 9
+    },
+    {
+      "entryDelaySeconds": 60,
+      "holdSeconds": 90,
+      "period": "earlier",
+      "return": -0.11526400000000014,
+      "drawdownBound": -0.11567915146532848,
+      "trades": 108,
+      "writeoffs": 11
+    },
+    {
+      "entryDelaySeconds": 60,
+      "holdSeconds": 90,
+      "period": "later",
+      "return": -0.08826787288809324,
+      "drawdownBound": -0.09882787403583948,
+      "trades": 93,
+      "writeoffs": 8
+    },
+    {
+      "entryDelaySeconds": 60,
+      "holdSeconds": 120,
+      "period": "earlier",
+      "return": -0.11526400000000014,
+      "drawdownBound": -0.11567915146532848,
+      "trades": 104,
+      "writeoffs": 10
+    },
+    {
+      "entryDelaySeconds": 60,
+      "holdSeconds": 120,
+      "period": "later",
+      "return": -0.0975761098452983,
+      "drawdownBound": -0.09990160509454671,
+      "trades": 80,
+      "writeoffs": 7
+    },
+    {
+      "entryDelaySeconds": 60,
+      "holdSeconds": 180,
+      "period": "earlier",
+      "return": -0.115258455669066,
+      "drawdownBound": -0.11567477078380528,
+      "trades": 97,
+      "writeoffs": 10
+    },
+    {
+      "entryDelaySeconds": 60,
+      "holdSeconds": 180,
+      "period": "later",
+      "return": -0.08685276910436512,
+      "drawdownBound": -0.09220545372882161,
+      "trades": 74,
+      "writeoffs": 7
+    }
+  ],
+  "historicalSearches": [
+    {
+      "label": "Short holds and chain filters",
+      "evaluations": 67200,
+      "evaluationUnit": "combinations",
+      "return": -0.020537456504103435,
+      "drawdownBound": -0.04466775264096323,
+      "trades": 15
+    },
+    {
+      "label": "Conditional entries",
+      "evaluations": 1705600,
+      "evaluationUnit": "combinations",
+      "return": -0.07036762781239059,
+      "drawdownBound": -0.11935447910044139,
+      "trades": 22
+    },
+    {
+      "label": "Reported liquidity and holder metrics",
+      "evaluations": 346320,
+      "evaluationUnit": "portfolio evaluations",
+      "return": -0.07275120762889242,
+      "drawdownBound": -0.07514803746398968,
+      "trades": 9
+    }
+  ],
+  "baselineAssumptions": {
+    "equityFraction": 0.01,
+    "saleProceedsHaircut": 0.05,
+    "dailyLossReserve": 0.04,
+    "onePosition": true,
+    "onePurchasePerContract": true,
+    "periodBoundary": "2026-10-19T00:00:00Z",
+    "maximumFillWaitSeconds": 10
+  },
+  "capReference": {
+    "entryDelaySeconds": 1,
+    "holdSeconds": 60,
+    "saleProceedsHaircut": 0.05,
+    "rows": [
+      {
+        "band": "3000-6000",
+        "observations": 22,
+        "contracts": 11,
+        "meanReturn": -0.2612617222581489,
+        "medianReturn": -0.2826016030064464,
+        "winRate": 0.36363636363636365
+      },
+      {
+        "band": "6000-10000",
+        "observations": 95,
+        "contracts": 53,
+        "meanReturn": -0.05799223822398513,
+        "medianReturn": -0.03881056480682965,
+        "winRate": 0.45263157894736844
+      },
+      {
+        "band": "10000-25000",
+        "observations": 262,
+        "contracts": 138,
+        "meanReturn": -0.08270823379126097,
+        "medianReturn": -0.08676740723736315,
+        "winRate": 0.3549618320610687
+      },
+      {
+        "band": "25000-50000",
+        "observations": 261,
+        "contracts": 140,
+        "meanReturn": -0.034119303801212274,
+        "medianReturn": -0.0329794766543664,
+        "winRate": 0.4674329501915709
+      },
+      {
+        "band": "50000-100000",
+        "observations": 130,
+        "contracts": 71,
+        "meanReturn": -0.09120876961713677,
+        "medianReturn": -0.07719738688058064,
+        "winRate": 0.33076923076923076
+      },
+      {
+        "band": "100000-250000",
+        "observations": 121,
+        "contracts": 63,
+        "meanReturn": -0.12874480756436915,
+        "medianReturn": -0.08969994032896667,
+        "winRate": 0.2809917355371901
+      },
+      {
+        "band": "250000-1e+06",
+        "observations": 58,
+        "contracts": 34,
+        "meanReturn": -0.11505049474963626,
+        "medianReturn": -0.08384235081454794,
+        "winRate": 0.1896551724137931
+      },
+      {
+        "band": "1e+06-inf",
+        "observations": 44,
+        "contracts": 22,
+        "meanReturn": -0.09194915715220525,
+        "medianReturn": -0.06186125409601695,
+        "winRate": 0.11363636363636363
+      }
+    ]
+  },
+  "callerReference": {
+    "rankedOn": "2026-10-16/2026-10-17",
+    "minimumObservationsEachPeriod": 5,
+    "entryDelaySeconds": 1,
+    "holdSeconds": 60,
+    "saleProceedsHaircut": 0.05,
+    "rows": [
+      {
+        "caller": "Caller 01",
+        "earlier": {
+          "observations": 6,
+          "meanReturn": 0.07832903509438359,
+          "medianReturn": 0.06513411474410136,
+          "winRate": 0.5,
+          "meanWithoutBest": -0.04507306723577111
+        },
+        "later": {
+          "observations": 15,
+          "meanReturn": -0.13935972401307228,
+          "medianReturn": -0.04443724276089012,
+          "winRate": 0.4,
+          "meanWithoutBest": -0.18046938038519983
+        }
+      },
+      {
+        "caller": "Caller 02",
+        "earlier": {
+          "observations": 7,
+          "meanReturn": 0.031198700030809108,
+          "medianReturn": 0.0964765296423471,
+          "winRate": 0.5714285714285714,
+          "meanWithoutBest": -0.013367895490244511
+        },
+        "later": {
+          "observations": 14,
+          "meanReturn": -0.05697342109047917,
+          "medianReturn": -0.05513379570303484,
+          "winRate": 0.21428571428571427,
+          "meanWithoutBest": -0.09412735242171452
+        }
+      },
+      {
+        "caller": "Caller 03",
+        "earlier": {
+          "observations": 5,
+          "meanReturn": 0.017030011430816817,
+          "medianReturn": 0.05307180970749159,
+          "winRate": 0.6,
+          "meanWithoutBest": -0.022658394621297456
+        },
+        "later": {
+          "observations": 5,
+          "meanReturn": 0.006516669004699738,
+          "medianReturn": -0.04446574543822068,
+          "winRate": 0.4,
+          "meanWithoutBest": -0.19326495175700903
+        }
+      },
+      {
+        "caller": "Caller 04",
+        "earlier": {
+          "observations": 40,
+          "meanReturn": -0.02840318807818918,
+          "medianReturn": -0.08359224468671034,
+          "winRate": 0.3,
+          "meanWithoutBest": -0.05496252111982782
+        },
+        "later": {
+          "observations": 61,
+          "meanReturn": -0.039149723709751276,
+          "medianReturn": -0.10227317271001668,
+          "winRate": 0.4098360655737705,
+          "meanWithoutBest": -0.06503872966873983
+        }
+      },
+      {
+        "caller": "Caller 05",
+        "earlier": {
+          "observations": 154,
+          "meanReturn": -0.05099121685528984,
+          "medianReturn": -0.05355396921237565,
+          "winRate": 0.37662337662337664,
+          "meanWithoutBest": -0.06685304497482894
+        },
+        "later": {
+          "observations": 305,
+          "meanReturn": -0.08149229524395314,
+          "medianReturn": -0.0785688027793443,
+          "winRate": 0.3704918032786885,
+          "meanWithoutBest": -0.08674125224748443
+        }
+      },
+      {
+        "caller": "Caller 06",
+        "earlier": {
+          "observations": 44,
+          "meanReturn": -0.07654234656322766,
+          "medianReturn": -0.0670861159993546,
+          "winRate": 0.3409090909090909,
+          "meanWithoutBest": -0.09902720149530328
+        },
+        "later": {
+          "observations": 88,
+          "meanReturn": -0.04189893297914105,
+          "medianReturn": -0.05780178574957384,
+          "winRate": 0.38636363636363635,
+          "meanWithoutBest": -0.051763807127818445
+        }
+      },
+      {
+        "caller": "Caller 07",
+        "earlier": {
+          "observations": 6,
+          "meanReturn": -0.07748387397512922,
+          "medianReturn": 0.0020960605940431587,
+          "winRate": 0.5,
+          "meanWithoutBest": -0.12081526075126156
+        },
+        "later": {
+          "observations": 5,
+          "meanReturn": -0.08467918880511535,
+          "medianReturn": -0.14681038957353365,
+          "winRate": 0.4,
+          "meanWithoutBest": -0.15338325401803976
+        }
+      },
+      {
+        "caller": "Caller 08",
+        "earlier": {
+          "observations": 7,
+          "meanReturn": -0.24160011468064654,
+          "medianReturn": -0.06823773553604606,
+          "winRate": 0.2857142857142857,
+          "meanWithoutBest": -0.29343396391321636
+        },
+        "later": {
+          "observations": 16,
+          "meanReturn": -0.011139544123607646,
+          "medianReturn": -0.029683085413801713,
+          "winRate": 0.4375,
+          "meanWithoutBest": -0.07631428546415879
+        }
+      },
+      {
+        "caller": "Caller 09",
+        "earlier": {
+          "observations": 6,
+          "meanReturn": -0.2653319310396937,
+          "medianReturn": -0.056034277916132746,
+          "winRate": 0.5,
+          "meanWithoutBest": -0.34248622494968395
+        },
+        "later": {
+          "observations": 18,
+          "meanReturn": -0.12661885018995783,
+          "medianReturn": -0.052979730642354506,
+          "winRate": 0.4444444444444444,
+          "meanWithoutBest": -0.1498639663178688
+        }
+      }
+    ]
+  },
+  "callerPolicies": [
+    {
+      "label": "Earlier saved choices",
+      "costs": [
+        {
+          "cost": 0.05,
+          "return": 0.026191994953738806,
+          "drawdownBound": -0.015508709952960054,
+          "trades": 10
+        },
+        {
+          "cost": 0.1,
+          "return": 0.019354253853054892,
+          "drawdownBound": -0.017081615588017574,
+          "trades": 10
+        },
+        {
+          "cost": 0.15,
+          "return": 0.012545079812560589,
+          "drawdownBound": -0.018651671901828593,
+          "trades": 10
+        }
+      ]
+    },
+    {
+      "label": "Sender history, smaller",
+      "costs": [
+        {
+          "cost": 0.05,
+          "return": 0.023838815639626088,
+          "drawdownBound": -0.009538350280298591,
+          "trades": 9
+        },
+        {
+          "cost": 0.1,
+          "return": 0.020053165076797885,
+          "drawdownBound": -0.009063934307253274,
+          "trades": 9
+        },
+        {
+          "cost": 0.15,
+          "return": 0.016273723223731107,
+          "drawdownBound": -0.009130638341412811,
+          "trades": 9
+        }
+      ]
+    },
+    {
+      "label": "Sender history, larger",
+      "costs": [
+        {
+          "cost": 0.05,
+          "return": 0.014154572327835124,
+          "drawdownBound": -0.013414609514533327,
+          "trades": 9
+        },
+        {
+          "cost": 0.1,
+          "return": 0.009203383889017314,
+          "drawdownBound": -0.014513493210591255,
+          "trades": 9
+        },
+        {
+          "cost": 0.15,
+          "return": 0.004266352028374554,
+          "drawdownBound": -0.015610558083969384,
+          "trades": 9
+        }
+      ]
+    },
+    {
+      "label": "Requester history, smaller",
+      "costs": [
+        {
+          "cost": 0.05,
+          "return": 0.014338617303874646,
+          "drawdownBound": -0.006441770322024087,
+          "trades": 8
+        },
+        {
+          "cost": 0.1,
+          "return": 0.011406727675679962,
+          "drawdownBound": -0.006840416236365332,
+          "trades": 8
+        },
+        {
+          "cost": 0.15,
+          "return": 0.008481582000458232,
+          "drawdownBound": -0.007317744210187271,
+          "trades": 8
+        }
+      ]
+    },
+    {
+      "label": "Requester history, larger",
+      "costs": [
+        {
+          "cost": 0.05,
+          "return": 0.030921734939611145,
+          "drawdownBound": -0.013173959898214238,
+          "trades": 9
+        },
+        {
+          "cost": 0.1,
+          "return": 0.025029122412424165,
+          "drawdownBound": -0.014903951311405539,
+          "trades": 9
+        },
+        {
+          "cost": 0.15,
+          "return": 0.019154023032061263,
+          "drawdownBound": -0.016631987137312065,
+          "trades": 9
+        }
+      ]
+    }
+  ],
+  "deciderPolicies": [
+    {
+      "label": "Raw Decider, smaller",
+      "costs": [
+        {
+          "cost": 0.05,
+          "return": 0.019581025234445715,
+          "drawdownBound": -0.00732657955114846,
+          "trades": 10
+        },
+        {
+          "cost": 0.1,
+          "return": 0.015448985680361016,
+          "drawdownBound": -0.008117584494686136,
+          "trades": 10
+        },
+        {
+          "cost": 0.15,
+          "return": 0.01132526604548989,
+          "drawdownBound": -0.00890794680452478,
+          "trades": 10
+        }
+      ]
+    },
+    {
+      "label": "Raw Decider, larger",
+      "costs": [
+        {
+          "cost": 0.05,
+          "return": 0.0030017767759022984,
+          "drawdownBound": -0.011947338829971454,
+          "trades": 9
+        },
+        {
+          "cost": 0.1,
+          "return": -0.000906699751282658,
+          "drawdownBound": -0.013495717981077626,
+          "trades": 9
+        },
+        {
+          "cost": 0.15,
+          "return": -0.004803463822864118,
+          "drawdownBound": -0.015042720853111202,
+          "trades": 9
+        }
+      ]
+    },
+    {
+      "label": "Calibrated Decider, smaller",
+      "costs": [
+        {
+          "cost": 0.05,
+          "return": 0.01455227473999976,
+          "drawdownBound": -0.00959690529012891,
+          "trades": 10
+        },
+        {
+          "cost": 0.1,
+          "return": 0.010229254124824116,
+          "drawdownBound": -0.011056392082463118,
+          "trades": 10
+        },
+        {
+          "cost": 0.15,
+          "return": 0.005914505175075302,
+          "drawdownBound": -0.012514709539873214,
+          "trades": 10
+        }
+      ]
+    },
+    {
+      "label": "Calibrated Decider, larger",
+      "costs": [
+        {
+          "cost": 0.05,
+          "return": 0.026242462400674293,
+          "drawdownBound": -0.01328459191594722,
+          "trades": 10
+        },
+        {
+          "cost": 0.1,
+          "return": 0.019873536147759774,
+          "drawdownBound": -0.014903951311405539,
+          "trades": 10
+        },
+        {
+          "cost": 0.15,
+          "return": 0.013527878237780122,
+          "drawdownBound": -0.016631987137312065,
+          "trades": 10
+        }
+      ]
+    }
+  ],
+  "poolComparison": {
+    "accounts": 54000,
+    "matchedAccounts": 48000,
+    "pairRemovals": 166400,
+    "opportunityUniverses": 5200,
+    "saleProceedsHaircut": 0.1,
+    "rows": [
+      {
+        "allocationMultiplier": 0.5,
+        "allPools": {
+          "minimumReturn": 0.007970136790649285,
+          "maximumDrawdownBound": -0.006419155524380216,
+          "minimumTrades": 8,
+          "minimumWithoutTwoBest": -0.0006485256423358621,
+          "minimumWithoutBestDay": 0.002882974335957744
+        },
+        "chosenPool": {
+          "minimumReturn": 0.007969937967416962,
+          "maximumDrawdownBound": -0.00641915784396363,
+          "minimumTrades": 8,
+          "minimumWithoutTwoBest": -0.0006487236647396699,
+          "minimumWithoutBestDay": 0.002882974335957744
+        },
+        "minimumAfterAnyPair": -0.0006487236647396699
+      },
+      {
+        "allocationMultiplier": 0.75,
+        "allPools": {
+          "minimumReturn": 0.011978758857112304,
+          "maximumDrawdownBound": -0.009414458552444604,
+          "minimumTrades": 8,
+          "minimumWithoutTwoBest": 0.00028328462096882667,
+          "minimumWithoutBestDay": 0.005023966595464557
+        },
+        "chosenPool": {
+          "minimumReturn": 0.0119785595779347,
+          "maximumDrawdownBound": -0.009414458552444604,
+          "minimumTrades": 8,
+          "minimumWithoutTwoBest": 0.00028308659856501883,
+          "minimumWithoutBestDay": 0.005023966595464557
+        },
+        "minimumAfterAnyPair": 0.00028308659856501883
+      }
+    ]
+  },
+  "saleCapacity": {
+    "baseAccounts": 10800,
+    "tradeUsages": 91800,
+    "distinctSaleCases": 9260,
+    "chosenPoolCasesAboveCapacity": 161,
+    "chosenPoolCasesWithHigherExitFee": 656
+  },
+  "sizing": {
+    "accounts": 63000,
+    "rows": [
+      {
+        "strength": 0.0,
+        "allocationMultiplier": 0.5,
+        "minimumReturn": 0.009260252436608551,
+        "maximumDrawdownBound": -0.013656818129948567,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.004362330843387663,
+        "minimumWithoutBestDay": 0.0013734026877059158
+      },
+      {
+        "strength": 0.0,
+        "allocationMultiplier": 0.75,
+        "minimumReturn": 0.0063150520076977745,
+        "maximumDrawdownBound": -0.016005595723860955,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.004532320389516564,
+        "minimumWithoutBestDay": -0.0013878131251290338
+      },
+      {
+        "strength": 0.25,
+        "allocationMultiplier": 0.5,
+        "minimumReturn": 0.010885158497807801,
+        "maximumDrawdownBound": -0.011611848434634142,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.004624123419974757,
+        "minimumWithoutBestDay": 0.0033976842027800824
+      },
+      {
+        "strength": 0.25,
+        "allocationMultiplier": 0.75,
+        "minimumReturn": 0.008271736720546485,
+        "maximumDrawdownBound": -0.014540436260128242,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.0044486681591205945,
+        "minimumWithoutBestDay": 0.0004760075485343851
+      },
+      {
+        "strength": 0.5,
+        "allocationMultiplier": 0.5,
+        "minimumReturn": 0.011384919991495268,
+        "maximumDrawdownBound": -0.009358341827575223,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.003767889614103126,
+        "minimumWithoutBestDay": 0.00576349501777873
+      },
+      {
+        "strength": 0.5,
+        "allocationMultiplier": 0.75,
+        "minimumReturn": 0.010119689872695625,
+        "maximumDrawdownBound": -0.012705229374370464,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.004364174708336055,
+        "minimumWithoutBestDay": 0.002339828222197804
+      },
+      {
+        "strength": 0.75,
+        "allocationMultiplier": 0.5,
+        "minimumReturn": 0.009377872886004113,
+        "maximumDrawdownBound": -0.0073818362391567804,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.0028232335945659326,
+        "minimumWithoutBestDay": 0.004695004165096828
+      },
+      {
+        "strength": 0.75,
+        "allocationMultiplier": 0.75,
+        "minimumReturn": 0.013377981535980688,
+        "maximumDrawdownBound": -0.010405952802608809,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.002592614063976595,
+        "minimumWithoutBestDay": 0.006534654867877743
+      },
+      {
+        "strength": 1.0,
+        "allocationMultiplier": 0.5,
+        "minimumReturn": 0.007315302338203766,
+        "maximumDrawdownBound": -0.006419155524380216,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.0012867098408108069,
+        "minimumWithoutBestDay": 0.002882974335957744
+      },
+      {
+        "strength": 1.0,
+        "allocationMultiplier": 0.75,
+        "minimumReturn": 0.010802607241023665,
+        "maximumDrawdownBound": -0.00943205805885472,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.0007392437206277247,
+        "minimumWithoutBestDay": 0.005023966595464557
+      },
+      {
+        "strength": 1.25,
+        "allocationMultiplier": 0.5,
+        "minimumReturn": 0.002560882977196588,
+        "maximumDrawdownBound": -0.0052787563599134835,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.0012071165083518132,
+        "minimumWithoutBestDay": -0.001128990536589547
+      },
+      {
+        "strength": 1.25,
+        "allocationMultiplier": 0.75,
+        "minimumReturn": 0.004151199801532668,
+        "maximumDrawdownBound": -0.007906323056385056,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.0014453467116578578,
+        "minimumWithoutBestDay": -0.0005007189992606298
+      },
+      {
+        "strength": 1.5,
+        "allocationMultiplier": 0.5,
+        "minimumReturn": 0.0030574377681693576,
+        "maximumDrawdownBound": -0.004257079148541787,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.0006694615504957424,
+        "minimumWithoutBestDay": -0.00025840589801573444
+      },
+      {
+        "strength": 1.5,
+        "allocationMultiplier": 0.75,
+        "minimumReturn": 0.004479769627992569,
+        "maximumDrawdownBound": -0.006377934644834382,
+        "minimumTrades": 8,
+        "minimumWithoutTwoBest": -0.00046777780922180323,
+        "minimumWithoutBestDay": 0.00037674383657693156
+      }
+    ]
+  },
+  "exitGrid": {
+    "newAccounts": 168000,
+    "vendorControls": 84000,
+    "settings": 56,
+    "passes": [
+      {
+        "priceSource": "vendor_candles",
+        "passingSettings": 26
+      },
+      {
+        "priceSource": "trade_prints",
+        "passingSettings": 12
+      },
+      {
+        "priceSource": "adverse_prints",
+        "passingSettings": 0
+      }
+    ]
+  },
+  "observationWindows": [
+    {
+      "startedAt": "2026-10-21T13:59:09.926Z",
+      "endedAt": "2026-10-21T14:29:09.932Z",
+      "signals": 30,
+      "eligibleCalls": 25,
+      "paperAccounts": 24,
+      "maximumTradesInAnyAccount": 0
+    },
+    {
+      "startedAt": "2026-10-21T14:53:17.549Z",
+      "endedAt": "2026-10-21T15:23:17.554Z",
+      "signals": 32,
+      "eligibleCalls": 22,
+      "paperAccounts": 24,
+      "maximumTradesInAnyAccount": 0
+    }
+  ],
+  "pairCache": {
+    "computedAccounts": 30700,
+    "pairs": 166400,
+    "identicalInputReuses": 135700
+  },
+  "sources": [
+    {
+      "study": "Corrected calls and short-hold baselines",
+      "sha256": "55973457c7bc8e2a4483b285450089388124c8f69295f3ca86333cf5d8507da3"
+    },
+    {
+      "study": "Conditional entry search",
+      "sha256": "22ba6dae4f7a6b715ee78a37d2ce90398d616403998bcab4571da316d961a072"
+    },
+    {
+      "study": "Reported token metrics",
+      "sha256": "2242598c076d69ca1d25391be41b716ebfba46b771c976c2bda76a6328f0b885"
+    },
+    {
+      "study": "Caller-history policies",
+      "sha256": "c869f3493800362e039b34fba87c6b9414fd23c03cdd511c08d86aefbdd5a9a9"
+    },
+    {
+      "study": "Decider with earlier activity and address context",
+      "sha256": "2d1653c581c009b3bf4989b676a2157284ec3822f66b8089a8c23ad299a1b6f6"
+    },
+    {
+      "study": "Pool routing",
+      "sha256": "e69f5d83e4d03710983db1537910f3c82e737c8dc5ad81ec18d7b8b92ed5371c"
+    },
+    {
+      "study": "Exhaustive token-pair removals",
+      "sha256": "0f592ba0e17234e2861af6fe27b5765b9ff512fb808357827d0bcebdad490cea"
+    },
+    {
+      "study": "Matched pool controls",
+      "sha256": "55d3565cc9be070a9494834ed471941b654d2b471f3de11c430361ea15db4f5a"
+    },
+    {
+      "study": "Sale-capacity diagnostic",
+      "sha256": "052ae3a25b9d6ea8b49a4e2e1e2ac585da89166e2ef13deccb1e0d8d2429c539"
+    },
+    {
+      "study": "Sizing response",
+      "sha256": "9901c23e7630ee7cc38de458e177f4481dffeb2fff8ea172113b1909dc40450f"
+    },
+    {
+      "study": "Exit grid across price sources",
+      "sha256": "ca1c4b860c14aebc71a2ca76214bee50a448b07886ab0095fc55a7ae343782f5"
+    },
+    {
+      "study": "Prospective observation 1",
+      "sha256": "0a78677528aed3bb0e23072c074a60880a95f744ab7f58cf5e427bffb236e785"
+    },
+    {
+      "study": "Prospective observation 2",
+      "sha256": "41fefefcec7b24447a92911737417a1d8ded005df42f58b1fbb94f0cc4354b52"
+    }
+  ]
+}

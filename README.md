@@ -73,3 +73,20 @@ bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+## Group trading research
+
+`/group-trading-is-minus-ev` is a prerendered research page. Its aggregate data and
+SVG figures live in `public/research/group-trading/`. The JSON includes source
+hashes; `manifest.json` hashes the public exports. The page does not fetch market
+data at runtime.
+
+To refresh the saved research snapshot from the local research workspace:
+
+```sh
+rtk python /home/nik/entryliquidity/analysis/ayugram-token-strategy/publish_group_research.py /home/nik/nik.technology
+rtk npm run generate
+```
+
+The exporter selects aggregate fields and anonymous caller labels explicitly.
+Update its snapshot inputs and the article together when publishing new results.
