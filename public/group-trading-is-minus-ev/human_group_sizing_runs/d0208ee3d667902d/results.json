@@ -1,0 +1,323 @@
+{
+  "path": "research/human_group_sizing_runs/d0208ee3d667902d",
+  "sourceHashes": {
+    "humanOnlyResults": "23c78185df8d2ec694f346bc761dc67facae39f45b86482df0fd2411322cfb4a",
+    "fixedControlSettings": "ba7fd62f80e05852b8b1bee39863c10d99c87f1fa203db548fbef0e04f903c15",
+    "datasetManifest": "de2de4e1bdc987640a6a45b887354de38ba95ff79f072a9b65f4a6035f146084",
+    "script": "cc0d731f4ae6d6a91fe3d45d3c8d2e983e63db7a4656402b7555c76236f1ab84",
+    "humanOnlyCode": "2ab745086684fdd4282fe80150d4dcb61a8538224e9fbb5717cb0f38edd0731a",
+    "referenceFilterCode": "7ffbe3052569e811b790374679477fcd20058ff93957f0999225b7482bdc6ab3",
+    "repeatDatasetCode": "4c1bf9f0a9765642180d4a6129e78bb2226e46000b0c5372b006411c2ed3b377",
+    "secondSearchCode": "4f22ef4e1bdd00c20fda0a2a6b48bd7ea13e32330182dcbb65c48e4632c320ac",
+    "researchDatasetCode": "ed998065623d76f5ef78eec13393dc832e44889e9709a6182b0663422050d803",
+    "secondEngine": "8bb9dee307d4cfc8b93784d703fe335214403a8aa2563e7e8765d2ea24cb3a9d",
+    "fixedReplay": "de8a20299f0992bd988706fc169612cadd72179baad2dc6fbe8374b62cf4530f"
+  },
+  "humanCalls": 766,
+  "distinctHumanReferenceTokens": 520,
+  "predictiveQuartiles": [
+    {
+      "period": "all",
+      "recentScoreQuartile": 1,
+      "tokens": 117,
+      "meanRecentScore": -0.3859674347808757,
+      "meanNextTokenReturn": -0.14207919983911865,
+      "nextTokenWinRate": 0.3162393162393162
+    },
+    {
+      "period": "all",
+      "recentScoreQuartile": 2,
+      "tokens": 117,
+      "meanRecentScore": -0.22639222290445876,
+      "meanNextTokenReturn": -0.1864723929294366,
+      "nextTokenWinRate": 0.28205128205128205
+    },
+    {
+      "period": "all",
+      "recentScoreQuartile": 3,
+      "tokens": 116,
+      "meanRecentScore": -0.13431980630907048,
+      "meanNextTokenReturn": -0.190970667994799,
+      "nextTokenWinRate": 0.33620689655172414
+    },
+    {
+      "period": "all",
+      "recentScoreQuartile": 4,
+      "tokens": 116,
+      "meanRecentScore": -0.011265725489221928,
+      "meanNextTokenReturn": -0.24099192589973842,
+      "nextTokenWinRate": 0.2413793103448276
+    },
+    {
+      "period": "later",
+      "recentScoreQuartile": 1,
+      "tokens": 64,
+      "meanRecentScore": -0.36671693048401893,
+      "meanNextTokenReturn": -0.14083815051635695,
+      "nextTokenWinRate": 0.28125
+    },
+    {
+      "period": "later",
+      "recentScoreQuartile": 2,
+      "tokens": 64,
+      "meanRecentScore": -0.21375310737631403,
+      "meanNextTokenReturn": -0.13654761884010058,
+      "nextTokenWinRate": 0.3125
+    },
+    {
+      "period": "later",
+      "recentScoreQuartile": 3,
+      "tokens": 64,
+      "meanRecentScore": -0.1312106729986507,
+      "meanNextTokenReturn": -0.17599358969677933,
+      "nextTokenWinRate": 0.359375
+    },
+    {
+      "period": "later",
+      "recentScoreQuartile": 4,
+      "tokens": 63,
+      "meanRecentScore": -0.02725124808230098,
+      "meanNextTokenReturn": -0.29240804491312317,
+      "nextTokenWinRate": 0.20634920634920634
+    }
+  ],
+  "scoreCoverage": {
+    "60s_last_10_ref0": {
+      "atLeastFive": 757,
+      "medianCount": 10.0
+    },
+    "60s_last_10_ref10": {
+      "atLeastFive": 757,
+      "medianCount": 10.0
+    },
+    "60s_last_20_ref0": {
+      "atLeastFive": 757,
+      "medianCount": 20.0
+    },
+    "60s_last_20_ref10": {
+      "atLeastFive": 757,
+      "medianCount": 20.0
+    },
+    "60s_60m_ref0": {
+      "atLeastFive": 483,
+      "medianCount": 6.0
+    },
+    "60s_60m_ref10": {
+      "atLeastFive": 483,
+      "medianCount": 6.0
+    },
+    "60s_360m_ref0": {
+      "atLeastFive": 743,
+      "medianCount": 28.0
+    },
+    "60s_360m_ref10": {
+      "atLeastFive": 743,
+      "medianCount": 28.0
+    },
+    "180s_last_10_ref0": {
+      "atLeastFive": 757,
+      "medianCount": 10.0
+    },
+    "180s_last_10_ref10": {
+      "atLeastFive": 757,
+      "medianCount": 10.0
+    },
+    "180s_last_20_ref0": {
+      "atLeastFive": 757,
+      "medianCount": 20.0
+    },
+    "180s_last_20_ref10": {
+      "atLeastFive": 757,
+      "medianCount": 20.0
+    },
+    "180s_60m_ref0": {
+      "atLeastFive": 481,
+      "medianCount": 6.0
+    },
+    "180s_60m_ref10": {
+      "atLeastFive": 481,
+      "medianCount": 6.0
+    },
+    "180s_360m_ref0": {
+      "atLeastFive": 744,
+      "medianCount": 28.0
+    },
+    "180s_360m_ref10": {
+      "atLeastFive": 744,
+      "medianCount": 28.0
+    }
+  },
+  "fresh": {
+    "policies": 70,
+    "rows": 280,
+    "highlight": [
+      {
+        "label": "daily: flat full",
+        "procedure": "daily",
+        "saleHaircut": 0.1,
+        "sizing": "flat_100",
+        "return": -0.11525589303337513,
+        "drawdownBound": -0.11525589303337513,
+        "trades": 67,
+        "stake": 49.51509402711933,
+        "zeroHaircutReturn": -0.1149497944222867
+      },
+      {
+        "label": "daily: flat quarter",
+        "procedure": "daily",
+        "saleHaircut": 0.1,
+        "sizing": "flat_025",
+        "return": -0.07979345329910681,
+        "drawdownBound": -0.07979345329910681,
+        "trades": 83,
+        "stake": 46.68396172560481,
+        "zeroHaircutReturn": -0.03902096339464867
+      },
+      {
+        "label": "daily: best recent-score grid",
+        "procedure": "daily",
+        "saleHaircut": 0.1,
+        "sizing": "180s_360m_ref10_linear_4",
+        "return": -0.09476451004043651,
+        "drawdownBound": -0.09476451004043651,
+        "trades": 83,
+        "stake": 42.909230323836965,
+        "zeroHaircutReturn": -0.05814255693716608
+      },
+      {
+        "label": "guarded: flat full",
+        "procedure": "guarded",
+        "saleHaircut": 0.1,
+        "sizing": "flat_100",
+        "return": -0.07438860623447086,
+        "drawdownBound": -0.07851255787233813,
+        "trades": 52,
+        "stake": 33.954203861727024,
+        "zeroHaircutReturn": -0.06024541870751987
+      },
+      {
+        "label": "guarded: flat quarter",
+        "procedure": "guarded",
+        "saleHaircut": 0.1,
+        "sizing": "flat_025",
+        "return": -0.031004325328153337,
+        "drawdownBound": -0.03209829055708646,
+        "trades": 52,
+        "stake": 15.506402574800017,
+        "zeroHaircutReturn": -0.01733554712175267
+      },
+      {
+        "label": "guarded: best recent-score grid",
+        "procedure": "guarded",
+        "saleHaircut": 0.1,
+        "sizing": "180s_360m_ref10_step",
+        "return": -0.033650963282905955,
+        "drawdownBound": -0.03688806702250247,
+        "trades": 52,
+        "stake": 17.704824507287647,
+        "zeroHaircutReturn": -0.01786285573828339
+      }
+    ],
+    "best": {
+      "daily": {
+        "procedure": "daily",
+        "saleHaircut": 0.1,
+        "sizing": "180s_360m_ref10_linear_4",
+        "return": -0.09476451004043651,
+        "drawdownBound": -0.09476451004043651,
+        "trades": 83,
+        "stake": 42.909230323836965
+      },
+      "guarded": {
+        "procedure": "guarded",
+        "saleHaircut": 0.1,
+        "sizing": "180s_360m_ref10_step",
+        "return": -0.033650963282905955,
+        "drawdownBound": -0.03688806702250247,
+        "trades": 52,
+        "stake": 17.704824507287647
+      }
+    }
+  },
+  "fixed": {
+    "policies": 70,
+    "rows": 14000,
+    "scenariosPerPolicyCost": 100,
+    "highlight": [
+      {
+        "label": "existing group score",
+        "sizing": "existing_group_size",
+        "saleHaircut": 0.1,
+        "worstReturn": 0.014819927736001048,
+        "bestReturn": 0.02611243604035085,
+        "worstDrawdownBound": -0.009432057917329262,
+        "fewestTrades": 7,
+        "leastStake": 3.1865269533588463,
+        "mostStake": 6.260128214628392,
+        "zeroHaircutWorstReturn": 0.022417887036512596,
+        "worstWithoutTwoBest": 0.002691537938469324,
+        "worstWithoutBestDay": 0.007233371658098342
+      },
+      {
+        "label": "no recent group factor",
+        "sizing": "flat_100",
+        "saleHaircut": 0.1,
+        "worstReturn": 0.012843074113313424,
+        "bestReturn": 0.02987925802768565,
+        "worstDrawdownBound": -0.015951287259979963,
+        "fewestTrades": 7,
+        "leastStake": 5.2856085054029895,
+        "mostStake": 9.888687830597178,
+        "zeroHaircutWorstReturn": 0.024678386573725675,
+        "worstWithoutTwoBest": -0.001446111374294956,
+        "worstWithoutBestDay": 0.004028177590655879
+      },
+      {
+        "label": "flat half factor",
+        "sizing": "flat_050",
+        "saleHaircut": 0.1,
+        "worstReturn": 0.017255945441378095,
+        "bestReturn": 0.025033869709674583,
+        "worstDrawdownBound": -0.010175931914649938,
+        "fewestTrades": 7,
+        "leastStake": 4.237400806135325,
+        "mostStake": 7.151272310176605,
+        "zeroHaircutWorstReturn": 0.02435411651631103,
+        "worstWithoutTwoBest": -0.0015560157706143718,
+        "worstWithoutBestDay": 0.008293157764254433
+      },
+      {
+        "label": "best recent-score grid",
+        "sizing": "180s_last_10_ref10_linear_2",
+        "saleHaircut": 0.1,
+        "worstReturn": 0.020776952310583408,
+        "bestReturn": 0.03263119017155769,
+        "worstDrawdownBound": -0.011178334450484106,
+        "fewestTrades": 7,
+        "leastStake": 4.112403757253534,
+        "mostStake": 8.860056855948079,
+        "zeroHaircutWorstReturn": 0.03072224681522817,
+        "worstWithoutTwoBest": 0.0015017668814321095,
+        "worstWithoutBestDay": 0.008777589936022068
+      }
+    ],
+    "best": {
+      "sizing": "180s_last_10_ref10_linear_2",
+      "saleHaircut": 0.1,
+      "worstReturn": 0.020776952310583408,
+      "bestReturn": 0.03263119017155769,
+      "worstDrawdownBound": -0.011178334450484106,
+      "fewestTrades": 7,
+      "leastStake": 4.112403757253534,
+      "mostStake": 8.860056855948079
+    },
+    "stakeComparison": {
+      "scenarios": 100,
+      "higherAccountReturnCases": 100,
+      "higherProfitPerStakeCases": 49,
+      "bestMedianStake": 6.826686400941298,
+      "existingMedianStake": 5.182439818773168
+    }
+  },
+  "interpretation": "All recent-score maxima are post hoc over correlated sizing variants on previously examined dates. Flat-size controls expose risk reduction from trading less."
+}
