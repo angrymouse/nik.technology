@@ -44,24 +44,34 @@ The full saved size grid also includes 2% and 4% budgets.</p>
 <h2>Human-only Decider check</h2><p>576 human calls received fresh market-only model scores. Among 54 later-period combinations, 0 had a positive account return. <a href="human_decider_runs/78971372149f2c54e246/report.html">Detailed gates, sizes and exits</a>.</p>
 <h2>Recent group performance and position size</h2>
 <p>This additional human-only replay sizes positions using the last 10 or 20 completed calls on other tokens,
-or calls completed within the preceding one or six hours. It compares 64 recent-score rules with constant-size
+or calls completed within the preceding one or six hours. It compares 144
+recent-score rules, including 96 reversal variants, with constant-size
 controls, using only information available at each target call's first quote.</p>
 <div class="scroll"><table><tr><th>Fresh daily procedure and sizing</th><th>Return, 0% haircut</th>
-<th>Return, 10% haircut</th><th>Drawdown bound, 10%</th></tr><tr><td>daily: flat full</td><td>-11.49%</td><td>-11.53%</td><td>11.53%</td></tr><tr><td>daily: flat quarter</td><td>-3.90%</td><td>-7.98%</td><td>7.98%</td></tr><tr><td>daily: best recent-score grid</td><td>-5.81%</td><td>-9.48%</td><td>9.48%</td></tr><tr><td>guarded: flat full</td><td>-6.02%</td><td>-7.44%</td><td>7.85%</td></tr><tr><td>guarded: flat quarter</td><td>-1.73%</td><td>-3.10%</td><td>3.21%</td></tr><tr><td>guarded: best recent-score grid</td><td>-1.79%</td><td>-3.37%</td><td>3.69%</td></tr></table></div>
+<th>Return, 10% haircut</th><th>Drawdown bound, 10%</th></tr><tr><td>daily: flat full</td><td>-11.49%</td><td>-11.53%</td><td>11.53%</td></tr><tr><td>daily: flat quarter</td><td>-3.90%</td><td>-7.98%</td><td>7.98%</td></tr><tr><td>daily: flat one-and-a-quarter</td><td>-11.50%</td><td>-11.53%</td><td>11.53%</td></tr><tr><td>daily: best reversal grid</td><td>-11.50%</td><td>-11.53%</td><td>11.53%</td></tr><tr><td>daily: best recent-score grid</td><td>-5.81%</td><td>-9.48%</td><td>9.48%</td></tr><tr><td>guarded: flat full</td><td>-6.02%</td><td>-7.44%</td><td>7.85%</td></tr><tr><td>guarded: flat quarter</td><td>-1.73%</td><td>-3.10%</td><td>3.21%</td></tr><tr><td>guarded: flat one-and-a-quarter</td><td>-6.74%</td><td>-7.84%</td><td>8.35%</td></tr><tr><td>guarded: best reversal grid</td><td>-5.33%</td><td>-7.08%</td><td>7.10%</td></tr><tr><td>guarded: best recent-score grid</td><td>-1.79%</td><td>-3.37%</td><td>3.69%</td></tr></table></div>
 <p>On the inherited five-minute fixed rule, the existing group sizing returns at least
 +1.48% across the saved execution scenarios at a 10% haircut.
-The best of 64 additional recent-score variants returns at least +2.08%,
+The best of 144 additional recent-score variants returns at least +2.08%,
 but its drawdown bound reaches 1.12% against
 0.94% for the existing factor. After removing the two best tokens,
 the respective worst returns are +0.15% and
 +0.27%. The new variant stakes more, and its profit per dollar staked
 exceeds the existing factor in only 49 of
 100 scenarios.</p>
+<p>Gradually raising size as the group does worse has weak support here. The best reversal variant on the
+guarded daily procedure returns -7.08% at a 10% sale haircut versus
+-7.44% for flat full size; both lose. On the inherited fixed rule, the best reversal
+variant returns at least +1.29% versus +1.48% for its existing
+size factor, with drawdown bounds of 1.60% and
+0.94% respectively. Its median stake is 7.88
+versus 8.11 for flat full size, and it beats that flat rule's account return in
+only 22 of 100 execution cases.
+The gentler slopes and zero-haircut results are in the linked detail.</p>
 <p>Among later first human calls with enough history, the next-token mean was
 -14.08% in the lowest recent-score quartile and
 -29.24% in the highest. A better recent group score did not predict
 better next-token returns in this sample. The sizing grid was searched on previously examined dates.
-<a href="human_group_sizing_runs/d0208ee3d667902d/report.html">Full rules, zero-cost comparison and scenario replays</a>.</p>
+<a href="human_group_sizing_runs/b8b22051898a3e0f/report.html">Full rules, zero-cost comparison and scenario replays</a>.</p>
 <h2>Historical caller ranking</h2>
 <p>Anonymous labels rank human authors with at least five prior distinct tokens at the final day's start.
 Outcomes use a three-minute observed exit, a 10% haircut, and shrinkage toward earlier peer returns. The

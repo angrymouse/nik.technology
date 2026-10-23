@@ -1,0 +1,59 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Recent group performance and trade size</title><style>
+body{font:16px/1.65 system-ui;margin:40px auto;max-width:1150px;padding:0 24px;color:#172231;background:#fff}
+h1,h2{line-height:1.2}table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:10px 12px;border-bottom:1px solid #d6dfe9}
+th{background:#eef3f8}a{color:#1459ac}.scroll{overflow-x:auto}</style>
+<h1>Recent group performance and trade size</h1>
+<p>Scope: 766 human-authored eligible calls across three replay days, with
+520 distinct tokens first called by a human. A group score uses the
+first eligible human call per other token, an observed
+60- or 180-second sale, and at least five completed reference outcomes. It is frozen at the target call's
+first quote; unfinished outcomes and the target token are excluded. Scores use the last 10 or 20 completed
+tokens, or the preceding one or six hours. The replay varies the group score's sale haircut, size mapping,
+and trade sale haircut. There are 144 score rules, including
+96 reversal rules. These dates were already examined, so the best variant is post hoc.</p>
+<p>The next table groups first human calls by the last ten completed three-minute reference outcomes.
+It measures whether a better recent group score preceded a better return on the next token. It is a
+descriptive full-sample check, not a trade-sized account replay.</p>
+<div class="scroll"><table><tr><th>Period</th><th>Recent-score quartile</th><th>Tokens</th>
+<th>Mean recent score</th><th>Mean next-token return</th></tr><tr><td>all</td><td>1</td><td>117</td><td>-38.60%</td><td>-14.21%</td></tr><tr><td>all</td><td>2</td><td>117</td><td>-22.64%</td><td>-18.65%</td></tr><tr><td>all</td><td>3</td><td>116</td><td>-13.43%</td><td>-19.10%</td></tr><tr><td>all</td><td>4</td><td>116</td><td>-1.13%</td><td>-24.10%</td></tr><tr><td>later</td><td>1</td><td>64</td><td>-36.67%</td><td>-14.08%</td></tr><tr><td>later</td><td>2</td><td>64</td><td>-21.38%</td><td>-13.65%</td></tr><tr><td>later</td><td>3</td><td>64</td><td>-13.12%</td><td>-17.60%</td></tr><tr><td>later</td><td>4</td><td>63</td><td>-2.73%</td><td>-29.24%</td></tr></table></div>
+<h2>Reversal slope on one common score</h2>
+<p>This table fixes the score to the last ten completed 180-second human-token returns, with no haircut
+on those reference returns. A reversal slope of k multiplies size by 1 - k × mean recent return.
+The 0.25 and 0.5 slopes are capped at 0.75–1.25×, slope 1 at 0.5–1.5×, and slope 2 at 0.25–1.5×.
+Loss-only slopes leave size at 1× after a positive score and rise after a negative score, capped at
+1.25× or 1.5×. Missing scores use 1×. Account return includes each procedure's loss budget.</p>
+<div class="scroll"><table><tr><th>Size rule</th><th>Daily, 0%</th><th>Daily, 10%</th>
+<th>Guarded, 0%</th><th>Guarded, 10%</th><th>Fixed worst, 0%</th><th>Fixed worst, 10%</th>
+<th>Fixed drawdown bound, 10%</th><th>Fixed median stake, 10%</th></tr><tr><td>flat full</td><td>-11.49%</td><td>-11.53%</td><td>-6.02%</td><td>-7.44%</td><td>+2.47%</td><td>+1.28%</td><td>1.60%</td><td>8.11</td></tr><tr><td>reversal slope 0.25</td><td>-11.50%</td><td>-11.53%</td><td>-5.95%</td><td>-7.39%</td><td>+2.40%</td><td>+1.25%</td><td>1.66%</td><td>8.17</td></tr><tr><td>reversal slope 0.5</td><td>-11.50%</td><td>-11.53%</td><td>-5.86%</td><td>-7.35%</td><td>+2.34%</td><td>+1.26%</td><td>1.73%</td><td>8.14</td></tr><tr><td>reversal slope 1</td><td>-11.50%</td><td>-11.53%</td><td>-5.70%</td><td>-7.26%</td><td>+2.21%</td><td>+1.24%</td><td>1.87%</td><td>8.32</td></tr><tr><td>reversal slope 2</td><td>-11.50%</td><td>-11.53%</td><td>-5.33%</td><td>-7.08%</td><td>+2.13%</td><td>+1.18%</td><td>1.99%</td><td>8.13</td></tr><tr><td>loss-only slope 0.5</td><td>-11.50%</td><td>-11.53%</td><td>-6.04%</td><td>-7.45%</td><td>+2.34%</td><td>+1.25%</td><td>1.73%</td><td>8.27</td></tr><tr><td>loss-only slope 1</td><td>-11.50%</td><td>-11.53%</td><td>-6.04%</td><td>-7.45%</td><td>+2.21%</td><td>+1.23%</td><td>1.87%</td><td>8.32</td></tr></table></div>
+<h2>Fresh human-only daily rules</h2>
+<p>The rows below show zero and 10% sale haircuts. Total stake is the sum of simulated position sizes from a $100
+starting account; it helps distinguish signal timing from simply taking less risk. The two saved entry/exit
+procedures stay fixed. Group scores change only position size.</p>
+<div class="scroll"><table><tr><th>Rule and sizing</th><th>Return, 0%</th><th>Return, 10%</th>
+<th>Drawdown bound, 10%</th><th>Trades, 10%</th><th>Total stake, 10%</th></tr><tr><td>daily: flat full</td><td>-11.49%</td><td>-11.53%</td><td>11.53%</td><td>67</td><td>49.52</td></tr><tr><td>daily: flat quarter</td><td>-3.90%</td><td>-7.98%</td><td>7.98%</td><td>83</td><td>46.68</td></tr><tr><td>daily: flat one-and-a-quarter</td><td>-11.50%</td><td>-11.53%</td><td>11.53%</td><td>65</td><td>47.53</td></tr><tr><td>daily: best reversal grid</td><td>-11.50%</td><td>-11.53%</td><td>11.53%</td><td>66</td><td>49.67</td></tr><tr><td>daily: best recent-score grid</td><td>-5.81%</td><td>-9.48%</td><td>9.48%</td><td>83</td><td>42.91</td></tr><tr><td>guarded: flat full</td><td>-6.02%</td><td>-7.44%</td><td>7.85%</td><td>52</td><td>33.95</td></tr><tr><td>guarded: flat quarter</td><td>-1.73%</td><td>-3.10%</td><td>3.21%</td><td>52</td><td>15.51</td></tr><tr><td>guarded: flat one-and-a-quarter</td><td>-6.74%</td><td>-7.84%</td><td>8.35%</td><td>47</td><td>34.27</td></tr><tr><td>guarded: best reversal grid</td><td>-5.33%</td><td>-7.08%</td><td>7.10%</td><td>52</td><td>36.33</td></tr><tr><td>guarded: best recent-score grid</td><td>-1.79%</td><td>-3.37%</td><td>3.69%</td><td>52</td><td>17.70</td></tr></table></div>
+<h2>Inherited five-minute fixed rule</h2>
+<p>This rule already scales its first two days with recent human reference outcomes. The comparison keeps
+its entry filters, stage-three volatility factor, 3× exit, and three-quarter allocation multiplier.
+Each row is the worst of 25 execution scenarios and two human-entry populations for each of two human-only
+reference definitions, at a 10% sale haircut. Replacing the existing group factor only changes the first
+two days' size. The rule's settings were chosen in earlier research.</p>
+<div class="scroll"><table><tr><th>Group sizing</th><th>Worst return, 0%</th><th>Worst return, 10%</th><th>Worst drawdown bound, 10%</th>
+<th>Fewest trades</th><th>Worst without two best tokens</th><th>Worst without best day</th></tr><tr><td>existing group score</td><td>+2.24%</td><td>+1.48%</td><td>0.94%</td><td>7</td><td>+0.27%</td><td>+0.72%</td></tr><tr><td>no recent group factor</td><td>+2.47%</td><td>+1.28%</td><td>1.60%</td><td>7</td><td>-0.14%</td><td>+0.40%</td></tr><tr><td>flat half factor</td><td>+2.44%</td><td>+1.73%</td><td>1.02%</td><td>7</td><td>-0.16%</td><td>+0.83%</td></tr><tr><td>flat one-and-a-quarter factor</td><td>+2.28%</td><td>+1.24%</td><td>1.79%</td><td>7</td><td>-0.15%</td><td>+0.37%</td></tr><tr><td>flat one-and-a-half factor</td><td>+2.13%</td><td>+1.16%</td><td>1.99%</td><td>7</td><td>-0.15%</td><td>+0.37%</td></tr><tr><td>best reversal grid</td><td>+2.47%</td><td>+1.29%</td><td>1.60%</td><td>7</td><td>-0.14%</td><td>+0.40%</td></tr><tr><td>best recent-score grid</td><td>+3.07%</td><td>+2.08%</td><td>1.12%</td><td>7</td><td>+0.15%</td><td>+0.88%</td></tr></table></div>
+<p>The post hoc best variant has higher account return than the inherited size rule in
+100 of 100 scenarios, but higher
+profit per dollar staked in only 49.
+Its median total stake is 6.83 against
+5.18. Its profit advantage does not establish a better group signal.</p>
+<p>The best reversal rule in this grid has median total stake 7.88, close to
+8.11 for a flat 1× size. Against that flat rule it has higher account return
+in 22 of 100 matched execution cases
+and higher profit per dollar staked in 26.
+Against the inherited group factor, it has higher account return in
+48 cases and higher profit per dollar staked in
+0. The median absolute stake gap against the
+flat rule is 0.23 on the $100 starting account.</p>
+<p><a href="results.json">Summary and policy definitions</a> · <a href="fresh_rows.csv">Fresh-rule grid</a> ·
+<a href="fixed_rows.csv">Fixed-rule scenario grid</a> · <a href="fixed_concentration.csv">Winner-removal replays</a> ·
+<a href="settings.json">Input hashes</a> ·
+<a href="../../human_group_sizing_lab.py">Replay code</a></p></html>

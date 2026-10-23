@@ -1,10 +1,10 @@
 {
-  "path": "research/human_group_sizing_runs/d0208ee3d667902d",
+  "path": "research/human_group_sizing_runs/b8b22051898a3e0f",
   "sourceHashes": {
     "humanOnlyResults": "23c78185df8d2ec694f346bc761dc67facae39f45b86482df0fd2411322cfb4a",
     "fixedControlSettings": "ba7fd62f80e05852b8b1bee39863c10d99c87f1fa203db548fbef0e04f903c15",
     "datasetManifest": "de2de4e1bdc987640a6a45b887354de38ba95ff79f072a9b65f4a6035f146084",
-    "script": "cc0d731f4ae6d6a91fe3d45d3c8d2e983e63db7a4656402b7555c76236f1ab84",
+    "script": "3672938b872e765eddcd62874fd27fc4913c2d2d82d9785e1d3cde342488f866",
     "humanOnlyCode": "2ab745086684fdd4282fe80150d4dcb61a8538224e9fbb5717cb0f38edd0731a",
     "referenceFilterCode": "7ffbe3052569e811b790374679477fcd20058ff93957f0999225b7482bdc6ab3",
     "repeatDatasetCode": "4c1bf9f0a9765642180d4a6129e78bb2226e46000b0c5372b006411c2ed3b377",
@@ -81,6 +81,92 @@
       "nextTokenWinRate": 0.20634920634920634
     }
   ],
+  "reversalSlopeComparison": [
+    {
+      "label": "flat full",
+      "sizing": "flat_100",
+      "dailyZeroReturn": -0.1149497944222867,
+      "dailyTenReturn": -0.11525589303337513,
+      "guardedZeroReturn": -0.06024541870751987,
+      "guardedTenReturn": -0.07438860623447086,
+      "fixedZeroWorstReturn": 0.024678386573725675,
+      "fixedTenWorstReturn": 0.012843074113313424,
+      "fixedTenWorstDrawdown": -0.015951287259979963,
+      "fixedTenMedianStake": 8.111421721232954
+    },
+    {
+      "label": "reversal slope 0.25",
+      "sizing": "180s_last_10_ref0_reverse_025",
+      "dailyZeroReturn": -0.1149638223633026,
+      "dailyTenReturn": -0.11525628746043182,
+      "guardedZeroReturn": -0.059473288554292014,
+      "guardedTenReturn": -0.0739363454827181,
+      "fixedZeroWorstReturn": 0.0240354069757438,
+      "fixedTenWorstReturn": 0.012526580754317784,
+      "fixedTenWorstDrawdown": -0.01663807174469578,
+      "fixedTenMedianStake": 8.174066453353248
+    },
+    {
+      "label": "reversal slope 0.5",
+      "sizing": "180s_last_10_ref0_reverse_05",
+      "dailyZeroReturn": -0.11497764613182737,
+      "dailyTenReturn": -0.11525464280417608,
+      "guardedZeroReturn": -0.058647830007634405,
+      "guardedTenReturn": -0.07348344163717602,
+      "fixedZeroWorstReturn": 0.023392427377761926,
+      "fixedTenWorstReturn": 0.012550383137997834,
+      "fixedTenWorstDrawdown": -0.017324856229411822,
+      "fixedTenMedianStake": 8.140328007209227
+    },
+    {
+      "label": "reversal slope 1",
+      "sizing": "180s_last_10_ref0_reverse_1",
+      "dailyZeroReturn": -0.11500059967938536,
+      "dailyTenReturn": -0.11525481896566914,
+      "guardedZeroReturn": -0.05696893996155916,
+      "guardedTenReturn": -0.07257720406891122,
+      "fixedZeroWorstReturn": 0.022106468181798622,
+      "fixedTenWorstReturn": 0.012383433313875924,
+      "fixedTenWorstDrawdown": -0.01869842519884346,
+      "fixedTenMedianStake": 8.318079346271073
+    },
+    {
+      "label": "reversal slope 2",
+      "sizing": "180s_last_10_ref0_reverse_2",
+      "dailyZeroReturn": -0.11504572858176287,
+      "dailyTenReturn": -0.11525614409784468,
+      "guardedZeroReturn": -0.053333832058342856,
+      "guardedTenReturn": -0.07076397032769521,
+      "fixedZeroWorstReturn": 0.021286433388017167,
+      "fixedTenWorstReturn": 0.011847417406117167,
+      "fixedTenWorstDrawdown": -0.01994528396132933,
+      "fixedTenMedianStake": 8.126749716213427
+    },
+    {
+      "label": "loss-only slope 0.5",
+      "sizing": "180s_last_10_ref0_reverse_loss_05",
+      "dailyZeroReturn": -0.1149708002237465,
+      "dailyTenReturn": -0.11525451800086506,
+      "guardedZeroReturn": -0.06037031920092617,
+      "guardedTenReturn": -0.07446470526436721,
+      "fixedZeroWorstReturn": 0.023392427377761926,
+      "fixedTenWorstReturn": 0.012502778370637735,
+      "fixedTenWorstDrawdown": -0.017324856229411822,
+      "fixedTenMedianStake": 8.272733917444283
+    },
+    {
+      "label": "loss-only slope 1",
+      "sizing": "180s_last_10_ref0_reverse_loss_1",
+      "dailyZeroReturn": -0.11498867711013927,
+      "dailyTenReturn": -0.11525461002425719,
+      "guardedZeroReturn": -0.06041533748147199,
+      "guardedTenReturn": -0.0745396443487738,
+      "fixedZeroWorstReturn": 0.022106468181798622,
+      "fixedTenWorstReturn": 0.012288808788847971,
+      "fixedTenWorstDrawdown": -0.01869842519884346,
+      "fixedTenMedianStake": 8.319560820423947
+    }
+  ],
   "scoreCoverage": {
     "60s_last_10_ref0": {
       "atLeastFive": 757,
@@ -148,8 +234,10 @@
     }
   },
   "fresh": {
-    "policies": 70,
-    "rows": 280,
+    "policies": 151,
+    "recentPolicies": 144,
+    "inversePolicies": 96,
+    "rows": 604,
     "highlight": [
       {
         "label": "daily: flat full",
@@ -172,6 +260,28 @@
         "trades": 83,
         "stake": 46.68396172560481,
         "zeroHaircutReturn": -0.03902096339464867
+      },
+      {
+        "label": "daily: flat one-and-a-quarter",
+        "procedure": "daily",
+        "saleHaircut": 0.1,
+        "sizing": "flat_125",
+        "return": -0.11525581055655054,
+        "drawdownBound": -0.11525581055655054,
+        "trades": 65,
+        "stake": 47.53248816151657,
+        "zeroHaircutReturn": -0.11501372272517263
+      },
+      {
+        "label": "daily: best reversal grid",
+        "procedure": "daily",
+        "saleHaircut": 0.1,
+        "sizing": "60s_last_20_ref0_reverse_05",
+        "return": -0.11525442600142644,
+        "drawdownBound": -0.11525442600142644,
+        "trades": 66,
+        "stake": 49.67121283887335,
+        "zeroHaircutReturn": -0.11496614929336846
       },
       {
         "label": "daily: best recent-score grid",
@@ -207,6 +317,28 @@
         "zeroHaircutReturn": -0.01733554712175267
       },
       {
+        "label": "guarded: flat one-and-a-quarter",
+        "procedure": "guarded",
+        "saleHaircut": 0.1,
+        "sizing": "flat_125",
+        "return": -0.07838872178965983,
+        "drawdownBound": -0.08349835085112389,
+        "trades": 47,
+        "stake": 34.272439061021494,
+        "zeroHaircutReturn": -0.06743571489484779
+      },
+      {
+        "label": "guarded: best reversal grid",
+        "procedure": "guarded",
+        "saleHaircut": 0.1,
+        "sizing": "180s_last_10_ref0_reverse_2",
+        "return": -0.07076397032769521,
+        "drawdownBound": -0.07104401039994701,
+        "trades": 52,
+        "stake": 36.325342356850484,
+        "zeroHaircutReturn": -0.053333832058342856
+      },
+      {
         "label": "guarded: best recent-score grid",
         "procedure": "guarded",
         "saleHaircut": 0.1,
@@ -218,6 +350,26 @@
         "zeroHaircutReturn": -0.01786285573828339
       }
     ],
+    "bestInverse": {
+      "daily": {
+        "procedure": "daily",
+        "saleHaircut": 0.1,
+        "sizing": "60s_last_20_ref0_reverse_05",
+        "return": -0.11525442600142644,
+        "drawdownBound": -0.11525442600142644,
+        "trades": 66,
+        "stake": 49.67121283887335
+      },
+      "guarded": {
+        "procedure": "guarded",
+        "saleHaircut": 0.1,
+        "sizing": "180s_last_10_ref0_reverse_2",
+        "return": -0.07076397032769521,
+        "drawdownBound": -0.07104401039994701,
+        "trades": 52,
+        "stake": 36.325342356850484
+      }
+    },
     "best": {
       "daily": {
         "procedure": "daily",
@@ -240,8 +392,8 @@
     }
   },
   "fixed": {
-    "policies": 70,
-    "rows": 14000,
+    "policies": 151,
+    "rows": 30200,
     "scenariosPerPolicyCost": 100,
     "highlight": [
       {
@@ -287,6 +439,48 @@
         "worstWithoutBestDay": 0.008293157764254433
       },
       {
+        "label": "flat one-and-a-quarter factor",
+        "sizing": "flat_125",
+        "saleHaircut": 0.1,
+        "worstReturn": 0.01236610974861918,
+        "bestReturn": 0.029053190137541485,
+        "worstDrawdownBound": -0.017948285610654646,
+        "fewestTrades": 7,
+        "leastStake": 5.662907844314103,
+        "mostStake": 10.64827541297231,
+        "zeroHaircutWorstReturn": 0.022808761931261134,
+        "worstWithoutTwoBest": -0.0014870857673534577,
+        "worstWithoutBestDay": 0.00368954584375758
+      },
+      {
+        "label": "flat one-and-a-half factor",
+        "sizing": "flat_150",
+        "saleHaircut": 0.1,
+        "worstReturn": 0.011617178720418675,
+        "bestReturn": 0.028227025210377565,
+        "worstDrawdownBound": -0.01994528396132933,
+        "fewestTrades": 7,
+        "leastStake": 5.920890394342893,
+        "mostStake": 11.407168519881271,
+        "zeroHaircutWorstReturn": 0.021286433388017167,
+        "worstWithoutTwoBest": -0.0014870857673534577,
+        "worstWithoutBestDay": 0.00368954584375758
+      },
+      {
+        "label": "best reversal grid",
+        "sizing": "60s_60m_ref0_reverse_2",
+        "saleHaircut": 0.1,
+        "worstReturn": 0.012926573304870681,
+        "bestReturn": 0.028102726023606195,
+        "worstDrawdownBound": -0.015951287259979963,
+        "fewestTrades": 7,
+        "leastStake": 5.2856085054029895,
+        "mostStake": 9.419867305593222,
+        "zeroHaircutWorstReturn": 0.024678386573725675,
+        "worstWithoutTwoBest": -0.0013637907743973,
+        "worstWithoutBestDay": 0.004028177590655879
+      },
+      {
         "label": "best recent-score grid",
         "sizing": "180s_last_10_ref10_linear_2",
         "saleHaircut": 0.1,
@@ -311,12 +505,38 @@
       "leastStake": 4.112403757253534,
       "mostStake": 8.860056855948079
     },
+    "bestInverse": {
+      "sizing": "60s_60m_ref0_reverse_2",
+      "saleHaircut": 0.1,
+      "worstReturn": 0.012926573304870681,
+      "bestReturn": 0.028102726023606195,
+      "worstDrawdownBound": -0.015951287259979963,
+      "fewestTrades": 7,
+      "leastStake": 5.2856085054029895,
+      "mostStake": 9.419867305593222
+    },
     "stakeComparison": {
       "scenarios": 100,
       "higherAccountReturnCases": 100,
       "higherProfitPerStakeCases": 49,
       "bestMedianStake": 6.826686400941298,
       "existingMedianStake": 5.182439818773168
+    },
+    "inverseComparison": {
+      "policy": "60s_60m_ref0_reverse_2",
+      "scenarios": 100,
+      "inverseMedianStake": 7.879844466807262,
+      "flatMedianStake": 8.111421721232954,
+      "existingMedianStake": 5.182439818773168,
+      "medianAbsoluteStakeGapToFlat": 0.23276995003342416,
+      "flat_100": {
+        "higherAccountReturnCases": 22,
+        "higherProfitPerStakeCases": 26
+      },
+      "existing_group_size": {
+        "higherAccountReturnCases": 48,
+        "higherProfitPerStakeCases": 0
+      }
     }
   },
   "interpretation": "All recent-score maxima are post hoc over correlated sizing variants on previously examined dates. Flat-size controls expose risk reduction from trading less."

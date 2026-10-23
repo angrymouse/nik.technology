@@ -79,8 +79,18 @@ def factor(mean, style):
         values = np.clip(1 + 4 * mean, .1, 1.5)
     elif style == "step":
         values = np.select((mean < -.1, mean < 0, mean < .1), (.25, .5, 1.), default=1.5)
+    elif style == "reverse_025":
+        values = np.clip(1 - .25 * mean, .75, 1.25)
+    elif style == "reverse_05":
+        values = np.clip(1 - .5 * mean, .75, 1.25)
+    elif style == "reverse_1":
+        values = np.clip(1 - mean, .5, 1.5)
     elif style == "reverse_2":
         values = np.clip(1 - 2 * mean, .25, 1.5)
+    elif style == "reverse_loss_05":
+        values = np.clip(1 - .5 * np.minimum(mean, 0), 1., 1.25)
+    elif style == "reverse_loss_1":
+        values = np.clip(1 - np.minimum(mean, 0), 1., 1.5)
     else:
         raise ValueError(style)
     return np.where(available, values, 1.)
@@ -231,22 +241,43 @@ def report(directory, result):
                         f"<td>{row['meanNextTokenReturn']:+.2%}</td></tr>"
                         for row in result["predictiveQuartiles"])
     stake_comparison = fixed["stakeComparison"]
+    inverse = fixed["inverseComparison"]
+    slopes = "".join(f"<tr><td>{html.escape(row['label'])}</td>"
+                     f"<td>{row['dailyZeroReturn']:+.2%}</td><td>{row['dailyTenReturn']:+.2%}</td>"
+                     f"<td>{row['guardedZeroReturn']:+.2%}</td><td>{row['guardedTenReturn']:+.2%}</td>"
+                     f"<td>{row['fixedZeroWorstReturn']:+.2%}</td>"
+                     f"<td>{row['fixedTenWorstReturn']:+.2%}</td>"
+                     f"<td>{abs(row['fixedTenWorstDrawdown']):.2%}</td>"
+                     f"<td>{row['fixedTenMedianStake']:.2f}</td></tr>"
+                     for row in result["reversalSlopeComparison"])
     page = f"""<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Recent group performance and trade size</title><style>
 body{{font:16px/1.65 system-ui;margin:40px auto;max-width:1150px;padding:0 24px;color:#172231;background:#fff}}
 h1,h2{{line-height:1.2}}table{{width:100%;border-collapse:collapse}}th,td{{text-align:left;padding:10px 12px;border-bottom:1px solid #d6dfe9}}
 th{{background:#eef3f8}}a{{color:#1459ac}}.scroll{{overflow-x:auto}}</style>
 <h1>Recent group performance and trade size</h1>
-<p>Human-authored calls only. A group score uses the first eligible human call per other token, an observed
+<p>Scope: {result['humanCalls']} human-authored eligible calls across three replay days, with
+{result['distinctHumanReferenceTokens']} distinct tokens first called by a human. A group score uses the
+first eligible human call per other token, an observed
 60- or 180-second sale, and at least five completed reference outcomes. It is frozen at the target call's
 first quote; unfinished outcomes and the target token are excluded. Scores use the last 10 or 20 completed
 tokens, or the preceding one or six hours. The replay varies the group score's sale haircut, size mapping,
-and trade sale haircut. These dates were already examined, so the best variant is post hoc.</p>
+and trade sale haircut. There are {fresh['recentPolicies']} score rules, including
+{fresh['inversePolicies']} reversal rules. These dates were already examined, so the best variant is post hoc.</p>
 <p>The next table groups first human calls by the last ten completed three-minute reference outcomes.
 It measures whether a better recent group score preceded a better return on the next token. It is a
 descriptive full-sample check, not a trade-sized account replay.</p>
 <div class="scroll"><table><tr><th>Period</th><th>Recent-score quartile</th><th>Tokens</th>
 <th>Mean recent score</th><th>Mean next-token return</th></tr>{quartiles}</table></div>
+<h2>Reversal slope on one common score</h2>
+<p>This table fixes the score to the last ten completed 180-second human-token returns, with no haircut
+on those reference returns. A reversal slope of k multiplies size by 1 - k × mean recent return.
+The 0.25 and 0.5 slopes are capped at 0.75–1.25×, slope 1 at 0.5–1.5×, and slope 2 at 0.25–1.5×.
+Loss-only slopes leave size at 1× after a positive score and rise after a negative score, capped at
+1.25× or 1.5×. Missing scores use 1×. Account return includes each procedure's loss budget.</p>
+<div class="scroll"><table><tr><th>Size rule</th><th>Daily, 0%</th><th>Daily, 10%</th>
+<th>Guarded, 0%</th><th>Guarded, 10%</th><th>Fixed worst, 0%</th><th>Fixed worst, 10%</th>
+<th>Fixed drawdown bound, 10%</th><th>Fixed median stake, 10%</th></tr>{slopes}</table></div>
 <h2>Fresh human-only daily rules</h2>
 <p>The rows below show zero and 10% sale haircuts. Total stake is the sum of simulated position sizes from a $100
 starting account; it helps distinguish signal timing from simply taking less risk. The two saved entry/exit
@@ -266,6 +297,14 @@ two days' size. The rule's settings were chosen in earlier research.</p>
 profit per dollar staked in only {stake_comparison['higherProfitPerStakeCases']}.
 Its median total stake is {stake_comparison['bestMedianStake']:.2f} against
 {stake_comparison['existingMedianStake']:.2f}. Its profit advantage does not establish a better group signal.</p>
+<p>The best reversal rule in this grid has median total stake {inverse['inverseMedianStake']:.2f}, close to
+{inverse['flatMedianStake']:.2f} for a flat 1× size. Against that flat rule it has higher account return
+in {inverse['flat_100']['higherAccountReturnCases']} of {inverse['scenarios']} matched execution cases
+and higher profit per dollar staked in {inverse['flat_100']['higherProfitPerStakeCases']}.
+Against the inherited group factor, it has higher account return in
+{inverse['existing_group_size']['higherAccountReturnCases']} cases and higher profit per dollar staked in
+{inverse['existing_group_size']['higherProfitPerStakeCases']}. The median absolute stake gap against the
+flat rule is {inverse['medianAbsoluteStakeGapToFlat']:.2f} on the $100 starting account.</p>
 <p><a href="results.json">Summary and policy definitions</a> · <a href="fresh_rows.csv">Fresh-rule grid</a> ·
 <a href="fixed_rows.csv">Fixed-rule scenario grid</a> · <a href="fixed_concentration.csv">Winner-removal replays</a> ·
 <a href="settings.json">Input hashes</a> ·
@@ -294,14 +333,16 @@ def main():
                "flat_050": np.full(dataset.n, .5),
                "flat_075": np.full(dataset.n, .75),
                "flat_100": np.ones(dataset.n),
-               "flat_125": np.full(dataset.n, 1.25)}
+               "flat_125": np.full(dataset.n, 1.25),
+               "flat_150": np.full(dataset.n, 1.5)}
     descriptions = {name: {"name": name, "kind": "control"} for name in factors}
     scores = {}
     for hold, lookback, reference_cost in product((60, 180), ("last_10", "last_20", "60m", "360m"), (0., .1)):
         count, mean = history(dataset, references_by_hold[hold], lookback, reference_cost)
         score_key = f"{hold}s_{lookback}_ref{int(reference_cost*100)}"
         scores[score_key] = {"count": count, "mean": mean}
-        for style in ("linear_2", "linear_4", "step", "reverse_2"):
+        for style in ("linear_2", "linear_4", "step", "reverse_025", "reverse_05",
+                      "reverse_1", "reverse_2", "reverse_loss_05", "reverse_loss_1"):
             name = score_key + "_" + style
             factors[name] = factor(mean, style)
             descriptions[name] = {"name": name, "kind": "recent_group", "referenceHoldSeconds": hold,
@@ -357,32 +398,49 @@ def main():
         return next(row for row in fixed_summary if row["sizing"] == sizing and row["saleHaircut"] == cost)
 
     fresh_highlight = []
+    inverse_names = [name for name in specifications if "_reverse_" in name]
+    fresh_inverse = {}
     for procedure in fresh:
         choices = [row for row in fresh_rows if row["procedure"] == procedure and
                    row["saleHaircut"] == .1 and row["sizing"] in specifications]
         best = max(choices, key=lambda row: row["return"])
+        inverse = max((row for row in choices if row["sizing"] in inverse_names),
+                      key=lambda row: row["return"])
+        fresh_inverse[procedure] = inverse
         for label, row in (("flat full", fresh_record(procedure, "flat_100")),
                            ("flat quarter", fresh_record(procedure, "flat_025")),
+                           ("flat one-and-a-quarter", fresh_record(procedure, "flat_125")),
+                           ("best reversal grid", inverse),
                            ("best recent-score grid", best)):
             fresh_highlight.append({"label": procedure + ": " + label, **row,
                                     "zeroHaircutReturn": fresh_record(procedure, row["sizing"], 0.)["return"]})
     fixed_choices = [row for row in fixed_summary if row["saleHaircut"] == .1 and
                      row["sizing"] in specifications]
     fixed_best = max(fixed_choices, key=lambda row: row["worstReturn"])
+    fixed_inverse = max((row for row in fixed_choices if row["sizing"] in inverse_names),
+                        key=lambda row: row["worstReturn"])
     concentration_rows = []
-    for name in ("existing_group_size", "flat_050", "flat_100", fixed_best["sizing"]):
+    concentration_names = tuple(dict.fromkeys(("existing_group_size", "flat_050", "flat_100",
+                                               "flat_125", "flat_150", fixed_best["sizing"],
+                                               fixed_inverse["sizing"])))
+    for name in concentration_names:
         concentration_rows.extend(fixed_concentration(engine, originals, cases, factors[name], name))
     save_csv(directory / "fixed_concentration.csv", concentration_rows)
     concentration_summary = {name: {
         "worstWithoutTwoBest": min(row["withoutTwoBest"] for row in concentration_rows if row["sizing"] == name),
         "worstWithoutBestDay": min(row["withoutBestDay"] for row in concentration_rows if row["sizing"] == name)}
-        for name in ("existing_group_size", "flat_050", "flat_100", fixed_best["sizing"])}
+        for name in concentration_names}
     fixed_highlight = [{"label": label, **fixed_record(name),
                         "zeroHaircutWorstReturn": fixed_record(name, 0.)["worstReturn"],
                         **concentration_summary[name]} for label, name in
                        (("existing group score", "existing_group_size"),
                         ("no recent group factor", "flat_100"),
-                        ("flat half factor", "flat_050"))]
+                        ("flat half factor", "flat_050"),
+                        ("flat one-and-a-quarter factor", "flat_125"),
+                        ("flat one-and-a-half factor", "flat_150"))]
+    fixed_highlight.append({"label": "best reversal grid", **fixed_inverse,
+                            "zeroHaircutWorstReturn": fixed_record(fixed_inverse["sizing"], 0.)["worstReturn"],
+                            **concentration_summary[fixed_inverse["sizing"]]})
     fixed_highlight.append({"label": "best recent-score grid", **fixed_best,
                             "zeroHaircutWorstReturn": fixed_record(fixed_best["sizing"], 0.)["worstReturn"],
                             **concentration_summary[fixed_best["sizing"]]})
@@ -404,22 +462,70 @@ def main():
         "bestMedianStake": float(np.median([pair[best_name]["stake"] for pair in pairs.values()])),
         "existingMedianStake": float(np.median([pair["existing_group_size"]["stake"]
                                                  for pair in pairs.values()]))}
+    inverse_name = fixed_inverse["sizing"]
+    inverse_pairs = defaultdict(dict)
+    for row in fixed_rows:
+        if row["saleHaircut"] == .1 and row["sizing"] in ("existing_group_size", "flat_100", inverse_name):
+            inverse_pairs[row["reference"], row["group"], row["scenarioId"]][row["sizing"]] = row
+    assert len(inverse_pairs) == len(cases) and all(len(pair) == 3 for pair in inverse_pairs.values())
+    inverse_comparison = {"policy": inverse_name, "scenarios": len(cases),
+                          "inverseMedianStake": float(np.median([
+                              pair[inverse_name]["stake"] for pair in inverse_pairs.values()])),
+                          "flatMedianStake": float(np.median([
+                              pair["flat_100"]["stake"] for pair in inverse_pairs.values()])),
+                          "existingMedianStake": float(np.median([
+                              pair["existing_group_size"]["stake"] for pair in inverse_pairs.values()])),
+                          "medianAbsoluteStakeGapToFlat": float(np.median([
+                              abs(pair[inverse_name]["stake"] - pair["flat_100"]["stake"])
+                              for pair in inverse_pairs.values()]))}
+    for baseline in ("flat_100", "existing_group_size"):
+        inverse_comparison[baseline] = {
+            "higherAccountReturnCases": sum(pair[inverse_name]["return"] > pair[baseline]["return"]
+                                            for pair in inverse_pairs.values()),
+            "higherProfitPerStakeCases": sum(
+                pair[inverse_name]["return"] / pair[inverse_name]["stake"] >
+                pair[baseline]["return"] / pair[baseline]["stake"]
+                for pair in inverse_pairs.values())}
+    common_score = "180s_last_10_ref0_"
+    slopes = [("flat full", "flat_100"),
+              *((f"reversal slope {slope}", common_score + "reverse_" + suffix)
+                for slope, suffix in (("0.25", "025"), ("0.5", "05"), ("1", "1"), ("2", "2"))),
+              ("loss-only slope 0.5", common_score + "reverse_loss_05"),
+              ("loss-only slope 1", common_score + "reverse_loss_1")]
+    slope_comparison = []
+    for label, name in slopes:
+        slope_comparison.append({"label": label, "sizing": name,
+                                 "dailyZeroReturn": fresh_record("daily", name, 0.)["return"],
+                                 "dailyTenReturn": fresh_record("daily", name)["return"],
+                                 "guardedZeroReturn": fresh_record("guarded", name, 0.)["return"],
+                                 "guardedTenReturn": fresh_record("guarded", name)["return"],
+                                 "fixedZeroWorstReturn": fixed_record(name, 0.)["worstReturn"],
+                                 "fixedTenWorstReturn": fixed_record(name)["worstReturn"],
+                                 "fixedTenWorstDrawdown": fixed_record(name)["worstDrawdownBound"],
+                                 "fixedTenMedianStake": float(np.median([
+                                     row["stake"] for row in fixed_rows if row["sizing"] == name and
+                                     row["saleHaircut"] == .1]))})
     quartiles = predictive_quartiles(dataset, references_by_hold, first,
                                      scores["180s_last_10_ref10"]["mean"])
     output = {"path": str(directory), "sourceHashes": source_hashes,
               "humanCalls": settings["humanCalls"], "distinctHumanReferenceTokens": settings["distinctHumanReferenceTokens"],
               "predictiveQuartiles": quartiles,
+              "reversalSlopeComparison": slope_comparison,
               "scoreCoverage": {key: {"atLeastFive": int(np.isfinite(value["mean"]).sum()),
                                       "medianCount": float(np.median(value["count"][~dataset.arrays["bot"]]))}
                                 for key, value in scores.items()},
-              "fresh": {"policies": len(factors), "rows": len(fresh_rows), "highlight": fresh_highlight,
+              "fresh": {"policies": len(factors), "recentPolicies": len(specifications),
+                        "inversePolicies": len(inverse_names), "rows": len(fresh_rows), "highlight": fresh_highlight,
+                        "bestInverse": fresh_inverse,
                         "best": {procedure: max((row for row in fresh_rows if row["procedure"] == procedure and
                                                 row["saleHaircut"] == .1 and row["sizing"] in specifications),
                                                 key=lambda row: row["return"])
                                  for procedure in fresh}},
               "fixed": {"policies": len(factors), "rows": len(fixed_rows),
                         "scenariosPerPolicyCost": len(cases), "highlight": fixed_highlight,
-                        "best": fixed_best, "stakeComparison": stake_comparison},
+                        "best": fixed_best, "bestInverse": fixed_inverse,
+                        "stakeComparison": stake_comparison,
+                        "inverseComparison": inverse_comparison},
               "interpretation": "All recent-score maxima are post hoc over correlated sizing variants on previously examined dates. Flat-size controls expose risk reduction from trading less."}
     write_json(directory / "results.json", output)
     report(directory, output)
