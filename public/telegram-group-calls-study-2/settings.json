@@ -1,0 +1,473 @@
+{
+  "datasetManifestSha256": "72fe9c77350698f22a1967aa97d1be3f2aaf6780234ba4354811a8d5a140e52f",
+  "secondResponseSetSha256": "a4f94723ee58aff82737ad75db70200669173689cdb927f86eede3df7776a450",
+  "flowResponseSetSha256": "da21660deeb7dcee2c9b3bed655d787b4bc20d92674dd694a164ba031c5c62cf",
+  "codeSha256": "9f334f5ba79b54265bba6342bfd069353583941f16d271b66d259c8e987b2d1e",
+  "cutoffUTC": "2026-10-01T00:00:00Z",
+  "delaysSeconds": [
+    1,
+    5,
+    15,
+    30
+  ],
+  "exits": {
+    "hold_5s": {
+      "hold": 5,
+      "stop": null,
+      "target": null,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "hold_10s": {
+      "hold": 10,
+      "stop": null,
+      "target": null,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "hold_15s": {
+      "hold": 15,
+      "stop": null,
+      "target": null,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "hold_30s": {
+      "hold": 30,
+      "stop": null,
+      "target": null,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "hold_45s": {
+      "hold": 45,
+      "stop": null,
+      "target": null,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "hold_60s": {
+      "hold": 60,
+      "stop": null,
+      "target": null,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "hold_90s": {
+      "hold": 90,
+      "stop": null,
+      "target": null,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "hold_120s": {
+      "hold": 120,
+      "stop": null,
+      "target": null,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "hold_180s": {
+      "hold": 180,
+      "stop": null,
+      "target": null,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "target_1.1x_60s": {
+      "hold": 60,
+      "stop": null,
+      "target": 1.1,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "target_1.25x_60s": {
+      "hold": 60,
+      "stop": null,
+      "target": 1.25,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "target_1.5x_60s": {
+      "hold": 60,
+      "stop": null,
+      "target": 1.5,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "target_2x_60s": {
+      "hold": 60,
+      "stop": null,
+      "target": 2.0,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "target_3x_60s": {
+      "hold": 60,
+      "stop": null,
+      "target": 3.0,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "stop_0.1_60s": {
+      "hold": 60,
+      "stop": 0.1,
+      "target": null,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "stop_0.25_60s": {
+      "hold": 60,
+      "stop": 0.25,
+      "target": null,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "stop_0.5_60s": {
+      "hold": 60,
+      "stop": 0.5,
+      "target": null,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "target_1.1x_120s": {
+      "hold": 120,
+      "stop": null,
+      "target": 1.1,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "target_1.25x_120s": {
+      "hold": 120,
+      "stop": null,
+      "target": 1.25,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "target_1.5x_120s": {
+      "hold": 120,
+      "stop": null,
+      "target": 1.5,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "target_2x_120s": {
+      "hold": 120,
+      "stop": null,
+      "target": 2.0,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "target_3x_120s": {
+      "hold": 120,
+      "stop": null,
+      "target": 3.0,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "stop_0.1_120s": {
+      "hold": 120,
+      "stop": 0.1,
+      "target": null,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "stop_0.25_120s": {
+      "hold": 120,
+      "stop": 0.25,
+      "target": null,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "stop_0.5_120s": {
+      "hold": 120,
+      "stop": 0.5,
+      "target": null,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "target_1.1x_180s": {
+      "hold": 180,
+      "stop": null,
+      "target": 1.1,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "target_1.25x_180s": {
+      "hold": 180,
+      "stop": null,
+      "target": 1.25,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "target_1.5x_180s": {
+      "hold": 180,
+      "stop": null,
+      "target": 1.5,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "target_2x_180s": {
+      "hold": 180,
+      "stop": null,
+      "target": 2.0,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "target_3x_180s": {
+      "hold": 180,
+      "stop": null,
+      "target": 3.0,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "stop_0.1_180s": {
+      "hold": 180,
+      "stop": 0.1,
+      "target": null,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "stop_0.25_180s": {
+      "hold": 180,
+      "stop": 0.25,
+      "target": null,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "stop_0.5_180s": {
+      "hold": 180,
+      "stop": 0.5,
+      "target": null,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "stop_0.25_target_1.25x_120s": {
+      "hold": 120,
+      "stop": 0.25,
+      "target": 1.25,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "stop_0.25_target_1.5x_120s": {
+      "hold": 120,
+      "stop": 0.25,
+      "target": 1.5,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "stop_0.25_target_2x_120s": {
+      "hold": 120,
+      "stop": 0.25,
+      "target": 2.0,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "stop_0.25_target_3x_120s": {
+      "hold": 120,
+      "stop": 0.25,
+      "target": 3.0,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "stop_0.5_target_1.25x_120s": {
+      "hold": 120,
+      "stop": 0.5,
+      "target": 1.25,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "stop_0.5_target_1.5x_120s": {
+      "hold": 120,
+      "stop": 0.5,
+      "target": 1.5,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "stop_0.5_target_2x_120s": {
+      "hold": 120,
+      "stop": 0.5,
+      "target": 2.0,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "stop_0.5_target_3x_120s": {
+      "hold": 120,
+      "stop": 0.5,
+      "target": 3.0,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "trail_1.2_0.2_120s": {
+      "hold": 120,
+      "stop": null,
+      "target": null,
+      "trail_at": 1.2,
+      "trail_gap": 0.2
+    },
+    "trail_1.5_0.3_120s": {
+      "hold": 120,
+      "stop": null,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3
+    },
+    "trail_2_0.3_120s": {
+      "hold": 120,
+      "stop": null,
+      "target": null,
+      "trail_at": 2.0,
+      "trail_gap": 0.3
+    },
+    "stop_0.25_target_1.25x_180s": {
+      "hold": 180,
+      "stop": 0.25,
+      "target": 1.25,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "stop_0.25_target_1.5x_180s": {
+      "hold": 180,
+      "stop": 0.25,
+      "target": 1.5,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "stop_0.25_target_2x_180s": {
+      "hold": 180,
+      "stop": 0.25,
+      "target": 2.0,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "stop_0.25_target_3x_180s": {
+      "hold": 180,
+      "stop": 0.25,
+      "target": 3.0,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "stop_0.5_target_1.25x_180s": {
+      "hold": 180,
+      "stop": 0.5,
+      "target": 1.25,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "stop_0.5_target_1.5x_180s": {
+      "hold": 180,
+      "stop": 0.5,
+      "target": 1.5,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "stop_0.5_target_2x_180s": {
+      "hold": 180,
+      "stop": 0.5,
+      "target": 2.0,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "stop_0.5_target_3x_180s": {
+      "hold": 180,
+      "stop": 0.5,
+      "target": 3.0,
+      "trail_at": null,
+      "trail_gap": null
+    },
+    "trail_1.2_0.2_180s": {
+      "hold": 180,
+      "stop": null,
+      "target": null,
+      "trail_at": 1.2,
+      "trail_gap": 0.2
+    },
+    "trail_1.5_0.3_180s": {
+      "hold": 180,
+      "stop": null,
+      "target": null,
+      "trail_at": 1.5,
+      "trail_gap": 0.3
+    },
+    "trail_2_0.3_180s": {
+      "hold": 180,
+      "stop": null,
+      "target": null,
+      "trail_at": 2.0,
+      "trail_gap": 0.3
+    }
+  },
+  "entryFilters": [
+    "all human calls",
+    "cap $0–$6,000",
+    "cap $6,000–$10,000",
+    "cap $10,000–$25,000",
+    "cap $25,000–$50,000",
+    "cap $50,000–$100,000",
+    "cap $100,000–$250,000",
+    "cap $250,000–$1,000,000",
+    "cap $1m+",
+    "cap under $6,000",
+    "cap at least $6,000",
+    "cap under $10,000",
+    "cap at least $10,000",
+    "cap under $25,000",
+    "cap at least $25,000",
+    "cap under $50,000",
+    "cap at least $50,000",
+    "cap under $100,000",
+    "cap at least $100,000",
+    "cap under $250,000",
+    "cap at least $250,000",
+    "cap under $1,000,000",
+    "cap at least $1,000,000",
+    "quote age ≤1s",
+    "quote age ≤5s",
+    "quote age ≤10s",
+    "direct post",
+    "Solana",
+    "EVM",
+    "Robinhood Chain",
+    "BSC",
+    "Arc",
+    "Ethereum",
+    "pre-call volume ≥100",
+    "pre-call volume ≥500",
+    "pre-call volume ≥1000",
+    "pre-call volume ≥3000",
+    "pre-call volume ≥10000",
+    "pre-call swaps ≥5",
+    "pre-call swaps ≥15",
+    "pre-call swaps ≥40",
+    "pre-call wallets ≥5",
+    "pre-call wallets ≥10",
+    "pre-call wallets ≥25",
+    "volume/cap ≥0.01",
+    "volume/cap ≥0.05",
+    "volume/cap ≥0.1",
+    "last pre-call swap ≤10s",
+    "pre-call buy share ≥50%",
+    "pre-call wallet concentration ≤20%",
+    "Caller 01",
+    "Caller 02",
+    "Caller 03",
+    "Caller 04",
+    "Caller 05",
+    "Caller 06",
+    "Caller 07",
+    "Caller 08",
+    "Caller 09",
+    "Caller 10"
+  ],
+  "scoring": "training mean 10%-cost clipped return minus standard error; minimum eight scorable calls and distinct tokens; select only positive score",
+  "account": {
+    "initialUSD": 100,
+    "fraction": 0.01,
+    "dailyFullLossBudget": 0.04,
+    "maxWaitSeconds": 10,
+    "saleHaircuts": [
+      0,
+      0.1
+    ]
+  }
+}

@@ -1,0 +1,2002 @@
+{
+  "scope": {
+    "messages": 4686,
+    "tokenMessages": 1532,
+    "humanTokenMessages": 655,
+    "unresolvedHumanTokenMessages": 18,
+    "candidateTokens": 486,
+    "marketCalls": 637,
+    "eligibleCalls": 408,
+    "scorable60": 264,
+    "sameCallerTokenRepeats": 135,
+    "observedSeconds": 48099,
+    "emptyCalls": 2,
+    "earlierCalls": 285,
+    "laterCalls": 123,
+    "secondBarResponseHash": "a4f94723ee58aff82737ad75db70200669173689cdb927f86eede3df7776a450"
+  },
+  "baseline": [
+    {
+      "holdSeconds": 5,
+      "earlier": {
+        "calls": 285,
+        "scorable": 178,
+        "meanReturn": -0.2923936134324238,
+        "medianReturn": -0.11615335400851223,
+        "positiveShare": 0.05056179775280899,
+        "writeoffs": 38
+      },
+      "later": {
+        "calls": 123,
+        "scorable": 86,
+        "meanReturn": -0.29299222682486675,
+        "medianReturn": -0.11223276297709334,
+        "positiveShare": 0.046511627906976744,
+        "writeoffs": 19
+      },
+      "earlierZero": {
+        "calls": 285,
+        "scorable": 178,
+        "meanReturn": -0.21377068159158202,
+        "medianReturn": -0.01794817112056918,
+        "positiveShare": 0.37640449438202245,
+        "writeoffs": 38
+      },
+      "laterZero": {
+        "calls": 123,
+        "scorable": 86,
+        "meanReturn": -0.21443580758318534,
+        "medianReturn": -0.01359195886343706,
+        "positiveShare": 0.43023255813953487,
+        "writeoffs": 19
+      },
+      "laterAccount": {
+        "return": -0.222820543213054,
+        "drawdownBound": -0.22304193661121363,
+        "trades": 85,
+        "wins": 4,
+        "writeoffs": 19,
+        "totalStake": 74.82521596419087
+      },
+      "laterZeroAccount": {
+        "return": -0.1693219476845439,
+        "drawdownBound": -0.1710698037876679,
+        "trades": 85,
+        "wins": 36,
+        "writeoffs": 19,
+        "totalStake": 77.18738268695442
+      }
+    },
+    {
+      "holdSeconds": 10,
+      "earlier": {
+        "calls": 285,
+        "scorable": 178,
+        "meanReturn": -0.23451541382933272,
+        "medianReturn": -0.11295160154325057,
+        "positiveShare": 0.11797752808988764,
+        "writeoffs": 27
+      },
+      "later": {
+        "calls": 123,
+        "scorable": 86,
+        "meanReturn": -0.30316001374266915,
+        "medianReturn": -0.11708730466366662,
+        "positiveShare": 0.08139534883720931,
+        "writeoffs": 20
+      },
+      "earlierZero": {
+        "calls": 285,
+        "scorable": 178,
+        "meanReturn": -0.14946157092148088,
+        "medianReturn": -0.014390668381389526,
+        "positiveShare": 0.43820224719101125,
+        "writeoffs": 27
+      },
+      "laterZero": {
+        "calls": 123,
+        "scorable": 86,
+        "meanReturn": -0.2257333486029658,
+        "medianReturn": -0.018985894070740694,
+        "positiveShare": 0.38372093023255816,
+        "writeoffs": 20
+      },
+      "laterAccount": {
+        "return": -0.22918892974398364,
+        "drawdownBound": -0.23144081701293995,
+        "trades": 85,
+        "wins": 7,
+        "writeoffs": 20,
+        "totalStake": 73.42777640196815
+      },
+      "laterZeroAccount": {
+        "return": -0.17740903841430455,
+        "drawdownBound": -0.18158581166269816,
+        "trades": 85,
+        "wins": 32,
+        "writeoffs": 20,
+        "totalStake": 75.86167337559583
+      }
+    },
+    {
+      "holdSeconds": 15,
+      "earlier": {
+        "calls": 285,
+        "scorable": 178,
+        "meanReturn": -0.23145666372404963,
+        "medianReturn": -0.11367129534514764,
+        "positiveShare": 0.12359550561797752,
+        "writeoffs": 27
+      },
+      "later": {
+        "calls": 123,
+        "scorable": 86,
+        "meanReturn": -0.30516186876807017,
+        "medianReturn": -0.11679743507551565,
+        "positiveShare": 0.10465116279069768,
+        "writeoffs": 21
+      },
+      "earlierZero": {
+        "calls": 285,
+        "scorable": 178,
+        "meanReturn": -0.14606295969338848,
+        "medianReturn": -0.01519032816127519,
+        "positiveShare": 0.43258426966292135,
+        "writeoffs": 27
+      },
+      "laterZero": {
+        "calls": 123,
+        "scorable": 86,
+        "meanReturn": -0.22795763196452234,
+        "medianReturn": -0.018663816750572992,
+        "positiveShare": 0.3953488372093023,
+        "writeoffs": 21
+      },
+      "laterAccount": {
+        "return": -0.230183983651846,
+        "drawdownBound": -0.23392557921373258,
+        "trades": 85,
+        "wins": 9,
+        "writeoffs": 21,
+        "totalStake": 73.61626437811755
+      },
+      "laterZeroAccount": {
+        "return": -0.17904309908867722,
+        "drawdownBound": -0.18497395256283355,
+        "trades": 85,
+        "wins": 33,
+        "writeoffs": 21,
+        "totalStake": 76.53092036742456
+      }
+    },
+    {
+      "holdSeconds": 30,
+      "earlier": {
+        "calls": 285,
+        "scorable": 178,
+        "meanReturn": -0.2840157525333745,
+        "medianReturn": -0.12762748453477896,
+        "positiveShare": 0.1797752808988764,
+        "writeoffs": 40
+      },
+      "later": {
+        "calls": 123,
+        "scorable": 86,
+        "meanReturn": -0.2579948395528949,
+        "medianReturn": -0.10939029954826512,
+        "positiveShare": 0.16279069767441862,
+        "writeoffs": 17
+      },
+      "earlierZero": {
+        "calls": 285,
+        "scorable": 178,
+        "meanReturn": -0.20446194725930503,
+        "medianReturn": -0.030697205038643316,
+        "positiveShare": 0.4157303370786517,
+        "writeoffs": 40
+      },
+      "laterZero": {
+        "calls": 123,
+        "scorable": 86,
+        "meanReturn": -0.17554982172543887,
+        "medianReturn": -0.010433666164739008,
+        "positiveShare": 0.43023255813953487,
+        "writeoffs": 17
+      },
+      "laterAccount": {
+        "return": -0.19827715078132824,
+        "drawdownBound": -0.20250821869289226,
+        "trades": 85,
+        "wins": 14,
+        "writeoffs": 17,
+        "totalStake": 75.04632105351563
+      },
+      "laterZeroAccount": {
+        "return": -0.1411265437185104,
+        "drawdownBound": -0.1475504143627948,
+        "trades": 85,
+        "wins": 36,
+        "writeoffs": 17,
+        "totalStake": 78.22315982233245
+      }
+    },
+    {
+      "holdSeconds": 45,
+      "earlier": {
+        "calls": 285,
+        "scorable": 178,
+        "meanReturn": -0.26352715208748806,
+        "medianReturn": -0.12146464554378084,
+        "positiveShare": 0.1797752808988764,
+        "writeoffs": 37
+      },
+      "later": {
+        "calls": 123,
+        "scorable": 86,
+        "meanReturn": -0.29380339603357886,
+        "medianReturn": -0.13044290976070788,
+        "positiveShare": 0.18604651162790697,
+        "writeoffs": 20
+      },
+      "earlierZero": {
+        "calls": 285,
+        "scorable": 178,
+        "meanReturn": -0.18169683565276454,
+        "medianReturn": -0.02384960615975651,
+        "positiveShare": 0.4438202247191011,
+        "writeoffs": 37
+      },
+      "laterZero": {
+        "calls": 123,
+        "scorable": 86,
+        "meanReturn": -0.21533710670397657,
+        "medianReturn": -0.033825455289675455,
+        "positiveShare": 0.38372093023255816,
+        "writeoffs": 20
+      },
+      "laterAccount": {
+        "return": -0.207290732085453,
+        "drawdownBound": -0.21105578704568684,
+        "trades": 82,
+        "wins": 16,
+        "writeoffs": 19,
+        "totalStake": 72.8206748909985
+      },
+      "laterZeroAccount": {
+        "return": -0.15646476734281034,
+        "drawdownBound": -0.16340444407560994,
+        "trades": 82,
+        "wins": 32,
+        "writeoffs": 19,
+        "totalStake": 75.32913073319372
+      }
+    },
+    {
+      "holdSeconds": 60,
+      "earlier": {
+        "calls": 285,
+        "scorable": 178,
+        "meanReturn": -0.2376430403989293,
+        "medianReturn": -0.134152939577723,
+        "positiveShare": 0.2247191011235955,
+        "writeoffs": 33
+      },
+      "later": {
+        "calls": 123,
+        "scorable": 86,
+        "meanReturn": -0.23306714671708723,
+        "medianReturn": -0.11572294003398903,
+        "positiveShare": 0.20930232558139536,
+        "writeoffs": 16
+      },
+      "earlierZero": {
+        "calls": 285,
+        "scorable": 178,
+        "meanReturn": -0.15293671155436597,
+        "medianReturn": -0.037947710641914434,
+        "positiveShare": 0.4101123595505618,
+        "writeoffs": 33
+      },
+      "laterZero": {
+        "calls": 123,
+        "scorable": 86,
+        "meanReturn": -0.1478523852412081,
+        "medianReturn": -0.017469933371098978,
+        "positiveShare": 0.43023255813953487,
+        "writeoffs": 16
+      },
+      "laterAccount": {
+        "return": -0.1792202639353342,
+        "drawdownBound": -0.18796572910195897,
+        "trades": 84,
+        "wins": 18,
+        "writeoffs": 16,
+        "totalStake": 76.75616648135207
+      },
+      "laterZeroAccount": {
+        "return": -0.11842116073767617,
+        "drawdownBound": -0.1357880605491666,
+        "trades": 84,
+        "wins": 36,
+        "writeoffs": 16,
+        "totalStake": 79.48465081634201
+      }
+    },
+    {
+      "holdSeconds": 90,
+      "earlier": {
+        "calls": 285,
+        "scorable": 178,
+        "meanReturn": -0.2838910971078134,
+        "medianReturn": -0.17616536179490283,
+        "positiveShare": 0.20224719101123595,
+        "writeoffs": 46
+      },
+      "later": {
+        "calls": 123,
+        "scorable": 86,
+        "meanReturn": -0.2854215001935619,
+        "medianReturn": -0.16690923228600268,
+        "positiveShare": 0.27906976744186046,
+        "writeoffs": 22
+      },
+      "earlierZero": {
+        "calls": 285,
+        "scorable": 178,
+        "meanReturn": -0.20676671394190613,
+        "medianReturn": -0.08462817977211429,
+        "positiveShare": 0.34831460674157305,
+        "writeoffs": 46
+      },
+      "laterZero": {
+        "calls": 123,
+        "scorable": 86,
+        "meanReturn": -0.2060238891039577,
+        "medianReturn": -0.07434359142889185,
+        "positiveShare": 0.4069767441860465,
+        "writeoffs": 22
+      },
+      "laterAccount": {
+        "return": -0.19590310255472587,
+        "drawdownBound": -0.20977562484067147,
+        "trades": 82,
+        "wins": 24,
+        "writeoffs": 20,
+        "totalStake": 73.54991465676736
+      },
+      "laterZeroAccount": {
+        "return": -0.14243359317553772,
+        "drawdownBound": -0.16626406829479945,
+        "trades": 82,
+        "wins": 34,
+        "writeoffs": 20,
+        "totalStake": 76.63562603559122
+      }
+    },
+    {
+      "holdSeconds": 120,
+      "earlier": {
+        "calls": 285,
+        "scorable": 178,
+        "meanReturn": -0.2134291655501344,
+        "medianReturn": -0.1503806852167568,
+        "positiveShare": 0.24719101123595505,
+        "writeoffs": 33
+      },
+      "later": {
+        "calls": 123,
+        "scorable": 86,
+        "meanReturn": -0.18799276221879815,
+        "medianReturn": -0.11512116390579297,
+        "positiveShare": 0.313953488372093,
+        "writeoffs": 15
+      },
+      "earlierZero": {
+        "calls": 285,
+        "scorable": 178,
+        "meanReturn": -0.1269752850277187,
+        "medianReturn": -0.055978539129729776,
+        "positiveShare": 0.4101123595505618,
+        "writeoffs": 33
+      },
+      "laterZero": {
+        "calls": 123,
+        "scorable": 86,
+        "meanReturn": -0.09776973579866463,
+        "medianReturn": -0.016801293228658865,
+        "positiveShare": 0.43023255813953487,
+        "writeoffs": 15
+      },
+      "laterAccount": {
+        "return": -0.13788240819048325,
+        "drawdownBound": -0.15423453018115307,
+        "trades": 83,
+        "wins": 27,
+        "writeoffs": 14,
+        "totalStake": 77.48881273310636
+      },
+      "laterZeroAccount": {
+        "return": -0.0700359211195617,
+        "drawdownBound": -0.09361471782525033,
+        "trades": 83,
+        "wins": 36,
+        "writeoffs": 14,
+        "totalStake": 80.42213283447055
+      }
+    },
+    {
+      "holdSeconds": 180,
+      "earlier": {
+        "calls": 285,
+        "scorable": 178,
+        "meanReturn": -0.3131966892948402,
+        "medianReturn": -0.2664568693838387,
+        "positiveShare": 0.24719101123595505,
+        "writeoffs": 50
+      },
+      "later": {
+        "calls": 123,
+        "scorable": 86,
+        "meanReturn": -0.22468724843167734,
+        "medianReturn": -0.13688614665037585,
+        "positiveShare": 0.3953488372093023,
+        "writeoffs": 20
+      },
+      "earlierZero": {
+        "calls": 285,
+        "scorable": 178,
+        "meanReturn": -0.24096540098020466,
+        "medianReturn": -0.1849520770931542,
+        "positiveShare": 0.33146067415730335,
+        "writeoffs": 50
+      },
+      "laterZero": {
+        "calls": 123,
+        "scorable": 86,
+        "meanReturn": -0.13854138714630815,
+        "medianReturn": -0.04098460738930654,
+        "positiveShare": 0.46511627906976744,
+        "writeoffs": 20
+      },
+      "laterAccount": {
+        "return": -0.16602764972090678,
+        "drawdownBound": -0.178164309733283,
+        "trades": 83,
+        "wins": 34,
+        "writeoffs": 19,
+        "totalStake": 74.93481079166331
+      },
+      "laterZeroAccount": {
+        "return": -0.10275405609197164,
+        "drawdownBound": -0.11875887271000107,
+        "trades": 83,
+        "wins": 39,
+        "writeoffs": 19,
+        "totalStake": 78.01258566727022
+      }
+    }
+  ],
+  "capBuckets": [
+    {
+      "label": "$0–$6,000",
+      "earlier": {
+        "calls": 10,
+        "scorable": 8,
+        "meanReturn": -0.11215716879431306,
+        "medianReturn": 0.00969205337782042,
+        "positiveShare": 0.625,
+        "writeoffs": 1
+      },
+      "later": {
+        "calls": 2,
+        "scorable": 0,
+        "meanReturn": null,
+        "medianReturn": null,
+        "positiveShare": null,
+        "writeoffs": 0
+      },
+      "laterZero": {
+        "calls": 2,
+        "scorable": 0,
+        "meanReturn": null,
+        "medianReturn": null,
+        "positiveShare": null,
+        "writeoffs": 0
+      }
+    },
+    {
+      "label": "$6,000–$10,000",
+      "earlier": {
+        "calls": 46,
+        "scorable": 21,
+        "meanReturn": -0.08112212746241536,
+        "medianReturn": 0.07633797390081587,
+        "positiveShare": 0.5238095238095238,
+        "writeoffs": 3
+      },
+      "later": {
+        "calls": 21,
+        "scorable": 13,
+        "meanReturn": -0.1897326102057533,
+        "medianReturn": -0.08396363221865266,
+        "positiveShare": 0.38461538461538464,
+        "writeoffs": 4
+      },
+      "laterZero": {
+        "calls": 21,
+        "scorable": 13,
+        "meanReturn": -0.0997029002286148,
+        "medianReturn": 0.01781818642371924,
+        "positiveShare": 0.5384615384615384,
+        "writeoffs": 4
+      }
+    },
+    {
+      "label": "$10,000–$25,000",
+      "earlier": {
+        "calls": 105,
+        "scorable": 64,
+        "meanReturn": -0.29676570829563953,
+        "medianReturn": -0.14244518751625612,
+        "positiveShare": 0.171875,
+        "writeoffs": 15
+      },
+      "later": {
+        "calls": 57,
+        "scorable": 43,
+        "meanReturn": -0.22202661838249166,
+        "medianReturn": -0.10210553750646423,
+        "positiveShare": 0.2558139534883721,
+        "writeoffs": 8
+      },
+      "laterZero": {
+        "calls": 57,
+        "scorable": 43,
+        "meanReturn": -0.13558513153610183,
+        "medianReturn": -0.002339486118293599,
+        "positiveShare": 0.4883720930232558,
+        "writeoffs": 8
+      }
+    },
+    {
+      "label": "$25,000–$50,000",
+      "earlier": {
+        "calls": 45,
+        "scorable": 32,
+        "meanReturn": -0.21974755579979371,
+        "medianReturn": -0.14917405023153885,
+        "positiveShare": 0.28125,
+        "writeoffs": 6
+      },
+      "later": {
+        "calls": 23,
+        "scorable": 20,
+        "meanReturn": -0.2371911614524506,
+        "medianReturn": -0.15106927031136802,
+        "positiveShare": 0.1,
+        "writeoffs": 2
+      },
+      "laterZero": {
+        "calls": 23,
+        "scorable": 20,
+        "meanReturn": -0.15243462383605627,
+        "medianReturn": -0.056743633679297856,
+        "positiveShare": 0.35,
+        "writeoffs": 2
+      }
+    },
+    {
+      "label": "$50,000–$100,000",
+      "earlier": {
+        "calls": 37,
+        "scorable": 26,
+        "meanReturn": -0.3489342129269553,
+        "medianReturn": -0.17332772271442315,
+        "positiveShare": 0.038461538461538464,
+        "writeoffs": 5
+      },
+      "later": {
+        "calls": 11,
+        "scorable": 7,
+        "meanReturn": -0.2960594265859752,
+        "medianReturn": -0.20785505647103708,
+        "positiveShare": 0.0,
+        "writeoffs": 1
+      },
+      "laterZero": {
+        "calls": 11,
+        "scorable": 7,
+        "meanReturn": -0.21784380731775027,
+        "medianReturn": -0.11983895163448566,
+        "positiveShare": 0.2857142857142857,
+        "writeoffs": 1
+      }
+    },
+    {
+      "label": "$100,000–$250,000",
+      "earlier": {
+        "calls": 15,
+        "scorable": 8,
+        "meanReturn": -0.12886082077100472,
+        "medianReturn": -0.1812230756580634,
+        "positiveShare": 0.125,
+        "writeoffs": 0
+      },
+      "later": {
+        "calls": 3,
+        "scorable": 1,
+        "meanReturn": -1.0,
+        "medianReturn": -1.0,
+        "positiveShare": 0.0,
+        "writeoffs": 1
+      },
+      "laterZero": {
+        "calls": 3,
+        "scorable": 1,
+        "meanReturn": -1.0,
+        "medianReturn": -1.0,
+        "positiveShare": 0.0,
+        "writeoffs": 1
+      }
+    },
+    {
+      "label": "$250,000–$1,000,000",
+      "earlier": {
+        "calls": 17,
+        "scorable": 14,
+        "meanReturn": -0.15452461403298923,
+        "medianReturn": -0.1093167481997977,
+        "positiveShare": 0.14285714285714285,
+        "writeoffs": 2
+      },
+      "later": {
+        "calls": 3,
+        "scorable": 0,
+        "meanReturn": null,
+        "medianReturn": null,
+        "positiveShare": null,
+        "writeoffs": 0
+      },
+      "laterZero": {
+        "calls": 3,
+        "scorable": 0,
+        "meanReturn": null,
+        "medianReturn": null,
+        "positiveShare": null,
+        "writeoffs": 0
+      }
+    },
+    {
+      "label": "$1m+",
+      "earlier": {
+        "calls": 10,
+        "scorable": 5,
+        "meanReturn": -0.2816382697398284,
+        "medianReturn": -0.13737840624433406,
+        "positiveShare": 0.0,
+        "writeoffs": 1
+      },
+      "later": {
+        "calls": 3,
+        "scorable": 2,
+        "meanReturn": -0.10693343969836583,
+        "medianReturn": -0.10693343969836583,
+        "positiveShare": 0.0,
+        "writeoffs": 0
+      },
+      "laterZero": {
+        "calls": 3,
+        "scorable": 2,
+        "meanReturn": -0.007703821887073192,
+        "medianReturn": -0.007703821887073192,
+        "positiveShare": 0.0,
+        "writeoffs": 0
+      }
+    }
+  ],
+  "chains": [
+    {
+      "label": "Solana",
+      "earlier": {
+        "calls": 82,
+        "scorable": 43,
+        "meanReturn": -0.16877141887118188,
+        "medianReturn": -0.07500722637025203,
+        "positiveShare": 0.32558139534883723,
+        "writeoffs": 7
+      },
+      "later": {
+        "calls": 104,
+        "scorable": 75,
+        "meanReturn": -0.1986442979333876,
+        "medianReturn": -0.11262706682443391,
+        "positiveShare": 0.24,
+        "writeoffs": 12
+      },
+      "laterZero": {
+        "calls": 104,
+        "scorable": 75,
+        "meanReturn": -0.10960477548154178,
+        "medianReturn": -0.014030074249370972,
+        "positiveShare": 0.4533333333333333,
+        "writeoffs": 12
+      }
+    },
+    {
+      "label": "Robinhood Chain",
+      "earlier": {
+        "calls": 140,
+        "scorable": 98,
+        "meanReturn": -0.26533900972704855,
+        "medianReturn": -0.14767010632277033,
+        "positiveShare": 0.20408163265306123,
+        "writeoffs": 20
+      },
+      "later": {
+        "calls": 8,
+        "scorable": 5,
+        "meanReturn": -0.6472383084811428,
+        "medianReturn": -1.0,
+        "positiveShare": 0.0,
+        "writeoffs": 3
+      },
+      "laterZero": {
+        "calls": 8,
+        "scorable": 5,
+        "meanReturn": -0.6080425649790476,
+        "medianReturn": -1.0,
+        "positiveShare": 0.2,
+        "writeoffs": 3
+      }
+    },
+    {
+      "label": "BSC",
+      "earlier": {
+        "calls": 23,
+        "scorable": 16,
+        "meanReturn": -0.2679320851360516,
+        "medianReturn": -0.12647872373336067,
+        "positiveShare": 0.125,
+        "writeoffs": 3
+      },
+      "later": {
+        "calls": 9,
+        "scorable": 5,
+        "meanReturn": -0.18185214605194416,
+        "medianReturn": -0.10777021028318756,
+        "positiveShare": 0.0,
+        "writeoffs": 0
+      },
+      "laterZero": {
+        "calls": 9,
+        "scorable": 5,
+        "meanReturn": -0.09094682894660464,
+        "medianReturn": -0.008633566981319563,
+        "positiveShare": 0.4,
+        "writeoffs": 0
+      }
+    },
+    {
+      "label": "Arc",
+      "earlier": {
+        "calls": 23,
+        "scorable": 16,
+        "meanReturn": -0.164076665494676,
+        "medianReturn": -0.12640662807012798,
+        "positiveShare": 0.1875,
+        "writeoffs": 1
+      },
+      "later": {
+        "calls": 0,
+        "scorable": 0,
+        "meanReturn": null,
+        "medianReturn": null,
+        "positiveShare": null,
+        "writeoffs": 0
+      },
+      "laterZero": {
+        "calls": 0,
+        "scorable": 0,
+        "meanReturn": null,
+        "medianReturn": null,
+        "positiveShare": null,
+        "writeoffs": 0
+      }
+    },
+    {
+      "label": "Ethereum",
+      "earlier": {
+        "calls": 8,
+        "scorable": 0,
+        "meanReturn": null,
+        "medianReturn": null,
+        "positiveShare": null,
+        "writeoffs": 0
+      },
+      "later": {
+        "calls": 1,
+        "scorable": 0,
+        "meanReturn": null,
+        "medianReturn": null,
+        "positiveShare": null,
+        "writeoffs": 0
+      },
+      "laterZero": {
+        "calls": 1,
+        "scorable": 0,
+        "meanReturn": null,
+        "medianReturn": null,
+        "positiveShare": null,
+        "writeoffs": 0
+      }
+    },
+    {
+      "label": "Base",
+      "earlier": {
+        "calls": 5,
+        "scorable": 1,
+        "meanReturn": 0.18333621122971655,
+        "medianReturn": 0.18333621122971655,
+        "positiveShare": 1.0,
+        "writeoffs": 0
+      },
+      "later": {
+        "calls": 0,
+        "scorable": 0,
+        "meanReturn": null,
+        "medianReturn": null,
+        "positiveShare": null,
+        "writeoffs": 0
+      },
+      "laterZero": {
+        "calls": 0,
+        "scorable": 0,
+        "meanReturn": null,
+        "medianReturn": null,
+        "positiveShare": null,
+        "writeoffs": 0
+      }
+    },
+    {
+      "label": "Other EVM chains",
+      "earlier": {
+        "calls": 4,
+        "scorable": 4,
+        "meanReturn": -0.5778158568589777,
+        "medianReturn": -0.582686584239531,
+        "positiveShare": 0.0,
+        "writeoffs": 2
+      },
+      "later": {
+        "calls": 1,
+        "scorable": 1,
+        "meanReturn": -1.0,
+        "medianReturn": -1.0,
+        "positiveShare": 0.0,
+        "writeoffs": 1
+      },
+      "laterZero": {
+        "calls": 1,
+        "scorable": 1,
+        "meanReturn": -1.0,
+        "medianReturn": -1.0,
+        "positiveShare": 0.0,
+        "writeoffs": 1
+      }
+    }
+  ],
+  "callers": [
+    {
+      "alias": "Caller 01",
+      "earlier": {
+        "calls": 32,
+        "scorable": 25,
+        "meanReturn": -0.03783121183829883,
+        "medianReturn": -0.03662831589456317,
+        "positiveShare": 0.44,
+        "writeoffs": 2
+      },
+      "later": {
+        "calls": 14,
+        "scorable": 10,
+        "meanReturn": -0.03944869224360659,
+        "medianReturn": -0.08179507121116347,
+        "positiveShare": 0.3,
+        "writeoffs": 1
+      },
+      "earlierZero": {
+        "calls": 32,
+        "scorable": 25,
+        "meanReturn": 0.06907643129077902,
+        "medianReturn": 0.07041298233937421,
+        "positiveShare": 0.56,
+        "writeoffs": 2
+      },
+      "laterZero": {
+        "calls": 14,
+        "scorable": 10,
+        "meanReturn": 0.06727923084043712,
+        "medianReturn": 0.020227698654262827,
+        "positiveShare": 0.5,
+        "writeoffs": 1
+      },
+      "laterAccount": {
+        "return": -0.0040489463714318275,
+        "drawdownBound": -0.017556394817666132,
+        "trades": 10,
+        "wins": 3,
+        "writeoffs": 1,
+        "totalStake": 10.078124421485281
+      }
+    },
+    {
+      "alias": "Caller 09",
+      "earlier": {
+        "calls": 9,
+        "scorable": 7,
+        "meanReturn": -0.07685533381680258,
+        "medianReturn": -0.04534960835223367,
+        "positiveShare": 0.14285714285714285,
+        "writeoffs": 0
+      },
+      "later": {
+        "calls": 13,
+        "scorable": 11,
+        "meanReturn": -0.18802476277815838,
+        "medianReturn": -0.1205406893294989,
+        "positiveShare": 0.18181818181818182,
+        "writeoffs": 1
+      },
+      "earlierZero": {
+        "calls": 9,
+        "scorable": 7,
+        "meanReturn": 0.025716295759108214,
+        "medianReturn": 0.06072265738640703,
+        "positiveShare": 0.5714285714285714,
+        "writeoffs": 0
+      },
+      "laterZero": {
+        "calls": 13,
+        "scorable": 11,
+        "meanReturn": -0.09780529197573157,
+        "medianReturn": -0.022822988143887724,
+        "positiveShare": 0.2727272727272727,
+        "writeoffs": 1
+      },
+      "laterAccount": {
+        "return": -0.020529477583517863,
+        "drawdownBound": -0.020529477583517863,
+        "trades": 11,
+        "wins": 2,
+        "writeoffs": 1,
+        "totalStake": 10.875279529295165
+      }
+    },
+    {
+      "alias": "Caller 02",
+      "earlier": {
+        "calls": 31,
+        "scorable": 19,
+        "meanReturn": -0.15513084254239295,
+        "medianReturn": -0.07500722637025203,
+        "positiveShare": 0.3157894736842105,
+        "writeoffs": 2
+      },
+      "later": {
+        "calls": 34,
+        "scorable": 31,
+        "meanReturn": -0.22473496568817988,
+        "medianReturn": -0.14925576706602228,
+        "positiveShare": 0.1935483870967742,
+        "writeoffs": 4
+      },
+      "earlierZero": {
+        "calls": 31,
+        "scorable": 19,
+        "meanReturn": -0.06125649171376997,
+        "medianReturn": 0.02776974847749769,
+        "positiveShare": 0.6842105263157895,
+        "writeoffs": 2
+      },
+      "laterZero": {
+        "calls": 34,
+        "scorable": 31,
+        "meanReturn": -0.1385944063201999,
+        "medianReturn": -0.05472863007335815,
+        "positiveShare": 0.41935483870967744,
+        "writeoffs": 4
+      },
+      "laterAccount": {
+        "return": -0.06753082498716834,
+        "drawdownBound": -0.06970713606410384,
+        "trades": 31,
+        "wins": 6,
+        "writeoffs": 4,
+        "totalStake": 29.90633737961841
+      }
+    },
+    {
+      "alias": "Caller 07",
+      "earlier": {
+        "calls": 21,
+        "scorable": 13,
+        "meanReturn": -0.16950067842608985,
+        "medianReturn": -0.10335820895522407,
+        "positiveShare": 0.38461538461538464,
+        "writeoffs": 2
+      },
+      "later": {
+        "calls": 0,
+        "scorable": 0,
+        "meanReturn": null,
+        "medianReturn": null,
+        "positiveShare": null,
+        "writeoffs": 0
+      },
+      "earlierZero": {
+        "calls": 21,
+        "scorable": 13,
+        "meanReturn": -0.07722297602898874,
+        "medianReturn": -0.003731343283582267,
+        "positiveShare": 0.46153846153846156,
+        "writeoffs": 2
+      },
+      "laterZero": {
+        "calls": 0,
+        "scorable": 0,
+        "meanReturn": null,
+        "medianReturn": null,
+        "positiveShare": null,
+        "writeoffs": 0
+      },
+      "laterAccount": {
+        "return": 0.0,
+        "drawdownBound": 0.0,
+        "trades": 0,
+        "wins": 0,
+        "writeoffs": 0,
+        "totalStake": 0
+      }
+    },
+    {
+      "alias": "Caller 11",
+      "earlier": {
+        "calls": 6,
+        "scorable": 5,
+        "meanReturn": -0.1975909921517664,
+        "medianReturn": -0.12179700951128292,
+        "positiveShare": 0.2,
+        "writeoffs": 1
+      },
+      "later": {
+        "calls": 0,
+        "scorable": 0,
+        "meanReturn": null,
+        "medianReturn": null,
+        "positiveShare": null,
+        "writeoffs": 0
+      },
+      "earlierZero": {
+        "calls": 6,
+        "scorable": 5,
+        "meanReturn": -0.10843443572418494,
+        "medianReturn": -0.02421889945698108,
+        "positiveShare": 0.4,
+        "writeoffs": 1
+      },
+      "laterZero": {
+        "calls": 0,
+        "scorable": 0,
+        "meanReturn": null,
+        "medianReturn": null,
+        "positiveShare": null,
+        "writeoffs": 0
+      },
+      "laterAccount": {
+        "return": 0.0,
+        "drawdownBound": 0.0,
+        "trades": 0,
+        "wins": 0,
+        "writeoffs": 0,
+        "totalStake": 0
+      }
+    },
+    {
+      "alias": "Caller 03",
+      "earlier": {
+        "calls": 29,
+        "scorable": 24,
+        "meanReturn": -0.28865910837317016,
+        "medianReturn": -0.1617973812566258,
+        "positiveShare": 0.08333333333333333,
+        "writeoffs": 4
+      },
+      "later": {
+        "calls": 0,
+        "scorable": 0,
+        "meanReturn": null,
+        "medianReturn": null,
+        "positiveShare": null,
+        "writeoffs": 0
+      },
+      "earlierZero": {
+        "calls": 29,
+        "scorable": 24,
+        "meanReturn": -0.20962123152574466,
+        "medianReturn": -0.06866375695180649,
+        "positiveShare": 0.25,
+        "writeoffs": 4
+      },
+      "laterZero": {
+        "calls": 0,
+        "scorable": 0,
+        "meanReturn": null,
+        "medianReturn": null,
+        "positiveShare": null,
+        "writeoffs": 0
+      },
+      "laterAccount": {
+        "return": 0.0,
+        "drawdownBound": 0.0,
+        "trades": 0,
+        "wins": 0,
+        "writeoffs": 0,
+        "totalStake": 0
+      }
+    },
+    {
+      "alias": "Caller 04",
+      "earlier": {
+        "calls": 28,
+        "scorable": 21,
+        "meanReturn": -0.3106671413156002,
+        "medianReturn": -0.16537316847906203,
+        "positiveShare": 0.14285714285714285,
+        "writeoffs": 5
+      },
+      "later": {
+        "calls": 2,
+        "scorable": 2,
+        "meanReturn": -0.05372676677573712,
+        "medianReturn": -0.05372676677573712,
+        "positiveShare": 0.0,
+        "writeoffs": 0
+      },
+      "earlierZero": {
+        "calls": 28,
+        "scorable": 21,
+        "meanReturn": -0.23407460146177805,
+        "medianReturn": -0.07263685386562446,
+        "positiveShare": 0.2857142857142857,
+        "writeoffs": 5
+      },
+      "laterZero": {
+        "calls": 2,
+        "scorable": 2,
+        "meanReturn": 0.051414703582514265,
+        "medianReturn": 0.051414703582514265,
+        "positiveShare": 0.5,
+        "writeoffs": 0
+      },
+      "laterAccount": {
+        "return": -0.0010744608094581665,
+        "drawdownBound": -0.0027250657986354065,
+        "trades": 2,
+        "wins": 0,
+        "writeoffs": 0,
+        "totalStake": 1.9989999899738469
+      }
+    },
+    {
+      "alias": "Caller 06",
+      "earlier": {
+        "calls": 21,
+        "scorable": 7,
+        "meanReturn": -0.3232072445668779,
+        "medianReturn": -0.09429120812966629,
+        "positiveShare": 0.14285714285714285,
+        "writeoffs": 2
+      },
+      "later": {
+        "calls": 10,
+        "scorable": 4,
+        "meanReturn": -0.3279951314513863,
+        "medianReturn": -0.12344828426863746,
+        "positiveShare": 0.0,
+        "writeoffs": 1
+      },
+      "earlierZero": {
+        "calls": 21,
+        "scorable": 7,
+        "meanReturn": -0.2480080495187532,
+        "medianReturn": 0.006343102078148588,
+        "positiveShare": 0.5714285714285714,
+        "writeoffs": 2
+      },
+      "laterZero": {
+        "calls": 10,
+        "scorable": 4,
+        "meanReturn": -0.2533279238348737,
+        "medianReturn": -0.026053649187375016,
+        "positiveShare": 0.5,
+        "writeoffs": 1
+      },
+      "laterAccount": {
+        "return": -0.013085832469321157,
+        "drawdownBound": -0.013085832469321157,
+        "trades": 4,
+        "wins": 0,
+        "writeoffs": 1,
+        "totalStake": 3.9926086391201476
+      }
+    },
+    {
+      "alias": "Caller 08",
+      "earlier": {
+        "calls": 12,
+        "scorable": 6,
+        "meanReturn": -0.38225945213153256,
+        "medianReturn": -0.10916490063476458,
+        "positiveShare": 0.0,
+        "writeoffs": 2
+      },
+      "later": {
+        "calls": 1,
+        "scorable": 1,
+        "meanReturn": -1.0,
+        "medianReturn": -1.0,
+        "positiveShare": 0.0,
+        "writeoffs": 1
+      },
+      "earlierZero": {
+        "calls": 12,
+        "scorable": 6,
+        "meanReturn": -0.31362161347948064,
+        "medianReturn": -0.010183222927516222,
+        "positiveShare": 0.3333333333333333,
+        "writeoffs": 2
+      },
+      "laterZero": {
+        "calls": 1,
+        "scorable": 1,
+        "meanReturn": -1.0,
+        "medianReturn": -1.0,
+        "positiveShare": 0.0,
+        "writeoffs": 1
+      },
+      "laterAccount": {
+        "return": -0.010000000000000009,
+        "drawdownBound": -0.010000000000000009,
+        "trades": 1,
+        "wins": 0,
+        "writeoffs": 1,
+        "totalStake": 1.0
+      }
+    },
+    {
+      "alias": "Caller 05",
+      "earlier": {
+        "calls": 26,
+        "scorable": 13,
+        "meanReturn": -0.4064556331398353,
+        "medianReturn": -0.24842936611686484,
+        "positiveShare": 0.38461538461538464,
+        "writeoffs": 5
+      },
+      "later": {
+        "calls": 5,
+        "scorable": 3,
+        "meanReturn": -0.7951249366644529,
+        "medianReturn": -1.0,
+        "positiveShare": 0.0,
+        "writeoffs": 2
+      },
+      "earlierZero": {
+        "calls": 26,
+        "scorable": 13,
+        "meanReturn": -0.34050625904426146,
+        "medianReturn": -0.16492151790762766,
+        "positiveShare": 0.46153846153846156,
+        "writeoffs": 5
+      },
+      "laterZero": {
+        "calls": 5,
+        "scorable": 3,
+        "meanReturn": -0.7723610407382809,
+        "medianReturn": -1.0,
+        "positiveShare": 0.0,
+        "writeoffs": 2
+      },
+      "laterAccount": {
+        "return": -0.02367705851274493,
+        "drawdownBound": -0.02367705851274493,
+        "trades": 3,
+        "wins": 0,
+        "writeoffs": 2,
+        "totalStake": 2.976184789381066
+      }
+    },
+    {
+      "alias": "Caller 10",
+      "earlier": {
+        "calls": 8,
+        "scorable": 3,
+        "meanReturn": -0.39641726989116194,
+        "medianReturn": -0.2707253904288418,
+        "positiveShare": 0.3333333333333333,
+        "writeoffs": 1
+      },
+      "later": {
+        "calls": 9,
+        "scorable": 5,
+        "meanReturn": -0.37213859841481944,
+        "medianReturn": -0.11121269654353283,
+        "positiveShare": 0.4,
+        "writeoffs": 2
+      },
+      "earlierZero": {
+        "calls": 8,
+        "scorable": 3,
+        "meanReturn": -0.3293525221012911,
+        "medianReturn": -0.18969487825426867,
+        "positiveShare": 0.3333333333333333,
+        "writeoffs": 1
+      },
+      "laterZero": {
+        "calls": 9,
+        "scorable": 5,
+        "meanReturn": -0.3023762204609105,
+        "medianReturn": -0.012458551715036514,
+        "positiveShare": 0.4,
+        "writeoffs": 2
+      },
+      "laterAccount": {
+        "return": -0.018535963976942904,
+        "drawdownBound": -0.020405275206372253,
+        "trades": 5,
+        "wins": 2,
+        "writeoffs": 2,
+        "totalStake": 4.958842268537275
+      }
+    },
+    {
+      "alias": "Caller 15",
+      "earlier": {
+        "calls": 5,
+        "scorable": 3,
+        "meanReturn": -0.04508061635001218,
+        "medianReturn": -0.04109371286194041,
+        "positiveShare": 0.3333333333333333,
+        "writeoffs": 0
+      },
+      "later": {
+        "calls": 3,
+        "scorable": 2,
+        "meanReturn": -0.16236318062978744,
+        "medianReturn": -0.16236318062978744,
+        "positiveShare": 0.0,
+        "writeoffs": 0
+      },
+      "earlierZero": {
+        "calls": 5,
+        "scorable": 3,
+        "meanReturn": 0.061021537388875315,
+        "medianReturn": 0.06545143015339949,
+        "positiveShare": 0.6666666666666666,
+        "writeoffs": 0
+      },
+      "laterZero": {
+        "calls": 3,
+        "scorable": 2,
+        "meanReturn": -0.06929242292198606,
+        "medianReturn": -0.06929242292198606,
+        "positiveShare": 0.5,
+        "writeoffs": 0
+      },
+      "laterAccount": {
+        "return": -0.0032450983571585823,
+        "drawdownBound": -0.0038946917389046654,
+        "trades": 2,
+        "wins": 0,
+        "writeoffs": 0,
+        "totalStake": 1.999062607805861
+      }
+    },
+    {
+      "alias": "Caller 18",
+      "earlier": {
+        "calls": 3,
+        "scorable": 2,
+        "meanReturn": -0.19724404279903496,
+        "medianReturn": -0.19724404279903496,
+        "positiveShare": 0.0,
+        "writeoffs": 0
+      },
+      "later": {
+        "calls": 5,
+        "scorable": 4,
+        "meanReturn": 0.19339931127143134,
+        "medianReturn": -0.016949161936476387,
+        "positiveShare": 0.5,
+        "writeoffs": 0
+      },
+      "earlierZero": {
+        "calls": 3,
+        "scorable": 2,
+        "meanReturn": -0.10804893644337221,
+        "medianReturn": -0.10804893644337221,
+        "positiveShare": 0.0,
+        "writeoffs": 0
+      },
+      "laterZero": {
+        "calls": 5,
+        "scorable": 4,
+        "meanReturn": 0.3259992347460348,
+        "medianReturn": 0.09227870895947066,
+        "positiveShare": 1.0,
+        "writeoffs": 0
+      },
+      "laterAccount": {
+        "return": 0.007725383577350975,
+        "drawdownBound": -0.00521968097460046,
+        "trades": 4,
+        "wins": 2,
+        "writeoffs": 0,
+        "totalStake": 3.9963865372897365
+      }
+    }
+  ],
+  "flowFilters": [
+    {
+      "label": "pre-call volume ≥100",
+      "earlier": {
+        "calls": 235,
+        "scorable": 161,
+        "meanReturn": -0.21184516716471827,
+        "medianReturn": -0.13522267320893955,
+        "positiveShare": 0.2360248447204969,
+        "writeoffs": 25
+      },
+      "later": {
+        "calls": 96,
+        "scorable": 77,
+        "meanReturn": -0.18875574627892103,
+        "medianReturn": -0.11262706682443391,
+        "positiveShare": 0.2077922077922078,
+        "writeoffs": 10
+      }
+    },
+    {
+      "label": "pre-call volume ≥500",
+      "earlier": {
+        "calls": 178,
+        "scorable": 138,
+        "meanReturn": -0.18115092275446235,
+        "medianReturn": -0.12965599880050416,
+        "positiveShare": 0.2391304347826087,
+        "writeoffs": 17
+      },
+      "later": {
+        "calls": 77,
+        "scorable": 69,
+        "meanReturn": -0.17229556969741605,
+        "medianReturn": -0.11262706682443391,
+        "positiveShare": 0.2318840579710145,
+        "writeoffs": 8
+      }
+    },
+    {
+      "label": "pre-call volume ≥1000",
+      "earlier": {
+        "calls": 139,
+        "scorable": 116,
+        "meanReturn": -0.1462187677406609,
+        "medianReturn": -0.12401290058289238,
+        "positiveShare": 0.27586206896551724,
+        "writeoffs": 10
+      },
+      "later": {
+        "calls": 57,
+        "scorable": 54,
+        "meanReturn": -0.1559759452684398,
+        "medianReturn": -0.10984277039650464,
+        "positiveShare": 0.2222222222222222,
+        "writeoffs": 4
+      }
+    },
+    {
+      "label": "pre-call volume ≥3000",
+      "earlier": {
+        "calls": 60,
+        "scorable": 58,
+        "meanReturn": -0.1567366663554521,
+        "medianReturn": -0.15270778188839107,
+        "positiveShare": 0.22413793103448276,
+        "writeoffs": 4
+      },
+      "later": {
+        "calls": 18,
+        "scorable": 18,
+        "meanReturn": -0.07809231066469338,
+        "medianReturn": -0.0689004793931065,
+        "positiveShare": 0.3333333333333333,
+        "writeoffs": 0
+      }
+    },
+    {
+      "label": "pre-call volume ≥10000",
+      "earlier": {
+        "calls": 20,
+        "scorable": 19,
+        "meanReturn": -0.10689112347182815,
+        "medianReturn": -0.1536550262473333,
+        "positiveShare": 0.2631578947368421,
+        "writeoffs": 0
+      },
+      "later": {
+        "calls": 3,
+        "scorable": 3,
+        "meanReturn": -0.15999875983320508,
+        "medianReturn": -0.1929219656930623,
+        "positiveShare": 0.0,
+        "writeoffs": 0
+      }
+    },
+    {
+      "label": "pre-call swaps ≥5",
+      "earlier": {
+        "calls": 198,
+        "scorable": 150,
+        "meanReturn": -0.20031342092865437,
+        "medianReturn": -0.1363005397266368,
+        "positiveShare": 0.22666666666666666,
+        "writeoffs": 21
+      },
+      "later": {
+        "calls": 92,
+        "scorable": 76,
+        "meanReturn": -0.16638691000026914,
+        "medianReturn": -0.1094914534133602,
+        "positiveShare": 0.21052631578947367,
+        "writeoffs": 8
+      }
+    },
+    {
+      "label": "pre-call swaps ≥15",
+      "earlier": {
+        "calls": 128,
+        "scorable": 106,
+        "meanReturn": -0.1340333169490284,
+        "medianReturn": -0.11861592970360241,
+        "positiveShare": 0.2830188679245283,
+        "writeoffs": 8
+      },
+      "later": {
+        "calls": 65,
+        "scorable": 61,
+        "meanReturn": -0.12146304650916209,
+        "medianReturn": -0.10000100261529865,
+        "positiveShare": 0.2459016393442623,
+        "writeoffs": 4
+      }
+    },
+    {
+      "label": "pre-call swaps ≥40",
+      "earlier": {
+        "calls": 55,
+        "scorable": 52,
+        "meanReturn": -0.1359333095691126,
+        "medianReturn": -0.1441489215204152,
+        "positiveShare": 0.28846153846153844,
+        "writeoffs": 3
+      },
+      "later": {
+        "calls": 28,
+        "scorable": 28,
+        "meanReturn": -0.05538924661226339,
+        "medianReturn": -0.08187670446724371,
+        "positiveShare": 0.2857142857142857,
+        "writeoffs": 0
+      }
+    },
+    {
+      "label": "pre-call wallets ≥5",
+      "earlier": {
+        "calls": 191,
+        "scorable": 148,
+        "meanReturn": -0.20421468983219215,
+        "medianReturn": -0.13855073362169829,
+        "positiveShare": 0.22297297297297297,
+        "writeoffs": 21
+      },
+      "later": {
+        "calls": 89,
+        "scorable": 75,
+        "meanReturn": -0.1671225661796923,
+        "medianReturn": -0.10777021028318756,
+        "positiveShare": 0.21333333333333335,
+        "writeoffs": 8
+      }
+    },
+    {
+      "label": "pre-call wallets ≥10",
+      "earlier": {
+        "calls": 141,
+        "scorable": 116,
+        "meanReturn": -0.16554808650559535,
+        "medianReturn": -0.1363005397266368,
+        "positiveShare": 0.25862068965517243,
+        "writeoffs": 12
+      },
+      "later": {
+        "calls": 70,
+        "scorable": 66,
+        "meanReturn": -0.14763658339619581,
+        "medianReturn": -0.10105327006088144,
+        "positiveShare": 0.24242424242424243,
+        "writeoffs": 6
+      }
+    },
+    {
+      "label": "pre-call wallets ≥25",
+      "earlier": {
+        "calls": 65,
+        "scorable": 62,
+        "meanReturn": -0.10726987839151367,
+        "medianReturn": -0.1444143564405892,
+        "positiveShare": 0.25806451612903225,
+        "writeoffs": 2
+      },
+      "later": {
+        "calls": 31,
+        "scorable": 30,
+        "meanReturn": -0.06269566840187189,
+        "medianReturn": -0.08187670446724371,
+        "positiveShare": 0.3,
+        "writeoffs": 0
+      }
+    },
+    {
+      "label": "volume/cap ≥0.01",
+      "earlier": {
+        "calls": 200,
+        "scorable": 143,
+        "meanReturn": -0.21639255889708364,
+        "medianReturn": -0.14131900787993967,
+        "positiveShare": 0.26573426573426573,
+        "writeoffs": 24
+      },
+      "later": {
+        "calls": 90,
+        "scorable": 75,
+        "meanReturn": -0.19093767445440252,
+        "medianReturn": -0.11262706682443391,
+        "positiveShare": 0.21333333333333335,
+        "writeoffs": 10
+      }
+    },
+    {
+      "label": "volume/cap ≥0.05",
+      "earlier": {
+        "calls": 123,
+        "scorable": 94,
+        "meanReturn": -0.1309868678934157,
+        "medianReturn": -0.12083182077521187,
+        "positiveShare": 0.3191489361702128,
+        "writeoffs": 9
+      },
+      "later": {
+        "calls": 63,
+        "scorable": 56,
+        "meanReturn": -0.11796516777509776,
+        "medianReturn": -0.09033749737678443,
+        "positiveShare": 0.26785714285714285,
+        "writeoffs": 4
+      }
+    },
+    {
+      "label": "volume/cap ≥0.1",
+      "earlier": {
+        "calls": 71,
+        "scorable": 62,
+        "meanReturn": -0.11706139301238964,
+        "medianReturn": -0.12033733487795534,
+        "positiveShare": 0.3548387096774194,
+        "writeoffs": 5
+      },
+      "later": {
+        "calls": 40,
+        "scorable": 35,
+        "meanReturn": -0.0968216324813048,
+        "medianReturn": -0.0794835468015459,
+        "positiveShare": 0.34285714285714286,
+        "writeoffs": 2
+      }
+    },
+    {
+      "label": "last pre-call swap ≤10s",
+      "earlier": {
+        "calls": 183,
+        "scorable": 141,
+        "meanReturn": -0.18912021916229943,
+        "medianReturn": -0.13308320594650647,
+        "positiveShare": 0.23404255319148937,
+        "writeoffs": 18
+      },
+      "later": {
+        "calls": 82,
+        "scorable": 66,
+        "meanReturn": -0.13384974090448568,
+        "medianReturn": -0.09968393041934054,
+        "positiveShare": 0.22727272727272727,
+        "writeoffs": 5
+      }
+    },
+    {
+      "label": "pre-call buy share ≥50%",
+      "earlier": {
+        "calls": 170,
+        "scorable": 112,
+        "meanReturn": -0.1625176897744153,
+        "medianReturn": -0.12294278896297633,
+        "positiveShare": 0.25892857142857145,
+        "writeoffs": 12
+      },
+      "later": {
+        "calls": 70,
+        "scorable": 53,
+        "meanReturn": -0.25197741468825385,
+        "medianReturn": -0.11262706682443391,
+        "positiveShare": 0.16981132075471697,
+        "writeoffs": 10
+      }
+    },
+    {
+      "label": "pre-call wallet concentration ≤20%",
+      "earlier": {
+        "calls": 137,
+        "scorable": 111,
+        "meanReturn": -0.1590996345449163,
+        "medianReturn": -0.13308320594650647,
+        "positiveShare": 0.2882882882882883,
+        "writeoffs": 12
+      },
+      "later": {
+        "calls": 60,
+        "scorable": 55,
+        "meanReturn": -0.11241122594531726,
+        "medianReturn": -0.09373921941387664,
+        "positiveShare": 0.2727272727272727,
+        "writeoffs": 4
+      }
+    }
+  ],
+  "grid": {
+    "rules": 55,
+    "delays": 4,
+    "entryMasks": 60,
+    "trainingRows": 11440
+  },
+  "topTrainingCandidate": {
+    "mask": "Caller 01",
+    "delaySeconds": 1,
+    "exit": "stop_0.25_target_3x_120s",
+    "trainingCalls": 23,
+    "trainingTokens": 23,
+    "meanNet10": 0.16600191732248457,
+    "standardError": 0.1247493771651892,
+    "score": 0.04125254015729536,
+    "trainingWriteoffs": 1
+  },
+  "trainingChoice": {
+    "label": "Caller 01, 1s, stop_0.25_target_3x_120s"
+  },
+  "topEvaluation": {
+    "earlierZero": {
+      "return": 0.06971905680771817,
+      "drawdownBound": -0.014094254866966138,
+      "trades": 23,
+      "wins": 15,
+      "writeoffs": 1,
+      "totalStake": 23.987457069633827
+    },
+    "earlierTen": {
+      "return": 0.03847915347669706,
+      "drawdownBound": -0.014675689074039489,
+      "trades": 23,
+      "wins": 12,
+      "writeoffs": 1,
+      "totalStake": 23.623997188400853
+    },
+    "laterZero": {
+      "return": 0.010580215118890957,
+      "drawdownBound": -0.009756223437837552,
+      "trades": 11,
+      "wins": 7,
+      "writeoffs": 0,
+      "totalStake": 11.07515043905341
+    },
+    "laterTen": {
+      "return": -0.0015185036605001034,
+      "drawdownBound": -0.013360756652184613,
+      "trades": 11,
+      "wins": 4,
+      "writeoffs": 0,
+      "totalStake": 11.012465085083141
+    },
+    "laterWithoutTwoBest": {
+      "return": -0.010070678299746061,
+      "drawdownBound": -0.012053674894146549,
+      "trades": 9,
+      "wins": 2,
+      "writeoffs": 0,
+      "totalStake": 8.943291596495683
+    },
+    "laterWithoutTwoBestZero": {
+      "return": -0.0012405481377808503,
+      "drawdownBound": -0.007699131458616115,
+      "trades": 9,
+      "wins": 5,
+      "writeoffs": 0,
+      "totalStake": 8.976814095070761
+    },
+    "earlierCalls": {
+      "calls": 32,
+      "scorable": 23,
+      "meanReturn": 0.16600191732248457,
+      "medianReturn": 0.04601513939631707,
+      "positiveShare": 0.5217391304347826,
+      "writeoffs": 1
+    },
+    "laterCalls": {
+      "calls": 14,
+      "scorable": 11,
+      "meanReturn": -0.013504236274113396,
+      "medianReturn": -0.05760731636230121,
+      "positiveShare": 0.36363636363636365,
+      "writeoffs": 0
+    }
+  },
+  "recentSizing": [
+    {
+      "name": "flat 1×",
+      "laterZero": {
+        "return": -0.11842116073767617,
+        "drawdownBound": -0.1357880605491666,
+        "trades": 84,
+        "wins": 36,
+        "writeoffs": 16,
+        "totalStake": 79.48465081634201
+      },
+      "laterTen": {
+        "return": -0.1792202639353342,
+        "drawdownBound": -0.18796572910195897,
+        "trades": 84,
+        "wins": 18,
+        "writeoffs": 16,
+        "totalStake": 76.75616648135207
+      },
+      "earlierTen": {
+        "return": -0.32410568085275604,
+        "drawdownBound": -0.3242979063148871,
+        "trades": 168,
+        "wins": 39,
+        "writeoffs": 31,
+        "totalStake": 133.21441255535382
+      }
+    },
+    {
+      "name": "follow trend, slope 1",
+      "laterZero": {
+        "return": -0.10327129792567757,
+        "drawdownBound": -0.11624451654650159,
+        "trades": 84,
+        "wins": 36,
+        "writeoffs": 16,
+        "totalStake": 65.68812146273076
+      },
+      "laterTen": {
+        "return": -0.15384869346364882,
+        "drawdownBound": -0.1603360366430624,
+        "trades": 84,
+        "wins": 18,
+        "writeoffs": 16,
+        "totalStake": 63.83978814089407
+      },
+      "earlierTen": {
+        "return": -0.27894993781747335,
+        "drawdownBound": -0.2791550056476003,
+        "trades": 168,
+        "wins": 39,
+        "writeoffs": 31,
+        "totalStake": 119.71981401400957
+      }
+    },
+    {
+      "name": "reversal, slope 0.5",
+      "laterZero": {
+        "return": -0.12592679492500347,
+        "drawdownBound": -0.14541652539774685,
+        "trades": 84,
+        "wins": 36,
+        "writeoffs": 16,
+        "totalStake": 86.3101547968674
+      },
+      "laterTen": {
+        "return": -0.1911470683583978,
+        "drawdownBound": -0.20101430520877717,
+        "trades": 84,
+        "wins": 18,
+        "writeoffs": 16,
+        "totalStake": 82.60788589306698
+      },
+      "earlierTen": {
+        "return": -0.34122068995399923,
+        "drawdownBound": -0.34140804787923795,
+        "trades": 163,
+        "wins": 36,
+        "writeoffs": 31,
+        "totalStake": 138.97826712020725
+      }
+    },
+    {
+      "name": "reversal, slope 1",
+      "laterZero": {
+        "return": -0.13340554630702595,
+        "drawdownBound": -0.15496922054107187,
+        "trades": 84,
+        "wins": 36,
+        "writeoffs": 16,
+        "totalStake": 92.7004450257277
+      },
+      "laterTen": {
+        "return": -0.20210037257001556,
+        "drawdownBound": -0.21306095751493437,
+        "trades": 84,
+        "wins": 18,
+        "writeoffs": 16,
+        "totalStake": 87.67407098777728
+      },
+      "earlierTen": {
+        "return": -0.3541282557528116,
+        "drawdownBound": -0.3543119427449911,
+        "trades": 163,
+        "wins": 36,
+        "writeoffs": 31,
+        "totalStake": 145.78590444689152
+      }
+    },
+    {
+      "name": "reversal, slope 2",
+      "laterZero": {
+        "return": -0.14513619939159894,
+        "drawdownBound": -0.17000472661648258,
+        "trades": 84,
+        "wins": 36,
+        "writeoffs": 16,
+        "totalStake": 102.4784631223835
+      },
+      "laterTen": {
+        "return": -0.22031167395227158,
+        "drawdownBound": -0.23291966813411613,
+        "trades": 84,
+        "wins": 18,
+        "writeoffs": 16,
+        "totalStake": 96.56732758933212
+      },
+      "earlierTen": {
+        "return": -0.3763405462785735,
+        "drawdownBound": -0.37651791605859364,
+        "trades": 163,
+        "wins": 36,
+        "writeoffs": 31,
+        "totalStake": 156.13560491225553
+      }
+    }
+  ],
+  "recentScoreCoverage": {
+    "earlierAtLeastFive": 272,
+    "laterAtLeastFive": 123,
+    "laterMedianHistory": 10.0
+  }
+}

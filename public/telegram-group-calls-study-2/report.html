@@ -1,0 +1,80 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Optimal strategy for trading on Telegram group calls</title><style>
+body{font:16px/1.6 system-ui;max-width:1150px;margin:40px auto;padding:0 24px;color:#172231}
+h1,h2{line-height:1.25}table{border-collapse:collapse;width:100%}td,th{padding:9px 11px;text-align:left;border-bottom:1px solid #d6dfe9}
+th{background:#eef3f8}.scroll{overflow-x:auto}a{color:#1459ac}</style>
+<h1>Optimal strategy for trading on Telegram group calls</h1>
+<h2>Scope</h2>
+<p>Accessible history: August 22–October 23, 2026. The archive contains 4,686 messages;
+1,532 mention a token, ticker or token link. Of those,
+655 came from non-bot user accounts. Mobula identified
+486 candidate tokens and 637 human call signals.
+Another 18 human token-related messages had no unique contract
+identity, mainly ticker-only or multi-address posts.
+The execution study uses 408 first sender-token calls with a fresh historical quote,
+market cap and saved price series. Later repeats by the same sender about the same token are counted but not
+treated as new entries. With a five-second entry delay, 264 calls have the
+observations needed for a 60-second sale.</p>
+<p>The comparison uses August–September to select a rule and October as a later replay. Calls overlap in time,
+so the account holds at most one position and never buys the same token twice. Entry and sale need an observed
+one-second print within ten seconds. A missing sale is a writeoff. Trade size starts at 1% of a $100 account,
+with a 4% daily full-loss budget. The 10% sale haircut is a stress assumption, not a measured fee.</p>
+<h2>Fixed holds, all human calls</h2>
+<p>Five-second entry delay. Mean call returns are clipped to −100%/+200% for this descriptive table.
+Account return uses the observed exit price without clipping.</p>
+<div class="scroll"><table><tr><th>Hold</th><th>Earlier scorable</th>
+<th>October scorable</th><th>October mean, 0%</th><th>October mean, 10%</th>
+<th>October account, 0%</th><th>October account, 10%</th></tr><tr><td>5s</td><td>178</td><td>86</td><td>-21.44%</td><td>-29.30%</td><td>-16.93%</td><td>-22.28%</td></tr><tr><td>10s</td><td>178</td><td>86</td><td>-22.57%</td><td>-30.32%</td><td>-17.74%</td><td>-22.92%</td></tr><tr><td>15s</td><td>178</td><td>86</td><td>-22.80%</td><td>-30.52%</td><td>-17.90%</td><td>-23.02%</td></tr><tr><td>30s</td><td>178</td><td>86</td><td>-17.55%</td><td>-25.80%</td><td>-14.11%</td><td>-19.83%</td></tr><tr><td>45s</td><td>178</td><td>86</td><td>-21.53%</td><td>-29.38%</td><td>-15.65%</td><td>-20.73%</td></tr><tr><td>60s</td><td>178</td><td>86</td><td>-14.79%</td><td>-23.31%</td><td>-11.84%</td><td>-17.92%</td></tr><tr><td>90s</td><td>178</td><td>86</td><td>-20.60%</td><td>-28.54%</td><td>-14.24%</td><td>-19.59%</td></tr><tr><td>120s</td><td>178</td><td>86</td><td>-9.78%</td><td>-18.80%</td><td>-7.00%</td><td>-13.79%</td></tr><tr><td>180s</td><td>178</td><td>86</td><td>-13.85%</td><td>-22.47%</td><td>-10.28%</td><td>-16.60%</td></tr></table></div>
+<h2>Market cap</h2>
+<p>Same five-second entry and 60-second hold, with a 10% sale haircut. These are descriptive buckets;
+the groups are too small to treat the highest row as a validated filter.</p>
+<div class="scroll"><table><tr><th>Call-time cap</th><th>Earlier calls</th><th>Earlier mean</th>
+<th>October calls</th><th>October mean</th><th>October writeoffs</th></tr><tr><td>$0–$6,000</td><td>8</td><td>-11.22%</td><td>0</td><td>—</td><td>0</td></tr><tr><td>$6,000–$10,000</td><td>21</td><td>-8.11%</td><td>13</td><td>-18.97%</td><td>4</td></tr><tr><td>$10,000–$25,000</td><td>64</td><td>-29.68%</td><td>43</td><td>-22.20%</td><td>8</td></tr><tr><td>$25,000–$50,000</td><td>32</td><td>-21.97%</td><td>20</td><td>-23.72%</td><td>2</td></tr><tr><td>$50,000–$100,000</td><td>26</td><td>-34.89%</td><td>7</td><td>-29.61%</td><td>1</td></tr><tr><td>$100,000–$250,000</td><td>8</td><td>-12.89%</td><td>1</td><td>-100.00%</td><td>1</td></tr><tr><td>$250,000–$1,000,000</td><td>14</td><td>-15.45%</td><td>0</td><td>—</td><td>0</td></tr><tr><td>$1m+</td><td>5</td><td>-28.16%</td><td>2</td><td>-10.69%</td><td>0</td></tr></table></div>
+<h2>Chain</h2>
+<p>Same five-second entry and 60-second hold, with a 10% sale haircut.</p>
+<div class="scroll"><table><tr><th>Chain</th><th>Earlier calls</th><th>Earlier mean</th>
+<th>October calls</th><th>October mean</th></tr><tr><td>Solana</td><td>43</td><td>-16.88%</td><td>75</td><td>-19.86%</td></tr><tr><td>Robinhood Chain</td><td>98</td><td>-26.53%</td><td>5</td><td>-64.72%</td></tr><tr><td>BSC</td><td>16</td><td>-26.79%</td><td>5</td><td>-18.19%</td></tr><tr><td>Arc</td><td>16</td><td>-16.41%</td><td>0</td><td>—</td></tr><tr><td>Ethereum</td><td>0</td><td>—</td><td>0</td><td>—</td></tr><tr><td>Base</td><td>1</td><td>+18.33%</td><td>0</td><td>—</td></tr><tr><td>Other EVM chains</td><td>4</td><td>-57.78%</td><td>1</td><td>-100.00%</td></tr></table></div>
+<h2>Caller comparison</h2>
+<p>Aliases hide identities. The same fixed 60-second rule applies to each caller. Rows require at least
+five scorable calls across the archive; later outcomes did not affect which aliases entered the strategy grid.</p>
+<div class="scroll"><table><tr><th>Caller</th><th>Earlier calls</th><th>Earlier mean</th>
+<th>October calls</th><th>October mean</th><th>October account</th></tr><tr><td>Caller 01</td><td>25</td><td>-3.78%</td><td>10</td><td>-3.94%</td><td>-0.40%</td></tr><tr><td>Caller 09</td><td>7</td><td>-7.69%</td><td>11</td><td>-18.80%</td><td>-2.05%</td></tr><tr><td>Caller 02</td><td>19</td><td>-15.51%</td><td>31</td><td>-22.47%</td><td>-6.75%</td></tr><tr><td>Caller 07</td><td>13</td><td>-16.95%</td><td>0</td><td>—</td><td>+0.00%</td></tr><tr><td>Caller 11</td><td>5</td><td>-19.76%</td><td>0</td><td>—</td><td>+0.00%</td></tr><tr><td>Caller 03</td><td>24</td><td>-28.87%</td><td>0</td><td>—</td><td>+0.00%</td></tr><tr><td>Caller 04</td><td>21</td><td>-31.07%</td><td>2</td><td>-5.37%</td><td>-0.11%</td></tr><tr><td>Caller 06</td><td>7</td><td>-32.32%</td><td>4</td><td>-32.80%</td><td>-1.31%</td></tr><tr><td>Caller 08</td><td>6</td><td>-38.23%</td><td>1</td><td>-100.00%</td><td>-1.00%</td></tr><tr><td>Caller 05</td><td>13</td><td>-40.65%</td><td>3</td><td>-79.51%</td><td>-2.37%</td></tr><tr><td>Caller 10</td><td>3</td><td>-39.64%</td><td>5</td><td>-37.21%</td><td>-1.85%</td></tr><tr><td>Caller 15</td><td>3</td><td>-4.51%</td><td>2</td><td>-16.24%</td><td>-0.32%</td></tr><tr><td>Caller 18</td><td>2</td><td>-19.72%</td><td>4</td><td>+19.34%</td><td>+0.77%</td></tr></table></div>
+<h2>Pre-call trade flow</h2>
+<p>Only swaps completed at least five seconds before the post contribute. The fixed rule waits five seconds
+and holds for 60 seconds; the table applies a 10% sale haircut. Volume is the net target-token value within
+each transaction and recipient. It is a screening proxy, not guaranteed executable depth.</p>
+<div class="scroll"><table><tr><th>Entry filter</th><th>Earlier calls</th><th>Earlier mean</th>
+<th>October calls</th><th>October mean</th></tr><tr><td>pre-call volume ≥100</td><td>161</td><td>-21.18%</td><td>77</td><td>-18.88%</td></tr><tr><td>pre-call volume ≥500</td><td>138</td><td>-18.12%</td><td>69</td><td>-17.23%</td></tr><tr><td>pre-call volume ≥1000</td><td>116</td><td>-14.62%</td><td>54</td><td>-15.60%</td></tr><tr><td>pre-call volume ≥3000</td><td>58</td><td>-15.67%</td><td>18</td><td>-7.81%</td></tr><tr><td>pre-call volume ≥10000</td><td>19</td><td>-10.69%</td><td>3</td><td>-16.00%</td></tr><tr><td>pre-call swaps ≥5</td><td>150</td><td>-20.03%</td><td>76</td><td>-16.64%</td></tr><tr><td>pre-call swaps ≥15</td><td>106</td><td>-13.40%</td><td>61</td><td>-12.15%</td></tr><tr><td>pre-call swaps ≥40</td><td>52</td><td>-13.59%</td><td>28</td><td>-5.54%</td></tr><tr><td>pre-call wallets ≥5</td><td>148</td><td>-20.42%</td><td>75</td><td>-16.71%</td></tr><tr><td>pre-call wallets ≥10</td><td>116</td><td>-16.55%</td><td>66</td><td>-14.76%</td></tr><tr><td>pre-call wallets ≥25</td><td>62</td><td>-10.73%</td><td>30</td><td>-6.27%</td></tr><tr><td>volume/cap ≥0.01</td><td>143</td><td>-21.64%</td><td>75</td><td>-19.09%</td></tr><tr><td>volume/cap ≥0.05</td><td>94</td><td>-13.10%</td><td>56</td><td>-11.80%</td></tr><tr><td>volume/cap ≥0.1</td><td>62</td><td>-11.71%</td><td>35</td><td>-9.68%</td></tr><tr><td>last pre-call swap ≤10s</td><td>141</td><td>-18.91%</td><td>66</td><td>-13.38%</td></tr><tr><td>pre-call buy share ≥50%</td><td>112</td><td>-16.25%</td><td>53</td><td>-25.20%</td></tr><tr><td>pre-call wallet concentration ≤20%</td><td>111</td><td>-15.91%</td><td>55</td><td>-11.24%</td></tr></table></div>
+<h2>Rule selection</h2>
+<p>The grid compares 55 exit rules, 4 entry delays and
+60 entry filters. It includes 5–180-second holds, 1.1–3× targets,
+stops, trailing exits, call-time cap bands, chains, quote age, pre-call trade flow and callers with
+at least eight earlier calls.
+Training requires eight scorable calls on eight distinct tokens and ranks the 10%-haircut mean after
+subtracting one estimated standard error. A rule is selected only if that score is positive.
+Training selected <strong>Caller 01, 1s, stop_0.25_target_3x_120s</strong>. The highest training score belonged to Caller 01, 1s delay, stop_0.25_target_3x_120s.</p>
+<p>The top training candidate returned +3.85% on the earlier
+account and -0.15% on the October account at the 10% haircut.
+At zero haircut those returns were +6.97% and
++1.06%. Removing October's two best token trades changes its
+October return to -0.12% at zero haircut and
+-1.01% with a 10% haircut.
+The candidate was chosen from many correlated rules; October is the useful comparison here.</p>
+<p>The October replay is sensitive to a small number of trades. Its measured no-haircut gain is small,
+while the cost stress and the two-winner check both turn it negative. Cash had no simulated drawdown;
+the selected rule's October drawdown bound was
+0.98% at zero haircut and
+1.34% with the haircut.</p>
+<h2>Recent group performance and position size</h2>
+<p>This fixed 60-second rule uses the last ten completed outcomes on other tokens, at least five observations,
+and a score frozen before each call's first quote. A positive slope raises size after better prior outcomes;
+a reversal slope raises it after worse outcomes. Factors are capped between 0.5× and 1.5×.
+The table uses October calls and a five-second entry delay.</p>
+<div class="scroll"><table><tr><th>Size rule</th><th>Return, 0%</th><th>Return, 10%</th>
+<th>Drawdown bound, 10%</th><th>Stake, 10%</th><th>Trades</th></tr><tr><td>flat 1×</td><td>-11.84%</td><td>-17.92%</td><td>18.80%</td><td>76.76</td><td>84</td></tr><tr><td>follow trend, slope 1</td><td>-10.33%</td><td>-15.38%</td><td>16.03%</td><td>63.84</td><td>84</td></tr><tr><td>reversal, slope 0.5</td><td>-12.59%</td><td>-19.11%</td><td>20.10%</td><td>82.61</td><td>84</td></tr><tr><td>reversal, slope 1</td><td>-13.34%</td><td>-20.21%</td><td>21.31%</td><td>87.67</td><td>84</td></tr><tr><td>reversal, slope 2</td><td>-14.51%</td><td>-22.03%</td><td>23.29%</td><td>96.57</td><td>84</td></tr></table></div>
+<p>These results use a short archive and sparse one-second observations. Only calls with fresh quotes enter
+the execution study, so its outcomes may differ from the full message archive. Missing exit prints are penalized;
+price prints do not establish fill capacity or account for gas and price impact. The full grid was searched
+only on the earlier period. Individual bucket and caller tables describe small samples.</p>
+<p><a href="results.json">Summary and policy definitions</a> · <a href="training_grid.csv">Training grid</a> ·
+<a href="strategy_lab.py">Replay code</a></p></html>
